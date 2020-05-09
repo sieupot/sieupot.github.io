@@ -8,8 +8,8 @@ let rightAnswers = 0, wrongAnswers = 0;
 
 // on page load call generate 2 shapes (first time the page is displayed)
 $(function() {
-  shapes = [{name: 'square', audio: 'sounds/square.ogg'}, {name: 'rectangle', audio: 'sounds/rectangle.ogg'}, {name: 'circle', audio: 'sounds/circle.ogg'},
-            {name: 'triangle', audio: 'sounds/triangle.ogg'}, {name: 'star', audio: 'sounds/star.ogg'}, {name: 'diamond', audio: 'sounds/diamond.ogg'}]
+  shapes = [{name: 'square', audio: 'sounds/shapes/square.ogg'}, {name: 'rectangle', audio: 'sounds/shapes/rectangle.ogg'}, {name: 'circle', audio: 'sounds/shapes/circle.ogg'},
+            {name: 'triangle', audio: 'sounds/shapes/triangle.ogg'}, {name: 'star', audio: 'sounds/shapes/star.ogg'}, {name: 'diamond', audio: 'sounds/shapes/diamond.ogg'}]
 
   $('#contentPanel').show();
   $('#startDiv').hide();
