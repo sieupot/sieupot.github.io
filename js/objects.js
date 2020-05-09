@@ -8,12 +8,13 @@ let rightAnswers = 0, wrongAnswers = 0;
 
 // on page load call generate 2 shapes (first time the page is displayed)
 $(function() {
-  shapes = [{name: 'square', audio: 'sounds/square.ogg'}, {name: 'rectangle', audio: 'sounds/rectangle.ogg'}, {name: 'circle', audio: 'sounds/circle.ogg'},
+  alert("Santier in lucru! \n\r Incearca asta actvitate (REFRESH la pagina)!");
+  /*shapes = [{name: 'square', audio: 'sounds/square.ogg'}, {name: 'rectangle', audio: 'sounds/rectangle.ogg'}, {name: 'circle', audio: 'sounds/circle.ogg'},
             {name: 'triangle', audio: 'sounds/triangle.ogg'}, {name: 'star', audio: 'sounds/star.ogg'}, {name: 'diamond', audio: 'sounds/diamond.ogg'}]
 
   $('#contentPanel').show();
   $('#startDiv').hide();
-  generateChallengeShapes();
+  generateChallengeShapes();*/
 });
 
 function generateChallengeShapes() {
