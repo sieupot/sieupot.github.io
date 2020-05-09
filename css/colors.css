@@ -1,0 +1,48 @@
+.colors-container {
+  height: 100%;
+}
+.colors-container {
+  display: flex;
+  width: 600px;
+}
+
+.color {
+  flex: 50%;
+  height: 300px;
+  border: 1px solid rgba(200, 200, 200, 1);
+  transition: background 500ms; /* For modern browsers */
+}
+.color.pointerCursor:hover {
+  box-shadow: 0 0 6px 14px inset rgb(138, 236, 27);
+}
+.color.red {
+  background-color: red;
+}
+
+.color.green {
+  background-color: green;
+}
+.color.blue {
+  background-color: blue;
+}
+.color.pink {
+  background-color: hotpink;
+}
+.color.yellow {
+  background-color: yellow;
+}
+.color.orange {
+  background-color: orange;
+}
+.color.violet {
+  background-color: blueviolet;
+}
+.color.brown {
+  background-color: saddlebrown;
+}
+.color.gray {
+  background-color: gray;
+}
+.color.black {
+  background-color: black;
+}
