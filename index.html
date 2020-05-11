@@ -17,32 +17,21 @@
     <meta name="theme-color" content="#fafafa">
 
     <script defer src="js/lib/modernizr-3.8.0.min.js"></script>
-    <script defer src="js/lib/jquery-3.4.1.min.js"></script>
-    <script defer src="js/lib/jquery-ui-1.12.1.min.js"></script>
     <script defer src="js/main.js"></script>
   </head>
 
   <body>
     <div id="content">
       <div id="startDiv">
-        <a onclick="loadActivity('shapes');" class="glass blue pointerCursor">START<br/>ARATA FORMA</a>
-        <a onclick="loadActivity('colors');" class="glass orange pointerCursor" style="margin: 0 20px;">START<br/>ARATA CULOAREA</a>
-        <a onclick="loadActivity('objects');" class="glass green pointerCursor">START<br/>ARATA OBIECT</a>
-      </div>
-      <div class="result">
-        <img src="" alt="result image" style="height: 100%;"/>
-      </div>
-      <div id="contentPanel" style="display: none;">
-        <!-- THIS IS THE AJAX INSERTION POINT OF SELECTED ACTIVITY PAGE-->
-        <div id="actionPanel"></div>
-        <div id="scoreGood" style="padding-left: 30px;">
-          <img src="img/smileFace.png" alt="good answers" style="height: 25px;"/>
-          <div>0</div>
-        </div>
-        <div id="scoreBad" style="margin: 30px 0 0 0; padding-left: 30px;">
-          <img src="img/sadFace.png" alt="bad answers" style="height: 25px;"/>
-          <div>0</div>
-        </div>
+        <a href="pages/shapes.html" class="glass blue pointerCursor">
+          START<br/>ARATA FORMA
+        </a>
+        <a href="pages/colors.html" class="glass orange pointerCursor" style="margin: 0 20px;">
+          START<br/>ARATA CULOAREA
+        </a>
+        <a href="pages/animals-tamed.html" class="glass green pointerCursor" style="margin: 0 20px;">
+          START<br/>ARATA ANIAMALE DOMESTICE
+        </a>
       </div>
     </div>
   </body>

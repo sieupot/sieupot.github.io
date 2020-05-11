@@ -8,8 +8,8 @@ let rightAnswers = 0, wrongAnswers = 0;
 
 // on page load call generate 2 shapes (first time the page is displayed)
 $(function() {
-  shapes = [{name: 'square', audio: 'sounds/shapes/square.ogg'}, {name: 'rectangle', audio: 'sounds/shapes/rectangle.ogg'}, {name: 'circle', audio: 'sounds/shapes/circle.ogg'},
-            {name: 'triangle', audio: 'sounds/shapes/triangle.ogg'}, {name: 'star', audio: 'sounds/shapes/star.ogg'}, {name: 'diamond', audio: 'sounds/shapes/diamond.ogg'}]
+  shapes = [{name: 'square', audio: '../sounds/shapes/square.ogg'}, {name: 'rectangle', audio: '../sounds/shapes/rectangle.ogg'}, {name: 'circle', audio: '../sounds/shapes/circle.ogg'},
+            {name: 'triangle', audio: '../sounds/shapes/triangle.ogg'}, {name: 'star', audio: '../sounds/shapes/star.ogg'}, {name: 'diamond', audio: '../sounds/shapes/diamond.ogg'}]
 
   $('#contentPanel').show();
   $('#startDiv').hide();
@@ -20,8 +20,8 @@ function generateChallengeShapes() {
   // randomly find 2 shapes to be displayed, from the list of available shapes
   let rnd1, rnd2;
   do {
-    rnd1 = Math.floor((Math.random() * 6));
-    rnd2 = Math.floor((Math.random() * 6));
+    rnd1 = Math.floor((Math.random() * shapes.length));
+    rnd2 = Math.floor((Math.random() * shapes.length));
   } while(rnd1 === rnd2 || rnd1 === prevRnd1 || rnd2 === prevRnd2);
   prevRnd1 = rnd1;
   prevRnd2 = rnd2;
@@ -58,7 +58,7 @@ function playShowShapeAudio() {
 
   let playingShapeTypeAudio = new Audio(audioFileName);
   playingAudios[playingAudios.length] = playingShapeTypeAudio;
-  let playingShowAudio = new Audio("sounds/show.ogg");
+  let playingShowAudio = new Audio("../sounds/show.ogg");
   playingAudios[playingAudios.length] = playingShowAudio;
   playingShowAudio.addEventListener('ended', function(){
     playingShapeTypeAudio.addEventListener('ended', function(){
@@ -86,9 +86,9 @@ function checkValidAnswer(selectedValidAnswer) {
   const $resultDivElem = $('div.result');
   if (selectedValidAnswer) {
     rightAnswers++;
-    $resultDivElem.find('img').attr("src","img/smileFace.png");
+    $resultDivElem.find('img').attr("src","../img/smileFace.png");
     $resultDivElem.fadeIn(1000);
-    let playingCorrectAnswerAudio = new Audio("sounds/correct.ogg");
+    let playingCorrectAnswerAudio = new Audio("../sounds/correct.ogg");
     playingAudios[playingAudios.length] = playingCorrectAnswerAudio;
     playingCorrectAnswerAudio.addEventListener('ended', function(){
       $resultDivElem.hide();
@@ -99,9 +99,9 @@ function checkValidAnswer(selectedValidAnswer) {
     $('#scoreGood').effect("highlight", {color: '#acffa3'}, 1000)
   } else {
     wrongAnswers++;
-    $resultDivElem.find('img').attr("src","img/sadFace.png");
+    $resultDivElem.find('img').attr("src","../img/sadFace.png");
     $resultDivElem.toggle("shake");
-    let playingWrongAnswerAudio = new Audio("sounds/wrong.ogg");
+    let playingWrongAnswerAudio = new Audio("../sounds/wrong.ogg");
     playingWrongAnswerAudio.addEventListener('ended', function(){
       $resultDivElem.toggle("shake", function() {
         playShowShapeAudio();

@@ -8,9 +8,9 @@ let rightAnswers = 0, wrongAnswers = 0;
 
 // on page load call generate 4 colors (first time the page is displayed)
 $(function() {
-  colors = [{name: 'red', audio: 'sounds/colors/red.ogg'}, {name: 'green', audio: 'sounds/colors/green.ogg'}, {name: 'blue', audio: 'sounds/colors/blue.ogg'},
-    {name: 'pink', audio: 'sounds/colors/pink.ogg'}, {name: 'yellow', audio: 'sounds/colors/yellow.ogg'}, {name: 'orange', audio: 'sounds/colors/orange.ogg'},
-    {name: 'violet', audio: 'sounds/colors/violet.ogg'}, {name: 'brown', audio: 'sounds/colors/brown.ogg'}, {name: 'gray', audio: 'sounds/colors/gray.ogg'}, {name: 'black', audio: 'sounds/colors/black.ogg'}
+  colors = [{name: 'red', audio: '../sounds/colors/red.ogg'}, {name: 'green', audio: '../sounds/colors/green.ogg'}, {name: 'blue', audio: '../sounds/colors/blue.ogg'},
+    {name: 'pink', audio: '../sounds/colors/pink.ogg'}, {name: 'yellow', audio: '../sounds/colors/yellow.ogg'}, {name: 'orange', audio: '../sounds/colors/orange.ogg'},
+    {name: 'violet', audio: '../sounds/colors/violet.ogg'}, {name: 'brown', audio: '../sounds/colors/brown.ogg'}, {name: 'gray', audio: '../sounds/colors/gray.ogg'}, {name: 'black', audio: '../sounds/colors/black.ogg'}
   ]
 
   $('#contentPanel').show();
@@ -22,10 +22,10 @@ function generateChallengeColors() {
   // randomly find 4 colors to be displayed, from the list of available colors
   let rnd1, rnd2, rnd3, rnd4;
   do {
-    rnd1 = Math.floor((Math.random() * 10));
-    rnd2 = Math.floor((Math.random() * 10));
-    rnd3 = Math.floor((Math.random() * 10));
-    rnd4 = Math.floor((Math.random() * 10));
+    rnd1 = Math.floor((Math.random() * colors.length));
+    rnd2 = Math.floor((Math.random() * colors.length));
+    rnd3 = Math.floor((Math.random() * colors.length));
+    rnd4 = Math.floor((Math.random() * colors.length));
   } while(!isIsogram(((('' + rnd1) + rnd2) + rnd3) + rnd4) || rnd1 === prevRnd1 || rnd2 === prevRnd2 || rnd3 === prevRnd3 || rnd4 === prevRnd4);
   prevRnd1 = rnd1;
   prevRnd2 = rnd2;
@@ -74,7 +74,7 @@ function playShowColorsAudio() {
 
   let playingColorTypeAudio = new Audio(audioFileName);
   playingAudios[playingAudios.length] = playingColorTypeAudio;
-  let playingShowAudio = new Audio("sounds/show.ogg");
+  let playingShowAudio = new Audio("../sounds/show.ogg");
   playingAudios[playingAudios.length] = playingShowAudio;
   playingShowAudio.addEventListener('ended', function(){
     playingColorTypeAudio.addEventListener('ended', function(){
@@ -110,9 +110,9 @@ function checkValidAnswer(isValidAnswer) {
   const $resultDivElem = $('div.result');
   if (isValidAnswer) {
     rightAnswers++;
-    $resultDivElem.find('img').attr("src","img/smileFace.png");
+    $resultDivElem.find('img').attr("src","../img/smileFace.png");
     $resultDivElem.fadeIn(1000);
-    let playingCorrectAnswerAudio = new Audio("sounds/correct.ogg");
+    let playingCorrectAnswerAudio = new Audio("../sounds/correct.ogg");
     playingAudios[playingAudios.length] = playingCorrectAnswerAudio;
     playingCorrectAnswerAudio.addEventListener('ended', function(){
       $resultDivElem.hide();
@@ -123,9 +123,9 @@ function checkValidAnswer(isValidAnswer) {
     $('#scoreGood').effect("highlight", {color: '#acffa3'}, 1000)
   } else {
     wrongAnswers++;
-    $resultDivElem.find('img').attr("src","img/sadFace.png");
+    $resultDivElem.find('img').attr("src","../img/sadFace.png");
     $resultDivElem.toggle("shake");
-    let playingWrongAnswerAudio = new Audio("sounds/wrong.ogg");
+    let playingWrongAnswerAudio = new Audio("../sounds/wrong.ogg");
     playingWrongAnswerAudio.addEventListener('ended', function(){
       $resultDivElem.toggle("shake", function() {
         playShowColorsAudio();

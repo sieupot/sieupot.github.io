@@ -124,31 +124,6 @@ canvas {
 .upper {
   text-transform: uppercase;
 }
-#actionPanel {
-  padding: 30px;
-}
-.result{
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-top: -150px;
-  margin-left: -150px;
-  width: auto;
-  height: 300px;
-  display: none;
-  z-index: 1;
-}
-#scoreGood, #scoreBad {
-  display: flex;
-}
-#scoreGood > div, #scoreBad >div {
-  padding-left: 30px;
-  font-size: 18px;
-}
-
-.pointerCursor {
-  cursor: pointer;
-}
 
 .glass {
   /* background styles */
@@ -160,7 +135,7 @@ canvas {
   text-decoration: none;
   text-align: center;
   color: #fff;
-  font-size: 25px;
+  font-size: 18px;
   font-family: sans-serif;
   font-weight: 100;
   border-radius: 3px;

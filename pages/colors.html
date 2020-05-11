@@ -1,14 +1,58 @@
 <!doctype html>
+<html class="no-js" lang="">
 
-<link rel="stylesheet" href="css/colors.css">
-<script defer rel="script" type="text/javascript" src="js/colors.js"></script>
+<head>
+  <meta charset="utf-8">
+  <title>Arata Culoarea</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<div class="colors-container">
-  <div id="color1" class="color"></div>
-  <div id="color2" class="color"></div>
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="apple-touch-icon" href="/icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/pageLayout.css">
+  <link rel="stylesheet" href="../css/colors.css">
+
+  <meta name="theme-color" content="#fafafa">
+
+  <script defer src="../js/lib/modernizr-3.8.0.min.js"></script>
+  <script defer src="../js/lib/jquery-3.4.1.min.js"></script>
+  <script defer src="../js/lib/jquery-ui-1.12.1.min.js"></script>
+  <script defer src="../js/utils.js"></script>
+  <script defer src="../js/colors.js"></script>
+</head>
+
+<body>
+<div id="content">
+  <div class="result">
+    <img src="" alt="result image" style="height: 100%;"/>
+  </div>
+  <div id="contentPanel">
+    <div id="actionPanel">
+      <div class="colors-container">
+        <div id="color1" class="color"></div>
+        <div id="color2" class="color"></div>
+      </div>
+      <div class="colors-container">
+        <div id="color3" class="color"></div>
+        <div id="color4" class="color"></div>
+      </div>
+    </div>
+    <div id="scoreGood" style="padding-left: 30px;">
+      <img src="../img/smileFace.png" alt="good answers" style="height: 25px;"/>
+      <div>0</div>
+    </div>
+    <div id="scoreBad" style="margin: 30px 0 0 0; padding-left: 30px;">
+      <img src="../img/sadFace.png" alt="bad answers" style="height: 25px;"/>
+      <div>0</div>
+    </div>
+  </div>
 </div>
-<div class="colors-container">
-  <div id="color3" class="color"></div>
-  <div id="color4" class="color"></div>
-</div>
+</body>
 
+<footer>
+  © 2020 All rights reserved. Teodor GUTAN.
+</footer>
+</html>

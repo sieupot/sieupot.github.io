@@ -1,3 +1,4 @@
+/* supported shapes */
 .square {
   width: 300px;
   height: 300px;
@@ -90,6 +91,7 @@
   border-top: 140px solid #0088ff;
 }
 
+/* needed css stuff */
 .shape.pointerCursor:hover {
   background: rgb(240, 240, 240);
 }

@@ -1,0 +1,45 @@
+html {
+  color: #151515;
+  font-size: 1em;
+  line-height: 1.4;
+  min-width: 800px;
+}
+
+footer{
+  height: 22px;
+  margin-top: -22px;
+  text-align: center;
+  background-color: #eee;
+}
+
+#content {
+  display: grid;
+  height: 100vh;
+  place-items: center center;
+}
+
+#actionPanel {
+  padding: 30px;
+}
+.result{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -150px;
+  margin-left: -150px;
+  width: auto;
+  height: 300px;
+  display: none;
+  z-index: 1;
+}
+#scoreGood, #scoreBad {
+  display: flex;
+}
+#scoreGood > div, #scoreBad >div {
+  padding-left: 30px;
+  font-size: 18px;
+}
+
+.pointerCursor {
+  cursor: pointer;
+}
