@@ -8,7 +8,7 @@ let rightAnswers = 0, wrongAnswers = 0;
 
 // on page load call generate 2 shapes (first time the page is displayed)
 $(function() {
-  alert("Santier in lucru! \n\r Incearca alta actvitate (REFRESH la pagina)!");
+  alert("Santier in lucru! \n\r Incearca alta actvitate!");
   location.reload();
   /*shapes = [{name: 'square', audio: 'sounds/square.ogg'}, {name: 'rectangle', audio: 'sounds/rectangle.ogg'}, {name: 'circle', audio: 'sounds/circle.ogg'},
             {name: 'triangle', audio: 'sounds/triangle.ogg'}, {name: 'star', audio: 'sounds/star.ogg'}, {name: 'diamond', audio: 'sounds/diamond.ogg'}]
