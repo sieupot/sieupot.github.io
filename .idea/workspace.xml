@@ -5,14 +5,86 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="Objects in development">
+    <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="copyright footer">
+      <change afterPath="$PROJECT_DIR$/css/pageLayout.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/animals/tamed/cat1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/animals/tamed/chick1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/animals/tamed/chicken1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/animals/tamed/cow1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/animals/tamed/dog1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/animals/tamed/duck1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/animals/tamed/duck2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/animals/tamed/goose1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/animals/tamed/horse1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/animals/tamed/pig1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/animals/tamed/rooster1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/animals/tamed/rooster2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/animals/tamed/sheep1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/fruits/apple1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/fruits/apple2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/fruits/apple3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/fruits/apple4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/fruits/apple5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/fruits/apple6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/fruits/apple7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/fruits/apple8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/fruits/apricot1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/fruits/banana1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/fruits/cherry1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/fruits/grape1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/fruits/grapefruit1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/fruits/kiwi1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/fruits/lemon1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/fruits/melon1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/fruits/orange1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/fruits/peach1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/fruits/peach2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/fruits/pear1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/fruits/pineapple1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/fruits/plum1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/fruits/strawberry1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/fruits/watermelon1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/vegetables/beans1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/vegetables/broccoli1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/vegetables/cabbage1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/vegetables/carrot1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/vegetables/cauliflower1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/vegetables/cucumber1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/vegetables/eggplant1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/vegetables/garlic1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/vegetables/green-beans1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/vegetables/mushroom1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/vegetables/onion1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/vegetables/paprika1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/vegetables/potato1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/vegetables/pumpkin.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/vegetables/tomatoe1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/vegetables/zucchini1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/animals-tamed.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/shapes.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/shapes.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/colors.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/colors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/objects.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/objects.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shapes.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/shapes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/colors.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/colors.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/objects.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/shapes.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shapes.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -37,11 +109,17 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/js" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\Diverse\Kestii Teddy\workspace\SiEuPot\js" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\Diverse\Kestii Teddy\workspace\SiEuPot\img\objects" />
+      <recent name="G:\Diverse\Kestii Teddy\workspace\SiEuPot\img\animals" />
       <recent name="G:\Diverse\Kestii Teddy\workspace\SiEuPot\sounds" />
       <recent name="G:\Diverse\Kestii Teddy\workspace\SiEuPot\sounds\shapes" />
     </key>
@@ -71,7 +149,10 @@
       <workItem from="1589008800700" duration="95000" />
       <workItem from="1589008916370" duration="139000" />
       <workItem from="1589009411009" duration="114000" />
-      <workItem from="1589009658165" duration="7327000" />
+      <workItem from="1589009658165" duration="7439000" />
+      <workItem from="1589177037196" duration="112000" />
+      <workItem from="1589177186300" duration="202000" />
+      <workItem from="1589177431789" duration="11607000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1589000180842</created>
@@ -122,7 +203,42 @@
       <option name="project" value="LOCAL" />
       <updated>1589020104620</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="removed # from URL when selecting activity">
+      <created>1589020499214</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1589020499214</updated>
+    </task>
+    <task id="LOCAL-00009" summary="removed # from URL when selecting activity">
+      <created>1589177126450</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1589177126451</updated>
+    </task>
+    <task id="LOCAL-00010" summary="fixed js refresh">
+      <created>1589177237512</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1589177237512</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fixed js refresh (REFRESH message no longer needed as refresh is done automatically)">
+      <created>1589177371488</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1589177371488</updated>
+    </task>
+    <task id="LOCAL-00012" summary="copyright footer">
+      <created>1589180108677</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1589180108677</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +267,11 @@
     <MESSAGE value="redesigned images" />
     <MESSAGE value="Cleanup" />
     <MESSAGE value="Objects in development" />
-    <option name="LAST_COMMIT_MESSAGE" value="Objects in development" />
+    <MESSAGE value="removed # from URL when selecting activity" />
+    <MESSAGE value="fixed js refresh" />
+    <MESSAGE value="fixed js refresh (REFRESH message no longer needed as refresh is done automatically)" />
+    <MESSAGE value="copyright footer" />
+    <option name="LAST_COMMIT_MESSAGE" value="copyright footer" />
   </component>
   <component name="WindowStateProjectService">
     <state x="294" y="156" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589008880314">
@@ -178,21 +298,30 @@
       <screen x="0" y="0" width="1680" height="1004" />
     </state>
     <state x="341" y="146" key="SettingsEditor/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589008635457" />
-    <state x="432" y="234" key="Vcs.Push.Dialog.v2" timestamp="1589020106249">
+    <state x="432" y="234" key="Vcs.Push.Dialog.v2" timestamp="1589180112135">
       <screen x="0" y="0" width="1680" height="1004" />
     </state>
-    <state x="432" y="234" key="Vcs.Push.Dialog.v2/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589020106249" />
+    <state x="432" y="234" key="Vcs.Push.Dialog.v2/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589180112135" />
+    <state x="92" y="92" width="1496" height="820" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1589177214950">
+      <screen x="0" y="0" width="1680" height="1004" />
+    </state>
+    <state x="92" y="92" width="1496" height="820" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589177214950" />
+    <state x="2125" y="113" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1589189901620">
+      <screen x="1680" y="0" width="1680" height="1010" />
+    </state>
+    <state x="445" y="112" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589181439373" />
+    <state x="2125" y="113" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1680.1004/1680.0.1680.1010@1680.0.1680.1010" timestamp="1589189901620" />
     <state x="649" y="415" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589000679957">
       <screen x="0" y="0" width="1680" height="1004" />
     </state>
     <state x="649" y="415" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589000679957" />
-    <state x="546" y="235" width="587" height="534" key="find.popup" timestamp="1589018464925">
+    <state x="546" y="235" width="587" height="534" key="find.popup" timestamp="1589190611122">
       <screen x="0" y="0" width="1680" height="1004" />
     </state>
-    <state x="546" y="235" width="587" height="534" key="find.popup/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589018464925" />
-    <state x="503" y="216" width="672" height="678" key="search.everywhere.popup" timestamp="1589009455114">
+    <state x="546" y="235" width="587" height="534" key="find.popup/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589190611122" />
+    <state x="503" y="216" width="672" height="678" key="search.everywhere.popup" timestamp="1589192310713">
       <screen x="0" y="0" width="1680" height="1004" />
     </state>
-    <state x="503" y="216" width="672" height="678" key="search.everywhere.popup/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589009455114" />
+    <state x="503" y="216" width="672" height="678" key="search.everywhere.popup/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589192310713" />
   </component>
 </project>

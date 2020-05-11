@@ -1,51 +1,50 @@
-let shapes; // list of available shape objects (css class name, audio file name to be played)
+let objects; // list of available object objects (css class name, audio file name to be played)
 
-let showShapeSoundInterval;
-let shape1Elem, shape2Elem, valid1, audioFileName;
+let showObjectSoundInterval;
+let object1Elem, object2Elem, valid1, audioFileName;
 let playingAudios;
 let prevRnd1, prevRnd2;
 let rightAnswers = 0, wrongAnswers = 0;
 
-// on page load call generate 2 shapes (first time the page is displayed)
+// on page load call generate 2 objects (first time the page is displayed)
 $(function() {
-  alert("Santier in lucru! \n\r Incearca alta actvitate!");
-  location.reload();
-  /*shapes = [{name: 'square', audio: 'sounds/square.ogg'}, {name: 'rectangle', audio: 'sounds/rectangle.ogg'}, {name: 'circle', audio: 'sounds/circle.ogg'},
-            {name: 'triangle', audio: 'sounds/triangle.ogg'}, {name: 'star', audio: 'sounds/star.ogg'}, {name: 'diamond', audio: 'sounds/diamond.ogg'}]
+  // function declared in each objects related file
+  initObjects();
 
   $('#contentPanel').show();
   $('#startDiv').hide();
-  generateChallengeShapes();*/
+  generateChallengeObjects();
 });
 
-function generateChallengeShapes() {
-  // randomly find 2 shapes to be displayed, from the list of available shapes
+function generateChallengeObjects() {
+  // randomly find 2 objects to be displayed, from the list of available objects
   let rnd1, rnd2;
+  let object1, object2;
   do {
-    rnd1 = Math.floor((Math.random() * 6));
-    rnd2 = Math.floor((Math.random() * 6));
-  } while(rnd1 === rnd2 || rnd1 === prevRnd1 || rnd2 === prevRnd2);
+    rnd1 = Math.floor((Math.random() * objects.length));
+    rnd2 = Math.floor((Math.random() * objects.length));
+    object1 = objects[rnd1];
+    object2 = objects[rnd2];
+  } while(rnd1 === rnd2 || rnd1 === prevRnd1 || rnd2 === prevRnd2 || object1.name === object2.name);
   prevRnd1 = rnd1;
   prevRnd2 = rnd2;
-  let shape1 = shapes[rnd1];
-  let shape2 = shapes[rnd2];
 
-  // display the 2 shapes
-  $('.shapes-container > #shape1 > div').removeClass().addClass(shape1.name);
-  $('.shapes-container > #shape2 > div').removeClass().addClass(shape2.name);
+  // display the 2 objects
+  $('.objects-container > #object1 > img').attr("src", object1.image);
+  $('.objects-container > #object2 > img').attr("src", object2.image);
   valid1 = Math.random() < 0.5;
-  audioFileName = valid1 ? shape1.audio : shape2.audio;
-  shape1Elem = $('.shapes-container > #shape1');
-  shape2Elem = $('.shapes-container > #shape2');
-  playShowShapeAudio();
+  audioFileName = valid1 ? object1.audio : object2.audio;
+  object1Elem = $('.objects-container > #object1');
+  object2Elem = $('.objects-container > #object2');
+  playShowObjectAudio();
 
 }
 
 function resetObjects() {
-  shape1Elem.unbind('click').removeClass('pointerCursor');
-  shape2Elem.unbind('click').removeClass('pointerCursor');
-  window.clearInterval(showShapeSoundInterval);
-  showShapeSoundInterval = null;
+  object1Elem.unbind('click').removeClass('pointerCursor');
+  object2Elem.unbind('click').removeClass('pointerCursor');
+  window.clearInterval(showObjectSoundInterval);
+  showObjectSoundInterval = null;
   for(let i = 0; i<playingAudios.length; i++) {
     let audio = playingAudios[i];
     audio.pause();
@@ -53,33 +52,33 @@ function resetObjects() {
   playingAudios = [];
 }
 
-function playShowShapeAudio() {
+function playShowObjectAudio() {
   playingAudios = [];
-  shape1Elem.unbind('click').removeClass('pointerCursor');
-  shape2Elem.unbind('click').removeClass('pointerCursor');
+  object1Elem.unbind('click').removeClass('pointerCursor');
+  object2Elem.unbind('click').removeClass('pointerCursor');
 
-  let playingShapeTypeAudio = new Audio(audioFileName);
-  playingAudios[playingAudios.length] = playingShapeTypeAudio;
-  let playingShowAudio = new Audio("sounds/show.ogg");
+  let playingObjectTypeAudio = new Audio(audioFileName);
+  playingAudios[playingAudios.length] = playingObjectTypeAudio;
+  let playingShowAudio = new Audio("../sounds/show.ogg");
   playingAudios[playingAudios.length] = playingShowAudio;
   playingShowAudio.addEventListener('ended', function(){
-    playingShapeTypeAudio.addEventListener('ended', function(){
+    playingObjectTypeAudio.addEventListener('ended', function(){
       // bind the onclick event function
-      shape1Elem.addClass('pointerCursor');
-      shape2Elem.addClass('pointerCursor');
-      shape1Elem.click(function() {
+      object1Elem.addClass('pointerCursor');
+      object2Elem.addClass('pointerCursor');
+      object1Elem.click(function() {
         checkValidAnswer(valid1);
       });
-      shape2Elem.click(function() {
+      object2Elem.click(function() {
         checkValidAnswer(!valid1);
       });
     });
-    playingShapeTypeAudio.play();
+    playingObjectTypeAudio.play();
   });
   playingShowAudio.play();
 
-  if (!showShapeSoundInterval) {
-    showShapeSoundInterval = setInterval(playShowShapeAudio, 8000);
+  if (!showObjectSoundInterval) {
+    showObjectSoundInterval = setInterval(playShowObjectAudio, 8000);
   }
 }
 
@@ -88,25 +87,25 @@ function checkValidAnswer(selectedValidAnswer) {
   const $resultDivElem = $('div.result');
   if (selectedValidAnswer) {
     rightAnswers++;
-    $resultDivElem.find('img').attr("src","img/smileFace.png");
+    $resultDivElem.find('img').attr("src","../img/smileFace.png");
     $resultDivElem.fadeIn(1000);
-    let playingCorrectAnswerAudio = new Audio("sounds/correct.ogg");
+    let playingCorrectAnswerAudio = new Audio("../sounds/correct.ogg");
     playingAudios[playingAudios.length] = playingCorrectAnswerAudio;
     playingCorrectAnswerAudio.addEventListener('ended', function(){
       $resultDivElem.hide();
-      generateChallengeShapes();
+      generateChallengeObjects();
     });
     playingCorrectAnswerAudio.play();
     $('#scoreGood > div').html(rightAnswers);
     $('#scoreGood').effect("highlight", {color: '#acffa3'}, 1000)
   } else {
     wrongAnswers++;
-    $resultDivElem.find('img').attr("src","img/sadFace.png");
+    $resultDivElem.find('img').attr("src../mg/sadFace.png");
     $resultDivElem.toggle("shake");
-    let playingWrongAnswerAudio = new Audio("sounds/wrong.ogg");
+    let playingWrongAnswerAudio = new Audio("../sounds/wrong.ogg");
     playingWrongAnswerAudio.addEventListener('ended', function(){
       $resultDivElem.toggle("shake", function() {
-        playShowShapeAudio();
+        playShowObjectAudio();
       });
     });
     playingWrongAnswerAudio.play();
