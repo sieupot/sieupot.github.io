@@ -5,7 +5,14 @@ html {
   min-width: 800px;
 }
 
-body {
+footer{
+  height: 22px;
+  margin-top: -22px;
+  text-align: center;
+  background-color: #eee;
+}
+
+#content {
   display: grid;
   height: 100vh;
   place-items: center center;

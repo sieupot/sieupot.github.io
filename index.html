@@ -23,26 +23,31 @@
   </head>
 
   <body>
-    <div id="startDiv">
-      <a onclick="loadActivity('shapes');" class="glass blue pointerCursor">START<br/>ARATA FORMA</a>
-      <a onclick="loadActivity('colors');" class="glass orange pointerCursor" style="margin: 0 20px;">START<br/>ARATA CULOAREA</a>
-      <a onclick="loadActivity('objects');" class="glass green pointerCursor">START<br/>ARATA OBIECT</a>
-    </div>
-    <div class="result">
-      <img src="" alt="result image" style="height: 100%;"/>
-    </div>
-    <div id="contentPanel" style="display: none;">
-      <!-- THIS IS THE AJAX INSERTION POINT OF SELECTED ACTIVITY PAGE-->
-      <div id="actionPanel"></div>
-      <div id="scoreGood" style="padding-left: 30px;">
-        <img src="img/smileFace.png" alt="good answers" style="height: 25px;"/>
-        <div>0</div>
+    <div id="content">
+      <div id="startDiv">
+        <a onclick="loadActivity('shapes');" class="glass blue pointerCursor">START<br/>ARATA FORMA</a>
+        <a onclick="loadActivity('colors');" class="glass orange pointerCursor" style="margin: 0 20px;">START<br/>ARATA CULOAREA</a>
+        <a onclick="loadActivity('objects');" class="glass green pointerCursor">START<br/>ARATA OBIECT</a>
       </div>
-      <div id="scoreBad" style="margin: 30px 0 0 0; padding-left: 30px;">
-        <img src="img/sadFace.png" alt="bad answers" style="height: 25px;"/>
-        <div>0</div>
+      <div class="result">
+        <img src="" alt="result image" style="height: 100%;"/>
+      </div>
+      <div id="contentPanel" style="display: none;">
+        <!-- THIS IS THE AJAX INSERTION POINT OF SELECTED ACTIVITY PAGE-->
+        <div id="actionPanel"></div>
+        <div id="scoreGood" style="padding-left: 30px;">
+          <img src="img/smileFace.png" alt="good answers" style="height: 25px;"/>
+          <div>0</div>
+        </div>
+        <div id="scoreBad" style="margin: 30px 0 0 0; padding-left: 30px;">
+          <img src="img/sadFace.png" alt="bad answers" style="height: 25px;"/>
+          <div>0</div>
+        </div>
       </div>
     </div>
   </body>
 
+  <footer>
+    © 2020 All rights reserved. Teodor GUTAN.
+  </footer>
 </html>
