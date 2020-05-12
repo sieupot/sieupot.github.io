@@ -100,7 +100,7 @@ function checkValidAnswer(selectedValidAnswer) {
     $('#scoreGood').effect("highlight", {color: '#acffa3'}, 1000)
   } else {
     wrongAnswers++;
-    $resultDivElem.find('img').attr("src../mg/sadFace.png");
+    $resultDivElem.find('img').attr("src", "../img/sadFace.png");
     $resultDivElem.toggle("shake");
     let playingWrongAnswerAudio = new Audio("../sounds/wrong.ogg");
     playingWrongAnswerAudio.addEventListener('ended', function(){
