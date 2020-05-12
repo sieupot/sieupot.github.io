@@ -13,8 +13,6 @@ $(function() {
     {name: 'violet', audio: '../sounds/colors/violet.ogg'}, {name: 'brown', audio: '../sounds/colors/brown.ogg'}, {name: 'gray', audio: '../sounds/colors/gray.ogg'}, {name: 'black', audio: '../sounds/colors/black.ogg'}
   ]
 
-  $('#contentPanel').show();
-  $('#startDiv').hide();
   generateChallengeColors();
 });
 

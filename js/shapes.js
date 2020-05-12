@@ -11,8 +11,6 @@ $(function() {
   shapes = [{name: 'square', audio: '../sounds/shapes/square.ogg'}, {name: 'rectangle', audio: '../sounds/shapes/rectangle.ogg'}, {name: 'circle', audio: '../sounds/shapes/circle.ogg'},
             {name: 'triangle', audio: '../sounds/shapes/triangle.ogg'}, {name: 'star', audio: '../sounds/shapes/star.ogg'}, {name: 'diamond', audio: '../sounds/shapes/diamond.ogg'}]
 
-  $('#contentPanel').show();
-  $('#startDiv').hide();
   generateChallengeShapes();
 });
 

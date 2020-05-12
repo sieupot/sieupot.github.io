@@ -151,6 +151,9 @@ canvas {
   height: 50%;
   background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
 }
+.glass:not(first_child) {
+  margin-left: 20px;
+}
 .glass.blue {
   background-color: blue; /*for compatibility with older browsers*/
   background-image: linear-gradient(blue, #00a6ff);

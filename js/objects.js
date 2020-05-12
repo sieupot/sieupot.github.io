@@ -6,15 +6,15 @@ let playingAudios;
 let prevRnd1, prevRnd2;
 let rightAnswers = 0, wrongAnswers = 0;
 
+$('body').load('objectBody.inc');
+
 // on page load call generate 2 objects (first time the page is displayed)
-$(function() {
+function go() {
   // function declared in each objects related file
   initObjects();
 
-  $('#contentPanel').show();
-  $('#startDiv').hide();
   generateChallengeObjects();
-});
+}
 
 function generateChallengeObjects() {
   // randomly find 2 objects to be displayed, from the list of available objects
@@ -28,7 +28,6 @@ function generateChallengeObjects() {
   } while(rnd1 === rnd2 || rnd1 === prevRnd1 || rnd2 === prevRnd2 || object1.name === object2.name);
   prevRnd1 = rnd1;
   prevRnd2 = rnd2;
-
   // display the 2 objects
   $('.objects-container > #object1 > img').attr("src", object1.image);
   $('.objects-container > #object2 > img').attr("src", object2.image);
