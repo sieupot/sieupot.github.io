@@ -6,10 +6,11 @@ html {
 }
 
 footer{
-  height: 22px;
-  margin-top: -22px;
   text-align: center;
   background-color: #eee;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 #content {
