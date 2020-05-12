@@ -18,7 +18,7 @@
   align-items: center;
   border: 1px solid rgba(200, 200, 200, 1);
   background: #ffffff;
-  transition: transform 500ms; /* For modern browsers */
+  transition: transform 250ms; /* For modern browsers */
 }
 
 
