@@ -36,10 +36,10 @@ function generateChallengeColors() {
 
   validImageIndex = Math.floor((Math.random() * 4) + 1);
   audioFileName = (eval('color'+validImageIndex)).audio;
-  color1Element = $('.colors-container > #color1');
-  color2Element = $('.colors-container > #color2');
-  color3Element = $('.colors-container > #color3');
-  color4Element = $('.colors-container > #color4');
+  color1Element = $('#contentPanel > #color1');
+  color2Element = $('#contentPanel > #color2');
+  color3Element = $('#contentPanel > #color3');
+  color4Element = $('#contentPanel > #color4');
   // display the colors
   color1Element.removeClass().addClass('color ' + color1.name);
   color2Element.removeClass().addClass('color ' + color2.name);

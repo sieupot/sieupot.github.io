@@ -92,24 +92,12 @@
 }
 
 /* needed css stuff */
-.shape.pointerCursor:hover {
-  background: rgb(240, 240, 240);
-}
-.shapes-container, .shape {
-  display: flex;
-  justify-content: center;
-}
-.shapes-container {
-  height: 100%;
-}
-
 .shape {
-  width: 500px;
-  height: 500px;
+  display: grid;
+  grid-template-columns: 1fr;
   justify-content: center;
   align-items: center;
   border: 1px solid rgba(200, 200, 200, 1);
   background: #ffffff;
-  transition: background 500ms; /* For modern browsers */
 }
 

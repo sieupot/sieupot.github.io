@@ -27,12 +27,12 @@ function generateChallengeShapes() {
   let shape2 = shapes[rnd2];
 
   // display the 2 shapes
-  $('.shapes-container > #shape1 > div').removeClass().addClass(shape1.name);
-  $('.shapes-container > #shape2 > div').removeClass().addClass(shape2.name);
+  $('#contentPanel > #shape1 > div').removeClass().addClass(shape1.name);
+  $('#contentPanel > #shape2 > div').removeClass().addClass(shape2.name);
   valid1 = Math.random() < 0.5;
   audioFileName = valid1 ? shape1.audio : shape2.audio;
-  shape1Elem = $('.shapes-container > #shape1');
-  shape2Elem = $('.shapes-container > #shape2');
+  shape1Elem = $('#contentPanel > #shape1');
+  shape2Elem = $('#contentPanel > #shape2');
   playShowShapeAudio();
 
 }

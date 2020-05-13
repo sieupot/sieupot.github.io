@@ -1,19 +1,11 @@
-.colors-container {
-  height: 100%;
-}
-.colors-container {
-  display: flex;
-  width: 600px;
+#contentPanel {
+  grid-template-rows: 1fr 1fr;
 }
 
 .color {
-  flex: 50%;
-  height: 300px;
+  min-block-size: 1vw;
   border: 1px solid rgba(200, 200, 200, 1);
   transition: background 500ms; /* For modern browsers */
-}
-.color.pointerCursor:hover {
-  box-shadow: 0 0 6px 14px inset rgb(138, 236, 27);
 }
 .color.red {
   background-color: red;

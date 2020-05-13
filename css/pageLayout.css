@@ -2,9 +2,11 @@ html {
   color: #151515;
   font-size: 1em;
   line-height: 1.4;
-  min-width: 800px;
+  height: 100%;
 }
-
+body {
+  height: 100%;
+}
 footer{
   text-align: center;
   background-color: #eee;
@@ -14,13 +16,25 @@ footer{
 }
 
 #content {
-  display: grid;
-  height: 100vh;
-  place-items: center center;
+  height: calc(100% - 56px);
+  padding-top: 16px;
 }
 
-#actionPanel {
-  padding: 30px;
+#contentPanel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  column-gap: 1em;
+  row-gap: 1em;
+  height: 100%;
+  margin: 0 16px;
+}
+#scorePanel > div {
+  display: grid;
+  grid-template-columns: 50px auto;
+}
+#scorePanel > div:first-child {
+  margin-bottom: 16px;
 }
 .result{
   position: fixed;

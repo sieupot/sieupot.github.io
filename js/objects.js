@@ -28,13 +28,13 @@ function generateChallengeObjects() {
   } while(rnd1 === rnd2 || rnd1 === prevRnd1 || rnd2 === prevRnd2 || object1.name === object2.name);
   prevRnd1 = rnd1;
   prevRnd2 = rnd2;
+  object1Elem = $('#contentPanel > #object1');
+  object2Elem = $('#contentPanel > #object2');
   // display the 2 objects
-  $('.objects-container > #object1 > img').attr("src", object1.image);
-  $('.objects-container > #object2 > img').attr("src", object2.image);
+  object1Elem.css('background-image', 'url(' + object1.image + ')');
+  object2Elem.css('background-image', 'url(' + object2.image + ')');
   valid1 = Math.random() < 0.5;
   audioFileName = valid1 ? object1.audio : object2.audio;
-  object1Elem = $('.objects-container > #object1');
-  object2Elem = $('.objects-container > #object2');
   playShowObjectAudio();
 
 }

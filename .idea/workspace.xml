@@ -5,10 +5,20 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="vegetables sounds">
+    <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="responsive design">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/colors.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/colors.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/objects.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/objects.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/pageLayout.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/pageLayout.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/shapes.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/shapes.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/colors.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/colors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/objects.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/objects.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shapes.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/shapes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/colors.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/colors.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/objectBody.inc" beforeDir="false" afterPath="$PROJECT_DIR$/pages/objectBody.inc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/shapes.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shapes.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +101,7 @@
       <workItem from="1589177186300" duration="202000" />
       <workItem from="1589177431789" duration="11689000" />
       <workItem from="1589268852416" duration="13444000" />
-      <workItem from="1589356486654" duration="6077000" />
+      <workItem from="1589356486654" duration="17513000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1589000180842</created>
@@ -233,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589283713291</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="responsive design">
+      <created>1589362936736</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1589362936736</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,7 +288,8 @@
     <MESSAGE value="added vegetables activity and objects &quot;template&quot;" />
     <MESSAGE value="redesign" />
     <MESSAGE value="vegetables sounds" />
-    <option name="LAST_COMMIT_MESSAGE" value="vegetables sounds" />
+    <MESSAGE value="responsive design" />
+    <option name="LAST_COMMIT_MESSAGE" value="responsive design" />
   </component>
   <component name="WindowStateProjectService">
     <state x="294" y="156" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589008880314">
@@ -302,10 +320,10 @@
       <screen x="0" y="0" width="1680" height="1004" />
     </state>
     <state x="341" y="146" key="SettingsEditor/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589008635457" />
-    <state x="432" y="234" key="Vcs.Push.Dialog.v2" timestamp="1589283714628">
+    <state x="432" y="234" key="Vcs.Push.Dialog.v2" timestamp="1589362938817">
       <screen x="0" y="0" width="1680" height="1004" />
     </state>
-    <state x="432" y="234" key="Vcs.Push.Dialog.v2/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589283714628" />
+    <state x="432" y="234" key="Vcs.Push.Dialog.v2/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589362938817" />
     <state x="92" y="92" width="1496" height="820" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1589177214950">
       <screen x="0" y="0" width="1680" height="1004" />
     </state>
@@ -319,13 +337,13 @@
       <screen x="0" y="0" width="1680" height="1004" />
     </state>
     <state x="649" y="415" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589000679957" />
-    <state x="546" y="235" width="587" height="534" key="find.popup" timestamp="1589279781706">
+    <state x="546" y="235" width="587" height="534" key="find.popup" timestamp="1589380078717">
       <screen x="0" y="0" width="1680" height="1004" />
     </state>
-    <state x="546" y="235" width="587" height="534" key="find.popup/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589279781706" />
-    <state x="503" y="216" width="672" height="678" key="search.everywhere.popup" timestamp="1589279554452">
+    <state x="546" y="235" width="587" height="534" key="find.popup/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589380078717" />
+    <state x="503" y="216" width="672" height="678" key="search.everywhere.popup" timestamp="1589370989532">
       <screen x="0" y="0" width="1680" height="1004" />
     </state>
-    <state x="503" y="216" width="672" height="678" key="search.everywhere.popup/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589279554452" />
+    <state x="503" y="216" width="672" height="678" key="search.everywhere.popup/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589370989532" />
   </component>
 </project>

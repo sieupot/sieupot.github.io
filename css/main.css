@@ -2,7 +2,6 @@ html {
   color: #151515;
   font-size: 1em;
   line-height: 1.4;
-  min-width: 800px;
   height: 100%;
 }
 body {
@@ -16,20 +15,6 @@ footer{
   width: 100%;
 }
 
-#content {
-  height: calc(100% - 56px);
-  padding-top: 16px;
-}
-
-#startDiv {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  column-gap: 1em;
-  row-gap: 1em;
-  height: 100%;
-  margin: 0 16px;
-}
 ::-moz-selection,
 ::selection {
   background: #b3d4fc;
@@ -137,6 +122,20 @@ canvas {
   text-transform: uppercase;
 }
 
+#content {
+  height: calc(100% - 56px);
+  padding-top: 16px;
+}
+
+#startDiv {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  column-gap: 1em;
+  row-gap: 1em;
+  height: 100%;
+  margin: 0 16px;
+}
 .activity-button {
   /* background styles */
   display: inline-block;
@@ -154,6 +153,9 @@ canvas {
   text-shadow: 0 -1px #ddd;
   transition: box-shadow 250ms; /* For modern browsers */
 }
+.activity-button:hover {
+  box-shadow: 0 -12px 4px -4px inset #000000;
+}
 
 .activity-button > span {
   height: 100%;
@@ -169,13 +171,4 @@ canvas {
 }
 .activity-button.orange {
   background-color: #ffa84f; /*for compatibility with older browsers*/
-}
-.activity-button.blue:hover {
-  box-shadow: 0 -12px 4px -4px inset #000000;
-}
-.activity-button.green:hover {
-  box-shadow: 0 -12px 4px -4px inset #000000;
-}
-.activity-button.orange:hover {
-  box-shadow: 0 -12px 4px -4px inset #000000;
 }
