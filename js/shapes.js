@@ -6,10 +6,27 @@ let playingAudios;
 let prevRnd1, prevRnd2;
 let rightAnswers = 0, wrongAnswers = 0;
 
+const dialogOptions = {
+  dialogClass: "ui-dialog-no-close-button",
+  show: {
+    effect: 'fade',
+    duration: 200
+  },
+  hide: {
+    effect: 'fade',
+    duration: 200
+  },
+};
+let $modalPanel;
+let $resultDivElem;
+
 // on page load call generate 2 shapes (first time the page is displayed)
 $(function() {
   shapes = [{name: 'square', audio: '../sounds/shapes/square.ogg'}, {name: 'rectangle', audio: '../sounds/shapes/rectangle.ogg'}, {name: 'circle', audio: '../sounds/shapes/circle.ogg'},
             {name: 'triangle', audio: '../sounds/shapes/triangle.ogg'}, {name: 'star', audio: '../sounds/shapes/star.ogg'}, {name: 'diamond', audio: '../sounds/shapes/diamond.ogg'}]
+
+  $modalPanel = $("#dialogDiv");
+  $resultDivElem = $('div.result');
 
   generateChallengeShapes();
 });
@@ -54,8 +71,15 @@ function playShowShapeAudio() {
   shape1Elem.unbind('click').removeClass('pointerCursor');
   shape2Elem.unbind('click').removeClass('pointerCursor');
 
+  $modalPanel.dialog(dialogOptions);
   let playingShapeTypeAudio = new Audio(audioFileName);
+  playingShapeTypeAudio.addEventListener('ended', function(){
+    $resultDivElem.hide();
+    $modalPanel.dialog("close");
+  });
   playingAudios[playingAudios.length] = playingShapeTypeAudio;
+  $resultDivElem.find('img').attr("src","../img/show.svg");
+  $resultDivElem.fadeIn(300);
   let playingShowAudio = new Audio("../sounds/show.ogg");
   playingAudios[playingAudios.length] = playingShowAudio;
   playingShowAudio.addEventListener('ended', function(){

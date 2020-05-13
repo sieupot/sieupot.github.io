@@ -29,6 +29,21 @@ footer{
   height: 100%;
   margin: 0 16px;
 }
+.ui-dialog {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: rgba(255, 255, 255, .5);
+}
+.ui-dialog-no-close-button .ui-dialog-titlebar-close {
+  display: none;
+}
+/* Create dialogs without title bar */
+.ui-dialog-no-titlebar .ui-dialog-titlebar {
+  display: none;
+}
 #scorePanel > div {
   display: grid;
   grid-template-columns: 50px auto;

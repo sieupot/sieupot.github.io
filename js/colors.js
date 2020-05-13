@@ -6,12 +6,29 @@ let playingAudios;
 let prevRnd1, prevRnd2, prevRnd3, prevRnd4;
 let rightAnswers = 0, wrongAnswers = 0;
 
+const dialogOptions = {
+  dialogClass: "ui-dialog-no-close-button",
+  show: {
+    effect: 'fade',
+    duration: 200
+  },
+  hide: {
+    effect: 'fade',
+    duration: 200
+  },
+};
+let $modalPanel;
+let $resultDivElem;
+
 // on page load call generate 4 colors (first time the page is displayed)
 $(function() {
   colors = [{name: 'red', audio: '../sounds/colors/red.ogg'}, {name: 'green', audio: '../sounds/colors/green.ogg'}, {name: 'blue', audio: '../sounds/colors/blue.ogg'},
     {name: 'pink', audio: '../sounds/colors/pink.ogg'}, {name: 'yellow', audio: '../sounds/colors/yellow.ogg'}, {name: 'orange', audio: '../sounds/colors/orange.ogg'},
     {name: 'violet', audio: '../sounds/colors/violet.ogg'}, {name: 'brown', audio: '../sounds/colors/brown.ogg'}, {name: 'gray', audio: '../sounds/colors/gray.ogg'}, {name: 'black', audio: '../sounds/colors/black.ogg'}
   ]
+
+  $modalPanel = $("#dialogDiv");
+  $resultDivElem = $('div.result');
 
   generateChallengeColors();
 });
@@ -70,8 +87,15 @@ function playShowColorsAudio() {
   color3Element.unbind('click').removeClass('pointerCursor');
   color4Element.unbind('click').removeClass('pointerCursor');
 
+  $modalPanel.dialog(dialogOptions);
   let playingColorTypeAudio = new Audio(audioFileName);
+  playingColorTypeAudio.addEventListener('ended', function(){
+    $resultDivElem.hide();
+    $modalPanel.dialog("close");
+  });
   playingAudios[playingAudios.length] = playingColorTypeAudio;
+  $resultDivElem.find('img').attr("src","../img/show.svg");
+  $resultDivElem.fadeIn(300);
   let playingShowAudio = new Audio("../sounds/show.ogg");
   playingAudios[playingAudios.length] = playingShowAudio;
   playingShowAudio.addEventListener('ended', function(){

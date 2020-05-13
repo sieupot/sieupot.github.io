@@ -6,12 +6,29 @@ let playingAudios;
 let prevRnd1, prevRnd2;
 let rightAnswers = 0, wrongAnswers = 0;
 
+const dialogOptions = {
+  dialogClass: "ui-dialog-no-close-button",
+  show: {
+    effect: 'fade',
+    duration: 200
+  },
+  hide: {
+    effect: 'fade',
+    duration: 200
+  },
+};
+let $modalPanel;
+let $resultDivElem;
+
 $('body').load('objectBody.inc');
 
 // on page load call generate 2 objects (first time the page is displayed)
 function go() {
   // function declared in each objects related file
   initObjects();
+
+  $modalPanel = $("#dialogDiv");
+  $resultDivElem = $('div.result');
 
   generateChallengeObjects();
 }
@@ -56,8 +73,15 @@ function playShowObjectAudio() {
   object1Elem.unbind('click').removeClass('pointerCursor');
   object2Elem.unbind('click').removeClass('pointerCursor');
 
+  $modalPanel.dialog(dialogOptions);
   let playingObjectTypeAudio = new Audio(audioFileName);
+  playingObjectTypeAudio.addEventListener('ended', function(){
+    $resultDivElem.hide();
+    $modalPanel.dialog("close");
+  });
   playingAudios[playingAudios.length] = playingObjectTypeAudio;
+  $resultDivElem.find('img').attr("src","../img/show.svg");
+  $resultDivElem.fadeIn(300);
   let playingShowAudio = new Audio("../sounds/show.ogg");
   playingAudios[playingAudios.length] = playingShowAudio;
   playingShowAudio.addEventListener('ended', function(){
@@ -83,7 +107,6 @@ function playShowObjectAudio() {
 
 function checkValidAnswer(selectedValidAnswer) {
   resetObjects();
-  const $resultDivElem = $('div.result');
   if (selectedValidAnswer) {
     rightAnswers++;
     $resultDivElem.find('img').attr("src","../img/smileFace.png");

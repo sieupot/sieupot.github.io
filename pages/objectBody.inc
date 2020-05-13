@@ -1,4 +1,5 @@
 <div id="content">
+  <div id="dialogDiv"></div>
   <div class="result">
     <img src="" alt="result image" style="height: 100%;"/>
   </div>
