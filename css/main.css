@@ -3,8 +3,11 @@ html {
   font-size: 1em;
   line-height: 1.4;
   min-width: 800px;
+  height: 100%;
 }
-
+body {
+  height: 100%;
+}
 footer{
   text-align: center;
   background-color: #eee;
@@ -14,18 +17,18 @@ footer{
 }
 
 #content {
-  display: grid;
-  height: 100vh;
-  place-items: center center;
-
+  height: calc(100% - 56px);
+  padding-top: 16px;
 }
 
 #startDiv {
   display: grid;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: auto auto auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   column-gap: 1em;
   row-gap: 1em;
+  height: 100%;
+  margin: 0 16px;
 }
 ::-moz-selection,
 ::selection {
@@ -134,58 +137,45 @@ canvas {
   text-transform: uppercase;
 }
 
-.glass {
+.activity-button {
   /* background styles */
-  position: relative;
   display: inline-block;
   padding: 15px 25px;
 
   /* text styles */
   text-decoration: none;
   text-align: center;
-  color: #fff;
+  color: #111;
   font-size: 18px;
   font-family: sans-serif;
   font-weight: 100;
-  border-radius: 3px;
+  border-radius: 10px;
   box-shadow: 0 1px 4px -2px #333;
-  text-shadow: 0 -1px #333;
-  width: 5em;
-  height: 5em;
+  text-shadow: 0 -1px #ddd;
+  transition: box-shadow 250ms; /* For modern browsers */
 }
-.glass:after {
-  content: '';
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: calc(100% - 4px);
-  height: 50%;
-  background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
-}
-.glass > span {
+
+.activity-button > span {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.glass.blue {
-  background-color: blue; /*for compatibility with older browsers*/
-  background-image: linear-gradient(blue, #00a6ff);
+.activity-button.blue {
+  background-color: #b8b8ff; /*for compatibility with older browsers*/
 }
-.glass.green {
-  background-color: green; /*for compatibility with older browsers*/
-  background-image: linear-gradient(green, lightgreen);
+.activity-button.green {
+  background-color: #a3ffa3; /*for compatibility with older browsers*/
 }
-.glass.orange {
-  background-color: #b1620d; /*for compatibility with older browsers*/
-  background-image: linear-gradient(#b1620d, #ff7a00);
+.activity-button.orange {
+  background-color: #ffa84f; /*for compatibility with older browsers*/
 }
-.glass.blue:hover {
-  background: linear-gradient(#083377, #31efef);
+.activity-button.blue:hover {
+  box-shadow: 0 -12px 4px -4px inset #000000;
 }
-.glass.green:hover {
-  background: linear-gradient(#007733, #0fa);
+.activity-button.green:hover {
+  box-shadow: 0 -12px 4px -4px inset #000000;
 }
-.glass.orange:hover {
-  background: linear-gradient(#e57c05, #ffcb00);
+.activity-button.orange:hover {
+  box-shadow: 0 -12px 4px -4px inset #000000;
 }

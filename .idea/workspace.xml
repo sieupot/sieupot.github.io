@@ -5,7 +5,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="vegetables sounds" />
+    <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="vegetables sounds">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,7 +90,8 @@
       <workItem from="1589177037196" duration="112000" />
       <workItem from="1589177186300" duration="202000" />
       <workItem from="1589177431789" duration="11689000" />
-      <workItem from="1589268852416" duration="12992000" />
+      <workItem from="1589268852416" duration="13444000" />
+      <workItem from="1589356486654" duration="6077000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1589000180842</created>
@@ -221,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589283316247</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="vegetables sounds">
+      <created>1589283713291</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1589283713291</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,10 +302,10 @@
       <screen x="0" y="0" width="1680" height="1004" />
     </state>
     <state x="341" y="146" key="SettingsEditor/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589008635457" />
-    <state x="432" y="234" key="Vcs.Push.Dialog.v2" timestamp="1589283318146">
+    <state x="432" y="234" key="Vcs.Push.Dialog.v2" timestamp="1589283714628">
       <screen x="0" y="0" width="1680" height="1004" />
     </state>
-    <state x="432" y="234" key="Vcs.Push.Dialog.v2/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589283318146" />
+    <state x="432" y="234" key="Vcs.Push.Dialog.v2/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589283714628" />
     <state x="92" y="92" width="1496" height="820" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1589177214950">
       <screen x="0" y="0" width="1680" height="1004" />
     </state>
