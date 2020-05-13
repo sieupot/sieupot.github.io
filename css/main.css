@@ -163,12 +163,18 @@ canvas {
   justify-content: center;
   align-items: center;
 }
-.activity-button.blue {
+.activity-button.blue1 {
   background-color: #b8b8ff; /*for compatibility with older browsers*/
 }
-.activity-button.green {
+.activity-button.green1 {
   background-color: #a3ffa3; /*for compatibility with older browsers*/
 }
-.activity-button.orange {
+.activity-button.orange1 {
   background-color: #ffa84f; /*for compatibility with older browsers*/
+}
+.activity-button.yellow1 {
+  background-color: #fffd91; /*for compatibility with older browsers*/
+}
+.activity-button.yellow2 {
+  background-color: #e0c35c; /*for compatibility with older browsers*/
 }
