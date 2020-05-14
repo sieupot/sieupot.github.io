@@ -20,11 +20,14 @@
     <script defer src="../js/lib/modernizr-3.8.0.min.js"></script>
     <script defer src="../js/lib/jquery-3.4.1.min.js"></script>
     <script defer src="../js/lib/jquery-ui-1.12.1.min.js"></script>
+
+    <script defer src="../js/common.js"></script>
+    <script defer src="../js/objects.js"></script>
     <script type="text/javascript">
       function initObjects(){
         const sndPath = "../sounds/objects/fruits/";
         const imgPath = "../img/objects/fruits/";
-        objects = [{name: 'apple', imagePath: imgPath + 'apple1.jpg', audioPath: sndPath + 'apple.ogg'},
+        items = [{name: 'apple', imagePath: imgPath + 'apple1.jpg', audioPath: sndPath + 'apple.ogg'},
                    {name: 'apple', imagePath: imgPath + 'apple2.jpg', audioPath: sndPath + 'apple.ogg'},
                    {name: 'apple', imagePath: imgPath + 'apple3.jpg', audioPath: sndPath + 'apple.ogg'},
                    {name: 'apple', imagePath: imgPath + 'apple4.jpg', audioPath: sndPath + 'apple.ogg'},
@@ -52,7 +55,6 @@
 
       }
     </script>
-    <script defer src="../js/objects.js"></script>
   </head>
 
   <body>

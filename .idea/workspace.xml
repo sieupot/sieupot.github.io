@@ -5,15 +5,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="activities buttons' colors updated">
+    <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="Full responsiveness on mobile devices">
+      <change afterPath="$PROJECT_DIR$/js/common.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/pageLayout.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/pageLayout.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/colors.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/colors.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/objects.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/objects.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/shapes.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/shapes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/animals-tamed.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/animals-tamed.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/colors.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/colors.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/fruits.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/fruits.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/objectBody.inc" beforeDir="false" afterPath="$PROJECT_DIR$/pages/objectBody.inc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/shapes.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shapes.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/vegetables.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/vegetables.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +26,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -99,7 +101,7 @@
       <workItem from="1589177431789" duration="11689000" />
       <workItem from="1589268852416" duration="13444000" />
       <workItem from="1589356486654" duration="23862000" />
-      <workItem from="1589441961556" duration="4028000" />
+      <workItem from="1589441961556" duration="8255000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1589000180842</created>
@@ -269,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589387424310</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Full responsiveness on mobile devices">
+      <created>1589446955857</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1589446955857</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -311,7 +320,8 @@
     <MESSAGE value="responsive design - getting closer to desired behavior" />
     <MESSAGE value="responsive design&#10;show image + modal panel while show sound" />
     <MESSAGE value="activities buttons' colors updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="activities buttons' colors updated" />
+    <MESSAGE value="Full responsiveness on mobile devices" />
+    <option name="LAST_COMMIT_MESSAGE" value="Full responsiveness on mobile devices" />
   </component>
   <component name="WindowStateProjectService">
     <state x="294" y="156" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589008880314">
@@ -342,10 +352,10 @@
       <screen x="0" y="0" width="1680" height="1004" />
     </state>
     <state x="341" y="146" key="SettingsEditor/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589008635457" />
-    <state x="432" y="234" key="Vcs.Push.Dialog.v2" timestamp="1589387425869">
+    <state x="432" y="234" key="Vcs.Push.Dialog.v2" timestamp="1589446958783">
       <screen x="0" y="0" width="1680" height="1004" />
     </state>
-    <state x="432" y="234" key="Vcs.Push.Dialog.v2/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589387425869" />
+    <state x="432" y="234" key="Vcs.Push.Dialog.v2/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589446958783" />
     <state x="92" y="92" width="1496" height="820" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1589177214950">
       <screen x="0" y="0" width="1680" height="1004" />
     </state>
@@ -359,13 +369,13 @@
       <screen x="0" y="0" width="1680" height="1004" />
     </state>
     <state x="649" y="415" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589000679957" />
-    <state x="546" y="235" width="1007" height="687" key="find.popup" timestamp="1589446595322">
+    <state x="546" y="235" width="1007" height="687" key="find.popup" timestamp="1589449617919">
       <screen x="0" y="0" width="1680" height="1004" />
     </state>
-    <state x="546" y="235" width="1007" height="687" key="find.popup/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589446595322" />
-    <state x="503" y="216" width="672" height="678" key="search.everywhere.popup" timestamp="1589446608447">
+    <state x="546" y="235" width="1007" height="687" key="find.popup/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589449617919" />
+    <state x="503" y="216" width="672" height="678" key="search.everywhere.popup" timestamp="1589447828114">
       <screen x="0" y="0" width="1680" height="1004" />
     </state>
-    <state x="503" y="216" width="672" height="678" key="search.everywhere.popup/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589446608447" />
+    <state x="503" y="216" width="672" height="678" key="search.everywhere.popup/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589447828114" />
   </component>
 </project>
