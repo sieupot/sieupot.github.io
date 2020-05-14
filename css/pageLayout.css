@@ -7,12 +7,13 @@ html {
 body {
   height: 100%;
 }
-footer{
+footer {
   text-align: center;
   background-color: #eee;
   position: fixed;
   bottom: 0;
   width: 100%;
+  z-index: 9999;
 }
 
 #content {
@@ -29,6 +30,7 @@ footer{
   height: 100%;
   margin: 0 16px;
 }
+
 .ui-dialog {
   position: fixed !important;
   top: 0 !important;
@@ -37,24 +39,30 @@ footer{
   height: 100% !important;
   background-color: rgba(127, 127, 127, .5);
 }
+
 .ui-dialog-no-close-button .ui-dialog-titlebar-close {
   display: none;
 }
+
 /* Create dialogs without title bar */
 .ui-dialog-no-titlebar .ui-dialog-titlebar {
   display: none;
 }
+
 #scorePanel > div {
   display: grid;
   grid-template-columns: 50px auto;
 }
+
 #scorePanel > div:first-child {
   margin-bottom: 16px;
 }
+
 #scorePanel > div.score > img {
   height: 25px;
 }
-.result{
+
+.result {
   position: fixed;
   margin: 25vh 25vw;
   height: 50%;
@@ -63,13 +71,16 @@ footer{
   display: none;
   z-index: 1000;
 }
+
 .result > img {
   height: 100%;
 }
+
 #scoreGood, #scoreBad {
   display: flex;
 }
-#scoreGood > div, #scoreBad >div {
+
+#scoreGood > div, #scoreBad > div {
   padding-left: 30px;
   font-size: 18px;
 }

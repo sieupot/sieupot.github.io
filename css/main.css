@@ -7,12 +7,13 @@ html {
 body {
   height: 100%;
 }
-footer{
+footer {
   text-align: center;
   background-color: #eee;
   position: fixed;
   bottom: 0;
   width: 100%;
+  z-index: 9999;
 }
 
 ::-moz-selection,
@@ -136,6 +137,7 @@ canvas {
   height: 100%;
   margin: 0 16px;
 }
+
 .activity-button {
   /* background styles */
   display: inline-block;
@@ -163,18 +165,23 @@ canvas {
   justify-content: center;
   align-items: center;
 }
+
 .activity-button.blue1 {
   background-color: #b8b8ff; /*for compatibility with older browsers*/
 }
+
 .activity-button.green1 {
   background-color: #a3ffa3; /*for compatibility with older browsers*/
 }
+
 .activity-button.orange1 {
   background-color: #ffa84f; /*for compatibility with older browsers*/
 }
+
 .activity-button.yellow1 {
   background-color: #fffd91; /*for compatibility with older browsers*/
 }
+
 .activity-button.yellow2 {
   background-color: #e0c35c; /*for compatibility with older browsers*/
 }

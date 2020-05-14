@@ -8,7 +8,7 @@ function go() {
   // function declared in each objects related file
   initObjects();
 
-  $modalPanel = $("#dialogDiv");
+  $modalPanel = $('#dialogDiv');
   $resultDivElem = $('div.result');
 
   generateChallengeItems();
@@ -44,12 +44,12 @@ function playShowItemAudio() {
   let playingObjectTypeAudio = new Audio(itemAudioFilePath);
   playingObjectTypeAudio.addEventListener('ended', function(){
     $resultDivElem.hide();
-    $modalPanel.dialog("close");
+    $modalPanel.dialog('close');
   });
   playingAudios[playingAudios.length] = playingObjectTypeAudio;
-  $resultDivElem.find('img').attr("src","../img/show.svg");
+  $resultDivElem.find('img').attr('src','../img/show.svg');
   $resultDivElem.fadeIn(300);
-  let playingShowAudio = new Audio("../sounds/show.ogg");
+  let playingShowAudio = new Audio('../sounds/show.ogg');
   playingAudios[playingAudios.length] = playingShowAudio;
   playingShowAudio.addEventListener('ended', function(){
     playingObjectTypeAudio.addEventListener('ended', function(){

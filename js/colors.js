@@ -8,7 +8,7 @@ $(function() {
     {name: 'violet', audioPath: '../sounds/colors/violet.ogg'}, {name: 'brown', audioPath: '../sounds/colors/brown.ogg'}, {name: 'gray', audioPath: '../sounds/colors/gray.ogg'}, {name: 'black', audioPath: '../sounds/colors/black.ogg'}
   ]
 
-  $modalPanel = $("#dialogDiv");
+  $modalPanel = $('#dialogDiv');
   $resultDivElem = $('div.result');
 
   generateChallengeItems();
@@ -54,12 +54,12 @@ function playShowItemAudio() {
   let playingColorTypeAudio = new Audio(itemAudioFilePath);
   playingColorTypeAudio.addEventListener('ended', function(){
     $resultDivElem.hide();
-    $modalPanel.dialog("close");
+    $modalPanel.dialog('close');
   });
   playingAudios[playingAudios.length] = playingColorTypeAudio;
-  $resultDivElem.find('img').attr("src","../img/show.svg");
+  $resultDivElem.find('img').attr('src', '../img/show.svg');
   $resultDivElem.fadeIn(300);
-  let playingShowAudio = new Audio("../sounds/show.ogg");
+  let playingShowAudio = new Audio('../sounds/show.ogg');
   playingAudios[playingAudios.length] = playingShowAudio;
   playingShowAudio.addEventListener('ended', function(){
     playingColorTypeAudio.addEventListener('ended', function(){

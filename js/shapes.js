@@ -6,7 +6,7 @@ $(function() {
   items = [{name: 'square', audioPath: '../sounds/shapes/square.ogg'}, {name: 'rectangle', audioPath: '../sounds/shapes/rectangle.ogg'}, {name: 'circle', audioPath: '../sounds/shapes/circle.ogg'},
             {name: 'triangle', audioPath: '../sounds/shapes/triangle.ogg'}, {name: 'star', audioPath: '../sounds/shapes/star.ogg'}, {name: 'diamond', audioPath: '../sounds/shapes/diamond.ogg'}]
 
-  $modalPanel = $("#dialogDiv");
+  $modalPanel = $('#dialogDiv');
   $resultDivElem = $('div.result');
 
   generateChallengeItems();
@@ -42,12 +42,12 @@ function playShowItemAudio() {
   let playingShapeTypeAudio = new Audio(itemAudioFilePath);
   playingShapeTypeAudio.addEventListener('ended', function(){
     $resultDivElem.hide();
-    $modalPanel.dialog("close");
+    $modalPanel.dialog('close');
   });
   playingAudios[playingAudios.length] = playingShapeTypeAudio;
-  $resultDivElem.find('img').attr("src","../img/show.svg");
+  $resultDivElem.find('img').attr('src','../img/show.svg');
   $resultDivElem.fadeIn(300);
-  let playingShowAudio = new Audio("../sounds/show.ogg");
+  let playingShowAudio = new Audio('../sounds/show.ogg');
   playingAudios[playingAudios.length] = playingShowAudio;
   playingShowAudio.addEventListener('ended', function(){
     playingShapeTypeAudio.addEventListener('ended', function(){

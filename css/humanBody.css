@@ -1,0 +1,56 @@
+#contentPanel {
+  grid-template-rows: 1fr auto;
+  grid-template-columns: 1fr;
+}
+
+.human-body {
+  width: 207px;
+  position: relative;
+  height: 100%;
+  margin: 16px auto;
+}
+.human-body svg:hover {
+  cursor: pointer;
+}
+.human-body svg:hover path {
+  fill: #ff7d16;
+}
+.human-body svg {
+  position: absolute;
+  left: 50%;
+  fill: #0088ff;
+}
+.human-body svg.head {
+  margin-left: -28.5px;
+  top: -6px;
+}
+.human-body svg.shoulders {
+  margin-left: -53.5px;
+  top: 69px;
+}
+.human-body svg.arms {
+  margin-left: -78px;
+  top: 112px;
+}
+.human-body svg.chest {
+  margin-left: -43.5px;
+  top: 88px;
+}
+.human-body svg.belly {
+  margin-left: -37.5px;
+  top: 130px;
+}
+.human-body svg.legs {
+  margin-left: -46.5px;
+  top: 205px;
+  z-index: 1;
+}
+.human-body svg.knees {
+  margin-left: -46.5px;
+  top: 335px;
+  z-index: 2;
+}
+.human-body svg.palms {
+  margin-left: -102.5px;
+  top: 224px;
+}
