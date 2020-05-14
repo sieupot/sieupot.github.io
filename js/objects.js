@@ -48,10 +48,10 @@ function generateChallengeObjects() {
   object1Elem = $('#contentPanel > #object1');
   object2Elem = $('#contentPanel > #object2');
   // display the 2 objects
-  object1Elem.css('background-image', 'url(' + object1.image + ')');
-  object2Elem.css('background-image', 'url(' + object2.image + ')');
+  object1Elem.css('background-image', 'url(' + object1.imagePath + ')');
+  object2Elem.css('background-image', 'url(' + object2.imagePath + ')');
   valid1 = Math.random() < 0.5;
-  audioFileName = valid1 ? object1.audio : object2.audio;
+  audioFileName = valid1 ? object1.audioPath : object2.audioPath;
   playShowObjectAudio();
 
 }
@@ -107,6 +107,7 @@ function playShowObjectAudio() {
 
 function checkValidAnswer(selectedValidAnswer) {
   resetObjects();
+  $modalPanel.dialog(dialogOptions);
   if (selectedValidAnswer) {
     rightAnswers++;
     $resultDivElem.find('img').attr("src","../img/smileFace.png");

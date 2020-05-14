@@ -35,7 +35,7 @@ footer{
   left: 0 !important;
   width: 100% !important;
   height: 100% !important;
-  background-color: rgba(255, 255, 255, .5);
+  background-color: rgba(127, 127, 127, .5);
 }
 .ui-dialog-no-close-button .ui-dialog-titlebar-close {
   display: none;
@@ -51,16 +51,20 @@ footer{
 #scorePanel > div:first-child {
   margin-bottom: 16px;
 }
+#scorePanel > div.score > img {
+  height: 25px;
+}
 .result{
   position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-top: -150px;
-  margin-left: -150px;
-  width: auto;
-  height: 300px;
+  margin: 25vh 25vw;
+  height: 50%;
+  width: 50%;
+  text-align: center;
   display: none;
-  z-index: 1;
+  z-index: 1000;
+}
+.result > img {
+  height: 100%;
 }
 #scoreGood, #scoreBad {
   display: flex;

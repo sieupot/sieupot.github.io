@@ -22,9 +22,9 @@ let $resultDivElem;
 
 // on page load call generate 4 colors (first time the page is displayed)
 $(function() {
-  colors = [{name: 'red', audio: '../sounds/colors/red.ogg'}, {name: 'green', audio: '../sounds/colors/green.ogg'}, {name: 'blue', audio: '../sounds/colors/blue.ogg'},
-    {name: 'pink', audio: '../sounds/colors/pink.ogg'}, {name: 'yellow', audio: '../sounds/colors/yellow.ogg'}, {name: 'orange', audio: '../sounds/colors/orange.ogg'},
-    {name: 'violet', audio: '../sounds/colors/violet.ogg'}, {name: 'brown', audio: '../sounds/colors/brown.ogg'}, {name: 'gray', audio: '../sounds/colors/gray.ogg'}, {name: 'black', audio: '../sounds/colors/black.ogg'}
+  colors = [{name: 'red', audioPath: '../sounds/colors/red.ogg'}, {name: 'green', audioPath: '../sounds/colors/green.ogg'}, {name: 'blue', audioPath: '../sounds/colors/blue.ogg'},
+    {name: 'pink', audioPath: '../sounds/colors/pink.ogg'}, {name: 'yellow', audioPath: '../sounds/colors/yellow.ogg'}, {name: 'orange', audioPath: '../sounds/colors/orange.ogg'},
+    {name: 'violet', audioPath: '../sounds/colors/violet.ogg'}, {name: 'brown', audioPath: '../sounds/colors/brown.ogg'}, {name: 'gray', audioPath: '../sounds/colors/gray.ogg'}, {name: 'black', audioPath: '../sounds/colors/black.ogg'}
   ]
 
   $modalPanel = $("#dialogDiv");
@@ -52,7 +52,7 @@ function generateChallengeColors() {
   let color3 = colors[rnd3];
 
   validImageIndex = Math.floor((Math.random() * 4) + 1);
-  audioFileName = (eval('color'+validImageIndex)).audio;
+  audioFileName = (eval('color'+validImageIndex)).audioPath;
   color1Element = $('#contentPanel > #color1');
   color2Element = $('#contentPanel > #color2');
   color3Element = $('#contentPanel > #color3');
@@ -129,7 +129,7 @@ function playShowColorsAudio() {
 
 function checkValidAnswer(isValidAnswer) {
   resetObjects();
-  const $resultDivElem = $('div.result');
+  $modalPanel.dialog(dialogOptions);
   if (isValidAnswer) {
     rightAnswers++;
     $resultDivElem.find('img').attr("src","../img/smileFace.png");

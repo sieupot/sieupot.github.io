@@ -22,8 +22,8 @@ let $resultDivElem;
 
 // on page load call generate 2 shapes (first time the page is displayed)
 $(function() {
-  shapes = [{name: 'square', audio: '../sounds/shapes/square.ogg'}, {name: 'rectangle', audio: '../sounds/shapes/rectangle.ogg'}, {name: 'circle', audio: '../sounds/shapes/circle.ogg'},
-            {name: 'triangle', audio: '../sounds/shapes/triangle.ogg'}, {name: 'star', audio: '../sounds/shapes/star.ogg'}, {name: 'diamond', audio: '../sounds/shapes/diamond.ogg'}]
+  shapes = [{name: 'square', audioPath: '../sounds/shapes/square.ogg'}, {name: 'rectangle', audioPath: '../sounds/shapes/rectangle.ogg'}, {name: 'circle', audioPath: '../sounds/shapes/circle.ogg'},
+            {name: 'triangle', audioPath: '../sounds/shapes/triangle.ogg'}, {name: 'star', audioPath: '../sounds/shapes/star.ogg'}, {name: 'diamond', audioPath: '../sounds/shapes/diamond.ogg'}]
 
   $modalPanel = $("#dialogDiv");
   $resultDivElem = $('div.result');
@@ -47,7 +47,7 @@ function generateChallengeShapes() {
   $('#contentPanel > #shape1 > div').removeClass().addClass(shape1.name);
   $('#contentPanel > #shape2 > div').removeClass().addClass(shape2.name);
   valid1 = Math.random() < 0.5;
-  audioFileName = valid1 ? shape1.audio : shape2.audio;
+  audioFileName = valid1 ? shape1.audioPath : shape2.audioPath;
   shape1Elem = $('#contentPanel > #shape1');
   shape2Elem = $('#contentPanel > #shape2');
   playShowShapeAudio();
@@ -105,7 +105,7 @@ function playShowShapeAudio() {
 
 function checkValidAnswer(selectedValidAnswer) {
   resetObjects();
-  const $resultDivElem = $('div.result');
+  $modalPanel.dialog(dialogOptions);
   if (selectedValidAnswer) {
     rightAnswers++;
     $resultDivElem.find('img').attr("src","../img/smileFace.png");
