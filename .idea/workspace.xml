@@ -6,25 +6,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="added human body">
-      <change afterPath="$PROJECT_DIR$/css/humanBody.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/humanBody.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/humanBody.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sounds/humanBody/arms.ogg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sounds/humanBody/belly.ogg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sounds/humanBody/chest.ogg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sounds/humanBody/head.ogg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sounds/humanBody/knees.ogg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sounds/humanBody/legs.ogg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sounds/humanBody/palms.ogg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sounds/humanBody/shoulders.ogg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/pageLayout.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/pageLayout.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/colors.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/colors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/objects.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/objects.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/shapes.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/shapes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +96,8 @@
       <workItem from="1589268852416" duration="13444000" />
       <workItem from="1589356486654" duration="23862000" />
       <workItem from="1589441961556" duration="8347000" />
-      <workItem from="1589457358196" duration="13694000" />
+      <workItem from="1589457358196" duration="13733000" />
+      <workItem from="1590468914615" duration="115000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1589000180842</created>
@@ -297,7 +281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589451087000</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="added human body">
+      <created>1589484350771</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1589484350771</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,10 +364,10 @@
       <screen x="0" y="0" width="1680" height="1004" />
     </state>
     <state x="341" y="146" key="SettingsEditor/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589008635457" />
-    <state x="432" y="234" key="Vcs.Push.Dialog.v2" timestamp="1589451088274">
+    <state x="432" y="234" key="Vcs.Push.Dialog.v2" timestamp="1589484352603">
       <screen x="0" y="0" width="1680" height="1004" />
     </state>
-    <state x="432" y="234" key="Vcs.Push.Dialog.v2/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589451088274" />
+    <state x="432" y="234" key="Vcs.Push.Dialog.v2/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589484352603" />
     <state x="92" y="92" width="1496" height="820" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1589479443789">
       <screen x="0" y="0" width="1680" height="1004" />
     </state>

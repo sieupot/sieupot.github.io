@@ -156,7 +156,7 @@ canvas {
   transition: box-shadow 250ms; /* For modern browsers */
 }
 .activity-button:hover {
-  box-shadow: 0 -12px 4px -4px inset #000000;
+  box-shadow: 0 -12px 4px -4px inset rgba(240, 240, 240, .9);
 }
 
 .activity-button > span {
