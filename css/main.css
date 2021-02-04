@@ -185,3 +185,7 @@ canvas {
 .activity-button.yellow2 {
   background-color: #e0c35c; /*for compatibility with older browsers*/
 }
+
+div.ui-dialog {
+  z-index: 4;
+}
