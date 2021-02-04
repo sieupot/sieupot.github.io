@@ -38,6 +38,7 @@ footer {
   width: 100% !important;
   height: 100% !important;
   background-color: rgba(127, 127, 127, .5);
+  z-index: 1;
 }
 
 .ui-dialog-no-close-button .ui-dialog-titlebar-close {
