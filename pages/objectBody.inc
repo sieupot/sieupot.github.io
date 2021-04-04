@@ -21,7 +21,7 @@
 </div>
 
 <footer>
-  © 2020 All rights reserved. Teodor GUTAN.
+  © 2021 All rights reserved. Teodor GUTAN.
 </footer>
 
 <script type="text/javascript">

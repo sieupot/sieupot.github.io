@@ -5,9 +5,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="added human body">
+    <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="act button hover">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/colors.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/colors.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/humanBody.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/humanBody.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/objectBody.inc" beforeDir="false" afterPath="$PROJECT_DIR$/pages/objectBody.inc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/shapes.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shapes.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,9 +51,10 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TypeScript" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -65,13 +70,14 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="JavascriptDebugType" engineId="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" uri="http://localhost:63342/SiEuPot/index.html" useFirstLineBreakpoints="true" useBuiltInWebServerPort="true">
+    <configuration default="true" type="JavascriptDebugType" uri="http://localhost:63342/SiEuPot/index.html" useFirstLineBreakpoints="true" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="index.html" type="JavascriptDebugType" nameIsGenerated="true" engineId="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" uri="http://localhost:63342/SiEuPot/index.html" useFirstLineBreakpoints="true" useBuiltInWebServerPort="true">
+    <configuration name="index.html" type="JavascriptDebugType" nameIsGenerated="true" uri="http://localhost:63342/SiEuPot/index.html" useFirstLineBreakpoints="true" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -97,7 +103,18 @@
       <workItem from="1589356486654" duration="23862000" />
       <workItem from="1589441961556" duration="8347000" />
       <workItem from="1589457358196" duration="13733000" />
-      <workItem from="1590468914615" duration="115000" />
+      <workItem from="1590468914615" duration="177000" />
+      <workItem from="1590553655362" duration="540000" />
+      <workItem from="1617519182308" duration="294000" />
+      <workItem from="1617519495209" duration="31000" />
+      <workItem from="1617520001805" duration="108000" />
+      <workItem from="1617520124826" duration="129000" />
+      <workItem from="1617528169945" duration="875000" />
+      <workItem from="1617537418015" duration="75000" />
+      <workItem from="1617537534985" duration="6000" />
+      <workItem from="1617537557684" duration="52000" />
+      <workItem from="1617537677317" duration="11000" />
+      <workItem from="1617537697622" duration="99000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1589000180842</created>
@@ -288,11 +305,18 @@
       <option name="project" value="LOCAL" />
       <updated>1589484350771</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="act button hover">
+      <created>1590469076218</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1590469076218</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -333,61 +357,7 @@
     <MESSAGE value="Full responsiveness on mobile devices" />
     <MESSAGE value="refactored the js files content -&gt; extracted common code into common.js" />
     <MESSAGE value="added human body" />
-    <option name="LAST_COMMIT_MESSAGE" value="added human body" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="294" y="156" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589008880314">
-      <screen x="0" y="0" width="1680" height="1004" />
-    </state>
-    <state x="294" y="156" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589008880314" />
-    <state x="585" y="303" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589271671887">
-      <screen x="0" y="0" width="1680" height="1004" />
-    </state>
-    <state x="585" y="303" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589271671887" />
-    <state x="612" y="237" key="#index.html" timestamp="1589008844457">
-      <screen x="0" y="0" width="1680" height="1004" />
-    </state>
-    <state x="612" y="237" key="#index.html/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589008844457" />
-    <state x="620" y="242" key="FileChooserDialogImpl" timestamp="1589008379074">
-      <screen x="0" y="0" width="1680" height="1004" />
-    </state>
-    <state x="620" y="242" key="FileChooserDialogImpl/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589008379074" />
-    <state x="796" y="368" key="Github.Dialog.Accounts.Choose" timestamp="1589009748503">
-      <screen x="0" y="0" width="1680" height="1004" />
-    </state>
-    <state x="796" y="368" key="Github.Dialog.Accounts.Choose/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589009748503" />
-    <state x="718" y="399" key="Github.ShareDialog" timestamp="1589009012150">
-      <screen x="0" y="0" width="1680" height="1004" />
-    </state>
-    <state x="718" y="399" key="Github.ShareDialog/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589009012150" />
-    <state x="341" y="146" key="SettingsEditor" timestamp="1589008635457">
-      <screen x="0" y="0" width="1680" height="1004" />
-    </state>
-    <state x="341" y="146" key="SettingsEditor/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589008635457" />
-    <state x="432" y="234" key="Vcs.Push.Dialog.v2" timestamp="1589484352603">
-      <screen x="0" y="0" width="1680" height="1004" />
-    </state>
-    <state x="432" y="234" key="Vcs.Push.Dialog.v2/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589484352603" />
-    <state x="92" y="92" width="1496" height="820" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1589479443789">
-      <screen x="0" y="0" width="1680" height="1004" />
-    </state>
-    <state x="92" y="92" width="1496" height="820" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589479443789" />
-    <state x="445" y="112" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1589445687039">
-      <screen x="0" y="0" width="1680" height="1004" />
-    </state>
-    <state x="445" y="112" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589445687039" />
-    <state x="2125" y="113" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1680.1004/1680.0.1680.1010@1680.0.1680.1010" timestamp="1589189901620" />
-    <state x="649" y="415" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589000679957">
-      <screen x="0" y="0" width="1680" height="1004" />
-    </state>
-    <state x="649" y="415" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589000679957" />
-    <state x="546" y="235" width="1007" height="687" key="find.popup" timestamp="1589484231961">
-      <screen x="0" y="0" width="1680" height="1004" />
-    </state>
-    <state x="546" y="235" width="1007" height="687" key="find.popup/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589484231961" />
-    <state x="503" y="216" width="672" height="678" key="search.everywhere.popup" timestamp="1589483529645">
-      <screen x="0" y="0" width="1680" height="1004" />
-    </state>
-    <state x="503" y="216" width="672" height="678" key="search.everywhere.popup/0.0.1680.1004/1680.0.1680.1010@0.0.1680.1004" timestamp="1589483529645" />
+    <MESSAGE value="act button hover" />
+    <option name="LAST_COMMIT_MESSAGE" value="act button hover" />
   </component>
 </project>
