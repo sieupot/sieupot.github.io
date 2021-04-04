@@ -5,9 +5,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="act button hover">
+    <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="templated footer">
+      <change afterPath="$PROJECT_DIR$/js/footer-injector.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/common.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/colors.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/colors.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/humanBody.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/humanBody.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/objectBody.inc" beforeDir="false" afterPath="$PROJECT_DIR$/pages/objectBody.inc" afterDir="false" />
@@ -23,15 +25,13 @@
       <list>
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
-  </component>
-  <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="0bb15ae9-1f73-4fd2-821e-75898115d8b4" />
   </component>
   <component name="ProjectId" id="1beivX7ZqXOfyh6wGUYz9p5PtLZ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -45,6 +45,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -53,7 +54,7 @@
     <property name="js.last.introduce.type" value="CONST" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -63,6 +64,7 @@
       <recent name="G:\Diverse\Kestii Teddy\workspace\SiEuPot\pages" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\Diverse\Kestii Teddy\workspace\SiEuPot\pages\common" />
       <recent name="G:\Diverse\Kestii Teddy\workspace\SiEuPot\img\objects" />
       <recent name="G:\Diverse\Kestii Teddy\workspace\SiEuPot\img\animals" />
       <recent name="G:\Diverse\Kestii Teddy\workspace\SiEuPot\sounds" />
@@ -114,7 +116,7 @@
       <workItem from="1617537534985" duration="6000" />
       <workItem from="1617537557684" duration="52000" />
       <workItem from="1617537677317" duration="11000" />
-      <workItem from="1617537697622" duration="99000" />
+      <workItem from="1617537697622" duration="5392000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1589000180842</created>
@@ -312,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590469076218</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="2021">
+      <created>1617538090618</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1617538090618</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -358,6 +367,12 @@
     <MESSAGE value="refactored the js files content -&gt; extracted common code into common.js" />
     <MESSAGE value="added human body" />
     <MESSAGE value="act button hover" />
-    <option name="LAST_COMMIT_MESSAGE" value="act button hover" />
+    <MESSAGE value="2021" />
+    <MESSAGE value="templated footer" />
+    <option name="LAST_COMMIT_MESSAGE" value="templated footer" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

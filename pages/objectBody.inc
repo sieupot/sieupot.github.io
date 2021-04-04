@@ -20,9 +20,7 @@
   </div>
 </div>
 
-<footer>
-  © 2021 All rights reserved. Teodor GUTAN.
-</footer>
+<script src="../js/footer-injector.js"></script>
 
 <script type="text/javascript">
   $(function() {

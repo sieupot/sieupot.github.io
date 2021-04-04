@@ -27,7 +27,7 @@ function checkValidAnswer(isValidAnswer) {
   if (isValidAnswer) {
     rightAnswers++;
     $resultDivElem.find('img').attr('src', '../img/smileFace.png');
-    $resultDivElem.fadeIn(1000);
+    $resultDivElem.fadeIn(500);
     let playingCorrectAnswerAudio = new Audio('../sounds/correct.ogg');
     playingAudios[playingAudios.length] = playingCorrectAnswerAudio;
     playingCorrectAnswerAudio.addEventListener('ended', function () {
@@ -36,21 +36,20 @@ function checkValidAnswer(isValidAnswer) {
     });
     playingCorrectAnswerAudio.play();
     $('#scoreGood > div').html(rightAnswers);
-    $('#scoreGood').effect('highlight', {color: '#acffa3'}, 1000)
+    $('#scoreGood').effect('highlight', {color: '#acffa3'}, 500)
   } else {
     wrongAnswers++;
     $resultDivElem.find('img').attr('src', '../img/sadFace.png');
-    $resultDivElem.toggle('shake');
+    $resultDivElem.fadeIn(500);
     let playingWrongAnswerAudio = new Audio('../sounds/wrong.ogg');
     playingWrongAnswerAudio.addEventListener('ended', function () {
-      $resultDivElem.toggle('shake', function () {
-        playShowItemAudio();
-      });
+      $resultDivElem.hide();
+      playShowItemAudio();
     });
     playingWrongAnswerAudio.play();
     playingAudios[playingAudios.length] = playingWrongAnswerAudio;
     $('#scoreBad > div').html(wrongAnswers);
-    $('#scoreBad').effect('highlight', {color: '#ff9c9c'}, 1000);
+    $('#scoreBad').effect('highlight', {color: '#ff9c9c'}, 500);
   }
 }
 
