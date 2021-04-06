@@ -6,14 +6,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="templated footer">
-      <change afterPath="$PROJECT_DIR$/js/footer-injector.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/fonts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/fonts/poppins/OFL.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/fonts/poppins/Poppins-600-italic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/fonts/poppins/Poppins-600-normal.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/fonts/poppins/poppins-400-italic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/fonts/poppins/poppins-400-normal.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/fonts/poppins/poppins-700-italic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/fonts/poppins/poppins-700-normal.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/main_1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/app/logo symbol.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index_1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/normalize.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/normalize.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/animals-tamed.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/animals-tamed.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/colors.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/colors.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/fruits.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/fruits.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/humanBody.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/humanBody.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/objectBody.inc" beforeDir="false" afterPath="$PROJECT_DIR$/pages/objectBody.inc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/shapes.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shapes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/vegetables.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/vegetables.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,32 +64,42 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TypeScript" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/css" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/css" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="G:\Diverse\Kestii Teddy\workspace\SiEuPot\js" />
       <recent name="G:\Diverse\Kestii Teddy\workspace\SiEuPot\css" />
       <recent name="G:\Diverse\Kestii Teddy\workspace\SiEuPot\pages" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/css/fonts" />
+      <recent name="$PROJECT_DIR$/css/fonts/poppins/acumin-pro" />
+      <recent name="$PROJECT_DIR$/img/app" />
       <recent name="G:\Diverse\Kestii Teddy\workspace\SiEuPot\pages\common" />
       <recent name="G:\Diverse\Kestii Teddy\workspace\SiEuPot\img\objects" />
-      <recent name="G:\Diverse\Kestii Teddy\workspace\SiEuPot\img\animals" />
-      <recent name="G:\Diverse\Kestii Teddy\workspace\SiEuPot\sounds" />
-      <recent name="G:\Diverse\Kestii Teddy\workspace\SiEuPot\sounds\shapes" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript Debug.index_1.html">
     <configuration default="true" type="JavascriptDebugType" uri="http://localhost:63342/SiEuPot/index.html" useFirstLineBreakpoints="true" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="index_1.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/SiEuPot/index_1.html" useFirstLineBreakpoints="true" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="index.html" type="JavascriptDebugType" nameIsGenerated="true" uri="http://localhost:63342/SiEuPot/index.html" useFirstLineBreakpoints="true" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index_1.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -117,6 +139,8 @@
       <workItem from="1617537557684" duration="52000" />
       <workItem from="1617537677317" duration="11000" />
       <workItem from="1617537697622" duration="5392000" />
+      <workItem from="1617622536684" duration="458000" />
+      <workItem from="1617689143290" duration="10088000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1589000180842</created>
@@ -344,7 +368,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="First commit" />
     <MESSAGE value="Added WEbStorm project files" />
     <MESSAGE value="Added project resources" />
     <MESSAGE value="redesigned images" />
@@ -369,7 +392,8 @@
     <MESSAGE value="act button hover" />
     <MESSAGE value="2021" />
     <MESSAGE value="templated footer" />
-    <option name="LAST_COMMIT_MESSAGE" value="templated footer" />
+    <MESSAGE value="Redesign the landing page according to the UI/UX design proposal. #2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Redesign the landing page according to the UI/UX design proposal. #2" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
