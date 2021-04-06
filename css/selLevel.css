@@ -1,0 +1,65 @@
+/* ------------ MY DEFS -------------- */
+#selLevelContentPanelId {
+  display: inline-block;
+  height: calc(100% - 20px);
+  width: calc(100% - 346px);
+  min-height: 800px;
+}
+
+#selLevelDiv {
+  display: grid;
+  row-gap: 2em;
+  height: 100%;
+}
+
+.levelButton {
+  background-color: #FFF;
+  display: grid;
+  padding: 15px 25px 15px 40px;
+  margin: 0 60px 0 90px;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: box-shadow 250ms; /* For modern browsers */
+}
+.levelButton:first-child {
+  margin: 60px 60px 0 90px;
+}
+.levelButton:last-child {
+  margin: 0 60px 60px 90px;
+}
+.levelButton:hover {
+  box-shadow: 0 -12px 4px -4px inset rgba(240, 240, 240, .9);
+}
+
+.selLevelDetails {
+  display: grid;
+  grid-template-columns: 1fr 8fr;
+}
+.selLevelLabel {
+  font: normal normal bold 22px/37px Poppins-600-normal;
+  letter-spacing: 0;
+  color: #226473;
+  text-transform: uppercase;
+  opacity: 1;
+}
+.selLevelDesc {
+  text-align: left;
+  font: normal normal bold 22px/37px Poppins-600-normal;
+  letter-spacing: 0;
+  color: #3E3E3E;
+  opacity: 1;
+}
+
+.iconLevel {
+  mask: url(../img/app/baby-boy.svg);
+  display: inline-block;
+  background: #EFE7E0;
+  mask-size: cover;
+  width: 57px;
+  height: 51px;
+  margin-right: 8px;
+}
+
+.iconLevel.active {
+  background: #FAA01C;
+}

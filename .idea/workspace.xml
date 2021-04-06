@@ -6,26 +6,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="templated footer">
-      <change afterPath="$PROJECT_DIR$/css/fonts.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/fonts/poppins/OFL.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/fonts/poppins/Poppins-600-italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/fonts/poppins/Poppins-600-normal.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/fonts/poppins/poppins-400-italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/fonts/poppins/poppins-400-normal.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/fonts/poppins/poppins-700-italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/fonts/poppins/poppins-700-normal.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/main_1.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/app/logo symbol.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index_1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/fonts/poppins/Poppins-200-italic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/fonts/poppins/Poppins-200-normal.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/fonts/poppins/Poppins-300-italic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/fonts/poppins/Poppins-300-normal.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/infoPanel.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/selActivity.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/app/baby-boy.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/app/chidlren.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/normalize.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/normalize.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/fonts.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/fonts.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main_1.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/selLevel.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/animals-tamed.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/animals-tamed.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/colors.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/colors.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/fruits.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/fruits.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/humanBody.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/humanBody.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/shapes.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shapes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/vegetables.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/vegetables.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/selActivity.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,19 +79,19 @@
       <recent name="G:\Diverse\Kestii Teddy\workspace\SiEuPot\img\objects" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index_1.html">
+  <component name="RunManager" selected="JavaScript Debug.index.html">
     <configuration default="true" type="JavascriptDebugType" uri="http://localhost:63342/SiEuPot/index.html" useFirstLineBreakpoints="true" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="index_1.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/SiEuPot/index_1.html" useFirstLineBreakpoints="true" useBuiltInWebServerPort="true">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/SiEuPot/index.html" useFirstLineBreakpoints="true" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="index.html" type="JavascriptDebugType" nameIsGenerated="true" uri="http://localhost:63342/SiEuPot/index.html" useFirstLineBreakpoints="true" useBuiltInWebServerPort="true">
+    <configuration name="selActivity.html" type="JavascriptDebugType" nameIsGenerated="true" uri="http://localhost:63342/SiEuPot/selActivity.html" useFirstLineBreakpoints="true" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.index_1.html" />
+        <item itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
   </component>
@@ -140,7 +134,7 @@
       <workItem from="1617537677317" duration="11000" />
       <workItem from="1617537697622" duration="5392000" />
       <workItem from="1617622536684" duration="458000" />
-      <workItem from="1617689143290" duration="10088000" />
+      <workItem from="1617689143290" duration="23989000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1589000180842</created>
@@ -345,7 +339,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617538090618</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Redesign the landing page according to the UI/UX design proposal. #2">
+      <created>1617703210759</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1617703210759</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

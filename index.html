@@ -12,7 +12,10 @@
     <!-- Place favicon.ico in the root directory -->
 
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/infoPanel.css">
+    <link rel="stylesheet" href="css/selLevel.css">
 
     <meta name="theme-color" content="#EFE7E0">
 
@@ -24,44 +27,97 @@
   </head>
 
   <body>
-    <div id="content">
-      <div id="startDiv">
-        <a href="pages/shapes.html" class="activity-button blue1 pointerCursor">
-          <span>
-            ARATA FORME
-          </span>
-        </a>
-        <a href="pages/colors.html" class="activity-button orange1 pointerCursor">
-          <span>
-            ARATA CULORI
-          </span>
-        </a>
-        <a href="pages/humanBody.html" class="activity-button orange1 pointerCursor">
-          <span>
-            ARATA CORPUL UMAN
-          </span>
-        </a>
+      <div id="infoPanel">
+        <div>
+          <div id="logoId"></div>
+          <div id="logoCircle"></div>
+          <div id="logoImgId"></div>
+          <div id="logoTxtId">
+            <div id="logoTxt1Id">șieu</div>
+            <div id="logoTxt2Id">pot</div>
+          </div>
+        </div>
 
-        <a href="pages/animals-tamed.html" class="activity-button yellow2 pointerCursor">
-          <span>
-            ARATA ANIMALE DOMESTICE
-          </span>
-        </a>
-        <object></object>
-        <object></object>
+        <div>
+          <div id="welcomeTextId">Bine ai venit!</div>
+          <div id="chooseLevelTextId">Alege nivelul dorit pentru a incepe</div>
+        </div>
 
-        <a href="pages/fruits.html" class="activity-button green1 pointerCursor">
-          <span>
-            ARATA FRUCTE
-          </span>
-        </a>
-        <a href="pages/vegetables.html" class="activity-button yellow1 pointerCursor">
-          <span>
-            ARATA LEGUME
-          </span>
-        </a>
+        <div id="footerContainerId">
+          <div id="footerCircle"></div>
+          <div id="footerImgId"></div>
+        </div>
       </div>
-    </div>
+
+      <div id="selLevelContentPanelId">
+        <div id="selLevelDiv">
+          <a href="selActivity.html?l=1" class="levelButton pointerCursor">
+            <div class="selLevelDetails">
+              <span class="selLevelLabel">
+                NIVELUL 1
+              </span>
+              <span class="selLevelDesc">
+                2 Distractori
+              </span>
+            </div>
+            <div class="selLevelRating">
+              <div class="iconLevel active"></div>
+              <div class="iconLevel"></div>
+              <div class="iconLevel"></div>
+              <div class="iconLevel"></div>
+            </div>
+          </a>
+          <a href="selActivity.html?l=2" class="levelButton pointerCursor">
+            <div class="selLevelDetails">
+              <span class="selLevelLabel">
+                NIVELUL 2
+              </span>
+              <span class="selLevelDesc">
+                3 Distractori
+              </span>
+            </div>
+            <div class="selLevelRating">
+              <div class="iconLevel active"></div>
+              <div class="iconLevel active"></div>
+              <div class="iconLevel"></div>
+              <div class="iconLevel"></div>
+            </div>
+          </a>
+          <a href="selActivity.html?l=3" class="levelButton pointerCursor">
+            <div class="selLevelDetails">
+              <span class="selLevelLabel">
+                NIVELUL 3
+              </span>
+              <span class="selLevelDesc">
+                4 Distractori
+              </span>
+            </div>
+            <div class="selLevelRating">
+              <div class="iconLevel active"></div>
+              <div class="iconLevel active"></div>
+              <div class="iconLevel active"></div>
+              <div class="iconLevel"></div>
+            </div>
+          </a>
+
+          <a href="selActivity.html?l=4" class="levelButton pointerCursor">
+            <div class="selLevelDetails">
+              <span class="selLevelLabel">
+                NIVELUL 4
+              </span>
+              <span class="selLevelDesc">
+                Așezare in spațiu
+              </span>
+            </div>
+            <div class="selLevelRating">
+              <div class="iconLevel active"></div>
+              <div class="iconLevel active"></div>
+              <div class="iconLevel active"></div>
+              <div class="iconLevel active"></div>
+            </div>
+          </a>
+        </div>
+      </div>
   </body>
 
 </html>

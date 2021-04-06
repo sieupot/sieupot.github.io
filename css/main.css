@@ -3,6 +3,7 @@ html {
   font-size: 1em;
   line-height: 1.4;
   height: 100%;
+  background-color: #EFE7E0;
 }
 body {
   height: 100%;
@@ -34,17 +35,6 @@ video,
 iframe,
 canvas {
   vertical-align: middle;
-}
-
-/* ==========================================================================
-   Browser Upgrade Prompt
-   ========================================================================== */
-
-.browserupgrade {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
 }
 
 /* ==========================================================================
@@ -121,67 +111,4 @@ canvas {
 }
 .upper {
   text-transform: uppercase;
-}
-
-#content {
-  height: calc(100% - 56px);
-  padding-top: 16px;
-}
-
-#startDiv {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  column-gap: 1em;
-  row-gap: 1em;
-  height: 100%;
-  margin: 0 16px;
-}
-
-.activity-button {
-  /* background styles */
-  display: inline-block;
-  padding: 15px 25px;
-
-  /* text styles */
-  text-decoration: none;
-  text-align: center;
-  color: #111;
-  font-size: 18px;
-  font-family: sans-serif;
-  font-weight: 100;
-  border-radius: 10px;
-  box-shadow: 0 1px 4px -2px #333;
-  text-shadow: 0 -1px #ddd;
-  transition: box-shadow 250ms; /* For modern browsers */
-}
-.activity-button:hover {
-  box-shadow: 0 -12px 4px -4px inset rgba(240, 240, 240, .9);
-}
-
-.activity-button > span {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.activity-button.blue1 {
-  background-color: #b8b8ff; /*for compatibility with older browsers*/
-}
-
-.activity-button.green1 {
-  background-color: #a3ffa3; /*for compatibility with older browsers*/
-}
-
-.activity-button.orange1 {
-  background-color: #ffa84f; /*for compatibility with older browsers*/
-}
-
-.activity-button.yellow1 {
-  background-color: #fffd91; /*for compatibility with older browsers*/
-}
-
-.activity-button.yellow2 {
-  background-color: #e0c35c; /*for compatibility with older browsers*/
 }
