@@ -39,6 +39,10 @@
       width: 480px;
     }
 
+    a, a:visited, a:hover, a:active {
+      color: inherit;
+    }
+
     @media only screen and (max-width: 280px) {
       body,
       p {
@@ -118,15 +122,37 @@
     </div>
   </div>
 
+  <a href="index.html" style="text-decoration: none;">
   <div style="position: absolute; top: 50%; bottom: 0; left: 0; right: 0; background-color: #fae69d; padding-top: 20px;">
     <p>Looks like you're <span style="color: red;">not</span> in the right place</p>
     <p>at the right time!</p>
+      <svg height="190" style="margin-top: 10px;">
+        <title>Let's go HOME!</title>
+        <defs>
+          <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="shadow-filter">
+            <feOffset dx="0" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur stdDeviation="10" in="shadowOffsetOuter1" result="shadowBlurOuter1"/>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 1 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"/>
+            <feMerge>
+              <feMergeNode in="shadowMatrixOuter1"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+
+        <path style="stroke: #89d05c; fill:none; stroke-width: 15;" d="M175,45 L150,20 L100,70 L100,160 L190,160 L190,80 L140,80"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              filter="url(#shadow-filter)"/>
+        <text x="20" y="120" style="opacity: .5;">Click here to go home!</text>
+      </svg>
 
     <div class="cactus-body inverted">
       <div class="cactus-arm-right inverted"></div>
       <div class="cactus-arm-left inverted"></div>
     </div>
   </div>
+  </a>
 </body>
 
 </html>

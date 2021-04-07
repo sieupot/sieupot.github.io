@@ -130,7 +130,7 @@
       <workItem from="1617537677317" duration="11000" />
       <workItem from="1617537697622" duration="5392000" />
       <workItem from="1617622536684" duration="458000" />
-      <workItem from="1617689143290" duration="46072000" />
+      <workItem from="1617689143290" duration="49526000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1589000180842</created>
@@ -398,7 +398,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617801901680</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="ticket #2: Redesign the landing page according to the UI/UX design proposal:&#10;- 404 page change">
+      <created>1617803892672</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1617803892672</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
