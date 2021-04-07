@@ -2,7 +2,7 @@ let color1Element, color2Element, color3Element, color4Element;
 let prevRnd1, prevRnd2, prevRnd3, prevRnd4;
 
 // on page load call generate 4 colors (first time the page is displayed)
-$(function() {
+$(() => {
   items = [{name: 'red', audioPath: '../sounds/colors/red.ogg'}, {name: 'green', audioPath: '../sounds/colors/green.ogg'}, {name: 'blue', audioPath: '../sounds/colors/blue.ogg'},
     {name: 'pink', audioPath: '../sounds/colors/pink.ogg'}, {name: 'yellow', audioPath: '../sounds/colors/yellow.ogg'}, {name: 'orange', audioPath: '../sounds/colors/orange.ogg'},
     {name: 'violet', audioPath: '../sounds/colors/violet.ogg'}, {name: 'brown', audioPath: '../sounds/colors/brown.ogg'}, {name: 'gray', audioPath: '../sounds/colors/gray.ogg'}, {name: 'black', audioPath: '../sounds/colors/black.ogg'}

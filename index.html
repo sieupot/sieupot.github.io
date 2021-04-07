@@ -22,31 +22,14 @@
     <script defer src="js/lib/jquery-3.4.1.min.js"></script>
     <script defer src="js/lib/modernizr-3.8.0.min.js"></script>
     <!-- inject the template footer into the page -->
-    <script defer src="js/footer-injector.js"></script>
+    <script defer src="js/footerInjector.js"></script>
     <script defer src="js/main.js"></script>
+    <script defer src="js/utils.js"></script>
+    <script defer src="js/infoPanelInjector.js"></script>
   </head>
 
   <body>
-      <div id="infoPanel">
-        <div>
-          <div id="logoId"></div>
-          <div id="logoCircle"></div>
-          <div id="logoImgId"></div>
-          <div id="logoTxtId">
-            <div id="logoTxt1Id">șieu</div>
-            <div id="logoTxt2Id">pot</div>
-          </div>
-        </div>
-
-        <div>
-          <div id="welcomeTextId">Bine ai venit!</div>
-          <div id="chooseLevelTextId">Alege nivelul dorit pentru a incepe</div>
-        </div>
-
-        <div id="footerContainerId">
-          <div id="footerCircle"></div>
-          <div id="footerImgId"></div>
-        </div>
+      <div id="infoPanel" pgLocationMsg="Bine ai venit!" pgDescriptionMsg="Alege nivelul dorit pentru a incepe">
       </div>
 
       <div id="selLevelContentPanelId">

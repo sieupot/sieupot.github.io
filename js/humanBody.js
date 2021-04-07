@@ -2,7 +2,7 @@ let prevRnd;
 let svgElems = [];
 
 // on page load call generate the body part that should be pointed at
-$(function() {
+$(() => {
   items = [{name: 'head', audioPath: '../sounds/humanBody/head.ogg'}, {name: 'shoulders', audioPath: '../sounds/humanBody/shoulders.ogg'}, {name: 'arms', audioPath: '../sounds/humanBody/arms.ogg'},
            {name: 'palms', audioPath: '../sounds/humanBody/palms.ogg'}, {name: 'chest', audioPath: '../sounds/humanBody/chest.ogg'}, {name: 'belly', audioPath: '../sounds/humanBody/belly.ogg'},
            {name: 'legs', audioPath: '../sounds/humanBody/legs.ogg'}, {name: 'knees', audioPath: '../sounds/humanBody/knees.ogg'},

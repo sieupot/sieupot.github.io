@@ -1,70 +1,75 @@
 <!doctype html>
 <html class="no-js" lang="">
 
-  <head>
-    <meta charset="utf-8">
-    <title>SiEuPot</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset="utf-8">
+  <title>Alege activitatea</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="apple-touch-icon" href="icon.png">
-    <!-- Place favicon.ico in the root directory -->
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
 
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/infoPanel.css">
-    <link rel="stylesheet" href="css/selActivity.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/infoPanel.css">
+  <link rel="stylesheet" href="css/selActivity.css">
 
-    <meta name="theme-color" content="#EFE7E0">
+  <meta name="theme-color" content="#EFE7E0">
 
-    <script defer src="js/lib/jquery-3.4.1.min.js"></script>
-    <script defer src="js/lib/modernizr-3.8.0.min.js"></script>
-    <!-- inject the template footer into the page -->
-    <script defer src="js/footer-injector.js"></script>
-    <script defer src="js/main.js"></script>
-  </head>
+  <script defer src="js/lib/modernizr-3.8.0.min.js"></script>
+  <script defer src="js/lib/jquery-3.4.1.min.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/utils.js"></script>
+  <!-- inject the template footer into the page -->
+  <script defer src="js/footerInjector.js"></script>
+  <script defer src="js/infoPanelInjector.js"></script>
+</head>
 
-  <body>
-    <div id="content">
-      <div id="startDiv">
-        <a href="pages/shapes.html" class="activity-button blue1 pointerCursor">
-          <span>
-            ARATA FORME
-          </span>
-        </a>
-        <a href="pages/colors.html" class="activity-button orange1 pointerCursor">
-          <span>
-            ARATA CULORI
-          </span>
-        </a>
-        <a href="pages/humanBody.html" class="activity-button orange1 pointerCursor">
-          <span>
-            ARATA CORPUL UMAN
-          </span>
-        </a>
+<body>
+  <div id="infoPanel" pgLocationMsg="Nivelul #{getUrlParameter('l')}" pgDescriptionMsg="Alege activitatea dorita">
+  </div>
 
-        <a href="pages/animals-tamed.html" class="activity-button yellow2 pointerCursor">
-          <span>
-            ARATA ANIMALE DOMESTICE
-          </span>
-        </a>
-        <object></object>
-        <object></object>
+  <div id="content">
+    <div id="startDiv">
+      <a href="pages/shapes.html" class="activity-button blue1 pointerCursor">
+        <span>
+          ARATA FORME
+        </span>
+      </a>
+      <a href="pages/colors.html" class="activity-button orange1 pointerCursor">
+        <span>
+          ARATA CULORI
+        </span>
+      </a>
+      <a href="pages/humanBody.html" class="activity-button orange1 pointerCursor">
+        <span>
+          ARATA CORPUL UMAN
+        </span>
+      </a>
 
-        <a href="pages/fruits.html" class="activity-button green1 pointerCursor">
-          <span>
-            ARATA FRUCTE
-          </span>
-        </a>
-        <a href="pages/vegetables.html" class="activity-button yellow1 pointerCursor">
-          <span>
-            ARATA LEGUME
-          </span>
-        </a>
-      </div>
+      <a href="pages/animalsTamed.html" class="activity-button yellow2 pointerCursor">
+        <span>
+          ARATA ANIMALE DOMESTICE
+        </span>
+      </a>
+      <object></object>
+      <object></object>
+
+      <a href="pages/fruits.html" class="activity-button green1 pointerCursor">
+        <span>
+          ARATA FRUCTE
+        </span>
+      </a>
+      <a href="pages/vegetables.html" class="activity-button yellow1 pointerCursor">
+        <span>
+          ARATA LEGUME
+        </span>
+      </a>
     </div>
-  </body>
+  </div>
+</body>
 
 </html>

@@ -2,7 +2,7 @@ let shape1Elem, shape2Elem;
 let prevRnd1, prevRnd2;
 
 // on page load call generate 2 shapes (first time the page is displayed)
-$(function() {
+$(() => {
   items = [{name: 'square', audioPath: '../sounds/shapes/square.ogg'}, {name: 'rectangle', audioPath: '../sounds/shapes/rectangle.ogg'}, {name: 'circle', audioPath: '../sounds/shapes/circle.ogg'},
             {name: 'triangle', audioPath: '../sounds/shapes/triangle.ogg'}, {name: 'star', audioPath: '../sounds/shapes/star.ogg'}, {name: 'diamond', audioPath: '../sounds/shapes/diamond.ogg'}]
 

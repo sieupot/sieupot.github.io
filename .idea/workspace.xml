@@ -5,8 +5,26 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="ticket #2: Redesign the landing page according to the UI/UX design proposal:&#10;- index.html (select level) page redesigned&#10;- poppins fonts added">
+    <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="ticket #2: Redesign the landing page according to the UI/UX design proposal:&#10;- fix font file names">
+      <change afterPath="$PROJECT_DIR$/js/infoPanelInjector.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/selLevel.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/selLevel.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/app/baby-boy.svg" beforeDir="false" afterPath="$PROJECT_DIR$/img/app/babyBoy.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/colors.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/colors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/footer-injector.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/footerInjector.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/humanBody.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/humanBody.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/plugins.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/plugins.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shapes.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/shapes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/animals-tamed.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/animalsTamed.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/colors.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/colors.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/humanBody.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/humanBody.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/objectBody.inc" beforeDir="false" afterPath="$PROJECT_DIR$/pages/objectBody.inc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/shapes.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shapes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/selActivity.html" beforeDir="false" afterPath="$PROJECT_DIR$/selActivity.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site.webmanifest" beforeDir="false" afterPath="$PROJECT_DIR$/site.webmanifest" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +43,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1beivX7ZqXOfyh6wGUYz9p5PtLZ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -45,18 +71,18 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TypeScript" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/css" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/js" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/js" />
       <recent name="$PROJECT_DIR$/css" />
       <recent name="$PROJECT_DIR$" />
       <recent name="G:\Diverse\Kestii Teddy\workspace\SiEuPot\js" />
       <recent name="G:\Diverse\Kestii Teddy\workspace\SiEuPot\css" />
-      <recent name="G:\Diverse\Kestii Teddy\workspace\SiEuPot\pages" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/css/fonts" />
@@ -121,7 +147,7 @@
       <workItem from="1617537677317" duration="11000" />
       <workItem from="1617537697622" duration="5392000" />
       <workItem from="1617622536684" duration="458000" />
-      <workItem from="1617689143290" duration="25116000" />
+      <workItem from="1617689143290" duration="34416000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1589000180842</created>
@@ -340,7 +366,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617728192188</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="ticket #2: Redesign the landing page according to the UI/UX design proposal:&#10;- fix font file names">
+      <created>1617773641363</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1617773641363</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -363,7 +396,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Added project resources" />
     <MESSAGE value="redesigned images" />
     <MESSAGE value="Cleanup" />
     <MESSAGE value="Objects in development" />
@@ -388,7 +420,8 @@
     <MESSAGE value="templated footer" />
     <MESSAGE value="Redesign the landing page according to the UI/UX design proposal. #2" />
     <MESSAGE value="ticket #2: Redesign the landing page according to the UI/UX design proposal:&#10;- index.html (select level) page redesigned&#10;- poppins fonts added" />
-    <option name="LAST_COMMIT_MESSAGE" value="ticket #2: Redesign the landing page according to the UI/UX design proposal:&#10;- index.html (select level) page redesigned&#10;- poppins fonts added" />
+    <MESSAGE value="ticket #2: Redesign the landing page according to the UI/UX design proposal:&#10;- fix font file names" />
+    <option name="LAST_COMMIT_MESSAGE" value="ticket #2: Redesign the landing page according to the UI/UX design proposal:&#10;- fix font file names" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

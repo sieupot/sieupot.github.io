@@ -23,7 +23,6 @@ let $resultDivElem;
 function checkValidAnswer(isValidAnswer) {
   resetObjects(true, false);
   $modalPanel.dialog(dialogOptions);
-  console.log(1);
   if (isValidAnswer) {
     rightAnswers++;
     $resultDivElem.find('img').attr('src', '../img/smileFace.png');

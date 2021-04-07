@@ -20,7 +20,7 @@
   </div>
 </div>
 
-<script src="../js/footer-injector.js"></script>
+<script src="../js/footerInjector.js"></script>
 
 <script type="text/javascript">
   $(function() {
