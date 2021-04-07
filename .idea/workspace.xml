@@ -5,21 +5,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="templated footer">
-      <change afterPath="$PROJECT_DIR$/css/fonts/poppins/Poppins-200-italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/fonts/poppins/Poppins-200-normal.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/fonts/poppins/Poppins-300-italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/fonts/poppins/Poppins-300-normal.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/infoPanel.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/selActivity.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/app/baby-boy.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/app/chidlren.png" afterDir="false" />
+    <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="ticket #2: Redesign the landing page according to the UI/UX design proposal:&#10;- index.html (select level) page redesigned&#10;- poppins fonts added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/fonts.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/fonts.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main_1.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/selLevel.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/selActivity.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +121,7 @@
       <workItem from="1617537677317" duration="11000" />
       <workItem from="1617537697622" duration="5392000" />
       <workItem from="1617622536684" duration="458000" />
-      <workItem from="1617689143290" duration="23989000" />
+      <workItem from="1617689143290" duration="25116000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1589000180842</created>
@@ -346,7 +333,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617703210759</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="ticket #2: Redesign the landing page according to the UI/UX design proposal:&#10;- index.html (select level) page redesigned&#10;- poppins fonts added">
+      <created>1617728192188</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1617728192188</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -369,7 +363,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Added WEbStorm project files" />
     <MESSAGE value="Added project resources" />
     <MESSAGE value="redesigned images" />
     <MESSAGE value="Cleanup" />
@@ -394,7 +387,8 @@
     <MESSAGE value="2021" />
     <MESSAGE value="templated footer" />
     <MESSAGE value="Redesign the landing page according to the UI/UX design proposal. #2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Redesign the landing page according to the UI/UX design proposal. #2" />
+    <MESSAGE value="ticket #2: Redesign the landing page according to the UI/UX design proposal:&#10;- index.html (select level) page redesigned&#10;- poppins fonts added" />
+    <option name="LAST_COMMIT_MESSAGE" value="ticket #2: Redesign the landing page according to the UI/UX design proposal:&#10;- index.html (select level) page redesigned&#10;- poppins fonts added" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
