@@ -13,8 +13,7 @@
 }
 
 .activity-button {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
+  display: flex;
   padding: 15px 25px;
   background-color: #FFF;
   font: normal normal bold 22px/24px Poppins-600-normal;
@@ -28,10 +27,6 @@
   position: relative;
 }
 .activity-button > img {
-  position: absolute;
-  top: 20px;
-  left: 0;
-  right: 0;
   margin: auto;
 }
 .activity-button > span {

@@ -5,9 +5,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="ticket #2: Redesign the landing page according to the UI/UX design proposal:&#10;- select activity page redesign">
+    <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="ticket #2: Redesign the landing page according to the UI/UX design proposal:&#10;- 404 page change">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/selActivity.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/selActivity.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +130,7 @@
       <workItem from="1617537677317" duration="11000" />
       <workItem from="1617537697622" duration="5392000" />
       <workItem from="1617622536684" duration="458000" />
-      <workItem from="1617689143290" duration="41934000" />
+      <workItem from="1617689143290" duration="42373000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1589000180842</created>
@@ -377,7 +377,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617798350121</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="ticket #2: Redesign the landing page according to the UI/UX design proposal:&#10;- 404 page change">
+      <created>1617799314606</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1617799314606</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -400,7 +407,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Objects in development" />
     <MESSAGE value="removed # from URL when selecting activity" />
     <MESSAGE value="fixed js refresh" />
     <MESSAGE value="fixed js refresh (REFRESH message no longer needed as refresh is done automatically)" />
@@ -425,7 +431,8 @@
     <MESSAGE value="ticket #2: Redesign the landing page according to the UI/UX design proposal:&#10;- fix font file names" />
     <MESSAGE value="ticket #2: Redesign the landing page according to the UI/UX design proposal:&#10;- template info panel&#10;- fix Chrome mask issue" />
     <MESSAGE value="ticket #2: Redesign the landing page according to the UI/UX design proposal:&#10;- select activity page redesign" />
-    <option name="LAST_COMMIT_MESSAGE" value="ticket #2: Redesign the landing page according to the UI/UX design proposal:&#10;- select activity page redesign" />
+    <MESSAGE value="ticket #2: Redesign the landing page according to the UI/UX design proposal:&#10;- 404 page change" />
+    <option name="LAST_COMMIT_MESSAGE" value="ticket #2: Redesign the landing page according to the UI/UX design proposal:&#10;- 404 page change" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
