@@ -14,7 +14,7 @@
     }
 
     html {
-      color: #888;
+      color: #242424;
       display: table;
       font: normal normal bold 22px/24px Poppins-600-normal;
       height: 100%;
@@ -51,14 +51,71 @@
         margin: 0 0 0.3em;
       }
     }
+
+    [class^="cactus-"], [class^="cactus-"]:after {
+      background-color: rgb(81, 155, 67);
+    }
+    .cactus-body {
+      bottom: 0;
+      left: 70%;
+      right: 30%;
+      position: absolute;
+      width: 30px;
+      height: 180px;
+    }
+    .cactus-body, [class^="cactus-arm-"]:after {
+      border-radius: 20px 20px 0 0;
+    }
+    [class^="cactus-arm-"] {
+      width: 42px;
+      height: 25px;
+    }
+    [class^="cactus-arm-"]:after {
+      content: " ";
+      width: 23px;
+      height: 28px;
+    }
+    [class^="cactus-arm-"], [class^="cactus-arm-"]:after {
+      position: absolute;
+    }
+    .cactus-arm-right {
+      border-radius: 0 0 10px 0;
+      left: 100%;
+      top: 30%;
+    }
+    .cactus-arm-right:after {
+      content: " ";
+      bottom: 100%;
+      right: 0;
+      width: 23px;
+      height: 28px;
+    }
+    .cactus-arm-left {
+      border-radius: 0 0 0 10px;
+      right: 100%;
+      top: 50%;
+    }
+    .cactus-arm-left:after {
+      bottom: 100%;
+      left: 0;
+    }
+
   </style>
 </head>
 
 <body>
-  <h1>Page Not Found</h1>
-  <hr style="margin: 30px 0;">
-  <p>Looks like you're <span style="color: red;">not</span> in the right place</p>
-  <p>at the right time!</p>
+  <div style="position: absolute; top: 0; bottom: 50%; left: 0; right: 0; background: rgb(255,255,0); background: radial-gradient(circle, rgba(255,255,0,1) 0%, rgba(255,255,255,1) 26%, rgba(0,212,255,1) 100%);">
+    <h1 style="position: absolute; bottom: 20px; left: 0; right: 0;">Page Not Found</h1>
+    <div class="cactus-body">
+      <div class="cactus-arm-right"></div>
+      <div class="cactus-arm-left"></div>
+    </div>
+  </div>
+
+  <div style="position: absolute; top: 50%; bottom: 0; left: 0; right: 0; background-color: #fae69d; padding-top: 20px;">
+    <p>Looks like you're <span style="color: red;">not</span> in the right place</p>
+    <p>at the right time!</p>
+  </div>
 </body>
 
 </html>
