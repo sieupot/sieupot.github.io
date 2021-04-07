@@ -6,12 +6,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="ticket #2: Redesign the landing page according to the UI/UX design proposal:&#10;- select activity page redesign">
-      <change afterPath="$PROJECT_DIR$/img/app/activityIcons/humanBody.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/selActivity.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/selActivity.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/selLevel.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/selLevel.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/selActivity.html" beforeDir="false" afterPath="$PROJECT_DIR$/selActivity.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +130,7 @@
       <workItem from="1617537677317" duration="11000" />
       <workItem from="1617537697622" duration="5392000" />
       <workItem from="1617622536684" duration="458000" />
-      <workItem from="1617689143290" duration="41088000" />
+      <workItem from="1617689143290" duration="41934000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1589000180842</created>
@@ -374,7 +370,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617789348338</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="ticket #2: Redesign the landing page according to the UI/UX design proposal:&#10;- select activity page redesign">
+      <created>1617798350120</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1617798350121</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
