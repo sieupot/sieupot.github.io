@@ -55,10 +55,12 @@
     [class^="cactus-"], [class^="cactus-"]:after {
       background-color: rgb(81, 155, 67);
     }
+    [class^="cactus-"][class*="inverted"], [class^="cactus-"][class*="inverted"]:after {
+      background-color: #5E5E5E;
+    }
     .cactus-body {
       bottom: 0;
-      left: 70%;
-      right: 30%;
+      left: calc(50% + 250px);
       position: absolute;
       width: 30px;
       height: 180px;
@@ -100,6 +102,10 @@
       left: 0;
     }
 
+    .cactus-body.inverted {
+      -webkit-transform: matrix(1, 0, -1, -1, 90, 0);
+      top: 0;
+    }
   </style>
 </head>
 
@@ -115,6 +121,11 @@
   <div style="position: absolute; top: 50%; bottom: 0; left: 0; right: 0; background-color: #fae69d; padding-top: 20px;">
     <p>Looks like you're <span style="color: red;">not</span> in the right place</p>
     <p>at the right time!</p>
+
+    <div class="cactus-body inverted">
+      <div class="cactus-arm-right inverted"></div>
+      <div class="cactus-arm-left inverted"></div>
+    </div>
   </div>
 </body>
 
