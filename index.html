@@ -19,12 +19,12 @@
 
     <meta name="theme-color" content="#EFE7E0">
 
-    <script defer src="js/lib/jquery-3.4.1.min.js"></script>
     <script defer src="js/lib/modernizr-3.8.0.min.js"></script>
-    <!-- inject the template footer into the page -->
-    <script defer src="js/footerInjector.js"></script>
+    <script defer src="js/lib/jquery-3.4.1.min.js"></script>
     <script defer src="js/main.js"></script>
     <script defer src="js/utils.js"></script>
+    <!-- inject the template footer into the page -->
+    <script defer src="js/footerInjector.js"></script>
     <script defer src="js/infoPanelInjector.js"></script>
   </head>
 
@@ -32,8 +32,11 @@
       <div id="infoPanel" pgLocationMsg="Bine ai venit!" pgDescriptionMsg="Alege nivelul dorit pentru a incepe">
       </div>
 
-      <div id="selLevelContentPanelId">
-        <div id="selLevelDiv">
+      <div id="contentPanelId">
+        <div></div> <!-- keep this empty div so that the layout doesn't get messed up;
+                      something to do with the parent's [grid-template-rows: min-content;] property -->
+
+        <div id="selLevelDivId">
           <a href="selActivity.html?l=1" class="levelButton pointerCursor">
             <div class="selLevelDetails">
               <span class="selLevelLabel">

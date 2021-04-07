@@ -1,12 +1,5 @@
 /* ------------ MY DEFS -------------- */
-#selLevelContentPanelId {
-  display: inline-block;
-  height: calc(100% - 20px);
-  width: calc(100% - 346px);
-  min-height: 800px;
-}
-
-#selLevelDiv {
+#selLevelDivId {
   display: grid;
   row-gap: 2em;
   height: 100%;
@@ -20,6 +13,7 @@
   text-decoration: none;
   border-radius: 20px;
   transition: box-shadow 250ms; /* For modern browsers */
+  white-space: nowrap;
 }
 .levelButton:first-child {
   margin: 60px 60px 0 90px;
@@ -52,11 +46,9 @@
 
 .iconLevel {
   -webkit-mask: url(../img/app/babyBoy.svg);
-  mask: url(../img/app/babyBoy.svg);
+  -webkit-mask-size: cover;
   display: inline-block;
   background: #EFE7E0;
-  -webkit-mask-size: cover;
-  mask-size: cover;
   width: 57px;
   height: 51px;
   margin-right: 8px;

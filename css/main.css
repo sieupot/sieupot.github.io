@@ -112,3 +112,13 @@ canvas {
 .upper {
   text-transform: uppercase;
 }
+
+.navLink {
+  background: transparent url('../img/app/arrowBack.svg') 0 center no-repeat padding-box;
+  text-align: left;
+  font: normal normal 300 22px/37px Poppins-300-normal;
+  letter-spacing: 0;
+  text-decoration: none;
+  color: #226473;
+  padding-left: 47px;
+}

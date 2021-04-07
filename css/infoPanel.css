@@ -110,3 +110,11 @@
   bottom: -68px;
   left: -50px;
 }
+
+#contentPanelId {
+  display: grid;
+  grid-template-rows: min-content;
+  height: calc(100% - 20px);
+  width: calc(100% - 346px);
+  min-height: 800px;
+}
