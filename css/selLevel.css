@@ -34,14 +34,13 @@
   letter-spacing: 0;
   color: #226473;
   text-transform: uppercase;
-  opacity: 1;
+  padding-right: 40px;
 }
 .selLevelDesc {
   text-align: left;
   font: normal normal bold 22px/37px Poppins-600-normal;
   letter-spacing: 0;
   color: #3E3E3E;
-  opacity: 1;
 }
 
 .iconLevel {
