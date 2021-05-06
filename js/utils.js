@@ -40,7 +40,6 @@ const parseDynamicJsString = function (sParam) {
   let sRet = '';
   for (i = 0; i < sParamTokens.length; i++) {
     if (sParamTokens[i].indexOf('#{') >= 0) {
-      console.log(sParamTokens[i].substring(2, sParamTokens[i].length - 2));
       sParamTokens[i] = eval(sParamTokens[i].substring(2, sParamTokens[i].length - 1));
     }
     sRet += sParamTokens[i] + " ";

@@ -122,3 +122,7 @@ canvas {
   color: #226473;
   padding-left: 47px;
 }
+
+.pointerCursor {
+  cursor: pointer;
+}
