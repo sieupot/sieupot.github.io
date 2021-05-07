@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px"
+     viewBox="0 0 80 80" enable-background="new 0 0 80 80" xml:space="preserve">
+  <g>
+    <path d="M39.75,5.5C20.834,5.5,5.5,20.834,5.5,39.75C5.5,58.666,20.834,74,39.75,74C58.666,74,74,58.666,74,39.75   C74,20.834,58.666,5.5,39.75,5.5z M39.75,70C23.043,70,9.5,56.457,9.5,39.75C9.5,23.043,23.043,9.5,39.75,9.5   C56.457,9.5,70,23.043,70,39.75C70,56.457,56.457,70,39.75,70z"/>
+    <polygon points="32,24 32,56 58,40" style="fill: none; stroke: black; stroke-width: 6; stroke-linejoin: round;"/>
+  </g>
+</svg>

@@ -8,10 +8,12 @@ $(() => {
     {name: 'violet', audioPath: '../sounds/colors/violet.ogg'}, {name: 'brown', audioPath: '../sounds/colors/brown.ogg'}, {name: 'gray', audioPath: '../sounds/colors/gray.ogg'}, {name: 'black', audioPath: '../sounds/colors/black.ogg'}
   ]
 
-  $modalPanel = $('#dialogDiv');
-  $resultDivElem = $('div.result');
+  modalPanel = $('#dialogDiv');
+  resultDivElem = $('div.result');
 
-  generateChallengeItems();
+  // show the start icon and let the user manually start the activity
+  resultDivElem.fadeIn(300);
+  modalPanel.dialog(dialogOptions);
 });
 
 function generateChallengeItems() {
@@ -50,15 +52,15 @@ function generateChallengeItems() {
 function playShowItemAudio() {
   resetObjects(false, true);
 
-  $modalPanel.dialog(dialogOptions);
+  modalPanel.dialog(dialogOptions);
   let playingColorTypeAudio = new Audio(itemAudioFilePath);
   playingColorTypeAudio.addEventListener('ended', function(){
-    $resultDivElem.hide();
-    $modalPanel.dialog('close');
+    resultDivElem.hide();
+    modalPanel.dialog('close');
   });
   playingAudios[playingAudios.length] = playingColorTypeAudio;
-  $resultDivElem.find('img').attr('src', '../img/show.svg');
-  $resultDivElem.fadeIn(300);
+  resultDivElem.find('img').attr('src', '../img/show.svg');
+  resultDivElem.fadeIn(300);
   let playingShowAudio = new Audio('../sounds/show.ogg');
   playingAudios[playingAudios.length] = playingShowAudio;
   playingShowAudio.addEventListener('ended', function(){
@@ -86,13 +88,13 @@ function playShowItemAudio() {
   playingShowAudio.play();
 
   if (!showItemSoundInterval) {
-    showItemSoundInterval = setInterval(playShowItemAudio, 8000);
+    showItemSoundInterval = setInterval(playShowItemAudio, commandRepeatInterval);
   }
 }
 
 function resetItemElems() {
-  color1Element.unbind('click').removeClass('pointerCursor');
-  color2Element.unbind('click').removeClass('pointerCursor');
-  color3Element.unbind('click').removeClass('pointerCursor');
-  color4Element.unbind('click').removeClass('pointerCursor');
+  color1Element.off('click').removeClass('pointerCursor');
+  color2Element.off('click').removeClass('pointerCursor');
+  color3Element.off('click').removeClass('pointerCursor');
+  color4Element.off('click').removeClass('pointerCursor');
 }

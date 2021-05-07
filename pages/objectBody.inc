@@ -1,7 +1,7 @@
 <div id="content">
   <div id="dialogDiv"></div>
   <div class="result">
-    <img src="" alt="result image"/>
+    <img src="../img/start.svg" alt="result image" onclick="startActivity();" style="height: 100%;" class="pointerCursor"/>
   </div>
   <div id="contentPanel">
     <div id="object1" class="object"></div>

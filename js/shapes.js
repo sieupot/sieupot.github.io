@@ -6,10 +6,12 @@ $(() => {
   items = [{name: 'square', audioPath: '../sounds/shapes/square.ogg'}, {name: 'rectangle', audioPath: '../sounds/shapes/rectangle.ogg'}, {name: 'circle', audioPath: '../sounds/shapes/circle.ogg'},
             {name: 'triangle', audioPath: '../sounds/shapes/triangle.ogg'}, {name: 'star', audioPath: '../sounds/shapes/star.ogg'}, {name: 'diamond', audioPath: '../sounds/shapes/diamond.ogg'}]
 
-  $modalPanel = $('#dialogDiv');
-  $resultDivElem = $('div.result');
+  modalPanel = $('#dialogDiv');
+  resultDivElem = $('div.result');
 
-  generateChallengeItems();
+  // show the start icon and let the user manually start the activity
+  resultDivElem.fadeIn(300);
+  modalPanel.dialog(dialogOptions);
 });
 
 function generateChallengeItems() {
@@ -38,15 +40,15 @@ function generateChallengeItems() {
 function playShowItemAudio() {
   resetObjects(false, true);
 
-  $modalPanel.dialog(dialogOptions);
+  modalPanel.dialog(dialogOptions);
   let playingShapeTypeAudio = new Audio(itemAudioFilePath);
   playingShapeTypeAudio.addEventListener('ended', function(){
-    $resultDivElem.hide();
-    $modalPanel.dialog('close');
+    resultDivElem.hide();
+    modalPanel.dialog('close');
   });
   playingAudios[playingAudios.length] = playingShapeTypeAudio;
-  $resultDivElem.find('img').attr('src','../img/show.svg');
-  $resultDivElem.fadeIn(300);
+  resultDivElem.find('img').attr('src','../img/show.svg');
+  resultDivElem.fadeIn(300);
   let playingShowAudio = new Audio('../sounds/show.ogg');
   playingAudios[playingAudios.length] = playingShowAudio;
   playingShowAudio.addEventListener('ended', function(){
@@ -66,11 +68,11 @@ function playShowItemAudio() {
   playingShowAudio.play();
 
   if (!showItemSoundInterval) {
-    showItemSoundInterval = setInterval(playShowItemAudio, 8000);
+    showItemSoundInterval = setInterval(playShowItemAudio, commandRepeatInterval);
   }
 }
 
 function resetItemElems() {
-  shape1Elem.unbind('click').removeClass('pointerCursor');
-  shape2Elem.unbind('click').removeClass('pointerCursor');
+  shape1Elem.off('click').removeClass('pointerCursor');
+  shape2Elem.off('click').removeClass('pointerCursor');
 }

@@ -8,10 +8,12 @@ function go() {
   // function declared in each objects related file
   initObjects();
 
-  $modalPanel = $('#dialogDiv');
-  $resultDivElem = $('div.result');
+  modalPanel = $('#dialogDiv');
+  resultDivElem = $('div.result');
 
-  generateChallengeItems();
+  // show the start icon and let the user manually start the activity
+  resultDivElem.fadeIn(300);
+  modalPanel.dialog(dialogOptions);
 }
 
 function generateChallengeItems() {
@@ -40,15 +42,15 @@ function generateChallengeItems() {
 function playShowItemAudio() {
   resetObjects(false, true);
 
-  $modalPanel.dialog(dialogOptions);
+  modalPanel.dialog(dialogOptions);
   let playingObjectTypeAudio = new Audio(itemAudioFilePath);
   playingObjectTypeAudio.addEventListener('ended', function(){
-    $resultDivElem.hide();
-    $modalPanel.dialog('close');
+    resultDivElem.hide();
+    modalPanel.dialog('close');
   });
   playingAudios[playingAudios.length] = playingObjectTypeAudio;
-  $resultDivElem.find('img').attr('src','../img/show.svg');
-  $resultDivElem.fadeIn(300);
+  resultDivElem.find('img').attr('src','../img/show.svg');
+  resultDivElem.fadeIn(300);
   let playingShowAudio = new Audio('../sounds/show.ogg');
   playingAudios[playingAudios.length] = playingShowAudio;
   playingShowAudio.addEventListener('ended', function(){
@@ -68,11 +70,11 @@ function playShowItemAudio() {
   playingShowAudio.play();
 
   if (!showItemSoundInterval) {
-    showItemSoundInterval = setInterval(playShowItemAudio, 8000);
+    showItemSoundInterval = setInterval(playShowItemAudio, commandRepeatInterval);
   }
 }
 
 function resetItemElems(){
-  object1Elem.unbind('click').removeClass('pointerCursor');
-  object2Elem.unbind('click').removeClass('pointerCursor');
+  object1Elem.off('click').removeClass('pointerCursor');
+  object2Elem.off('click').removeClass('pointerCursor');
 }

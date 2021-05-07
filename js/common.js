@@ -1,3 +1,5 @@
+const commandRepeatInterval = 8000;
+
 let items; // list of available object items for the activity (css class name, image path, audio file name to be played, etc)
 
 let validItemIndex, itemAudioFilePath;
@@ -17,20 +19,29 @@ const dialogOptions = {
   },
 };
 
-let $modalPanel;
-let $resultDivElem;
+let modalPanel;
+let resultDivElem;
+
+/**
+ * starts the activity
+ */
+const startActivity = function() {
+  resultDivElem.find('img').removeAttr('onclick').removeClass('pointerCursor');
+
+  generateChallengeItems();
+}
 
 function checkValidAnswer(isValidAnswer) {
   resetObjects(true, false);
-  $modalPanel.dialog(dialogOptions);
+  modalPanel.dialog(dialogOptions);
   if (isValidAnswer) {
     rightAnswers++;
-    $resultDivElem.find('img').attr('src', '../img/smileFace.png');
-    $resultDivElem.fadeIn(500);
+    resultDivElem.find('img').attr('src', '../img/smileFace.png');
+    resultDivElem.fadeIn(500);
     let playingCorrectAnswerAudio = new Audio('../sounds/correct.ogg');
     playingAudios[playingAudios.length] = playingCorrectAnswerAudio;
     playingCorrectAnswerAudio.addEventListener('ended', function () {
-      $resultDivElem.hide();
+      resultDivElem.hide();
       generateChallengeItems();
     });
     playingCorrectAnswerAudio.play();
@@ -38,11 +49,11 @@ function checkValidAnswer(isValidAnswer) {
     $('#scoreGood').effect('highlight', {color: '#acffa3'}, 500)
   } else {
     wrongAnswers++;
-    $resultDivElem.find('img').attr('src', '../img/sadFace.png');
-    $resultDivElem.fadeIn(500);
+    resultDivElem.find('img').attr('src', '../img/sadFace.png');
+    resultDivElem.fadeIn(500);
     let playingWrongAnswerAudio = new Audio('../sounds/wrong.ogg');
     playingWrongAnswerAudio.addEventListener('ended', function () {
-      $resultDivElem.hide();
+      resultDivElem.hide();
       playShowItemAudio();
     });
     playingWrongAnswerAudio.play();

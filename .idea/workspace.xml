@@ -5,17 +5,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="nothing">
+    <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="ticket #2: Redesign the landing page according to the UI/UX design proposal:&#10;- 404 page change">
+      <change afterPath="$PROJECT_DIR$/img/start.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/pageLayout.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/pageLayout.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/colors.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/colors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/humanBody.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/humanBody.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/objects.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/objects.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shapes.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/shapes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/animalsTamed.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/animalsTamed.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/colors.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/colors.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/fruits.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/fruits.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/humanBody.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/humanBody.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/objectBody.inc" beforeDir="false" afterPath="$PROJECT_DIR$/pages/objectBody.inc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/shapes.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shapes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/vegetables.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/vegetables.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/selActivity.html" beforeDir="false" afterPath="$PROJECT_DIR$/selActivity.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,18 +65,18 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TypeScript" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/img" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/img" />
       <recent name="$PROJECT_DIR$/js" />
       <recent name="$PROJECT_DIR$/css" />
       <recent name="$PROJECT_DIR$" />
       <recent name="G:\Diverse\Kestii Teddy\workspace\SiEuPot\js" />
-      <recent name="G:\Diverse\Kestii Teddy\workspace\SiEuPot\css" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/css/fonts" />

@@ -8,15 +8,17 @@ $(() => {
            {name: 'legs', audioPath: '../sounds/humanBody/legs.ogg'}, {name: 'knees', audioPath: '../sounds/humanBody/knees.ogg'},
   ]
 
-  $modalPanel = $('#dialogDiv');
-  $resultDivElem = $('div.result');
+  modalPanel = $('#dialogDiv');
+  resultDivElem = $('div.result');
 
   for (let i = 0; i < items.length; i++) {
     let item = items[i];
     svgElems[i] = $('svg[' + item.name + '-attr]');
   }
 
-  generateChallengeItems();
+  // show the start icon and let the user manually start the activity
+  resultDivElem.fadeIn(300);
+  modalPanel.dialog(dialogOptions);
 });
 
 function generateChallengeItems() {
@@ -33,15 +35,15 @@ function generateChallengeItems() {
 function playShowItemAudio() {
   resetObjects(false, true);
 
-  $modalPanel.dialog(dialogOptions);
+  modalPanel.dialog(dialogOptions);
   let playingBodyPartAudio = new Audio(itemAudioFilePath);
   playingBodyPartAudio.addEventListener('ended', function(){
-    $resultDivElem.hide();
-    $modalPanel.dialog('close');
+    resultDivElem.hide();
+    modalPanel.dialog('close');
   });
   playingAudios[playingAudios.length] = playingBodyPartAudio;
-  $resultDivElem.find('img').attr('src', '../img/show.svg');
-  $resultDivElem.fadeIn(300);
+  resultDivElem.find('img').attr('src', '../img/show.svg');
+  resultDivElem.fadeIn(300);
   let playingShowAudio = new Audio('../sounds/show.ogg');
   playingAudios[playingAudios.length] = playingShowAudio;
   playingShowAudio.addEventListener('ended', function(){
@@ -59,13 +61,13 @@ function playShowItemAudio() {
   playingShowAudio.play();
 
   if (!showItemSoundInterval) {
-    showItemSoundInterval = setInterval(playShowItemAudio, 8000);
+    showItemSoundInterval = setInterval(playShowItemAudio, commandRepeatInterval);
   }
 }
 
 function resetItemElems() {
   for (let i = 0; i < svgElems.length; i++) {
     let $svgElem = svgElems[i];
-    $svgElem.unbind('click');
+    $svgElem.off('click');
   }
 }
