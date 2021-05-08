@@ -1,4 +1,4 @@
-let object1Elem, object2Elem;
+let object1Elem, object2Elem; // TODO : create an array to dynamically hold the elements based on the level (number of distractors)
 let prevRnd1, prevRnd2;
 
 $('body').load('objectBody.inc');

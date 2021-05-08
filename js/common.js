@@ -63,16 +63,6 @@ function checkValidAnswer(isValidAnswer) {
   }
 }
 
-function resetSounds() {
-  window.clearInterval(showItemSoundInterval);
-  showItemSoundInterval = null;
-  for (let i = 0; i < playingAudios.length; i++) {
-    let audio = playingAudios[i];
-    audio.pause();
-  }
-  playingAudios = [];
-}
-
 function resetObjects(alsoResetSounds, alsoResetPlayingAudiosArray) {
   resetItemElems();
 
@@ -83,4 +73,14 @@ function resetObjects(alsoResetSounds, alsoResetPlayingAudiosArray) {
   if (alsoResetSounds) {
     resetSounds();
   }
+}
+
+function resetSounds() {
+  window.clearInterval(showItemSoundInterval);
+  showItemSoundInterval = null;
+  for (let i = 0; i < playingAudios.length; i++) {
+    let audio = playingAudios[i];
+    audio.pause();
+  }
+  playingAudios = [];
 }
