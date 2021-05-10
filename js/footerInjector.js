@@ -4,4 +4,4 @@ let footer = `
     </footer>
 `;
 
-$('body').append(footer);
+jQuery('body').append(footer);

@@ -1,4 +1,4 @@
-const infoPanel = $('#infoPanel');
+const infoPanel = jQuery('#infoPanel');
 let pgLocationMsg = parseDynamicJsString(infoPanel.attr('pgLocationMsg'));
 let pgDescriptionMsg = parseDynamicJsString(infoPanel.attr('pgDescriptionMsg'));
 

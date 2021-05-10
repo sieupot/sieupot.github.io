@@ -1,12 +1,12 @@
-$('body').load('objectBody.inc');
+jQuery('body').load('objectBody.inc');
 
 // on page load call generate 2 objects (first time the page is displayed)
 function go() {
   // function declared in each objects related file
   initObjects();
 
-  modalPanel = $('#dialogDiv');
-  resultDivElem = $('div.result');
+  modalPanel = jQuery('#dialogDiv');
+  resultDivElem = jQuery('div.result');
 
   initContainerElements();
 

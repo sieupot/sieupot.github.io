@@ -43,7 +43,7 @@ const initContainerElements = function () {
   // inject item containing divs into the page and create the JQUERY objectElements
   for (i = 1; i <= nbDistractors; i++) {
     let itemContainerId = `itemContainer${i}`;
-    $('#contentPanel').append(`<div id="${itemContainerId}" class="object pointerCursor"></div>`);
+    jQuery('#contentPanel').append(`<div id="${itemContainerId}" class="object pointerCursor"></div>`);
 
     let objElem = jQuery(`#${itemContainerId}`);
     activityObjElemArray.push(objElem);
@@ -64,8 +64,8 @@ function checkValidAnswer(isValidAnswer) {
       generateChallengeItems();
     });
     playingCorrectAnswerAudio.play();
-    $('#scoreGood > div').html(rightAnswers);
-    $('#scoreGood').effect('highlight', {color: '#acffa3'}, 500)
+    jQuery('#scoreGood > div').html(rightAnswers);
+    jQuery('#scoreGood').effect('highlight', {color: '#acffa3'}, 500)
   } else {
     wrongAnswers++;
     resultDivElem.find('img').attr('src', '../img/sadFace.png');
@@ -77,8 +77,8 @@ function checkValidAnswer(isValidAnswer) {
     });
     playingWrongAnswerAudio.play();
     playingAudios[playingAudios.length] = playingWrongAnswerAudio;
-    $('#scoreBad > div').html(wrongAnswers);
-    $('#scoreBad').effect('highlight', {color: '#ff9c9c'}, 500);
+    jQuery('#scoreBad > div').html(wrongAnswers);
+    jQuery('#scoreBad').effect('highlight', {color: '#ff9c9c'}, 500);
   }
 }
 
