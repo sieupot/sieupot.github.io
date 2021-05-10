@@ -1,58 +1,59 @@
 <!doctype html>
 <html class="no-js" lang="">
 
-<head>
-  <meta charset="utf-8">
-  <title>Arata Forme</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8">
+    <title>Arata Forme</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="apple-touch-icon" href="/icon.png">
-  <!-- Place favicon.ico in the root directory -->
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" href="/icon.png">
+    <!-- Place favicon.ico in the root directory -->
 
-  <link rel="stylesheet" href="../css/normalize.css">
-  <link rel="stylesheet" href="../css/main.css">
-  <link rel="stylesheet" href="../css/pageLayout.css">
-  <link rel="stylesheet" href="../css/shapes.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/pageLayout.css">
+    <link rel="stylesheet" href="../css/objects.css">
 
-  <meta name="theme-color" content="#EFE7E0">
+    <meta name="theme-color" content="#EFE7E0">
 
-  <script defer src="../js/lib/modernizr-3.8.0.min.js"></script>
-  <script defer src="../js/lib/jquery-3.4.1.min.js"></script>
-  <script defer src="../js/lib/jquery-ui-1.12.1.min.js"></script>
-  <script defer src="../js/common.js"></script>
-  <script defer src="../js/shapes.js"></script>
-  <!-- inject the template footer into the page -->
-  <script defer src="../js/footerInjector.js"></script>
-</head>
+    <script defer src="../js/lib/modernizr-3.8.0.min.js"></script>
+    <script defer src="../js/lib/jquery.min.js"></script>
+    <script defer src="../js/lib/jquery-ui-1.12.1.min.js"></script>
 
-<body>
-  <div id="content">
-    <div id="dialogDiv"></div>
-    <div class="result">
-      <img src="../img/start.svg" alt="result image" onclick="startActivity();" style="height: 100%;" class="pointerCursor"/>
-    </div>
-    <div id="contentPanel">
-      <div id="shape1" class="shape">
-        <div class=""></div>
-      </div>
-      <div id="shape2" class="shape">
-        <div class=""></div>
-      </div>
+    <script defer src="../js/common.js"></script>
+    <script defer src="../js/utils.js"></script>
+    <script defer src="../js/objects.js"></script>
+    <script type="text/javascript">
+      function initObjects(){
+        const sndPath = "../sounds/objects/shapes/";
+        const imgPath = "../img/objects/shapes/";
+        items = [
+                {name: 'square', imagePath: imgPath + 'square.png', audioPath: sndPath + 'square.ogg'},
+                {name: 'square', imagePath: imgPath + 'square1.png', audioPath: sndPath + 'square.ogg'},
+                {name: 'square', imagePath: imgPath + 'square2.png', audioPath: sndPath + 'square.ogg'},
+                {name: 'rectangle', imagePath: imgPath + 'rectangle.png', audioPath: sndPath + 'rectangle.ogg'},
+                {name: 'rectangle', imagePath: imgPath + 'rectangle1.png', audioPath: sndPath + 'rectangle.ogg'},
+                {name: 'rectangle', imagePath: imgPath + 'rectangle2.png', audioPath: sndPath + 'rectangle.ogg'},
+                {name: 'circle', imagePath: imgPath + 'circle.png', audioPath: sndPath + 'circle.ogg'},
+                {name: 'circle', imagePath: imgPath + 'circle1.png', audioPath: sndPath + 'circle.ogg'},
+                {name: 'circle', imagePath: imgPath + 'circle2.png', audioPath: sndPath + 'circle.ogg'},
+                {name: 'triangle', imagePath: imgPath + 'triangle.png', audioPath: sndPath + 'triangle.ogg'},
+                {name: 'triangle', imagePath: imgPath + 'triangle1.png', audioPath: sndPath + 'triangle.ogg'},
+                {name: 'triangle', imagePath: imgPath + 'triangle2.png', audioPath: sndPath + 'triangle.ogg'},
+                {name: 'star', imagePath: imgPath + 'star.png', audioPath: sndPath + 'star.ogg'},
+                {name: 'star', imagePath: imgPath + 'star1.png', audioPath: sndPath + 'star.ogg'},
+                {name: 'star', imagePath: imgPath + 'star2.png', audioPath: sndPath + 'star.ogg'},
+                {name: 'diamond', imagePath: imgPath + 'diamond.png', audioPath: sndPath + 'diamond.ogg'},
+                {name: 'diamond', imagePath: imgPath + 'diamond1.png', audioPath: sndPath + 'diamond.ogg'},
+                {name: 'diamond', imagePath: imgPath + 'diamond2.png', audioPath: sndPath + 'diamond.ogg'}
+        ]
+      }
+    </script>
+  </head>
 
-      <div id="scorePanel">
-        <div id="scoreGood">
-          <img src="../img/smileFace.png" alt="good answers" style="height: 25px;"/>
-          <div>0</div>
-        </div>
-        <div id="scoreBad">
-          <img src="../img/sadFace.png" alt="bad answers" style="height: 25px;"/>
-          <div>0</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-
+  <body>
+  <!--  content is injected by JavaScript in objects.js-->
+  </body>
 </html>

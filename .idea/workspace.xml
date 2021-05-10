@@ -5,10 +5,35 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="manually launch an activity">
+    <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="getting ready to handle distractors based on user level selection">
+      <change afterPath="$PROJECT_DIR$/img/objects/shapes/circle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/shapes/diamond.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/shapes/rectangle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/shapes/square.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/shapes/star.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/shapes/triangle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/lib/jquery.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/pageLayout.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/pageLayout.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/shapes.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/colors.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/colors.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/common.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/objects.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/objects.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shapes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/animalsTamed.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/animalsTamed.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/colors.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/colors.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/fruits.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/fruits.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/humanBody.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/humanBody.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/objectBody.inc" beforeDir="false" afterPath="$PROJECT_DIR$/pages/objectBody.inc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/shapes.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shapes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/vegetables.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/vegetables.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/selActivity.html" beforeDir="false" afterPath="$PROJECT_DIR$/selActivity.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sounds/shapes/circle.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/objects/shapes/circle.ogg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sounds/shapes/diamond.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/objects/shapes/diamond.ogg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sounds/shapes/rectangle.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/objects/shapes/rectangle.ogg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sounds/shapes/square.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/objects/shapes/square.ogg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sounds/shapes/star.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/objects/shapes/star.ogg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sounds/shapes/triangle.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/objects/shapes/triangle.ogg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,11 +94,11 @@
       <recent name="G:\Diverse\Kestii Teddy\workspace\SiEuPot\js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/sounds/objects" />
       <recent name="$PROJECT_DIR$/css/fonts" />
       <recent name="$PROJECT_DIR$/css/fonts/poppins/acumin-pro" />
       <recent name="$PROJECT_DIR$/img/app" />
       <recent name="G:\Diverse\Kestii Teddy\workspace\SiEuPot\pages\common" />
-      <recent name="G:\Diverse\Kestii Teddy\workspace\SiEuPot\img\objects" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html">
@@ -138,7 +163,9 @@
       <workItem from="1620313145120" duration="346000" />
       <workItem from="1620313559828" duration="1848000" />
       <workItem from="1620482272727" duration="24000" />
-      <workItem from="1620482364526" duration="261000" />
+      <workItem from="1620482364526" duration="367000" />
+      <workItem from="1620539228734" duration="3088000" />
+      <workItem from="1620625755142" duration="21875000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1589000180842</created>
@@ -434,7 +461,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620395095137</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="getting ready to handle distractors based on user level selection">
+      <created>1620482720508</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1620482720508</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -457,7 +491,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="fixed js refresh (REFRESH message no longer needed as refresh is done automatically)" />
     <MESSAGE value="copyright footer" />
     <MESSAGE value="Added images for objects and started the refactoring process." />
     <MESSAGE value="added sounds and fruits activity" />
@@ -482,7 +515,8 @@
     <MESSAGE value="ticket #2: Redesign the landing page according to the UI/UX design proposal:&#10;- 404 page change" />
     <MESSAGE value="nothing" />
     <MESSAGE value="manually launch an activity" />
-    <option name="LAST_COMMIT_MESSAGE" value="manually launch an activity" />
+    <MESSAGE value="getting ready to handle distractors based on user level selection" />
+    <option name="LAST_COMMIT_MESSAGE" value="getting ready to handle distractors based on user level selection" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

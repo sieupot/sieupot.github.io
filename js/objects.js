@@ -1,6 +1,3 @@
-let object1Elem, object2Elem; // TODO : create an array to dynamically hold the elements based on the level (number of distractors)
-let prevRnd1, prevRnd2;
-
 $('body').load('objectBody.inc');
 
 // on page load call generate 2 objects (first time the page is displayed)
@@ -11,70 +8,55 @@ function go() {
   modalPanel = $('#dialogDiv');
   resultDivElem = $('div.result');
 
+  initContainerElements();
+
   // show the start icon and let the user manually start the activity
   resultDivElem.fadeIn(300);
   modalPanel.dialog(dialogOptions);
 }
 
 function generateChallengeItems() {
-  // randomly find 2 objects to be displayed, from the list of available objects
-  let rnd1, rnd2;
-  let object1, object2;
-  do {
-    rnd1 = Math.floor((Math.random() * items.length));
-    rnd2 = Math.floor((Math.random() * items.length));
-    object1 = items[rnd1];
-    object2 = items[rnd2];
-  } while(rnd1 === rnd2 || rnd1 === prevRnd1 || rnd2 === prevRnd2 || object1.name === object2.name);
-  prevRnd1 = rnd1;
-  prevRnd2 = rnd2;
-  object1Elem = $('#contentPanel > #object1');
-  object2Elem = $('#contentPanel > #object2');
-  // display the 2 objects
-  object1Elem.css('background-image', 'url(' + object1.imagePath + ')');
-  object2Elem.css('background-image', 'url(' + object2.imagePath + ')');
-  validItemIndex = Math.random() < 0.5;
-  itemAudioFilePath = validItemIndex ? object1.audioPath : object2.audioPath;
+  let answerOptionValues = []; // [true, false, (false)..]
+  for (i = 0; i < nbDistractors; i++) {
+    answerOptionValues.push(!answerOptionValues.length || answerOptionValues.length === 0);
+  }
+
+  // generate the containing DOM elements
+  let currSelectedObjects = []; // objects selected in the current iteration of the activity
+  for (let objElem of activityObjElemArray) {
+    // randomly determine whether this is the correct answer or not
+    const answerOptionIndex = Math.floor(Math.random() * answerOptionValues.length);
+    let isCorrectAnswer = answerOptionValues[answerOptionIndex]; // true or false
+    answerOptionValues.splice(answerOptionIndex, 1); // remove the selected answer from the array
+
+    // unbind previously bound click handler
+    objElem.off('click');
+    // bind the onclick event function
+    objElem.click(function () {
+      checkValidAnswer(isCorrectAnswer);
+    });
+
+    // randomly find "nbDistractors" objects to be displayed, from the list of available objects
+    let item;
+    while (true) {
+      item = items[Math.floor((Math.random() * items.length))];
+
+      // make sure it was neither selected in the previous iteration, nor in the current iteration
+      if (!currSelectedObjects.some(cso => cso.name === item.name)/* && !prevSelectedItems.some(pso => pso.name === item.name)*/) {
+        currSelectedObjects.push(item);
+        break;
+      }
+    }
+
+    // display the object
+    objElem.css('background-image', 'url(' + item.imagePath + ')');
+    objElem.removeClass().addClass('object pointerCursor');
+    if (isCorrectAnswer) {
+      itemAudioFilePath = item.audioPath;
+    }
+
+  }
+  prevSelectedItems = currSelectedObjects;
 
   playShowItemAudio();
-}
-
-function playShowItemAudio() {
-  resetObjects(false, true);
-
-  modalPanel.dialog(dialogOptions);
-  let playingObjectTypeAudio = new Audio(itemAudioFilePath);
-  playingObjectTypeAudio.addEventListener('ended', function(){
-    resultDivElem.hide();
-    modalPanel.dialog('close');
-  });
-  playingAudios[playingAudios.length] = playingObjectTypeAudio;
-  resultDivElem.find('img').attr('src','../img/show.svg');
-  resultDivElem.fadeIn(300);
-  let playingShowAudio = new Audio('../sounds/show.ogg');
-  playingAudios[playingAudios.length] = playingShowAudio;
-  playingShowAudio.addEventListener('ended', function(){
-    playingObjectTypeAudio.addEventListener('ended', function(){
-      // bind the onclick event function
-      object1Elem.addClass('pointerCursor');
-      object2Elem.addClass('pointerCursor');
-      object1Elem.click(function() {
-        checkValidAnswer(validItemIndex);
-      });
-      object2Elem.click(function() {
-        checkValidAnswer(!validItemIndex);
-      });
-    });
-    playingObjectTypeAudio.play();
-  });
-  playingShowAudio.play();
-
-  if (!showItemSoundInterval) {
-    showItemSoundInterval = setInterval(playShowItemAudio, commandRepeatInterval);
-  }
-}
-
-function resetItemElems(){
-  object1Elem.off('click').removeClass('pointerCursor');
-  object2Elem.off('click').removeClass('pointerCursor');
 }
