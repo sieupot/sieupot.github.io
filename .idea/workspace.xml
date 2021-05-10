@@ -5,35 +5,26 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="getting ready to handle distractors based on user level selection">
-      <change afterPath="$PROJECT_DIR$/img/objects/shapes/circle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/objects/shapes/diamond.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/objects/shapes/rectangle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/objects/shapes/square.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/objects/shapes/star.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/objects/shapes/triangle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/lib/jquery.min.js" afterDir="false" />
+    <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="forward level number to activity pages">
+      <change afterPath="$PROJECT_DIR$/img/objects/shapes/circle1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/shapes/circle2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/shapes/diamond1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/shapes/diamond2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/shapes/rectangle1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/shapes/rectangle2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/shapes/square1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/shapes/square2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/shapes/star1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/shapes/star2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/shapes/triangle1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/objects/shapes/triangle2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/pageLayout.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/pageLayout.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/shapes.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/colors.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/colors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/objects.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/objects.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/shapes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/animalsTamed.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/animalsTamed.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/colors.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/colors.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/fruits.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/fruits.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/humanBody.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/humanBody.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/objectBody.inc" beforeDir="false" afterPath="$PROJECT_DIR$/pages/objectBody.inc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/shapes.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shapes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/vegetables.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/vegetables.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/selActivity.html" beforeDir="false" afterPath="$PROJECT_DIR$/selActivity.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/shapes/circle.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/objects/shapes/circle.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/shapes/diamond.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/objects/shapes/diamond.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/shapes/rectangle.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/objects/shapes/rectangle.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/shapes/square.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/objects/shapes/square.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/shapes/star.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/objects/shapes/star.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/shapes/triangle.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/objects/shapes/triangle.ogg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/objects/shapes/circle.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/objects/shapes/circle.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/objects/shapes/diamond.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/objects/shapes/diamond.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/objects/shapes/rectangle.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/objects/shapes/rectangle.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/objects/shapes/square.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/objects/shapes/square.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/objects/shapes/star.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/objects/shapes/star.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/objects/shapes/triangle.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/objects/shapes/triangle.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
