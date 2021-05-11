@@ -5,13 +5,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="forward level number to activity pages">
+    <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="Make activities level-aware #9&#10;- migrated the Human Body">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/colors.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/colors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/footerInjector.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/footerInjector.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/humanBody.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/humanBody.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/selActivity.html" beforeDir="false" afterPath="$PROJECT_DIR$/selActivity.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/fruits.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/fruits.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +56,7 @@
     <property name="js.last.introduce.type" value="CONST" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/img" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -144,6 +140,8 @@
       <workItem from="1620482364526" duration="367000" />
       <workItem from="1620539228734" duration="3088000" />
       <workItem from="1620625755142" duration="21875000" />
+      <workItem from="1620716040885" duration="152000" />
+      <workItem from="1620716463585" duration="59000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1589000180842</created>
@@ -446,7 +444,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620482720508</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Make activities level-aware #9&#10;- migrated the Human Body">
+      <created>1620672970924</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1620672970924</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -469,7 +474,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="copyright footer" />
     <MESSAGE value="Added images for objects and started the refactoring process." />
     <MESSAGE value="added sounds and fruits activity" />
     <MESSAGE value="added vegetables activity and objects &quot;template&quot;" />
@@ -494,7 +498,8 @@
     <MESSAGE value="nothing" />
     <MESSAGE value="manually launch an activity" />
     <MESSAGE value="getting ready to handle distractors based on user level selection" />
-    <option name="LAST_COMMIT_MESSAGE" value="getting ready to handle distractors based on user level selection" />
+    <MESSAGE value="Make activities level-aware #9&#10;- migrated the Human Body" />
+    <option name="LAST_COMMIT_MESSAGE" value="Make activities level-aware #9&#10;- migrated the Human Body" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
