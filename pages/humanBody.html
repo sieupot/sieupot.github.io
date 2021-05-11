@@ -26,6 +26,21 @@
   <script defer src="../js/humanBody.js"></script>
   <!-- inject the template footer into the page -->
   <script defer src="../js/footerInjector.js"></script>
+  <script type="text/javascript">
+    function initItems(){
+      const sndPath = "../sounds/humanBody/";
+      items = [
+              {name: 'head', audioPath: sndPath + 'head.ogg'},
+              {name: 'shoulders', audioPath: sndPath + 'shoulders.ogg'},
+              {name: 'arms', audioPath: sndPath + 'arms.ogg'},
+              {name: 'palms', audioPath: sndPath + 'palms.ogg'},
+              {name: 'chest', audioPath: sndPath + 'chest.ogg'},
+              {name: 'belly', audioPath: sndPath + 'belly.ogg'},
+              {name: 'legs', audioPath: sndPath + 'legs.ogg'},
+              {name: 'knees', audioPath: sndPath + 'knees.ogg'},
+      ]
+    }
+  </script>
 </head>
 
 <body>

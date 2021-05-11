@@ -5,9 +5,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="Make activities level-aware #9&#10;- migrated the Human Body">
+    <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="Make activities level-aware #9&#10;- issue fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/colors.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/colors.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/colors.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/colors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/humanBody.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/humanBody.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/objects.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/objects.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/animalsTamed.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/animalsTamed.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/colors.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/colors.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/fruits.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/fruits.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/humanBody.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/humanBody.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/shapes.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shapes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/vegetables.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/vegetables.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +151,7 @@
       <workItem from="1620539228734" duration="3088000" />
       <workItem from="1620625755142" duration="21875000" />
       <workItem from="1620716040885" duration="152000" />
-      <workItem from="1620716463585" duration="59000" />
+      <workItem from="1620716463585" duration="7670000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1589000180842</created>
@@ -451,7 +461,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620672970924</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Make activities level-aware #9&#10;- issue fixes">
+      <created>1620716661826</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1620716661826</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -474,7 +491,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Added images for objects and started the refactoring process." />
     <MESSAGE value="added sounds and fruits activity" />
     <MESSAGE value="added vegetables activity and objects &quot;template&quot;" />
     <MESSAGE value="redesign" />
@@ -499,7 +515,8 @@
     <MESSAGE value="manually launch an activity" />
     <MESSAGE value="getting ready to handle distractors based on user level selection" />
     <MESSAGE value="Make activities level-aware #9&#10;- migrated the Human Body" />
-    <option name="LAST_COMMIT_MESSAGE" value="Make activities level-aware #9&#10;- migrated the Human Body" />
+    <MESSAGE value="Make activities level-aware #9&#10;- issue fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Make activities level-aware #9&#10;- issue fixes" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

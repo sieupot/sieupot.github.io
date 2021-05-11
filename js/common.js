@@ -26,8 +26,31 @@ const dialogOptions = {
 let modalPanel;
 let resultDivElem;
 
+const initActivity = function (itemClass = 'object') {
+  modalPanel = jQuery('#dialogDiv');
+  resultDivElem = jQuery('div.result');
+
+  // what level is this? Init number of distractors used to render the number of activity items
+  nbDistractors = Number(getUrlParameter('l'));
+  nbDistractors = (!nbDistractors || nbDistractors > 3) ? 2 : nbDistractors + 1;
+
+  // INIT CONTAINER ELEMENTS: inject item containing divs into the page and create the JQUERY objectElements
+  for (i = 1; i <= nbDistractors; i++) {
+    let itemContainerId = `itemContainer${i}`;
+    jQuery('#contentPanel').append(`<div id="${itemContainerId}" class="${itemClass} pointerCursor"></div>`);
+
+    let objElem = jQuery(`#${itemContainerId}`);
+    activityObjElemArray.push(objElem);
+  }
+
+  // show the start icon and let the user manually start the activity
+  resultDivElem.fadeIn(300);
+  modalPanel.dialog(dialogOptions);
+}
+
+
 /**
- * starts the activity
+ * triggered when the user manually chooses to start the activity
  */
 const startActivity = function () {
   resultDivElem.find('img').removeAttr('onclick').removeClass('pointerCursor');
@@ -35,22 +58,21 @@ const startActivity = function () {
   generateChallengeItems();
 }
 
-const initContainerElements = function () {
-  // what level is this?
-  nbDistractors = Number(getUrlParameter('l'));
-  nbDistractors = (!nbDistractors || nbDistractors > 3) ? 2 : nbDistractors + 1;
-
-  // inject item containing divs into the page and create the JQUERY objectElements
-  for (i = 1; i <= nbDistractors; i++) {
-    let itemContainerId = `itemContainer${i}`;
-    jQuery('#contentPanel').append(`<div id="${itemContainerId}" class="object pointerCursor"></div>`);
-
-    let objElem = jQuery(`#${itemContainerId}`);
-    activityObjElemArray.push(objElem);
+const getAnswerOptions = function() {
+  let answerOptionValues = []; // [true, false, (false)..]
+  for (i = 0; i < nbDistractors; i++) {
+    answerOptionValues.push(!answerOptionValues.length || answerOptionValues.length === 0);
   }
+ return answerOptionValues;
+}
+const extractAnswerOption = function(answerOptionValues) {
+  const answerOptionIndex = Math.floor(Math.random() * answerOptionValues.length);
+  let isCorrectAnswer = answerOptionValues[answerOptionIndex]; // true or false
+  answerOptionValues.splice(answerOptionIndex, 1); // remove the selected answer from the array
+  return isCorrectAnswer;
 }
 
-function checkValidAnswer(isValidAnswer) {
+const checkValidAnswer = function(isValidAnswer) {
   resetObjects();
   modalPanel.dialog(dialogOptions);
   if (isValidAnswer) {
@@ -82,12 +104,12 @@ function checkValidAnswer(isValidAnswer) {
   }
 }
 
-function resetObjects() {
+const resetObjects = function() {
   playingAudios = [];
   resetSounds();
 }
 
-function resetSounds() {
+const resetSounds = function() {
   window.clearInterval(showItemSoundInterval);
   showItemSoundInterval = null;
   playingAudios = [];
@@ -97,7 +119,7 @@ function resetSounds() {
   }*/
 }
 
-function playShowItemAudio() {
+const playShowItemAudio = function() {
   resetObjects();
 
   modalPanel.dialog(dialogOptions);
