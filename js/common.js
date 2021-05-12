@@ -60,7 +60,7 @@ const startActivity = function () {
 
 const getAnswerOptions = function() {
   let answerOptionValues = []; // [true, false, (false)..]
-  for (i = 0; i < nbDistractors; i++) {
+  for (i = 0; i < activityObjElemArray.length; i++) {
     answerOptionValues.push(!answerOptionValues.length || answerOptionValues.length === 0);
   }
  return answerOptionValues;

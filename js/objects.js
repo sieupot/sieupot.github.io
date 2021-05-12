@@ -1,12 +1,4 @@
-jQuery('body').load('objectBody.inc');
-
-// called on page load
-function go() {
-  // function declared in each object's related file
-  initItems();
-
-  initActivity();
-}
+jQuery('body').load('objectBody.inc.html');
 
 function generateChallengeItems() {
   let answerOptionValues = getAnswerOptions(); // [true, false, (false)..]
@@ -15,7 +7,7 @@ function generateChallengeItems() {
   let currSelectedObjects = []; // objects selected in the current iteration of the activity
   for (let objElem of activityObjElemArray) {
     // randomly determine whether this is the correct answer or not
-    let isCorrectAnswer = extractAnswerOption(answerOptionValues);
+    const isCorrectAnswer = extractAnswerOption(answerOptionValues);
 
     // randomly find "nbDistractors" objects to be displayed, from the list of available objects
     let item;

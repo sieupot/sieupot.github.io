@@ -1,0 +1,48 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="apple-touch-icon" href="/icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/pageLayout.css">
+  <link rel="stylesheet" href="../css/objects.css">
+
+  <meta name="theme-color" content="#EFE7E0">
+
+  <script defer src="../js/common.js"></script>
+  <script defer src="../js/utils.js"></script>
+</head>
+
+<div id="content">
+  <div id="dialogDiv"></div>
+  <div class="result">
+    <img src="../img/start.svg" alt="result image" onclick="startActivity();" style="height: 100%;" class="pointerCursor"/>
+  </div>
+  <div id="contentPanel">
+  </div>
+</div>
+<div id="scorePanel">
+  <div id="scoreGood" class="score">
+    <img src="../img/smileFace.png" alt="good answers"/>
+    <div>0</div>
+  </div>
+  <div id="scoreBad" class="score">
+    <img src="../img/sadFace.png" alt="bad answers"/>
+    <div>0</div>
+  </div>
+</div>
+
+<script src="../js/footerInjector.js"></script>
+
+<script type="text/javascript">
+  // on page load
+  jQuery(() => {
+    // function declared in each object's related file
+    initItems();
+
+    initActivity();
+  });
+</script>

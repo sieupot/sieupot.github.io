@@ -8,9 +8,8 @@ jQuery(() => {
   modalPanel = jQuery('#dialogDiv');
   resultDivElem = jQuery('div.result');
 
-  for (let i = 0; i < items.length; i++) {
-    let item = items[i];
-    activityObjElemArray[i] = jQuery('svg[' + item.name + '-attr]');
+  for (const item of items) {
+    activityObjElemArray.push(jQuery('svg[' + item.name + '-attr]'));
   }
 
   // show the start icon and let the user manually start the activity

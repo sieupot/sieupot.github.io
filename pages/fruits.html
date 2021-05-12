@@ -5,56 +5,43 @@
     <meta charset="utf-8">
     <title>Arata Fructe</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="apple-touch-icon" href="/icon.png">
-    <!-- Place favicon.ico in the root directory -->
-
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/pageLayout.css">
-    <link rel="stylesheet" href="../css/objects.css">
-
-    <meta name="theme-color" content="#EFE7E0">
 
     <script defer src="../js/lib/modernizr-3.8.0.min.js"></script>
     <script defer src="../js/lib/jquery.min.js"></script>
     <script defer src="../js/lib/jquery-ui-1.12.1.min.js"></script>
 
-    <script defer src="../js/common.js"></script>
-    <script defer src="../js/utils.js"></script>
     <script defer src="../js/objects.js"></script>
+
     <script type="text/javascript">
       function initItems(){
         const sndPath = "../sounds/objects/fruits/";
         const imgPath = "../img/objects/fruits/";
-        items = [{name: 'apple', imagePath: imgPath + 'apple1.jpg', audioPath: sndPath + 'apple.ogg'},
-                   {name: 'apple', imagePath: imgPath + 'apple2.jpg', audioPath: sndPath + 'apple.ogg'},
-                   {name: 'apple', imagePath: imgPath + 'apple3.jpg', audioPath: sndPath + 'apple.ogg'},
-                   {name: 'apple', imagePath: imgPath + 'apple4.jpg', audioPath: sndPath + 'apple.ogg'},
-                   {name: 'apple', imagePath: imgPath + 'apple5.jpg', audioPath: sndPath + 'apple.ogg'},
-                   {name: 'apple', imagePath: imgPath + 'apple6.jpg', audioPath: sndPath + 'apple.ogg'},
-                   {name: 'apple', imagePath: imgPath + 'apple7.jpg', audioPath: sndPath + 'apple.ogg'},
-                   {name: 'apple', imagePath: imgPath + 'apple8.jpg', audioPath: sndPath + 'apple.ogg'},
-                   {name: 'apricot', imagePath: imgPath + 'apricot1.jpg', audioPath: sndPath + 'apricot.ogg'},
-                   {name: 'banana', imagePath: imgPath + 'banana1.jpg', audioPath: sndPath + 'banana.ogg'},
-                   {name: 'cherry', imagePath: imgPath + 'cherry1.jpg', audioPath: sndPath + 'cherry.ogg'},
-                   {name: 'grape', imagePath: imgPath + 'grape1.jpg', audioPath: sndPath + 'grape.ogg'},
-                   {name: 'grapefruit', imagePath: imgPath + 'grapefruit1.jpg', audioPath: sndPath + 'grapefruit.ogg'},
-                   {name: 'kiwi', imagePath: imgPath + 'kiwi1.jpg', audioPath: sndPath + 'kiwi.ogg'},
-                   {name: 'lemon', imagePath: imgPath + 'lemon1.jpg', audioPath: sndPath + 'lemon.ogg'},
-                   {name: 'melon', imagePath: imgPath + 'melon1.jpg', audioPath: sndPath + 'melon.ogg'},
-                   {name: 'orange', imagePath: imgPath + 'orange1.jpg', audioPath: sndPath + 'orange.ogg'},
-                   {name: 'peach', imagePath: imgPath + 'peach1.jpg', audioPath: sndPath + 'peach.ogg'},
-                   {name: 'peach', imagePath: imgPath + 'peach2.jpg', audioPath: sndPath + 'peach.ogg'},
-                   {name: 'pear', imagePath: imgPath + 'pear1.jpg', audioPath: sndPath + 'pear.ogg'},
-                   {name: 'pineapple', imagePath: imgPath + 'pineapple1.jpg', audioPath: sndPath + 'pineapple.ogg'},
-                   {name: 'plum', imagePath: imgPath + 'plum1.jpg', audioPath: sndPath + 'plum.ogg'},
-                   {name: 'strawberry', imagePath: imgPath + 'strawberry1.jpg', audioPath: sndPath + 'strawberry.ogg'},
-                   {name: 'watermelon', imagePath: imgPath + 'watermelon1.jpg', audioPath: sndPath + 'watermelon.ogg'},
+        items = [
+                 {name: 'apple', imagePath: imgPath + 'apple1.jpg', audioPath: sndPath + 'apple.ogg'},
+                 {name: 'apple', imagePath: imgPath + 'apple2.jpg', audioPath: sndPath + 'apple.ogg'},
+                 {name: 'apple', imagePath: imgPath + 'apple3.jpg', audioPath: sndPath + 'apple.ogg'},
+                 {name: 'apple', imagePath: imgPath + 'apple4.jpg', audioPath: sndPath + 'apple.ogg'},
+                 {name: 'apple', imagePath: imgPath + 'apple5.jpg', audioPath: sndPath + 'apple.ogg'},
+                 {name: 'apple', imagePath: imgPath + 'apple6.jpg', audioPath: sndPath + 'apple.ogg'},
+                 {name: 'apple', imagePath: imgPath + 'apple7.jpg', audioPath: sndPath + 'apple.ogg'},
+                 {name: 'apple', imagePath: imgPath + 'apple8.jpg', audioPath: sndPath + 'apple.ogg'},
+                 {name: 'apricot', imagePath: imgPath + 'apricot1.jpg', audioPath: sndPath + 'apricot.ogg'},
+                 {name: 'banana', imagePath: imgPath + 'banana1.jpg', audioPath: sndPath + 'banana.ogg'},
+                 {name: 'cherry', imagePath: imgPath + 'cherry1.jpg', audioPath: sndPath + 'cherry.ogg'},
+                 {name: 'grape', imagePath: imgPath + 'grape1.jpg', audioPath: sndPath + 'grape.ogg'},
+                 {name: 'grapefruit', imagePath: imgPath + 'grapefruit1.jpg', audioPath: sndPath + 'grapefruit.ogg'},
+                 {name: 'kiwi', imagePath: imgPath + 'kiwi1.jpg', audioPath: sndPath + 'kiwi.ogg'},
+                 {name: 'lemon', imagePath: imgPath + 'lemon1.jpg', audioPath: sndPath + 'lemon.ogg'},
+                 {name: 'melon', imagePath: imgPath + 'melon1.jpg', audioPath: sndPath + 'melon.ogg'},
+                 {name: 'orange', imagePath: imgPath + 'orange1.jpg', audioPath: sndPath + 'orange.ogg'},
+                 {name: 'peach', imagePath: imgPath + 'peach1.jpg', audioPath: sndPath + 'peach.ogg'},
+                 {name: 'peach', imagePath: imgPath + 'peach2.jpg', audioPath: sndPath + 'peach.ogg'},
+                 {name: 'pear', imagePath: imgPath + 'pear1.jpg', audioPath: sndPath + 'pear.ogg'},
+                 {name: 'pineapple', imagePath: imgPath + 'pineapple1.jpg', audioPath: sndPath + 'pineapple.ogg'},
+                 {name: 'plum', imagePath: imgPath + 'plum1.jpg', audioPath: sndPath + 'plum.ogg'},
+                 {name: 'strawberry', imagePath: imgPath + 'strawberry1.jpg', audioPath: sndPath + 'strawberry.ogg'},
+                 {name: 'watermelon', imagePath: imgPath + 'watermelon1.jpg', audioPath: sndPath + 'watermelon.ogg'},
         ]
-
       }
     </script>
   </head>
