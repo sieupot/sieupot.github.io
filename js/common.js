@@ -1,11 +1,11 @@
 const commandRepeatInterval = 8000;
 
-let items; // list of available object items for the activity (css class name, image path, audio file name to be played, etc)
+let items; // list of available item items for the activity (css class name, image path, audio file name to be played, etc)
 
 let nbDistractors;
 
-let activityObjElemArray = []; // list of the JQUERY objects actively displayed in the page
-let prevSelectedItems = []; // item objects selected in the previous iteration of the activity
+let activityObjElemArray = []; // list of the JQUERY items actively displayed in the page
+let prevSelectedItems = []; // item items selected in the previous iteration of the activity
 let itemAudioFilePath;
 let showItemSoundInterval;
 let playingAudios = [];
@@ -26,7 +26,7 @@ const dialogOptions = {
 let modalPanel;
 let resultDivElem;
 
-const initActivity = function (itemClass = 'object') {
+const initActivity = function (itemClass = 'item') {
   modalPanel = jQuery('#dialogDiv');
   resultDivElem = jQuery('div.result');
 
@@ -34,7 +34,7 @@ const initActivity = function (itemClass = 'object') {
   nbDistractors = Number(getUrlParameter('l'));
   nbDistractors = (!nbDistractors || nbDistractors > 3) ? 2 : nbDistractors + 1;
 
-  // INIT CONTAINER ELEMENTS: inject item containing divs into the page and create the JQUERY objectElements
+  // INIT CONTAINER ELEMENTS: inject item containing divs into the page and create the JQUERY itemElements
   for (i = 1; i <= nbDistractors; i++) {
     let itemContainerId = `itemContainer${i}`;
     jQuery('#contentPanel').append(`<div id="${itemContainerId}" class="${itemClass} pointerCursor"></div>`);
@@ -73,7 +73,7 @@ const extractAnswerOption = function(answerOptionValues) {
 }
 
 const checkValidAnswer = function(isValidAnswer) {
-  resetObjects();
+  resetItems();
   modalPanel.dialog(dialogOptions);
   if (isValidAnswer) {
     rightAnswers++;
@@ -104,7 +104,7 @@ const checkValidAnswer = function(isValidAnswer) {
   }
 }
 
-const resetObjects = function() {
+const resetItems = function() {
   playingAudios = [];
   resetSounds();
 }
@@ -120,7 +120,7 @@ const resetSounds = function() {
 }
 
 const playShowItemAudio = function() {
-  resetObjects();
+  resetItems();
 
   modalPanel.dialog(dialogOptions);
   let playingItemNameAudio = new Audio(itemAudioFilePath);
