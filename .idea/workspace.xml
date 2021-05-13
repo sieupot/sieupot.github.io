@@ -5,139 +5,54 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="Compress files">
+    <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="ticket #9">
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/bathtub.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/bathtub1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/bathtub2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/bathtub3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/hairbrush.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/hairbrush1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/hairdryer.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/hairdryer1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/hairdryer2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/robe.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/scale.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/scale1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/scale2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/shampoo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/shampoo1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/shampoo2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/shampoo3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/shower.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/shower1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/shower2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/sink.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/sink1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/soap.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/soap1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/soap2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/toilet.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/toilet1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/toilet2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/toiletpaper.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/toiletpaper1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/toiletpaper2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/toothbrush.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/toothbrush1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/toothbrush2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/toothbrush3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/toothbrush5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/toothbrush6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/toothpaste.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/toothpaste1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/toothpaste2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/towel.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/towel1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/towel2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/items/bathroom/towel3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/bathroom.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/objects.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/items.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/animals/tamed/cat1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/animals/tamed/cat1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/animals/tamed/chick1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/animals/tamed/chick1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/animals/tamed/chicken1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/animals/tamed/chicken1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/animals/tamed/cow1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/animals/tamed/cow1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/animals/tamed/dog1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/animals/tamed/dog1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/animals/tamed/duck1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/animals/tamed/duck1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/animals/tamed/duck2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/animals/tamed/duck2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/animals/tamed/goose1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/animals/tamed/goose1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/animals/tamed/horse1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/animals/tamed/horse1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/animals/tamed/pig1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/animals/tamed/pig1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/animals/tamed/rooster1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/animals/tamed/rooster1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/animals/tamed/rooster2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/animals/tamed/rooster2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/animals/tamed/sheep1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/animals/tamed/sheep1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/fruits/apple1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/fruits/apple1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/fruits/apple2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/fruits/apple2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/fruits/apple3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/fruits/apple3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/fruits/apple4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/fruits/apple4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/fruits/apple5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/fruits/apple5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/fruits/apple6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/fruits/apple6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/fruits/apple7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/fruits/apple7.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/fruits/apple8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/fruits/apple8.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/fruits/apricot1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/fruits/apricot1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/fruits/banana1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/fruits/banana1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/fruits/cherry1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/fruits/cherry1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/fruits/grape1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/fruits/grape1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/fruits/grapefruit1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/fruits/grapefruit1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/fruits/kiwi1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/fruits/kiwi1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/fruits/lemon1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/fruits/lemon1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/fruits/melon1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/fruits/melon1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/fruits/orange1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/fruits/orange1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/fruits/peach1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/fruits/peach1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/fruits/peach2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/fruits/peach2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/fruits/pear1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/fruits/pear1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/fruits/pineapple1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/fruits/pineapple1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/fruits/plum1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/fruits/plum1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/fruits/strawberry1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/fruits/strawberry1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/fruits/watermelon1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/fruits/watermelon1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/shapes/circle.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/shapes/circle.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/shapes/circle1.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/shapes/circle1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/shapes/circle2.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/shapes/circle2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/shapes/diamond.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/shapes/diamond.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/shapes/diamond1.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/shapes/diamond1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/shapes/diamond2.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/shapes/diamond2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/shapes/rectangle.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/shapes/rectangle.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/shapes/rectangle1.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/shapes/rectangle1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/shapes/rectangle2.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/shapes/rectangle2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/shapes/square.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/shapes/square.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/shapes/square1.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/shapes/square1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/shapes/square2.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/shapes/square2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/shapes/star.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/shapes/star.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/shapes/star1.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/shapes/star1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/shapes/star2.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/shapes/star2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/shapes/triangle.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/shapes/triangle.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/shapes/triangle1.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/shapes/triangle1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/shapes/triangle2.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/shapes/triangle2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/vegetables/beans1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/vegetables/beans1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/vegetables/broccoli1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/vegetables/broccoli1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/vegetables/cabbage1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/vegetables/cabbage1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/vegetables/carrot1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/vegetables/carrot1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/vegetables/cauliflower1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/vegetables/cauliflower1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/vegetables/cucumber1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/vegetables/cucumber1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/vegetables/eggplant1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/vegetables/eggplant1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/vegetables/garlic1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/vegetables/garlic1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/vegetables/green-beans1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/vegetables/green-beans1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/vegetables/mushroom1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/vegetables/mushroom1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/vegetables/onion1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/vegetables/onion1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/vegetables/paprika1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/vegetables/paprika1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/vegetables/potato1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/vegetables/potato1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/vegetables/pumpkin1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/vegetables/pumpkin1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/vegetables/tomato1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/vegetables/tomato1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/objects/vegetables/zucchini1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/items/vegetables/zucchini1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/colors.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/colors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/objects.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/items.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/animalsTamed.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/animalsTamed.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/fruits.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/fruits.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/objectBody.inc.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_item.inc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/shapes.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shapes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/vegetables.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/vegetables.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/animals/tamed/cat.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/animals/tamed/cat.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/animals/tamed/chick.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/animals/tamed/chick.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/animals/tamed/chicken.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/animals/tamed/chicken.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/animals/tamed/cow.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/animals/tamed/cow.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/animals/tamed/dog.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/animals/tamed/dog.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/animals/tamed/duck.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/animals/tamed/duck.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/animals/tamed/goat.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/animals/tamed/goat.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/animals/tamed/goose.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/animals/tamed/goose.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/animals/tamed/horse.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/animals/tamed/horse.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/animals/tamed/pig.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/animals/tamed/pig.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/animals/tamed/rooster.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/animals/tamed/rooster.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/animals/tamed/sheep.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/animals/tamed/sheep.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/fruits/apple.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/fruits/apple.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/fruits/apricot.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/fruits/apricot.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/fruits/banana.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/fruits/banana.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/fruits/cherry.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/fruits/cherry.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/fruits/grape.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/fruits/grape.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/fruits/grapefruit.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/fruits/grapefruit.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/fruits/kiwi.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/fruits/kiwi.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/fruits/lemon.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/fruits/lemon.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/fruits/melon.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/fruits/melon.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/fruits/orange.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/fruits/orange.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/fruits/peach.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/fruits/peach.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/fruits/pear.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/fruits/pear.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/fruits/pineapple.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/fruits/pineapple.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/fruits/plum.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/fruits/plum.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/fruits/strawberry.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/fruits/strawberry.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/fruits/watermelon.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/fruits/watermelon.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/shapes/circle.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/shapes/circle.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/shapes/diamond.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/shapes/diamond.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/shapes/rectangle.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/shapes/rectangle.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/shapes/square.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/shapes/square.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/shapes/star.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/shapes/star.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/shapes/triangle.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/shapes/triangle.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/vegetables/beans.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/vegetables/beans.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/vegetables/broccoli.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/vegetables/broccoli.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/vegetables/cabbage.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/vegetables/cabbage.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/vegetables/carrot.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/vegetables/carrot.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/vegetables/cauliflower.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/vegetables/cauliflower.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/vegetables/cucumber.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/vegetables/cucumber.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/vegetables/eggplant.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/vegetables/eggplant.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/vegetables/garlic.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/vegetables/garlic.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/vegetables/green-beans.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/vegetables/green-beans.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/vegetables/mushroom.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/vegetables/mushroom.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/vegetables/onion.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/vegetables/onion.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/vegetables/paprika.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/vegetables/paprika.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/vegetables/peas.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/vegetables/peas.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/vegetables/potato.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/vegetables/potato.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/vegetables/pumpkin.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/vegetables/pumpkin.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/vegetables/tomato.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/vegetables/tomato.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sounds/objects/vegetables/zucchini.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/items/vegetables/zucchini.ogg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/selActivity.html" beforeDir="false" afterPath="$PROJECT_DIR$/selActivity.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,18 +99,18 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TypeScript" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pages" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\Diverse\Kestii Teddy\workspace\SiEuPot\pages" />
       <recent name="$PROJECT_DIR$/img" />
       <recent name="$PROJECT_DIR$/js" />
       <recent name="$PROJECT_DIR$/css" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="G:\Diverse\Kestii Teddy\workspace\SiEuPot\js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/sounds/objects" />
