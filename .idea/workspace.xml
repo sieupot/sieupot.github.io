@@ -5,54 +5,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="ticket #9">
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/bathtub.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/bathtub1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/bathtub2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/bathtub3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/hairbrush.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/hairbrush1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/hairdryer.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/hairdryer1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/hairdryer2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/robe.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/scale.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/scale1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/scale2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/shampoo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/shampoo1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/shampoo2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/shampoo3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/shower.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/shower1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/shower2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/sink.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/sink1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/soap.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/soap1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/soap2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/toilet.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/toilet1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/toilet2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/toiletpaper.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/toiletpaper1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/toiletpaper2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/toothbrush.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/toothbrush1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/toothbrush2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/toothbrush3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/toothbrush5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/toothbrush6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/toothpaste.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/toothpaste1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/toothpaste2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/towel.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/towel1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/towel2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/items/bathroom/towel3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/bathroom.html" afterDir="false" />
+    <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="Add more activities #10&#10;- bathroom page and images">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/selActivity.html" beforeDir="false" afterPath="$PROJECT_DIR$/selActivity.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +34,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="a1b498a5-413a-4b86-a427-aa03165481b3" />
+  </component>
   <component name="ProjectId" id="1beivX7ZqXOfyh6wGUYz9p5PtLZ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="false" id="Update" />
@@ -101,7 +58,7 @@
     <property name="js.last.introduce.type" value="CONST" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/pages" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -190,6 +147,7 @@
       <workItem from="1620807875489" duration="3119000" />
       <workItem from="1620885758228" duration="114000" />
       <workItem from="1620887662893" duration="1639000" />
+      <workItem from="1620910148970" duration="75000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1589000180842</created>
@@ -527,7 +485,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620885831833</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Add more activities #10&#10;- bathroom page and images">
+      <created>1620909524839</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1620909524840</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -553,7 +518,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="vegetables sounds" />
     <MESSAGE value="responsive design" />
     <MESSAGE value="responsive design - getting closer to desired behavior" />
     <MESSAGE value="responsive design&#10;show image + modal panel while show sound" />
@@ -578,7 +542,8 @@
     <MESSAGE value="Make activities level-aware #9&#10;- issue fixes&#10;- simplify architecture of .js files" />
     <MESSAGE value="Make activities level-aware #9&#10;- simplify architecture of object files" />
     <MESSAGE value="Compress files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Compress files" />
+    <MESSAGE value="Add more activities #10&#10;- bathroom page and images" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add more activities #10&#10;- bathroom page and images" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
