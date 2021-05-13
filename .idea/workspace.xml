@@ -5,19 +5,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="Make activities level-aware #9&#10;- issue fixes&#10;- simplify architecture of .js files">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/colors.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/colors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/humanBody.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/humanBody.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/objects.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/objects.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/animalsTamed.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/animalsTamed.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/colors.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/colors.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/fruits.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/fruits.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/objectBody.inc" beforeDir="false" afterPath="$PROJECT_DIR$/pages/objectBody.inc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/shapes.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shapes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/vegetables.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/vegetables.html" afterDir="false" />
-    </list>
+    <list default="true" id="60a29308-23df-4b18-80fb-8329593e1c37" name="Default Changelist" comment="Make activities level-aware #9&#10;- simplify architecture of object files" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -151,7 +139,7 @@
       <workItem from="1620625755142" duration="21875000" />
       <workItem from="1620716040885" duration="152000" />
       <workItem from="1620716463585" duration="8261000" />
-      <workItem from="1620807875489" duration="3068000" />
+      <workItem from="1620807875489" duration="3119000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1589000180842</created>
@@ -475,7 +463,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620734344962</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Make activities level-aware #9&#10;- simplify architecture of object files">
+      <created>1620811252974</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1620811252974</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -501,7 +496,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="added vegetables activity and objects &quot;template&quot;" />
     <MESSAGE value="redesign" />
     <MESSAGE value="vegetables sounds" />
     <MESSAGE value="responsive design" />
@@ -526,7 +520,8 @@
     <MESSAGE value="Make activities level-aware #9&#10;- migrated the Human Body" />
     <MESSAGE value="Make activities level-aware #9&#10;- issue fixes" />
     <MESSAGE value="Make activities level-aware #9&#10;- issue fixes&#10;- simplify architecture of .js files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Make activities level-aware #9&#10;- issue fixes&#10;- simplify architecture of .js files" />
+    <MESSAGE value="Make activities level-aware #9&#10;- simplify architecture of object files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Make activities level-aware #9&#10;- simplify architecture of object files" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
