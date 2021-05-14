@@ -1,0 +1,99 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Arata Animale Salbatice Din Toata Lumea</title>
+    <meta name="description" content="">
+
+    <script defer src="../js/lib/modernizr-3.8.0.min.js"></script>
+    <script defer src="../js/lib/jquery.min.js"></script>
+    <script defer src="../js/lib/jquery-ui-1.12.1.min.js"></script>
+
+    <script defer src="../js/items.js"></script>
+
+    <script type="text/javascript">
+      function initItems(){
+        const sndPath = "../sounds/items/animals/wild/";
+        const imgPath = "../img/items/animals/wild/";
+        items = [
+                 {name: 'camel', imagePath: imgPath + 'camel.jpg', audioPath: sndPath + 'camel.ogg'},
+                 {name: 'camel', imagePath: imgPath + 'camel1.jpg', audioPath: sndPath + 'camel.ogg'},
+                 {name: 'camel', imagePath: imgPath + 'camel2.jpg', audioPath: sndPath + 'camel.ogg'},
+                 {name: 'camel', imagePath: imgPath + 'camel3.jpg', audioPath: sndPath + 'camel.ogg'},
+                 {name: 'camel', imagePath: imgPath + 'camel4.jpg', audioPath: sndPath + 'camel.ogg'},
+                 {name: 'crocodile', imagePath: imgPath + 'crocodile.jpg', audioPath: sndPath + 'crocodile.ogg'},
+                 {name: 'crocodile', imagePath: imgPath + 'crocodile1.jpg', audioPath: sndPath + 'crocodile.ogg'},
+                 {name: 'crocodile', imagePath: imgPath + 'crocodile2.jpg', audioPath: sndPath + 'crocodile.ogg'},
+                 {name: 'crocodile', imagePath: imgPath + 'crocodile3.jpg', audioPath: sndPath + 'crocodile.ogg'},
+                 {name: 'crocodile', imagePath: imgPath + 'crocodile4.jpg', audioPath: sndPath + 'crocodile.ogg'},
+                 {name: 'elephant', imagePath: imgPath + 'elephant.jpg', audioPath: sndPath + 'elephant.ogg'},
+                 {name: 'elephant', imagePath: imgPath + 'elephant1.jpg', audioPath: sndPath + 'elephant.ogg'},
+                 {name: 'elephant', imagePath: imgPath + 'elephant2.jpg', audioPath: sndPath + 'elephant.ogg'},
+                 {name: 'elephant', imagePath: imgPath + 'elephant3.jpg', audioPath: sndPath + 'elephant.ogg'},
+                 {name: 'elephant', imagePath: imgPath + 'elephant4.jpg', audioPath: sndPath + 'elephant.ogg'},
+                 {name: 'elephant', imagePath: imgPath + 'elephant5.jpg', audioPath: sndPath + 'elephant.ogg'},
+                 {name: 'giraffe', imagePath: imgPath + 'giraffe.jpg', audioPath: sndPath + 'giraffe.ogg'},
+                 {name: 'giraffe', imagePath: imgPath + 'giraffe1.jpg', audioPath: sndPath + 'giraffe.ogg'},
+                 {name: 'giraffe', imagePath: imgPath + 'giraffe2.jpg', audioPath: sndPath + 'giraffe.ogg'},
+                 {name: 'giraffe', imagePath: imgPath + 'giraffe3.jpg', audioPath: sndPath + 'giraffe.ogg'},
+                 {name: 'giraffe', imagePath: imgPath + 'giraffe4.jpg', audioPath: sndPath + 'giraffe.ogg'},
+                 {name: 'giraffe', imagePath: imgPath + 'giraffe5.jpg', audioPath: sndPath + 'giraffe.ogg'},
+                 {name: 'giraffe', imagePath: imgPath + 'giraffe6.jpg', audioPath: sndPath + 'giraffe.ogg'},
+                 {name: 'hippo', imagePath: imgPath + 'hippo.jpg', audioPath: sndPath + 'hippo.ogg'},
+                 {name: 'hippo', imagePath: imgPath + 'hippo1.jpg', audioPath: sndPath + 'hippo.ogg'},
+                 {name: 'hippo', imagePath: imgPath + 'hippo2.jpg', audioPath: sndPath + 'hippo.ogg'},
+                 {name: 'hippo', imagePath: imgPath + 'hippo3.jpg', audioPath: sndPath + 'hippo.ogg'},
+                 {name: 'hippo', imagePath: imgPath + 'hippo4.jpg', audioPath: sndPath + 'hippo.ogg'},
+                 {name: 'hippo', imagePath: imgPath + 'hippo5.jpg', audioPath: sndPath + 'hippo.ogg'},
+                 {name: 'lion', imagePath: imgPath + 'lion.jpg', audioPath: sndPath + 'lion.ogg'},
+                 {name: 'lion', imagePath: imgPath + 'lion1.jpg', audioPath: sndPath + 'lion.ogg'},
+                 {name: 'lion', imagePath: imgPath + 'lion2.jpg', audioPath: sndPath + 'lion.ogg'},
+                 {name: 'lion', imagePath: imgPath + 'lion3.jpg', audioPath: sndPath + 'lion.ogg'},
+                 {name: 'lion', imagePath: imgPath + 'lion4.jpg', audioPath: sndPath + 'lion.ogg'},
+                 {name: 'lion', imagePath: imgPath + 'lion5.jpg', audioPath: sndPath + 'lion.ogg'},
+                 {name: 'monkey', imagePath: imgPath + 'monkey.jpg', audioPath: sndPath + 'monkey.ogg'},
+                 {name: 'monkey', imagePath: imgPath + 'monkey1.jpg', audioPath: sndPath + 'monkey.ogg'},
+                 {name: 'monkey', imagePath: imgPath + 'monkey2.jpg', audioPath: sndPath + 'monkey.ogg'},
+                 {name: 'monkey', imagePath: imgPath + 'monkey3.jpg', audioPath: sndPath + 'monkey.ogg'},
+                 {name: 'monkey', imagePath: imgPath + 'monkey4.jpg', audioPath: sndPath + 'monkey.ogg'},
+                 {name: 'rhino', imagePath: imgPath + 'rhino.jpg', audioPath: sndPath + 'rhino.ogg'},
+                 {name: 'rhino', imagePath: imgPath + 'rhino1.jpg', audioPath: sndPath + 'rhino.ogg'},
+                 {name: 'rhino', imagePath: imgPath + 'rhino2.jpg', audioPath: sndPath + 'rhino.ogg'},
+                 {name: 'rhino', imagePath: imgPath + 'rhino3.jpg', audioPath: sndPath + 'rhino.ogg'},
+                 {name: 'rhino', imagePath: imgPath + 'rhino4.jpg', audioPath: sndPath + 'rhino.ogg'},
+                 {name: 'rhino', imagePath: imgPath + 'rhino5.jpg', audioPath: sndPath + 'rhino.ogg'},
+                 {name: 'snake', imagePath: imgPath + 'snake.jpg', audioPath: sndPath + 'snake.ogg'},
+                 {name: 'snake', imagePath: imgPath + 'snake1.jpg', audioPath: sndPath + 'snake.ogg'},
+                 {name: 'snake', imagePath: imgPath + 'snake2.jpg', audioPath: sndPath + 'snake.ogg'},
+                 {name: 'snake', imagePath: imgPath + 'snake3.jpg', audioPath: sndPath + 'snake.ogg'},
+                 {name: 'snake', imagePath: imgPath + 'snake4.jpg', audioPath: sndPath + 'snake.ogg'},
+                 {name: 'snake', imagePath: imgPath + 'snake5.jpg', audioPath: sndPath + 'snake.ogg'},
+                 {name: 'tiger', imagePath: imgPath + 'tiger.jpg', audioPath: sndPath + 'tiger.ogg'},
+                 {name: 'tiger', imagePath: imgPath + 'tiger1.jpg', audioPath: sndPath + 'tiger.ogg'},
+                 {name: 'tiger', imagePath: imgPath + 'tiger2.jpg', audioPath: sndPath + 'tiger.ogg'},
+                 {name: 'tiger', imagePath: imgPath + 'tiger3.jpg', audioPath: sndPath + 'tiger.ogg'},
+                 {name: 'tiger', imagePath: imgPath + 'tiger4.jpg', audioPath: sndPath + 'tiger.ogg'},
+                 {name: 'tiger', imagePath: imgPath + 'tiger5.jpg', audioPath: sndPath + 'tiger.ogg'},
+                 {name: 'turtle', imagePath: imgPath + 'turtle.jpg', audioPath: sndPath + 'turtle.ogg'},
+                 {name: 'turtle', imagePath: imgPath + 'turtle1.jpg', audioPath: sndPath + 'turtle.ogg'},
+                 {name: 'turtle', imagePath: imgPath + 'turtle2.jpg', audioPath: sndPath + 'turtle.ogg'},
+                 {name: 'turtle', imagePath: imgPath + 'turtle3.jpg', audioPath: sndPath + 'turtle.ogg'},
+                 {name: 'turtle', imagePath: imgPath + 'turtle4.jpg', audioPath: sndPath + 'turtle.ogg'},
+                 {name: 'turtle', imagePath: imgPath + 'turtle5.jpg', audioPath: sndPath + 'turtle.ogg'},
+                 {name: 'turtle', imagePath: imgPath + 'turtle6.jpg', audioPath: sndPath + 'turtle.ogg'},
+                 {name: 'zebra', imagePath: imgPath + 'zebra.jpg', audioPath: sndPath + 'zebra.ogg'},
+                 {name: 'zebra', imagePath: imgPath + 'zebra1.jpg', audioPath: sndPath + 'zebra.ogg'},
+                 {name: 'zebra', imagePath: imgPath + 'zebra2.jpg', audioPath: sndPath + 'zebra.ogg'},
+                 {name: 'zebra', imagePath: imgPath + 'zebra3.jpg', audioPath: sndPath + 'zebra.ogg'},
+                 {name: 'zebra', imagePath: imgPath + 'zebra4.jpg', audioPath: sndPath + 'zebra.ogg'},
+                 {name: 'zebra', imagePath: imgPath + 'zebra5.jpg', audioPath: sndPath + 'zebra.ogg'},
+        ]
+      }
+    </script>
+  </head>
+
+  <body>
+    <!--  content is injected by JavaScript in items.js-->
+  </body>
+</html>

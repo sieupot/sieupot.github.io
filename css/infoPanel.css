@@ -117,4 +117,5 @@
   height: calc(100% - 20px);
   width: calc(100% - 346px);
   min-height: 800px;
+  overflow: auto;
 }

@@ -1,0 +1,123 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Arata Articole De Imbracaminte</title>
+    <meta name="description" content="">
+
+    <script defer src="../js/lib/modernizr-3.8.0.min.js"></script>
+    <script defer src="../js/lib/jquery.min.js"></script>
+    <script defer src="../js/lib/jquery-ui-1.12.1.min.js"></script>
+
+    <script defer src="../js/items.js"></script>
+
+    <script type="text/javascript">
+      function initItems(){
+        const sndPath = "../sounds/items/clothing/";
+        const imgPath = "../img/items/clothing/";
+        items = [
+                 {name: 'beanie', imagePath: imgPath + 'beanie.jpg', audioPath: sndPath + 'beanie.ogg'},
+                 {name: 'beanie', imagePath: imgPath + 'beanie1.jpg', audioPath: sndPath + 'beanie.ogg'},
+                 {name: 'beanie', imagePath: imgPath + 'beanie2.jpg', audioPath: sndPath + 'beanie.ogg'},
+                 {name: 'beanie', imagePath: imgPath + 'beanie3.jpg', audioPath: sndPath + 'beanie.ogg'},
+                 {name: 'beanie', imagePath: imgPath + 'beanie4.jpg', audioPath: sndPath + 'beanie.ogg'},
+                 {name: 'blouse', imagePath: imgPath + 'blouse.jpg', audioPath: sndPath + 'blouse.ogg'},
+                 {name: 'blouse', imagePath: imgPath + 'blouse1.jpg', audioPath: sndPath + 'blouse.ogg'},
+                 {name: 'blouse', imagePath: imgPath + 'blouse2.jpg', audioPath: sndPath + 'blouse.ogg'},
+                 {name: 'blouse', imagePath: imgPath + 'blouse3.jpg', audioPath: sndPath + 'blouse.ogg'},
+                 {name: 'briefs', imagePath: imgPath + 'briefs.jpg', audioPath: sndPath + 'briefs.ogg'},
+                 {name: 'briefs', imagePath: imgPath + 'briefs1.jpg', audioPath: sndPath + 'briefs.ogg'},
+                 {name: 'briefs', imagePath: imgPath + 'briefs2.jpg', audioPath: sndPath + 'briefs.ogg'},
+                 {name: 'dress', imagePath: imgPath + 'dress.jpg', audioPath: sndPath + 'dress.ogg'},
+                 {name: 'dress', imagePath: imgPath + 'dress1.jpg', audioPath: sndPath + 'dress.ogg'},
+                 {name: 'dress', imagePath: imgPath + 'dress2.jpg', audioPath: sndPath + 'dress.ogg'},
+                 {name: 'gloves', imagePath: imgPath + 'gloves.jpg', audioPath: sndPath + 'gloves.ogg'},
+                 {name: 'gloves', imagePath: imgPath + 'gloves1.jpg', audioPath: sndPath + 'gloves.ogg'},
+                 {name: 'gloves', imagePath: imgPath + 'gloves2.jpg', audioPath: sndPath + 'gloves.ogg'},
+                 {name: 'gloves', imagePath: imgPath + 'gloves3.jpg', audioPath: sndPath + 'gloves.ogg'},
+                 {name: 'gloves', imagePath: imgPath + 'gloves4.jpg', audioPath: sndPath + 'gloves.ogg'},
+                 {name: 'gloves', imagePath: imgPath + 'gloves5.jpg', audioPath: sndPath + 'gloves.ogg'},
+                 {name: 'hat', imagePath: imgPath + 'hat.jpg', audioPath: sndPath + 'hat.ogg'},
+                 {name: 'hat', imagePath: imgPath + 'hat1.jpg', audioPath: sndPath + 'hat.ogg'},
+                 {name: 'hat', imagePath: imgPath + 'hat2.jpg', audioPath: sndPath + 'hat.ogg'},
+                 {name: 'jacket', imagePath: imgPath + 'jacket.jpg', audioPath: sndPath + 'jacket.ogg'},
+                 {name: 'jacket', imagePath: imgPath + 'jacket1.jpg', audioPath: sndPath + 'jacket.ogg'},
+                 {name: 'jacket', imagePath: imgPath + 'jacket2.jpg', audioPath: sndPath + 'jacket.ogg'},
+                 {name: 'jacket', imagePath: imgPath + 'jacket3.jpg', audioPath: sndPath + 'jacket.ogg'},
+                 {name: 'jacket', imagePath: imgPath + 'jacket4.jpg', audioPath: sndPath + 'jacket.ogg'},
+                 {name: 'pajamas', imagePath: imgPath + 'pajamas.jpg', audioPath: sndPath + 'pajamas.ogg'},
+                 {name: 'pajamas', imagePath: imgPath + 'pajamas1.jpg', audioPath: sndPath + 'pajamas.ogg'},
+                 {name: 'pajamas', imagePath: imgPath + 'pajamas2.jpg', audioPath: sndPath + 'pajamas.ogg'},
+                 {name: 'pajamas', imagePath: imgPath + 'pajamas3.jpg', audioPath: sndPath + 'pajamas.ogg'},
+                 {name: 'pajamas', imagePath: imgPath + 'pajamas4.jpg', audioPath: sndPath + 'pajamas.ogg'},
+                 {name: 'panty', imagePath: imgPath + 'panty.jpg', audioPath: sndPath + 'panty.ogg'},
+                 {name: 'panty', imagePath: imgPath + 'panty1.jpg', audioPath: sndPath + 'panty.ogg'},
+                 {name: 'panty', imagePath: imgPath + 'panty2.jpg', audioPath: sndPath + 'panty.ogg'},
+                 {name: 'scarf', imagePath: imgPath + 'scarf.jpg', audioPath: sndPath + 'scarf.ogg'},
+                 {name: 'scarf', imagePath: imgPath + 'scarf1.jpg', audioPath: sndPath + 'scarf.ogg'},
+                 {name: 'scarf', imagePath: imgPath + 'scarf2.jpg', audioPath: sndPath + 'scarf.ogg'},
+                 {name: 'scarf', imagePath: imgPath + 'scarf3.jpg', audioPath: sndPath + 'scarf.ogg'},
+                 {name: 'scarf', imagePath: imgPath + 'scarf4.jpg', audioPath: sndPath + 'scarf.ogg'},
+                 {name: 'shirt', imagePath: imgPath + 'shirt.jpg', audioPath: sndPath + 'shirt.ogg'},
+                 {name: 'shirt', imagePath: imgPath + 'shirt1.jpg', audioPath: sndPath + 'shirt.ogg'},
+                 {name: 'shirt', imagePath: imgPath + 'shirt2.jpg', audioPath: sndPath + 'shirt.ogg'},
+                 {name: 'shirt', imagePath: imgPath + 'shirt3.jpg', audioPath: sndPath + 'shirt.ogg'},
+                 {name: 'shirt', imagePath: imgPath + 'shirt4.jpg', audioPath: sndPath + 'shirt.ogg'},
+                 {name: 'shirt', imagePath: imgPath + 'shirt5.jpg', audioPath: sndPath + 'shirt.ogg'},
+                 {name: 'shorts', imagePath: imgPath + 'shorts.jpg', audioPath: sndPath + 'shorts.ogg'},
+                 {name: 'shorts', imagePath: imgPath + 'shorts1.jpg', audioPath: sndPath + 'shorts.ogg'},
+                 {name: 'shorts', imagePath: imgPath + 'shorts2.jpg', audioPath: sndPath + 'shorts.ogg'},
+                 {name: 'shorts', imagePath: imgPath + 'shorts3.jpg', audioPath: sndPath + 'shorts.ogg'},
+                 {name: 'shorts', imagePath: imgPath + 'shorts4.jpg', audioPath: sndPath + 'shorts.ogg'},
+                 {name: 'shorts', imagePath: imgPath + 'shorts5.jpg', audioPath: sndPath + 'shorts.ogg'},
+                 {name: 'shorts', imagePath: imgPath + 'shorts6.jpg', audioPath: sndPath + 'shorts.ogg'},
+                 {name: 'skirt', imagePath: imgPath + 'skirt.jpg', audioPath: sndPath + 'skirt.ogg'},
+                 {name: 'skirt', imagePath: imgPath + 'skirt1.jpg', audioPath: sndPath + 'skirt.ogg'},
+                 {name: 'skirt', imagePath: imgPath + 'skirt2.jpg', audioPath: sndPath + 'skirt.ogg'},
+                 {name: 'skirt', imagePath: imgPath + 'skirt3.jpg', audioPath: sndPath + 'skirt.ogg'},
+                 {name: 'socks', imagePath: imgPath + 'socks.jpg', audioPath: sndPath + 'socks.ogg'},
+                 {name: 'socks', imagePath: imgPath + 'socks1.jpg', audioPath: sndPath + 'socks.ogg'},
+                 {name: 'socks', imagePath: imgPath + 'socks2.jpg', audioPath: sndPath + 'socks.ogg'},
+                 {name: 'socks', imagePath: imgPath + 'socks3.jpg', audioPath: sndPath + 'socks.ogg'},
+                 {name: 'socks', imagePath: imgPath + 'socks4.jpg', audioPath: sndPath + 'socks.ogg'},
+                 {name: 'sweater', imagePath: imgPath + 'sweater.jpg', audioPath: sndPath + 'sweater.ogg'},
+                 {name: 'sweater', imagePath: imgPath + 'sweater1.jpg', audioPath: sndPath + 'sweater.ogg'},
+                 {name: 'sweater', imagePath: imgPath + 'sweater2.jpg', audioPath: sndPath + 'sweater.ogg'},
+                 {name: 'sweater', imagePath: imgPath + 'sweater3.jpg', audioPath: sndPath + 'sweater.ogg'},
+                 {name: 'sweater', imagePath: imgPath + 'sweater4.jpg', audioPath: sndPath + 'sweater.ogg'},
+                 {name: 'sweater', imagePath: imgPath + 'sweater5.jpg', audioPath: sndPath + 'sweater.ogg'},
+                 {name: 'sweatshirt', imagePath: imgPath + 'sweatshirt.jpg', audioPath: sndPath + 'sweatshirt.ogg'},
+                 {name: 'sweatshirt', imagePath: imgPath + 'sweatshirt1.jpg', audioPath: sndPath + 'sweatshirt.ogg'},
+                 {name: 'sweatshirt', imagePath: imgPath + 'sweatshirt2.jpg', audioPath: sndPath + 'sweatshirt.ogg'},
+                 {name: 'sweatshirt', imagePath: imgPath + 'sweatshirt3.jpg', audioPath: sndPath + 'sweatshirt.ogg'},
+                 {name: 'swimsuit', imagePath: imgPath + 'swimsuit.jpg', audioPath: sndPath + 'swimsuit.ogg'},
+                 {name: 'swimsuit', imagePath: imgPath + 'swimsuit1.jpg', audioPath: sndPath + 'swimsuit.ogg'},
+                 {name: 'swimsuit', imagePath: imgPath + 'swimsuit2.jpg', audioPath: sndPath + 'swimsuit.ogg'},
+                 {name: 'swimsuit', imagePath: imgPath + 'swimsuit3.jpg', audioPath: sndPath + 'swimsuit.ogg'},
+                 {name: 'swimsuit', imagePath: imgPath + 'swimsuit4.jpg', audioPath: sndPath + 'swimsuit.ogg'},
+                 {name: 'trousers', imagePath: imgPath + 'trousers.jpg', audioPath: sndPath + 'trousers.ogg'},
+                 {name: 'trousers', imagePath: imgPath + 'trousers1.jpg', audioPath: sndPath + 'trousers.ogg'},
+                 {name: 'trousers', imagePath: imgPath + 'trousers2.jpg', audioPath: sndPath + 'trousers.ogg'},
+                 {name: 'trousers', imagePath: imgPath + 'trousers3.jpg', audioPath: sndPath + 'trousers.ogg'},
+                 {name: 'trousers', imagePath: imgPath + 'trousers4.jpg', audioPath: sndPath + 'trousers.ogg'},
+                 {name: 'tshirt', imagePath: imgPath + 'tshirt.jpg', audioPath: sndPath + 'tshirt.ogg'},
+                 {name: 'tshirt', imagePath: imgPath + 'tshirt1.jpg', audioPath: sndPath + 'tshirt.ogg'},
+                 {name: 'tshirt', imagePath: imgPath + 'tshirt2.jpg', audioPath: sndPath + 'tshirt.ogg'},
+                 {name: 'tshirt', imagePath: imgPath + 'tshirt3.jpg', audioPath: sndPath + 'tshirt.ogg'},
+                 {name: 'tshirt', imagePath: imgPath + 'tshirt4.jpg', audioPath: sndPath + 'tshirt.ogg'},
+                 {name: 'tshirt', imagePath: imgPath + 'tshirt5.jpg', audioPath: sndPath + 'tshirt.ogg'},
+                 {name: 'undershirt', imagePath: imgPath + 'undershirt.jpg', audioPath: sndPath + 'undershirt.ogg'},
+                 {name: 'vest', imagePath: imgPath + 'vest.jpg', audioPath: sndPath + 'vest.ogg'},
+                 {name: 'vest', imagePath: imgPath + 'vest1.jpg', audioPath: sndPath + 'vest.ogg'},
+                 {name: 'vest', imagePath: imgPath + 'vest2.jpg', audioPath: sndPath + 'vest.ogg'},
+                 {name: 'vest', imagePath: imgPath + 'vest3.jpg', audioPath: sndPath + 'vest.ogg'},
+        ]
+      }
+    </script>
+  </head>
+
+  <body>
+    <!--  content is injected by JavaScript in items.js-->
+  </body>
+</html>

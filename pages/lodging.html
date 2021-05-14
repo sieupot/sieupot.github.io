@@ -1,0 +1,73 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Arata Locuinta</title>
+    <meta name="description" content="">
+
+    <script defer src="../js/lib/modernizr-3.8.0.min.js"></script>
+    <script defer src="../js/lib/jquery.min.js"></script>
+    <script defer src="../js/lib/jquery-ui-1.12.1.min.js"></script>
+
+    <script defer src="../js/items.js"></script>
+
+    <script type="text/javascript">
+      function initItems(){
+        const sndPath = "../sounds/items/lodging/";
+        const imgPath = "../img/items/lodging/";
+        items = [
+                 {name: 'bathroom', imagePath: imgPath + 'bathroom.jpg', audioPath: sndPath + 'bathroom.ogg'},
+                 {name: 'bathroom', imagePath: imgPath + 'bathroom1.jpg', audioPath: sndPath + 'bathroom.ogg'},
+                 {name: 'bathroom', imagePath: imgPath + 'bathroom2.jpg', audioPath: sndPath + 'bathroom.ogg'},
+                 {name: 'bathroom', imagePath: imgPath + 'bathroom3.jpg', audioPath: sndPath + 'bathroom.ogg'},
+                 {name: 'bathroom', imagePath: imgPath + 'bathroom4.jpg', audioPath: sndPath + 'bathroom.ogg'},
+                 {name: 'bathroom', imagePath: imgPath + 'bathroom5.jpg', audioPath: sndPath + 'bathroom.ogg'},
+                 {name: 'bathroom', imagePath: imgPath + 'bathroom6.jpg', audioPath: sndPath + 'bathroom.ogg'},
+                 {name: 'bathroom', imagePath: imgPath + 'bathroom7.jpg', audioPath: sndPath + 'bathroom.ogg'},
+                 {name: 'bathroom', imagePath: imgPath + 'bathroom8.jpg', audioPath: sndPath + 'bathroom.ogg'},
+                 {name: 'bathroom', imagePath: imgPath + 'bathroom9.jpg', audioPath: sndPath + 'bathroom.ogg'},
+                 {name: 'bathroom', imagePath: imgPath + 'bathroom10.jpg', audioPath: sndPath + 'bathroom.ogg'},
+                 {name: 'bedroom', imagePath: imgPath + 'bedroom.jpg', audioPath: sndPath + 'bedroom.ogg'},
+                 {name: 'bedroom', imagePath: imgPath + 'bedroom1.jpg', audioPath: sndPath + 'bedroom.ogg'},
+                 {name: 'bedroom', imagePath: imgPath + 'bedroom2.jpg', audioPath: sndPath + 'bedroom.ogg'},
+                 {name: 'bedroom', imagePath: imgPath + 'bedroom3.jpg', audioPath: sndPath + 'bedroom.ogg'},
+                 {name: 'bedroom', imagePath: imgPath + 'bedroom4.jpg', audioPath: sndPath + 'bedroom.ogg'},
+                 {name: 'bedroom', imagePath: imgPath + 'bedroom5.jpg', audioPath: sndPath + 'bedroom.ogg'},
+                 {name: 'bedroom', imagePath: imgPath + 'bedroom6.jpg', audioPath: sndPath + 'bedroom.ogg'},
+                 {name: 'bedroom', imagePath: imgPath + 'bedroom7.jpg', audioPath: sndPath + 'bedroom.ogg'},
+                 {name: 'blockofflats', imagePath: imgPath + 'blockofflats.jpg', audioPath: sndPath + 'blockofflats.ogg'},
+                 {name: 'blockofflats', imagePath: imgPath + 'blockofflats1.jpg', audioPath: sndPath + 'blockofflats.ogg'},
+                 {name: 'blockofflats', imagePath: imgPath + 'blockofflats2.jpg', audioPath: sndPath + 'blockofflats.ogg'},
+                 {name: 'blockofflats', imagePath: imgPath + 'blockofflats3.jpg', audioPath: sndPath + 'blockofflats.ogg'},
+                 {name: 'hallway', imagePath: imgPath + 'hallway.jpg', audioPath: sndPath + 'hallway.ogg'},
+                 {name: 'house', imagePath: imgPath + 'house.jpg', audioPath: sndPath + 'house.ogg'},
+                 {name: 'house', imagePath: imgPath + 'house1.jpg', audioPath: sndPath + 'house.ogg'},
+                 {name: 'house', imagePath: imgPath + 'house2.jpg', audioPath: sndPath + 'house.ogg'},
+                 {name: 'house', imagePath: imgPath + 'house3.jpg', audioPath: sndPath + 'house.ogg'},
+                 {name: 'house', imagePath: imgPath + 'house4.jpg', audioPath: sndPath + 'house.ogg'},
+                 {name: 'house', imagePath: imgPath + 'house5.jpg', audioPath: sndPath + 'house.ogg'},
+                 {name: 'kitchen', imagePath: imgPath + 'kitchen.jpg', audioPath: sndPath + 'kitchen.ogg'},
+                 {name: 'kitchen', imagePath: imgPath + 'kitchen1.jpg', audioPath: sndPath + 'kitchen.ogg'},
+                 {name: 'kitchen', imagePath: imgPath + 'kitchen2.jpg', audioPath: sndPath + 'kitchen.ogg'},
+                 {name: 'kitchen', imagePath: imgPath + 'kitchen3.jpg', audioPath: sndPath + 'kitchen.ogg'},
+                 {name: 'kitchen', imagePath: imgPath + 'kitchen4.jpg', audioPath: sndPath + 'kitchen.ogg'},
+                 {name: 'kitchen', imagePath: imgPath + 'kitchen5.jpg', audioPath: sndPath + 'kitchen.ogg'},
+                 {name: 'kitchen', imagePath: imgPath + 'kitchen6.jpg', audioPath: sndPath + 'kitchen.ogg'},
+                 {name: 'livingroom', imagePath: imgPath + 'livingroom.jpg', audioPath: sndPath + 'livingroom.ogg'},
+                 {name: 'livingroom', imagePath: imgPath + 'livingroom1.jpg', audioPath: sndPath + 'livingroom.ogg'},
+                 {name: 'livingroom', imagePath: imgPath + 'livingroom2.jpg', audioPath: sndPath + 'livingroom.ogg'},
+                 {name: 'livingroom', imagePath: imgPath + 'livingroom3.jpg', audioPath: sndPath + 'livingroom.ogg'},
+                 {name: 'livingroom', imagePath: imgPath + 'livingroom4.jpg', audioPath: sndPath + 'livingroom.ogg'},
+                 {name: 'livingroom', imagePath: imgPath + 'livingroom5.jpg', audioPath: sndPath + 'livingroom.ogg'},
+                 {name: 'livingroom', imagePath: imgPath + 'livingroom6.jpg', audioPath: sndPath + 'livingroom.ogg'},
+                 {name: 'livingroom', imagePath: imgPath + 'livingroom7.jpg', audioPath: sndPath + 'livingroom.ogg'},
+        ]
+      }
+    </script>
+  </head>
+
+  <body>
+    <!--  content is injected by JavaScript in items.js-->
+  </body>
+</html>

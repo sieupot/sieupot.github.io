@@ -25,9 +25,10 @@
   text-shadow: 0 -1px #ddd;
   transition: box-shadow 250ms; /* For modern browsers */
   position: relative;
+  min-height: 114px;
 }
 .activity-button > img {
-  margin: auto;
+  margin: 0 auto;
 }
 .activity-button > span {
   position: absolute;

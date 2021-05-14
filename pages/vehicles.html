@@ -1,0 +1,130 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Arata Vehicule</title>
+    <meta name="description" content="">
+
+    <script defer src="../js/lib/modernizr-3.8.0.min.js"></script>
+    <script defer src="../js/lib/jquery.min.js"></script>
+    <script defer src="../js/lib/jquery-ui-1.12.1.min.js"></script>
+
+    <script defer src="../js/items.js"></script>
+
+    <script type="text/javascript">
+      function initItems(){
+        const sndPath = "../sounds/items/vehicles/";
+        const imgPath = "../img/items/vehicles/";
+        items = [
+                 {name: 'airballoon', imagePath: imgPath + 'airballoon.jpg', audioPath: sndPath + 'airballoon.ogg'},
+                 {name: 'airballoon', imagePath: imgPath + 'airballoon1.jpg', audioPath: sndPath + 'airballoon.ogg'},
+                 {name: 'airballoon', imagePath: imgPath + 'airballoon2.jpg', audioPath: sndPath + 'airballoon.ogg'},
+                 {name: 'airballoon', imagePath: imgPath + 'airballoon3.jpg', audioPath: sndPath + 'airballoon.ogg'},
+                 {name: 'airballoon', imagePath: imgPath + 'airballoon4.jpg', audioPath: sndPath + 'airballoon.ogg'},
+                 {name: 'airballoon', imagePath: imgPath + 'airballoon5.jpg', audioPath: sndPath + 'airballoon.ogg'},
+                 {name: 'airballoon', imagePath: imgPath + 'airballoon6.jpg', audioPath: sndPath + 'airballoon.ogg'},
+                 {name: 'airballoon', imagePath: imgPath + 'airballoon7.jpg', audioPath: sndPath + 'airballoon.ogg'},
+                 {name: 'airplane', imagePath: imgPath + 'airplane.jpg', audioPath: sndPath + 'airplane.ogg'},
+                 {name: 'airplane', imagePath: imgPath + 'airplane1.jpg', audioPath: sndPath + 'airplane.ogg'},
+                 {name: 'airplane', imagePath: imgPath + 'airplane2.jpg', audioPath: sndPath + 'airplane.ogg'},
+                 {name: 'airplane', imagePath: imgPath + 'airplane3.jpg', audioPath: sndPath + 'airplane.ogg'},
+                 {name: 'airplane', imagePath: imgPath + 'airplane4.jpg', audioPath: sndPath + 'airplane.ogg'},
+                 {name: 'airplane', imagePath: imgPath + 'airplane5.jpg', audioPath: sndPath + 'airplane.ogg'},
+                 {name: 'airplane', imagePath: imgPath + 'airplane6.jpg', audioPath: sndPath + 'airplane.ogg'},
+                 {name: 'ambulance', imagePath: imgPath + 'ambulance.jpg', audioPath: sndPath + 'ambulance.ogg'},
+                 {name: 'ambulance', imagePath: imgPath + 'ambulance1.jpg', audioPath: sndPath + 'ambulance.ogg'},
+                 {name: 'ambulance', imagePath: imgPath + 'ambulance2.jpg', audioPath: sndPath + 'ambulance.ogg'},
+                 {name: 'ambulance', imagePath: imgPath + 'ambulance3.jpg', audioPath: sndPath + 'ambulance.ogg'},
+                 {name: 'ambulance', imagePath: imgPath + 'ambulance4.jpg', audioPath: sndPath + 'ambulance.ogg'},
+                 {name: 'atv', imagePath: imgPath + 'atv.jpg', audioPath: sndPath + 'atv.ogg'},
+                 {name: 'atv', imagePath: imgPath + 'atv1.jpg', audioPath: sndPath + 'atv.ogg'},
+                 {name: 'atv', imagePath: imgPath + 'atv2.jpg', audioPath: sndPath + 'atv.ogg'},
+                 {name: 'atv', imagePath: imgPath + 'atv3.jpg', audioPath: sndPath + 'atv.ogg'},
+                 {name: 'atv', imagePath: imgPath + 'atv4.jpg', audioPath: sndPath + 'atv.ogg'},
+                 {name: 'atv', imagePath: imgPath + 'atv5.jpg', audioPath: sndPath + 'atv.ogg'},
+                 {name: 'bicycle', imagePath: imgPath + 'bicycle.jpg', audioPath: sndPath + 'bicycle.ogg'},
+                 {name: 'bicycle', imagePath: imgPath + 'bicycle1.jpg', audioPath: sndPath + 'bicycle.ogg'},
+                 {name: 'bicycle', imagePath: imgPath + 'bicycle2.jpg', audioPath: sndPath + 'bicycle.ogg'},
+                 {name: 'bicycle', imagePath: imgPath + 'bicycle3.jpg', audioPath: sndPath + 'bicycle.ogg'},
+                 {name: 'bicycle', imagePath: imgPath + 'bicycle4.jpg', audioPath: sndPath + 'bicycle.ogg'},
+                 {name: 'bicycle', imagePath: imgPath + 'bicycle5.jpg', audioPath: sndPath + 'bicycle.ogg'},
+                 {name: 'boat', imagePath: imgPath + 'boat.jpg', audioPath: sndPath + 'boat.ogg'},
+                 {name: 'boat', imagePath: imgPath + 'boat1.jpg', audioPath: sndPath + 'boat.ogg'},
+                 {name: 'boat', imagePath: imgPath + 'boat2.jpg', audioPath: sndPath + 'boat.ogg'},
+                 {name: 'boat', imagePath: imgPath + 'boat3.jpg', audioPath: sndPath + 'boat.ogg'},
+                 {name: 'bus', imagePath: imgPath + 'bus.jpg', audioPath: sndPath + 'bus.ogg'},
+                 {name: 'bus', imagePath: imgPath + 'bus1.jpg', audioPath: sndPath + 'bus.ogg'},
+                 {name: 'bus', imagePath: imgPath + 'bus2.jpg', audioPath: sndPath + 'bus.ogg'},
+                 {name: 'bus', imagePath: imgPath + 'bus3.jpg', audioPath: sndPath + 'bus.ogg'},
+                 {name: 'bus', imagePath: imgPath + 'bus4.jpg', audioPath: sndPath + 'bus.ogg'},
+                 {name: 'car', imagePath: imgPath + 'car.jpg', audioPath: sndPath + 'car.ogg'},
+                 {name: 'car', imagePath: imgPath + 'car1.jpg', audioPath: sndPath + 'car.ogg'},
+                 {name: 'car', imagePath: imgPath + 'car2.jpg', audioPath: sndPath + 'car.ogg'},
+                 {name: 'car', imagePath: imgPath + 'car3.jpg', audioPath: sndPath + 'car.ogg'},
+                 {name: 'excavator', imagePath: imgPath + 'excavator.jpg', audioPath: sndPath + 'excavator.ogg'},
+                 {name: 'excavator', imagePath: imgPath + 'excavator1.jpg', audioPath: sndPath + 'excavator.ogg'},
+                 {name: 'excavator', imagePath: imgPath + 'excavator2.jpg', audioPath: sndPath + 'excavator.ogg'},
+                 {name: 'excavator', imagePath: imgPath + 'excavator3.jpg', audioPath: sndPath + 'excavator.ogg'},
+                 {name: 'excavator', imagePath: imgPath + 'excavator4.jpg', audioPath: sndPath + 'excavator.ogg'},
+                 {name: 'excavator', imagePath: imgPath + 'excavator5.jpg', audioPath: sndPath + 'excavator.ogg'},
+                 {name: 'excavator', imagePath: imgPath + 'excavator6.jpg', audioPath: sndPath + 'excavator.ogg'},
+                 {name: 'firetruck', imagePath: imgPath + 'firetruck.jpg', audioPath: sndPath + 'firetruck.ogg'},
+                 {name: 'firetruck', imagePath: imgPath + 'firetruck1.jpg', audioPath: sndPath + 'firetruck.ogg'},
+                 {name: 'firetruck', imagePath: imgPath + 'firetruck2.jpg', audioPath: sndPath + 'firetruck.ogg'},
+                 {name: 'firetruck', imagePath: imgPath + 'firetruck3.jpg', audioPath: sndPath + 'firetruck.ogg'},
+                 {name: 'helicopter', imagePath: imgPath + 'helicopter.jpg', audioPath: sndPath + 'helicopter.ogg'},
+                 {name: 'helicopter', imagePath: imgPath + 'helicopter1.jpg', audioPath: sndPath + 'helicopter.ogg'},
+                 {name: 'helicopter', imagePath: imgPath + 'helicopter2.jpg', audioPath: sndPath + 'helicopter.ogg'},
+                 {name: 'helicopter', imagePath: imgPath + 'helicopter3.jpg', audioPath: sndPath + 'helicopter.ogg'},
+                 {name: 'helicopter', imagePath: imgPath + 'helicopter4.jpg', audioPath: sndPath + 'helicopter.ogg'},
+                 {name: 'helicopter', imagePath: imgPath + 'helicopter5.jpg', audioPath: sndPath + 'helicopter.ogg'},
+                 {name: 'helicopter', imagePath: imgPath + 'helicopter6.jpg', audioPath: sndPath + 'helicopter.ogg'},
+                 {name: 'helicopter', imagePath: imgPath + 'helicopter7.jpg', audioPath: sndPath + 'helicopter.ogg'},
+                 {name: 'motorcycle', imagePath: imgPath + 'motorcycle.jpg', audioPath: sndPath + 'motorcycle.ogg'},
+                 {name: 'motorcycle', imagePath: imgPath + 'motorcycle1.jpg', audioPath: sndPath + 'motorcycle.ogg'},
+                 {name: 'motorcycle', imagePath: imgPath + 'motorcycle2.jpg', audioPath: sndPath + 'motorcycle.ogg'},
+                 {name: 'motorcycle', imagePath: imgPath + 'motorcycle3.jpg', audioPath: sndPath + 'motorcycle.ogg'},
+                 {name: 'motorcycle', imagePath: imgPath + 'motorcycle4.jpg', audioPath: sndPath + 'motorcycle.ogg'},
+                 {name: 'motorcycle', imagePath: imgPath + 'motorcycle5.jpg', audioPath: sndPath + 'motorcycle.ogg'},
+                 {name: 'motorcycle', imagePath: imgPath + 'motorcycle6.jpg', audioPath: sndPath + 'motorcycle.ogg'},
+                 {name: 'policecar', imagePath: imgPath + 'policecar.jpg', audioPath: sndPath + 'policecar.ogg'},
+                 {name: 'policecar', imagePath: imgPath + 'policecar1.jpg', audioPath: sndPath + 'policecar.ogg'},
+                 {name: 'policecar', imagePath: imgPath + 'policecar2.jpg', audioPath: sndPath + 'policecar.ogg'},
+                 {name: 'policecar', imagePath: imgPath + 'policecar3.jpg', audioPath: sndPath + 'policecar.ogg'},
+                 {name: 'policecar', imagePath: imgPath + 'policecar4.jpg', audioPath: sndPath + 'policecar.ogg'},
+                 {name: 'policecar', imagePath: imgPath + 'policecar5.jpg', audioPath: sndPath + 'policecar.ogg'},
+                 {name: 'policecar', imagePath: imgPath + 'policecar6.jpg', audioPath: sndPath + 'policecar.ogg'},
+                 {name: 'scooter', imagePath: imgPath + 'scooter.jpg', audioPath: sndPath + 'scooter.ogg'},
+                 {name: 'ship', imagePath: imgPath + 'ship.jpg', audioPath: sndPath + 'ship.ogg'},
+                 {name: 'ship', imagePath: imgPath + 'ship1.jpg', audioPath: sndPath + 'ship.ogg'},
+                 {name: 'ship', imagePath: imgPath + 'ship2.jpg', audioPath: sndPath + 'ship.ogg'},
+                 {name: 'ship', imagePath: imgPath + 'ship3.jpg', audioPath: sndPath + 'ship.ogg'},
+                 {name: 'ship', imagePath: imgPath + 'ship4.jpg', audioPath: sndPath + 'ship.ogg'},
+                 {name: 'ship', imagePath: imgPath + 'ship5.jpg', audioPath: sndPath + 'ship.ogg'},
+                 {name: 'ship', imagePath: imgPath + 'ship6.jpg', audioPath: sndPath + 'ship.ogg'},
+                 {name: 'tractor', imagePath: imgPath + 'tractor.jpg', audioPath: sndPath + 'tractor.ogg'},
+                 {name: 'tractor', imagePath: imgPath + 'tractor1.jpg', audioPath: sndPath + 'tractor.ogg'},
+                 {name: 'tractor', imagePath: imgPath + 'tractor2.jpg', audioPath: sndPath + 'tractor.ogg'},
+                 {name: 'tractor', imagePath: imgPath + 'tractor3.jpg', audioPath: sndPath + 'tractor.ogg'},
+                 {name: 'tractor', imagePath: imgPath + 'tractor4.jpg', audioPath: sndPath + 'tractor.ogg'},
+                 {name: 'train', imagePath: imgPath + 'train.jpg', audioPath: sndPath + 'train.ogg'},
+                 {name: 'train', imagePath: imgPath + 'train1.jpg', audioPath: sndPath + 'train.ogg'},
+                 {name: 'train', imagePath: imgPath + 'train2.jpg', audioPath: sndPath + 'train.ogg'},
+                 {name: 'train', imagePath: imgPath + 'train3.jpg', audioPath: sndPath + 'train.ogg'},
+                 {name: 'train', imagePath: imgPath + 'train4.jpg', audioPath: sndPath + 'train.ogg'},
+                 {name: 'truck', imagePath: imgPath + 'truck.jpg', audioPath: sndPath + 'truck.ogg'},
+                 {name: 'truck', imagePath: imgPath + 'truck1.jpg', audioPath: sndPath + 'truck.ogg'},
+                 {name: 'truck', imagePath: imgPath + 'truck2.jpg', audioPath: sndPath + 'truck.ogg'},
+                 {name: 'truck', imagePath: imgPath + 'truck3.jpg', audioPath: sndPath + 'truck.ogg'},
+                 {name: 'truck', imagePath: imgPath + 'truck4.jpg', audioPath: sndPath + 'truck.ogg'},
+                 {name: 'truck', imagePath: imgPath + 'truck5.jpg', audioPath: sndPath + 'truck.ogg'},
+        ]
+      }
+    </script>
+  </head>
+
+  <body>
+    <!--  content is injected by JavaScript in items.js-->
+  </body>
+</html>
