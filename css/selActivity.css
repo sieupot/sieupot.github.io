@@ -13,7 +13,8 @@
 }
 
 .activity-button {
-  display: flex;
+  display: grid;
+  row-gap: 8px;
   padding: 15px 25px;
   background-color: #FFF;
   font: normal normal bold 22px/24px Poppins-600-normal;
@@ -28,14 +29,11 @@
   min-height: 114px;
 }
 .activity-button > img {
-  margin: 0 auto;
+  margin: auto;
 }
 .activity-button > span {
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
   margin: auto;
+  display: block;
 }
 .activity-button:hover {
   box-shadow: 0 -12px 4px -4px inset rgba(240, 240, 240, .9);
