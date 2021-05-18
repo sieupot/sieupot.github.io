@@ -1,9 +1,11 @@
 jQuery('document').ready(function() {
+  alert(0);
   $.ajax({
     url: "_item.inc",
     cache: false
   })
     .done(function( html ) {
+      console.log("1 " + html);
       $( "body" ).append( html );
     });
 });
