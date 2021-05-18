@@ -1,10 +1,12 @@
-alert(0);
 console.log('000000000000 -> ' + window.location.href);
 jQuery.get('_item.inc',function (data) {
+  alert(0);
   console.log(data);
 });
-jQuery('body').load('_item.inc');
-alert(1);
+jQuery('document').ready(function() {
+  jQuery('body').load('_item.inc');
+  alert(1);
+});
 
 function generateChallengeItems() {
   let answerOptionValues = getAnswerOptions(); // [true, false, (false)..]
