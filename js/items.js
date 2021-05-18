@@ -1,4 +1,7 @@
 alert(0);
+jQuery.get('../pages/_item.inc.html',function (data) {
+  console.log(data);
+});
 jQuery('body').load('../pages/_item.inc.html');
 alert(1);
 
