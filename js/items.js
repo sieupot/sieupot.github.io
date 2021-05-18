@@ -1,13 +1,4 @@
-jQuery('document').ready(function() {
-  $.ajax({
-    url: "item.inc",
-    cache: false
-  })
-    .done(function( html ) {
-      console.log("1 " + html);
-      $( "body" ).append( html );
-    });
-});
+jQuery('body').load('0_item.inc.html');
 
 function generateChallengeItems() {
   let answerOptionValues = getAnswerOptions(); // [true, false, (false)..]
