@@ -1,4 +1,6 @@
+alert(0);
 jQuery('body').load('../pages/_item.inc.html');
+alert(1);
 
 function generateChallengeItems() {
   let answerOptionValues = getAnswerOptions(); // [true, false, (false)..]
