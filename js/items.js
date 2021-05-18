@@ -1,4 +1,5 @@
 alert(0);
+console.log('000000000000 -> ' + window.location.href);
 jQuery.get('../pages/_item.inc.html',function (data) {
   console.log(data);
 });
