@@ -1,7 +1,7 @@
 /* ------------ MY DEFS -------------- */
 #infoPanel {
   height: calc(100% - 20px);
-  width: 346px;
+  width: 436px;
   min-height: 800px;
   float: left;
   margin-bottom: 20px;
@@ -115,7 +115,7 @@
   display: grid;
   grid-template-rows: min-content;
   height: calc(100% - 20px);
-  width: calc(100% - 346px);
+  width: calc(100% - 436px);
   min-height: 800px;
   overflow: auto;
 }
