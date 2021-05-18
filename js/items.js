@@ -1,7 +1,6 @@
 jQuery('document').ready(function() {
-  alert(0);
   $.ajax({
-    url: "_item.inc",
+    url: "item.inc",
     cache: false
   })
     .done(function( html ) {
