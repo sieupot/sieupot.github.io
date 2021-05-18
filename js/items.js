@@ -1,9 +1,9 @@
 alert(0);
 console.log('000000000000 -> ' + window.location.href);
-jQuery.get('../pages/_item.inc.html',function (data) {
+jQuery.get('_item.inc',function (data) {
   console.log(data);
 });
-jQuery('body').load('../pages/_item.inc.html');
+jQuery('body').load('_item.inc');
 alert(1);
 
 function generateChallengeItems() {
