@@ -1,11 +1,11 @@
-console.log('000000000000 -> ' + window.location.href);
-jQuery.get('_item.inc',function (data) {
-  alert(0);
-  console.log(data);
-});
 jQuery('document').ready(function() {
-  jQuery('body').load('_item.inc');
-  alert(1);
+  $.ajax({
+    url: "_item.inc",
+    cache: false
+  })
+    .done(function( html ) {
+      $( "body" ).append( html );
+    });
 });
 
 function generateChallengeItems() {
