@@ -1,6 +1,6 @@
 const commandRepeatInterval = 8000;
 
-let items; // list of available item items for the activity (css class name, image path, audio file name to be played, etc)
+let activityItems; // list of available items for the activity (css class name, image path, audio file name to be played, etc)
 
 let nbDistractors;
 
@@ -73,11 +73,11 @@ const extractAnswerOption = function(answerOptionValues) {
 }
 
 const checkValidAnswer = function(isValidAnswer) {
-  resetItems();
+  resetActivityItems();
   modalPanel.dialog(dialogOptions);
   if (isValidAnswer) {
     rightAnswers++;
-    resultDivElem.find('img').attr('src', '../img/smileFace.png');
+    resultDivElem.find('img').attr('src', '../images/smileFace.png');
     resultDivElem.fadeIn(500);
     let playingCorrectAnswerAudio = new Audio('../sounds/correct.ogg');
     playingAudios[playingAudios.length] = playingCorrectAnswerAudio;
@@ -90,7 +90,7 @@ const checkValidAnswer = function(isValidAnswer) {
     jQuery('#scoreGood').effect('highlight', {color: '#acffa3'}, 500)
   } else {
     wrongAnswers++;
-    resultDivElem.find('img').attr('src', '../img/sadFace.png');
+    resultDivElem.find('img').attr('src', '../images/sadFace.png');
     resultDivElem.fadeIn(500);
     let playingWrongAnswerAudio = new Audio('../sounds/wrong.ogg');
     playingWrongAnswerAudio.addEventListener('ended', function () {
@@ -104,7 +104,7 @@ const checkValidAnswer = function(isValidAnswer) {
   }
 }
 
-const resetItems = function() {
+const resetActivityItems = function() {
   playingAudios = [];
   resetSounds();
 }
@@ -120,7 +120,7 @@ const resetSounds = function() {
 }
 
 const playShowItemAudio = function() {
-  resetItems();
+  resetActivityItems();
 
   modalPanel.dialog(dialogOptions);
   let playingItemNameAudio = new Audio(itemAudioFilePath);
@@ -129,7 +129,7 @@ const playShowItemAudio = function() {
     modalPanel.dialog('close');
   });
   playingAudios[playingAudios.length] = playingItemNameAudio;
-  resultDivElem.find('img').attr('src', '../img/show.svg');
+  resultDivElem.find('img').attr('src', '../images/show.svg');
   resultDivElem.fadeIn(300);
   let playingShowAudio = new Audio('../sounds/show.ogg');
   playingAudios[playingAudios.length] = playingShowAudio;

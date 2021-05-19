@@ -44,7 +44,7 @@
 }
 
 .iconLevel {
-  -webkit-mask: url(../img/app/babyBoy.svg);
+  -webkit-mask: url(../images/app/babyBoy.svg);
   -webkit-mask-size: cover;
   display: inline-block;
   background: #EFE7E0;

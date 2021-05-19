@@ -33,7 +33,7 @@
   left: 79px;
   width: 53px;
   height: 53px;
-  background: transparent url('../img/app/logo symbol.png') 0 0 no-repeat padding-box;
+  background: transparent url('../images/app/logo symbol.png') 0 0 no-repeat padding-box;
   opacity: 1;
   position: absolute;
 }
@@ -104,7 +104,7 @@
 #footerImgId {
   width: 387px;
   height: 428px;
-  background: transparent url('../img/app/chidlren.png') 0 0 no-repeat padding-box;
+  background: transparent url('../images/app/chidlren.png') 0 0 no-repeat padding-box;
   opacity: 1;
   position: absolute;
   bottom: -68px;

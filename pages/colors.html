@@ -28,9 +28,9 @@
     <!-- inject the template footer into the page -->
     <script defer src="../js/footerInjector.js"></script>
     <script type="text/javascript">
-      function initItems(){
+      function initActivityItems(){
         const sndPath = "../sounds/colors/";
-        items = [
+        activityItems = [
                 {name: 'red', audioPath: sndPath + 'red.ogg'},
                 {name: 'green', audioPath: sndPath + 'green.ogg'},
                 {name: 'blue', audioPath: sndPath + 'blue.ogg'},
@@ -50,18 +50,18 @@
     <div id="content">
       <div id="dialogDiv"></div>
       <div class="result">
-        <img src="../img/start.svg" alt="result image" onclick="startActivity();" style="height: 100%;" class="pointerCursor"/>
+        <img src="../images/start.svg" alt="result image" onclick="startActivity();" style="height: 100%;" class="pointerCursor"/>
       </div>
       <div id="contentPanel">
       </div>
     </div>
     <div id="scorePanel">
       <div id="scoreGood">
-        <img src="../img/smileFace.png" alt="good answers" style="height: 25px;"/>
+        <img src="../images/smileFace.png" alt="good answers" style="height: 25px;"/>
         <div>0</div>
       </div>
       <div id="scoreBad">
-        <img src="../img/sadFace.png" alt="bad answers" style="height: 25px;"/>
+        <img src="../images/sadFace.png" alt="bad answers" style="height: 25px;"/>
         <div>0</div>
       </div>
     </div>

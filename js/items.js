@@ -12,7 +12,7 @@ function generateChallengeItems() {
     // randomly find "nbDistractors" items to be displayed, from the list of available items
     let item;
     while (true) {
-      item = items[Math.floor((Math.random() * items.length))];
+      item = activityItems[Math.floor((Math.random() * activityItems.length))];
 
       // make sure it was not already generated for the current iteration (/* can also limited to the previous iteration*/)
       if (!currSelectedItems.some(cso => cso.name === item.name)/* && !prevSelectedItems.some(pso => pso.name === item.name)*/) {

@@ -20,18 +20,18 @@
 <div id="content">
   <div id="dialogDiv"></div>
   <div class="result">
-    <img src="../img/start.svg" alt="result image" onclick="startActivity();" style="height: 100%;" class="pointerCursor"/>
+    <img src="../images/start.svg" alt="result image" onclick="startActivity();" style="height: 100%;" class="pointerCursor"/>
   </div>
   <div id="contentPanel">
   </div>
 </div>
 <div id="scorePanel">
   <div id="scoreGood" class="score">
-    <img src="../img/smileFace.png" alt="good answers"/>
+    <img src="../images/smileFace.png" alt="good answers"/>
     <div>0</div>
   </div>
   <div id="scoreBad" class="score">
-    <img src="../img/sadFace.png" alt="bad answers"/>
+    <img src="../images/sadFace.png" alt="bad answers"/>
     <div>0</div>
   </div>
 </div>
@@ -42,7 +42,7 @@
   // on page load
   jQuery(() => {
     // function declared in each item's related file
-    initItems();
+    initActivityItems();
 
     initActivity();
   });

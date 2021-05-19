@@ -1,7 +1,7 @@
 // on page load
 jQuery(() => {
   // declared in the html file
-  initItems();
+  initActivityItems();
 
   initActivity('color');
 });
@@ -18,7 +18,7 @@ function generateChallengeItems() {
     // randomly find "nbDistractors" items to be displayed, from the list of available items
     let item;
     while (true) {
-      item = items[Math.floor((Math.random() * items.length))];
+      item = activityItems[Math.floor((Math.random() * activityItems.length))];
 
       // make sure it was not already generated for the current iteration
       if (!currSelectedItems.some(cso => cso.name === item.name)) {
