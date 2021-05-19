@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="../css/normalize.css">
   <link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" href="../css/pageLayout.css">
-  <link rel="stylesheet" href="../css/humanBody.css">
+  <link rel="stylesheet" href="../css/items.css">
 
   <meta name="theme-color" content="#EFE7E0">
 
@@ -30,167 +30,207 @@
     function initActivityItems(){
       const imgPath = "../images/opposites/";
       const sndPath = "../sounds/opposites/";
-      activityItems = new Map();
+      activityItems = [];
       // FULL / EMPTY
       let fullCategory = {}, emptyCategory = {};
       fullCategory.audioPath = sndPath + "full.ogg";
+      fullCategory.images = [imgPath + "full.jpg"];
       emptyCategory.audioPath = sndPath + "empty.ogg";
+      emptyCategory.images = [imgPath + "empty.jpg"];
       fullCategory.pairCategory = emptyCategory;
       emptyCategory.pairCategory = fullCategory;
-      activityItems.set(fullCategory, [imgPath + "full.jpg"]);
-      activityItems.set(emptyCategory, [imgPath + "empty.jpg"]);
+      activityItems.push(fullCategory);
+      activityItems.push(emptyCategory);
       // INSIDE / OUTSIDE
       let insideCategory = {}, outsideCategory = {};
-      insideCategory.audioPath = sndPath + "inside.ogg"
+      insideCategory.audioPath = sndPath + "inside.ogg";
+      insideCategory.images = [imgPath + "inside.jpg"];
       outsideCategory.audioPath = sndPath + "outside.ogg";
+      outsideCategory.images = [imgPath + "outside.jpg"];
       insideCategory.pairCategory = outsideCategory;
       outsideCategory.pairCategory = insideCategory;
-      activityItems.set(insideCategory, [imgPath + "inside.jpg"]);
-      activityItems.set(emptyCategory, [imgPath + "outside.jpg"]);
+      activityItems.push(insideCategory);
+      activityItems.push(outsideCategory);
       // WARM / COLD
       let warmCategory = {}, coldCategory = {};
-      warmCategory.audioPath = sndPath + "warm.ogg"
+      warmCategory.audioPath = sndPath + "warm.ogg";
+      warmCategory.images = [imgPath + "warm.jpg"];
       coldCategory.audioPath = sndPath + "cold.ogg";
+      coldCategory.images =  [imgPath + "cold.jpg"];
       warmCategory.pairCategory = coldCategory;
       coldCategory.pairCategory = warmCategory;
-      activityItems.set(warmCategory, [imgPath + "warm.jpg"]);
-      activityItems.set(emptyCategory, [imgPath + "cold.jpg"]);
+      activityItems.push(warmCategory);
+      activityItems.push(coldCategory);
       // FRONT / BACK
       let frontCategory = {}, backCategory = {};
-      frontCategory.audioPath = sndPath + "front.ogg"
+      frontCategory.audioPath = sndPath + "front.ogg";
+      frontCategory.images = [imgPath + "front.jpg"];
       backCategory.audioPath = sndPath + "back.ogg";
+      backCategory.images = [imgPath + "back.jpg"];
       frontCategory.pairCategory = backCategory;
       backCategory.pairCategory = frontCategory;
-      activityItems.set(frontCategory, [imgPath + "front.jpg"]);
-      activityItems.set(emptyCategory, [imgPath + "back.jpg"]);
+      activityItems.push(frontCategory);
+      activityItems.push(backCategory);
       // SLEEPING / AWAKE
       let sleepingCategory = {}, awakeCategory = {};
-      sleepingCategory.audioPath = sndPath + "sleeping.ogg"
+      sleepingCategory.audioPath = sndPath + "sleeping.ogg";
+      sleepingCategory.images =[imgPath + "sleeping.jpg"] ;
       awakeCategory.audioPath = sndPath + "awake.ogg";
+      awakeCategory.images =  [imgPath + "awake.jpg"];
       sleepingCategory.pairCategory = awakeCategory;
       awakeCategory.pairCategory = sleepingCategory;
-      activityItems.set(sleepingCategory, [imgPath + "sleeping.jpg"]);
-      activityItems.set(emptyCategory, [imgPath + "awake.jpg"]);
+      activityItems.push(sleepingCategory);
+      activityItems.push(awakeCategory);
       // FAT / SLIM
       let fatCategory = {}, slimCategory = {};
-      fatCategory.audioPath = sndPath + "fat.ogg"
+      fatCategory.audioPath = sndPath + "fat.ogg";
+      fatCategory.images = [imgPath + "fat.jpg"];
       slimCategory.audioPath = sndPath + "slim.ogg";
+      slimCategory.images = [imgPath + "slim.jpg"];
       fatCategory.pairCategory = slimCategory;
       slimCategory.pairCategory = fatCategory;
-      activityItems.set(fatCategory, [imgPath + "fat.jpg"]);
-      activityItems.set(emptyCategory, [imgPath + "slim.jpg"]);
+      activityItems.push(fatCategory);
+      activityItems.push(slimCategory);
       // HEAVY / LIGHT
       let heavyCategory = {}, lightCategory = {};
-      heavyCategory.audioPath = sndPath + "heavy.ogg"
+      heavyCategory.audioPath = sndPath + "heavy.ogg";
+      heavyCategory.images = [imgPath + "heavy.jpg"];
       lightCategory.audioPath = sndPath + "light.ogg";
+      lightCategory.images = [imgPath + "light.jpg"];
       heavyCategory.pairCategory = lightCategory;
       lightCategory.pairCategory = heavyCategory;
-      activityItems.set(heavyCategory, [imgPath + "heavy.jpg"]);
-      activityItems.set(emptyCategory, [imgPath + "light.jpg"]);
+      activityItems.push(heavyCategory);
+      activityItems.push(lightCategory);
       // SLOW / FAST
       let slowCategory = {}, fastCategory = {};
-      slowCategory.audioPath = sndPath + "slow.ogg"
+      slowCategory.audioPath = sndPath + "slow.ogg";
+      slowCategory.images = [imgPath + "slow.jpg"];
       fastCategory.audioPath = sndPath + "fast.ogg";
+      fastCategory.images = [imgPath + "fast.jpg"];
       slowCategory.pairCategory = fastCategory;
       fastCategory.pairCategory = slowCategory;
-      activityItems.set(slowCategory, [imgPath + "slow.jpg"]);
-      activityItems.set(emptyCategory, [imgPath + "fast.jpg"]);
+      activityItems.push(slowCategory);
+      activityItems.push(fastCategory);
       // DOWN / UP
       let downCategory = {}, upCategory = {};
-      downCategory.audioPath = sndPath + "down.ogg"
+      downCategory.audioPath = sndPath + "down.ogg";
+      downCategory.images = [imgPath + "down.jpg"];
       upCategory.audioPath = sndPath + "up.ogg";
+      upCategory.images = [imgPath + "up.jpg"];
       downCategory.pairCategory = upCategory;
       upCategory.pairCategory = downCategory;
-      activityItems.set(downCategory, [imgPath + "down.jpg"]);
-      activityItems.set(emptyCategory, [imgPath + "up.jpg"]);
+      activityItems.push(downCategory);
+      activityItems.push(upCategory);
       // CRYING / LAUGHING
       let cryingCategory = {}, laughingCategory = {};
-      cryingCategory.audioPath = sndPath + "crying.ogg"
+      cryingCategory.audioPath = sndPath + "crying.ogg";
+      cryingCategory.images = [imgPath + "crying.jpg"];
       laughingCategory.audioPath = sndPath + "laughing.ogg";
+      laughingCategory.images = [imgPath + "laughing.jpg"];
       cryingCategory.pairCategory = laughingCategory;
       laughingCategory.pairCategory = cryingCategory;
-      activityItems.set(cryingCategory, [imgPath + "crying.jpg"]);
-      activityItems.set(emptyCategory, [imgPath + "laughing.jpg"]);
+      activityItems.push(cryingCategory);
+      activityItems.push(laughingCategory);
       // DAY / NIGHT
       let dayCategory = {}, nightCategory = {};
-      dayCategory.audioPath = sndPath + "day.ogg"
+      dayCategory.audioPath = sndPath + "day.ogg";
+      dayCategory.images = [imgPath + "day.jpg"];
       nightCategory.audioPath = sndPath + "night.ogg";
+      nightCategory.images = [imgPath + "night.jpg"];
       dayCategory.pairCategory = nightCategory;
       nightCategory.pairCategory = dayCategory;
-      activityItems.set(dayCategory, [imgPath + "day.jpg"]);
-      activityItems.set(emptyCategory, [imgPath + "night.jpg"]);
+      activityItems.push(dayCategory);
+      activityItems.push(nightCategory);
       // OPEN / CLOSED
       let openCategory = {}, closedCategory = {};
-      openCategory.audioPath = sndPath + "open.ogg"
+      openCategory.audioPath = sndPath + "open.ogg";
+      openCategory.images = [imgPath + "open.jpg"];
       closedCategory.audioPath = sndPath + "closed.ogg";
+      closedCategory.images = [imgPath + "closed.jpg"];
       openCategory.pairCategory = closedCategory;
       closedCategory.pairCategory = openCategory;
-      activityItems.set(openCategory, [imgPath + "open.jpg"]);
-      activityItems.set(emptyCategory, [imgPath + "closed.jpg"]);
+      activityItems.push(openCategory);
+      activityItems.push(closedCategory);
       // RIGHT / LEFT
       let rightCategory = {}, leftCategory = {};
-      rightCategory.audioPath = sndPath + "right.ogg"
+      rightCategory.audioPath = sndPath + "right.ogg";
+      rightCategory.images = [imgPath + "right.jpg"];
       leftCategory.audioPath = sndPath + "left.ogg";
+      leftCategory.images = [imgPath + "left.jpg"];
       rightCategory.pairCategory = leftCategory;
       leftCategory.pairCategory = rightCategory;
-      activityItems.set(rightCategory, [imgPath + "right.jpg"]);
-      activityItems.set(emptyCategory, [imgPath + "left.jpg"]);
+      activityItems.push(rightCategory);
+      activityItems.push(leftCategory);
       // YOUNG / OLD
       let youngCategory = {}, oldCategory = {};
-      youngCategory.audioPath = sndPath + "young.ogg"
+      youngCategory.audioPath = sndPath + "young.ogg";
+      youngCategory.images = [imgPath + "young.jpg"];
       oldCategory.audioPath = sndPath + "old.ogg";
+      oldCategory.images = [imgPath + "old.jpg"];
       youngCategory.pairCategory = oldCategory;
       oldCategory.pairCategory = youngCategory;
-      activityItems.set(youngCategory, [imgPath + "young.jpg"]);
-      activityItems.set(emptyCategory, [imgPath + "old.jpg"]);
+      activityItems.push(youngCategory);
+      activityItems.push(oldCategory);
       // TALL / SHORT
       let tallCategory = {}, shortCategory = {};
-      tallCategory.audioPath = sndPath + "tall.ogg"
+      tallCategory.audioPath = sndPath + "tall.ogg";
+      tallCategory.images = [imgPath + "tall.jpg"];
       shortCategory.audioPath = sndPath + "short.ogg";
+      shortCategory.images = [imgPath + "short.jpg"];
       tallCategory.pairCategory = shortCategory;
       shortCategory.pairCategory = tallCategory;
-      activityItems.set(tallCategory, [imgPath + "tall.jpg"]);
-      activityItems.set(emptyCategory, [imgPath + "short.jpg"]);
+      activityItems.push(tallCategory);
+      activityItems.push(shortCategory);
       // WET / DRY
       let wetCategory = {}, dryCategory = {};
-      wetCategory.audioPath = sndPath + "wet.ogg"
+      wetCategory.audioPath = sndPath + "wet.ogg";
+      wetCategory.images = [imgPath + "wet.jpg"];
       dryCategory.audioPath = sndPath + "dry.ogg";
+      dryCategory.images = [imgPath + "dry.jpg"];
       wetCategory.pairCategory = dryCategory;
       dryCategory.pairCategory = wetCategory;
-      activityItems.set(wetCategory, [imgPath + "wet.jpg"]);
-      activityItems.set(emptyCategory, [imgPath + "dry.jpg"]);
+      activityItems.push(wetCategory);
+      activityItems.push(dryCategory);
       // CLEAN / DIRTY
       let cleanCategory = {}, dirtyCategory = {};
-      cleanCategory.audioPath = sndPath + "clean.ogg"
+      cleanCategory.audioPath = sndPath + "clean.ogg";
+      cleanCategory.images = [imgPath + "clean.jpg"];
       dirtyCategory.audioPath = sndPath + "dirty.ogg";
+      dirtyCategory.images = [imgPath + "dirty.jpg"];
       cleanCategory.pairCategory = dirtyCategory;
       dirtyCategory.pairCategory = cleanCategory;
-      activityItems.set(cleanCategory, [imgPath + "clean.jpg"]);
-      activityItems.set(emptyCategory, [imgPath + "dirty.jpg"]);
+      activityItems.push(cleanCategory);
+      activityItems.push(dirtyCategory);
       // GOOD / BAD
       let goodCategory = {}, badCategory = {};
-      goodCategory.audioPath = sndPath + "good.ogg"
+      goodCategory.audioPath = sndPath + "good.ogg";
+      goodCategory.images = [imgPath + "good.jpg"];
       badCategory.audioPath = sndPath + "bad.ogg";
+      badCategory.images = [imgPath + "bad.jpg"];
       goodCategory.pairCategory = badCategory;
       badCategory.pairCategory = goodCategory;
-      activityItems.set(goodCategory, [imgPath + "good.jpg"]);
-      activityItems.set(emptyCategory, [imgPath + "bad.jpg"]);
+      activityItems.push(goodCategory);
+      activityItems.push(badCategory);
       // PUSH / PULL
       let pushCategory = {}, pullCategory = {};
-      pushCategory.audioPath = sndPath + "push.ogg"
+      pushCategory.audioPath = sndPath + "push.ogg";
+      pushCategory.images = [imgPath + "push.jpg"];
       pullCategory.audioPath = sndPath + "pull.ogg";
+      pullCategory.images = [imgPath + "pull.jpg"];
       pushCategory.pairCategory = pullCategory;
       pullCategory.pairCategory = pushCategory;
-      activityItems.set(pushCategory, [imgPath + "push.jpg"]);
-      activityItems.set(emptyCategory, [imgPath + "pull.jpg"]);
+      activityItems.push(pushCategory);
+      activityItems.push(pullCategory);
       // ON / OFF
       let onCategory = {}, offCategory = {};
-      onCategory.audioPath = sndPath + "on.ogg"
+      onCategory.audioPath = sndPath + "on.ogg";
+      onCategory.images = [imgPath + "on.jpg"];
       offCategory.audioPath = sndPath + "off.ogg";
+      offCategory.images = [imgPath + "off.jpg"];
       onCategory.pairCategory = offCategory;
       offCategory.pairCategory = onCategory;
-      activityItems.set(onCategory, [imgPath + "on.jpg"]);
-      activityItems.set(emptyCategory, [imgPath + "off.jpg"]);
+      activityItems.push(onCategory);
+      activityItems.push(offCategory);
     }
   </script>
 </head>
@@ -202,6 +242,8 @@
       <img src="../images/start.svg" alt="result image" onclick="startActivity();" style="height: 100%;" class="pointerCursor"/>
     </div>
     <div id="contentPanel">
+      <div id="itemContainer1Id" class="item pointerCursor"></div>
+      <div id="itemContainer2Id" class="item pointerCursor"></div>
     </div>
   </div>
 
