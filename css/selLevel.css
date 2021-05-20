@@ -26,8 +26,7 @@
 }
 
 .selLevelDetails {
-  display: grid;
-  grid-template-columns: 1fr 8fr;
+  display: flex;
 }
 .selLevelLabel {
   font: normal normal bold 22px/37px Poppins-600-normal;
@@ -55,4 +54,10 @@
 
 .iconLevel.active {
   background: #FAA01C;
+}
+
+.iconOpposites {
+  background-image: url(../images/app/activityIcons/opposites.svg);
+  width: 51px;
+  height: 51px;
 }
