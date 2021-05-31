@@ -1,6 +1,6 @@
 jQuery('body').load('0_item.inc.html');
 
-function generateChallengeItems() {
+generateChallengeItems = () => {
   let answerOptionValues = getAnswerOptions(); // [true, false, (false)..]
 
   // setup the containing DOM elements

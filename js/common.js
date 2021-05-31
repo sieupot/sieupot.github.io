@@ -9,7 +9,7 @@ let prevSelectedItems = []; // item items selected in the previous iteration of 
 let itemAudioFilePath;
 let showItemSoundInterval;
 let playingAudios = [];
-let rightAnswers = 0, wrongAnswers = 0;
+let [rightAnswers, wrongAnswers] = [0, 0];
 
 const dialogOptions = {
   dialogClass: 'ui-dialog-no-close-button',
@@ -23,10 +23,9 @@ const dialogOptions = {
   },
 };
 
-let modalPanel;
-let resultDivElem;
+let modalPanel, resultDivElem;
 
-const initActivity = function (itemClass = 'item') {
+const initActivity = (itemClass = 'item') => {
   modalPanel = jQuery('#dialogDiv');
   resultDivElem = jQuery('div.result');
 
@@ -52,27 +51,27 @@ const initActivity = function (itemClass = 'item') {
 /**
  * triggered when the user manually chooses to start the activity
  */
-const startActivity = function () {
+const startActivity = () => {
   resultDivElem.find('img').removeAttr('onclick').removeClass('pointerCursor');
 
   generateChallengeItems();
 }
 
-const getAnswerOptions = function() {
+const getAnswerOptions = () => {
   let answerOptionValues = []; // [true, false, (false)..]
   for (i = 0; i < activityObjElemArray.length; i++) {
     answerOptionValues.push(!answerOptionValues.length || answerOptionValues.length === 0);
   }
  return answerOptionValues;
 }
-const extractAnswerOption = function(answerOptionValues) {
+const extractAnswerOption = (answerOptionValues) => {
   const answerOptionIndex = Math.floor(Math.random() * answerOptionValues.length);
   let isCorrectAnswer = answerOptionValues[answerOptionIndex]; // true or false
   answerOptionValues.splice(answerOptionIndex, 1); // remove the selected answer from the array
   return isCorrectAnswer;
 }
 
-const checkValidAnswer = function(isValidAnswer) {
+const checkValidAnswer = (isValidAnswer) => {
   resetActivityItems();
   modalPanel.dialog(dialogOptions);
   if (isValidAnswer) {
@@ -104,12 +103,12 @@ const checkValidAnswer = function(isValidAnswer) {
   }
 }
 
-const resetActivityItems = function() {
+const resetActivityItems = () => {
   playingAudios = [];
   resetSounds();
 }
 
-const resetSounds = function() {
+const resetSounds = () => {
   window.clearInterval(showItemSoundInterval);
   showItemSoundInterval = null;
   playingAudios = [];
@@ -119,7 +118,7 @@ const resetSounds = function() {
   }*/
 }
 
-const playShowItemAudio = function() {
+const playShowItemAudio = () => {
   resetActivityItems();
 
   modalPanel.dialog(dialogOptions);
