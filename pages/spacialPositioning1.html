@@ -1,0 +1,72 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Poziționare spațială</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="apple-touch-icon" href="/icon.png">
+
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/pageLayout.css">
+  <link rel="stylesheet" href="../css/items.css">
+
+  <meta name="theme-color" content="#EFE7E0">
+
+  <script defer src="../js/lib/modernizr-3.8.0.min.js"></script>
+  <script defer src="../js/lib/jquery.min.js"></script>
+  <script defer src="../js/lib/jquery-ui-1.12.1.min.js"></script>
+
+  <script defer src="../js/common.js"></script>
+  <script defer src="../js/spatialPositioning.js"></script>
+  <!-- inject the template footer into the page -->
+  <script defer src="../js/footerInjector.js"></script>
+  <script type="text/javascript">
+    function initActivityItems(){
+      const imgPath = "../images/spatialPositioning/";
+      const sndPath = "../sounds/spatialPositioning/";
+      activityItems = [];
+      // FULL / EMPTY
+      let fullCategory = {}, emptyCategory = {};
+      fullCategory.audioPath = sndPath + "full.ogg";
+      fullCategory.images = [imgPath + "full.jpg"];
+      emptyCategory.audioPath = sndPath + "empty.ogg";
+      emptyCategory.images = [imgPath + "empty.jpg"];
+      fullCategory.pairCategory = emptyCategory;
+      emptyCategory.pairCategory = fullCategory;
+      activityItems.push(fullCategory);
+      activityItems.push(emptyCategory);
+
+    }
+  </script>
+</head>
+
+<body>
+  <div id="content">
+    <div id="dialogDiv"></div>
+    <div class="result">
+      <img src="../images/start.svg" alt="result image" onclick="startActivity();" style="height: 100%;" class="pointerCursor"/>
+    </div>
+    <div id="contentPanel">
+      <div id="itemContainer1Id" class="item pointerCursor"></div>
+      <div id="itemContainer2Id" class="item pointerCursor"></div>
+    </div>
+  </div>
+
+  <div id="scorePanel">
+    <div id="scoreGood">
+      <img src="../images/smileFace.png" alt="good answers" style="height: 25px;"/>
+      <div>0</div>
+    </div>
+    <div id="scoreBad">
+      <img src="../images/sadFace.png" alt="bad answers" style="height: 25px;"/>
+      <div>0</div>
+    </div>
+  </div>
+</body>
+
+</html>
