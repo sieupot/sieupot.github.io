@@ -6,7 +6,7 @@ jQuery(() => {
   initActivity('color');
 });
 
-function generateChallengeItems() {
+generateChallengeItems = () => {
   let answerOptionValues = getAnswerOptions(); // [true, false, (false)..]
 
   // setup the containing DOM elements

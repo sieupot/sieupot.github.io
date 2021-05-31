@@ -12,7 +12,7 @@ const isIsogram = function (str) {
  * @param sParam the name of the url param
  * @returns {boolean|string}
  */
-const getUrlParameter = function (sParam) {
+const getUrlParameter = (sParam) => {
   const sPageURL = window.location.search.substring(1);
   const sURLVariables = sPageURL.split('&');
   let sParameterName;
@@ -33,7 +33,7 @@ const getUrlParameter = function (sParam) {
  * @param pageLocation location of the page to navigate to
  * @param includeUrlParams include url params
  */
-const navigateTo = function (pageLocation, includeUrlParams = true) {
+const navigateTo = (pageLocation, includeUrlParams = true) => {
   window.location = pageLocation + (includeUrlParams ? window.location.search: '');
 }
 
@@ -44,7 +44,7 @@ const navigateTo = function (pageLocation, includeUrlParams = true) {
  * @param sParam
  * @returns {string}
  */
-const parseDynamicJsString = function (sParam) {
+const parseDynamicJsString = (sParam) => {
   const sParamTokens = sParam.split(' ');
   let sRet = '';
   for (i = 0; i < sParamTokens.length; i++) {

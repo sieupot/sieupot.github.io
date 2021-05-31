@@ -17,7 +17,7 @@ jQuery(() => {
   modalPanel.dialog(dialogOptions);
 });
 
-function generateChallengeItems() {
+generateChallengeItems = () => {
   do {
     validItemIndex = Math.floor((Math.random() * activityItems.length));
   } while (validItemIndex === prevRnd);
