@@ -104,7 +104,6 @@ const checkValidAnswer = (isValidAnswer) => {
 }
 
 const resetActivityItems = () => {
-  playingAudios = [];
   resetSounds();
 }
 

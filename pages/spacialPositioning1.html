@@ -22,13 +22,14 @@
   <script defer src="../js/lib/jquery-ui-1.12.1.min.js"></script>
 
   <script defer src="../js/common.js"></script>
-  <script defer src="../js/spatialPositioning.js"></script>
+  <script defer src="../js/spatialPositioning1.js"></script>
   <!-- inject the template footer into the page -->
   <script defer src="../js/footerInjector.js"></script>
   <script type="text/javascript">
     function initActivityItems(){
-      const imgPath = "../images/spatialPositioning/";
-      const sndPath = "../sounds/spatialPositioning/";
+
+
+
       activityItems = [];
       // FULL / EMPTY
       let fullCategory = {}, emptyCategory = {};
@@ -52,8 +53,16 @@
       <img src="../images/start.svg" alt="result image" onclick="startActivity();" style="height: 100%;" class="pointerCursor"/>
     </div>
     <div id="contentPanel">
-      <div id="itemContainer1Id" class="item pointerCursor"></div>
-      <div id="itemContainer2Id" class="item pointerCursor"></div>
+      <div id="itemContainer1Id" class="item pointerCursor">
+        <svg id="svgContainer1Id" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+          <!-- SVG activity items 1 gets injected here -->
+        </svg>
+      </div>
+      <div id="itemContainer2Id" class="item pointerCursor">
+        <svg id="svgContainer2Id" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+          <!-- SVG activity items 2 gets injected here -->
+        </svg>
+      </div>
     </div>
   </div>
 

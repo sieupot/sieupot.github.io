@@ -1,4 +1,35 @@
+class Item {
+  imagePath;
+  soundPath;
+
+  /**
+   *
+   * @param imageFile
+   * @param soundBaseFileName
+   * @param soundArticle: Indefinite, Definite, Possessive
+   */
+  constructor(imageFile, soundBaseFileName, soundArticle) {
+    this.imagePath = imgPath + imageFile;
+    this.soundPath = sndPath + soundBaseFileName + soundArticle + ".ogg";
+  }
+}
+
 let answerOptionValues;
+
+const imgPath = "../images/spatialPositioning/";
+const sndPath = "../sounds/spatialPositioning/";
+
+const teddyBearArtDItem = new Item('teddyBear.svg', 'teddyBear', 'D'),
+  boxArtIItem = new Item('box.svg', 'box', 'I'),
+  boxArtDItem = new Item('box.svg', 'box', 'D'),
+  boxArtPItem = new Item('box.svg', 'box', 'P'),
+  chairArtIItem = new Item('chair.svg', 'chair', 'I'),
+  chairArtPItem = new Item('chair.svg', 'chair', 'P'),
+  closetArtIItem = new Item('closet.svg', 'closet', 'I'),
+  closetArtPItem = new Item('closet.svg', 'closet', 'P'),
+  tableArtIItem = new Item('table.svg', 'table', 'I'),
+  tableArtPItem = new Item('table.svg', 'table', 'P');
+
 
 // on page load
 jQuery(() => {
