@@ -1,30 +1,30 @@
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-	 viewBox="0 0 58 58" style="enable-background:new 0 0 58 58;">
-<style type="text/css">
-	.st0{fill:#847059;}
-	.st1{fill:#665646;}
-	.st2{fill:#54473B;}
-	.st3{fill:#9E8771;}
-	.st4{fill:#AF9680;}
-	.st5{fill:none;stroke:#382016;stroke-width:2;stroke-miterlimit:10;}
-	.st6{fill:none;stroke:#E0E1E2;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
-</style>
-<g>
-	<rect x="12" y="1" class="st0" width="34" height="54"/>
-	<polygon class="st0" points="7,1 0,1 0,58 3,58 3,55 3,3 	"/>
-	<polygon class="st0" points="51,1 55,3 55,55 55,58 58,58 58,1 	"/>
-</g>
-<rect x="12" y="4" class="st1" width="17" height="48"/>
-<rect x="29" y="4" class="st2" width="17" height="48"/>
-<polygon class="st3" points="9,58 3,55 3,3 9,0 "/>
-<rect x="9" class="st4" width="3" height="58"/>
-<polygon class="st3" points="49,58 55,55 55,3 49,0 "/>
-<rect x="46" class="st4" width="3" height="58"/>
-<path class="st5" d="M29,19"/>
-<path class="st5" d="M12,19"/>
-<path class="st6" d="M43,12"/>
-<path class="st6" d="M32,12"/>
-<polygon class="st2" points="12,4 29,4 30.1,15 12,14 "/>
-<rect x="12" y="43" class="st3" width="34" height="2"/>
-<line class="st3" x1="46" y1="13" x2="46" y2="15"/>
+<svg viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <title>Layer closet</title>
+  <style type="text/css">
+    .st0{fill:#847059;}
+    .st1{fill:#665646;}
+    .st2{fill:#54473B;}
+    .st3{fill:#9E8771;}
+    .st4{fill:#AF9680;}
+    .st5{fill:none;stroke:#382016;stroke-width:2;stroke-miterlimit:10;}
+    .st6{fill:none;stroke:#E0E1E2;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
+  </style>
+  <g style="">
+    <rect x="12" y="1" class="st0" width="34" height="54"/>
+    <polygon class="st0" points="7,1 0,1 0,58 3,58 3,55 3,3 	"/>
+    <polygon class="st0" points="51,1 55,3 55,55 55,58 58,58 58,1 	"/>
+    <rect x="12" y="4" class="st1" width="17" height="48"/>
+    <rect x="29" y="4" class="st2" width="17" height="48"/>
+    <polygon class="st3" points="9,58 3,55 3,3 9,0 "/>
+    <rect x="9" class="st4" width="3" height="58"/>
+    <polygon class="st3" points="49,58 55,55 55,3 49,0 "/>
+    <rect x="46" class="st4" width="3" height="58"/>
+    <path class="st5" d="M29,19"/>
+    <path class="st5" d="M12,19"/>
+    <path class="st6" d="M43,12"/>
+    <path class="st6" d="M32,12"/>
+    <polygon class="st2" points="12,4 29,4 30.1,15 12,14 "/>
+    <rect x="12" y="43" class="st3" width="34" height="2"/>
+    <line class="st3" x1="46" y1="13" x2="46" y2="15"/>
+  </g>
 </svg>
