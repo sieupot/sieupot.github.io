@@ -1,41 +1,12 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 478.4 478.4" style="enable-background:new 0 0 478.4 478.4;" xml:space="preserve">
-<g>
-	<path style="fill:#926E43;" d="M238,72.8v334.8L56,336V220l97.2-1.6L238,72.8z M238,70.8L238,70.8L56,127.2L238,70.8z"/>
-	<polygon style="fill:#D9AC80;" points="153.2,218.8 239.2,70.8 56,127.2 0,221.2 	"/>
-	<polygon style="fill:#A67E4F;" points="238,70.8 238,407.6 420,336 420,220 325.2,218.8 239.6,71.2 	"/>
-	<polygon style="fill:#D9AC80;" points="325.2,218.8 239.2,70.8 422.4,127.2 478.4,221.2 	"/>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
+<svg viewBox="0 0 478.4 338.4" xmlns="http://www.w3.org/2000/svg" version="1.1">
+
+ <g>
+  <title>Layer 1</title>
+  <g id="svg_1">
+   <path id="svg_2" fill="#926E43" d="m238,2.8l0,334.8l-182,-71.6l0,-116l97.2,-1.6l84.8,-145.6zm0,-2l0,0l-182,56.4l182,-56.4z"/>
+   <polygon id="svg_3" fill="#D9AC80" points="153.1999969482422,148.8000030517578 239.1999969482422,0.8000030517578125 56,57.19999694824219 0,151.1999969482422 "/>
+   <polygon id="svg_4" fill="#A67E4F" points="238,0.8000030517578125 238,337.6000061035156 420,266 420,150 325.20001220703125,148.8000030517578 239.60000610351562,1.1999969482421875 "/>
+   <polygon id="svg_5" fill="#D9AC80" points="325.20001220703125,148.8000030517578 239.1999969482422,0.8000030517578125 422.3999938964844,57.19999694824219 478.3999938964844,151.1999969482422 "/>
+  </g>
+ </g>
 </svg>
