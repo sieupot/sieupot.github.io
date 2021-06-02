@@ -1,6 +1,6 @@
 <svg viewBox="0 0 497 316" xmlns="http://www.w3.org/2000/svg" version="1.1">
   <title>Layer table</title>
-  <g style="">
+  <g id="g_table1" style="">
     <path id="svg_3" fill="#b46f3d" d="m42.951,21.914l407.883,0l0,60.763l-407.883,0l0,-60.763z"/>
     <path id="svg_5" fill="#ab6839" d="m390.834,21.914l60,0l0,60.763l-60,0l0,-60.763z"/>
     <path id="svg_7" fill="#d68b56"
