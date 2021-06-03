@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   viewBox="0 0 520.38477 359.62931"
+   version="1.1"
+   id="svg19"
+   width="520.38477"
+   height="359.6293">
+  <metadata
+     id="metadata25">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Layer table</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs23" />
+  <title
+     id="title10">Layer table</title>
+  <g
+     id="g_box1"
+     transform="matrix(0.92202027,0,0,0.92202027,0,-0.73761622)">
+    <path
+       id="svg_box2"
+       fill="#926e43"
+       d="M 238,2.8 V 337.6 L 56,266 V 150 l 97.2,-1.6 z m 0,-2 v 0 L 56,57.2 Z" />
+    <polygon
+       id="svg_box3"
+       fill="#d9ac80"
+       points="56,57.199997 0,151.2 153.2,148.8 239.2,0.80000305 " />
+    <polygon
+       id="svg_box4"
+       fill="#a67e4f"
+       points="238,0.80000305 238,337.60001 420,266 420,150 325.20001,148.8 239.60001,1.1999969 " />
+    <polygon
+       id="svg_box5"
+       fill="#d9ac80"
+       points="422.39999,57.199997 478.39999,151.2 325.20001,148.8 239.2,0.80000305 " />
+  </g>
+  <g
+     id="g_table1"
+     transform="translate(23.38475,43.127297)">
+    <path
+       id="svg_3"
+       fill="#b46f3d"
+       d="M 42.951,21.914 H 450.834 V 82.677 H 42.951 Z" />
+    <path
+       id="svg_5"
+       fill="#ab6839"
+       d="m 390.834,21.914 h 60 v 60.763 h -60 z" />
+    <path
+       id="svg_7"
+       fill="#d68b56"
+       d="M 55.825,316.502 H 30.077 c -3.314,0 -6,-2.686 -6,-6 V 43.828 l 18.874,-10 18.874,10 v 266.674 c 0,3.314 -2.687,6 -6,6 z" />
+    <path
+       id="svg_9"
+       fill="#ca7b44"
+       d="M 463.707,316.502 H 437.96 c -3.314,0 -6,-2.686 -6,-6 V 43.828 l 18.874,-10 18.874,10 v 266.674 c -0.001,3.314 -2.687,6 -6.001,6 z" />
+    <path
+       id="svg_11"
+       fill="#e0a57f"
+       d="m 491,43.828 h -21.293 l -8.128,-0.015 -0.5,0.015 H 6 c -3.314,0 -6,-2.686 -6,-6 V 6 C 0,2.686 2.686,0 6,0 h 485 c 3.314,0 6,2.686 6,6 v 31.827 c 0,3.314 -2.686,6.001 -6,6.001 z" />
+    <path
+       id="svg_13"
+       fill="#d68b56"
+       d="m 491,0 h -30 c 3.314,0 6,2.686 6,6 v 31.827 c 0,3.314 -2.686,6 -6,6 h 30 c 3.314,0 6,-2.686 6,-6 V 6 c 0,-3.314 -2.686,-6 -6,-6 z" />
+  </g>
+</svg>
