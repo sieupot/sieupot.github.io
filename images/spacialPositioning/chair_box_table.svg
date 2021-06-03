@@ -1,34 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   viewBox="0 0 144.5286 58.369442"
-   version="1.1"
-   id="svg481"
-   width="144.52859"
-   height="58.369442">
-  <metadata
-     id="metadata487">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title>Layer closet</dc:title>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <defs
-     id="defs485" />
-  <title
-     id="title444">Layer closet</title>
-  <style
-     type="text/css"
-     id="style446">
+<svg viewBox="0 0 144.5286 58.369442" xmlns="http://www.w3.org/2000/svg">
+  <title>Layer chair box table</title>
+  <style type="text/css">
     .st0{fill:#847059;}
     .st1{fill:#665646;}
     .st2{fill:#54473B;}
@@ -37,93 +9,66 @@
     .st5{fill:none;stroke:#382016;stroke-width:2;stroke-miterlimit:10;}
     .st6{fill:none;stroke:#E0E1E2;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
   </style>
-  <g
-     id="g1959"
-     transform="matrix(-1,0,0,1,144.52859,0)">
-    <g
-       id="g_box1"
-       transform="matrix(0.10576875,0,0,0.10576875,59.855692,14.14618)">
+  <g transform="matrix(-1,0,0,1,144.52859,0)">
+    <g transform="matrix(0.10576875,0,0,0.10576875,59.855692,14.14618)">
       <path
-         id="svg_box2"
          fill="#926e43"
          d="M 238,2.8 V 337.6 L 56,266 V 150 l 97.2,-1.6 z m 0,-2 v 0 L 56,57.2 Z" />
       <polygon
-         id="svg_box3"
          fill="#d9ac80"
          points="153.2,148.8 239.2,0.80000305 56,57.199997 0,151.2 " />
       <polygon
-         id="svg_box4"
          fill="#a67e4f"
          points="420,266 420,150 325.20001,148.8 239.60001,1.1999969 238,0.80000305 238,337.60001 " />
       <polygon
-         id="svg_box5"
          fill="#d9ac80"
          points="325.20001,148.8 239.2,0.80000305 422.39999,57.199997 478.39999,151.2 " />
     </g>
     <g
-       id="g_chair1"
        fill="#99501a"
        transform="matrix(1.0240249,0,0,1.0240249,111.75959,2.5027303e-6)">
       <path
-         id="svg_chair2"
          d="m 30.00015,57.00002 h -2 v -22 h -24 v 22 h -2 v -24 h 28 z" />
       <path
-         id="svg_chair3"
          d="m 2.00015,47.00002 h 28 v 2 h -28 z" />
       <path
-         id="svg_chair4"
          d="m 11.00015,10.00002 h 2 v 20 h -2 z" />
       <path
-         id="svg_chair5"
          d="m 19.00015,10.00002 h 2 v 20 h -2 z" />
       <path
-         id="svg_chair6"
          d="m 4.00015,11.00002 h 2 v 20 h -2 z" />
       <path
-         id="svg_chair7"
          d="m 26.00015,11.00002 h 2 v 20 h -2 z" />
       <path
-         id="svg_chair8"
          fill="#f9ac46"
          d="m 32.00015,34.00002 a 1.85,1.85 0 0 1 -0.18,0.81 1.84,1.84 0 0 1 -0.41,0.59 2,2 0 0 1 -1.41,0.6 h -28 a 2,2 0 0 1 -1.82,-1.18 1.85,1.85 0 0 1 -0.18,-0.82 4,4 0 0 1 4,-4 h 24 a 4,4 0 0 1 4,4 z" />
       <path
-         id="svg_chair9"
          fill="#f49e21"
          d="m 31.82015,34.81002 a 1.84,1.84 0 0 1 -0.41,0.59 2,2 0 0 1 -1.41,0.6 h -28 a 2,2 0 0 1 -1.82,-1.18 4.18,4.18 0 0 1 1,-1.64 4,4 0 0 1 2.82,-1.18 h 24 a 4,4 0 0 1 3.82,2.81 z" />
       <path
-         id="svg_chair10"
          fill="#f49e21"
          d="m 30.00015,6.00002 v 3 a 2,2 0 0 1 -2,2 h -24 a 2,2 0 0 1 -2,-2 v -3 a 6,6 0 0 1 6,-6 h 16 a 6,6 0 0 1 6,6 z" />
       <path
-         id="svg_chair11"
          fill="#f9ac46"
          d="m 27.50015,3.50002 v 3 a 2,2 0 0 1 -2,2 h -23.5 v -2.5 a 6,6 0 0 1 6,-6 h 16 a 6,6 0 0 1 2.81,0.69 6,6 0 0 1 0.69,2.81 z" />
     </g>
-    <g
-       id="g_table1"
-       transform="matrix(0.12633208,0,0,0.12633208,0,12.509744)">
+    <g transform="matrix(0.12633208,0,0,0.12633208,0,12.509744)">
       <path
-         id="svg_3"
          fill="#b46f3d"
          d="M 42.951,21.914 H 450.834 V 82.677 H 42.951 Z" />
       <path
-         id="svg_5"
          fill="#ab6839"
          d="m 390.834,21.914 h 60 v 60.763 h -60 z" />
       <path
-         id="svg_7"
          fill="#d68b56"
          d="M 55.825,316.502 H 30.077 c -3.314,0 -6,-2.686 -6,-6 V 43.828 l 18.874,-10 18.874,10 v 266.674 c 0,3.314 -2.687,6 -6,6 z" />
       <path
-         id="svg_9"
          fill="#ca7b44"
          d="M 463.707,316.502 H 437.96 c -3.314,0 -6,-2.686 -6,-6 V 43.828 l 18.874,-10 18.874,10 v 266.674 c -0.001,3.314 -2.687,6 -6.001,6 z" />
       <path
-         id="svg_11"
          fill="#e0a57f"
          d="m 491,43.828 h -21.293 l -8.128,-0.015 -0.5,0.015 H 6 c -3.314,0 -6,-2.686 -6,-6 V 6 C 0,2.686 2.686,0 6,0 h 485 c 3.314,0 6,2.686 6,6 v 31.827 c 0,3.314 -2.686,6.001 -6,6.001 z" />
       <path
-         id="svg_13"
          fill="#d68b56"
          d="m 491,0 h -30 c 3.314,0 6,2.686 6,6 v 31.827 c 0,3.314 -2.686,6 -6,6 h 30 c 3.314,0 6,-2.686 6,-6 V 6 c 0,-3.314 -2.686,-6 -6,-6 z" />
     </g>
