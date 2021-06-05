@@ -27,20 +27,14 @@
   <script defer src="../js/footerInjector.js"></script>
   <script type="text/javascript">
     function initActivityItems(){
-
-
-
       activityItems = [];
-      // FULL / EMPTY
-      let fullCategory = {}, emptyCategory = {};
-      fullCategory.audioPath = sndPath + "full.ogg";
-      fullCategory.images = [imgPath + "full.jpg"];
-      emptyCategory.audioPath = sndPath + "empty.ogg";
-      emptyCategory.images = [imgPath + "empty.jpg"];
-      fullCategory.pairCategory = emptyCategory;
-      emptyCategory.pairCategory = fullCategory;
-      activityItems.push(fullCategory);
-      activityItems.push(emptyCategory);
+
+      // BEAR between BOX and CHAIR
+      let boxBearChair = {};
+      boxBearChair.name = 'bearBetweenBoxAndChair';
+      boxBearChair.images = [imgPath + "box_bear_chair.svg", imgPath + "chair_bear_box.svg"];
+      boxBearChair.soundItems = [teddyBearArtDSoundItem, betweenSoundItem, boxArtISoundItem, andSoundItem, chairArtISoundItem];
+      activityItems.push(boxBearChair);
 
     }
   </script>

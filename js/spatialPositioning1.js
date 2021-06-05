@@ -1,16 +1,13 @@
-class Item {
-  imagePath;
+class SoundItem {
   soundPath;
 
   /**
    *
-   * @param imageFile
    * @param soundBaseFileName
    * @param soundArticle: Indefinite, Definite, Possessive
    */
-  constructor(imageFile, soundBaseFileName, soundArticle) {
-    this.imagePath = imgPath + imageFile;
-    this.soundPath = sndPath + soundBaseFileName + soundArticle + ".ogg";
+  constructor(soundBaseFileName, soundArticle) {
+    this.soundPath = sndPath + soundBaseFileName + (soundArticle ? soundArticle : '') + ".ogg";
   }
 }
 
@@ -19,16 +16,27 @@ let answerOptionValues;
 const imgPath = "../images/spatialPositioning/";
 const sndPath = "../sounds/spatialPositioning/";
 
-const teddyBearArtDItem = new Item('teddyBear.svg', 'teddyBear', 'D'),
-  boxArtIItem = new Item('box.svg', 'box', 'I'),
-  boxArtDItem = new Item('box.svg', 'box', 'D'),
-  boxArtPItem = new Item('box.svg', 'box', 'P'),
-  chairArtIItem = new Item('chair.svg', 'chair', 'I'),
-  chairArtPItem = new Item('chair.svg', 'chair', 'P'),
-  closetArtIItem = new Item('closet.svg', 'closet', 'I'),
-  closetArtPItem = new Item('closet.svg', 'closet', 'P'),
-  tableArtIItem = new Item('table.svg', 'table', 'I'),
-  tableArtPItem = new Item('table.svg', 'table', 'P');
+const
+  andSoundItem = new SoundItem('under'),
+  aboveSoundItem = new SoundItem('above'),
+  underSoundItem = new SoundItem('under'),
+  nearSoundItem = new SoundItem('near'),
+  beforeSoundItem = new SoundItem('before'),
+  behindSoundItem = new SoundItem('behind'),
+  betweenSoundItem = new SoundItem('between'),
+
+  teddyBearArtDSoundItem = new SoundItem('teddyBear', 'D'),
+  teddyBearArtISoundItem = new SoundItem('teddyBear', 'I'),
+  teddyBearArtPSoundItem = new SoundItem('teddyBear', 'P'),
+  boxArtISoundItem = new SoundItem('box', 'I'),
+  boxArtDSoundItem = new SoundItem('box', 'D'),
+  boxArtPSoundItem = new SoundItem('box', 'P'),
+  chairArtISoundItem = new SoundItem('chair', 'I'),
+  chairArtPSoundItem = new SoundItem('chair', 'P'),
+  closetArtISoundItem = new SoundItem('closet', 'I'),
+  closetArtPSoundItem = new SoundItem('closet', 'P'),
+  tableArtISoundItem = new SoundItem('table', 'I'),
+  tableArtPSoundItem = new SoundItem('table', 'P');
 
 
 // on page load
