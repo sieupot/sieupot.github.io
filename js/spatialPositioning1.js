@@ -13,11 +13,12 @@ class SoundItem {
 
 let answerOptionValues;
 
-const imgPath = "../images/spatialPositioning/";
-const sndPath = "../sounds/spatialPositioning/";
+const imgPath = "../images/spatialPositioning1/";
+const sndPath = "../sounds/spatialPositioning1/";
 
 const
-  andSoundItem = new SoundItem('under'),
+  andSoundItem = new SoundItem('and'),
+  inSoundItem = new SoundItem('in'),
   aboveSoundItem = new SoundItem('above'),
   underSoundItem = new SoundItem('under'),
   nearSoundItem = new SoundItem('near'),
@@ -27,7 +28,6 @@ const
 
   teddyBearArtDSoundItem = new SoundItem('teddyBear', 'D'),
   teddyBearArtISoundItem = new SoundItem('teddyBear', 'I'),
-  teddyBearArtPSoundItem = new SoundItem('teddyBear', 'P'),
   boxArtISoundItem = new SoundItem('box', 'I'),
   boxArtDSoundItem = new SoundItem('box', 'D'),
   boxArtPSoundItem = new SoundItem('box', 'P'),
@@ -47,8 +47,8 @@ jQuery(() => {
   modalPanel = jQuery('#dialogDiv');
   resultDivElem = jQuery('div.result');
 
-  activityObjElemArray.push(jQuery('#itemContainer1Id'));
-  activityObjElemArray.push(jQuery('#itemContainer2Id'));
+  activityObjElemArray.push(jQuery('#svgContainer1Id'));
+  activityObjElemArray.push(jQuery('#svgContainer2Id'));
 
   // show the start icon and let the user manually start the activity
   resultDivElem.fadeIn(300);
@@ -65,8 +65,14 @@ generateChallengeItems = () => {
   let selectedActivityItem1 = activityItems[Math.floor((Math.random() * activityItems.length))];
   setupAnswer(activityObjElemArray[0], selectedActivityItem1);
 
-  // extract the second activityItem from the pairCategory of the first item
-  let selectedActivityItem2 = selectedActivityItem1.pairCategory;
+  let selectedActivityItem1Name = selectedActivityItem1.name;
+
+  // extract the second activityItem
+  // loop until different name
+  let selectedActivityItem2;
+  do {
+    selectedActivityItem2 =  activityItems[Math.floor((Math.random() * activityItems.length))];
+  } while (selectedActivityItem1Name === selectedActivityItem2.name);
   setupAnswer(activityObjElemArray[1], selectedActivityItem2);
 
   playShowItemAudio();
@@ -74,13 +80,13 @@ generateChallengeItems = () => {
 
 const setupAnswer = function (objElem, selectedActivityItem) {
   // extract the image to display for this first activity item
-  let imagePath1 = selectedActivityItem.images[Math.floor((Math.random() * selectedActivityItem.images.length))];
+  let imagePath = selectedActivityItem.images[Math.floor((Math.random() * selectedActivityItem.images.length))];
   // randomly determine whether this is the correct answer or not
   let isCorrectAnswer = extractAnswerOption(answerOptionValues);
   if (isCorrectAnswer) {
-    activitySoundList[activitySoundList.length] = selectedActivityItem.audioPath;
+    activitySoundList = activitySoundList.concat(selectedActivityItem.soundItems);
   }
-  objElem.css('background-image', 'url(' + imagePath1 + ')');
+  objElem.load(imagePath);
   objElem.off('click').click(function () {
     checkValidAnswer(isCorrectAnswer);
   });
