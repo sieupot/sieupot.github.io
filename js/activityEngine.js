@@ -6,7 +6,7 @@ let nbDistractors;
 
 let activityObjElemArray = []; // list of the JQUERY items actively displayed in the page
 let prevSelectedItems = []; // item items selected in the previous iteration of the activity
-let itemAudioFilePath;
+let activitySoundList = [];
 let showItemSoundInterval;
 let playingAudios = [];
 let [rightAnswers, wrongAnswers] = [0, 0];
@@ -54,6 +54,7 @@ const initActivity = (itemClass = 'item') => {
 const startActivity = () => {
   resultDivElem.find('img').removeAttr('onclick').removeClass('pointerCursor');
 
+  activitySoundList = [];
   generateChallengeItems();
 }
 
@@ -82,6 +83,8 @@ const checkValidAnswer = (isValidAnswer) => {
     playingAudios[playingAudios.length] = playingCorrectAnswerAudio;
     playingCorrectAnswerAudio.addEventListener('ended', function () {
       resultDivElem.hide();
+
+      activitySoundList = [];
       generateChallengeItems();
     });
     playingCorrectAnswerAudio.play();
@@ -110,7 +113,7 @@ const resetActivityItems = () => {
 const resetSounds = () => {
   window.clearInterval(showItemSoundInterval);
   showItemSoundInterval = null;
-  playingAudios = [];
+  // playingAudios = [];
   /*for (let i = 0; i < playingAudios.length; i++) {
     let audio = playingAudios[i];
     audio.pause();
@@ -120,21 +123,24 @@ const resetSounds = () => {
 const playShowItemAudio = () => {
   resetActivityItems();
 
-  modalPanel.dialog(dialogOptions);
-  let playingItemNameAudio = new Audio(itemAudioFilePath);
-  playingItemNameAudio.addEventListener('ended', function () {
-    resultDivElem.hide();
-    modalPanel.dialog('close');
-  });
-  playingAudios[playingAudios.length] = playingItemNameAudio;
-  resultDivElem.find('img').attr('src', '../images/show.svg');
+  resultDivElem.find('img').attr('src', '../images/pause.svg');
   resultDivElem.fadeIn(300);
-  let playingShowAudio = new Audio('../sounds/show.ogg');
-  playingAudios[playingAudios.length] = playingShowAudio;
-  playingShowAudio.addEventListener('ended', function () {
-    playingItemNameAudio.play();
-  });
-  playingShowAudio.play();
+  modalPanel.dialog(dialogOptions);
+
+  let audio = new Audio(),
+              i = 0;
+  audio.addEventListener('ended', function () {
+    if (++i === activitySoundList.length) {
+      resultDivElem.hide();
+      modalPanel.dialog('close');
+      return;
+    }
+
+    audio.src = activitySoundList[i];
+    audio.play();
+  }, true);
+  audio.src = activitySoundList[0];
+  audio.play();
 
   if (!showItemSoundInterval) {
     showItemSoundInterval = setInterval(playShowItemAudio, commandRepeatInterval);

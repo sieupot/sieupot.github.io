@@ -47,9 +47,11 @@ jQuery(() => {
   modalPanel.dialog(dialogOptions);
 });
 
-function generateChallengeItems() {
+generateChallengeItems = () => {
   // generate answer options
   answerOptionValues = getAnswerOptions(); // [true, false, (false)..]
+
+  activitySoundList[activitySoundList.length] = '../sounds/show.ogg';
 
   // extract the first activityItem
   let selectedActivityItem1 = activityItems[Math.floor((Math.random() * activityItems.length))];
@@ -68,7 +70,7 @@ const setupAnswer = function (objElem, selectedActivityItem) {
   // randomly determine whether this is the correct answer or not
   let isCorrectAnswer = extractAnswerOption(answerOptionValues);
   if (isCorrectAnswer) {
-    itemAudioFilePath = selectedActivityItem.audioPath;
+    activitySoundList[activitySoundList.length] = selectedActivityItem.audioPath;
   }
   objElem.css('background-image', 'url(' + imagePath1 + ')');
   objElem.off('click').click(function () {
