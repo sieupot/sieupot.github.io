@@ -1,4 +1,4 @@
-const commandRepeatInterval = 8000;
+const commandRepeatInterval = 16000;
 
 let activityItems; // list of available items for the activity (css class name, image path, audio file name to be played, etc)
 
@@ -133,6 +133,11 @@ const playShowItemAudio = () => {
     if (++i === activitySoundList.length) {
       resultDivElem.hide();
       modalPanel.dialog('close');
+
+      // schedule next repeat after the last sound has been played
+      if (!showItemSoundInterval) {
+        showItemSoundInterval = setInterval(playShowItemAudio, commandRepeatInterval);
+      }
       return;
     }
 
@@ -141,8 +146,4 @@ const playShowItemAudio = () => {
   }, true);
   audio.src = activitySoundList[0];
   audio.play();
-
-  if (!showItemSoundInterval) {
-    showItemSoundInterval = setInterval(playShowItemAudio, commandRepeatInterval);
-  }
 }
