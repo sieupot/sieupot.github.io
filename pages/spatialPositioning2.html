@@ -1,0 +1,130 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Poziționare spațială 2</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="apple-touch-icon" href="/icon.png">
+
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/pageLayout.css">
+  <link rel="stylesheet" href="../css/items.css">
+
+  <meta name="theme-color" content="#EFE7E0">
+
+  <script defer src="../js/lib/modernizr-3.8.0.min.js"></script>
+  <script defer src="../js/lib/jquery.min.js"></script>
+  <script defer src="../js/lib/jquery-ui-1.12.1.min.js"></script>
+
+  <script defer src="../js/activityEngine.js"></script>
+  <script defer src="../js/spatialPositioning.js"></script>
+  <!-- inject the template footer into the page -->
+  <script defer src="../js/footerInjector.js"></script>
+  <script type="text/javascript">
+    const imgPath = "../images/spatialPositioning/2/";
+    const sndPath = "../sounds/spatialPositioning/2/";
+
+    class SoundItem {
+      soundPath;
+
+      /**
+       *
+       * @param soundBaseFileName
+       * @param soundArticle: Indefinite, Definite, Possessive
+       */
+      constructor(soundBaseFileName, soundArticle = '') {
+        this.soundPath = `${sndPath}${soundBaseFileName}${soundArticle}.ogg`;
+      }
+    }
+
+    const
+      dogArtDSoundItem = new SoundItem('dog', 'D'),
+      doghouseArtISoundItem = new SoundItem('doghouse', 'I'),
+      doghouseArtPSoundItem = new SoundItem('doghouse', 'P');
+
+    function initActivityItems(){
+      activityItems = [];
+
+      // DOG in DOGHOUSE
+      let dogInDoghouse = {};
+      dogInDoghouse.name = 'dogInDoghouse';
+      dogInDoghouse.images = [imgPath + "dog_In_Doghouse.svg"];
+      dogInDoghouse.soundItems = [dogArtDSoundItem.soundPath, inSoundItem.soundPath, doghouseArtISoundItem.soundPath];
+      activityItems.push(dogInDoghouse);
+
+      // DOG on DOGHOUSE
+      let dogOnDoghouse = {};
+      dogOnDoghouse.name = 'dogOnDoghouse';
+      dogOnDoghouse.images = [imgPath + "dog_On_Doghouse.svg"];
+      dogOnDoghouse.soundItems = [dogArtDSoundItem.soundPath, aboveSoundItem.soundPath, doghouseArtISoundItem.soundPath];
+      activityItems.push(dogOnDoghouse);
+
+      // DOG behind DOGHOUSE
+      let dogBehindDoghouse = {};
+      dogBehindDoghouse.name = 'dogBehindDoghouse';
+      dogBehindDoghouse.images = [imgPath + "dog_Behind_Doghouse.svg"];
+      dogBehindDoghouse.soundItems = [dogArtDSoundItem.soundPath, behindSoundItem.soundPath, doghouseArtPSoundItem.soundPath];
+      activityItems.push(dogBehindDoghouse);
+
+      // DOG before DOGHOUSE
+      let dogBeforeDoghouse = {};
+      dogBeforeDoghouse.name = 'dogBeforeDoghouse';
+      dogBeforeDoghouse.images = [imgPath + "dog_Before_Doghouse.svg"];
+      dogBeforeDoghouse.soundItems = [dogArtDSoundItem.soundPath, beforeSoundItem.soundPath, doghouseArtPSoundItem.soundPath];
+      activityItems.push(dogBeforeDoghouse);
+
+      // DOG under DOGHOUSE
+      let dogUnderDoghouse = {};
+      dogUnderDoghouse.name = 'dogUnderDoghouse';
+      dogUnderDoghouse.images = [imgPath + "dog_Under_Doghouse.svg"];
+      dogUnderDoghouse.soundItems = [dogArtDSoundItem.soundPath, underSoundItem.soundPath, doghouseArtISoundItem.soundPath];
+      activityItems.push(dogUnderDoghouse);
+
+      // DOG near DOGHOUSE
+      let dogNearDoghouse = {};
+      dogNearDoghouse.name = 'dogNearDoghouse';
+      dogNearDoghouse.images = [imgPath + "dog_Near_Doghouse.svg"];
+      dogNearDoghouse.soundItems = [dogArtDSoundItem.soundPath, nearSoundItem.soundPath, doghouseArtISoundItem.soundPath];
+      activityItems.push(dogNearDoghouse);
+    }
+  </script>
+</head>
+
+<body>
+  <div id="content">
+    <div id="dialogDiv"></div>
+    <div class="result">
+      <img src="../images/start.svg" alt="result image" onclick="startActivity();" style="height: 100%;" class="pointerCursor"/>
+    </div>
+    <div id="contentPanel">
+      <div id="itemContainer1Id" class="item pointerCursor">
+        <svg id="svgContainer1Id" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="background-color: #d8e8ff;">
+            <!-- SVG activity items 1 gets injected here -->
+        </svg>
+      </div>
+      <div id="itemContainer2Id" class="item pointerCursor">
+        <svg id="svgContainer2Id" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="background-color: #fff9d8;">
+          <!-- SVG activity items 2 gets injected here -->
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div id="scorePanel">
+    <div id="scoreGood">
+      <img src="../images/smileFace.png" alt="good answers" style="height: 25px;"/>
+      <div>0</div>
+    </div>
+    <div id="scoreBad">
+      <img src="../images/sadFace.png" alt="bad answers" style="height: 25px;"/>
+      <div>0</div>
+    </div>
+  </div>
+</body>
+
+</html>

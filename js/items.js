@@ -1,7 +1,7 @@
 jQuery('body').load('0_item.inc.html');
 
 generateChallengeItems = () => {
-  let answerOptionValues = getAnswerOptions(); // [true, false, (false)..]
+  answerOptionValues = getAnswerOptions(); // [true, false, (false)..]
 
   // setup the containing DOM elements
   let currSelectedItems = []; // items selected in the current iteration of the activity

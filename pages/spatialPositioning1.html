@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Poziționare spațială</title>
+  <title>Poziționare spațială 1</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -22,10 +22,42 @@
   <script defer src="../js/lib/jquery-ui-1.12.1.min.js"></script>
 
   <script defer src="../js/activityEngine.js"></script>
-  <script defer src="../js/spatialPositioning1.js"></script>
+  <script defer src="../js/spatialPositioning.js"></script>
   <!-- inject the template footer into the page -->
   <script defer src="../js/footerInjector.js"></script>
   <script type="text/javascript">
+    const imgPath = "../images/spatialPositioning/1/";
+    const sndPath = "../sounds/spatialPositioning/1/";
+
+    class SoundItem {
+      soundPath;
+
+      /**
+       *
+       * @param soundBaseFileName
+       * @param soundArticle: Indefinite, Definite, Possessive
+       */
+      constructor(soundBaseFileName, soundArticle = '') {
+        this.soundPath = `${sndPath}${soundBaseFileName}${soundArticle}.ogg`;
+      }
+    }
+
+    const
+      andSoundItem = new SoundItem('and'),
+      betweenSoundItem = new SoundItem('between'),
+
+      teddyBearArtDSoundItem = new SoundItem('teddyBear', 'D'),
+      teddyBearArtISoundItem = new SoundItem('teddyBear', 'I'),
+      boxArtISoundItem = new SoundItem('box', 'I'),
+      boxArtDSoundItem = new SoundItem('box', 'D'),
+      boxArtPSoundItem = new SoundItem('box', 'P'),
+      chairArtISoundItem = new SoundItem('chair', 'I'),
+      chairArtPSoundItem = new SoundItem('chair', 'P'),
+      closetArtISoundItem = new SoundItem('closet', 'I'),
+      closetArtPSoundItem = new SoundItem('closet', 'P'),
+      tableArtISoundItem = new SoundItem('table', 'I'),
+      tableArtPSoundItem = new SoundItem('table', 'P');
+
     function initActivityItems(){
       activityItems = [];
 

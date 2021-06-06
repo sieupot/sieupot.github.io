@@ -1,43 +1,10 @@
-class SoundItem {
-  soundPath;
-
-  /**
-   *
-   * @param soundBaseFileName
-   * @param soundArticle: Indefinite, Definite, Possessive
-   */
-  constructor(soundBaseFileName, soundArticle) {
-    this.soundPath = sndPath + soundBaseFileName + (soundArticle ? soundArticle : '') + ".ogg";
-  }
-}
-
-let answerOptionValues;
-
-const imgPath = "../images/spatialPositioning1/";
-const sndPath = "../sounds/spatialPositioning1/";
-
 const
-  andSoundItem = new SoundItem('and'),
   inSoundItem = new SoundItem('in'),
   aboveSoundItem = new SoundItem('above'),
   underSoundItem = new SoundItem('under'),
   nearSoundItem = new SoundItem('near'),
   beforeSoundItem = new SoundItem('before'),
-  behindSoundItem = new SoundItem('behind'),
-  betweenSoundItem = new SoundItem('between'),
-
-  teddyBearArtDSoundItem = new SoundItem('teddyBear', 'D'),
-  teddyBearArtISoundItem = new SoundItem('teddyBear', 'I'),
-  boxArtISoundItem = new SoundItem('box', 'I'),
-  boxArtDSoundItem = new SoundItem('box', 'D'),
-  boxArtPSoundItem = new SoundItem('box', 'P'),
-  chairArtISoundItem = new SoundItem('chair', 'I'),
-  chairArtPSoundItem = new SoundItem('chair', 'P'),
-  closetArtISoundItem = new SoundItem('closet', 'I'),
-  closetArtPSoundItem = new SoundItem('closet', 'P'),
-  tableArtISoundItem = new SoundItem('table', 'I'),
-  tableArtPSoundItem = new SoundItem('table', 'P');
-
+  behindSoundItem = new SoundItem('behind');
 
 // on page load
 jQuery(() => {

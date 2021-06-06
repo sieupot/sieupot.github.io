@@ -1,5 +1,3 @@
-let answerOptionValues;
-
 // on page load
 jQuery(() => {
   // declared in the html file
