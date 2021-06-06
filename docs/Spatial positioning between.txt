@@ -1,0 +1,15 @@
+table  - box - chair   |  table  - bear - chair   |
+table  - box - closet  |  table  - bear - closet  |
+table  - box - bear    |  table  - bear - box     |
+                       |                          |
+chair  - box - table   |  chair  - bear - table   |
+chair  - box - closet  |  chair  - bear - closet  |
+chair  - box - bear    |  chair  - bear - box     |
+                       |                          |
+closet - box - table   |  closet - bear - table   |
+closet - box - chair   |  closet - bear - chair   |
+closet - box - bear    |  closet - bear - box     |
+                       |                          |
+bear   - box - table   |  box   - bear - table    |
+bear   - box - chair   |  box   - bear - chair    |
+bear   - box - closet  |  box   - bear - closet   |
