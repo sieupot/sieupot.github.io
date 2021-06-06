@@ -1,0 +1,64 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Alege activitatea</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/infoPanel.css">
+    <link rel="stylesheet" href="css/selActivity.css">
+
+    <meta name="theme-color" content="#EFE7E0">
+
+    <script defer src="js/lib/modernizr-3.8.0.min.js"></script>
+    <script defer src="js/lib/jquery.min.js"></script>
+    <script defer src="js/main.js"></script>
+    <script defer src="js/utils.js"></script>
+    <!-- inject the template footer into the page -->
+    <script defer src="js/footerInjector.js"></script>
+    <script defer src="js/infoPanelInjector.js"></script>
+  </head>
+
+  <body>
+    <div id="infoPanel" pgLocationMsg="Activități generice" pgDescriptionMsg="Alege activitatea dorită">
+    </div>
+
+    <div id="contentPanelId">
+      <div id="goBackDivId">
+        <a href="index.html" class="navLink">
+          Alege altă categorie
+        </a>
+      </div>
+
+      <div id="selActivityDivId">
+        <a onclick="navigateTo('pages/opposites.html');" class="activity-button pointerCursor">
+          <img height="75" alt="humanBodyImg" src="images/app/activityIcons/opposites.svg"/>
+          <span>
+            noțiuni opuse
+          </span>
+        </a>
+        <a onclick="navigateTo('pages/humanBody.html');" class="activity-button pointerCursor">
+          <img height="75" alt="humanBodyImg" src="images/app/activityIcons/humanBody.svg"/>
+          <span>
+            corpul uman
+          </span>
+        </a>
+        <object></object>
+
+        <!-- a beautiful trio to force the spacing at the bottom-->
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </body>
+
+</html>

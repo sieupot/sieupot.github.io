@@ -55,9 +55,3 @@
 .iconLevel.active {
   background: #FAA01C;
 }
-
-.iconOpposites {
-  background-image: url(../images/app/activityIcons/opposites.svg);
-  width: 51px;
-  height: 51px;
-}
