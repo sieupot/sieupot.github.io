@@ -36,9 +36,10 @@
        *
        * @param soundBaseFileName
        * @param soundArticle: Indefinite, Definite, Possessive
+       * @param sharedSound: some sounds are shared by the spatial positioning activities
        */
-      constructor(soundBaseFileName, soundArticle = '') {
-        this.soundPath = `${sndPath}${soundBaseFileName}${soundArticle}.ogg`;
+      constructor(soundBaseFileName, soundArticle = '', sharedSound = false) {
+        this.soundPath = `${sharedSound ? sndCommonPath : sndPath}${soundBaseFileName}${soundArticle}.ogg`;
       }
     }
 

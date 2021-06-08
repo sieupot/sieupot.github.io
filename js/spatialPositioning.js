@@ -1,10 +1,12 @@
 const
-  inSoundItem = new SoundItem('in'),
-  aboveSoundItem = new SoundItem('above'),
-  underSoundItem = new SoundItem('under'),
-  nearSoundItem = new SoundItem('near'),
-  beforeSoundItem = new SoundItem('before'),
-  behindSoundItem = new SoundItem('behind');
+  sndCommonPath = "../sounds/spatialPositioning/",
+
+  inSoundItem = new SoundItem('in', '', true),
+  aboveSoundItem = new SoundItem('above', '', true),
+  underSoundItem = new SoundItem('under', '', true),
+  nearSoundItem = new SoundItem('near', '', true),
+  beforeSoundItem = new SoundItem('before', '', true),
+  behindSoundItem = new SoundItem('behind', '', true);
 
 // on page load
 jQuery(() => {
