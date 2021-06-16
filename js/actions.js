@@ -1,12 +1,36 @@
 const
   sndCommonPath = "../sounds/common/",
 
-  inSoundItem = new SoundItem('in', '', true),
+  boyArtDSoundItem = new SoundItem('boy', 'D'),
+  girlArtDSoundItem = new SoundItem('girl', 'D'),
+
+  clapsSoundItem = new SoundItem('claps'),
+  drawsSoundItem = new SoundItem('draws'),
+  drinksSoundItem = new SoundItem('drinks'),
+  makesSoundItem = new SoundItem('makes'),
+  playsSoundItem = new SoundItem('plays'),
+  singsSoundItem = new SoundItem('sings'),
+  throwsSoundItem = new SoundItem('throws'),
+  washesSoundItem = new SoundItem('washes'),
+  writesSoundItem = new SoundItem('writes'),
+
+  palmsISoundItem = new SoundItem('palms', "I"),
+  handsISoundItem = new SoundItem('hands', "I"),
+  waterISoundItem = new SoundItem('water', "I"),
+  balloonsISoundItem = new SoundItem('balloons', "I"),
+  pianoISoundItem = new SoundItem('piano', "I"),
+  basketballISoundItem = new SoundItem('basketball', "I"),
+  faceISoundItem = new SoundItem('face', "I"),
+
+  // se (articol reflexiv)
+  thirdSgReflexiveArtSoundItem = new SoundItem('thirdSgReflexiveArt', '', true),
+  // pe
   aboveSoundItem = new SoundItem('above', '', true),
-  underSoundItem = new SoundItem('under', '', true),
-  nearSoundItem = new SoundItem('near', '', true),
-  beforeSoundItem = new SoundItem('before', '', true),
-  behindSoundItem = new SoundItem('behind', '', true);
+  // din
+  fromSoundItem = new SoundItem('from', '', true),
+  // la
+  atSoundItem = new SoundItem('at', '', true),
+  inSoundItem = new SoundItem('in', '', true);
 
 // on page load
 jQuery(() => {
@@ -16,8 +40,8 @@ jQuery(() => {
   modalPanel = jQuery('#dialogDiv');
   resultDivElem = jQuery('div.result');
 
-  activityObjElemArray.push(jQuery('#svgContainer1Id'));
-  activityObjElemArray.push(jQuery('#svgContainer2Id'));
+  activityObjElemArray.push(jQuery('#actionContainer1Id'));
+  activityObjElemArray.push(jQuery('#actionContainer2Id'));
 
   // show the start icon and let the user manually start the activity
   resultDivElem.fadeIn(300);
