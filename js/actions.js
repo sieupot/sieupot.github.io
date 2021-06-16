@@ -1,3 +1,4 @@
+// on page load
 const
   sndCommonPath = "../sounds/common/",
 
@@ -19,7 +20,8 @@ const
   waterISoundItem = new SoundItem('water', "I"),
   balloonsISoundItem = new SoundItem('balloons', "I"),
   pianoISoundItem = new SoundItem('piano', "I"),
-  basketballISoundItem = new SoundItem('basketball', "I"),
+  ballISoundItem = new SoundItem('ball', "I"),
+  basketISoundItem = new SoundItem('basket', "I"),
   faceISoundItem = new SoundItem('face', "I"),
 
   // se (articol reflexiv)
@@ -32,7 +34,6 @@ const
   atSoundItem = new SoundItem('at', '', true),
   inSoundItem = new SoundItem('in', '', true);
 
-// on page load
 jQuery(() => {
   // declared in the html file
   initActivityItems();
@@ -79,7 +80,7 @@ const setupAnswer = function (objElem, selectedActivityItem) {
   if (isCorrectAnswer) {
     activitySoundList = activitySoundList.concat(selectedActivityItem.soundItems);
   }
-  objElem.load(imagePath);
+  objElem.css('background-image', 'url(' + imagePath + ')');
   objElem.off('click').click(function () {
     checkValidAnswer(isCorrectAnswer);
   });

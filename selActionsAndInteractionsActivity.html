@@ -1,0 +1,68 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Alege activitatea</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/infoPanel.css">
+    <link rel="stylesheet" href="css/selActivity.css">
+
+    <meta name="theme-color" content="#EFE7E0">
+
+    <script defer src="js/lib/modernizr-3.8.0.min.js"></script>
+    <script defer src="js/lib/jquery.min.js"></script>
+    <script defer src="js/main.js"></script>
+    <script defer src="js/utils.js"></script>
+    <!-- inject the template footer into the page -->
+    <script defer src="js/footerInjector.js"></script>
+    <script defer src="js/infoPanelInjector.js"></script>
+
+    <style>
+      #welcomeTextId {
+        width: 287px;
+      }
+      #chooseLevelTextId {
+        top: 348px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="infoPanel" pgLocationMsg="Acțiuni si interacțiuni" pgDescriptionMsg="Alege activitatea dorită">
+    </div>
+
+    <div id="contentPanelId">
+      <div id="goBackDivId">
+        <a href="index.html" class="navLink">
+          Alege altă categorie
+        </a>
+      </div>
+
+      <div id="selActivityDivId">
+        <a onclick="navigateTo('pages/actions.html');" class="activity-button pointerCursor">
+          <img height="75" alt="actionsImg" src="images/app/activityIcons/actions.svg"/>
+          <span>
+            acțiuni
+          </span>
+        </a>
+        <object></object>
+        <object></object>
+
+        <!-- a beautiful trio to force the spacing at the bottom-->
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </body>
+
+</html>
