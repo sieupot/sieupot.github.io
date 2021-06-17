@@ -2,9 +2,7 @@
 const
   sndCommonPath = "../sounds/common/",
 
-  boyArtDSoundItem = new SoundItem('boy', 'D'),
-  girlArtDSoundItem = new SoundItem('girl', 'D'),
-
+  // verbs
   clapsSoundItem = new SoundItem('claps'),
   drawsSoundItem = new SoundItem('draws'),
   drinksSoundItem = new SoundItem('drinks'),
@@ -23,7 +21,7 @@ const
   smellsSoundItem = new SoundItem('smells'),
   runsSoundItem = new SoundItem('runs'),
   dancesSoundItem = new SoundItem('dances'),
-  dressesSoundItem = new SoundItem('dances'),
+  dressesSoundItem = new SoundItem('dresses'),
   putsShoesOnSoundItem = new SoundItem('putsShoesOn'),
   combsSoundItem = new SoundItem('combs'),
   criesSoundItem = new SoundItem('cries'),
@@ -33,6 +31,10 @@ const
   jumpsSoundItem = new SoundItem('jumps'),
   eatsSoundItem = new SoundItem('eats'),
 
+  // nouns
+  boyArtDSoundItem = new SoundItem('boy', 'D'),
+  girlArtDSoundItem = new SoundItem('girl', 'D'),
+  // +
   palmsISoundItem = new SoundItem('palms', "I"),
   handsISoundItem = new SoundItem('hands', "I"),
   waterISoundItem = new SoundItem('water', "I"),
