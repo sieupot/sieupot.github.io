@@ -1,0 +1,102 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Secvențiere</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="apple-touch-icon" href="/icon.png">
+
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/pageLayout.css">
+  <link rel="stylesheet" href="../css/sequencing.css">
+
+  <meta name="theme-color" content="#EFE7E0">
+
+  <script defer src="../js/lib/modernizr-3.8.0.min.js"></script>
+  <script defer src="../js/lib/jquery.min.js"></script>
+  <script defer src="../js/lib/jquery-ui-1.12.1.min.js"></script>
+
+  <script defer src="../js/activityEngine.js"></script>
+  <script defer src="../js/actions.js"></script>
+  <!-- inject the template footer into the page -->
+  <script defer src="../js/footerInjector.js"></script>
+  <script type="text/javascript">
+    const imgPath = "../images/actions/";
+    const sndPath = "../sounds/actions/";
+
+    class SoundItem {
+      soundPath;
+
+      /**
+       *
+       * @param soundBaseFileName
+       * @param soundArticle: Indefinite, Definite, Possessive
+       * @param sharedSound: some sounds are shared by the spatial positioning activities
+       */
+      constructor(soundBaseFileName, soundArticle = '', sharedSound = false) {
+        this.soundPath = `${sharedSound ? sndCommonPath : sndPath}${soundBaseFileName}${soundArticle}.ogg`;
+      }
+    }
+
+    function initActivityItems(){
+      activityItems = [];
+
+      // BOY CLAPS HANDS
+      let boyClapsHands = {};
+      boyClapsHands.name = 'boyClapsHands';
+      boyClapsHands.images = [imgPath + "boyClapsHands.jpg"];
+      boyClapsHands.soundItems = [boyArtDSoundItem.soundPath, clapsSoundItem.soundPath, fromSoundItem.soundPath, palmsISoundItem.soundPath];
+      activityItems.push(boyClapsHands);
+      // GIRL CLAPS HANDS
+      let girlClapsHands = {};
+      girlClapsHands.name = 'girlClapsHands';
+      girlClapsHands.images = [imgPath + "girlClapsHands.jpg"];
+      girlClapsHands.soundItems = [girlArtDSoundItem.soundPath, clapsSoundItem.soundPath, fromSoundItem.soundPath, palmsISoundItem.soundPath];
+      activityItems.push(girlClapsHands);
+    }
+  </script>
+</head>
+
+<body>
+  <div id="content">
+    <div id="dialogDiv"></div>
+    <div class="result">
+      <img src="../images/start.svg" alt="result image" onclick="startActivity();" style="height: 100%;" class="pointerCursor"/>
+    </div>
+
+    <div id="contentPanel">
+      <div class="itemsContainer">
+        <div id="droppable1" class="activityButton droppableContainer">DROPPABLE 1</div>
+        <div id="droppable2" class="activityButton droppableContainer">DROPPABLE 2</div>
+        <div id="droppable3" class="activityButton droppableContainer">DROPPABLE 3</div>
+      </div>
+
+      <div class="separator">
+      </div>
+
+      <div class="itemsContainer">
+        <div id="draggable1" class="activityButton">DRAGGABLE 1</div>
+        <div id="draggable2" class="activityButton">DRAGGABLE 2</div>
+        <div id="draggable3" class="activityButton">DRAGGABLE 3</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="scorePanel">
+    <div id="scoreGood">
+      <img src="../images/smileFace.png" alt="good answers" style="height: 25px;"/>
+      <div>0</div>
+    </div>
+    <div id="scoreBad">
+      <img src="../images/sadFace.png" alt="bad answers" style="height: 25px;"/>
+      <div>0</div>
+    </div>
+  </div>
+</body>
+
+</html>

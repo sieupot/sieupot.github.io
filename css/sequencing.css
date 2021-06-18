@@ -1,0 +1,45 @@
+#contentPanel {
+  display: block;
+  min-height: 600px;
+  overflow: auto;
+  margin: 0;
+}
+
+.itemsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 3em;
+  row-gap: 3em;
+  margin: 0 60px 0;
+}
+
+.activityButton {
+  display: grid;
+  row-gap: 8px;
+  padding: 15px 25px;
+  background-color: #FFF;
+  font: normal normal bold 22px/24px Poppins-600-normal;
+  text-decoration: none;
+  text-align: center;
+  color: #226473;
+  border-radius: 20px;
+  box-shadow: 0 1px 4px -2px #333;
+  text-shadow: 0 -1px #ddd;
+  transition: box-shadow 250ms;
+  position: relative;
+  min-height: 114px;
+  flex: 1;
+  margin: 0 0 1em 0;
+}
+
+.separator {
+  height: 1px;
+  background-color: gray;
+  margin-bottom: 1.4em;
+}
+
+.droppableContainer {
+  max-height: 100px;
+  max-width: 100px;
+}
+
