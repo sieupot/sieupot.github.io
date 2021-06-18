@@ -60,29 +60,107 @@
       activityItems.push(girlClapsHands);
     }
   </script>
+
+  <script>
+    function allowDrop(ev) {
+      ev.preventDefault();
+    }
+
+    function startDrag(ev) {
+      const draggableElem = document.getElementById(ev.target.id);
+      if (draggableElem.getAttribute('draggable')) {
+        draggableElem.classList.add('hide-src-while-dragging');
+        ev.dataTransfer.setData('text', ev.target.id);
+      }
+    }
+    function endDrag(ev) {
+      document.getElementById(ev.target.id).classList.remove('hide-src-while-dragging');
+    }
+
+    function drop(ev, el) {
+      ev.preventDefault();
+      const draggableElemId = ev.dataTransfer.getData('text');
+      const draggableElem = document.getElementById(draggableElemId);
+      if (draggableElem && draggableElem.getAttribute('draggable')) {
+        el.appendChild(draggableElem);
+        // don't allow source to be draggable anymore
+        removeAttributes(draggableElem, 'draggable');
+        draggableElem.style.cursor = 'default';
+        draggableElem.classList.remove('hide-src-while-dragging');
+        // don't allow occupied target to allow dropping anymore
+        removeAttributes(ev.target, 'ondrop', 'ondragover', 'ondragenter', 'onmouseout', 'ondragleave');
+        ev.target.style.backgroundColor = "";
+      }
+    }
+
+    function HighlightArea(ev, id, isTrue) {
+      if (ev.dataTransfer) {
+        const dropElem = document.getElementById(id);
+        const draggableElem = document.getElementById(ev.dataTransfer.getData('text'));
+        if (dropElem && draggableElem) {
+          isTrue && draggableElem.hasAttribute('draggable') ? dropElem.style.backgroundColor = 'yellow' :
+            dropElem.style.backgroundColor = "";
+        }
+      }
+    }
+
+    function removeAttributes(element, ...attrs) {
+      attrs.forEach(attr => element.removeAttribute(attr))
+    }
+  </script>
 </head>
 
 <body>
   <div id="content">
-    <div id="dialogDiv"></div>
+    <!--<div id="dialogDiv"></div>
     <div class="result">
       <img src="../images/start.svg" alt="result image" onclick="startActivity();" style="height: 100%;" class="pointerCursor"/>
-    </div>
+    </div>-->
 
     <div id="contentPanel">
-      <div class="itemsContainer">
-        <div id="droppable1" class="activityButton droppableContainer">DROPPABLE 1</div>
-        <div id="droppable2" class="activityButton droppableContainer">DROPPABLE 2</div>
-        <div id="droppable3" class="activityButton droppableContainer">DROPPABLE 3</div>
+      <div class="items-container">
+        <div id="droppable1" class="activity-item"
+             ondrop="drop(event, this)"
+             ondragover="allowDrop(event)"
+             ondragenter="HighlightArea(event, this.id, true)"
+             onmouseout="HighlightArea(event, this.id, false)"
+             ondragleave="HighlightArea(event, this.id, false)">
+          <div class="index-nb" ondragover="allowDrop(event)">1</div>
+        </div>
+        <div id="droppable2" class="activity-item"
+             ondrop="drop(event, this)"
+             ondragover="allowDrop(event)"
+             ondragenter="HighlightArea(event, this.id, true)"
+             onmouseout="HighlightArea(event, this.id, false)"
+             ondragleave="HighlightArea(event, this.id, false)">
+          <div class="index-nb" ondragover="allowDrop(event)">2</div>
+        </div>
+        <div id="droppable3" class="activity-item"
+             ondrop="drop(event, this)"
+             ondragover="allowDrop(event)"
+             ondragenter="HighlightArea(event, this.id, true)"
+             onmouseout="HighlightArea(event, this.id, false)"
+             ondragleave="HighlightArea(event, this.id, false)">
+          <div class="index-nb" ondragover="allowDrop(event)">3</div>
+        </div>
       </div>
 
       <div class="separator">
       </div>
 
-      <div class="itemsContainer">
-        <div id="draggable1" class="activityButton">DRAGGABLE 1</div>
-        <div id="draggable2" class="activityButton">DRAGGABLE 2</div>
-        <div id="draggable3" class="activityButton">DRAGGABLE 3</div>
+      <div class="items-container">
+        <div id="draggable1" class="draggable-container">
+          <div id="drag1" class="drag-item" style="background-image: url('../images/smileFace.png');" draggable="true" ondragstart="startDrag(event)" ondragend="endDrag(event);">
+          </div>
+        </div>
+        <div id="draggable2" class="draggable-container">
+          <div id="drag2" class="drag-item" style="background-image: url('../images/sadFace.png');" draggable="true" ondragstart="startDrag(event)" ondragend="endDrag(event);">
+          </div>
+        </div>
+        <div id="draggable3" class="draggable-container">
+          <div id="drag3" class="drag-item" style="background-image: url('../images/app/chidlren.png');" draggable="true" ondragstart="startDrag(event)" ondragend="endDrag(event);">
+          </div>
+        </div>
       </div>
     </div>
   </div>

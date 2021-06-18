@@ -5,7 +5,7 @@
   margin: 0;
 }
 
-.itemsContainer {
+.items-container {
   display: flex;
   flex-wrap: wrap;
   column-gap: 3em;
@@ -13,12 +13,12 @@
   margin: 0 60px 0;
 }
 
-.activityButton {
+.activity-item, .draggable-container {
   display: grid;
   row-gap: 8px;
-  padding: 15px 25px;
-  background-color: #FFF;
   font: normal normal bold 22px/24px Poppins-600-normal;
+  background-color: #FFF;
+  padding: 15px 25px;
   text-decoration: none;
   text-align: center;
   color: #226473;
@@ -32,14 +32,34 @@
   margin: 0 0 1em 0;
 }
 
+.draggable-container {
+  background-color: transparent;
+  max-height: 100px;
+  max-width: 150px;
+}
+
 .separator {
   height: 1px;
   background-color: gray;
   margin-bottom: 1.4em;
 }
 
-.droppableContainer {
-  max-height: 100px;
-  max-width: 100px;
+.drag-item {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: grab;
 }
 
+.hide-src-while-dragging {
+  transition: 0.01s;
+  transform: translateX(-9999999px);
+}
+
+.index-nb {
+  position: fixed;
+  opacity: .5;
+  border-radius: 50%;
+  border: 3px solid #226473;
+  padding: 0 7px;
+}
