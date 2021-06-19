@@ -1,3 +1,24 @@
+body {
+  counter-reset: indexNb;  /* used to add the counter indicator on the bacground of the drop element */
+}
+
+.droppable::before {
+  counter-increment: indexNb;
+  content: counter(indexNb);
+  position: absolute;
+  opacity: .5;
+  border-radius: 50%;
+  border: 3px solid #226473;
+  padding: 4px;
+  width: 20px;
+  height: 20px;
+  left: calc(50% - 16px);
+  top: calc(50% - 16px);
+}
+.droppable.hidden-content::before {
+  visibility: hidden;
+}
+
 #contentPanel {
   display: block;
   min-height: 600px;

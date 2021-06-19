@@ -77,19 +77,22 @@
       document.getElementById(ev.target.id).classList.remove('hide-src-while-dragging');
     }
 
-    function drop(ev, el) {
+    function drop(ev) {
       ev.preventDefault();
       const draggableElemId = ev.dataTransfer.getData('text');
       const draggableElem = document.getElementById(draggableElemId);
       if (draggableElem && draggableElem.getAttribute('draggable')) {
-        el.appendChild(draggableElem);
+        const dropElem = ev.target;
+        dropElem.appendChild(draggableElem);
         // don't allow source to be draggable anymore
         removeAttributes(draggableElem, 'draggable');
         draggableElem.style.cursor = 'default';
         draggableElem.classList.remove('hide-src-while-dragging');
         // don't allow occupied target to allow dropping anymore
-        removeAttributes(ev.target, 'ondrop', 'ondragover', 'ondragenter', 'onmouseout', 'ondragleave');
-        ev.target.style.backgroundColor = "";
+        removeAttributes(dropElem, 'ondrop', 'ondragover', 'ondragenter', 'onmouseout', 'ondragleave');
+        // hide the counter indicator
+        dropElem.classList.add('hidden-content');
+        dropElem.style.backgroundColor = "";
       }
     }
 
@@ -119,29 +122,26 @@
 
     <div id="contentPanel">
       <div class="items-container">
-        <div id="droppable1" class="activity-item"
-             ondrop="drop(event, this)"
+        <div id="droppable1" class="activity-item droppable"
+             ondrop="drop(event)"
              ondragover="allowDrop(event)"
              ondragenter="HighlightArea(event, this.id, true)"
              onmouseout="HighlightArea(event, this.id, false)"
              ondragleave="HighlightArea(event, this.id, false)">
-          <div class="index-nb" ondragover="allowDrop(event)">1</div>
         </div>
-        <div id="droppable2" class="activity-item"
-             ondrop="drop(event, this)"
+        <div id="droppable2" class="activity-item droppable"
+             ondrop="drop(event)"
              ondragover="allowDrop(event)"
              ondragenter="HighlightArea(event, this.id, true)"
              onmouseout="HighlightArea(event, this.id, false)"
              ondragleave="HighlightArea(event, this.id, false)">
-          <div class="index-nb" ondragover="allowDrop(event)">2</div>
         </div>
-        <div id="droppable3" class="activity-item"
-             ondrop="drop(event, this)"
+        <div id="droppable3" class="activity-item droppable"
+             ondrop="drop(event)"
              ondragover="allowDrop(event)"
              ondragenter="HighlightArea(event, this.id, true)"
              onmouseout="HighlightArea(event, this.id, false)"
              ondragleave="HighlightArea(event, this.id, false)">
-          <div class="index-nb" ondragover="allowDrop(event)">3</div>
         </div>
       </div>
 
@@ -150,15 +150,15 @@
 
       <div class="items-container">
         <div id="draggable1" class="draggable-container">
-          <div id="drag1" class="drag-item" style="background-image: url('../images/smileFace.png');" draggable="true" ondragstart="startDrag(event)" ondragend="endDrag(event);">
+          <div id="drag1" class="drag-item" style="background-image: url('../images/smileFace.png'); z-index: 9999;" draggable="true" ondragstart="startDrag(event)" ondragend="endDrag(event);">
           </div>
         </div>
         <div id="draggable2" class="draggable-container">
-          <div id="drag2" class="drag-item" style="background-image: url('../images/sadFace.png');" draggable="true" ondragstart="startDrag(event)" ondragend="endDrag(event);">
+          <div id="drag2" class="drag-item" style="background-image: url('../images/sadFace.png'); z-index: 9999;" draggable="true" ondragstart="startDrag(event)" ondragend="endDrag(event);">
           </div>
         </div>
         <div id="draggable3" class="draggable-container">
-          <div id="drag3" class="drag-item" style="background-image: url('../images/app/chidlren.png');" draggable="true" ondragstart="startDrag(event)" ondragend="endDrag(event);">
+          <div id="drag3" class="drag-item" style="background-image: url('../images/app/chidlren.png'); z-index: 9999;" draggable="true" ondragstart="startDrag(event)" ondragend="endDrag(event);">
           </div>
         </div>
       </div>
