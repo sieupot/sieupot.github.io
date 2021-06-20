@@ -87,7 +87,7 @@
         // don't allow source to be draggable anymore
         removeAttributes(draggableElem, 'draggable');
         draggableElem.style.cursor = 'default';
-        draggableElem.classList.remove('hide-src-while-dragging');
+        draggableElem.classList.remove('hide-src-while-dragging', 'draggable-container');
         // don't allow occupied target to allow dropping anymore
         removeAttributes(dropElem, 'ondrop', 'ondragover', 'ondragenter', 'onmouseout', 'ondragleave');
         // hide the counter indicator
@@ -149,17 +149,11 @@
       </div>
 
       <div class="draggable-items-container">
-        <div id="draggable1" class="draggable-container">
-          <div id="drag1" class="drag-item" style="background-image: url('../images/smileFace.png');" draggable="true" ondragstart="startDrag(event)" ondragend="endDrag(event);">
-          </div>
+        <div id="draggable1" class="draggable-container drag-item" style="background-image: url('../images/smileFace.png');" draggable="true" ondragstart="startDrag(event)" ondragend="endDrag(event);">
         </div>
-        <div id="draggable2" class="draggable-container">
-          <div id="drag2" class="drag-item" style="background-image: url('../images/sadFace.png');" draggable="true" ondragstart="startDrag(event)" ondragend="endDrag(event);">
-          </div>
+        <div id="draggable2" class="draggable-container drag-item" style="background-image: url('../images/sadFace.png');" draggable="true" ondragstart="startDrag(event)" ondragend="endDrag(event);">
         </div>
-        <div id="draggable3" class="draggable-container">
-          <div id="drag3" class="drag-item" style="background-image: url('../images/app/chidlren.png');" draggable="true" ondragstart="startDrag(event)" ondragend="endDrag(event);">
-          </div>
+        <div id="draggable3" class="draggable-container drag-item" style="background-image: url('../images/app/chidlren.png');" draggable="true" ondragstart="startDrag(event)" ondragend="endDrag(event);">
         </div>
       </div>
     </div>
