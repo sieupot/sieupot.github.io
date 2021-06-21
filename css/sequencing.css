@@ -22,7 +22,6 @@ body {
 
 #contentPanel {
   display: grid;
-  min-height: 600px;
   overflow: auto;
   margin: 0;
   grid-template-columns: 1fr;
