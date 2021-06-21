@@ -75,6 +75,7 @@ const extractAnswerOption = (answerOptionValues) => {
 const checkValidAnswer = (isValidAnswer) => {
   resetActivityItems();
   modalPanel.dialog(dialogOptions);
+
   if (isValidAnswer) {
     rightAnswers++;
     resultDivElem.find('img').attr('src', '../images/smileFace.png');
@@ -91,19 +92,25 @@ const checkValidAnswer = (isValidAnswer) => {
     jQuery('#scoreGood > div').html(rightAnswers);
     jQuery('#scoreGood').effect('highlight', {color: '#acffa3'}, 500)
   } else {
-    wrongAnswers++;
-    resultDivElem.find('img').attr('src', '../images/sadFace.png');
-    resultDivElem.fadeIn(500);
-    let playingWrongAnswerAudio = new Audio('../sounds/wrong.ogg');
-    playingWrongAnswerAudio.addEventListener('ended', function () {
-      resultDivElem.hide();
-      playShowItemAudio();
-    });
-    playingWrongAnswerAudio.play();
-    playingAudios[playingAudios.length] = playingWrongAnswerAudio;
-    jQuery('#scoreBad > div').html(wrongAnswers);
-    jQuery('#scoreBad').effect('highlight', {color: '#ff9c9c'}, 500);
+    handleInvalidAnswer(true);
   }
+}
+
+function handleInvalidAnswer(playShowItemAudio) {
+  wrongAnswers++;
+  resultDivElem.find('img').attr('src', '../images/sadFace.png');
+  resultDivElem.fadeIn(500);
+  let playingWrongAnswerAudio = new Audio('../sounds/wrong.ogg');
+  playingWrongAnswerAudio.addEventListener('ended', function () {
+    resultDivElem.hide();
+    if (playShowItemAudio) {
+      playShowItemAudio();
+    }
+  });
+  playingWrongAnswerAudio.play();
+  playingAudios[playingAudios.length] = playingWrongAnswerAudio;
+  jQuery('#scoreBad > div').html(wrongAnswers);
+  jQuery('#scoreBad').effect('highlight', {color: '#ff9c9c'}, 500);
 }
 
 const resetActivityItems = () => {

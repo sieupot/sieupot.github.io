@@ -26,8 +26,8 @@
   <!-- inject the template footer into the page -->
   <script defer src="../js/footerInjector.js"></script>
   <script type="text/javascript">
-    const imgPath = "../images/actions/";
-    const sndPath = "../sounds/actions/";
+    const imgPath = "../images/sequencing/";
+    const sndPath = "../sounds/sequencing/";
 
     class SoundItem {
       soundPath;
@@ -52,12 +52,7 @@
       boyClapsHands.images = [imgPath + "boyClapsHands.jpg"];
       boyClapsHands.soundItems = [boyArtDSoundItem.soundPath, clapsSoundItem.soundPath, fromSoundItem.soundPath, palmsISoundItem.soundPath];
       activityItems.push(boyClapsHands);
-      // GIRL CLAPS HANDS
-      let girlClapsHands = {};
-      girlClapsHands.name = 'girlClapsHands';
-      girlClapsHands.images = [imgPath + "girlClapsHands.jpg"];
-      girlClapsHands.soundItems = [girlArtDSoundItem.soundPath, clapsSoundItem.soundPath, fromSoundItem.soundPath, palmsISoundItem.soundPath];
-      activityItems.push(girlClapsHands);
+
     }
   </script>
 
@@ -83,16 +78,26 @@
       const draggableElem = document.getElementById(draggableElemId);
       if (draggableElem && draggableElem.getAttribute('draggable')) {
         const dropElem = ev.target;
-        dropElem.appendChild(draggableElem);
-        // don't allow source to be draggable anymore
-        removeAttributes(draggableElem, 'draggable');
-        draggableElem.style.cursor = 'default';
-        draggableElem.classList.remove('hide-src-while-dragging', 'draggable-container');
-        // don't allow occupied target to allow dropping anymore
-        removeAttributes(dropElem, 'ondrop', 'ondragover', 'ondragenter', 'onmouseout', 'ondragleave');
-        // hide the counter indicator
-        dropElem.classList.add('hidden-content');
-        dropElem.style.backgroundColor = "";
+
+        const draggableElemIndex = draggableElemId.replace(/[^\d.-]/g, '');
+        const dropElemIndex = dropElem.id.replace(/[^\d.-]/g, '');
+        if (draggableElemIndex === dropElemIndex) {
+          dropElem.appendChild(draggableElem);
+          // don't allow source to be draggable anymore
+          removeAttributes(draggableElem, 'draggable');
+          draggableElem.style.cursor = 'default';
+          draggableElem.classList.remove('hide-src-while-dragging', 'draggable-container');
+          // don't allow occupied target to allow dropping anymore
+          removeAttributes(dropElem, 'ondrop', 'ondragover', 'ondragenter', 'onmouseout', 'ondragleave');
+          // hide the counter indicator
+          dropElem.classList.add('hidden-content');
+          dropElem.style.backgroundColor = "";
+        } else {
+          // signal wrong answer
+          handleInvalidAnswer(false);
+          dropElem.style.backgroundColor = '';
+          dropElem.classList.add('error-indicator');
+        }
       }
     }
 
@@ -101,8 +106,8 @@
         const dropElem = document.getElementById(id);
         const draggableElem = document.getElementById(ev.dataTransfer.getData('text'));
         if (dropElem && draggableElem) {
-          isTrue && draggableElem.hasAttribute('draggable') ? dropElem.style.backgroundColor = 'yellow' :
-            dropElem.style.backgroundColor = "";
+          dropElem.classList.remove('error-indicator');
+          dropElem.style.backgroundColor = (isTrue && draggableElem.hasAttribute('draggable') ? 'yellow' : "");
         }
       }
     }
@@ -149,11 +154,11 @@
       </div>
 
       <div class="draggable-items-container">
-        <div id="draggable1" class="draggable-container drag-item" style="background-image: url('../images/smileFace.png');" draggable="true" ondragstart="startDrag(event)" ondragend="endDrag(event);">
+        <div id="draggable3" class="draggable-container drag-item" style="background-image: url('../images/smileFace.png');" draggable="true" ondragstart="startDrag(event)" ondragend="endDrag(event);">
         </div>
-        <div id="draggable2" class="draggable-container drag-item" style="background-image: url('../images/sadFace.png');" draggable="true" ondragstart="startDrag(event)" ondragend="endDrag(event);">
+        <div id="draggable1" class="draggable-container drag-item" style="background-image: url('../images/sadFace.png');" draggable="true" ondragstart="startDrag(event)" ondragend="endDrag(event);">
         </div>
-        <div id="draggable3" class="draggable-container drag-item" style="background-image: url('../images/app/chidlren.png');" draggable="true" ondragstart="startDrag(event)" ondragend="endDrag(event);">
+        <div id="draggable2" class="draggable-container drag-item" style="background-image: url('../images/app/chidlren.png');" draggable="true" ondragstart="startDrag(event)" ondragend="endDrag(event);">
         </div>
       </div>
     </div>

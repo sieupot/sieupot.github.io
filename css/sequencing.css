@@ -60,7 +60,6 @@ body {
   border-radius: 20px;
   box-shadow: 0 1px 4px -2px #333;
   text-shadow: 0 -1px #ddd;
-  transition: box-shadow 250ms;
   position: relative;
   min-height: 114px;
   min-width: 200px;
@@ -98,4 +97,13 @@ body {
   border-radius: 50%;
   border: 3px solid #226473;
   padding: 0 7px;
+}
+
+.error-indicator {
+  animation: mymove 1s;
+}
+
+@keyframes mymove {
+  from {background-color: red;}
+  to {background-color: #fff;}
 }
