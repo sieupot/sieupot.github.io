@@ -39,7 +39,7 @@ const generateDraggableHtmlElem = (index, imagePath) => {
 }
 
 generateChallengeItems = () => {
-  cleanupSq(dropContainers.attr('id'), dragContainers.attr('id'));
+  cleanupSq(dropContainers.attr('id'));
   activitySoundList[activitySoundList.length] = `${sndPath}sequence.ogg`;
 
   // extract the activity sequence
