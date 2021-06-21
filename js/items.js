@@ -8,7 +8,7 @@ generateChallengeItems = () => {
   activitySoundList[activitySoundList.length] = '../sounds/show.ogg';
   for (let objElem of activityObjElemArray) {
     // randomly determine whether this is the correct answer or not
-    const isCorrectAnswer = extractAnswerOption(answerOptionValues);
+    const isCorrectAnswer = extractRandomEntryAndSplice(answerOptionValues);
 
     // randomly find "nbDistractors" items to be displayed, from the list of available items
     let item;

@@ -35,7 +35,7 @@ const setupAnswer = (objElem, selectedActivityItem) => {
   // extract the image to display for this first activity item
   let imagePath1 = selectedActivityItem.images[Math.floor((Math.random() * selectedActivityItem.images.length))];
   // randomly determine whether this is the correct answer or not
-  let isCorrectAnswer = extractAnswerOption(answerOptionValues);
+  let isCorrectAnswer = extractRandomEntryAndSplice(answerOptionValues);
   if (isCorrectAnswer) {
     activitySoundList[activitySoundList.length] = selectedActivityItem.audioPath;
   }

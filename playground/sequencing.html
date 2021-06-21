@@ -22,144 +22,94 @@
   <script defer src="../js/lib/jquery-ui-1.12.1.min.js"></script>
 
   <script defer src="../js/activityEngine.js"></script>
-  <script defer src="../js/actions.js"></script>
+  <script defer src="../js/utils.js"></script>
+  <script defer src="../js/sequencing.js"></script>
   <!-- inject the template footer into the page -->
   <script defer src="../js/footerInjector.js"></script>
   <script type="text/javascript">
     const imgPath = "../images/sequencing/";
     const sndPath = "../sounds/sequencing/";
 
-    class SoundItem {
-      soundPath;
-
-      /**
-       *
-       * @param soundBaseFileName
-       * @param soundArticle: Indefinite, Definite, Possessive
-       * @param sharedSound: some sounds are shared by the spatial positioning activities
-       */
-      constructor(soundBaseFileName, soundArticle = '', sharedSound = false) {
-        this.soundPath = `${sharedSound ? sndCommonPath : sndPath}${soundBaseFileName}${soundArticle}.ogg`;
-      }
-    }
-
     function initActivityItems(){
       activityItems = [];
 
-      // BOY CLAPS HANDS
-      let boyClapsHands = {};
-      boyClapsHands.name = 'boyClapsHands';
-      boyClapsHands.images = [imgPath + "boyClapsHands.jpg"];
-      boyClapsHands.soundItems = [boyArtDSoundItem.soundPath, clapsSoundItem.soundPath, fromSoundItem.soundPath, palmsISoundItem.soundPath];
-      activityItems.push(boyClapsHands);
+      // CATERPILLAR
+      let caterpillarSq = [{index: 1, imagePath: `${imgPath}caterpillar1.jpg`},
+                         {index: 2, imagePath: `${imgPath}caterpillar2.jpg`},
+                         {index: 3, imagePath: `${imgPath}caterpillar3.jpg`}];
+      activityItems.push(caterpillarSq);
 
-    }
-  </script>
+      // CHICKEN
+      let chickenSq = [{index: 1, imagePath: `${imgPath}chicken1.jpg`},
+                       {index: 2, imagePath: `${imgPath}chicken2.jpg`},
+                       {index: 3, imagePath: `${imgPath}chicken3.jpg`}];
+      activityItems.push(chickenSq);
 
-  <script>
-    function allowDrop(ev) {
-      ev.preventDefault();
-    }
+      // CUBES
+      let cubesSq = [{index: 1, imagePath: `${imgPath}cubes1.jpg`},
+                     {index: 2, imagePath: `${imgPath}cubes2.jpg`},
+                     {index: 3, imagePath: `${imgPath}cubes3.jpg`}];
+      activityItems.push(cubesSq);
 
-    function startDrag(ev) {
-      const draggableElem = document.getElementById(ev.target.id);
-      if (draggableElem.getAttribute('draggable')) {
-        draggableElem.classList.add('hide-src-while-dragging');
-        ev.dataTransfer.setData('text', ev.target.id);
-      }
-    }
-    function endDrag(ev) {
-      document.getElementById(ev.target.id).classList.remove('hide-src-while-dragging');
-    }
+      // DRAWN BEAR
+      let drawnBearSq = [{index: 1, imagePath: `${imgPath}drawnBear1.jpg`},
+                         {index: 2, imagePath: `${imgPath}drawnBear2.jpg`},
+                         {index: 3, imagePath: `${imgPath}drawnBear3.jpg`}];
+      activityItems.push(drawnBearSq);
 
-    function drop(ev) {
-      ev.preventDefault();
-      const draggableElemId = ev.dataTransfer.getData('text');
-      const draggableElem = document.getElementById(draggableElemId);
-      if (draggableElem && draggableElem.getAttribute('draggable')) {
-        const dropElem = ev.target;
+      // HOUSE
+      let houseSq = [{index: 1, imagePath: `${imgPath}house1.jpg`},
+                     {index: 2, imagePath: `${imgPath}house2.jpg`},
+                     {index: 3, imagePath: `${imgPath}house3.jpg`},
+                     {index: 4, imagePath: `${imgPath}house4.jpg`},
+                     {index: 5, imagePath: `${imgPath}house5.jpg`},
+                     {index: 6, imagePath: `${imgPath}house6.jpg`}];
+      activityItems.push(houseSq);
 
-        const draggableElemIndex = draggableElemId.replace(/[^\d.-]/g, '');
-        const dropElemIndex = dropElem.id.replace(/[^\d.-]/g, '');
-        if (draggableElemIndex === dropElemIndex) {
-          dropElem.appendChild(draggableElem);
-          // don't allow source to be draggable anymore
-          removeAttributes(draggableElem, 'draggable');
-          draggableElem.style.cursor = 'default';
-          draggableElem.classList.remove('hide-src-while-dragging', 'draggable-container');
-          // don't allow occupied target to allow dropping anymore
-          removeAttributes(dropElem, 'ondrop', 'ondragover', 'ondragenter', 'onmouseout', 'ondragleave');
-          // hide the counter indicator
-          dropElem.classList.add('hidden-content');
-          dropElem.style.backgroundColor = "";
-        } else {
-          // signal wrong answer
-          handleInvalidAnswer(false);
-          dropElem.style.backgroundColor = '';
-          dropElem.classList.add('error-indicator');
-        }
-      }
-    }
+      // PLANT
+      let plantSq = [{index: 1, imagePath: `${imgPath}plant1.jpg`},
+                     {index: 2, imagePath: `${imgPath}plant2.jpg`},
+                     {index: 3, imagePath: `${imgPath}plant3.jpg`}];
+      activityItems.push(plantSq);
 
-    function HighlightArea(ev, id, isTrue) {
-      if (ev.dataTransfer) {
-        const dropElem = document.getElementById(id);
-        const draggableElem = document.getElementById(ev.dataTransfer.getData('text'));
-        if (dropElem && draggableElem) {
-          dropElem.classList.remove('error-indicator');
-          dropElem.style.backgroundColor = (isTrue && draggableElem.hasAttribute('draggable') ? 'yellow' : "");
-        }
-      }
-    }
+      // SEASON TREE
+      let seasonTreeSq = [{index: 1, imagePath: `${imgPath}seasonTree1.jpg`},
+                          {index: 2, imagePath: `${imgPath}seasonTree2.jpg`},
+                          {index: 3, imagePath: `${imgPath}seasonTree3.jpg`},
+                          {index: 4, imagePath: `${imgPath}seasonTree4.jpg`},
+                          {index: 5, imagePath: `${imgPath}seasonTree5.jpg`},
+                          {index: 6, imagePath: `${imgPath}seasonTree6.jpg`}];
+      activityItems.push(seasonTreeSq);
 
-    function removeAttributes(element, ...attrs) {
-      attrs.forEach(attr => element.removeAttribute(attr))
+      // WAKEUP
+      let wakeupSq = [{index: 1, imagePath: `${imgPath}wakeup1.jpg`},
+                      {index: 2, imagePath: `${imgPath}wakeup2.jpg`},
+                      {index: 3, imagePath: `${imgPath}wakeup3.jpg`},
+                      {index: 4, imagePath: `${imgPath}wakeup4.jpg`},
+                      {index: 5, imagePath: `${imgPath}wakeup5.jpg`},
+                      {index: 6, imagePath: `${imgPath}wakeup6.jpg`}];
+      activityItems.push(wakeupSq);
     }
   </script>
 </head>
 
 <body>
   <div id="content">
-    <!--<div id="dialogDiv"></div>
+    <div id="dialogDiv"></div>
     <div class="result">
       <img src="../images/start.svg" alt="result image" onclick="startActivity();" style="height: 100%;" class="pointerCursor"/>
-    </div>-->
+    </div>
 
     <div id="contentPanel">
-      <div class="items-container">
-        <div id="droppable1" class="activity-item droppable"
-             ondrop="drop(event)"
-             ondragover="allowDrop(event)"
-             ondragenter="HighlightArea(event, this.id, true)"
-             onmouseout="HighlightArea(event, this.id, false)"
-             ondragleave="HighlightArea(event, this.id, false)">
-        </div>
-        <div id="droppable2" class="activity-item droppable"
-             ondrop="drop(event)"
-             ondragover="allowDrop(event)"
-             ondragenter="HighlightArea(event, this.id, true)"
-             onmouseout="HighlightArea(event, this.id, false)"
-             ondragleave="HighlightArea(event, this.id, false)">
-        </div>
-        <div id="droppable3" class="activity-item droppable"
-             ondrop="drop(event)"
-             ondragover="allowDrop(event)"
-             ondragenter="HighlightArea(event, this.id, true)"
-             onmouseout="HighlightArea(event, this.id, false)"
-             ondragleave="HighlightArea(event, this.id, false)">
-        </div>
+      <div id="dropContainersId" class="items-container">
+        <!-- content generated from sequencing.js -->
       </div>
 
       <div class="separator">
       </div>
 
-      <div class="draggable-items-container">
-        <div id="draggable3" class="draggable-container drag-item" style="background-image: url('../images/smileFace.png');" draggable="true" ondragstart="startDrag(event)" ondragend="endDrag(event);">
-        </div>
-        <div id="draggable1" class="draggable-container drag-item" style="background-image: url('../images/sadFace.png');" draggable="true" ondragstart="startDrag(event)" ondragend="endDrag(event);">
-        </div>
-        <div id="draggable2" class="draggable-container drag-item" style="background-image: url('../images/app/chidlren.png');" draggable="true" ondragstart="startDrag(event)" ondragend="endDrag(event);">
-        </div>
+      <div id="dragContainersId" class="draggable-items-container">
+        <!-- content generated from sequencing.js -->
       </div>
     </div>
   </div>

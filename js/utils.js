@@ -56,3 +56,11 @@ const parseDynamicJsString = (sParam) => {
 
   return sRet.substring(0, sRet.length - 1);
 }
+
+// extract entry from array and splice the array
+const extractRandomEntryAndSplice = (entryArray) => {
+  const entryIndex = Math.floor(Math.random() * entryArray.length);
+  let entryRet = entryArray[entryIndex]; // true or false
+  entryArray.splice(entryIndex, 1); // remove the selected answer from the array
+  return entryRet;
+}

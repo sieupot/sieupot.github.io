@@ -65,12 +65,6 @@ const getAnswerOptions = () => {
   }
  return answerOptionValues;
 }
-const extractAnswerOption = (answerOptionValues) => {
-  const answerOptionIndex = Math.floor(Math.random() * answerOptionValues.length);
-  let isCorrectAnswer = answerOptionValues[answerOptionIndex]; // true or false
-  answerOptionValues.splice(answerOptionIndex, 1); // remove the selected answer from the array
-  return isCorrectAnswer;
-}
 
 const checkValidAnswer = (isValidAnswer) => {
   resetActivityItems();
@@ -103,6 +97,7 @@ function handleInvalidAnswer(playShowItemAudio) {
   let playingWrongAnswerAudio = new Audio('../sounds/wrong.ogg');
   playingWrongAnswerAudio.addEventListener('ended', function () {
     resultDivElem.hide();
+    modalPanel.dialog('close');
     if (playShowItemAudio) {
       playShowItemAudio();
     }
@@ -127,7 +122,7 @@ const resetSounds = () => {
   }*/
 }
 
-const playShowItemAudio = () => {
+const playShowItemAudio = (repeat = true) => {
   resetActivityItems();
 
   resultDivElem.find('img').attr('src', '../images/pause.svg');
@@ -142,7 +137,7 @@ const playShowItemAudio = () => {
       modalPanel.dialog('close');
 
       // schedule next repeat after the last sound has been played
-      if (!showItemSoundInterval) {
+      if (repeat && !showItemSoundInterval) {
         showItemSoundInterval = setInterval(playShowItemAudio, commandRepeatInterval);
       }
       return;
