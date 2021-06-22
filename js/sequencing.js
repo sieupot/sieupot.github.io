@@ -29,25 +29,27 @@ const generateDroppableHtmlElem = (j) => {
        onMouseOut="highlightArea(event, false)"
        onDragLeave="highlightArea(event, false)">
   </div>`;
-  dropContainers.prepend(droppableHtmlElem);
+  dropContainers.append(droppableHtmlElem);
 }
 
 const generateDraggableHtmlElem = (index, imagePath) => {
   const draggableHtmlElem = `<div id="draggable${index}" class="draggable-container drag-item" style="background-image: url('${imagePath}');" draggable="true" ondragstart="startDrag(event)" ondragend="endDrag(event);">
         </div>`;
-  dragContainers.prepend(draggableHtmlElem);
+  dragContainers.append(draggableHtmlElem);
 }
 
 generateChallengeItems = () => {
+  // remove previous HTML content from the dropContainersId div (new content will be generated below)
   cleanupSq(dropContainers.attr('id'));
+
   activitySoundList[activitySoundList.length] = `${sndPath}sequence.ogg`;
 
   // extract the activity sequence
-  let selectedActivitySq = activityItems[Math.floor((Math.random() * activityItems.length))];
+  const indexAct = Math.floor((Math.random() * activityItems.length));
+  let selectedActivitySq = Object.assign([], activityItems[indexAct]); // clone the array, or else the extractRandomEntryAndSplice will empty the source array
 
-  let sequenceSize = selectedActivitySq.length;
-  for (let j = sequenceSize; j >= 1; j--) {
-    generateDroppableHtmlElem(j);
+  for (index in selectedActivitySq) {
+    generateDroppableHtmlElem(parseInt(index) + 1);
   }
 
   while (selectedActivitySq.length > 0) {
@@ -60,6 +62,7 @@ generateChallengeItems = () => {
 }
 
 function checkActivityProgress() {
+  // no more draggable items?
   if (dragContainers.children().length === 0) {
     checkValidAnswer(true);
   }
@@ -90,7 +93,9 @@ const drop = (ev) => {
   if (draggableElem && draggableElem.getAttribute('draggable')) {
     const dropElem = ev.target;
 
+    // remove alphas from draggableId (i.e.: draggable1 -> 1, etc)
     const draggableElemIndex = draggedElemId.replace(/[^\d.-]/g, '');
+    // remove alphas from droppableId (i.e.: droppable1 -> 1, etc)
     const dropElemIndex = dropElem.id.replace(/[^\d.-]/g, '');
     if (draggableElemIndex === dropElemIndex) {
       dropElem.appendChild(draggableElem);
@@ -98,10 +103,10 @@ const drop = (ev) => {
       removeAttributes(draggableElem, 'draggable');
       draggableElem.style.cursor = 'default';
       draggableElem.classList.remove('hide-src-while-dragging', 'draggable-container');
-      // don't allow occupied target to allow dropping anymore
+      // don't allow occupied dropElem to accept dropping anymore
       removeAttributes(dropElem, 'ondrop', 'ondragover', 'ondragenter', 'onmouseout', 'ondragleave');
       // hide the counter indicator
-      dropElem.classList.add('hidden-content');
+      dropElem.classList.add('hidden-content', 'success-indicator');
       dropElem.style.backgroundColor = "";
       checkActivityProgress();
     } else {

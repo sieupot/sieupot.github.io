@@ -100,10 +100,17 @@ body {
 }
 
 .error-indicator {
-  animation: mymove 1s;
+  animation: errorAnimation 1s;
+}
+@keyframes errorAnimation {
+  from {background-color: red;}
+  to {background-color: #fff;}
 }
 
-@keyframes mymove {
-  from {background-color: red;}
+.success-indicator {
+  animation: successAnimation 1s;
+}
+@keyframes successAnimation {
+  from {background-color: #47f135;}
   to {background-color: #fff;}
 }
