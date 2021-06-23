@@ -64,3 +64,14 @@ const extractRandomEntryAndSplice = (entryArray) => {
   entryArray.splice(entryIndex, 1); // remove the selected answer from the array
   return entryRet;
 }
+
+const removeAttributes = (element, ...attrs) => {
+  attrs.forEach(attr => element.removeAttribute(attr))
+}
+
+const removeContent = (...containerIds) => {
+  for (const containerId of containerIds) {
+    const myNode = document.getElementById(containerId);
+    myNode.innerHTML = '';
+  }
+}

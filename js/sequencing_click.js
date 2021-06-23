@@ -11,24 +11,18 @@ jQuery(() => {
   modalPanel.dialog(dialogOptions);
 });
 
+let okClicksNb = 0, selectedActivitySqLength = 0;
 let itemsContainerId = jQuery('#itemsContainerId');
 
-const cleanupSq = (...containerIds) => {
-  for (const containerId of containerIds) {
-    const myNode = document.getElementById(containerId);
-    myNode.innerHTML = '';
-  }
-}
-
-const generateDraggableHtmlElem = (index, imagePath) => {
-  const draggableHtmlElem = `<div id="draggable${index}" class="draggable-container drag-item" style="background-image: url('${imagePath}');" draggable="true" ondragstart="startDrag(event)" ondragend="endDrag(event);">
+const generateClickableHtmlElem = (index, imagePath) => {
+  const clickableHtmlElem = `<div id="clickable${index}" class="pointerCursor click-item" style="background-image: url('${imagePath}');" canbeclicked="true" onclick="itemClicked(event);">
         </div>`;
-  itemsContainerId.append(draggableHtmlElem);
+  itemsContainerId.append(clickableHtmlElem);
 }
 
 generateChallengeItems = () => {
   // remove previous HTML content from the itemsContainerId div (new content will be generated below)
-  cleanupSq(itemsContainerId.attr('id'));
+  removeContent(itemsContainerId.attr('id'));
 
   activitySoundList[activitySoundList.length] = `${sndPath}sequence.ogg`;
 
@@ -36,56 +30,46 @@ generateChallengeItems = () => {
   const indexAct = Math.floor((Math.random() * activityItems.length));
   let selectedActivitySq = Object.assign([], activityItems[indexAct]); // clone the array, or else the extractRandomEntryAndSplice will empty the source array
 
+  selectedActivitySqLength = selectedActivitySq.length;
+  okClicksNb = 1;
   while (selectedActivitySq.length > 0) {
     let entryObj = extractRandomEntryAndSplice(selectedActivitySq);
 
-    generateDraggableHtmlElem(entryObj.index, entryObj.imagePath);
+    generateClickableHtmlElem(entryObj.index, entryObj.imagePath);
   }
 
   playShowItemAudio(false);
 }
 
 function checkActivityProgress() {
-  // no more draggable items?
-  if (condition) {
+  // no more clickable items?
+  if (okClicksNb === selectedActivitySqLength) {
     checkValidAnswer(true);
   }
 }
 
-/* used in the DRAG AND DROP logic */
-let draggedElemId;
-
-const drop = (ev) => {
+const itemClicked = (ev) => {
   ev.preventDefault();
-  const draggableElem = document.getElementById(draggedElemId);
-  if (draggableElem && draggableElem.getAttribute('draggable')) {
-    const dropElem = ev.target;
+  const clickableElem = ev.target;
+  if (clickableElem && clickableElem.getAttribute('canbeclicked')) {
 
-    // remove alphas from draggableId (i.e.: draggable1 -> 1, etc)
-    const draggableElemIndex = draggedElemId.replace(/[^\d.-]/g, '');
-    // remove alphas from droppableId (i.e.: droppable1 -> 1, etc)
-    const dropElemIndex = dropElem.id.replace(/[^\d.-]/g, '');
-    if (draggableElemIndex === dropElemIndex) {
-      dropElem.appendChild(draggableElem);
-      // don't allow source to be draggable anymore
-      removeAttributes(draggableElem, 'draggable');
-      draggableElem.style.cursor = 'default';
-      draggableElem.classList.remove('hide-src-while-dragging', 'draggable-container');
-      // don't allow occupied dropElem to accept dropping anymore
-      removeAttributes(dropElem, 'ondrop', 'ondragover', 'ondragenter', 'onmouseout', 'ondragleave');
+    // remove alphas from clickableId (i.e.: clickable1 -> 1, etc)
+    const clickableElemIndex = parseInt(clickableElem.id.replace(/[^\d.-]/g, ''));
+    if (clickableElemIndex === okClicksNb) {
+      // don't allow source to be clickable anymore
+      removeAttributes(clickableElem, 'canbeclicked', 'onclick');
+      clickableElem.classList.remove('pointerCursor');
       // hide the counter indicator
-      dropElem.classList.add('hidden-content', 'success-indicator');
-      dropElem.style.backgroundColor = "";
+      clickableElem.classList.add('hidden-content', 'success-indicator');
       checkActivityProgress();
+      okClicksNb++;
     } else {
       modalPanel.dialog(dialogOptions);
       handleInvalidAnswer(false);
-      dropElem.style.backgroundColor = '';
-      dropElem.classList.add('error-indicator');
+      // in order to have the animation of the error-indicator play after repeatedly clicking on this element
+      var clickableElemClone = clickableElem.cloneNode(true);
+      clickableElemClone.classList.add('error-indicator');
+      clickableElem.parentNode.replaceChild(clickableElemClone, clickableElem);
     }
   }
-}
-
-const removeAttributes = (element, ...attrs) => {
-  attrs.forEach(attr => element.removeAttribute(attr))
 }

@@ -1,20 +1,17 @@
-body {
-  counter-reset: indexNb;  /* used to add the counter indicator on the bacground of the drop element */
-}
-
 #contentPanel {
   margin: 0;
   grid-template-columns: 1fr;
 }
 
-.items-container, .draggable-items-container {
+.clickable-items-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 3em;
+  row-gap: 2em;
   margin: 0 60px 0;
 }
 
-.activity-item, .draggable-container {
+.activity-item {
   display: grid;
   row-gap: 8px;
   font: normal normal bold 22px/24px Poppins-600-normal;
@@ -33,30 +30,10 @@ body {
   margin: 0 0 1em 0;
 }
 
-.draggable-container {
-  background-color: transparent;
-  min-height: 100px;
-  min-width: 100px;
-}
-
-.drag-item {
+.click-item {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  cursor: pointer;
-}
-
-.hide-src-while-dragging {
-  transition: 0.01s;
-  transform: translateX(-9999999px);
-}
-
-.index-nb {
-  position: fixed;
-  opacity: .5;
-  border-radius: 50%;
-  border: 3px solid #226473;
-  padding: 0 7px;
 }
 
 .error-indicator {
@@ -64,13 +41,14 @@ body {
 }
 @keyframes errorAnimation {
   from {background-color: red;}
-  to {background-color: #fff;}
+  to {background-color: inherit;}
 }
 
 .success-indicator {
+  opacity: .25;
   animation: successAnimation 1s;
 }
 @keyframes successAnimation {
   from {background-color: #47f135;}
-  to {background-color: #fff;}
+  to {background-color: inherit;}
 }

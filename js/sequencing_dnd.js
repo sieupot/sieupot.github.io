@@ -14,13 +14,6 @@ jQuery(() => {
 let dropContainers = jQuery('#dropContainersId');
 let dragContainers = jQuery('#dragContainersId');
 
-const cleanupSq = (...containerIds) => {
-  for (const containerId of containerIds) {
-    const myNode = document.getElementById(containerId);
-    myNode.innerHTML = '';
-  }
-}
-
 const generateDroppableHtmlElem = (j) => {
   const droppableHtmlElem = `<div id="droppable${j}" class="activity-item droppable"
        onDrop="drop(event)"
@@ -40,7 +33,7 @@ const generateDraggableHtmlElem = (index, imagePath) => {
 
 generateChallengeItems = () => {
   // remove previous HTML content from the dropContainersId div (new content will be generated below)
-  cleanupSq(dropContainers.attr('id'));
+  removeContent(dropContainers.attr('id'));
 
   activitySoundList[activitySoundList.length] = `${sndPath}sequence.ogg`;
 
@@ -127,8 +120,4 @@ const highlightArea = (ev, isTrue) => {
       dropElem.style.backgroundColor = (isTrue && draggableElem.hasAttribute('draggable') ? 'yellow' : "");
     }
   }
-}
-
-const removeAttributes = (element, ...attrs) => {
-  attrs.forEach(attr => element.removeAttribute(attr))
 }
