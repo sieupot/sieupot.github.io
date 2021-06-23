@@ -56,6 +56,14 @@ const itemClicked = (ev) => {
     // remove alphas from clickableId (i.e.: clickable1 -> 1, etc)
     const clickableElemIndex = parseInt(clickableElem.id.replace(/[^\d.-]/g, ''));
     if (clickableElemIndex === okClicksNb) {
+      // don't display it for the last successful choice
+      if (okClicksNb < selectedActivitySqLength) {
+        resultDivElem.find('img').attr('src', '../images/smileFace.png');
+        resultDivElem.fadeIn(500, function () {
+          resultDivElem.fadeOut(500);
+        });
+      }
+
       // don't allow source to be clickable anymore
       removeAttributes(clickableElem, 'canbeclicked', 'onclick');
       clickableElem.classList.remove('pointerCursor');
@@ -67,7 +75,7 @@ const itemClicked = (ev) => {
       modalPanel.dialog(dialogOptions);
       handleInvalidAnswer(false);
       // in order to have the animation of the error-indicator play after repeatedly clicking on this element
-      var clickableElemClone = clickableElem.cloneNode(true);
+      const clickableElemClone = clickableElem.cloneNode(true);
       clickableElemClone.classList.add('error-indicator');
       clickableElem.parentNode.replaceChild(clickableElemClone, clickableElem);
     }
