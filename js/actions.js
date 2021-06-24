@@ -40,7 +40,7 @@ const
   waterISoundItem = new SoundItem('water', "I"),
   balloonsISoundItem = new SoundItem('balloons', "I"),
   pianoISoundItem = new SoundItem('piano', "I"),
-  ballISoundItem = new SoundItem('ball', "I"),
+  ballDSoundItem = new SoundItem('ball', "D"),
   basketISoundItem = new SoundItem('basket', "I"),
   faceISoundItem = new SoundItem('face', "I"),
   bathISoundItem = new SoundItem('bath', "I"),

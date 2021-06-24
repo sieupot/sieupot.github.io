@@ -10,9 +10,9 @@ let scorePanel = `
         <div>0</div>
       </div>
     </div>
-    <div id="downloadResultsContainerId">
-      <input type="button" name="download results" title="descarcă rezultate" onclick="alert('În curând pe micile ecrane...');" class="dl-res-btn"/>
-    </div>
+<!--    <div id="downloadResultsContainerId">-->
+<!--      <input type="button" name="download results" title="descarcă rezultate" onclick="alert('În curând pe micile ecrane...');" class="dl-res-btn"/>-->
+<!--    </div>-->
   </div>
 `;
 
