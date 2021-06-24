@@ -90,7 +90,7 @@ const checkValidAnswer = (isValidAnswer) => {
   }
 }
 
-function handleInvalidAnswer(playShowItemAudio) {
+function handleInvalidAnswer(doPlayShowItemAudio) {
   wrongAnswers++;
   resultDivElem.find('img').attr('src', '../images/sadFace.png');
   resultDivElem.fadeIn(500);
@@ -98,7 +98,7 @@ function handleInvalidAnswer(playShowItemAudio) {
   playingWrongAnswerAudio.addEventListener('ended', function () {
     resultDivElem.hide();
     modalPanel.dialog('close');
-    if (playShowItemAudio) {
+    if (doPlayShowItemAudio) {
       playShowItemAudio();
     }
   });

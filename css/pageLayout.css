@@ -33,13 +33,18 @@
   display: none;
 }
 
-#scorePanel > div {
+#scorePanel {
+  display: grid;
+  grid-template-columns: auto 100px;
+}
+
+#scorePanel > div#scoreContainerId > div {
   display: grid;
   grid-template-columns: 50px auto;
   margin: 0 16px;
 }
 
-#scorePanel > div:first-child {
+#scorePanel > div#scoreContainerId > div:first-child {
   margin-bottom: 16px;
 }
 
@@ -68,4 +73,14 @@
 #scoreGood > div, #scoreBad > div {
   padding-left: 30px;
   font-size: 18px;
+}
+
+.dl-res-btn {
+  background: url(../images/download.svg) no-repeat;
+  cursor:pointer;
+  border: none;
+  width: 50px;
+  height: 50px;
+  background-size: 50px;
+  opacity: .15;
 }

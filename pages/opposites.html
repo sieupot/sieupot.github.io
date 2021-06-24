@@ -26,6 +26,7 @@
   <script defer src="../js/opposites.js"></script>
   <!-- inject the template footer into the page -->
   <script defer src="../js/footerInjector.js"></script>
+  <script defer src="../js/scorePanelInjector.js"></script>
   <script type="text/javascript">
     const imgPath = "../images/opposites/";
     const sndPath = "../sounds/opposites/";
@@ -247,16 +248,7 @@
     </div>
   </div>
 
-  <div id="scorePanel">
-    <div id="scoreGood">
-      <img src="../images/smileFace.png" alt="good answers" style="height: 25px;"/>
-      <div>0</div>
-    </div>
-    <div id="scoreBad">
-      <img src="../images/sadFace.png" alt="bad answers" style="height: 25px;"/>
-      <div>0</div>
-    </div>
-  </div>
+  <div id="scorePanelInjectorId"><!-- score panel injected --></div>
 </body>
 
 </html>
