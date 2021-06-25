@@ -3,6 +3,7 @@
   background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: center;
+  object-fit: contain;
 }
 
 .gradientWorld1 {

@@ -33,10 +33,10 @@ const initActivity = (itemClass = 'item') => {
   nbDistractors = Number(getUrlParameter('l'));
   nbDistractors = (!nbDistractors || nbDistractors > 3) ? 2 : nbDistractors + 1;
 
-  // INIT CONTAINER ELEMENTS: inject item containing divs into the page and create the JQUERY itemElements
+  // INIT CONTAINER ELEMENTS: inject item containing img nodes into the page and create the JQUERY itemElements
   for (i = 1; i <= nbDistractors; i++) {
     let itemContainerId = `itemContainer${i}`;
-    jQuery('#contentPanel').append(`<div id="${itemContainerId}" class="${itemClass} pointerCursor"></div>`);
+    jQuery('#contentPanel').append(`<img id="${itemContainerId}" class="${itemClass} pointerCursor" width="100%" height="100%"></img>`);
 
     let objElem = jQuery(`#${itemContainerId}`);
     activityObjElemArray.push(objElem);
