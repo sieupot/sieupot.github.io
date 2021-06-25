@@ -126,3 +126,25 @@ canvas {
 .pointerCursor {
   cursor: pointer;
 }
+
+.bold {
+  font-weight: bold;
+}
+
+.main-button, .side-button {
+  color: #FFF;
+  padding: 10px;
+  border-radius: 10px;
+  font: normal normal 200 16px/16px Poppins-400-normal;
+}
+
+.main-button {
+  background-color: #FAA01C;
+}
+.side-button {
+  background-color: #226473;
+}
+
+.width-150-px {
+  width: 150px;
+}

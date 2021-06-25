@@ -1,0 +1,89 @@
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  width: 80%;
+  border: 4px outset rgba(200, 200, 200, .5);
+  border-radius: 20px;
+}
+
+div.modal-title {
+  background-color: #dddddd;
+  display: grid;
+  grid-template-columns: auto 30px;
+  border-radius: 15px 15px 0 0;
+}
+
+/* The Close Button */
+div.modal-title > span.title {
+  padding: 10px 0 10px 20px;
+  font: normal normal 200 20px/20px Poppins-400-normal;
+}
+
+div.modal-title > span.close {
+  color: #aaaaaa;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+div.modal-title > span.close:hover,
+div.modal-title > span.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#modalScorePanelFormId {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+}
+
+#nameLabel, #patientNameInputId {
+  margin: 20px;
+  font: normal normal 300 30px/37px Poppins-400-normal;
+}
+
+#nameLabel{
+  color: #FAA01C;
+}
+#patientNameInputId {
+  border: 1px solid #226473;
+  border-radius: 10px;
+  margin: 20px 20px 20px 0;
+  height: 30px;
+  color: #226473;
+  padding: 4px 10px;
+}
+
+#modalScoreSeparatorId {
+  background-color: #ccc;
+  height: 2px;
+  border: none;
+  margin: 0;
+}
+
+#modalScoreButtonsId {
+  margin: 0;
+  background-color: #eee;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  grid-column-gap: 20px;
+  border-radius: 0 0 10px 10px;
+}
