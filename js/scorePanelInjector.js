@@ -30,7 +30,7 @@ let scorePanel = `
               </div>
 
               <div id="modalScorePanelFormId">
-                <p id="nameLabel">Numele pacientului:</p>
+                <p id="nameLabel">Numele copilului:</p>
 
                 <input type="text" name="name" id="patientNameInputId" class="text ui-widget-content ui-corner-all">
               </div>
@@ -68,7 +68,7 @@ const fnExcelReport = () => {
   let time = hh + ':' + mm;
   let rows = `<tr><td style="text-align: right;">Data:</td><td colspan="2">${date}</td></td><td>Ora:</td><td colspan="2">${time}</td><</tr>`;
   rows += `<tr><td colspan="2" class="bold">Activitatea:</td><td colspan="4" class="bold">${document.title}</td></tr>`;
-  rows += `<tr><td colspan="2" class="bold">Nume pacient:</td><td colspan="4" class="bold">${document.getElementById('patientNameInputId').value}</td></tr>`;
+  rows += `<tr><td colspan="2" class="bold">Nume copil:</td><td colspan="4" class="bold">${document.getElementById('patientNameInputId').value}</td></tr>`;
   rows += `<tr></tr>`;
   rows += `<tr><td colspan="4">Scor:</td></tr>`;
   rows += '<tr><td colspan="2" class="bold">Raspunsuri corecte</td><td colspan="2" class="bold">Raspunsuri gresite</td></tr>';
