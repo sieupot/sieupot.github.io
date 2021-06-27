@@ -125,27 +125,34 @@ const resetSounds = () => {
 const playShowItemAudio = (repeat = true) => {
   resetActivityItems();
 
-  resultDivElem.find('img').attr('src', '../images/pause.svg');
-  resultDivElem.fadeIn(300);
-  modalPanel.dialog(dialogOptions);
-
-  let audio = new Audio(),
-              i = 0;
-  audio.addEventListener('ended', function () {
-    if (++i === activitySoundList.length) {
-      resultDivElem.hide();
-      modalPanel.dialog('close');
-
-      // schedule next repeat after the last sound has been played
-      if (repeat && !showItemSoundInterval) {
-        showItemSoundInterval = setInterval(playShowItemAudio, commandRepeatInterval);
-      }
-      return;
+  if (nameModalPanel && nameModalPanel.is(":visible")) {
+    // don't repeat the command and reschedule next repeat
+    if (repeat && !showItemSoundInterval) {
+      showItemSoundInterval = setInterval(playShowItemAudio, commandRepeatInterval);
     }
+  } else {
+    resultDivElem.find('img').attr('src', '../images/pause.svg');
+    resultDivElem.fadeIn(300);
+    modalPanel.dialog(dialogOptions);
 
-    audio.src = activitySoundList[i];
+    let audio = new Audio(),
+      i = 0;
+    audio.addEventListener('ended', function () {
+      if (++i === activitySoundList.length) {
+        resultDivElem.hide();
+        modalPanel.dialog('close');
+
+        // schedule next repeat after the last sound has been played
+        if (repeat && !showItemSoundInterval) {
+          showItemSoundInterval = setInterval(playShowItemAudio, commandRepeatInterval);
+        }
+        return;
+      }
+
+      audio.src = activitySoundList[i];
+      audio.play();
+    }, true);
+    audio.src = activitySoundList[0];
     audio.play();
-  }, true);
-  audio.src = activitySoundList[0];
-  audio.play();
+  }
 }

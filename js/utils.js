@@ -75,3 +75,8 @@ const removeContent = (...containerIds) => {
     myNode.innerHTML = '';
   }
 }
+
+function isNumberKey(evt){
+  var charCode = (evt.which) ? evt.which : evt.keyCode;
+  return !(charCode === 32 || charCode > 57);
+}

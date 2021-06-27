@@ -22,7 +22,7 @@ let scorePanel = `
 
           <table id="tblExportId" style="display:none"></table>
 
-          <div id="getNameDialogDiv"  class="modal">
+          <div id="getNameDialogDiv" class="score-modal">
             <div class="modal-content">
               <div class="modal-title">
                 <span class="title">Export rezultate</span>
@@ -30,8 +30,8 @@ let scorePanel = `
               </div>
 
               <div id="modalScorePanelFormId">
-                <input type="text" name="name" id="patientNameInputId" placeholder="Nume copil" class="score-export-input text ui-widget-content ui-corner-all">
-                <input type="text" name="age" id="patientAgeInputId" placeholder="Vârstă copil (ani)" class="score-export-input text ui-widget-content ui-corner-all">
+                <input type="text" name="name" id="patientNameInputId" placeholder="Nume copil" class="score-export-input"/>
+                <input type="number" name="name" id="patientAgeInputId" placeholder="Vârstă copil (ani)" class="score-export-input" min="1" max="200" onkeydown="return isNumberKey(event);"/>
               </div>
               <hr id="modalScoreSeparatorId"/>
               <div id="modalScoreButtonsId">
