@@ -49,23 +49,20 @@ div.modal-title > span.close:focus {
 }
 
 #modalScorePanelFormId {
+  padding: 20px;
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 1fr;
   align-items: center;
 }
 
-#nameLabel, #patientNameInputId {
-  margin: 20px;
-  font: normal normal 300 30px/37px Poppins-400-normal;
+.score-export-input:not(:first-child) {
+  margin-top: 20px;
 }
 
-#nameLabel{
-  color: #FAA01C;
-}
-#patientNameInputId {
+#patientNameInputId, #patientAgeInputId {
   border: 1px solid #226473;
   border-radius: 10px;
-  margin: 20px 20px 20px 0;
+  font: normal normal 300 30px/37px Poppins-400-normal;
   height: 30px;
   color: #226473;
   padding: 4px 10px;
@@ -86,4 +83,5 @@ div.modal-title > span.close:focus {
   grid-template-columns: 1fr auto auto;
   grid-column-gap: 20px;
   border-radius: 0 0 10px 10px;
+  height: 40px;
 }

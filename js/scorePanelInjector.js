@@ -30,9 +30,8 @@ let scorePanel = `
               </div>
 
               <div id="modalScorePanelFormId">
-                <p id="nameLabel">Numele copilului:</p>
-
-                <input type="text" name="name" id="patientNameInputId" class="text ui-widget-content ui-corner-all">
+                <input type="text" name="name" id="patientNameInputId" placeholder="Nume copil" class="score-export-input text ui-widget-content ui-corner-all">
+                <input type="text" name="age" id="patientAgeInputId" placeholder="Vârstă copil (ani)" class="score-export-input text ui-widget-content ui-corner-all">
               </div>
               <hr id="modalScoreSeparatorId"/>
               <div id="modalScoreButtonsId">
@@ -69,9 +68,10 @@ const fnExcelReport = () => {
   let rows = `<tr><td style="text-align: right;">Data:</td><td colspan="2">${date}</td></td><td>Ora:</td><td colspan="2">${time}</td><</tr>`;
   rows += `<tr><td colspan="2" class="bold">Activitatea:</td><td colspan="4" class="bold">${document.title}</td></tr>`;
   rows += `<tr><td colspan="2" class="bold">Nume copil:</td><td colspan="4" class="bold">${document.getElementById('patientNameInputId').value}</td></tr>`;
+  rows += `<tr><td colspan="2" class="bold">Vârstă  copil (ani):</td><td class="bold">${document.getElementById('patientAgeInputId').value}</td></tr>`;
   rows += `<tr></tr>`;
   rows += `<tr><td colspan="4">Scor:</td></tr>`;
-  rows += '<tr><td colspan="2" class="bold">Raspunsuri corecte</td><td colspan="2" class="bold">Raspunsuri gresite</td></tr>';
+  rows += '<tr><td colspan="2" class="bold">Răspunsuri corecte</td><td colspan="2" class="bold">Răspunsuri greșite</td></tr>';
   rows += `<tr><td colspan="2">${document.getElementById('scoreCountGoodId').innerHTML}</td><td colspan="2">${document.getElementById('scoreCountBadId').innerHTML}</td></tr>`;
 
   let workbook = XLSX.utils.book_new();

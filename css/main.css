@@ -136,6 +136,7 @@ canvas {
   padding: 10px;
   border-radius: 10px;
   font: normal normal 200 16px/16px Poppins-400-normal;
+  height: 40px;
 }
 
 .main-button {
