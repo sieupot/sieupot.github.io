@@ -36,7 +36,7 @@ const initActivity = (itemClass = 'item') => {
   // INIT CONTAINER ELEMENTS: inject item containing img nodes into the page and create the JQUERY itemElements
   for (i = 1; i <= nbDistractors; i++) {
     let itemContainerId = `itemContainer${i}`;
-    jQuery('#contentPanel').append(`<img id="${itemContainerId}" class="${itemClass} pointerCursor" width="100%" height="100%"></img>`);
+    jQuery('#contentPanel').append(`<div id="${itemContainerId}" class="${itemClass} pointerCursor"></div>`);
 
     let objElem = jQuery(`#${itemContainerId}`);
     activityObjElemArray.push(objElem);

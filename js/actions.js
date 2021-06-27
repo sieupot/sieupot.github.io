@@ -105,8 +105,8 @@ const setupAnswer = function (objElem, selectedActivityItem) {
   if (isCorrectAnswer) {
     activitySoundList = activitySoundList.concat(selectedActivityItem.soundItems);
   }
-  // objElem.css('background-image', 'url(' + imagePath + ')');
-  objElem.attr('src', imagePath);
+  objElem.css('background-image', 'url(' + imagePath + ')');
+  // objElem.attr('src', imagePath);
   objElem.off('click').click(function () {
     checkValidAnswer(isCorrectAnswer);
   });

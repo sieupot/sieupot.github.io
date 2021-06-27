@@ -1,6 +1,6 @@
 .item {
   border: 1px solid rgba(200, 200, 200, 1);
-  background-size: auto 100%;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   object-fit: contain;

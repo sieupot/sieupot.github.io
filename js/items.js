@@ -23,8 +23,8 @@ generateChallengeItems = () => {
     }
 
     // display the item
-    // objElem.css('background-image', 'url(' + item.imagePath + ')').removeClass().addClass('item pointerCursor');
-    objElem.attr('src', item.imagePath).removeClass().addClass('item pointerCursor');
+    objElem.css('background-image', 'url(' + item.imagePath + ')').removeClass().addClass('item pointerCursor');
+    // objElem.attr('src', item.imagePath).removeClass().addClass('item pointerCursor');
     // unbind previously bound click handler; bind the onclick event function
     objElem.off('click').click(function () {
       checkValidAnswer(isCorrectAnswer);
