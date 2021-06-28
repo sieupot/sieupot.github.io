@@ -78,10 +78,10 @@ div.modal-title > span.close:focus {
 #modalScoreButtonsId {
   margin: 0;
   background-color: #eee;
-  padding: 10px;
-  display: grid;
+  padding: 10px 20px;
   grid-template-columns: 1fr auto auto;
   grid-column-gap: 20px;
   border-radius: 0 0 10px 10px;
   height: 40px;
+  text-align: center;
 }

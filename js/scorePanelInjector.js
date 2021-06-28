@@ -35,7 +35,6 @@ let scorePanel = `
               </div>
               <hr id="modalScoreSeparatorId"/>
               <div id="modalScoreButtonsId">
-                <object></object>
                 <button type="button" name="Cancel" class="side-button width-150-px" onclick="nameModalPanel.hide();">Cancel</button>
                 <button type="button" name="Export" class="main-button width-150-px" onclick="fnExcelReport();">Export</button>
               </div>
