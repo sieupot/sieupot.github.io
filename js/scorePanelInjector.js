@@ -4,6 +4,7 @@ let scorePanel = `
 
     <link rel="stylesheet" href="../css/fonts.css">
     <link rel="stylesheet" href="../css/scorePanel.css">
+    <link rel="stylesheet" href="../css/fontawesome-free-5.15.3-web/css/all.css">
 </head>
 
       <div id="scorePanel">
@@ -26,7 +27,7 @@ let scorePanel = `
             <div class="modal-content">
               <div class="modal-title">
                 <span class="title">Export rezultate</span>
-                <span class="close" onclick="nameModalPanel.hide();">&times;</span>
+                <span class="close" onclick="nameModalPanel.hide();"><i class="fa fa-times"></i></span>
               </div>
 
               <div id="modalScorePanelFormId">
@@ -35,8 +36,9 @@ let scorePanel = `
               </div>
               <hr id="modalScoreSeparatorId"/>
               <div id="modalScoreButtonsId">
-                <button type="button" name="Cancel" class="side-button width-150-px" onclick="nameModalPanel.hide();">Cancel</button>
-                <button type="button" name="Export" class="main-button width-150-px" onclick="fnExcelReport();">Export</button>
+                <button type="button" name="Cancel" class="side-button width-150-px" onclick="nameModalPanel.hide();"><i class="fa fa-times"></i> Cancel</button>
+                <span style="width: 10px; display: inline-block;"></span>
+                <button type="button" name="Export" class="main-button width-150-px" onclick="fnExcelReport();"><i class="fa fa-download"></i> Export</button>
               </div>
             </div>
           </div>
