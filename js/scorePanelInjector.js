@@ -19,7 +19,7 @@ let scorePanel = `
           </div>
         </div>
         <div id="downloadResultsContainerId">
-          <input type="button" name="download results" title="descarcă rezultate" onclick="getPatientName();" class="dl-res-btn"/>
+          <input type="button" name="download results" title="descarcă rezultate Excel (.xlsx)" onclick="getPatientName();" class="dl-res-btn"/>
 
           <table id="tblExportId" style="display:none"></table>
 
@@ -36,9 +36,9 @@ let scorePanel = `
               </div>
               <hr id="modalScoreSeparatorId"/>
               <div id="modalScoreButtonsId">
-                <button type="button" name="Cancel" class="side-button width-150-px" onclick="nameModalPanel.hide();"><i class="fa fa-times"></i> Cancel</button>
+                <button type="button" name="Anulează" class="side-button width-150-px" onclick="nameModalPanel.hide();"><i class="fa fa-times"></i> Cancel</button>
                 <span style="width: 10px; display: inline-block;"></span>
-                <button type="button" name="Export" class="main-button width-150-px" onclick="fnExcelReport();"><i class="fa fa-download"></i> Export</button>
+                <button type="button" name="Descarcă" title="descarcă rezultate Excel (.xlsx)" class="main-button width-150-px" onclick="fnExcelReport();"><i class="fa fa-download"></i> Export</button>
               </div>
             </div>
           </div>
