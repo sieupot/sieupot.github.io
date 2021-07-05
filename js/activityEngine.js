@@ -1,5 +1,3 @@
-const commandRepeatInterval = 16000;
-
 let activityItems; // list of available items for the activity (css class name, image path, audio file name to be played, etc)
 
 let nbDistractors;
@@ -128,7 +126,7 @@ const playShowItemAudio = (repeat = true) => {
   if (nameModalPanel && nameModalPanel.is(":visible")) {
     // don't repeat the command and reschedule next repeat
     if (repeat && !showItemSoundInterval) {
-      showItemSoundInterval = setInterval(playShowItemAudio, commandRepeatInterval);
+      showItemSoundInterval = setInterval(playShowItemAudio, getCommandRepeatInterval(true));
     }
   } else {
     resultDivElem.find('img').attr('src', '../images/pause.svg');
@@ -144,7 +142,7 @@ const playShowItemAudio = (repeat = true) => {
 
         // schedule next repeat after the last sound has been played
         if (repeat && !showItemSoundInterval) {
-          showItemSoundInterval = setInterval(playShowItemAudio, commandRepeatInterval);
+          showItemSoundInterval = setInterval(playShowItemAudio, getCommandRepeatInterval(true));
         }
         return;
       }

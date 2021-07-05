@@ -1,6 +1,6 @@
 /* ------------ MY DEFS -------------- */
 #goBackDivId {
-  margin: 60px 60px 60px 90px;
+  margin: 10px 60px 60px 90px;
 }
 #selActivityDivId {
   display: grid;
@@ -8,7 +8,6 @@
   grid-template-rows: 1fr 1fr 1fr;
   column-gap: 3em;
   row-gap: 3em;
-  height: 100%;
   margin: 0 60px 0;
 }
 

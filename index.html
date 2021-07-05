@@ -32,8 +32,23 @@
       </div>
 
       <div id="contentPanelId">
-        <div></div> <!-- keep this empty div so that the layout doesn't get messed up;
-                      something to do with the parent's [grid-template-rows: min-content;] property -->
+        <div id="headerMenuId">
+          <div id="userSettingsMenuId">
+            <div id="userSettingsMenuButtonId" class="pointerCursor"
+                 onclick="document.querySelector('#delayOutputId').value = getCommandRepeatInterval(false);
+                          document.querySelector('#delayRepeatCommandInputId').value = getCommandRepeatInterval(false);
+                          jQuery('#userSettingsMenuId div.dropdown-content').slideToggle('fast');">
+
+            </div>
+            <div class="dropdown-content">
+              <label for="delayRepeatCommandInputId" style="font: normal normal bold 22px/37px Poppins-300-normal;">Interval repetare comandă: </label>
+              <output for="delayRepeatCommandInputId" id="delayOutputId" style="font: normal normal bold 22px/37px Poppins-600-normal;">15</output>
+              <output for="delayRepeatCommandInputId" style="font: normal normal bold 22px/37px Poppins-300-italic;"> secunde</output>
+              <input id="delayRepeatCommandInputId" type="range" min="5" max="35" step="5" class="slider-round"
+              oninput="document.querySelector('#delayOutputId').value = value; setSessionCommandRepeatInterval(value);"/>
+            </div>
+          </div>
+        </div>
 
         <div id="selLevelDivId">
           <a href="selSelectorsActivity.html?l=1" class="levelButton pointerCursor">
