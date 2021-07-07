@@ -28,90 +28,92 @@
   </head>
 
   <body>
-    <div id="infoPanel" pgLocationMsg="Activități generice" pgDescriptionMsg="Alege activitatea dorită">
-    </div>
+    <div id="bodyContentDivId">
+      <div id="infoPanel" pgLocationMsg="Activități generice" pgDescriptionMsg="Alege activitatea dorită">
+      </div>
 
-    <div id="contentPanelId">
-      <div id="headerMenuId">
-        <div id="userSettingsMenuId">
-          <div id="userSettingsMenuButtonId" class="pointerCursor"
-               onclick="document.querySelector('#delayOutputId').value = getCommandRepeatInterval(false);
+      <div id="contentPanelId">
+        <div id="headerMenuId">
+          <div id="userSettingsMenuId">
+            <div id="userSettingsMenuButtonId" class="pointerCursor"
+                 onclick="document.querySelector('#delayOutputId').value = getCommandRepeatInterval(false);
                           document.querySelector('#delayRepeatCommandInputId').value = getCommandRepeatInterval(false);
                           jQuery('#userSettingsMenuId div.dropdown-content').slideToggle('fast');">
 
-          </div>
-          <div class="dropdown-content">
-            <label for="delayRepeatCommandInputId" style="font: normal normal bold 22px/37px Poppins-300-normal;">Interval repetare comandă: </label>
-            <output for="delayRepeatCommandInputId" id="delayOutputId" style="font: normal normal bold 22px/37px Poppins-600-normal;">15</output>
-            <output for="delayRepeatCommandInputId" style="font: normal normal bold 22px/37px Poppins-300-italic;"> secunde</output>
-            <input id="delayRepeatCommandInputId" type="range" min="5" max="35" step="5" class="slider-round"
-                   oninput="document.querySelector('#delayOutputId').value = value; setSessionCommandRepeatInterval(value);"/>
+            </div>
+            <div class="dropdown-content">
+              <label for="delayRepeatCommandInputId" style="font: normal normal bold 22px/37px Poppins-300-normal;">Interval repetare comandă: </label>
+              <output for="delayRepeatCommandInputId" id="delayOutputId" style="font: normal normal bold 22px/37px Poppins-600-normal;">15</output>
+              <output for="delayRepeatCommandInputId" style="font: normal normal bold 22px/37px Poppins-300-italic;"> secunde</output>
+              <input id="delayRepeatCommandInputId" type="range" min="5" max="35" step="5" class="slider-round"
+                     oninput="document.querySelector('#delayOutputId').value = value; setSessionCommandRepeatInterval(value);"/>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div id="goBackDivId">
-        <a href="index.html" class="navLink">
-          Alege altă categorie
-        </a>
-      </div>
+        <div id="goBackDivId">
+          <a href="index.html" class="navLink">
+            Alege altă categorie
+          </a>
+        </div>
 
-      <div id="selActivityDivId">
-        <a onclick="navigateTo('pages/opposites.html');" class="activity-button pointerCursor">
-          <img height="75" alt="humanBodyImg" src="images/app/activityIcons/opposites.svg"/>
-          <span>
-            noțiuni opuse
-          </span>
-        </a>
-        <a onclick="navigateTo('pages/humanBody.html');" class="activity-button pointerCursor">
-          <img height="75" alt="humanBodyImg" src="images/app/activityIcons/humanBody.svg"/>
-          <span>
-            corpul uman
-          </span>
-        </a>
-        <object></object>
+        <div id="selActivityDivId">
+          <a onclick="navigateTo('pages/opposites.html');" class="activity-button pointerCursor">
+            <img height="75" alt="humanBodyImg" src="images/app/activityIcons/opposites.svg"/>
+            <span>
+              noțiuni opuse
+            </span>
+          </a>
+          <a onclick="navigateTo('pages/humanBody.html');" class="activity-button pointerCursor">
+            <img height="75" alt="humanBodyImg" src="images/app/activityIcons/humanBody.svg"/>
+            <span>
+              corpul uman
+            </span>
+          </a>
+          <object></object>
 
-        <a onclick="navigateTo('pages/spatialPositioning1.html');" class="activity-button pointerCursor">
-          <img height="75" alt="spatialPositioning1Img" src="images/app/activityIcons/spatialPositioning1.svg"/>
-          <span>
-            poziționare spațială 1
-          </span>
-        </a>
-        <a onclick="navigateTo('pages/spatialPositioning2.html');" class="activity-button pointerCursor">
-          <img height="75" alt="spatialPositioning2Img" src="images/app/activityIcons/spatialPositioning2.svg"/>
-          <span>
-            poziționare spațială 2
-          </span>
-        </a>
-        <object></object>
+          <a onclick="navigateTo('pages/spatialPositioning1.html');" class="activity-button pointerCursor">
+            <img height="75" alt="spatialPositioning1Img" src="images/app/activityIcons/spatialPositioning1.svg"/>
+            <span>
+              poziționare spațială 1
+            </span>
+          </a>
+          <a onclick="navigateTo('pages/spatialPositioning2.html');" class="activity-button pointerCursor">
+            <img height="75" alt="spatialPositioning2Img" src="images/app/activityIcons/spatialPositioning2.svg"/>
+            <span>
+              poziționare spațială 2
+            </span>
+          </a>
+          <object></object>
 
-        <a onclick="navigateTo('pages/actions.html');" class="activity-button pointerCursor">
-          <img height="75" alt="actionsImg" src="images/app/activityIcons/actions.svg"/>
-          <span>
-            acțiuni
-          </span>
-        </a>
-        <a onclick="navigateTo('pages/sequencing_dnd.html');" class="activity-button pointerCursor">
-          <img height="75" alt="sequencingImg" src="images/app/activityIcons/sequencing_dnd.svg"/>
-          <span>
-            secvențiere
-            <br/>
-            (drag and drop)
-          </span>
-        </a>
-        <a onclick="navigateTo('pages/sequencing_click.html');" class="activity-button pointerCursor">
-          <img height="75" alt="sequencingImg" src="images/app/activityIcons/sequencing_click.svg"/>
-          <span>
-            secvențiere
-            <br/>
-            (click)
-          </span>
-        </a>
+          <a onclick="navigateTo('pages/actions.html');" class="activity-button pointerCursor">
+            <img height="75" alt="actionsImg" src="images/app/activityIcons/actions.svg"/>
+            <span>
+              acțiuni
+            </span>
+          </a>
+          <a onclick="navigateTo('pages/sequencing_dnd.html');" class="activity-button pointerCursor">
+            <img height="75" alt="sequencingImg" src="images/app/activityIcons/sequencing_dnd.svg"/>
+            <span>
+              secvențiere
+              <br/>
+              (drag and drop)
+            </span>
+          </a>
+          <a onclick="navigateTo('pages/sequencing_click.html');" class="activity-button pointerCursor">
+            <img height="75" alt="sequencingImg" src="images/app/activityIcons/sequencing_click.svg"/>
+            <span>
+              secvențiere
+              <br/>
+              (click)
+            </span>
+          </a>
 
-        <!-- a beautiful trio to force the spacing at the bottom-->
-        <div></div>
-        <div></div>
-        <div></div>
+          <!-- a beautiful trio to force the spacing at the bottom-->
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
     </div>
   </body>

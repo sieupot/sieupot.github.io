@@ -9,9 +9,16 @@ body {
   height: 100%;
 }
 
+#bodyContentDivId {
+  display: grid;
+  grid-template-columns: 380px auto;
+  column-gap: 3em;
+  height: calc(100% - 20px);
+}
+
 #headerMenuId {
   border-bottom: 2px solid #ccc;
-  margin: 0 60px 0 90px;
+  margin: 0 60px 0 0;
   display: flex;
 }
 #userSettingsMenuId {
@@ -67,6 +74,13 @@ body {
   border: 1px solid black;
   background: rgba(255, 255, 255, .5) url('../images/app/profileSettings.svg') no-repeat center;
   background-size: 30px;
+}
+
+#contentPanelId {
+  display: grid;
+  min-height: 800px;
+  overflow: auto;
+  grid-template-rows: auto auto 1fr;
 }
 
 footer {

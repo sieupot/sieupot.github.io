@@ -28,6 +28,7 @@
   </head>
 
   <body>
+    <div id="bodyContentDivId">
       <div id="infoPanel" pgLocationMsg="Bine ai venit!" pgDescriptionMsg="Alege nivelul dorit pentru a începe">
       </div>
 
@@ -36,8 +37,8 @@
           <div id="userSettingsMenuId">
             <div id="userSettingsMenuButtonId" class="pointerCursor"
                  onclick="document.querySelector('#delayOutputId').value = getCommandRepeatInterval(false);
-                          document.querySelector('#delayRepeatCommandInputId').value = getCommandRepeatInterval(false);
-                          jQuery('#userSettingsMenuId div.dropdown-content').slideToggle('fast');">
+                      document.querySelector('#delayRepeatCommandInputId').value = getCommandRepeatInterval(false);
+                      jQuery('#userSettingsMenuId div.dropdown-content').slideToggle('fast');">
 
             </div>
             <div class="dropdown-content">
@@ -45,23 +46,25 @@
               <output for="delayRepeatCommandInputId" id="delayOutputId" style="font: normal normal bold 22px/37px Poppins-600-normal;">15</output>
               <output for="delayRepeatCommandInputId" style="font: normal normal bold 22px/37px Poppins-300-italic;"> secunde</output>
               <input id="delayRepeatCommandInputId" type="range" min="5" max="35" step="5" class="slider-round"
-              oninput="document.querySelector('#delayOutputId').value = value; setSessionCommandRepeatInterval(value);"/>
+                     oninput="document.querySelector('#delayOutputId').value = value; setSessionCommandRepeatInterval(value);"/>
             </div>
           </div>
         </div>
 
+        <div></div> <!-- to match the contentPanelId css description declared for a 3 rows layout (grid-template-rows: auto auto 1fr;) -->
+
         <div id="selLevelDivId">
           <a href="selSelectorsActivity.html?l=1" class="levelButton pointerCursor">
             <div class="selLevelDetails">
+          <span class="selLevelLabel">
+            SELECTORI:
+          </span>
               <span class="selLevelLabel">
-                SELECTORI:
-              </span>
-              <span class="selLevelLabel">
-                NIVELUL 1
-              </span>
+            NIVELUL 1
+          </span>
               <span class="selLevelDesc">
-                2 Distractori
-              </span>
+            2 Distractori
+          </span>
             </div>
             <div>
               <div class="iconLevel active"></div>
@@ -71,15 +74,15 @@
           </a>
           <a href="selSelectorsActivity.html?l=2" class="levelButton pointerCursor">
             <div class="selLevelDetails">
+          <span class="selLevelLabel">
+            SELECTORI:
+          </span>
               <span class="selLevelLabel">
-                SELECTORI:
-              </span>
-              <span class="selLevelLabel">
-                NIVELUL 2
-              </span>
+            NIVELUL 2
+          </span>
               <span class="selLevelDesc">
-                3 Distractori
-              </span>
+            3 Distractori
+          </span>
             </div>
             <div>
               <div class="iconLevel active"></div>
@@ -89,15 +92,15 @@
           </a>
           <a href="selSelectorsActivity.html?l=3" class="levelButton pointerCursor">
             <div class="selLevelDetails">
+          <span class="selLevelLabel">
+            SELECTORI:
+          </span>
               <span class="selLevelLabel">
-                SELECTORI:
-              </span>
-              <span class="selLevelLabel">
-                NIVELUL 3
-              </span>
+            NIVELUL 3
+          </span>
               <span class="selLevelDesc">
-                4 Distractori
-              </span>
+            4 Distractori
+          </span>
             </div>
             <div>
               <div class="iconLevel active"></div>
@@ -108,9 +111,9 @@
 
           <a href="selGenericActivity.html" class="levelButton pointerCursor">
             <div class="selLevelDetails">
-              <span class="selLevelLabel">
-                Activități generice
-              </span>
+          <span class="selLevelLabel">
+            Activități generice
+          </span>
             </div>
             <div>
               <img height="51" alt="genericActivityImg" src="images/app/activityIcons/genericActivity.svg"/>
@@ -118,6 +121,8 @@
           </a>
         </div>
       </div>
+    </div>
+
   </body>
 
 </html>
