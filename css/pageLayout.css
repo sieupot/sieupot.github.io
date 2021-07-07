@@ -54,16 +54,20 @@
 
 .result {
   position: fixed;
-  margin: 25vh 25vw;
-  height: 50%;
-  width: 50%;
+  height: 100%;
+  width: 100%;
   text-align: center;
   display: none;
+  top: 0;
   z-index: 1000;
 }
 
-.result > img {
-  height: 100%;
+.result > div {
+  height: calc(100% - 115px);
+  background-size: contain;
+  background-position: center;
+  background-image: url(../images/start.svg);
+  background-repeat: no-repeat;
 }
 
 #scoreGood, #scoreBad {

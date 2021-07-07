@@ -50,7 +50,7 @@ const initActivity = (itemClass = 'item') => {
  * triggered when the user manually chooses to start the activity
  */
 const startActivity = () => {
-  resultDivElem.find('img').removeAttr('onclick').removeClass('pointerCursor');
+  resultDivElem.find('div').removeAttr('onclick').removeClass('pointerCursor');
 
   activitySoundList = [];
   generateChallengeItems();
@@ -70,7 +70,7 @@ const checkValidAnswer = (isValidAnswer) => {
 
   if (isValidAnswer) {
     rightAnswers++;
-    resultDivElem.find('img').attr('src', '../images/smileFace.png');
+    resultDivElem.find('div').css('background-image', 'url(../images/smileFace.png)');
     resultDivElem.fadeIn(500);
     let playingCorrectAnswerAudio = new Audio('../sounds/correct.ogg');
     playingAudios[playingAudios.length] = playingCorrectAnswerAudio;
@@ -90,7 +90,7 @@ const checkValidAnswer = (isValidAnswer) => {
 
 function handleInvalidAnswer(doPlayShowItemAudio) {
   wrongAnswers++;
-  resultDivElem.find('img').attr('src', '../images/sadFace.png');
+  resultDivElem.find('div').css('background-image', 'url(../images/sadFace.png)');
   resultDivElem.fadeIn(500);
   let playingWrongAnswerAudio = new Audio('../sounds/wrong.ogg');
   playingWrongAnswerAudio.addEventListener('ended', function () {
@@ -129,7 +129,7 @@ const playShowItemAudio = (repeat = true) => {
       showItemSoundInterval = setInterval(playShowItemAudio, getCommandRepeatInterval(true));
     }
   } else {
-    resultDivElem.find('img').attr('src', '../images/pause.svg');
+    resultDivElem.find('div').css('background-image', 'url(../images/pause.svg)');
     resultDivElem.fadeIn(300);
     modalPanel.dialog(dialogOptions);
 

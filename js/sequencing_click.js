@@ -58,7 +58,7 @@ const itemClicked = (ev) => {
     if (clickableElemIndex === okClicksNb) {
       // don't display it for the last successful choice
       if (okClicksNb < selectedActivitySqLength) {
-        resultDivElem.find('img').attr('src', '../images/smileFace.png');
+        resultDivElem.find('div').css('background-image', 'url(../images/smileFace.png)');
         resultDivElem.fadeIn(500, function () {
           resultDivElem.fadeOut(500);
         });
