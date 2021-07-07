@@ -14,12 +14,16 @@ body {
   grid-template-columns: 380px auto;
   column-gap: 3em;
   height: calc(100% - 20px);
+  overflow: hidden;
 }
 
 #headerMenuId {
   border-bottom: 2px solid #ccc;
   margin: 0 60px 0 0;
   display: flex;
+  position: absolute;
+  right: 0;
+  left: 426px;
 }
 #userSettingsMenuId {
   margin-left: auto;
@@ -35,7 +39,7 @@ body {
   padding: 10px;
   border: 2px solid #ccc;
   border-radius: 0 0 20px 20px;
-  right: 60px;
+  right: 0;
 }
 
 .slider-round {
@@ -78,9 +82,10 @@ body {
 
 #contentPanelId {
   display: grid;
-  min-height: 800px;
   overflow: auto;
-  grid-template-rows: auto auto 1fr;
+  grid-template-rows: auto 1fr;
+  margin-top: 44px;
+  height: calc(100% - 44px);
 }
 
 footer {

@@ -28,30 +28,30 @@
   </head>
 
   <body>
+    <div id="headerMenuId">
+      <div id="userSettingsMenuId">
+        <div id="userSettingsMenuButtonId" class="pointerCursor"
+             onclick="document.querySelector('#delayOutputId').value = getCommandRepeatInterval(false);
+                            document.querySelector('#delayRepeatCommandInputId').value = getCommandRepeatInterval(false);
+                            jQuery('#userSettingsMenuId div.dropdown-content').slideToggle('fast');">
+
+        </div>
+        <div class="dropdown-content">
+          <label for="delayRepeatCommandInputId" style="font: normal normal bold 22px/37px Poppins-300-normal;">Interval repetare comandă: </label>
+          <output for="delayRepeatCommandInputId" id="delayOutputId" style="font: normal normal bold 22px/37px Poppins-600-normal;">15</output>
+          <output for="delayRepeatCommandInputId" style="font: normal normal bold 22px/37px Poppins-300-italic;"> secunde</output>
+          <input id="delayRepeatCommandInputId" type="range" min="5" max="35" step="5" class="slider-round"
+                 oninput="document.querySelector('#delayOutputId').value = value; setSessionCommandRepeatInterval(value);"/>
+        </div>
+      </div>
+    </div>
+
     <div id="bodyContentDivId">
       <div id="infoPanel" pgLocationMsg="Bine ai venit!" pgDescriptionMsg="Alege nivelul dorit pentru a începe">
       </div>
 
       <div id="contentPanelId">
-        <div id="headerMenuId">
-          <div id="userSettingsMenuId">
-            <div id="userSettingsMenuButtonId" class="pointerCursor"
-                 onclick="document.querySelector('#delayOutputId').value = getCommandRepeatInterval(false);
-                      document.querySelector('#delayRepeatCommandInputId').value = getCommandRepeatInterval(false);
-                      jQuery('#userSettingsMenuId div.dropdown-content').slideToggle('fast');">
-
-            </div>
-            <div class="dropdown-content">
-              <label for="delayRepeatCommandInputId" style="font: normal normal bold 22px/37px Poppins-300-normal;">Interval repetare comandă: </label>
-              <output for="delayRepeatCommandInputId" id="delayOutputId" style="font: normal normal bold 22px/37px Poppins-600-normal;">15</output>
-              <output for="delayRepeatCommandInputId" style="font: normal normal bold 22px/37px Poppins-300-italic;"> secunde</output>
-              <input id="delayRepeatCommandInputId" type="range" min="5" max="35" step="5" class="slider-round"
-                     oninput="document.querySelector('#delayOutputId').value = value; setSessionCommandRepeatInterval(value);"/>
-            </div>
-          </div>
-        </div>
-
-        <div></div> <!-- to match the contentPanelId css description declared for a 3 rows layout (grid-template-rows: auto auto 1fr;) -->
+        <div></div> <!-- to match the contentPanelId css description declared for a 2 rows layout (grid-template-rows: auto 1fr;) -->
 
         <div id="selLevelDivId">
           <a href="selSelectorsActivity.html?l=1" class="levelButton pointerCursor">
