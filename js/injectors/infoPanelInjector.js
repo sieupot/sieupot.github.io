@@ -23,20 +23,12 @@ let infoPnlContent = `
     </svg>
   </div>
 
-  <div>
+  <div id="infoPanelMsgsContainerId">
+    <hr style="margin-top: 35px;">
     <div id="welcomeTextId">${pgLocationMsg}</div>
     <div id="chooseLevelTextId">${pgDescriptionMsg}</div>
+    <hr>
   </div>
-
-  <svg id="footerContainerId">
-    <svg xmlns="http://www.w3.org/2000/svg">
-      <circle cx="122" cy="258" r="211" fill="#F9F4EF" opacity=".57"/>
-    </svg>
-
-    <svg xmlns="http://www.w3.org/2000/svg" width="100%">
-      <image xlink:href="images/app/children.svg" height="487" width="380" x="-50" y="4"/>
-    </svg>
-  </svg>
 `;
 
 infoPanel.append(infoPnlContent);

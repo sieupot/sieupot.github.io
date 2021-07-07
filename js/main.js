@@ -8,7 +8,6 @@ const getCommandRepeatInterval = (inMillis) => {
   let sessionCmdRepeatInterval = sessionStorage.getItem('commandRepeatInterval');
   const commandRepeatInterval = (sessionCmdRepeatInterval ? sessionCmdRepeatInterval : 15);
 
-  console.log(`Interval repetare comanda: ${commandRepeatInterval} secunde.`);
   return inMillis ? (commandRepeatInterval * 1000) : commandRepeatInterval;
 }
 

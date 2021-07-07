@@ -46,7 +46,7 @@ let scorePanel = `
       </div>
 `;
 
-jQuery('#scorePanelInjectorId').append(scorePanel);
+jQuery('#scorePanelId').append(scorePanel);
 let nameModalPanel = jQuery('#getNameDialogDiv');
 
 const getPatientName = () => {

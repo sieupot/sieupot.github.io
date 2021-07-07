@@ -1,20 +1,34 @@
 /* ------------ MY DEFS -------------- */
 #infoPanel {
-  min-height: 400px;
   float: left;
   display: grid;
-  grid-template-rows: 200px 1fr 398px;
+  grid-template-rows: 200px 1fr;
+
+  background-image: url(../images/app/childrenCircle.svg);
+  background-repeat: no-repeat;
+  background-position: right 46px bottom -87px;
+  background-size: 116%;
 }
 #welcomeTextId {
   font: normal normal bold 39px/42px Poppins-600-normal;
   color: #226473;
-  padding: 35px 0 0 79px;
+  padding: 0 0 0 79px;
+  background-color: rgba(239, 231, 224, .75);
 }
 #chooseLevelTextId {
   font: normal normal 300 30px/37px Poppins-300-normal;
   color: #3A3A3A;
-  padding: 20px 0 0 79px;
+  padding: 10px 0 0 79px;
+  background-color: rgba(239, 231, 224, .75);
 }
+
+#infoPanelMsgsContainerId > hr {
+  background: linear-gradient(to right, rgba(255, 255, 255, .2), rgba(255, 255, 255, .3), white, rgba(255, 255, 255, .2), #EFE7E0);
+  height: 2px;
+  border: none;
+  margin: 0;
+}
+
 #footerContainerId {
   position: relative;
   overflow: hidden;

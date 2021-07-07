@@ -22,29 +22,16 @@
     <script defer src="js/lib/jquery.min.js"></script>
     <script defer src="js/main.js"></script>
     <script defer src="js/utils.js"></script>
+    <!-- inject the menu user settings content-->
+    <script defer src="js/injectors/menuUserSettingsInjector.js"></script>
     <!-- inject the template footer into the page -->
-    <script defer src="js/footerInjector.js"></script>
-    <script defer src="js/infoPanelInjector.js"></script>
+    <script defer src="js/injectors/footerInjector.js"></script>
+    <!-- inject info panel content-->
+    <script defer src="js/injectors/infoPanelInjector.js"></script>
   </head>
 
   <body>
-    <div id="headerMenuId">
-      <div id="userSettingsMenuId">
-        <div id="userSettingsMenuButtonId" class="pointerCursor"
-             onclick="document.querySelector('#delayOutputId').value = getCommandRepeatInterval(false);
-                            document.querySelector('#delayRepeatCommandInputId').value = getCommandRepeatInterval(false);
-                            jQuery('#userSettingsMenuId div.dropdown-content').slideToggle('fast');">
-
-        </div>
-        <div class="dropdown-content">
-          <label for="delayRepeatCommandInputId" style="font: normal normal bold 22px/37px Poppins-300-normal;">Interval repetare comandă: </label>
-          <output for="delayRepeatCommandInputId" id="delayOutputId" style="font: normal normal bold 22px/37px Poppins-600-normal;">15</output>
-          <output for="delayRepeatCommandInputId" style="font: normal normal bold 22px/37px Poppins-300-italic;"> secunde</output>
-          <input id="delayRepeatCommandInputId" type="range" min="5" max="35" step="5" class="slider-round"
-                 oninput="document.querySelector('#delayOutputId').value = value; setSessionCommandRepeatInterval(value);"/>
-        </div>
-      </div>
-    </div>
+    <div id="headerMenuId"></div>
 
     <div id="bodyContentDivId">
       <div id="infoPanel" pgLocationMsg="Bine ai venit!" pgDescriptionMsg="Alege nivelul dorit pentru a începe">
