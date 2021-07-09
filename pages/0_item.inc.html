@@ -28,15 +28,12 @@
 
 <div id="scorePanelId"><!-- score panel injected --></div>
 
-<script src="../js/injectors/footerInjector.js"></script>
+<script defer src="../js/injectors/footerInjector.js"></script>
 <script defer src="../js/injectors/scorePanelInjector.js"></script>
 
-<script type="text/javascript">
-  // on page load
-  jQuery(() => {
-    // function declared in each item's related file
-    initActivityItems();
+<script defer type="text/javascript">
+  // function declared in each item's related file
+  initActivityItems();
 
-    initActivity();
-  });
+  initActivity();
 </script>
