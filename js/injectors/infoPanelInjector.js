@@ -2,7 +2,6 @@ const infoPanel = jQuery('#infoPanel');
 let pgLocationMsg = parseDynamicJsString(infoPanel.attr('pgLocationMsg'));
 let pgDescriptionMsg = parseDynamicJsString(infoPanel.attr('pgDescriptionMsg'));
 
-
 let infoPnlContent = `
   <div>
     <svg viewBox="0 0 100% 100%" xmlns="http://www.w3.org/2000/svg" height="200" class="pointerCursor" onclick="document.location = 'index.html';">
