@@ -73,6 +73,12 @@ body {
   width: 100%;
 }
 
+#delayOutputId {
+  font: normal normal bold 22px/37px Poppins-600-normal;
+  width: 29px;
+  display: inline-block;
+  text-align: right;
+}
 .slider-round {
   -webkit-appearance: none;
   width: 100%;

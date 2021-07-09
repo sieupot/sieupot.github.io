@@ -9,13 +9,13 @@ let userSettingsContent = `
 
     </div>
     <div id="settingsPanelId" class="dropdown-content">
-      <div id="settingsPanelTitleId">Configurare</div>
+      <div id="settingsPanelTitleId">Setări</div>
 
       <label for="delayRepeatCommandInputId" style="font: normal normal bold 22px/37px Poppins-300-normal;">Interval repetare comandă: </label>
-      <output for="delayRepeatCommandInputId" id="delayOutputId" style="font: normal normal bold 22px/37px Poppins-600-normal;">15</output>
+      <output for="delayRepeatCommandInputId" id="delayOutputId">15</output>
       <output for="delayRepeatCommandInputId" style="font: normal normal bold 22px/37px Poppins-300-italic;"> secunde</output>
       <input id="delayRepeatCommandInputId" type="range" min="5" max="35" step="5" class="slider-round"
-             oninput="document.querySelector('#delayOutputId').value = value; setSessionCommandRepeatInterval(value);"/>
+             oninput="document.querySelector('#delayOutputId').value = value; setSessionProperty('commandRepeatIntervalSeconds', value);"/>
     </div>
   </div>
 `;

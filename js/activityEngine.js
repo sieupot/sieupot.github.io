@@ -126,7 +126,7 @@ const playShowItemAudio = (repeat = true) => {
   if (nameModalPanel && nameModalPanel.is(":visible")) {
     // don't repeat the command and reschedule next repeat
     if (repeat && !showItemSoundInterval) {
-      showItemSoundInterval = setInterval(playShowItemAudio, getCommandRepeatInterval(true));
+      showItemSoundInterval = setInterval(playShowItemAudio, getCommandRepeatInterval());
     }
   } else {
     resultDivElem.find('div').css('background-image', 'url(../images/pause.svg)');
@@ -142,7 +142,7 @@ const playShowItemAudio = (repeat = true) => {
 
         // schedule next repeat after the last sound has been played
         if (repeat && !showItemSoundInterval) {
-          showItemSoundInterval = setInterval(playShowItemAudio, getCommandRepeatInterval(true));
+          showItemSoundInterval = setInterval(playShowItemAudio, getCommandRepeatInterval());
         }
         return;
       }

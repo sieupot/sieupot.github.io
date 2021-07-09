@@ -4,13 +4,13 @@
  *                   else return in seconds
  * @returns {number}
  */
-const getCommandRepeatInterval = (inMillis) => {
-  let sessionCmdRepeatInterval = sessionStorage.getItem('commandRepeatInterval');
-  const commandRepeatInterval = (sessionCmdRepeatInterval ? sessionCmdRepeatInterval : 15);
+const getCommandRepeatInterval = (inMillis = true) => {
+  let sessionCmdRepeatIntervalSeconds = sessionStorage.getItem('commandRepeatIntervalSeconds');
+  const commandRepeatIntervalSeconds = (sessionCmdRepeatIntervalSeconds ? sessionCmdRepeatIntervalSeconds : 15);
 
-  return inMillis ? (commandRepeatInterval * 1000) : commandRepeatInterval;
+  return inMillis ? (commandRepeatIntervalSeconds * 1000) : commandRepeatIntervalSeconds;
 }
 
-const setSessionCommandRepeatInterval = (nbSeconds) => {
-  sessionStorage.commandRepeatInterval = nbSeconds;
+const setSessionProperty = (property, nbSeconds) => {
+  sessionStorage[property] = nbSeconds;
 }
