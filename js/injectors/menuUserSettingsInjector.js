@@ -23,7 +23,7 @@ let userSettingsContent = `
 menuPanel.append(userSettingsContent);
 
 window.addEventListener('mouseup',function(event){
-  var pol = document.getElementById('settingsPanelId');
+  var pol = document.querySelector('#settingsPanelId');
   if(pol && event.target !== pol && event.target.parentNode !== pol){
     pol.style.display = 'none';
   }

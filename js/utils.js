@@ -70,10 +70,7 @@ const removeAttributes = (element, ...attrs) => {
 }
 
 const removeContent = (...containerIds) => {
-  for (const containerId of containerIds) {
-    const myNode = document.getElementById(containerId);
-    myNode.innerHTML = '';
-  }
+  containerIds.forEach(containerId => document.getElementById(containerId).innerHTML = '')
 }
 
 function isNumberKey(evt){

@@ -58,10 +58,8 @@ const startActivity = () => {
 
 const getAnswerOptions = () => {
   let answerOptionValues = []; // [true, false, (false)..]
-  for (i = 0; i < activityObjElemArray.length; i++) {
-    answerOptionValues.push(!answerOptionValues.length || answerOptionValues.length === 0);
-  }
- return answerOptionValues;
+  activityObjElemArray.forEach(item => answerOptionValues.push(!answerOptionValues.length || answerOptionValues.length === 0));
+  return answerOptionValues;
 }
 
 const checkValidAnswer = (isValidAnswer) => {

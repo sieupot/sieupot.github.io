@@ -51,7 +51,7 @@ let nameModalPanel = jQuery('#getNameDialogDiv');
 
 const getPatientName = () => {
   nameModalPanel.show(0, function(){
-    document.getElementById('patientNameInputId').focus();
+    document.querySelector('#patientNameInputId').focus();
   });
 }
 
@@ -68,19 +68,19 @@ const fnExcelReport = () => {
   let time = hh + ':' + mm;
   let rows = `<tr><td style="text-align: right;">Data:</td><td colspan="2">${date}</td></td><td>Ora:</td><td colspan="2">${time}</td><</tr>`;
   rows += `<tr><td colspan="2" class="bold">Activitatea:</td><td colspan="4" class="bold">${document.title}</td></tr>`;
-  rows += `<tr><td colspan="2" class="bold">Nume copil:</td><td colspan="4" class="bold">${document.getElementById('patientNameInputId').value}</td></tr>`;
-  rows += `<tr><td colspan="2" class="bold">Vârstă  copil (ani):</td><td class="bold">${document.getElementById('patientAgeInputId').value}</td></tr>`;
+  rows += `<tr><td colspan="2" class="bold">Nume copil:</td><td colspan="4" class="bold">${document.querySelector('#patientNameInputId').value}</td></tr>`;
+  rows += `<tr><td colspan="2" class="bold">Vârstă  copil (ani):</td><td class="bold">${document.querySelector('#patientAgeInputId').value}</td></tr>`;
   rows += `<tr></tr>`;
   rows += `<tr><td colspan="4">Scor:</td></tr>`;
   rows += '<tr><td colspan="2" class="bold">Răspunsuri corecte</td><td colspan="2" class="bold">Răspunsuri greșite</td></tr>';
-  rows += `<tr><td colspan="2">${document.getElementById('scoreCountGoodId').innerHTML}</td><td colspan="2">${document.getElementById('scoreCountBadId').innerHTML}</td></tr>`;
+  rows += `<tr><td colspan="2">${document.querySelector('#scoreCountGoodId').innerHTML}</td><td colspan="2">${document.querySelector('#scoreCountBadId').innerHTML}</td></tr>`;
 
   let workbook = XLSX.utils.book_new();
 
   //var worksheet_data  =  [['hello','world']];
   //var worksheet = XLSX.utils.aoa_to_sheet(worksheet_data);
 
-  let worksheet_data = document.getElementById("tblExportId");
+  let worksheet_data = document.querySelector("#tblExportId");
   worksheet_data.innerHTML = rows;
   let worksheet = XLSX.utils.table_to_sheet(worksheet_data);
 
