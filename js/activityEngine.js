@@ -71,7 +71,7 @@ const checkValidAnswer = (isValidAnswer) => {
     resultDivElem.find('div').css('background-image', 'url(../images/smileFace.png)');
     resultDivElem.fadeIn(500);
     let playingCorrectAnswerAudio = new Audio('../sounds/correct.ogg');
-    playingAudios[playingAudios.length] = playingCorrectAnswerAudio;
+    playingAudios.push(playingCorrectAnswerAudio);
     playingCorrectAnswerAudio.addEventListener('ended', function () {
       resultDivElem.hide();
 
@@ -99,7 +99,7 @@ function handleInvalidAnswer(doPlayShowItemAudio) {
     }
   });
   playingWrongAnswerAudio.play();
-  playingAudios[playingAudios.length] = playingWrongAnswerAudio;
+  playingAudios.push(playingWrongAnswerAudio);
   jQuery('#scoreBad > div').html(wrongAnswers);
   jQuery('#scoreBad').effect('highlight', {color: '#ff9c9c'}, 500);
 }

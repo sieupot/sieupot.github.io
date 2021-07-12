@@ -78,7 +78,7 @@ generateChallengeItems = () => {
   // generate answer options
   answerOptionValues = getAnswerOptions(); // [true, false, (false)..]
 
-  activitySoundList[activitySoundList.length] = '../sounds/show.ogg';
+  activitySoundList.push('../sounds/show.ogg');
 
   // extract the first activityItem
   let selectedActivityItem1 = activityItems[Math.floor((Math.random() * activityItems.length))];

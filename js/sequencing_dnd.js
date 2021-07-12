@@ -35,7 +35,7 @@ generateChallengeItems = () => {
   // remove previous HTML content from the dropContainersId div (new content will be generated below)
   removeContent(dropContainers.attr('id'));
 
-  activitySoundList[activitySoundList.length] = `${sndPath}sequence.ogg`;
+  activitySoundList.push(`${sndPath}sequence.ogg`);
 
   // extract the activity sequence
   const indexAct = Math.floor((Math.random() * activityItems.length));

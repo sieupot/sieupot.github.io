@@ -21,8 +21,8 @@ generateChallengeItems = () => {
   } while (validItemIndex === prevRnd);
   prevRnd = validItemIndex;
 
-  activitySoundList[activitySoundList.length] = '../sounds/show.ogg';
-  activitySoundList[activitySoundList.length] = activityItems[validItemIndex].audioPath;
+  activitySoundList.push('../sounds/show.ogg');
+  activitySoundList.push(activityItems[validItemIndex].audioPath);
 
   // bind the onclick event function
   for (const [i, svgElem] of activityObjElemArray.entries()) {

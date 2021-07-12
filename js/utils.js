@@ -46,21 +46,19 @@ const navigateTo = (pageLocation, includeUrlParams = true) => {
  */
 const parseDynamicJsString = (sParam) => {
   const sParamTokens = sParam.split(' ');
-  let sRet = '';
-  for (i = 0; i < sParamTokens.length; i++) {
-    if (sParamTokens[i].indexOf('#{') >= 0) {
-      sParamTokens[i] = eval(sParamTokens[i].substring(2, sParamTokens[i].length - 1));
+  sParamTokens.forEach((token, curIndex) => {
+    if (token.indexOf('#{') >= 0) {
+      sParamTokens[curIndex] = eval(token.substring(2, token.length - 1));
     }
-    sRet += sParamTokens[i] + " ";
-  }
+  });
 
-  return sRet.substring(0, sRet.length - 1);
+  return sParamTokens.join(' ');
 }
 
 // extract entry from array and splice the array
 const extractRandomEntryAndSplice = (entryArray) => {
   const entryIndex = Math.floor(Math.random() * entryArray.length);
-  let entryRet = entryArray[entryIndex]; // true or false
+  const entryRet = entryArray[entryIndex]; // true or false
   entryArray.splice(entryIndex, 1); // remove the selected answer from the array
   return entryRet;
 }
@@ -74,6 +72,6 @@ const removeContent = (...containerIds) => {
 }
 
 function isNumberKey(evt){
-  var charCode = (evt.which) ? evt.which : evt.keyCode;
+  const charCode = (evt.which) ? evt.which : evt.keyCode;
   return !(charCode === 32 || charCode > 57);
 }

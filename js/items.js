@@ -5,7 +5,7 @@ generateChallengeItems = () => {
 
   // setup the containing DOM elements
   let currSelectedItems = []; // items selected in the current iteration of the activity
-  activitySoundList[activitySoundList.length] = '../sounds/show.ogg';
+  activitySoundList.push('../sounds/show.ogg');
   for (let objElem of activityObjElemArray) {
     // randomly determine whether this is the correct answer or not
     const isCorrectAnswer = extractRandomEntryAndSplice(answerOptionValues);
@@ -30,7 +30,7 @@ generateChallengeItems = () => {
       checkValidAnswer(isCorrectAnswer);
     });
 
-    isCorrectAnswer ? activitySoundList[activitySoundList.length] = item.audioPath : null;
+    isCorrectAnswer ? activitySoundList.push(item.audioPath) : null;
   }
   prevSelectedItems = currSelectedItems;
 
