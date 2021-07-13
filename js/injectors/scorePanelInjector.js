@@ -23,7 +23,7 @@ let scorePanel = `
 
           <table id="tblExportId" style="display:none"></table>
 
-          <div id="getNameDialogDiv" class="score-modal">
+          <div id="getNameDialogDiv" class="score-modal" style="display: none;">
             <div class="modal-content">
               <div class="modal-title">
                 <span class="title">Export rezultate</span>

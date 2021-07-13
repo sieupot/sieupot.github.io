@@ -28,8 +28,8 @@ const initActivity = (itemClass = 'item') => {
   resultDivElem = jQuery('div.result');
 
   // what level is this? Init number of distractors used to render the number of activity items
-  nbDistractors = Number(getUrlParameter('l'));
-  nbDistractors = (!nbDistractors || nbDistractors > 3) ? 2 : nbDistractors + 1;
+  nbDistractors = Number(getUrlParameter('dst'));
+  nbDistractors = (!nbDistractors || nbDistractors > 4) ? 2 : nbDistractors;
 
   // INIT CONTAINER ELEMENTS: inject item containing img nodes into the page and create the JQUERY itemElements
   for (i = 1; i <= nbDistractors; i++) {
