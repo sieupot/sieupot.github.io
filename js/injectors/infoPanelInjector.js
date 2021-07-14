@@ -4,7 +4,9 @@ let pgDescriptionMsg = parseDynamicJsString(infoPanel.attr('pgDescriptionMsg'));
 
 let infoPnlContent = `
   <div>
-    <svg viewBox="0 0 100% 100%" xmlns="http://www.w3.org/2000/svg" height="200" class="pointerCursor" onclick="document.location = 'index.html';">
+    <svg viewBox="0 0 100% 100%" xmlns="http://www.w3.org/2000/svg" height="200"
+         class="pointerCursor"
+         onclick="document.location = 'index.html';">
       <title>Acasă</title>
       <svg xmlns="http://www.w3.org/2000/svg">
          <circle cx="55" cy="35" r="160" fill="#F9F4EF" opacity=".23"/>
