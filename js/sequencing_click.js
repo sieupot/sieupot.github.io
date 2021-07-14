@@ -15,7 +15,7 @@ let okClicksNb = 0, selectedActivitySqLength = 0;
 let itemsContainerId = jQuery('#itemsContainerId');
 
 const generateClickableHtmlElem = (index, imagePath) => {
-  const clickableHtmlElem = `<div id="clickable${index}" class="pointerCursor click-item" style="background-image: url('${imagePath}');" canbeclicked="true" onclick="itemClicked(event);">
+  const clickableHtmlElem = `<div id="clickable${index}" class="pointer-cursor click-item" style="background-image: url('${imagePath}');" canbeclicked="true" onclick="itemClicked(event);">
         </div>`;
   itemsContainerId.append(clickableHtmlElem);
 }
@@ -66,7 +66,7 @@ const itemClicked = (ev) => {
 
       // don't allow source to be clickable anymore
       removeAttributes(clickableElem, 'canbeclicked', 'onclick');
-      clickableElem.classList.remove('pointerCursor');
+      clickableElem.classList.remove('pointer-cursor');
       // hide the counter indicator
       clickableElem.classList.add('hidden-content', 'success-indicator');
       checkActivityProgress();

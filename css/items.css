@@ -6,9 +6,9 @@
   object-fit: contain;
 }
 
-.gradientWorld1 {
+.gradient-world-1 {
   background: linear-gradient(180deg, rgba(0, 198, 255, 1) 0%, rgba(0, 198, 255, 1) 37%, rgba(43, 148, 77, 1) 49%, rgba(43, 148, 77, 1) 69%, rgba(105, 40, 42, 1) 79%);
 }
-.gradientWorld2 {
+.gradient-world-2 {
   background:linear-gradient(180deg, rgba(0, 90, 255, 1) 1%, rgba(0, 198, 255, 1) 37%, rgba(39, 202, 92, 1) 49%, rgba(46, 208, 98, 1) 68%, rgba(78, 26, 28, 1) 78%);
 }

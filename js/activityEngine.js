@@ -34,7 +34,7 @@ const initActivity = (itemClass = 'item') => {
   // INIT CONTAINER ELEMENTS: inject item containing img nodes into the page and create the JQUERY itemElements
   for (i = 1; i <= nbDistractors; i++) {
     let itemContainerId = `itemContainer${i}`;
-    jQuery('#contentPanel').append(`<div id="${itemContainerId}" class="${itemClass} pointerCursor"></div>`);
+    jQuery('#contentPanel').append(`<div id="${itemContainerId}" class="${itemClass} pointer-cursor"></div>`);
 
     let objElem = jQuery(`#${itemContainerId}`);
     activityObjElemArray.push(objElem);
@@ -50,7 +50,7 @@ const initActivity = (itemClass = 'item') => {
  * triggered when the user manually chooses to start the activity
  */
 const startActivity = () => {
-  resultDivElem.find('div').removeAttr('onclick').removeClass('pointerCursor');
+  resultDivElem.find('div').removeAttr('onclick').removeClass('pointer-cursor');
 
   activitySoundList = [];
   generateChallengeItems();

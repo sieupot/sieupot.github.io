@@ -29,7 +29,7 @@ generateChallengeItems = () => {
     }
 
     // display the item
-    objElem.removeClass().addClass('color pointerCursor ' + item.name);
+    objElem.removeClass().addClass('color pointer-cursor ' + item.name);
     // unbind previously bound click handler; bind the onclick event function
     objElem.off('click').click(function () {
       checkValidAnswer(isCorrectAnswer);

@@ -230,7 +230,7 @@ canvas {
   text-transform: uppercase;
 }
 
-.navLink {
+.nav-link {
   background: transparent url('../images/app/arrowBack.svg') 0 center no-repeat padding-box;
   text-align: left;
   font: normal normal 300 22px/37px Poppins-300-normal;
@@ -240,7 +240,7 @@ canvas {
   padding-left: 47px;
 }
 
-.pointerCursor {
+.pointer-cursor {
   cursor: pointer;
 }
 

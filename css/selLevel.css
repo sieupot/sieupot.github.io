@@ -6,7 +6,7 @@
   overflow: auto;
 }
 
-.levelButton {
+.level-button {
   background-color: #FFF;
   display: grid;
   padding: 15px 25px 15px 40px;
@@ -16,34 +16,34 @@
   transition: box-shadow 250ms; /* For modern browsers */
   white-space: nowrap;
 }
-.levelButton:first-child {
+.level-button:first-child {
   margin: 60px 60px 0 0;
 }
-.levelButton:last-child {
+.level-button:last-child {
   margin: 0 60px 60px 0
 }
-.levelButton:hover {
+.level-button:hover {
   box-shadow: 0 -12px 4px -4px inset rgba(240, 240, 240, .9);
 }
 
-.selLevelDetails {
+.sel-level-details {
   display: flex;
 }
-.selLevelLabel {
+.sel-level-label {
   font: normal normal bold 22px/37px Poppins-600-normal;
   letter-spacing: 0;
   color: #226473;
   text-transform: uppercase;
   padding-right: 40px;
 }
-.selLevelDesc {
+.sel-level-desc {
   text-align: left;
   font: normal normal bold 22px/37px Poppins-600-normal;
   letter-spacing: 0;
   color: #3E3E3E;
 }
 
-.iconLevel {
+.icon-level {
   -webkit-mask: url(../images/app/babyBoy.svg);
   -webkit-mask-size: cover;
   display: inline-block;
@@ -53,6 +53,6 @@
   margin-right: 8px;
 }
 
-.iconLevel.active {
+.icon-level.active {
   background: #FAA01C;
 }

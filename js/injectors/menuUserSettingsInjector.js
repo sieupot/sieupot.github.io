@@ -2,7 +2,7 @@ const menuPanel = jQuery('#headerMenuId');
 
 let userSettingsContent = `
   <div id="userSettingsMenuId">
-    <div id="userSettingsMenuButtonId" class="pointerCursor"
+    <div id="userSettingsMenuButtonId" class="pointer-cursor"
          onclick="document.querySelector('#delayOutputId').value = getCommandRepeatInterval(false);
                   document.querySelector('#delayRepeatCommandInputId').value = getCommandRepeatInterval(false);
                   jQuery('#userSettingsMenuId div.dropdown-content').slideDown('fast');">
