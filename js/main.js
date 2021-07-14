@@ -5,12 +5,21 @@
  * @returns {number}
  */
 const getCommandRepeatInterval = (inMillis = true) => {
-  let sessionCmdRepeatIntervalSeconds = sessionStorage.getItem('commandRepeatIntervalSeconds');
+  const sessionCmdRepeatIntervalSeconds = sessionStorage.getItem('commandRepeatIntervalSeconds');
   const commandRepeatIntervalSeconds = (sessionCmdRepeatIntervalSeconds ? sessionCmdRepeatIntervalSeconds : 15);
 
   return inMillis ? (commandRepeatIntervalSeconds * 1000) : commandRepeatIntervalSeconds;
 }
 
-const setSessionProperty = (property, nbSeconds) => {
-  sessionStorage[property] = nbSeconds;
+/**
+ *
+ * @returns {string|boolean}
+ */
+const getDisplayActivityTimer = () => {
+  const displayActivityTimer = sessionStorage.getItem('displayActivityTimer');
+  return displayActivityTimer === true || displayActivityTimer === 'true';
+}
+
+const setSessionProperty = (property, value) => {
+  sessionStorage[property] = value;
 }

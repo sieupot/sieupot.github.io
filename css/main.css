@@ -117,6 +117,10 @@ body {
   background-size: 30px;
 }
 
+#displayActivityTimerInputId {
+  height: 20px;
+  width: 20px;
+}
 #contentPanelId {
   display: grid;
   overflow: auto;

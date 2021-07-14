@@ -5,6 +5,7 @@ let userSettingsContent = `
     <div id="userSettingsMenuButtonId" class="pointer-cursor"
          onclick="document.querySelector('#delayOutputId').value = getCommandRepeatInterval(false);
                   document.querySelector('#delayRepeatCommandInputId').value = getCommandRepeatInterval(false);
+                  document.querySelector('#displayActivityTimerInputId').checked = getDisplayActivityTimer();
                   jQuery('#userSettingsMenuId div.dropdown-content').slideDown('fast');">
 
     </div>
@@ -16,6 +17,10 @@ let userSettingsContent = `
       <output for="delayRepeatCommandInputId" style="font: normal normal bold 22px/37px Poppins-300-italic;"> secunde</output>
       <input id="delayRepeatCommandInputId" type="range" min="5" max="35" step="5" class="slider-round"
              oninput="document.querySelector('#delayOutputId').value = value; setSessionProperty('commandRepeatIntervalSeconds', value);"/>
+
+      <label for="displayActivityTimerInputId" style="font: normal normal bold 22px/37px Poppins-300-normal;">Afișare durată activitate: </label>
+      <input id="displayActivityTimerInputId" type="checkbox"
+             onchange="setSessionProperty('displayActivityTimer', document.querySelector('#displayActivityTimerInputId').checked);"/>
     </div>
   </div>
 `;

@@ -9,27 +9,28 @@
   <link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" href="../css/pageLayout.css">
   <link rel="stylesheet" href="../css/items.css">
+  <link rel="stylesheet" href="../css/timer.css">
 
   <meta name="theme-color" content="#EFE7E0">
 
   <script defer src="../js/activityEngine.js"></script>
   <script defer src="../js/main.js"></script>
   <script defer src="../js/utils.js"></script>
+  <script defer src="../js/activityTimer.js"></script>
+  <script defer src="../js/injectors/footerInjector.js"></script>
+  <script defer src="../js/injectors/scorePanelInjector.js"></script>
 </head>
 
 <div id="content">
   <div id="dialogDiv"></div>
   <div class="result">
-    <div onclick="startActivity();" class="pointer-cursor"></div>
+    <div onclick="startActivity();" class="pointer-cursor start-activity"></div>
   </div>
   <div id="contentPanel">
   </div>
 </div>
 
 <div id="scorePanelId"><!-- score panel injected --></div>
-
-<script defer src="../js/injectors/footerInjector.js"></script>
-<script defer src="../js/injectors/scorePanelInjector.js"></script>
 
 <script defer type="text/javascript">
   // function declared in each item's related file
