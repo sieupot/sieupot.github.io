@@ -121,7 +121,7 @@ const resetSounds = () => {
 const playShowItemAudio = (repeat = true) => {
   resetActivityItems();
 
-  if (nameModalPanel && nameModalPanel.is(":visible")) {
+  if (dlResultsModalPanel && dlResultsModalPanel.is(":visible")) {
     // don't repeat the command and reschedule next repeat
     if (repeat && !showItemSoundInterval) {
       showItemSoundInterval = setInterval(playShowItemAudio, getCommandRepeatInterval());

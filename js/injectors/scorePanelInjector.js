@@ -1,7 +1,9 @@
 let scorePanel = `
 <head>
     <script defer src="../js/lib/xlsx.full.min.js"></script>
+    <script defer src="../js/activityTimer.js"></script>
 
+    <link rel="stylesheet" href="../css/activityTimer.css">
     <link rel="stylesheet" href="../css/fonts.css">
     <link rel="stylesheet" href="../css/scorePanel.css">
     <link rel="stylesheet" href="../css/fontawesome-free-5.15.3-web/css/all.css">
@@ -19,15 +21,15 @@ let scorePanel = `
           </div>
         </div>
         <div id="downloadResultsContainerId">
-          <input type="button" name="download results" title="descarcă rezultate Excel (.xlsx)" onclick="getPatientName();" class="dl-res-btn"/>
+          <input type="button" name="download results" title="descarcă rezultate Excel (.xlsx)" onclick="showDlResultsPopup();" class="dl-res-btn"/>
 
           <table id="tblExportId" style="display:none"></table>
 
-          <div id="getNameDialogDiv" class="score-modal" style="display: none;">
+          <div id="downloadResultsFormId" class="score-modal" style="display: none;">
             <div class="modal-content">
               <div class="modal-title">
                 <span class="title">Export rezultate</span>
-                <span class="close" onclick="nameModalPanel.hide();"><i class="fa fa-times"></i></span>
+                <span class="close" onclick="dlResultsModalPanel.hide();"><i class="fa fa-times"></i></span>
               </div>
 
               <div id="modalScorePanelFormId">
@@ -36,7 +38,7 @@ let scorePanel = `
               </div>
               <hr id="modalScoreSeparatorId"/>
               <div id="modalScoreButtonsId">
-                <button type="button" name="Anulează" class="side-button width-150-px" onclick="nameModalPanel.hide();"><i class="fa fa-times"></i> Anulează</button>
+                <button type="button" name="Anulează" class="side-button width-150-px" onclick="dlResultsModalPanel.hide();"><i class="fa fa-times"></i> Anulează</button>
                 <span style="width: 10px; display: inline-block;"></span>
                 <button type="button" name="Descarcă" title="descarcă rezultate Excel (.xlsx)" class="main-button width-150-px" onclick="fnExcelReport();"><i class="fa fa-download"></i> Descarcă</button>
               </div>
@@ -47,10 +49,10 @@ let scorePanel = `
 `;
 
 jQuery('#scorePanelId').append(scorePanel);
-let nameModalPanel = jQuery('#getNameDialogDiv');
+let dlResultsModalPanel = jQuery('#downloadResultsFormId');
 
-const getPatientName = () => {
-  nameModalPanel.show(0, function(){
+const showDlResultsPopup = () => {
+  dlResultsModalPanel.show(0, function(){
     document.querySelector('#patientNameInputId').focus();
   });
 }
@@ -64,16 +66,11 @@ const fnExcelReport = () => {
   let hh = String(today.getHours()).padStart(2, '0');
   let mm = String(today.getMinutes()).padStart(2, '0');
 
-  let date = dd + '/' + MM + '/' + yyyy;
-  let time = hh + ':' + mm;
-  let rows = `<tr><td style="text-align: right;">Data:</td><td colspan="2">${date}</td></td><td>Ora:</td><td colspan="2">${time}</td><</tr>`;
-  rows += `<tr><td colspan="2" class="bold">Activitatea:</td><td colspan="4" class="bold">${document.title}</td></tr>`;
-  rows += `<tr><td colspan="2" class="bold">Nume copil:</td><td colspan="4" class="bold">${document.querySelector('#patientNameInputId').value}</td></tr>`;
-  rows += `<tr><td colspan="2" class="bold">Vârstă  copil (ani):</td><td class="bold">${document.querySelector('#patientAgeInputId').value}</td></tr>`;
-  rows += `<tr></tr>`;
-  rows += `<tr><td colspan="4">Scor:</td></tr>`;
-  rows += '<tr><td colspan="2" class="bold">Răspunsuri corecte</td><td colspan="2" class="bold">Răspunsuri greșite</td></tr>';
-  rows += `<tr><td colspan="2">${document.querySelector('#scoreCountGoodId').innerHTML}</td><td colspan="2">${document.querySelector('#scoreCountBadId').innerHTML}</td></tr>`;
+  const date = `${dd}/${MM}/${yyyy}`;
+  const time = `${hh}:${mm}`;
+  const activityDuration = displayActivityTimer ? `${document.querySelector('#timerId > #minutes').innerHTML}:${document.querySelector('#timerId > #seconds').innerHTML}` : '';
+
+  const exportResultDataBuilder = new ExportResultDataBuilder(date, time, document.title, document.querySelector('#patientNameInputId').value, document.querySelector('#patientAgeInputId').value, document.querySelector('#scoreCountGoodId').innerHTML, document.querySelector('#scoreCountBadId').innerHTML, displayActivityTimer, activityDuration);
 
   let workbook = XLSX.utils.book_new();
 
@@ -81,7 +78,7 @@ const fnExcelReport = () => {
   //var worksheet = XLSX.utils.aoa_to_sheet(worksheet_data);
 
   let worksheet_data = document.querySelector("#tblExportId");
-  worksheet_data.innerHTML = rows;
+  worksheet_data.innerHTML = exportResultDataBuilder.exportHTMLRows;
   let worksheet = XLSX.utils.table_to_sheet(worksheet_data);
 
   workbook.SheetNames.push("Rezultate activitate");
@@ -89,5 +86,38 @@ const fnExcelReport = () => {
 
   XLSX.writeFile(workbook, "rezultate.xlsx");
 
-  nameModalPanel.hide();
+  dlResultsModalPanel.hide();
+}
+
+class ExportResultDataBuilder {
+  constructor(dateString, timeString, activityName, patientName, patientAge, scoreCountGood, scoreCountBad, showActivityDuration, activityDurationString) {
+    this.dateString = dateString;
+    this.timeString = timeString;
+    this.activityName = activityName;
+    this.patientName = (patientName && patientName.trim()) ? patientName : '-';
+    this.patientAge = (patientAge && patientAge.trim()) ? patientAge + ' (ani)' : '-';
+    this.scoreCountGood = scoreCountGood;
+    this.scoreCountBad = scoreCountBad;
+    this.showActivityDuration = showActivityDuration;
+    this.activityDurationString = activityDurationString;
+  }
+  // getter
+  get exportHTMLRows() {
+    let rows = `<tr><td colspan="3" class="bold">Activitatea:</td><td colspan="4" class="bold">${this.activityName}</td></tr>`;
+    rows += `<tr><td colspan="3">Data:</td><td colspan="4">${this.dateString}</td></tr>tr>`;
+    rows += `<tr><td colspan="3">Ora:</td><td colspan="4">${this.timeString}</td></tr>`;
+    rows += '<tr><td colspan="7"/></tr>';
+    rows += `<tr><td colspan="3" class="bold">Nume copil:</td><td colspan="4" class="bold">${this.patientName}</td></tr>`;
+    rows += `<tr><td colspan="3" class="bold">Vârstă  copil:</td><td colspan="4" class="bold">${this.patientAge}</td></tr>`;
+    rows += '<tr><td colspan="7"/></tr>';
+    rows += '<tr><td colspan="7">Scor</td></tr>';
+    rows += `<tr><td colspan="3" class="bold">Răspunsuri corecte:</td><td>${this.scoreCountGood}</td></tr>`;
+    rows += `<tr><td colspan="3" class="bold">Răspunsuri greșite:</td><td>${this.scoreCountBad}</td></tr>`;
+    if (this.showActivityDuration) {
+      // only export the timer if it's enabled
+      rows += `<tr><td colspan="3" class="bold">Durată activitate (minute:secunde):</td><td colspan="4">${this.activityDurationString}</td></tr>`
+    }
+
+    return rows;
+  }
 }
