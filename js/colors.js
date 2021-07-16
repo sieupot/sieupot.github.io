@@ -6,7 +6,7 @@ jQuery(() => {
   initActivity('color');
 });
 
-generateChallengeItems = () => {
+const generateChallengeItems = () => {
   answerOptionValues = getAnswerOptions(); // [true, false, (false)..]
 
   // setup the containing DOM elements
@@ -31,7 +31,7 @@ generateChallengeItems = () => {
     // display the item
     objElem.removeClass().addClass('color pointer-cursor ' + item.name);
     // unbind previously bound click handler; bind the onclick event function
-    objElem.off('click').click(function () {
+    objElem.off('click').click(() => {
       checkValidAnswer(isCorrectAnswer);
     });
 

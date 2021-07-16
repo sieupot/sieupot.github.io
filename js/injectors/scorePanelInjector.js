@@ -49,22 +49,22 @@ let scorePanel = `
 `;
 
 jQuery('#scorePanelId').append(scorePanel);
-let dlResultsModalPanel = jQuery('#downloadResultsFormId');
+const dlResultsModalPanel = jQuery('#downloadResultsFormId');
 
 const showDlResultsPopup = () => {
-  dlResultsModalPanel.show(0, function(){
+  dlResultsModalPanel.show(0, () => {
     document.querySelector('#patientNameInputId').focus();
   });
 }
 
 const fnExcelReport = () => {
-  let today = new Date();
-  let dd = String(today.getDate()).padStart(2, '0');
-  let MM = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-  let yyyy = today.getFullYear();
+  const today = new Date();
+  const dd = String(today.getDate()).padStart(2, '0');
+  const MM = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  const yyyy = today.getFullYear();
 
-  let hh = String(today.getHours()).padStart(2, '0');
-  let mm = String(today.getMinutes()).padStart(2, '0');
+  const hh = String(today.getHours()).padStart(2, '0');
+  const mm = String(today.getMinutes()).padStart(2, '0');
 
   const date = `${dd}/${MM}/${yyyy}`;
   const time = `${hh}:${mm}`;
@@ -72,14 +72,14 @@ const fnExcelReport = () => {
 
   const exportResultDataBuilder = new ExportResultDataBuilder(date, time, document.title, document.querySelector('#patientNameInputId').value, document.querySelector('#patientAgeInputId').value, document.querySelector('#scoreCountGoodId').innerHTML, document.querySelector('#scoreCountBadId').innerHTML, displayActivityTimer, activityDuration);
 
-  let workbook = XLSX.utils.book_new();
+  const workbook = XLSX.utils.book_new();
 
   //var worksheet_data  =  [['hello','world']];
   //var worksheet = XLSX.utils.aoa_to_sheet(worksheet_data);
 
-  let worksheet_data = document.querySelector("#tblExportId");
-  worksheet_data.innerHTML = exportResultDataBuilder.exportHTMLRows;
-  let worksheet = XLSX.utils.table_to_sheet(worksheet_data);
+  const worksheet_data = document.querySelector("#tblExportId");
+  worksheet_data.innerHTML = exportResultDataBuilder.buildExportHTMLRows();
+  const worksheet = XLSX.utils.table_to_sheet(worksheet_data);
 
   workbook.SheetNames.push("Rezultate activitate");
   workbook.Sheets["Rezultate activitate"] = worksheet;
@@ -89,7 +89,7 @@ const fnExcelReport = () => {
   dlResultsModalPanel.hide();
 }
 
-class ExportResultDataBuilder {
+const ExportResultDataBuilder = class {
   constructor(dateString, timeString, activityName, patientName, patientAge, scoreCountGood, scoreCountBad, showActivityDuration, activityDurationString) {
     this.dateString = dateString;
     this.timeString = timeString;
@@ -101,8 +101,8 @@ class ExportResultDataBuilder {
     this.showActivityDuration = showActivityDuration;
     this.activityDurationString = activityDurationString;
   }
-  // getter
-  get exportHTMLRows() {
+  // build the HTML table rows that will be used for rendering the xlsx data
+  buildExportHTMLRows = () => {
     let rows = `<tr><td colspan="3" class="bold">Activitatea:</td><td colspan="4" class="bold">${this.activityName}</td></tr>`;
     rows += `<tr><td colspan="3">Data:</td><td colspan="4">${this.dateString}</td></tr>tr>`;
     rows += `<tr><td colspan="3">Ora:</td><td colspan="4">${this.timeString}</td></tr>`;
@@ -119,5 +119,5 @@ class ExportResultDataBuilder {
     }
 
     return rows;
-  }
+  };
 }

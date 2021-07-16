@@ -20,7 +20,7 @@ const generateClickableHtmlElem = (index, imagePath) => {
   itemsContainerId.append(clickableHtmlElem);
 }
 
-generateChallengeItems = () => {
+const generateChallengeItems = () => {
   // remove previous HTML content from the itemsContainerId div (new content will be generated below)
   removeContent(itemsContainerId.attr('id'));
 
@@ -41,7 +41,7 @@ generateChallengeItems = () => {
   playShowItemAudio(false);
 }
 
-function checkActivityProgress() {
+const checkActivityProgress = () => {
   // no more clickable items?
   if (okClicksNb === selectedActivitySqLength) {
     checkValidAnswer(true);
@@ -59,7 +59,7 @@ const itemClicked = (ev) => {
       // don't display it for the last successful choice
       if (okClicksNb < selectedActivitySqLength) {
         resultDivElem.find('div').css('background-image', 'url(../images/smileFace.png)');
-        resultDivElem.fadeIn(500, function () {
+        resultDivElem.fadeIn(500, () => {
           resultDivElem.fadeOut(500);
         });
       }

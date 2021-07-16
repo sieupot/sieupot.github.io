@@ -1,6 +1,6 @@
 jQuery('body').load('0_item.inc.html');
 
-generateChallengeItems = () => {
+const generateChallengeItems = () => {
   answerOptionValues = getAnswerOptions(); // [true, false, (false)..]
 
   // setup the containing DOM elements
@@ -26,7 +26,7 @@ generateChallengeItems = () => {
     objElem.css('background-image', 'url(' + item.imagePath + ')').removeClass().addClass('item pointer-cursor');
     // objElem.attr('src', item.imagePath).removeClass().addClass('item pointer-cursor');
     // unbind previously bound click handler; bind the onclick event function
-    objElem.off('click').click(function () {
+    objElem.off('click').click(() => {
       checkValidAnswer(isCorrectAnswer);
     });
 

@@ -14,7 +14,7 @@ jQuery(() => {
   modalPanel.dialog(dialogOptions);
 });
 
-generateChallengeItems = () => {
+const generateChallengeItems = () => {
   // generate answer options
   answerOptionValues = getAnswerOptions(); // [true, false, (false)..]
 
@@ -40,7 +40,7 @@ const setupAnswer = (objElem, selectedActivityItem) => {
     activitySoundList.push(selectedActivityItem.audioPath);
   }
   objElem.css('background-image', 'url(' + imagePath1 + ')');
-  objElem.off('click').click(function () {
+  objElem.off('click').click(() => {
     checkValidAnswer(isCorrectAnswer);
   });
 }

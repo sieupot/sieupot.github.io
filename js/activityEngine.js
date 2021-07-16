@@ -72,7 +72,7 @@ const checkValidAnswer = (isValidAnswer) => {
     resultDivElem.fadeIn(500);
     let playingCorrectAnswerAudio = new Audio('../sounds/correct.ogg');
     playingAudios.push(playingCorrectAnswerAudio);
-    playingCorrectAnswerAudio.addEventListener('ended', function () {
+    playingCorrectAnswerAudio.addEventListener('ended', () => {
       resultDivElem.hide();
 
       activitySoundList = [];
@@ -86,12 +86,12 @@ const checkValidAnswer = (isValidAnswer) => {
   }
 }
 
-function handleInvalidAnswer(doPlayShowItemAudio) {
+const handleInvalidAnswer = (doPlayShowItemAudio) => {
   wrongAnswers++;
   resultDivElem.find('div').css('background-image', 'url(../images/sadFace.png)');
   resultDivElem.fadeIn(500);
   let playingWrongAnswerAudio = new Audio('../sounds/wrong.ogg');
-  playingWrongAnswerAudio.addEventListener('ended', function () {
+  playingWrongAnswerAudio.addEventListener('ended', () => {
     resultDivElem.hide();
     modalPanel.dialog('close');
     if (doPlayShowItemAudio) {
@@ -133,7 +133,7 @@ const playShowItemAudio = (repeat = true) => {
 
     let audio = new Audio(),
       i = 0;
-    audio.addEventListener('ended', function () {
+    audio.addEventListener('ended', () => {
       if (++i === activitySoundList.length) {
         resultDivElem.hide();
         modalPanel.dialog('close');

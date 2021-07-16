@@ -3,7 +3,7 @@
  * @param str the string to check for duplicate chars
  * @returns {boolean} true if duplicate chars were found, false otherwise
  */
-const isIsogram = function (str) {
+const isIsogram = (str) => {
   return !/(.).*\1/.test(str);
 }
 
@@ -71,7 +71,7 @@ const removeContent = (...containerIds) => {
   containerIds.forEach(containerId => document.getElementById(containerId).innerHTML = '')
 }
 
-function isNumberKey(evt){
+const isNumberKey = (evt) => {
   const charCode = (evt.which) ? evt.which : evt.keyCode;
   return !(charCode === 32 || charCode > 57);
 }

@@ -24,7 +24,7 @@ jQuery(() => {
   modalPanel.dialog(dialogOptions);
 });
 
-generateChallengeItems = () => {
+const generateChallengeItems = () => {
   // generate answer options
   answerOptionValues = getAnswerOptions(); // [true, false, (false)..]
 
@@ -47,7 +47,7 @@ generateChallengeItems = () => {
   playShowItemAudio();
 }
 
-const setupAnswer = function (objElem, selectedActivityItem) {
+const setupAnswer = (objElem, selectedActivityItem) => {
   // extract the image to display for this first activity item
   let imagePath = selectedActivityItem.images[Math.floor((Math.random() * selectedActivityItem.images.length))];
   // randomly determine whether this is the correct answer or not
@@ -56,7 +56,7 @@ const setupAnswer = function (objElem, selectedActivityItem) {
     activitySoundList = activitySoundList.concat(selectedActivityItem.soundItems);
   }
   objElem.load(imagePath);
-  objElem.off('click').click(function () {
+  objElem.off('click').click(() => {
     checkValidAnswer(isCorrectAnswer);
   });
 }

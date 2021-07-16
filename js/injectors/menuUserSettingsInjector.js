@@ -30,7 +30,7 @@ let userSettingsContent = `
 // inject content
 menuPanel.append(userSettingsContent);
 
-window.addEventListener('mouseup',function(event){
+window.addEventListener('mouseup', (event) => {
   var pol = document.querySelector('#settingsPanelId');
   if(pol && event.target !== pol && event.target.parentNode !== pol){
     pol.style.display = 'none';

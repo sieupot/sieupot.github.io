@@ -31,7 +31,7 @@ const generateDraggableHtmlElem = (index, imagePath) => {
   dragContainers.append(draggableHtmlElem);
 }
 
-generateChallengeItems = () => {
+const generateChallengeItems = () => {
   // remove previous HTML content from the dropContainersId div (new content will be generated below)
   removeContent(dropContainers.attr('id'));
 
@@ -54,7 +54,7 @@ generateChallengeItems = () => {
   playShowItemAudio(false);
 }
 
-function checkActivityProgress() {
+const checkActivityProgress = () => {
   // no more draggable items?
   if (dragContainers.children().length === 0) {
     checkValidAnswer(true);

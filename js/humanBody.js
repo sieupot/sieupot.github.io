@@ -15,7 +15,7 @@ jQuery(() => {
   modalPanel.dialog(dialogOptions);
 });
 
-generateChallengeItems = () => {
+const generateChallengeItems = () => {
   do {
     validItemIndex = Math.floor((Math.random() * activityItems.length));
   } while (validItemIndex === prevRnd);
@@ -26,7 +26,7 @@ generateChallengeItems = () => {
 
   // bind the onclick event function
   for (const [i, svgElem] of activityObjElemArray.entries()) {
-    svgElem.off('click').click(function () {
+    svgElem.off('click').click(() => {
       checkValidAnswer(i === validItemIndex);
     });
   }
