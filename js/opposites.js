@@ -1,3 +1,5 @@
+let hasDistractors = false; // used when exporting results, as info in the sheet with activity reaction times
+
 // on page load
 jQuery(() => {
   // declared in the html file
@@ -38,6 +40,7 @@ const setupAnswer = (objElem, selectedActivityItem) => {
   let isCorrectAnswer = extractRandomEntryAndSplice(answerOptionValues);
   if (isCorrectAnswer) {
     activitySoundList.push(selectedActivityItem.audioPath);
+    challengeCorrectItemName = selectedActivityItem.name;
   }
   objElem.css('background-image', 'url(' + imagePath1 + ')');
   objElem.off('click').click(() => {

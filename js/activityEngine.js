@@ -1,6 +1,6 @@
 let activityItems; // list of available items for the activity (css class name, image path, audio file name to be played, etc)
 
-let nbDistractors;
+let nbDistractors = getNbDistractors();
 
 let activityObjElemArray = []; // list of the JQUERY items actively displayed in the page
 let prevSelectedItems = []; // item items selected in the previous iteration of the activity
@@ -8,6 +8,8 @@ let activitySoundList = [];
 let showItemSoundInterval;
 let playingAudios = [];
 let [rightAnswers, wrongAnswers] = [0, 0];
+
+let challengeCorrectItemName = '';
 
 const dialogOptions = {
   dialogClass: 'ui-dialog-no-close-button',
@@ -27,10 +29,6 @@ const initActivity = (itemClass = 'item') => {
   modalPanel = jQuery('#dialogDiv');
   resultDivElem = jQuery('div.result');
 
-  // what level is this? Init number of distractors used to render the number of activity items
-  nbDistractors = Number(getUrlParameter('dst'));
-  nbDistractors = (!nbDistractors || nbDistractors > 4) ? 2 : nbDistractors;
-
   // INIT CONTAINER ELEMENTS: inject item containing img nodes into the page and create the JQUERY itemElements
   for (i = 1; i <= nbDistractors; i++) {
     let itemContainerId = `itemContainer${i}`;
@@ -45,6 +43,12 @@ const initActivity = (itemClass = 'item') => {
   modalPanel.dialog(dialogOptions);
 }
 
+const startNewChallenge = () => {
+  generateChallengeItems();
+
+  // initialize a new reaction time item
+  activityTimer.addAnswerReactionTimeItem(new Date(), challengeCorrectItemName);
+}
 
 /**
  * triggered when the user manually chooses to start the activity
@@ -53,7 +57,7 @@ const startActivity = () => {
   resultDivElem.find('div').removeAttr('onclick').removeClass('pointer-cursor');
 
   activitySoundList = [];
-  generateChallengeItems();
+  startNewChallenge();
 }
 
 const getAnswerOptions = () => {
@@ -76,11 +80,13 @@ const checkValidAnswer = (isValidAnswer) => {
       resultDivElem.hide();
 
       activitySoundList = [];
-      generateChallengeItems();
+      startNewChallenge();
     });
     playingCorrectAnswerAudio.play();
     jQuery('#scoreGood > div').html(rightAnswers);
-    jQuery('#scoreGood').effect('highlight', {color: '#acffa3'}, 500)
+    jQuery('#scoreGood').effect('highlight', {color: '#acffa3'}, 500);
+
+    activityTimer.completeCurrentActionReactionTimeItem(new Date());
   } else {
     handleInvalidAnswer(true);
   }
@@ -102,6 +108,8 @@ const handleInvalidAnswer = (doPlayShowItemAudio) => {
   playingAudios.push(playingWrongAnswerAudio);
   jQuery('#scoreBad > div').html(wrongAnswers);
   jQuery('#scoreBad').effect('highlight', {color: '#ff9c9c'}, 500);
+
+  activityTimer.updateFailuresCurrentAnswerReactionTimeItem();
 }
 
 const resetActivityItems = () => {

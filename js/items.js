@@ -1,5 +1,7 @@
 jQuery('body').load('0_item.inc.html');
 
+let hasDistractors = true; // used when exporting results, as info in the sheet with activity reaction times
+
 const generateChallengeItems = () => {
   answerOptionValues = getAnswerOptions(); // [true, false, (false)..]
 
@@ -30,7 +32,10 @@ const generateChallengeItems = () => {
       checkValidAnswer(isCorrectAnswer);
     });
 
-    isCorrectAnswer ? activitySoundList.push(item.audioPath) : null;
+    if (isCorrectAnswer) {
+      activitySoundList.push(item.audioPath);
+      challengeCorrectItemName = item.name;
+    }
   }
   prevSelectedItems = currSelectedItems;
 

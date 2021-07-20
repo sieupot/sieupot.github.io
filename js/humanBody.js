@@ -1,4 +1,5 @@
 let prevRnd;
+let hasDistractors = false; // used when exporting results, as info in the sheet with activity reaction times
 
 // on page load
 jQuery(() => {
@@ -22,7 +23,9 @@ const generateChallengeItems = () => {
   prevRnd = validItemIndex;
 
   activitySoundList.push('../sounds/show.ogg');
-  activitySoundList.push(activityItems[validItemIndex].audioPath);
+  const correctItem = activityItems[validItemIndex];
+  activitySoundList.push(correctItem.audioPath);
+  challengeCorrectItemName = correctItem.name;
 
   // bind the onclick event function
   for (const [i, svgElem] of activityObjElemArray.entries()) {

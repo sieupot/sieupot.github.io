@@ -1,3 +1,5 @@
+let hasDistractors = false; // used when exporting results, as info in the sheet with activity reaction times
+
 // on page load
 jQuery(() => {
   // declared in the html file
@@ -28,12 +30,15 @@ const generateChallengeItems = () => {
 
   // extract the activity sequence
   const indexAct = Math.floor((Math.random() * activityItems.length));
-  let selectedActivitySq = Object.assign([], activityItems[indexAct]); // clone the array, or else the extractRandomEntryAndSplice will empty the source array
+  const selectedActivitySq = activityItems[indexAct];
 
-  selectedActivitySqLength = selectedActivitySq.length;
+  challengeCorrectItemName = selectedActivitySq.name;
+
+  const selectedActivitySqItems = Object.assign([], selectedActivitySq.items); // clone the array, or else the extractRandomEntryAndSplice will empty the source array
+  selectedActivitySqLength = selectedActivitySqItems.length;
   okClicksNb = 1;
-  while (selectedActivitySq.length > 0) {
-    let entryObj = extractRandomEntryAndSplice(selectedActivitySq);
+  while (selectedActivitySqItems.length > 0) {
+    const entryObj = extractRandomEntryAndSplice(selectedActivitySqItems);
 
     generateClickableHtmlElem(entryObj.index, entryObj.imagePath);
   }

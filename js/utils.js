@@ -75,3 +75,16 @@ const isNumberKey = (evt) => {
   const charCode = (evt.which) ? evt.which : evt.keyCode;
   return !(charCode === 32 || charCode > 57);
 }
+
+const getNbDistractors = () => {
+  let nbDistractorsRet = Number(getUrlParameter('dst'));
+
+  // what level is this? Init number of distractors used to render the number of activity items
+  nbDistractorsRet = (!nbDistractorsRet || nbDistractorsRet > 4) ? 2 : nbDistractorsRet;
+
+  return nbDistractorsRet;
+}
+
+const pad = (val) => {
+  return val > 9 ? val : "0" + val;
+}

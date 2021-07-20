@@ -1,5 +1,5 @@
-let scorePanel = `
-<head>
+const scorePanel = `
+<object type="text/xml">
     <script defer src="../js/lib/xlsx.full.min.js"></script>
     <script defer src="../js/activityTimer.js"></script>
 
@@ -7,7 +7,7 @@ let scorePanel = `
     <link rel="stylesheet" href="../css/fonts.css">
     <link rel="stylesheet" href="../css/scorePanel.css">
     <link rel="stylesheet" href="../css/fontawesome-free-5.15.3-web/css/all.css">
-</head>
+</object>
 
       <div id="scorePanel">
         <div id="scoreContainerId">
@@ -47,8 +47,10 @@ let scorePanel = `
         </div>
       </div>
 `;
-
 jQuery('#scorePanelId').append(scorePanel);
+
+const activityTimer = new ActivityTimer(getDisplayActivityTimer());
+
 const dlResultsModalPanel = jQuery('#downloadResultsFormId');
 
 const showDlResultsPopup = () => {
@@ -79,10 +81,15 @@ const fnExcelReport = () => {
 
   const worksheet_data = document.querySelector("#tblExportId");
   worksheet_data.innerHTML = exportResultDataBuilder.buildExportHTMLRows();
-  const worksheet = XLSX.utils.table_to_sheet(worksheet_data);
-
+  let worksheet = XLSX.utils.table_to_sheet(worksheet_data);
   workbook.SheetNames.push("Rezultate activitate");
   workbook.Sheets["Rezultate activitate"] = worksheet;
+
+  // reaction times sheet
+  worksheet_data.innerHTML = activityTimer.buildExportReactionTimesHTMLRows();
+  worksheet = XLSX.utils.table_to_sheet(worksheet_data);
+  workbook.SheetNames.push("Timpi de raspuns");
+  workbook.Sheets["Timpi de raspuns"] = worksheet;
 
   XLSX.writeFile(workbook, "rezultate.xlsx");
 
@@ -100,9 +107,10 @@ const ExportResultDataBuilder = class {
     this.scoreCountBad = scoreCountBad;
     this.activityDurationString = activityDurationString;
   }
+
   // build the HTML table rows that will be used for rendering the xlsx data
   buildExportHTMLRows = () => {
-    let rows = `<tr><td colspan="3" class="bold">Activitatea:</td><td colspan="4" class="bold">${this.activityName}</td></tr>`;
+    let rows = `<tr><td colspan="3" class="bold">Nume activitate:</td><td colspan="4" class="bold">${this.activityName}</td></tr>`;
     rows += `<tr><td colspan="3">Data:</td><td colspan="4">${this.dateString}</td></tr>tr>`;
     rows += `<tr><td colspan="3">Ora:</td><td colspan="4">${this.timeString}</td></tr>`;
     rows += '<tr><td colspan="7"/></tr>';

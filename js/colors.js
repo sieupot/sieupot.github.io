@@ -1,3 +1,5 @@
+let hasDistractors = true; // used when exporting results, as info in the sheet with activity reaction times
+
 // on page load
 jQuery(() => {
   // declared in the html file
@@ -35,7 +37,10 @@ const generateChallengeItems = () => {
       checkValidAnswer(isCorrectAnswer);
     });
 
-    isCorrectAnswer ? activitySoundList.push(item.audioPath) : null;
+    if (isCorrectAnswer) {
+      activitySoundList.push(item.audioPath);
+      challengeCorrectItemName = item.name;
+    }
   }
 
   playShowItemAudio();

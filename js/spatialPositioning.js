@@ -1,3 +1,5 @@
+let hasDistractors = false; // used when exporting results, as info in the sheet with activity reaction times
+
 const
   sndCommonPath = "../sounds/common/",
 
@@ -54,6 +56,7 @@ const setupAnswer = (objElem, selectedActivityItem) => {
   let isCorrectAnswer = extractRandomEntryAndSplice(answerOptionValues);
   if (isCorrectAnswer) {
     activitySoundList = activitySoundList.concat(selectedActivityItem.soundItems);
+    challengeCorrectItemName = selectedActivityItem.name;
   }
   objElem.load(imagePath);
   objElem.off('click').click(() => {
