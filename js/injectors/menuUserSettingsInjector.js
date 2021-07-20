@@ -31,8 +31,8 @@ let userSettingsContent = `
 menuPanel.append(userSettingsContent);
 
 window.addEventListener('mouseup', (event) => {
-  var pol = document.querySelector('#settingsPanelId');
-  if(pol && event.target !== pol && event.target.parentNode !== pol && event.target.parentNode.parentNode !== pol){
+  const pol = document.querySelector('#settingsPanelId');
+  if (pol && event.target !== pol && event.target.parentNode !== pol && event.target.parentNode.parentNode !== pol) {
     pol.style.display = 'none';
   }
 });
