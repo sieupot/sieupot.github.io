@@ -1,7 +1,7 @@
 let sec = 0, displayActivityTimer = getDisplayActivityTimer();
 
 const startTimer = () => {
-  jQuery('body').prepend('<div id="timerId"><span id="minutes">00</span>:<span id="seconds">00</span></div>');
+  jQuery('body').prepend(`<div id="timerId" style="display: ${(displayActivityTimer ? 'block' : 'none')};"><span id="minutes">00</span>:<span id="seconds">00</span></div>`);
 
   const pad = (val) => {
     return val > 9 ? val : "0" + val;
@@ -15,6 +15,4 @@ const startTimer = () => {
   }, 1000);
 }
 
-if (displayActivityTimer) {
-  document.querySelector('div.start-activity').addEventListener('click', startTimer);
-}
+document.querySelector('div.start-activity').addEventListener('click', startTimer);

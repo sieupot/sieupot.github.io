@@ -68,9 +68,9 @@ const fnExcelReport = () => {
 
   const date = `${dd}/${MM}/${yyyy}`;
   const time = `${hh}:${mm}`;
-  const activityDuration = displayActivityTimer ? `${document.querySelector('#timerId > #minutes').innerHTML}:${document.querySelector('#timerId > #seconds').innerHTML}` : '';
+  const activityDuration = `${document.querySelector('#timerId > #minutes').innerHTML}:${document.querySelector('#timerId > #seconds').innerHTML}`;
 
-  const exportResultDataBuilder = new ExportResultDataBuilder(date, time, document.title, document.querySelector('#patientNameInputId').value, document.querySelector('#patientAgeInputId').value, document.querySelector('#scoreCountGoodId').innerHTML, document.querySelector('#scoreCountBadId').innerHTML, displayActivityTimer, activityDuration);
+  const exportResultDataBuilder = new ExportResultDataBuilder(date, time, document.title, document.querySelector('#patientNameInputId').value, document.querySelector('#patientAgeInputId').value, document.querySelector('#scoreCountGoodId').innerHTML, document.querySelector('#scoreCountBadId').innerHTML, activityDuration);
 
   const workbook = XLSX.utils.book_new();
 
@@ -90,7 +90,7 @@ const fnExcelReport = () => {
 }
 
 const ExportResultDataBuilder = class {
-  constructor(dateString, timeString, activityName, patientName, patientAge, scoreCountGood, scoreCountBad, showActivityDuration, activityDurationString) {
+  constructor(dateString, timeString, activityName, patientName, patientAge, scoreCountGood, scoreCountBad, activityDurationString) {
     this.dateString = dateString;
     this.timeString = timeString;
     this.activityName = activityName;
@@ -98,7 +98,6 @@ const ExportResultDataBuilder = class {
     this.patientAge = (patientAge && patientAge.trim()) ? patientAge + ' (ani)' : '-';
     this.scoreCountGood = scoreCountGood;
     this.scoreCountBad = scoreCountBad;
-    this.showActivityDuration = showActivityDuration;
     this.activityDurationString = activityDurationString;
   }
   // build the HTML table rows that will be used for rendering the xlsx data
@@ -113,10 +112,7 @@ const ExportResultDataBuilder = class {
     rows += '<tr><td colspan="7">Scor</td></tr>';
     rows += `<tr><td colspan="3" class="bold">Răspunsuri corecte:</td><td>${this.scoreCountGood}</td></tr>`;
     rows += `<tr><td colspan="3" class="bold">Răspunsuri greșite:</td><td>${this.scoreCountBad}</td></tr>`;
-    if (this.showActivityDuration) {
-      // only export the timer if it's enabled
-      rows += `<tr><td colspan="3" class="bold">Durată activitate (minute:secunde):</td><td colspan="4">${this.activityDurationString}</td></tr>`
-    }
+    rows += `<tr><td colspan="3" class="bold">Durată activitate (minute:secunde):</td><td colspan="4">${this.activityDurationString}</td></tr>`
 
     return rows;
   };
