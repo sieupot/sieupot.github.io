@@ -47,7 +47,7 @@ const startNewChallenge = () => {
   generateChallengeItems();
 
   // initialize a new reaction time item
-  activityTimer.addAnswerReactionTimeItem(new Date(), challengeCorrectItemName);
+  scoreAnswerReactionTimeData.addAnswerReactionTimeItem(new Date(), challengeCorrectItemName);
 }
 
 /**
@@ -86,7 +86,7 @@ const checkValidAnswer = (isValidAnswer) => {
     jQuery('#scoreGood > div').html(rightAnswers);
     jQuery('#scoreGood').effect('highlight', {color: '#acffa3'}, 500);
 
-    activityTimer.completeCurrentActionReactionTimeItem(new Date());
+    scoreAnswerReactionTimeData.completeCurrentActionReactionTimeItem(new Date());
   } else {
     handleInvalidAnswer(true);
   }
@@ -109,7 +109,7 @@ const handleInvalidAnswer = (doPlayShowItemAudio) => {
   jQuery('#scoreBad > div').html(wrongAnswers);
   jQuery('#scoreBad').effect('highlight', {color: '#ff9c9c'}, 500);
 
-  activityTimer.updateFailuresCurrentAnswerReactionTimeItem();
+  scoreAnswerReactionTimeData.updateFailuresCurrentAnswerReactionTimeItem();
 }
 
 const resetActivityItems = () => {
