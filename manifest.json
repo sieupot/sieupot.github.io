@@ -1,0 +1,14 @@
+{
+  "name": "Si Eu Pot Invata PWA",
+  "short_name": "Si Eu Pot PWA",
+  "start_url": "index.html?utm_source=homescreen",
+  "scope": "./",
+  "icons": [{
+    "src": "icon.png",
+    "type": "image/png",
+    "sizes": "192x192"
+  }],
+  "background_color": "#EFE7E0",
+  "theme_color": "#EFE7E0",
+  "display": "standalone"
+}

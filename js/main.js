@@ -1,3 +1,13 @@
+// used for the PWA registration of the service worker
+if ('serviceWorker' in navigator) {
+  // register service worker
+  navigator.serviceWorker.register('service-worker.js').then(() => {
+    console.log('Service Worker registered!')
+  }).catch(error => {
+    console.error('Service Worker registration failed!', error)
+  });
+}
+
 /**
  *
  * @param inMillis - if TRUE return in milliseconds
