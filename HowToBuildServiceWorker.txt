@@ -1,0 +1,10 @@
+From this article:
+https://www.optasy.com/blog/3-essential-steps-convert-your-website-progressive-web-app
+
+
+c. Once you've registered your Service Worker, generate your Service Worker file, too.
+For this, just run this command in your terminal:
+$ npm install --global sw-precache
+
+Next, go ahead and run it on your website directory:
+$ sw-precache
