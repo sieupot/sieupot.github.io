@@ -14,17 +14,24 @@ jQuery(() => {
 });
 
 let okClicksNb = 0, selectedActivitySqLength = 0;
-let itemsContainerId = jQuery('#itemsContainerId');
+let destContainers = jQuery('#destContainersId');
+let srcContainers = jQuery('#srcContainersId');
+
+const generateDestHtmlElem = (j) => {
+  const destHtmlElem = `<div id="dest${j}" class="activity-item droppable"></div>`;
+  destContainers.append(destHtmlElem);
+}
 
 const generateClickableHtmlElem = (index, imagePath) => {
   const clickableHtmlElem = `<div id="clickable${index}" class="pointer-cursor click-item" style="background-image: url('${imagePath}');" canBeClicked="true" onclick="itemClicked(event);">
         </div>`;
-  itemsContainerId.append(clickableHtmlElem);
+  srcContainers.append(clickableHtmlElem);
 }
 
 const generateChallengeItems = () => {
-  // remove previous HTML content from the itemsContainerId div (new content will be generated below)
-  removeContent(itemsContainerId.attr('id'));
+  // remove previous HTML content from the destContainersId div (new content will be generated below)
+  removeContent(destContainers.attr('id'));
+  removeContent(srcContainers.attr('id'));
 
   activitySoundList.push(`${sndPath}sequence.ogg`);
 
@@ -35,6 +42,10 @@ const generateChallengeItems = () => {
   challengeCorrectItemName = selectedActivitySq.name;
 
   const selectedActivitySqItems = Object.assign([], selectedActivitySq.items); // clone the array, or else the extractRandomEntryAndSplice will empty the source array
+  for (index in selectedActivitySqItems) {
+    generateDestHtmlElem(parseInt(index) + 1);
+  }
+
   selectedActivitySqLength = selectedActivitySqItems.length;
   okClicksNb = 1;
   while (selectedActivitySqItems.length > 0) {
@@ -72,8 +83,20 @@ const itemClicked = (ev) => {
       // don't allow source to be clickable anymore
       removeAttributes(clickableElem, 'canBeClicked', 'onclick');
       clickableElem.classList.remove('pointer-cursor');
+
+      // copy source object to dest container
+      const destElem = document.getElementById(`dest${clickableElemIndex}`);
+      const destContentElem = clickableElem.cloneNode(true);
+      destContentElem.style.boxShadow = 'none';
+      destContentElem.style.scale = '75%';
+      destContentElem.style.padding = 'unset';
+      destContentElem.style.margin = 'unset';
+      destElem.appendChild(destContentElem);
+
       // hide the counter indicator
-      clickableElem.classList.add('hidden-content', 'success-indicator');
+      clickableElem.classList.add('success-indicator');
+      clickableElem.style.opacity = .5;
+
       checkActivityProgress();
       okClicksNb++;
     } else {
