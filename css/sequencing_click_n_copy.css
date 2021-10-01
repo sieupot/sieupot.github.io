@@ -1,8 +1,8 @@
 body {
-  counter-reset: indexNb;  /* used to add the counter indicator on the bacground of the drop element */
+  counter-reset: indexNb; /* used to add the counter indicator on the bacground of the drop element */
 }
 
-.droppable::before {
+.activity-item.destination::before {
   counter-increment: indexNb;
   content: counter(indexNb);
   position: absolute;
@@ -11,13 +11,7 @@ body {
   border: 3px solid #226473;
   padding: 5px;
   width: 40px;
-  height: 40px;
-  left: calc(50% - 28px);
-  top: calc(50% - 28px);
   line-height: 40px;
-}
-.droppable.hidden-content::before {
-  visibility: hidden;
 }
 
 #contentPanel {
@@ -29,22 +23,18 @@ body {
   column-gap: 1em;
   row-gap: 0;
   height: 100%;
-  grid-template-rows: 1fr 1px 1fr;
+  grid-template-rows: 1fr 1.4em 1fr;
 }
 
-.items-container, .draggable-items-container {
+.items-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 3em;
   margin: 0 60px 0;
 }
 
-.draggable-items-container {
-  margin: 20px 60px 0;
-}
-
 .activity-item, .click-item {
-  display: grid;
+  display: flex;
   row-gap: 8px;
   font: normal normal bold 22px/24px Poppins-600-normal;
   background-color: #FFF;
@@ -60,6 +50,8 @@ body {
   min-width: 200px;
   flex: 1;
   margin: 0 0 1em 0;
+  justify-content: center;
+  align-items: center;
 }
 
 .click-item {
@@ -71,22 +63,32 @@ body {
   background-position: center;
 }
 
+.post-click::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(239, 231, 224, .75);
+  border-radius: inherit;
+}
+
+.indicator {
+  position: absolute;
+  font-size: 80px;
+  display: flex;
+  border: 3px solid #226473;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  border-radius: 50%;
+}
+
 .separator {
   height: 1px;
   background-color: gray;
-  margin-bottom: 1.4em;
-}
-
-.drag-item {
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  cursor: grab;
-}
-
-.hide-src-while-dragging {
-  transition: 0.01s;
-  transform: translateX(-9999999px);
 }
 
 .index-nb {

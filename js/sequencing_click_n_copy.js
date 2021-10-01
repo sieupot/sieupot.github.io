@@ -18,7 +18,7 @@ let destContainers = jQuery('#destContainersId');
 let srcContainers = jQuery('#srcContainersId');
 
 const generateDestHtmlElem = (j) => {
-  const destHtmlElem = `<div id="dest${j}" class="activity-item droppable"></div>`;
+  const destHtmlElem = `<div id="dest${j}" class="activity-item destination"></div>`;
   destContainers.append(destHtmlElem);
 }
 
@@ -48,7 +48,7 @@ const generateChallengeItems = () => {
 
   selectedActivitySqLength = selectedActivitySqItems.length;
   okClicksNb = 1;
-  while (selectedActivitySqItems.length > 0) {
+  while (selectedActivitySqItems.length > 0) { // length changed here in extractRandomEntryAndSplice(...) below
     const entryObj = extractRandomEntryAndSplice(selectedActivitySqItems);
 
     generateClickableHtmlElem(entryObj.index, entryObj.imagePath);
@@ -72,30 +72,35 @@ const itemClicked = (ev) => {
     // remove alphas from clickableId (i.e.: clickable1 -> 1, etc)
     const clickableElemIndex = parseInt(clickableElem.id.replace(/[^\d.-]/g, ''));
     if (clickableElemIndex === okClicksNb) {
-      // don't display it for the last successful choice
+      /*// don't display it for the last successful choice
       if (okClicksNb < selectedActivitySqLength) {
         resultDivElem.find('div').css('background-image', 'url(../images/smileFace.png)');
-        resultDivElem.fadeIn(500, () => {
-          resultDivElem.fadeOut(500);
+        resultDivElem.fadeIn(250, () => {
+          resultDivElem.fadeOut(250);
         });
-      }
+      }*/
 
       // don't allow source to be clickable anymore
       removeAttributes(clickableElem, 'canBeClicked', 'onclick');
-      clickableElem.classList.remove('pointer-cursor');
+      clickableElem.classList.remove('pointer-cursor', 'error-indicator');
 
       // copy source object to dest container
       const destElem = document.getElementById(`dest${clickableElemIndex}`);
       const destContentElem = clickableElem.cloneNode(true);
       destContentElem.style.boxShadow = 'none';
-      destContentElem.style.scale = '75%';
+      destContentElem.style.height = '50%';
       destContentElem.style.padding = 'unset';
       destContentElem.style.margin = 'unset';
       destElem.appendChild(destContentElem);
 
-      // hide the counter indicator
-      clickableElem.classList.add('success-indicator');
-      clickableElem.style.opacity = .5;
+      // add counter on source image
+      let indicatorNode = document.createElement('span');
+      indicatorNode.innerHTML = `${clickableElemIndex}`;
+      indicatorNode.classList.add('indicator');
+      clickableElem.appendChild(indicatorNode);
+
+      // flash success indicators and fade source panel
+      clickableElem.classList.add('success-indicator', 'post-click');
 
       checkActivityProgress();
       okClicksNb++;

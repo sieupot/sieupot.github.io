@@ -68,6 +68,7 @@
   background-position: center;
   background-image: url(../images/start.svg);
   background-repeat: no-repeat;
+  transform: scale(.5);
 }
 
 #scoreGood, #scoreBad {
