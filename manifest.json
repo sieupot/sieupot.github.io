@@ -1,7 +1,8 @@
 {
   "name": "Si Eu Pot Invata PWA",
   "short_name": "Si Eu Pot PWA",
-  "start_url": "index.html?utm_source=homescreen",
+  "description": "Produs destinat extinderii si imbunatatirii procedeelor si modurilor de lucru ale terapeutilor din domeniul logopediei. Produsul a fost dezvoltat in vederea folosirii atat in prezenta logopedului, cat si in mod independent, ca unealta de antrenare si sedimantare a cunostintelor.",
+  "start_url": "index.html",
   "scope": "./",
   "icons": [{
     "src": "icon.png",
