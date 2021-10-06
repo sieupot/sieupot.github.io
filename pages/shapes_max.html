@@ -1,0 +1,40 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Arata Forme</title>
+    <meta name="description" content="">
+
+    <script defer src="../js/lib/modernizr-3.8.0.min.js"></script>
+    <script defer src="../js/lib/jquery.min.js"></script>
+    <script defer src="../js/lib/jquery-ui-1.12.1.min.js"></script>
+
+    <script defer src="../js/items.js"></script>
+
+    <style>
+      .item {
+        background-size: contain !important;
+      }
+    </style>
+
+    <script type="text/javascript">
+      const sndPath = "../sounds/items/shapes/";
+      const imgPath = "../images/items/shapes/";
+      function initActivityItems(){
+        activityItems = [
+          {name: 'square', imagePath: imgPath + 'squareBlack.png', audioPath: sndPath + 'square.ogg'},
+          {name: 'rectangle', imagePath: imgPath + 'rectangleBlack.png', audioPath: sndPath + 'rectangle.ogg'},
+          {name: 'circle', imagePath: imgPath + 'circleBlack.png', audioPath: sndPath + 'circle.ogg'},
+          {name: 'triangle', imagePath: imgPath + 'triangleBlack.png', audioPath: sndPath + 'triangle.ogg'},
+          {name: 'star', imagePath: imgPath + 'starBlack.png', audioPath: sndPath + 'star.ogg'},
+          {name: 'diamond', imagePath: imgPath + 'diamondBlack.png', audioPath: sndPath + 'diamond.ogg'}
+        ]
+      }
+    </script>
+  </head>
+
+  <body>
+  <!--  content is injected by JavaScript in items.js-->
+  </body>
+</html>
