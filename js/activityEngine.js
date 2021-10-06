@@ -72,12 +72,12 @@ const checkValidAnswer = (isValidAnswer) => {
 
   if (isValidAnswer) {
     rightAnswers++;
-    resultDivElem.find('div').css('background-image', 'url(../images/smileFace.png)');
+    resultDivElem.css('opacity', .5).find('div').css('background-image', 'url(../images/smileFace.png)');
     resultDivElem.fadeIn(500);
     let playingCorrectAnswerAudio = new Audio('../sounds/correct.ogg');
     playingAudios.push(playingCorrectAnswerAudio);
     playingCorrectAnswerAudio.addEventListener('ended', () => {
-      resultDivElem.hide();
+      resultDivElem.css('opacity', 1).hide();
 
       activitySoundList = [];
       startNewChallenge();
@@ -94,11 +94,11 @@ const checkValidAnswer = (isValidAnswer) => {
 
 const handleInvalidAnswer = (doPlayShowItemAudio) => {
   wrongAnswers++;
-  resultDivElem.find('div').css('background-image', 'url(../images/sadFace.png)');
+  resultDivElem.css('opacity', .5).find('div').css('background-image', 'url(../images/sadFace.png)');
   resultDivElem.fadeIn(500);
   let playingWrongAnswerAudio = new Audio('../sounds/wrong.ogg');
   playingWrongAnswerAudio.addEventListener('ended', () => {
-    resultDivElem.hide();
+    resultDivElem.css('opacity', 1).hide();
     modalPanel.dialog('close');
     if (doPlayShowItemAudio) {
       playShowItemAudio();
