@@ -45,7 +45,7 @@ const generateChallengeItems = () => {
   for (index in selectedActivitySqItems) {
     generateDestHtmlElem(parseInt(index) + 1);
   }
-  // set bg-color opacity of first element to 1
+  // set bg-color opacity of first element to 1, as if it's waiting to be populated
   jQuery('.activity-item:not(:has(> div)):first').addClass('done');
 
   selectedActivitySqLength = selectedActivitySqItems.length;
@@ -97,6 +97,7 @@ const itemClicked = (ev) => {
       destElem.appendChild(destContentElem);
       destElem.style.backgroundColor = 'rgb(205, 238, 200)';
 
+      // set bg-color opacity of first empty dest element to 1, as if it's waiting to be populated
       jQuery('.activity-item:not(:has(> div)):first').addClass('done');
 
       // add counter on source image
