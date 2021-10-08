@@ -1,0 +1,518 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Acțiuni</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/icon.png">
+
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/pageLayout.css">
+  <link rel="stylesheet" href="../css/items.css">
+
+  <meta name="theme-color" content="#EFE7E0">
+
+  <script defer src="../js/lib/modernizr-3.8.0.min.js"></script>
+  <script defer src="../js/lib/jquery.min.js"></script>
+  <script defer src="../js/lib/jquery-ui-1.12.1.min.js"></script>
+
+  <script defer src="../js/main.js"></script>
+  <script defer src="../js/utils.js"></script>
+  <script defer src="../js/activityEngine.js"></script>
+  <script defer src="../js/actions.js"></script>
+  <!-- inject the template footer into the page -->
+  <script defer src="../js/injectors/footerInjector.js"></script>
+  <script defer src="../js/injectors/scorePanelInjector.js"></script>
+  <script defer type="text/javascript">
+    const imgPath = "../images/actions/";
+    const sndPath = "../sounds/actions/";
+
+    class SoundItem {
+      /**
+       *
+       * @param soundBaseFileName
+       * @param soundArticle: Indefinite, Definite, Possessive
+       * @param sharedSound: some sounds are shared by the spatial positioning activities
+       */
+      constructor(soundBaseFileName, soundArticle = '', sharedSound = false) {
+        this.soundPath = `${sharedSound ? sndCommonPath : sndPath}${soundBaseFileName}${soundArticle}.ogg`;
+      }
+    }
+
+    const initActivityItems = () => {
+      activityItems = [];
+
+      // BOY CLAPS HANDS
+      let boyClapsHands = {};
+      boyClapsHands.name = 'boyClapsHands';
+      boyClapsHands.images = [imgPath + "boyClapsHands.jpg"];
+      boyClapsHands.soundItems = [clapsSoundItem.soundPath, fromSoundItem.soundPath, palmsISoundItem.soundPath];
+      boyClapsHands.grouping = 'clapsHands';
+      activityItems.push(boyClapsHands);
+      // GIRL CLAPS HANDS
+      let girlClapsHands = {};
+      girlClapsHands.name = 'girlClapsHands';
+      girlClapsHands.images = [imgPath + "girlClapsHands.jpg"];
+      girlClapsHands.soundItems = [clapsSoundItem.soundPath, fromSoundItem.soundPath, palmsISoundItem.soundPath];
+      girlClapsHands.grouping = 'clapsHands';
+      activityItems.push(girlClapsHands);
+
+      // BOY DRAWS
+      let boyDraws = {};
+      boyDraws.name = 'boyDraws';
+      boyDraws.images = [imgPath + "boyDraws.jpg"];
+      boyDraws.soundItems = [drawsSoundItem.soundPath];
+      boyDraws.grouping = 'draws';
+      activityItems.push(boyDraws);
+      // GIRL DRAWS
+      let girlDraws = {};
+      girlDraws.name = 'girlDraws';
+      girlDraws.images = [imgPath + "girlDraws.jpg"];
+      girlDraws.soundItems = [drawsSoundItem.soundPath];
+      girlDraws.grouping = 'draws';
+      activityItems.push(girlDraws);
+
+      // BOY DRINKS WATER
+      let boyDrinksWater = {};
+      boyDrinksWater.name = 'boyDrinksWater';
+      boyDrinksWater.images = [imgPath + "boyDrinksWater.jpg"];
+      boyDrinksWater.soundItems = [drinksSoundItem.soundPath, waterISoundItem.soundPath];
+      boyDrinksWater.grouping = 'drinksWater';
+     activityItems.push(boyDrinksWater);
+      // GIRL DRINKS WATER
+      let girlDrinksWater = {};
+      girlDrinksWater.name = 'girlDrinksWater';
+      girlDrinksWater.images = [imgPath + "girlDrinksWater.jpg"];
+      girlDrinksWater.soundItems = [drinksSoundItem.soundPath, waterISoundItem.soundPath];
+      girlDrinksWater.grouping = 'drinksWater';
+      activityItems.push(girlDrinksWater);
+
+      // BOY MAKES SOAP BALLOONS
+      let boyMakesSoapBalloons = {};
+      boyMakesSoapBalloons.name = 'boyMakesSoapBalloons';
+      boyMakesSoapBalloons.images = [imgPath + "boyMakesSoapBalloons.jpg"];
+      boyMakesSoapBalloons.soundItems = [makesSoundItem.soundPath, balloonsISoundItem.soundPath];
+      boyMakesSoapBalloons.grouping = 'makesSoapBalloons';
+      activityItems.push(boyMakesSoapBalloons);
+      // GIRL MAKES SOAP BALLOONS
+      let girlMakesSoapBalloons = {};
+      girlMakesSoapBalloons.name = 'girlMakesSoapBalloons';
+      girlMakesSoapBalloons.images = [imgPath + "girlMakesSoapBalloons.jpg"];
+      girlMakesSoapBalloons.soundItems = [makesSoundItem.soundPath, balloonsISoundItem.soundPath];
+      girlMakesSoapBalloons.grouping = 'makesSoapBalloons';
+      activityItems.push(girlMakesSoapBalloons);
+
+      // BOY PLAYS
+      let boyPlays = {};
+      boyPlays.name = 'boyPlays';
+      boyPlays.images = [imgPath + "boyPlays.jpg"];
+      boyPlays.soundItems = [thirdSgReflexiveArtSoundItem.soundPath, playsSoundItem.soundPath];
+      boyPlays.grouping = 'plays';
+      activityItems.push(boyPlays);
+      // GIRL PLAYS
+      let girlPlays = {};
+      girlPlays.name = 'girlPlays';
+      girlPlays.images = [imgPath + "girlPlays.jpg"];
+      girlPlays.soundItems = [thirdSgReflexiveArtSoundItem.soundPath, playsSoundItem.soundPath];
+      girlPlays.grouping = 'plays';
+      activityItems.push(girlPlays);
+
+      // BOY PLAYS THE PIANO
+      let boyPlaysThePiano = {};
+      boyPlaysThePiano.name = 'boyPlaysThePiano';
+      boyPlaysThePiano.images = [imgPath + "boyPlaysPiano.jpg"];
+      boyPlaysThePiano.soundItems = [singsSoundItem.soundPath, atSoundItem.soundPath, pianoISoundItem.soundPath];
+      boyPlaysThePiano.grouping = 'playsThePiano';
+      activityItems.push(boyPlaysThePiano);
+      // GIRL PLAYS THE PIANO
+      let girlPlaysThePiano = {};
+      girlPlaysThePiano.name = 'girlPlaysThePiano';
+      girlPlaysThePiano.images = [imgPath + "girlPlaysPiano.jpg"];
+      girlPlaysThePiano.soundItems = [singsSoundItem.soundPath, atSoundItem.soundPath, pianoISoundItem.soundPath];
+      girlPlaysThePiano.grouping = 'playsThePiano';
+      activityItems.push(girlPlaysThePiano);
+
+      // BOY THROWS BALL AT BASKET
+      let boyThrowsBallAtBasket = {};
+      boyThrowsBallAtBasket.name = 'boyThrowsBallAtBasket';
+      boyThrowsBallAtBasket.images = [imgPath + "boyThrowsBallAtBasket.jpg"];
+      boyThrowsBallAtBasket.soundItems = [throwsSoundItem.soundPath, ballDSoundItem.soundPath, atSoundItem.soundPath, basketISoundItem.soundPath];
+      boyThrowsBallAtBasket.grouping = 'throwsBallAtBasket';
+      activityItems.push(boyThrowsBallAtBasket);
+      // GIRL THROWS BALL AT BASKET
+      let girlThrowsBallAtBasket = {};
+      girlThrowsBallAtBasket.name = 'girlThrowsBallAtBasket';
+      girlThrowsBallAtBasket.images = [imgPath + "girlThrowsBallAtBasket.jpg"];
+      girlThrowsBallAtBasket.soundItems = [throwsSoundItem.soundPath, ballDSoundItem.soundPath, atSoundItem.soundPath, basketISoundItem.soundPath];
+      girlThrowsBallAtBasket.grouping = 'throwsBallAtBasket';
+      activityItems.push(girlThrowsBallAtBasket);
+
+      // BOY WASHES FACE
+      let boyWashesFace = {};
+      boyWashesFace.name = 'boyWashesFace';
+      boyWashesFace.images = [imgPath + "boyWashesFace.jpg"];
+      boyWashesFace.soundItems = [thirdSgReflexiveArtSoundItem.soundPath, washesSoundItem.soundPath, aboveSoundItem.soundPath, faceISoundItem.soundPath];
+      boyWashesFace.grouping = 'washesFace';
+      activityItems.push(boyWashesFace);
+      // GIRL WASHES FACE
+      let girlWashesFace = {};
+      girlWashesFace.name = 'girlWashesFace';
+      girlWashesFace.images = [imgPath + "girlWashesFace.jpg"];
+      girlWashesFace.soundItems = [thirdSgReflexiveArtSoundItem.soundPath, washesSoundItem.soundPath, aboveSoundItem.soundPath, faceISoundItem.soundPath];
+      girlWashesFace.grouping = 'washesFace';
+      activityItems.push(girlWashesFace);
+
+      // BOY WASHES HANDS
+      let boyWashesHands = {};
+      boyWashesHands.name = 'boyWashesHands';
+      boyWashesHands.images = [imgPath + "boyWashesHands.jpg"];
+      boyWashesHands.soundItems = [thirdSgReflexiveArtSoundItem.soundPath, washesSoundItem.soundPath, aboveSoundItem.soundPath, handsISoundItem.soundPath];
+      boyWashesHands.grouping = 'washesHands';
+      activityItems.push(boyWashesHands);
+      // GIRL WASHES HANDS
+      let girlWashesHands = {};
+      girlWashesHands.name = 'girlWashesHands';
+      girlWashesHands.images = [imgPath + "girlWashesHands.jpg"];
+      girlWashesHands.soundItems = [thirdSgReflexiveArtSoundItem.soundPath, washesSoundItem.soundPath, aboveSoundItem.soundPath, handsISoundItem.soundPath];
+      girlWashesHands.grouping = 'washesHands';
+      activityItems.push(girlWashesHands);
+
+      // BOY WRITES
+      let boyWrites = {};
+      boyWrites.name = 'boyWrites';
+      boyWrites.images = [imgPath + "boyWrites.jpg"];
+      boyWrites.soundItems = [writesSoundItem.soundPath];
+      boyWrites.grouping = 'writes';
+      activityItems.push(boyWrites);
+      // GIRL WRITES
+      let girlWrites = {};
+      girlWrites.name = 'girlWrites';
+      girlWrites.images = [imgPath + "girlWrites.jpg"];
+      girlWrites.soundItems = [writesSoundItem.soundPath];
+      girlWrites.grouping = 'writes';
+      activityItems.push(girlWrites);
+
+      // BOY TAKES A BATH
+      let boyTakesABath = {};
+      boyTakesABath.name = 'boyTakesABath';
+      boyTakesABath.images = [imgPath + "boyTakesABath.jpg"];
+      boyTakesABath.soundItems = [makesSoundItem.soundPath, bathISoundItem.soundPath];
+      boyTakesABath.grouping = 'takesABath';
+      activityItems.push(boyTakesABath);
+      // GIRL TAKES A BATH
+      let girlTakesABath = {};
+      girlTakesABath.name = 'girlTakesABath';
+      girlTakesABath.images = [imgPath + "girlTakesABath.jpg"];
+      girlTakesABath.soundItems = [makesSoundItem.soundPath, bathISoundItem.soundPath];
+      girlTakesABath.grouping = 'takesABath';
+      activityItems.push(girlTakesABath);
+
+      // BOY BLOWS THE CANDLES
+      let boyBlowsTheCandles = {};
+      boyBlowsTheCandles.name = 'boyBlowsTheCandles';
+      boyBlowsTheCandles.images = [imgPath + "boyBlowsTheCandles.jpg"];
+      boyBlowsTheCandles.soundItems = [blowsSoundItem.soundPath, inSoundItem.soundPath, candlesISoundItem.soundPath];
+      boyBlowsTheCandles.grouping = 'blowsTheCandles';
+      activityItems.push(boyBlowsTheCandles);
+      // GIRL BLOWS THE CANDLES
+      let girlBlowsTheCandles = {};
+      girlBlowsTheCandles.name = 'girlBlowsTheCandles';
+      girlBlowsTheCandles.images = [imgPath + "girlBlowsTheCandles.jpg"];
+      girlBlowsTheCandles.soundItems = [blowsSoundItem.soundPath, inSoundItem.soundPath, candlesISoundItem.soundPath];
+      girlBlowsTheCandles.grouping = 'blowsTheCandles';
+      activityItems.push(girlBlowsTheCandles);
+
+      // BOY SLEEPS
+      let boySleeps = {};
+      boySleeps.name = 'boySleeps';
+      boySleeps.images = [imgPath + "boySleeps.jpg"];
+      boySleeps.soundItems = [sleepsSoundItem.soundPath];
+      boySleeps.grouping = 'sleeps';
+      activityItems.push(boySleeps);
+      // GIRL SLEEPS
+      let girlSleeps = {};
+      girlSleeps.name = 'girlSleeps';
+      girlSleeps.images = [imgPath + "girlSleeps.jpg"];
+      girlSleeps.soundItems = [sleepsSoundItem.soundPath];
+      girlSleeps.grouping = 'sleeps';
+      activityItems.push(girlSleeps);
+
+      // BOY WALKS
+      let boyWalks = {};
+      boyWalks.name = 'boyWalks';
+      boyWalks.images = [imgPath + "boyWalks.jpg"];
+      boyWalks.soundItems = [walksSoundItem.soundPath];
+      boyWalks.grouping = 'walks';
+      activityItems.push(boyWalks);
+      // GIRL WALKS
+      let girlWalks = {};
+      girlWalks.name = 'girlWalks';
+      girlWalks.images = [imgPath + "girlWalks.jpg"];
+      girlWalks.soundItems = [walksSoundItem.soundPath];
+      girlWalks.grouping = 'walks';
+      activityItems.push(girlWalks);
+
+      // BOY READS
+      let boyReads = {};
+      boyReads.name = 'boyReads';
+      boyReads.images = [imgPath + "boyReads.jpg"];
+      boyReads.soundItems = [readsSoundItem.soundPath];
+      boyReads.grouping = 'reads';
+      activityItems.push(boyReads);
+      // GIRL READS
+      let girlReads = {};
+      girlReads.name = 'girlReads';
+      girlReads.images = [imgPath + "girlReads.jpg"];
+      girlReads.soundItems = [readsSoundItem.soundPath];
+      girlReads.grouping = 'reads';
+      activityItems.push(girlReads);
+
+      // BOY LOOKS AT THE WATCH
+      let boyLooksAtTheWatch = {};
+      boyLooksAtTheWatch.name = 'boyLooksAtTheWatch';
+      boyLooksAtTheWatch.images = [imgPath + "boyLooksAtTheWatch.jpg"];
+      boyLooksAtTheWatch.soundItems = [thirdSgReflexiveArtSoundItem.soundPath, looksSoundItem.soundPath, atSoundItem.soundPath, watchISoundItem.soundPath];
+      boyLooksAtTheWatch.grouping = 'looksAtTheWatch';
+      activityItems.push(boyLooksAtTheWatch);
+      // GIRL LOOKS AT THE WATCH
+      let girlLooksAtTheWatch = {};
+      girlLooksAtTheWatch.name = 'girlLooksAtTheWatch';
+      girlLooksAtTheWatch.images = [imgPath + "girlLooksAtTheWatch.jpg"];
+      girlLooksAtTheWatch.soundItems = [thirdSgReflexiveArtSoundItem.soundPath, looksSoundItem.soundPath, atSoundItem.soundPath, watchISoundItem.soundPath];
+      girlLooksAtTheWatch.grouping = 'looksAtTheWatch';
+      activityItems.push(girlLooksAtTheWatch);
+
+      // BOY CLIMBS
+      let boyClimbs = {};
+      boyClimbs.name = 'boyClimbs';
+      boyClimbs.images = [imgPath + "boyClimbs.jpg"];
+      boyClimbs.soundItems = [thirdSgReflexiveArtSoundItem.soundPath, climbsSoundItem.soundPath];
+      boyClimbs.grouping = 'climbs';
+      activityItems.push(boyClimbs);
+      // GIRL CLIMBS
+      let girlClimbs = {};
+      girlClimbs.name = 'girlClimbs';
+      girlClimbs.images = [imgPath + "girlClimbs.jpg"];
+      girlClimbs.soundItems = [thirdSgReflexiveArtSoundItem.soundPath, climbsSoundItem.soundPath];
+      girlClimbs.grouping = 'climbs';
+      activityItems.push(girlClimbs);
+
+      // BOY SMELLS THE FLOWER
+      let boySmellsTheFlower = {};
+      boySmellsTheFlower.name = 'boySmellsTheFlower';
+      boySmellsTheFlower.images = [imgPath + "boySmellsTheFlower.jpg"];
+      boySmellsTheFlower.soundItems = [smellsSoundItem.soundPath, flowerDSoundItem.soundPath];
+      boySmellsTheFlower.grouping = 'smellsTheFlower';
+      activityItems.push(boySmellsTheFlower);
+      // GIRL SMELLS THE FLOWER
+      let girlSmellsTheFlower = {};
+      girlSmellsTheFlower.name = 'girlSmellsTheFlower';
+      girlSmellsTheFlower.images = [imgPath + "girlSmellsTheFlower.jpg"];
+      girlSmellsTheFlower.soundItems = [smellsSoundItem.soundPath, flowerDSoundItem.soundPath];
+      girlSmellsTheFlower.grouping = 'smellsTheFlower';
+      activityItems.push(girlSmellsTheFlower);
+
+      // BOY RUNS
+      let boyRuns = {};
+      boyRuns.name = 'boyRuns';
+      boyRuns.images = [imgPath + "boyRuns.jpg"];
+      boyRuns.soundItems = [runsSoundItem.soundPath];
+      boyRuns.grouping = 'runs';
+      activityItems.push(boyRuns);
+      // GIRL RUNS
+      let girlRuns = {};
+      girlRuns.name = 'girlRuns';
+      girlRuns.images = [imgPath + "girlRuns.jpg"];
+      girlRuns.soundItems = [runsSoundItem.soundPath];
+      girlRuns.grouping = 'runs';
+      activityItems.push(girlRuns);
+
+      // BOY DANCES
+      let boyDances = {};
+      boyDances.name = 'boyDances';
+      boyDances.images = [imgPath + "boyDances.jpg"];
+      boyDances.soundItems = [dancesSoundItem.soundPath];
+      boyDances.grouping = 'dances';
+      activityItems.push(boyDances);
+      // GIRL DANCES
+      let girlDances = {};
+      girlDances.name = 'girlDances';
+      girlDances.images = [imgPath + "girlDances.jpg"];
+      girlDances.soundItems = [dancesSoundItem.soundPath];
+      girlDances.grouping = 'dances';
+      activityItems.push(girlDances);
+
+      // BOY DRESSES
+      let boyDresses = {};
+      boyDresses.name = 'boyDresses';
+      boyDresses.images = [imgPath + "boyDresses.jpg"];
+      boyDresses.soundItems = [thirdSgReflexiveArtSoundItem.soundPath, dressesSoundItem.soundPath];
+      boyDresses.grouping = 'dresses';
+      activityItems.push(boyDresses);
+      // GIRL DRESSES
+      let girlDresses = {};
+      girlDresses.name = 'girlDresses';
+      girlDresses.images = [imgPath + "girlDresses.jpg"];
+      girlDresses.soundItems = [thirdSgReflexiveArtSoundItem.soundPath, dressesSoundItem.soundPath];
+      girlDresses.grouping = 'dresses';
+      activityItems.push(girlDresses);
+
+      // BOY PUTS SHOES ON
+      let boyPutsShoesOn = {};
+      boyPutsShoesOn.name = 'boyPutsShoesOn';
+      boyPutsShoesOn.images = [imgPath + "boyPutsShoesOn.jpg"];
+      boyPutsShoesOn.soundItems = [thirdSgReflexiveArtSoundItem.soundPath, putsShoesOnSoundItem.soundPath];
+      boyPutsShoesOn.grouping = 'putsShoesOn';
+      activityItems.push(boyPutsShoesOn);
+      // GIRL PUTS SHOES ON
+      let girlPutsShoesOn = {};
+      girlPutsShoesOn.name = 'girlPutsShoesOn';
+      girlPutsShoesOn.images = [imgPath + "girlPutsShoesOn.jpg"];
+      girlPutsShoesOn.soundItems = [thirdSgReflexiveArtSoundItem.soundPath, putsShoesOnSoundItem.soundPath];
+      girlPutsShoesOn.grouping = 'putsShoesOn';
+      activityItems.push(girlPutsShoesOn);
+
+      // BOY COMBS
+      let boyCombs = {};
+      boyCombs.name = 'boyCombs';
+      boyCombs.images = [imgPath + "boyCombs.jpg"];
+      boyCombs.soundItems = [thirdSgReflexiveArtSoundItem.soundPath, combsSoundItem.soundPath];
+      boyCombs.grouping = 'combs';
+      activityItems.push(boyCombs);
+      // GIRL COMBS
+      let girlCombs = {};
+      girlCombs.name = 'girlCombs';
+      girlCombs.images = [imgPath + "girlCombs.jpg"];
+      girlCombs.soundItems = [thirdSgReflexiveArtSoundItem.soundPath, combsSoundItem.soundPath];
+      girlCombs.grouping = 'combs';
+      activityItems.push(girlCombs);
+
+      // BOY CRIES
+      let boyCries = {};
+      boyCries.name = 'boyCries';
+      boyCries.images = [imgPath + "boyCries.jpg"];
+      boyCries.soundItems = [criesSoundItem.soundPath];
+      boyCries.grouping = 'cries';
+      activityItems.push(boyCries);
+      // GIRL CRIES
+      let girlCries = {};
+      girlCries.name = 'girlCries';
+      girlCries.images = [imgPath + "girlCries.jpg"];
+      girlCries.soundItems = [criesSoundItem.soundPath];
+      girlCries.grouping = 'cries';
+      activityItems.push(girlCries);
+
+      // BOY BROOMS
+      let boyBrooms = {};
+      boyBrooms.name = 'boyBrooms';
+      boyBrooms.images = [imgPath + "boyBrooms.jpg"];
+      boyBrooms.soundItems = [broomsSoundItem.soundPath];
+      boyBrooms.grouping = 'brooms';
+      activityItems.push(boyBrooms);
+      // GIRL BROOMS
+      let girlBrooms = {};
+      girlBrooms.name = 'girlBrooms';
+      girlBrooms.images = [imgPath + "girlBrooms.jpg"];
+      girlBrooms.soundItems = [broomsSoundItem.soundPath];
+      girlBrooms.grouping = 'brooms';
+      activityItems.push(girlBrooms);
+
+      // BOY LISTENS TO MUSIC
+      let boyListensToMusic = {};
+      boyListensToMusic.name = 'boyListensToMusic';
+      boyListensToMusic.images = [imgPath + "boyListensToMusic.jpg"];
+      boyListensToMusic.soundItems = [listensSoundItem.soundPath, musicISoundItem.soundPath];
+      boyListensToMusic.grouping = 'listensToMusic';
+      activityItems.push(boyListensToMusic);
+      // GIRL LISTENS TO MUSIC
+      let girlListensToMusic = {};
+      girlListensToMusic.name = 'girlListensToMusic';
+      girlListensToMusic.images = [imgPath + "girlListensToMusic.jpg"];
+      girlListensToMusic.soundItems = [listensSoundItem.soundPath, musicISoundItem.soundPath];
+      girlListensToMusic.grouping = 'listensToMusic';
+      activityItems.push(girlListensToMusic);
+
+      // BOY LAUGHS
+      let boyLaughs = {};
+      boyLaughs.name = 'boyLaughs';
+      boyLaughs.images = [imgPath + "boyLaughs.jpg"];
+      boyLaughs.soundItems = [laughsSoundItem.soundPath];
+      boyLaughs.grouping = 'laughs';
+      activityItems.push(boyLaughs);
+      // GIRL LAUGHS
+      let girlLaughs = {};
+      girlLaughs.name = 'girlLaughs';
+      girlLaughs.images = [imgPath + "girlLaughs.jpg"];
+      girlLaughs.soundItems = [laughsSoundItem.soundPath];
+      girlLaughs.grouping = 'laughs';
+      activityItems.push(girlLaughs);
+
+      // BOY SINGS
+      let boySings = {};
+      boySings.name = 'boySings';
+      boySings.images = [imgPath + "boySings.jpg"];
+      boySings.soundItems = [singsSoundItem.soundPath];
+      boySings.grouping = 'sings';
+      activityItems.push(boySings);
+      // GIRL SINGS
+      let girlSings = {};
+      girlSings.name = 'girlSings';
+      girlSings.images = [imgPath + "girlSings.jpg"];
+      girlSings.soundItems = [singsSoundItem.soundPath];
+      girlSings.grouping = 'sings';
+      activityItems.push(girlSings);
+
+      // BOY JUMPS
+      let boyJumps = {};
+      boyJumps.name = 'boyJumps';
+      boyJumps.images = [imgPath + "boyJumps.jpg"];
+      boyJumps.soundItems = [jumpsSoundItem.soundPath];
+      boyJumps.grouping = 'jumps';
+      activityItems.push(boyJumps);
+      // GIRL JUMPS
+      let girlJumps = {};
+      girlJumps.name = 'girlJumps';
+      girlJumps.images = [imgPath + "girlJumps.jpg"];
+      girlJumps.soundItems = [jumpsSoundItem.soundPath];
+      girlJumps.grouping = 'jumps';
+      activityItems.push(girlJumps);
+
+      // BOY EATS
+      let boyEats = {};
+      boyEats.name = 'boyEats';
+      boyEats.images = [imgPath + "boyEats.jpg"];
+      boyEats.soundItems = [eatsSoundItem.soundPath];
+      boyEats.grouping = 'eats';
+      activityItems.push(boyEats);
+      // GIRL EATS
+      let girlEats = {};
+      girlEats.name = 'girlEats';
+      girlEats.images = [imgPath + "girlEats.jpg"];
+      girlEats.soundItems = [eatsSoundItem.soundPath];
+      girlEats.grouping = 'eats';
+      activityItems.push(girlEats);
+    }
+  </script>
+</head>
+
+<body>
+  <div id="content">
+    <div id="dialogDiv"></div>
+    <div class="result">
+      <div onclick="startActivity();" class="pointer-cursor start-activity"></div>
+    </div>
+    <div id="contentPanel">
+      <div id="actionContainer1Id" class="item pointer-cursor"></div>
+      <div id="actionContainer2Id" class="item pointer-cursor"></div>
+    </div>
+  </div>
+
+  <div id="scorePanelId"><!-- score panel injected --></div>
+</body>
+
+</html>

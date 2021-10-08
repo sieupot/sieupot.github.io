@@ -88,12 +88,16 @@ const generateChallengeItems = () => {
 
   let selectedActivityItem1Name = selectedActivityItem1.name;
 
+  let inSameGrouping = false;
+
   // extract the second activityItem
   // loop until different name
   let selectedActivityItem2;
   do {
     selectedActivityItem2 =  activityItems[Math.floor((Math.random() * activityItems.length))];
-  } while (selectedActivityItem1Name === selectedActivityItem2.name);
+
+    inSameGrouping = selectedActivityItem1.grouping && selectedActivityItem2.grouping && (selectedActivityItem1.grouping === selectedActivityItem2.grouping);
+  } while (selectedActivityItem1Name === selectedActivityItem2.name || inSameGrouping);
   setupAnswer(activityObjElemArray[1], selectedActivityItem2);
 
   playShowItemAudio();
