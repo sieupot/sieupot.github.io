@@ -31,9 +31,47 @@
 }
 
 .click-item {
+  display: flex;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  row-gap: 8px;
+  font: normal normal bold 22px/24px Poppins-600-normal;
+  text-decoration: none;
+  text-align: center;
+  color: #226473;
+  border-radius: 20px;
+  box-shadow: 0 1px 4px -2px #333;
+  text-shadow: 0 -1px #ddd;
+  position: relative;
+  flex: 1;
+  margin: 0 0 1em 0;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.indicator {
+  position: absolute;
+  font-size: 80px;
+  display: flex;
+  border: 3px solid #226473;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  border-radius: 50%;
+}
+
+.post-click::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(239, 231, 224, .75);
+  border-radius: inherit;
 }
 
 .error-indicator {
@@ -45,7 +83,6 @@
 }
 
 .success-indicator {
-  opacity: .25;
   animation: successAnimation 1s;
 }
 @keyframes successAnimation {

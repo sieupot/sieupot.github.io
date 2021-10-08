@@ -72,8 +72,16 @@ const itemClicked = (ev) => {
       // don't allow source to be clickable anymore
       removeAttributes(clickableElem, 'canBeClicked', 'onclick');
       clickableElem.classList.remove('pointer-cursor');
-      // hide the counter indicator
-      clickableElem.classList.add('hidden-content', 'success-indicator');
+
+      // add counter on source image
+      let indicatorNode = document.createElement('span');
+      indicatorNode.innerHTML = `${clickableElemIndex}`;
+      indicatorNode.classList.add('indicator');
+      clickableElem.appendChild(indicatorNode);
+
+      // flash success indicators and fade source panel
+      clickableElem.classList.add('success-indicator', 'post-click');
+
       checkActivityProgress();
       okClicksNb++;
     } else {

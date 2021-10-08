@@ -45,6 +45,8 @@ const generateChallengeItems = () => {
   for (index in selectedActivitySqItems) {
     generateDestHtmlElem(parseInt(index) + 1);
   }
+  // set bg-color opacity of first element to 1
+  jQuery('.activity-item:not(:has(> div)):first').addClass('done');
 
   selectedActivitySqLength = selectedActivitySqItems.length;
   okClicksNb = 1;
@@ -88,10 +90,14 @@ const itemClicked = (ev) => {
       const destElem = document.getElementById(`dest${clickableElemIndex}`);
       const destContentElem = clickableElem.cloneNode(true);
       destContentElem.style.boxShadow = 'none';
-      destContentElem.style.height = '50%';
+      destContentElem.style.height = '75%';
       destContentElem.style.padding = 'unset';
       destContentElem.style.margin = 'unset';
+      destContentElem.style.backgroundColor = 'transparent';
       destElem.appendChild(destContentElem);
+      destElem.style.backgroundColor = 'rgb(205, 238, 200)';
+
+      jQuery('.activity-item:not(:has(> div)):first').addClass('done');
 
       // add counter on source image
       let indicatorNode = document.createElement('span');
