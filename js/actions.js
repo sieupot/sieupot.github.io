@@ -114,7 +114,7 @@ const setupAnswer = (objElem, selectedActivityItem) => {
   }
   objElem.css('background-image', 'url(' + imagePath + ')');
   // objElem.attr('src', imagePath);
-  objElem.off('click').click(() => {
+  objElem.off('mousedown').mousedown(() => {
     checkValidAnswer(isCorrectAnswer);
   });
 }

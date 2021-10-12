@@ -27,9 +27,9 @@ const generateChallengeItems = () => {
   activitySoundList.push(correctItem.audioPath);
   challengeCorrectItemName = correctItem.name;
 
-  // bind the onclick event function
+  // unbind previously bound mousedown handler; bind the mousedown event function
   for (const [i, svgElem] of activityObjElemArray.entries()) {
-    svgElem.off('click').click(() => {
+    svgElem.off('mousedown').mousedown(() => {
       checkValidAnswer(i === validItemIndex);
     });
   }

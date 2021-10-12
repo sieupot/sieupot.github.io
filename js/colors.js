@@ -32,8 +32,8 @@ const generateChallengeItems = () => {
 
     // display the item
     objElem.removeClass().addClass('color pointer-cursor ' + item.name);
-    // unbind previously bound click handler; bind the onclick event function
-    objElem.off('click').click(() => {
+    // unbind previously bound mousedown handler; bind the mousedown event function
+    objElem.off('mousedown').mousedown(() => {
       checkValidAnswer(isCorrectAnswer);
     });
 

@@ -59,7 +59,7 @@ const setupAnswer = (objElem, selectedActivityItem) => {
     challengeCorrectItemName = selectedActivityItem.name;
   }
   objElem.load(imagePath);
-  objElem.off('click').click(() => {
+  objElem.off('mousedown').mousedown(() => {
     checkValidAnswer(isCorrectAnswer);
   });
 }

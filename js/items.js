@@ -27,8 +27,8 @@ const generateChallengeItems = () => {
     // display the item
     objElem.css('background-image', 'url(' + item.imagePath + ')').removeClass().addClass('item pointer-cursor');
     // objElem.attr('src', item.imagePath).removeClass().addClass('item pointer-cursor');
-    // unbind previously bound click handler; bind the onclick event function
-    objElem.off('click').click(() => {
+    // unbind previously bound mousedown handler; bind the mousedown event function
+    objElem.off('mousedown').mousedown(() => {
       checkValidAnswer(isCorrectAnswer);
     });
 

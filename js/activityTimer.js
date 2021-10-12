@@ -11,4 +11,4 @@ startTimer = () => {
   }, 1000);
 }
 
-document.querySelector('div.start-activity').addEventListener('click', startTimer);
+document.querySelector('div.start-activity').addEventListener('mousedown', startTimer);

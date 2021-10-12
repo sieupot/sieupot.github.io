@@ -43,7 +43,7 @@ const setupAnswer = (objElem, selectedActivityItem) => {
     challengeCorrectItemName = selectedActivityItem.name;
   }
   objElem.css('background-image', 'url(' + imagePath1 + ')');
-  objElem.off('click').click(() => {
+  objElem.off('mousedown').mousedown(() => {
     checkValidAnswer(isCorrectAnswer);
   });
 }

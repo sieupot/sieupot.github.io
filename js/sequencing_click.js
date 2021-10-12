@@ -17,7 +17,7 @@ let okClicksNb = 0, selectedActivitySqLength = 0;
 let itemsContainerId = jQuery('#itemsContainerId');
 
 const generateClickableHtmlElem = (index, imagePath) => {
-  const clickableHtmlElem = `<div id="clickable${index}" class="pointer-cursor click-item" style="background-image: url('${imagePath}');" canBeClicked="true" onclick="itemClicked(event);">
+  const clickableHtmlElem = `<div id="clickable${index}" class="pointer-cursor click-item" style="background-image: url('${imagePath}');" canBeClicked="true" onmousedown="itemClicked(event);">
         </div>`;
   itemsContainerId.append(clickableHtmlElem);
 }
@@ -70,7 +70,7 @@ const itemClicked = (ev) => {
       }*/
 
       // don't allow source to be clickable anymore
-      removeAttributes(clickableElem, 'canBeClicked', 'onclick');
+      removeAttributes(clickableElem, 'canBeClicked', 'onmousedown');
       clickableElem.classList.remove('pointer-cursor');
 
       // add counter on source image

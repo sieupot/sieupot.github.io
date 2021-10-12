@@ -23,7 +23,7 @@ const generateDestHtmlElem = (j) => {
 }
 
 const generateClickableHtmlElem = (index, imagePath) => {
-  const clickableHtmlElem = `<div id="clickable${index}" class="pointer-cursor click-item" style="background-image: url('${imagePath}');" canBeClicked="true" onclick="itemClicked(event);">
+  const clickableHtmlElem = `<div id="clickable${index}" class="pointer-cursor click-item" style="background-image: url('${imagePath}');" canBeClicked="true" onmousedown="itemClicked(event);">
         </div>`;
   srcContainers.append(clickableHtmlElem);
 }
@@ -83,7 +83,7 @@ const itemClicked = (ev) => {
       }*/
 
       // don't allow source to be clickable anymore
-      removeAttributes(clickableElem, 'canBeClicked', 'onclick');
+      removeAttributes(clickableElem, 'canBeClicked', 'onmousedown');
       clickableElem.classList.remove('pointer-cursor', 'error-indicator');
 
       // copy source object to dest container

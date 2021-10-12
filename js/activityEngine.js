@@ -54,7 +54,7 @@ const startNewChallenge = () => {
  * triggered when the user manually chooses to start the activity
  */
 const startActivity = () => {
-  resultDivElem.find('div').removeAttr('onclick').removeClass('pointer-cursor');
+  resultDivElem.find('div').removeAttr('onmousedown').removeClass('pointer-cursor');
 
   activitySoundList = [];
   startNewChallenge();
