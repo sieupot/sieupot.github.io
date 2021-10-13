@@ -16,14 +16,35 @@ jQuery(() => {
 let dropContainers = jQuery('#dropContainersId');
 let dragContainers = jQuery('#dragContainersId');
 
-const generateDroppableHtmlElem = (j) => {
-  const droppableHtmlElem = `<div id="droppable${j}" class="activity-item droppable"
-       onDrop="drop(event)"
-       onDragOver="allowDrop(event)"
-       onDragEnter="highlightArea(event, true)"
-       onMouseOut="highlightArea(event, false)"
-       onDragLeave="highlightArea(event, false)">
-  </div>`;
+const generateDroppableHtmlElem = (index, nbItems) => {
+  let assistAudioPath = "../sounds/sequencing/";
+  switch (index) {
+    case 0:
+      // first
+      assistAudioPath += 'whatComesFirst.ogg';
+      break;
+    case (nbItems - 1):
+      // last
+      assistAudioPath += 'whatComesLast.ogg';
+      break;
+    default:
+      // then
+      assistAudioPath += 'whatComesThen.ogg';
+      break;
+  }
+
+  let droppableHtmlElem = document.createElement('div');
+  droppableHtmlElem.id = `droppable${index}`;
+  droppableHtmlElem.classList.add('activity-item', 'droppable');
+  droppableHtmlElem.setAttribute('onDrop', 'drop(event)');
+  droppableHtmlElem.setAttribute('onDragOver', 'allowDrop(event)');
+  droppableHtmlElem.setAttribute('onDragEnter', 'highlightArea(event, true)');
+  droppableHtmlElem.setAttribute('onMouseOut', 'highlightArea(event, false)');
+  droppableHtmlElem.setAttribute('onDragLeave', 'highlightArea(event, false)');
+  droppableHtmlElem.onmousedown = function () {
+    let assistAudio = new Audio(assistAudioPath);
+    assistAudio.play();
+  };
   dropContainers.append(droppableHtmlElem);
 }
 
@@ -47,7 +68,7 @@ const generateChallengeItems = () => {
 
   const selectedActivitySqItems = Object.assign([], selectedActivitySq.items); // clone the array, or else the extractRandomEntryAndSplice will empty the source array
   for (index in selectedActivitySqItems) {
-    generateDroppableHtmlElem(parseInt(index) + 1);
+    generateDroppableHtmlElem(parseInt(index) + 1, selectedActivitySqItems.length);
   }
 
   while (selectedActivitySqItems.length > 0) {

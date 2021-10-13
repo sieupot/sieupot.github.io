@@ -17,8 +17,30 @@ let okClicksNb = 0, selectedActivitySqLength = 0;
 let destContainers = jQuery('#destContainersId');
 let srcContainers = jQuery('#srcContainersId');
 
-const generateDestHtmlElem = (j) => {
-  const destHtmlElem = `<div id="dest${j}" class="activity-item destination"></div>`;
+const generateDestHtmlElem = (index, nbItems) => {
+  let assistAudioPath = "../sounds/sequencing/";
+  switch (index) {
+    case 0:
+      // first
+      assistAudioPath += 'whatComesFirst.ogg';
+      break;
+    case (nbItems - 1):
+      // last
+      assistAudioPath += 'whatComesLast.ogg';
+      break;
+    default:
+      // then
+      assistAudioPath += 'whatComesThen.ogg';
+      break;
+  }
+
+  let destHtmlElem = document.createElement('div');
+  destHtmlElem.id = `dest${index}`;
+  destHtmlElem.classList.add('activity-item', 'destination');
+  destHtmlElem.onmousedown = function () {
+    let assistAudio = new Audio(assistAudioPath);
+    assistAudio.play();
+  };
   destContainers.append(destHtmlElem);
 }
 
@@ -43,7 +65,7 @@ const generateChallengeItems = () => {
 
   const selectedActivitySqItems = Object.assign([], selectedActivitySq.items); // clone the array, or else the extractRandomEntryAndSplice will empty the source array
   for (index in selectedActivitySqItems) {
-    generateDestHtmlElem(parseInt(index) + 1);
+    generateDestHtmlElem(parseInt(index) + 1, selectedActivitySqItems.length);
   }
   // set bg-color opacity of first element to 1, as if it's waiting to be populated
   jQuery('.activity-item:not(:has(> div)):first').addClass('done');
