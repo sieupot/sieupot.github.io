@@ -20,11 +20,11 @@ let srcContainers = jQuery('#srcContainersId');
 const generateDestHtmlElem = (index, nbItems) => {
   let assistAudioPath = "../sounds/sequencing/";
   switch (index) {
-    case 0:
+    case 1:
       // first
       assistAudioPath += 'whatComesFirst.ogg';
       break;
-    case (nbItems - 1):
+    case (nbItems):
       // last
       assistAudioPath += 'whatComesLast.ogg';
       break;
@@ -36,6 +36,7 @@ const generateDestHtmlElem = (index, nbItems) => {
 
   let destHtmlElem = document.createElement('div');
   destHtmlElem.id = `dest${index}`;
+  destHtmlElem.style.cursor = 'help';
   destHtmlElem.classList.add('activity-item', 'destination');
   destHtmlElem.onmousedown = function () {
     let assistAudio = new Audio(assistAudioPath);
@@ -118,6 +119,8 @@ const itemClicked = (ev) => {
       destContentElem.style.backgroundColor = 'transparent';
       destElem.appendChild(destContentElem);
       destElem.style.backgroundColor = 'rgb(205, 238, 200)';
+      destElem.onmousedown = {};
+      destElem.style.cursor = 'auto';
 
       // set bg-color opacity of first empty dest element to 1, as if it's waiting to be populated
       jQuery('.activity-item:not(:has(> div)):first').addClass('done');

@@ -19,11 +19,11 @@ let dragContainers = jQuery('#dragContainersId');
 const generateDroppableHtmlElem = (index, nbItems) => {
   let assistAudioPath = "../sounds/sequencing/";
   switch (index) {
-    case 0:
+    case 1:
       // first
       assistAudioPath += 'whatComesFirst.ogg';
       break;
-    case (nbItems - 1):
+    case (nbItems):
       // last
       assistAudioPath += 'whatComesLast.ogg';
       break;
@@ -35,6 +35,7 @@ const generateDroppableHtmlElem = (index, nbItems) => {
 
   let droppableHtmlElem = document.createElement('div');
   droppableHtmlElem.id = `droppable${index}`;
+  droppableHtmlElem.style.cursor = 'help';
   droppableHtmlElem.classList.add('activity-item', 'droppable');
   droppableHtmlElem.setAttribute('onDrop', 'drop(event)');
   droppableHtmlElem.setAttribute('onDragOver', 'allowDrop(event)');
@@ -127,6 +128,9 @@ const drop = (ev) => {
       // hide the counter indicator
       dropElem.classList.add('hidden-content', 'success-indicator');
       dropElem.style.backgroundColor = "";
+      dropElem.onmousedown = {};
+      dropElem.style.cursor = 'auto';
+
       checkActivityProgress();
     } else {
       modalPanel.dialog(dialogOptions);
