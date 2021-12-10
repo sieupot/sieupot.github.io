@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="9.4335289mm"
+   height="5.4323292mm"
+   viewBox="0 0 9.4335289 5.4323292"
+   version="1.1"
+   id="svg23436"
+   inkscape:version="1.1 (c4e8f9e, 2021-05-24)"
+   sodipodi:docname="mouth.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview23438"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="5.8578358"
+     inkscape:cx="35.422638"
+     inkscape:cy="-4.3531435"
+     inkscape:window-width="1920"
+     inkscape:window-height="1147"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs23433">
+    <linearGradient
+       x1="0"
+       y1="0"
+       x2="1"
+       y2="0"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0,15.398811,15.398811,0,228.23685,305.966)"
+       spreadMethod="pad"
+       id="linearGradient1150">
+      <stop
+         style="stop-opacity:1;stop-color:#ce3e41"
+         offset="0"
+         id="stop1146" />
+      <stop
+         style="stop-opacity:1;stop-color:#64003c"
+         offset="1"
+         id="stop1148" />
+    </linearGradient>
+    <radialGradient
+       fx="0"
+       fy="0"
+       cx="0"
+       cy="0"
+       r="1"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(5.2756696,0,0,-5.2756696,228.7388,317.98102)"
+       spreadMethod="pad"
+       id="radialGradient1174">
+      <stop
+         style="stop-opacity:1;stop-color:#fff0eb"
+         offset="0"
+         id="stop1166" />
+      <stop
+         style="stop-opacity:1;stop-color:#fff0eb"
+         offset="0.0335196"
+         id="stop1168" />
+      <stop
+         style="stop-opacity:1;stop-color:#ffe7e9"
+         offset="0.977299"
+         id="stop1170" />
+      <stop
+         style="stop-opacity:1;stop-color:#ffe7e9"
+         offset="1"
+         id="stop1172" />
+    </radialGradient>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-100.19957,-145.98105)">
+    <g
+       id="gr_mouth"
+       inkscape:label="group mouth"
+       transform="translate(10.969118,36.402555)">
+      <g
+         id="g1134"
+         transform="matrix(0.35277777,0,0,-0.35277777,13.430432,222.94892)">
+        <g
+           id="g1136">
+          <g
+             id="g1142">
+            <g
+               id="g1144">
+              <path
+                 d="m 226.293,318.085 c -3.765,-0.521 -6.138,-0.132 -7.78,0.257 v 0 c -1.478,0.35 -2.366,0.7 -3.148,0.388 v 0 c -2.385,-0.954 4.072,-14.085 13.205,-12.655 v 0 c 9.133,1.431 14.608,14.772 12.636,15.258 v 0 c -0.087,0.022 -0.194,0.032 -0.318,0.032 v 0 c -1.884,0 -7.884,-2.35 -14.595,-3.28"
+                 style="fill:url(#linearGradient1150);stroke:none"
+                 id="path1152" />
+            </g>
+          </g>
+        </g>
+      </g>
+      <g
+         id="g1154"
+         transform="matrix(0.35277777,0,0,-0.35277777,13.430432,222.94892)">
+        <g
+           id="g1156">
+          <g
+             id="g1162">
+            <g
+               id="g1164">
+              <path
+                 d="m 221.59,317.875 c 0,0 2.952,-2.336 7.149,-1.995 v 0 c 4.197,0.34 7.148,4.236 7.148,4.236 v 0 c 0,0 -7.651,-2.5 -14.297,-2.241"
+                 style="fill:url(#radialGradient1174);stroke:none"
+                 id="path1176" />
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
