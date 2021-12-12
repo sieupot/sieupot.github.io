@@ -88,3 +88,11 @@ const getNbDistractors = () => {
 const pad = (val) => {
   return val > 9 ? val : "0" + val;
 }
+
+// shuffles the elements in an array
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}

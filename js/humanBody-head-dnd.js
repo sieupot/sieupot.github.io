@@ -18,19 +18,23 @@ jQuery(() => {
   modalPanel = jQuery('#dialogDiv');
   resultDivElem = jQuery('div.result');
 
-  activityItems.forEach(item => activityObjElemArray.push(jQuery('svg[' + item.name + '-attr]')));
-
   // show the start icon and let the user manually start the activity
   resultDivElem.fadeIn(300);
   modalPanel.dialog(dialogOptions);
 });
 
-const generateChallengeItems = () => {
-  do {
-    validItemIndex = Math.floor((Math.random() * activityItems.length));
-  } while (validItemIndex === prevRnd);
-  prevRnd = validItemIndex;
+let clickSrcContainers = jQuery('#clickSrcContainersId');
 
+const generateChallengeItems = () => {
+  shuffleArray(activityItems);
+
+  activityItems.forEach(function(item) {
+    const clickSrcHtmlElem = ` <div id="${item.name}SrcId" onmousedown="sourceSelected(event);" style="background-image: url('${item.image}');" class="clickable-src-container pointer-cursor">
+        </div>`;
+    clickSrcContainers.append(clickSrcHtmlElem);
+  });
+
+  // TODO TEDDY continue - select the valid item, save it to be checked later
   activitySoundList.push('../sounds/show.ogg');
   const correctItem = activityItems[validItemIndex];
   activitySoundList.push(correctItem.audioPath);
