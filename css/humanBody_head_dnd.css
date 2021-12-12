@@ -2,16 +2,60 @@
   display: grid;
   overflow: auto;
   margin: 0;
-  grid-template-columns: 2fr 1px 1fr;
+  grid-template-columns: 1fr 1px 2fr;
   grid-auto-columns: auto;
   column-gap: 0;
   height: 100%;
   grid-template-rows: 1fr;
 }
 
+.human-body {
+  display: grid;
+  height: 100%;
+  grid-auto-rows: auto;
+  grid-auto-columns: auto;
+}
 
 .separator {
   width: 1px;
   background-color: gray;
-  margin: 0 1.4em;
+}
+
+#clickSrcContainersId {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1em;
+  margin: 0 1em;
+}
+
+.clickable-src-container {
+  background-color: #FFF;
+  border: 10px outset #DDD ;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 1px 4px -2px #333;
+  margin: 0 0 1em 0;
+  min-width: 100px;
+  min-height: 100px;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-origin: content-box;
+}
+
+.clickable-src-container.selected {
+  border: 10px inset #FF0 ;
+  background-size: 90% 90%;
+  background-color: rgba(255, 255, 0, .1);
+}
+
+.covered > path, .covered > circle {
+  fill: #aaa !important;
+  opacity: 1 !important;
+}
+
+.covered:hover > path, .covered:hover > circle {
+  fill: yellow !important;
+  opacity: 1 !important;
 }
