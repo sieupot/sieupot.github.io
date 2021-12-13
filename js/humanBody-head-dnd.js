@@ -1,14 +1,15 @@
 let prevRnd;
 let hasDistractors = false; // used when exporting results, as info in the sheet with activity reaction times
-let selectedElem;
+let userSelectedElem, challengeItem;
+let currentActivityItems;
 
 const
-  hairArtDSoundItem = new SoundItem('hair', 'D'),
-  eyeBrowsArtDSoundItem = new SoundItem('eyeBrows', 'D'),
-  eyesArtDSoundItem = new SoundItem('eyes', 'D'),
-  earsArtDSoundItem = new SoundItem('ears', 'D'),
-  noseArtDSoundItem = new SoundItem('nose', 'D'),
-  mouthArtDSoundItem = new SoundItem('mouth', 'D');
+  hairArtDSoundItem = new SoundItem('hair', 'I'),
+  eyeBrowsArtDSoundItem = new SoundItem('eyeBrows', 'I'),
+  eyesArtDSoundItem = new SoundItem('eyes', 'I'),
+  earsArtDSoundItem = new SoundItem('ears', 'I'),
+  noseArtDSoundItem = new SoundItem('nose', 'I'),
+  mouthArtDSoundItem = new SoundItem('mouth', 'I');
 
 // on page load
 jQuery(() => {
@@ -24,37 +25,96 @@ jQuery(() => {
 });
 
 let clickSrcContainers = jQuery('#clickSrcContainersId');
+let clickDestContainer = jQuery('#clickDestContainerId > svg');
 
 const generateChallengeItems = () => {
-  shuffleArray(activityItems);
+  // load dest resource
+  clickDestContainer.load('../images/humanBody/head_boy.svg', function() {
+    Array.from(document.getElementsByClassName('covered')).forEach(function(item) {
+      item.setAttribute('onmousedown', 'event.stopPropagation(); validateChallenge(event);');
+    });
+  });
 
-  activityItems.forEach(function(item) {
-    const clickSrcHtmlElem = ` <div id="${item.name}SrcId" onmousedown="sourceSelected(event);" style="background-image: url('${item.image}');" class="clickable-src-container pointer-cursor">
-        </div>`;
+  // generate selectable items
+  currentActivityItems = Object.assign([], activityItems); // clone the array
+  shuffleArray(currentActivityItems); // shuffle items
+
+  currentActivityItems.forEach(function(item) {
+    let clickSrcHtmlElem = document.createElement('div');
+    clickSrcHtmlElem.id = `${item.name}SrcId`;
+    clickSrcHtmlElem.setAttribute('name', `${item.name}`);
+    clickSrcHtmlElem.style.backgroundImage = `url('${item.image}')`;
+    clickSrcHtmlElem.classList.add('clickable-src-container', 'pointer-cursor');
+    clickSrcHtmlElem.setAttribute('onmousedown', 'sourceSelected(event);');
     clickSrcContainers.append(clickSrcHtmlElem);
   });
 
-  // TODO TEDDY continue - select the valid item, save it to be checked later
-  activitySoundList.push('../sounds/show.ogg');
-  const correctItem = activityItems[validItemIndex];
-  activitySoundList.push(correctItem.audioPath);
-  challengeCorrectItemName = correctItem.name;
+  selectValidChallengeItem();
+}
 
-  // unbind previously bound mousedown handler; bind the mousedown event function
-  for (const [i, svgElem] of activityObjElemArray.entries()) {
-    svgElem.off('mousedown').mousedown(() => {
-      checkValidAnswer(i === validItemIndex);
-    });
-  }
+const selectValidChallengeItem = () => {
+  // select the valid challenge item, save it to be checked later
+  const validItemIndex = Math.floor((Math.random() * currentActivityItems.length));
+  challengeItem = clickSrcContainers.children()[validItemIndex];
+
+  activitySoundList = [];
+  activitySoundList.push('../sounds/match.ogg'); // potriveste
+  const correctItem = currentActivityItems[validItemIndex];
+  activitySoundList.push(correctItem.soundItem.soundPath);
+
+  currentActivityItems.splice(validItemIndex, 1);
 
   playShowItemAudio();
 }
 
 const sourceSelected = (ev) => {
-  let clickedElem = ev.target;
-  if (selectedElem) {
-    selectedElem.classList.remove('selected');
+  let clickedElem = ev.currentTarget;
+  if (!userSelectedElem) {
+    if (clickedElem.getAttribute('name') === challengeItem.getAttribute('name')) {
+      clickedElem.classList.add('selected');
+      clickedElem.classList.remove('pointer-cursor');
+      userSelectedElem = clickedElem;
+
+      handleValidAnswer(false, false,false);
+    } else {
+      handleInvalidAnswer(true);
+      // in order to have the animation of the error-indicator play after repeatedly clicking on this element
+      const clickedElemClone = clickedElem.cloneNode(true);
+      clickedElemClone.classList.add('error-indicator');
+      clickedElem.parentNode.replaceChild(clickedElemClone, clickedElem);
+    }
   }
-  clickedElem.classList.add('selected');
-  selectedElem = clickedElem;
+}
+
+const validateChallenge = (ev) => {
+  let clickedElem = ev.currentTarget;
+  if (userSelectedElem) {
+    const userSelectedItemAttrName = userSelectedElem.getAttribute('name');
+    const challengeItemAttrName = challengeItem.getAttribute('name');
+    if (clickedElem.id === `gr_${userSelectedItemAttrName}` && userSelectedItemAttrName === challengeItemAttrName) {
+      // uncover the item on the head
+      clickedElem.classList.remove('covered', 'pointer-cursor');
+      removeAttributes(clickedElem, 'onmousedown')
+
+      // remove uncovered item from source clickable list
+      userSelectedElem.remove();
+      userSelectedElem = undefined;
+
+      // check progress
+      checkActivityProgress();
+    } else {
+      handleInvalidAnswer(true);
+    }
+  }
+}
+
+const checkActivityProgress = () => {
+  // no more clickable items?
+  if (clickSrcContainers.children().length <= 0) {
+    checkValidAnswer(true);
+  } else {
+    handleValidAnswer(false, false,false);
+
+    selectValidChallengeItem();
+  }
 }

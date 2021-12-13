@@ -37,6 +37,7 @@
   margin: 0 0 1em 0;
   min-width: 100px;
   min-height: 100px;
+  max-height: 200px;
 
   background-size: contain;
   background-repeat: no-repeat;
@@ -58,4 +59,12 @@
 .covered:hover > path, .covered:hover > circle {
   fill: yellow !important;
   opacity: 1 !important;
+}
+
+.error-indicator {
+  animation: errorAnimation 1s;
+}
+@keyframes errorAnimation {
+  from {background-color: red;}
+  to {background-color: inherit;}
 }

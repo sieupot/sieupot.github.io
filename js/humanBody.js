@@ -17,6 +17,7 @@ jQuery(() => {
 });
 
 const generateChallengeItems = () => {
+  let validItemIndex;
   do {
     validItemIndex = Math.floor((Math.random() * activityItems.length));
   } while (validItemIndex === prevRnd);

@@ -71,25 +71,38 @@ const checkValidAnswer = (isValidAnswer) => {
   modalPanel.dialog(dialogOptions);
 
   if (isValidAnswer) {
-    rightAnswers++;
+    handleValidAnswer(true, true, true);
+  } else {
+    handleInvalidAnswer(true);
+  }
+}
+
+const handleValidAnswer = (doShowSmileFace, doPlayCorrectItemAudio, doStartNewChallenge) => {
+  rightAnswers++;
+  if (doShowSmileFace) {
     resultDivElem.css('opacity', .5).find('div').css('background-image', 'url(../images/smileFace.png)');
     resultDivElem.fadeIn(500);
+  }
+  if (doPlayCorrectItemAudio) {
     let playingCorrectAnswerAudio = new Audio('../sounds/correct.ogg');
     playingAudios.push(playingCorrectAnswerAudio);
     playingCorrectAnswerAudio.addEventListener('ended', () => {
       resultDivElem.css('opacity', 1).hide();
 
       activitySoundList = [];
-      startNewChallenge();
+      if (doStartNewChallenge) {
+        startNewChallenge();
+      }
     });
     playingCorrectAnswerAudio.play();
-    jQuery('#scoreGood > div').html(rightAnswers);
-    jQuery('#scoreGood').effect('highlight', {color: '#acffa3'}, 500);
-
-    scoreAnswerReactionTimeData.completeCurrentActionReactionTimeItem(new Date());
-  } else {
-    handleInvalidAnswer(true);
+  } else if (doStartNewChallenge) {
+    startNewChallenge();
   }
+
+  jQuery('#scoreGood > div').html(rightAnswers);
+  jQuery('#scoreGood').effect('highlight', {color: '#acffa3'}, 500);
+
+  scoreAnswerReactionTimeData.completeCurrentActionReactionTimeItem(new Date());
 }
 
 const handleInvalidAnswer = (doPlayShowItemAudio) => {
