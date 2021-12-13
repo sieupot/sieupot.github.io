@@ -29,7 +29,7 @@ let clickDestContainer = jQuery('#clickDestContainerId > svg');
 
 const generateChallengeItems = () => {
   // load dest resource
-  clickDestContainer.load('../images/humanBody/head_boy.svg', function() {
+  clickDestContainer.load(destImagePath, function() {
     Array.from(document.getElementsByClassName('covered')).forEach(function(item) {
       item.setAttribute('onmousedown', 'event.stopPropagation(); validateChallenge(event);');
     });
