@@ -1,0 +1,79 @@
+<svg viewBox="0 0 2.4386711 0.75567353" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient
+       x1="0"
+       y1="0"
+       x2="1"
+       y2="0"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0,-0.75565486,0.75565486,0,1.2203579,0.75566594)"
+       id="linearGradient14136">
+      <stop
+         style="stop-opacity:1;stop-color:#8b1a41"
+         offset="0"
+         id="stop14132" />
+      <stop
+         style="stop-opacity:1;stop-color:#64003c"
+         offset="1"
+         id="stop14134" />
+    </linearGradient>
+    <linearGradient
+       x1="0"
+       y1="0"
+       x2="1"
+       y2="0"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.27450547,0.82905699,-0.82905699,0.27450547,1.1242951,-0.29173347)"
+       id="linearGradient14156">
+      <stop
+         style="stop-opacity:1;stop-color:#ff6641"
+         offset="0"
+         id="stop14152" />
+      <stop
+         style="stop-opacity:1;stop-color:#b8003c"
+         offset="1"
+         id="stop14154" />
+    </linearGradient>
+    <radialGradient
+       fx="615.13385"
+       fy="1332.8505"
+       cx="615.13385"
+       cy="1332.8505"
+       r="8.7025337"
+       gradientTransform="matrix(0.59274503,0,0,0.11810194,-5.9776401,-13.301703)"
+       id="radialGradient14180"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         style="stop-opacity:1;stop-color:#fff0eb"
+         offset="0"
+         id="stop14172" />
+      <stop
+         style="stop-opacity:1;stop-color:#fff0eb"
+         offset="0.0335196"
+         id="stop14174" />
+      <stop
+         style="stop-opacity:1;stop-color:#ffe7e9"
+         offset="0.977299"
+         id="stop14176" />
+      <stop
+         style="stop-opacity:1;stop-color:#ffe7e9"
+         offset="1"
+         id="stop14178" />
+    </radialGradient>
+  </defs>
+
+  <g id="gr_mouth">
+    <path
+       d="m 1.2025871,0.75570431 c 0.769861,0 1.2371165,-0.68594922 1.2371165,-0.68594922 v 0 c 0,0 -1.1833531,0.93553781 -2.43867114,-0.06972432008 v 0 c 0,0 0.43160024,0.75567354008 1.20155464,0.75567354008"
+       style="fill:url(#linearGradient14136);stroke:none;stroke-width:0.0933392"
+       id="path14138" />
+    <path
+       d="m 1.1672115,0.50452874 c 0.7497932,0 1.2483174,-0.41694602 1.2483174,-0.41694602 v 0 C 1.1970801,0.30020929 0.07383706,0.05603407 0.07383706,0.05603407 v 0 c 0,0 0.52923281,0.44849467 1.09337444,0.44849467"
+       style="fill:url(#linearGradient14156);stroke:none;stroke-width:0.0933392"
+       id="path14158" />
+    <path
+       d="m 1.2138811,0.61746904 c 0.3165129,0 0.5143918,-0.1952654 0.5143918,-0.1952654 v 0 c 0,0 -0.5091649,0.19535854 -1.03858427,-0.0116681 v 0 c 0,0 0.24240172,0.206933 0.52419247,0.206933"
+       style="fill:url(#radialGradient14180);stroke:none;stroke-width:0.0933392"
+       id="path14182" />
+  </g>
+</svg>
