@@ -21,8 +21,8 @@ let clickDestContainer = jQuery('#clickDestContainerId > svg');
 
 const generateChallengeItems = () => {
   // load dest resource
-  clickDestContainer.load(destImagePath, function() {
-    Array.from(document.getElementsByClassName('covered')).forEach(function(item) {
+  clickDestContainer.load(destImagePath, function () {
+    Array.from(document.getElementsByClassName('covered')).forEach(function (item) {
       item.setAttribute('onmousedown', 'event.stopPropagation(); validateChallenge(event);');
     });
   });
@@ -31,7 +31,7 @@ const generateChallengeItems = () => {
   currentActivityItems = Object.assign([], activityItems); // clone the array
   shuffleArray(currentActivityItems); // shuffle items
 
-  currentActivityItems.forEach(function(item) {
+  currentActivityItems.forEach(function (item) {
     let clickSrcHtmlElem = document.createElement('div');
     clickSrcHtmlElem.id = `${item.name}SrcId`;
     clickSrcHtmlElem.setAttribute('name', `${item.name}`);
@@ -67,7 +67,7 @@ const sourceSelected = (ev) => {
       clickedElem.classList.remove('pointer-cursor');
       userSelectedElem = clickedElem;
 
-      handleValidAnswer(false, false,false);
+      handleValidAnswer(false, false, false);
     } else {
       handleInvalidAnswer(true);
       // in order to have the animation of the error-indicator play after repeatedly clicking on this element
@@ -105,7 +105,7 @@ const checkActivityProgress = () => {
   if (clickSrcContainers.children().length <= 0) {
     checkValidAnswer(true);
   } else {
-    handleValidAnswer(false, false,false);
+    handleValidAnswer(false, false, false);
 
     selectValidChallengeItem();
   }

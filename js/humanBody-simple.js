@@ -13,8 +13,8 @@ jQuery(() => {
   resultDivElem = jQuery('div.result');
 
   // load dest resource
-  clickDestContainer.load(destImagePath, function() {
-    Array.from(document.getElementsByClassName('covered')).forEach(function(item) {
+  clickDestContainer.load(destImagePath, function () {
+    Array.from(document.getElementsByClassName('covered')).forEach(function (item) {
       item.setAttribute('onmousedown', 'event.stopPropagation(); validateChallenge(event);');
     });
   });
@@ -30,7 +30,7 @@ const generateChallengeItems = () => {
   challengeItem = activityItems[validItemIndex];
 
   activitySoundList = [];
-  activitySoundList.push('../sounds/show.ogg'); // potriveste
+  activitySoundList.push('../sounds/show.ogg');
   const correctItem = activityItems[validItemIndex];
   activitySoundList.push(correctItem.soundItem.soundPath);
 
@@ -39,11 +39,5 @@ const generateChallengeItems = () => {
 
 const validateChallenge = (ev) => {
   let clickedElem = ev.currentTarget;
-    const challengeItemAttrName = challengeItem.name;
-    if (clickedElem.id === `gr_${challengeItemAttrName}`) {
-
-      checkValidAnswer(true);
-    } else {
-      handleInvalidAnswer(true);
-    }
+  checkValidAnswer(clickedElem.id === `gr_${challengeItem.name}`);
 }
