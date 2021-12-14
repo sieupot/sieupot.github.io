@@ -17,11 +17,10 @@ jQuery(() => {
 });
 
 let clickSrcContainers = jQuery('#clickSrcContainersId');
-let clickDestContainer = jQuery('#clickDestContainerId > svg');
 
 const generateChallengeItems = () => {
   // load dest resource
-  clickDestContainer.load(destImagePath, function () {
+  jQuery('#clickDestContainerId > svg').load(destImagePath, function () {
     Array.from(document.getElementsByClassName('covered')).forEach(function (item) {
       item.setAttribute('onmousedown', 'event.stopPropagation(); validateChallenge(event);');
     });

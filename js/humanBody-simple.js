@@ -2,8 +2,6 @@ let prevRnd;
 let hasDistractors = false; // used when exporting results, as info in the sheet with activity reaction times
 let challengeItem;
 
-let clickDestContainer = jQuery('#clickDestContainerId > svg');
-
 // on page load
 jQuery(() => {
   // declared in the html file
@@ -13,7 +11,7 @@ jQuery(() => {
   resultDivElem = jQuery('div.result');
 
   // load dest resource
-  clickDestContainer.load(destImagePath, function () {
+  jQuery('#clickDestContainerId > svg').load(destImagePath, function () {
     Array.from(document.getElementsByClassName('covered')).forEach(function (item) {
       item.setAttribute('onmousedown', 'event.stopPropagation(); validateChallenge(event);');
     });
