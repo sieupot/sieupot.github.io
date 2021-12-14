@@ -1,0 +1,15 @@
+#contentPanel {
+  display: grid;
+  overflow: auto;
+  margin: 0;
+  grid-template-columns: 1fr;
+  grid-auto-columns: auto;
+  column-gap: 0;
+  height: 100%;
+  grid-template-rows: 1fr;
+}
+
+.covered:hover > path, .covered:hover > circle {
+  fill: yellow !important;
+  opacity: 1 !important;
+}

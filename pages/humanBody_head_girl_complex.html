@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="../css/normalize.css">
   <link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" href="../css/pageLayout.css">
-  <link rel="stylesheet" href="../css/humanBody-head-complex.css">
+  <link rel="stylesheet" href="../css/humanBody-complex.css">
 
   <meta name="theme-color" content="#EFE7E0">
 
@@ -24,7 +24,7 @@
   <script defer src="../js/main.js"></script>
   <script defer src="../js/utils.js"></script>
   <script defer src="../js/activityEngine.js"></script>
-  <script defer src="../js/humanBody-head-complex.js"></script>
+  <script defer src="../js/humanBody-complex.js"></script>
   <!-- inject the template footer into the page -->
   <script defer src="../js/injectors/footerInjector.js"></script>
   <script defer src="../js/injectors/scorePanelInjector.js"></script>
@@ -52,42 +52,42 @@
       let hair = {};
       hair.name = 'hair';
       hair.image = imgPath + "hair_girl.svg";
-      hair.soundItem = hairArtDSoundItem;
+      hair.soundItem = new SoundItem('hair', 'I');
       activityItems.push(hair);
 
       // eyeBrows
       let eyeBrows = {};
       eyeBrows.name = 'eyebrows';
       eyeBrows.image = imgPath + "eyebrows_girl.svg";
-      eyeBrows.soundItem = eyeBrowsArtDSoundItem;
+      eyeBrows.soundItem = new SoundItem('eyeBrows', 'I');
       activityItems.push(eyeBrows);
 
       // eyes
       let eyes = {};
       eyes.name = 'eyes';
       eyes.image = imgPath + "eyes_girl.svg";
-      eyes.soundItem = eyesArtDSoundItem;
+      eyes.soundItem = new SoundItem('eyes', 'I');
       activityItems.push(eyes);
 
       // ears
       let ears = {};
       ears.name = 'ears';
       ears.image = imgPath + "ears_girl.svg";
-      ears.soundItem = earsArtDSoundItem;
+      ears.soundItem = new SoundItem('ears', 'I');
       activityItems.push(ears);
 
       // nose
       let nose = {};
       nose.name = 'nose';
       nose.image = imgPath + "nose_girl.svg";
-      nose.soundItem = noseArtDSoundItem;
+      nose.soundItem = new SoundItem('nose', 'I');
       activityItems.push(nose);
 
       // mouth
       let mouth = {};
       mouth.name = 'mouth';
       mouth.image = imgPath + "mouth_girl.svg";
-      mouth.soundItem = mouthArtDSoundItem;
+      mouth.soundItem = new SoundItem('mouth', 'I');
       activityItems.push(mouth);
     }
   </script>
@@ -102,14 +102,14 @@
 
     <div id="contentPanel">
       <div id="clickSrcContainersId">
-        <!-- content generated in humanBody-head-complex.js -->
+        <!-- content generated in humanBody-complex.js -->
       </div>
 
       <div class="separator"></div>
 
       <div id="clickDestContainerId">
         <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-          <!-- content generated in humanBody-head-complex.js -->
+          <!-- content generated in humanBody-complex.js -->
         </svg>
       </div>
     </div>

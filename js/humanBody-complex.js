@@ -3,14 +3,6 @@ let hasDistractors = false; // used when exporting results, as info in the sheet
 let userSelectedElem, challengeItem;
 let currentActivityItems;
 
-const
-  hairArtDSoundItem = new SoundItem('hair', 'I'),
-  eyeBrowsArtDSoundItem = new SoundItem('eyeBrows', 'I'),
-  eyesArtDSoundItem = new SoundItem('eyes', 'I'),
-  earsArtDSoundItem = new SoundItem('ears', 'I'),
-  noseArtDSoundItem = new SoundItem('nose', 'I'),
-  mouthArtDSoundItem = new SoundItem('mouth', 'I');
-
 // on page load
 jQuery(() => {
   // declared in the html file
