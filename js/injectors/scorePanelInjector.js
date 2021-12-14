@@ -1,5 +1,5 @@
 const scorePanel = `
-<object type="text/xml">
+<object type="text/xml" style="display: none;">
     <script defer src="../js/lib/xlsx.full.min.js"></script>
     <script defer src="../js/activityTimer.js"></script>
 
