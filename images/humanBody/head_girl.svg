@@ -787,7 +787,7 @@
        style="fill:#ffd6bd;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.352778"
        id="path13482" />
   </g>
-  <g id="gr_mouth">
+  <g id="gr_mouth" class="covered pointer-cursor">
     <path
        d="m 22.596558,50.27427 c 0,0 1.792717,3.543122 4.375755,3.543122 2.339738,0 4.84127,-3.357688 4.84127,-3.357688 0,0 -1.603349,1.582951 -4.84127,1.582951 -3.237516,0 -4.375755,-1.768385 -4.375755,-1.768385"
        style="fill:#ff5f56;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.414335"

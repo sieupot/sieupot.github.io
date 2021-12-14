@@ -56,11 +56,6 @@
   opacity: 1 !important;
 }
 
-.covered:hover > path, .covered:hover > circle {
-  fill: yellow !important;
-  opacity: 1 !important;
-}
-
 .error-indicator {
   animation: errorAnimation 1s;
 }

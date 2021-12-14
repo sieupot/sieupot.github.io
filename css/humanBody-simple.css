@@ -8,8 +8,3 @@
   height: 100%;
   grid-template-rows: 1fr;
 }
-
-.covered:hover > path, .covered:hover > circle {
-  fill: yellow !important;
-  opacity: 1 !important;
-}
