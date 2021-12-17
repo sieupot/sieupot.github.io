@@ -80,14 +80,15 @@ const checkValidAnswer = (isValidAnswer) => {
 const handleValidAnswer = (doShowSmileFace, doPlayCorrectItemAudio, doStartNewChallenge) => {
   rightAnswers++;
   if (doShowSmileFace) {
-    resultDivElem.css('opacity', .5).find('div').css('background-image', 'url(../images/smileFace.png)');
+    // ------------------------------------------v display success smaller and top right so that children can see the correct item they have chosen (on a tablet, for the human body activities)
+    resultDivElem.css('opacity', .5).find('div').addClass('action-feedback').css('background-image', 'url(../images/smileFace.png)');
     resultDivElem.fadeIn(500);
   }
   if (doPlayCorrectItemAudio) {
     let playingCorrectAnswerAudio = new Audio('../sounds/correct.ogg');
     playingAudios.push(playingCorrectAnswerAudio);
     playingCorrectAnswerAudio.addEventListener('ended', () => {
-      resultDivElem.css('opacity', 1).hide();
+      resultDivElem.css('opacity', 1).hide().find('div').removeClass('action-feedback');
 
       activitySoundList = [];
       if (doStartNewChallenge) {

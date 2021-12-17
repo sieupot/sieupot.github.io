@@ -71,6 +71,12 @@
   transform: scale(.5);
 }
 
+.result > div.action-feedback {
+  height: calc(50% - 115px);
+  transform: scale(1);
+  background-position: right;
+}
+
 #scoreGood, #scoreBad {
   display: flex;
 }

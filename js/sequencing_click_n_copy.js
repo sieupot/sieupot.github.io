@@ -97,14 +97,6 @@ const itemClicked = (ev) => {
     // remove alphas from clickableId (i.e.: clickable1 -> 1, etc)
     const clickableElemIndex = parseInt(clickableElem.id.replace(/[^\d.-]/g, ''));
     if (clickableElemIndex === okClicksNb) {
-      /*// don't display it for the last successful choice
-      if (okClicksNb < selectedActivitySqLength) {
-        resultDivElem.find('div').css('background-image', 'url(../images/smileFace.png)');
-        resultDivElem.fadeIn(250, () => {
-          resultDivElem.fadeOut(250);
-        });
-      }*/
-
       // don't allow source to be clickable anymore
       removeAttributes(clickableElem, 'canBeClicked', 'onmousedown');
       clickableElem.classList.remove('pointer-cursor', 'error-indicator');
