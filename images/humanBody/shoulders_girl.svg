@@ -1,0 +1,41 @@
+<svg viewBox="0 0 4.843 2.063" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <marker id="DotL" style="overflow:visible" orient="auto">
+      <path transform="matrix(.8 0 0 .8 5.92 .8)" d="m-2.5-1c0 2.76-2.24 5-5 5s-5-2.24-5-5 2.24-5 5-5 5 2.24 5 5z" style="fill-rule:evenodd;fill:context-stroke;stroke-width:1pt;stroke:context-stroke"/>
+    </marker>
+    <marker id="Tail" style="overflow:visible" orient="auto">
+      <g transform="scale(-1.2)">
+        <path d="m-3.805-3.959 4.348 3.959" style="fill:none;stroke-linecap:round;stroke-width:.8;stroke:context-stroke"/>
+        <path d="m-1.287-3.959 4.348 3.959" style="fill:none;stroke-linecap:round;stroke-width:.8;stroke:context-stroke"/>
+        <path d="m1.305-3.959 4.348 3.959" style="fill:none;stroke-linecap:round;stroke-width:.8;stroke:context-stroke"/>
+        <path d="m-3.805 4.178 4.348-3.958" style="fill:none;stroke-linecap:round;stroke-width:.8;stroke:context-stroke"/>
+        <path d="m-1.287 4.178 4.348-3.958" style="fill:none;stroke-linecap:round;stroke-width:.8;stroke:context-stroke"/>
+        <path d="m1.305 4.178 4.348-3.958" style="fill:none;stroke-linecap:round;stroke-width:.8;stroke:context-stroke"/>
+      </g>
+    </marker>
+    <marker id="Arrow2Lend" style="overflow:visible" orient="auto">
+      <path transform="matrix(-1.1,0,0,-1.1,-1.1,0)" d="m8.719 4.034-10.93-4.018 10.93-4.018c-1.745 2.372-1.735 5.617-6e-7 8.035z" style="fill-rule:evenodd;fill:context-stroke;stroke-linejoin:round;stroke-width:.625;stroke:context-stroke"/>
+    </marker>
+    <linearGradient id="linearGradient5660">
+      <stop style="stop-color:#ff8b70" offset="0"/>
+      <stop style="stop-color:#ff8b70;stop-opacity:0" offset="1"/>
+    </linearGradient>
+    <linearGradient id="linearGradient5662" x1="2.437" x2="2.468" y1=".3859" y2="-1.093" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient5660"/>
+    <linearGradient id="linearGradient5787" x1="2.437" x2="2.468" y1=".3859" y2="-1.093" gradientTransform="matrix(.306 0 0 .3427 1.706 .4746)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient5660"/>
+  </defs>
+  <g transform="translate(-.0005805 -.001499)">
+    <g transform="translate(-.005555 .6569)">
+      <rect x="1.84" y="-.6554" width="1.204" height="1.208" style="fill:url(#linearGradient5662);stroke-width:0"/>
+      <g id="gr_shoulders" class="covered pointer-cursor" transform="matrix(.2646 0 0 .2646 -6.759 -13.39)">
+        <path d="m28.45 51.36c-0.7237 0.402-1.074 0.7799-1.831 1.693-0.7046 1.274-1.048 2.338-1.048 2.854 6.45-0.02566 11.41-0.01758 18.31 0.02119-0.06727-1.551-0.9799-2.775-2.012-3.902-0.6382-0.4299-0.6994-0.6678-2.064-1.058-0.5248-0.1488-1.564-0.3045-2.073-0.3546-1.444 0.07966-0.1223 0.7906-2.945 0.8584-2.959-0.06107-1.253-0.8083-3.184-0.8224-1.147 0.0535-2.216 0.2747-3.15 0.7097z" style="fill:#ffa670"/>
+      </g>
+      <path d="m0.7374 0.528 1.339 0.2843" style="fill:#ff7b70;stroke-linecap:round;stroke-width:.065;stroke:#ff7b70"/>
+      <path d="m4.193 0.528-1.339 0.2843" style="fill:#ff7b70;stroke-linecap:round;stroke-width:.065;stroke:#ff7b70"/>
+      <path d="m0.7524 0.5617 1.339 0.2843" style="fill:#ff7b70;stroke-linecap:round;stroke-opacity:.5;stroke-width:.065;stroke:#b57b70"/>
+      <path d="m0.7374 0.528 1.339 0.2843" style="fill:#ff7b70;stroke-linecap:round;stroke-width:.065;stroke:#ff9470"/>
+      <path d="m4.171 0.5579-1.339 0.2843" style="fill:#ff7b70;stroke-linecap:round;stroke-opacity:.5;stroke-width:.065;stroke:#b57b70"/>
+      <path d="m4.193 0.528-1.339 0.2843" style="fill:#ff7b70;stroke-linecap:round;stroke-width:.065;stroke:#ff9470"/>
+      <rect x="2.27" y=".25" width=".3686" height=".4139" style="fill:url(#linearGradient5787);marker-end:url(#DotL);marker-mid:url(#Tail);marker-start:url(#Arrow2Lend);stroke-width:0"/>
+    </g>
+  </g>
+</svg>

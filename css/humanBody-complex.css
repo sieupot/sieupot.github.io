@@ -51,6 +51,11 @@
   background-color: rgba(255, 255, 0, .1);
 }
 
+.covered:hover path, .covered:hover circle {
+  fill: yellow !important;
+  opacity: .5 !important;
+}
+
 .covered > path, .covered > circle {
   fill: #aaa !important;
   opacity: 1 !important;

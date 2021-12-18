@@ -1,0 +1,136 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Arata Corpul Uman</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/icon.png">
+
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/pageLayout.css">
+  <link rel="stylesheet" href="../css/humanBody-complex.css">
+
+  <meta name="theme-color" content="#EFE7E0">
+
+  <script defer src="../js/lib/modernizr-3.8.0.min.js"></script>
+  <script defer src="../js/lib/jquery.min.js"></script>
+  <script defer src="../js/lib/jquery-ui-1.12.1.min.js"></script>
+
+  <script defer src="../js/main.js"></script>
+  <script defer src="../js/utils.js"></script>
+  <script defer src="../js/activityEngine.js"></script>
+  <script defer src="../js/humanBody-complex.js"></script>
+  <!-- inject the template footer into the page -->
+  <script defer src="../js/injectors/footerInjector.js"></script>
+  <script defer src="../js/injectors/scorePanelInjector.js"></script>
+  <script defer type="text/javascript">
+    const imgPath = "../images/humanBody/";
+    const sndPath = "../sounds/humanBody/";
+
+    class SoundItem {
+      /**
+       *
+       * @param soundBaseFileName
+       * @param soundArticle: Indefinite, Definite, Possessive
+       */
+      constructor(soundBaseFileName, soundArticle = '') {
+        this.soundPath = `${sndPath}${soundBaseFileName}${soundArticle}.ogg`;
+      }
+    }
+
+    const destImagePath = '../images/humanBody/humanBody_girl.svg';
+
+    const initActivityItems = () => {
+      activityItems = [];
+
+      // head
+      let head = {};
+      head.name = 'head';
+      head.image = imgPath + "head_girl_hh.svg";
+      head.soundItem = new SoundItem('head');
+      activityItems.push(head);
+
+      // shoulders
+      let shoulders = {};
+      shoulders.name = 'shoulders';
+      shoulders.image = imgPath + "shoulders_girl.svg";
+      shoulders.soundItem = new SoundItem('shoulders');
+      activityItems.push(shoulders);
+
+      // arms
+      let arms = {};
+      arms.name = 'arms';
+      arms.image = imgPath + "arms_girl.svg";
+      arms.soundItem = new SoundItem('arms');
+      activityItems.push(arms);
+
+      // chest
+      let chest = {};
+      chest.name = 'chest';
+      chest.image = imgPath + "chest_girl.svg";
+      chest.soundItem = new SoundItem('chest');
+      activityItems.push(chest);
+
+      // belly
+      let belly = {};
+      belly.name = 'belly';
+      belly.image = imgPath + "belly_girl.svg";
+      belly.soundItem = new SoundItem('belly');
+      activityItems.push(belly);
+
+      // palms
+      let palms = {};
+      palms.name = 'palms';
+      palms.image = imgPath + "palms_girl.svg";
+      palms.soundItem = new SoundItem('palms');
+      activityItems.push(palms);
+
+      // legs
+      let legs = {};
+      legs.name = 'legs';
+      legs.image = imgPath + "legs_girl.svg";
+      legs.soundItem = new SoundItem('legs');
+      activityItems.push(legs);
+
+      // knees
+      let knees = {};
+      knees.name = 'knees';
+      knees.image = imgPath + "knees_girl.svg";
+      knees.soundItem = new SoundItem('knees');
+      activityItems.push(knees);
+    }
+  </script>
+</head>
+
+<body>
+  <div id="content">
+    <div id="dialogDiv"></div>
+    <div class="result">
+      <div onmousedown="startActivity();" class="pointer-cursor start-activity"></div>
+    </div>
+
+    <div id="contentPanel">
+      <div id="clickSrcContainersId">
+        <!-- content generated in humanBody-complex.js -->
+      </div>
+
+      <div class="separator"></div>
+
+      <div id="clickDestContainerId">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+          <!-- content generated in humanBody-complex.js -->
+        </svg>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="scorePanelId"><!-- score panel injected --></div>
+</body>
+
+</html>
