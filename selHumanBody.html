@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/nav-menu.css">
     <link rel="stylesheet" href="css/infoPanel.css">
     <link rel="stylesheet" href="css/selActivity.css">
+    <link rel="stylesheet" href="css/fontawesome-free-5.15.3-web/css/all.css">
 
     <meta name="theme-color" content="#EFE7E0">
 
@@ -36,7 +37,7 @@
     </div>
 
     <div id="bodyContentDivId">
-      <div id="infoPanel" pgLocationMsg="Activități generice" pgDescriptionMsg="Alege activitatea dorită">
+      <div id="infoPanel" pgLocationMsg="Corpul omenesc" pgDescriptionMsg="Alege activitatea dorită">
       </div>
 
       <div id="contentPanelId">
@@ -47,31 +48,6 @@
         </div>
 
         <div id="selActivityDivId">
-          <a onclick="navigateTo('pages/actionsSimple.html');" class="activity-button pointer-cursor">
-            <img height="75" alt="actionsImg" src="images/app/activityIcons/actionsSimple.svg"/>
-            <span>
-              acțiuni (simplu)
-            </span>
-          </a>
-          <a onclick="navigateTo('pages/actionsComplex.html');" class="activity-button pointer-cursor">
-            <img height="75" alt="actionsImg" src="images/app/activityIcons/actionsComplex.svg"/>
-            <span>
-              acțiuni (complex)
-            </span>
-          </a>
-          <object></object>
-
-          <a onclick="navigateTo('pages/humanBody_head_boy_simple.html');" class="activity-button pointer-cursor">
-            <object class="difficulty">
-              <object class="far fa-star checked"></object>
-            </object>
-            <img height="75" alt="humanBodyHeadBoyImg" src="images/humanBody/head_boy.svg"/>
-            <span>
-              cap băiețel
-              <br/>
-              (simplu)
-            </span>
-          </a>
           <a onclick="navigateTo('pages/humanBody_head_girl_simple.html');" class="activity-button pointer-cursor">
             <object class="difficulty">
               <object class="far fa-star checked"></object>
@@ -83,20 +59,19 @@
               (simplu)
             </span>
           </a>
-          <object></object>
-
-          <a onclick="navigateTo('pages/humanBody_head_boy_complex.html');" class="activity-button pointer-cursor">
+          <a onclick="navigateTo('pages/humanBody_head_boy_simple.html');" class="activity-button pointer-cursor">
             <object class="difficulty">
-              <object class="fa fa-star checked"></object>
-              <object class="fa fa-star checked"></object>
+              <object class="far fa-star checked"></object>
             </object>
             <img height="75" alt="humanBodyHeadBoyImg" src="images/humanBody/head_boy.svg"/>
             <span>
               cap băiețel
               <br/>
-              (complex)
+              (simplu)
             </span>
           </a>
+          <object></object>
+
           <a onclick="navigateTo('pages/humanBody_head_girl_complex.html');" class="activity-button pointer-cursor">
             <object class="difficulty">
               <object class="fa fa-star checked"></object>
@@ -105,6 +80,18 @@
             <img height="75" alt="humanBodyHeadGirlImg" src="images/humanBody/head_girl.svg"/>
             <span>
               cap fetiță
+              <br/>
+              (complex)
+            </span>
+          </a>
+          <a onclick="navigateTo('pages/humanBody_head_boy_complex.html');" class="activity-button pointer-cursor">
+            <object class="difficulty">
+              <object class="fa fa-star checked"></object>
+              <object class="fa fa-star checked"></object>
+            </object>
+            <img height="75" alt="humanBodyHeadBoyImg" src="images/humanBody/head_boy.svg"/>
+            <span>
+              cap băiețel
               <br/>
               (complex)
             </span>
@@ -171,50 +158,6 @@
               corpul uman
               <br/>
               (abstract)
-            </span>
-          </a>
-
-          <a onclick="navigateTo('pages/opposites.html');" class="activity-button pointer-cursor">
-            <img height="75" alt="humanBodyImg" src="images/app/activityIcons/opposites.svg"/>
-            <span>
-              noțiuni opuse
-            </span>
-          </a>
-          <a onclick="navigateTo('pages/spPos1.html');" class="activity-button pointer-cursor">
-            <img height="75" alt="spatialPositioning1Img" src="images/app/activityIcons/spPos1.svg"/>
-            <span>
-              poziționare spațială 1
-            </span>
-          </a>
-          <a onclick="navigateTo('pages/spPos2.html');" class="activity-button pointer-cursor">
-            <img height="75" alt="spatialPositioning2Img" src="images/app/activityIcons/spPos2.svg"/>
-            <span>
-              poziționare spațială 2
-            </span>
-          </a>
-
-          <a onclick="navigateTo('pages/sequencing_dnd.html');" class="activity-button pointer-cursor">
-            <img height="75" alt="sequencingImg" src="images/app/activityIcons/sequencing_dnd.svg"/>
-            <span>
-              secvențiere
-              <br/>
-              (drag and drop)
-            </span>
-          </a>
-          <a onclick="navigateTo('pages/sequencing_click.html');" class="activity-button pointer-cursor">
-            <img height="75" alt="sequencingImg" src="images/app/activityIcons/sequencing_click.svg"/>
-            <span>
-              secvențiere
-              <br/>
-              (click)
-            </span>
-          </a>
-          <a onclick="navigateTo('pages/sequencing_click_n_copy.html');" class="activity-button pointer-cursor">
-            <img height="75" alt="actionsImg" src="images/app/activityIcons/sequencing_click_n_copy.svg"/>
-            <span>
-              secvențiere
-              <br/>
-              (click si copiere)
             </span>
           </a>
 

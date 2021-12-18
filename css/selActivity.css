@@ -27,6 +27,17 @@
   position: relative;
   min-height: 114px;
 }
+.activity-button > object.difficulty {
+  position: absolute;
+  right: .5em;
+  top: .5em;
+}
+object.difficulty > object.checked {
+  color: #ff9900;
+}
+object.difficulty > object.checked-r {
+  color: #ff0000;
+}
 .activity-button > img {
   margin: auto;
 }
