@@ -138,6 +138,7 @@ canvas {
   text-decoration: none;
   color: #226473;
   padding-left: 47px;
+  background-size: 30px;
 }
 
 .pointer-cursor {
