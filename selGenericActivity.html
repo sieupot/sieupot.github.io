@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/nav-menu.css">
     <link rel="stylesheet" href="css/infoPanel.css">
     <link rel="stylesheet" href="css/selActivity.css">
+    <link rel="stylesheet" href="css/fontawesome-free-5.15.3-web/css/all.css">
 
     <meta name="theme-color" content="#EFE7E0">
 
@@ -48,12 +49,19 @@
 
         <div id="selActivityDivId">
           <a onclick="navigateTo('pages/actionsSimple.html');" class="activity-button pointer-cursor">
+            <object class="difficulty">
+              <object class="far fa-star checked"></object>
+            </object>
             <img height="75" alt="actionsImg" src="images/app/activityIcons/actionsSimple.svg"/>
             <span>
               acțiuni (simplu)
             </span>
           </a>
           <a onclick="navigateTo('pages/actionsComplex.html');" class="activity-button pointer-cursor">
+            <object class="difficulty">
+              <object class="fa fa-star checked"></object>
+              <object class="fa fa-star checked"></object>
+            </object>
             <img height="75" alt="actionsImg" src="images/app/activityIcons/actionsComplex.svg"/>
             <span>
               acțiuni (complex)
@@ -67,6 +75,9 @@
               noțiuni opuse
             </span>
           </a>
+          <object></object>
+          <object></object>
+
           <a onclick="navigateTo('pages/spPos1.html');" class="activity-button pointer-cursor">
             <img height="75" alt="spatialPositioning1Img" src="images/app/activityIcons/spPos1.svg"/>
             <span>
@@ -79,6 +90,7 @@
               poziționare spațială 2
             </span>
           </a>
+          <object></object>
 
           <a onclick="navigateTo('pages/sequencing_dnd.html');" class="activity-button pointer-cursor">
             <img height="75" alt="sequencingImg" src="images/app/activityIcons/sequencing_dnd.svg"/>
