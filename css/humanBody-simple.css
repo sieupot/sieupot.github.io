@@ -11,5 +11,6 @@
 
 .covered:hover path, .covered:hover circle {
   fill: yellow !important;
-  opacity: .5 !important;
+  opacity: 1 !important;
+  filter: drop-shadow(0 0 1px rgb(255, 255, 176));
 }
