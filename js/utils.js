@@ -34,7 +34,14 @@ const getUrlParameter = (sParam) => {
  * @param includeUrlParams include url params
  */
 const navigateTo = (pageLocation, includeUrlParams = true) => {
-  window.location = pageLocation + (includeUrlParams ? window.location.search: '');
+  if (includeUrlParams) {
+	if (pageLocation.indexOf('?') >= 0) {
+	  // if pageLocation already contains params, append window..ocation.search params without the "?" delimiter but replace it with the "&" delimiter
+	  pageLocation += '&' + window.location.search.substring(1);	
+	}
+  }
+  
+  window.location = pageLocation;
 }
 
 /**

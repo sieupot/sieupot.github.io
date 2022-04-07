@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/nav-menu.css">
     <link rel="stylesheet" href="css/infoPanel.css">
     <link rel="stylesheet" href="css/selActivity.css">
+    <link rel="stylesheet" href="css/fontawesome-free-5.15.3-web/css/all.css">
 
     <meta name="theme-color" content="#EFE7E0">
 
@@ -75,13 +76,29 @@
           <object></object>
           <object></object>
 
-          <a onclick="navigateTo('pages/colors.html');" class="activity-button pointer-cursor">
+          <a onclick="navigateTo('pages/colors.html?at=s');" class="activity-button pointer-cursor">
+           	<object class="difficulty">
+              <object class="far fa-star checked"></object>
+            </object>
             <img height="75" alt="colorsImg" src="images/app/activityIcons/colors.svg"/>
             <span>
               culori
+              <br/>
+              (simplu)
             </span>
           </a>
-          <object></object>
+          <a onclick="navigateTo('pages/colors.html?at=c');" class="activity-button pointer-cursor">
+          	<object class="difficulty">
+              <object class="fa fa-star checked"></object>
+              <object class="fa fa-star checked"></object>
+            </object>
+            <img height="75" alt="colorsImg" src="images/app/activityIcons/colors.svg"/>
+            <span>
+              culori
+			  <br/>
+              (complex)
+            </span>
+          </a>
           <object></object>
 
           <a onclick="navigateTo('pages/animalsTamed.html');" class="activity-button pointer-cursor">

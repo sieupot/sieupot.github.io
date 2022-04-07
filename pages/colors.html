@@ -31,18 +31,28 @@
     <script type="text/javascript">
       const sndPath = "../sounds/colors/";
       const initActivityItems = () => {
-        activityItems = [
+    	const activityType = getUrlParameter('at');
+        const activityItemsBasic = [
                 {name: 'red', audioPath: sndPath + 'red.ogg'},
                 {name: 'green', audioPath: sndPath + 'green.ogg'},
                 {name: 'blue', audioPath: sndPath + 'blue.ogg'},
-                {name: 'pink', audioPath: sndPath + 'pink.ogg'},
                 {name: 'yellow', audioPath: sndPath + 'yellow.ogg'},
-                {name: 'orange', audioPath: sndPath + 'orange.ogg'},
-                {name: 'violet', audioPath: sndPath + 'violet.ogg'},
-                {name: 'brown', audioPath: sndPath + 'brown.ogg'},
-                {name: 'gray', audioPath: sndPath + 'gray.ogg'},
-                {name: 'black', audioPath: sndPath + 'black.ogg'},
-        ]
+        ];
+
+        let activityItemsAdvanced = [];
+        if (activityType === 'c') {
+       	  activityItemsAdvanced = [
+                 {name: 'pink', audioPath: sndPath + 'pink.ogg'},
+                 {name: 'orange', audioPath: sndPath + 'orange.ogg'},
+                 {name: 'violet', audioPath: sndPath + 'violet.ogg'},
+                 {name: 'brown', audioPath: sndPath + 'brown.ogg'},
+                 {name: 'gray', audioPath: sndPath + 'gray.ogg'},
+                 {name: 'black', audioPath: sndPath + 'black.ogg'},
+       	  ];
+        }
+        
+        activityItems = activityItemsBasic.concat(activityItemsAdvanced);
+        console.log(activityItems);
       }
     </script>
   </head>
