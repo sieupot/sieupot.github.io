@@ -101,8 +101,8 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid black;
-  background: rgba(255, 255, 255, .5) url('../images/app/profileSettings.svg') no-repeat center;
+  border: 2px solid #226473;
+  background: rgb(255, 255, 255) url('../images/app/profileSettings.svg') no-repeat center;
   background-size: 30px;
 }
 
