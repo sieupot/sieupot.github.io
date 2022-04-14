@@ -100,14 +100,14 @@ const ExportResultDataBuilder = class {
     this.timeString = timeString;
     this.activityName = activityName;
     this.patientName = (patientName && patientName.trim()) ? patientName : '-';
-    this.patientAge = (patientAge && patientAge.trim()) ? patientAge + ' (ani)' : '-';
+    this.patientAge = (patientAge && patientAge.trim()) ? `${patientAge} (ani)` : '-';
     this.scoreCountGood = scoreCountGood;
     this.scoreCountBad = scoreCountBad;
     this.activityDurationString = activityDurationString;
   }
 
   // build the HTML table rows that will be used for rendering the xlsx data
-  buildExportHTMLRows = () => {
+  buildExportHTMLRows() {
     let rows = `<tr><td colspan="3" class="bold">Nume activitate:</td><td colspan="4" class="bold">${this.activityName}</td></tr>`;
     rows += `<tr><td colspan="3">Data:</td><td colspan="4">${this.dateString}</td></tr>tr>`;
     rows += `<tr><td colspan="3">Ora:</td><td colspan="4">${this.timeString}</td></tr>`;
@@ -132,20 +132,20 @@ class ScoreAnswerReactionTimeData {
     this.answerReactionTimeItems = [];
   }
 
-  addAnswerReactionTimeItem = (startDateTime, challengeName) => {
+  addAnswerReactionTimeItem(startDateTime, challengeName) {
     const answerReactionTimeItem = new AnswerReactionTimeItem(startDateTime, challengeName);
     this.answerReactionTimeItems.push(answerReactionTimeItem);
   }
 
-  updateFailuresCurrentAnswerReactionTimeItem = () => {
+  updateFailuresCurrentAnswerReactionTimeItem() {
     ++this.answerReactionTimeItems[this.answerReactionTimeItems.length - 1].nbFailures;
   }
 
-  completeCurrentActionReactionTimeItem = (endDateTime) => {
+  completeCurrentActionReactionTimeItem(endDateTime) {
     this.answerReactionTimeItems[this.answerReactionTimeItems.length - 1].challengeEndDateTime = endDateTime;
   }
 
-  buildExportReactionTimesHTMLRows = () => {
+  buildExportReactionTimesHTMLRows() {
     let rows = `<tr><td colspan="2">Nume activitate:</td><td colspan="4">${this.activityName}</td></tr>`;
     if (hasDistractors) {
       rows += `<tr><td colspan="2">Numar distractori:</td><td>${this.nbDistractors}</td></tr>`;
@@ -169,15 +169,15 @@ class AnswerReactionTimeItem {
     this.nbFailures = 0; // how many wrong answers were given until the correct answer was chosen
   }
 
-  buildExportHTMLRow = () => {
+  buildExportHTMLRow() {
     return `<tr><td colspan="2">${this.challengeName}</td><td colspan="4">${this.getMinutesSecondsDelta()}</td><td colspan="4">${this.nbFailures}</td></tr>`;
   }
 
-  isComplete = () => {
+  isComplete() {
     return this.challengeEndDateTime > this.challengeStartDateTime;
   }
 
-  getMinutesSecondsDelta = () => {
+  getMinutesSecondsDelta() {
     const deltaDate = new Date(this.challengeEndDateTime - this.challengeStartDateTime);
     return `${pad(deltaDate.getMinutes())}:${pad(deltaDate.getSeconds())}`;
   }

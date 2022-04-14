@@ -3,9 +3,7 @@
  * @param str the string to check for duplicate chars
  * @returns {boolean} true if duplicate chars were found, false otherwise
  */
-const isIsogram = (str) => {
-  return !/(.).*\1/.test(str);
-}
+const isIsogram = (str) => !/(.).*\1/.test(str);
 
 /**
  * get url param value
