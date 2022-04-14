@@ -1,6 +1,7 @@
 let prevRnd;
 let hasDistractors = false; // used when exporting results, as info in the sheet with activity reaction times
-let userSelectedElem, challengeItem;
+let userSelectedElem;
+let challengeItem;
 let currentActivityItems;
 
 // on page load

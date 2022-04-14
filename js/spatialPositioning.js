@@ -1,14 +1,12 @@
 let hasDistractors = false; // used when exporting results, as info in the sheet with activity reaction times
 
-const
-  sndCommonPath = "../sounds/common/",
-
-  inSoundItem = new SoundItem('in', '', true),
-  aboveSoundItem = new SoundItem('above', '', true),
-  underSoundItem = new SoundItem('under', '', true),
-  nearSoundItem = new SoundItem('near', '', true),
-  beforeSoundItem = new SoundItem('before', '', true),
-  behindSoundItem = new SoundItem('behind', '', true);
+const sndCommonPath = "../sounds/common/";
+const inSoundItem = new SoundItem('in', '', true);
+const aboveSoundItem = new SoundItem('above', '', true);
+const underSoundItem = new SoundItem('under', '', true);
+const nearSoundItem = new SoundItem('near', '', true);
+const beforeSoundItem = new SoundItem('before', '', true);
+const behindSoundItem = new SoundItem('behind', '', true);
 
 // on page load
 jQuery(() => {
@@ -49,14 +47,14 @@ const generateChallengeItems = () => {
   playShowItemAudio();
 }
 
-const setupAnswer = (objElem, selectedActivityItem) => {
+const setupAnswer = (objElem, {images, soundItems, name}) => {
   // extract the image to display for this first activity item
-  let imagePath = selectedActivityItem.images[Math.floor((Math.random() * selectedActivityItem.images.length))];
+  let imagePath = images[Math.floor((Math.random() * images.length))];
   // randomly determine whether this is the correct answer or not
   let isCorrectAnswer = extractRandomEntryAndSplice(answerOptionValues);
   if (isCorrectAnswer) {
-    activitySoundList = activitySoundList.concat(selectedActivityItem.soundItems);
-    challengeCorrectItemName = selectedActivityItem.name;
+    activitySoundList = activitySoundList.concat(soundItems);
+    challengeCorrectItemName = name;
   }
   objElem.load(imagePath);
   objElem.off('mousedown').mousedown(() => {

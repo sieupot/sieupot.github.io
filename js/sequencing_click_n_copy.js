@@ -13,7 +13,8 @@ jQuery(() => {
   modalPanel.dialog(dialogOptions);
 });
 
-let okClicksNb = 0, selectedActivitySqLength = 0;
+let okClicksNb = 0;
+let selectedActivitySqLength = 0;
 let destContainers = jQuery('#destContainersId');
 let srcContainers = jQuery('#srcContainersId');
 

@@ -23,7 +23,8 @@ const dialogOptions = {
   },
 };
 
-let modalPanel, resultDivElem;
+let modalPanel;
+let resultDivElem;
 
 const initActivity = (itemClass = 'item') => {
   modalPanel = jQuery('#dialogDiv');

@@ -1,65 +1,64 @@
 let hasDistractors = false; // used when exporting results, as info in the sheet with activity reaction times
 
 // on page load
-const
-  sndCommonPath = "../sounds/common/",
+const sndCommonPath = "../sounds/common/";
 
   // verbs
-  clapsSoundItem = new SoundItem('claps'),
-  drawsSoundItem = new SoundItem('draws'),
-  drinksSoundItem = new SoundItem('drinks'),
-  makesSoundItem = new SoundItem('makes'),
-  playsSoundItem = new SoundItem('plays'),
-  singsSoundItem = new SoundItem('sings'),
-  throwsSoundItem = new SoundItem('throws'),
-  washesSoundItem = new SoundItem('washes'),
-  writesSoundItem = new SoundItem('writes'),
-  blowsSoundItem = new SoundItem('blows'),
-  sleepsSoundItem = new SoundItem('sleeps'),
-  walksSoundItem = new SoundItem('walks'),
-  readsSoundItem = new SoundItem('reads'),
-  looksSoundItem = new SoundItem('looks'),
-  climbsSoundItem = new SoundItem('climbs'),
-  smellsSoundItem = new SoundItem('smells'),
-  runsSoundItem = new SoundItem('runs'),
-  dancesSoundItem = new SoundItem('dances'),
-  dressesSoundItem = new SoundItem('dresses'),
-  putsShoesOnSoundItem = new SoundItem('putsShoesOn'),
-  combsSoundItem = new SoundItem('combs'),
-  criesSoundItem = new SoundItem('cries'),
-  broomsSoundItem = new SoundItem('brooms'),
-  listensSoundItem = new SoundItem('listens'),
-  laughsSoundItem = new SoundItem('laughs'),
-  jumpsSoundItem = new SoundItem('jumps'),
-  eatsSoundItem = new SoundItem('eats'),
+const clapsSoundItem = new SoundItem('claps');
+const drawsSoundItem = new SoundItem('draws');
+const drinksSoundItem = new SoundItem('drinks');
+const makesSoundItem = new SoundItem('makes');
+const playsSoundItem = new SoundItem('plays');
+const singsSoundItem = new SoundItem('sings');
+const throwsSoundItem = new SoundItem('throws');
+const washesSoundItem = new SoundItem('washes');
+const writesSoundItem = new SoundItem('writes');
+const blowsSoundItem = new SoundItem('blows');
+const sleepsSoundItem = new SoundItem('sleeps');
+const walksSoundItem = new SoundItem('walks');
+const readsSoundItem = new SoundItem('reads');
+const looksSoundItem = new SoundItem('looks');
+const climbsSoundItem = new SoundItem('climbs');
+const smellsSoundItem = new SoundItem('smells');
+const runsSoundItem = new SoundItem('runs');
+const dancesSoundItem = new SoundItem('dances');
+const dressesSoundItem = new SoundItem('dresses');
+const putsShoesOnSoundItem = new SoundItem('putsShoesOn');
+const combsSoundItem = new SoundItem('combs');
+const criesSoundItem = new SoundItem('cries');
+const broomsSoundItem = new SoundItem('brooms');
+const listensSoundItem = new SoundItem('listens');
+const laughsSoundItem = new SoundItem('laughs');
+const jumpsSoundItem = new SoundItem('jumps');
+const eatsSoundItem = new SoundItem('eats');
 
   // nouns
-  boyArtDSoundItem = new SoundItem('boy', 'D'),
-  girlArtDSoundItem = new SoundItem('girl', 'D'),
+const boyArtDSoundItem = new SoundItem('boy', 'D');
+const girlArtDSoundItem = new SoundItem('girl', 'D');
   // +
-  palmsISoundItem = new SoundItem('palms', "I"),
-  handsISoundItem = new SoundItem('hands', "I"),
-  waterISoundItem = new SoundItem('water', "I"),
-  balloonsISoundItem = new SoundItem('balloons', "I"),
-  pianoISoundItem = new SoundItem('piano', "I"),
-  ballDSoundItem = new SoundItem('ball', "D"),
-  basketISoundItem = new SoundItem('basket', "I"),
-  faceISoundItem = new SoundItem('face', "I"),
-  bathISoundItem = new SoundItem('bath', "I"),
-  candlesISoundItem = new SoundItem('candles', "I"),
-  watchISoundItem = new SoundItem('watch', "I"),
-  flowerDSoundItem = new SoundItem('flower', "D"),
-  musicISoundItem = new SoundItem('music', "I"),
+const palmsISoundItem = new SoundItem('palms', "I");
+const handsISoundItem = new SoundItem('hands', "I");
+const waterISoundItem = new SoundItem('water', "I");
+const balloonsISoundItem = new SoundItem('balloons', "I");
+const pianoISoundItem = new SoundItem('piano', "I");
+const ballDSoundItem = new SoundItem('ball', "D");
+const basketISoundItem = new SoundItem('basket', "I");
+const faceISoundItem = new SoundItem('face', "I");
+const bathISoundItem = new SoundItem('bath', "I");
+const candlesISoundItem = new SoundItem('candles', "I");
+const watchISoundItem = new SoundItem('watch', "I");
+const flowerDSoundItem = new SoundItem('flower', "D");
+const musicISoundItem = new SoundItem('music', "I");
 
   // se (articol reflexiv)
-  thirdSgReflexiveArtSoundItem = new SoundItem('thirdSgReflexiveArt', '', true),
+const thirdSgReflexiveArtSoundItem = new SoundItem('thirdSgReflexiveArt', '', true);
   // pe
-  aboveSoundItem = new SoundItem('above', '', true),
+const aboveSoundItem = new SoundItem('above', '', true);
   // din
-  fromSoundItem = new SoundItem('from', '', true),
+const fromSoundItem = new SoundItem('from', '', true);
   // la
-  atSoundItem = new SoundItem('at', '', true),
-  inSoundItem = new SoundItem('in', '', true);
+const atSoundItem = new SoundItem('at', '', true);
+const inSoundItem = new SoundItem('in', '', true);
 
 jQuery(() => {
   // declared in the html file

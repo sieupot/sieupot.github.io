@@ -13,7 +13,8 @@ jQuery(() => {
   modalPanel.dialog(dialogOptions);
 });
 
-let okClicksNb = 0, selectedActivitySqLength = 0;
+let okClicksNb = 0;
+let selectedActivitySqLength = 0;
 let itemsContainerId = jQuery('#itemsContainerId');
 
 const generateClickableHtmlElem = (index, imagePath) => {
