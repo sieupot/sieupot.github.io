@@ -25,6 +25,7 @@ const dialogOptions = {
 
 let modalPanel;
 let resultDivElem;
+let score = new Score();
 
 const initActivity = (itemClass = 'item') => {
   modalPanel = jQuery('#dialogDiv');
@@ -48,7 +49,7 @@ const startNewChallenge = () => {
   generateChallengeItems();
 
   // initialize a new reaction time item
-  scoreAnswerReactionTimeData.addAnswerReactionTimeItem(new Date(), challengeCorrectItemName);
+  score.addAnswerReactionTimeItem(new Date(), challengeCorrectItemName);
 }
 
 /**
@@ -104,7 +105,7 @@ const handleValidAnswer = (doShowSmileFace, doPlayCorrectItemAudio, doStartNewCh
   jQuery('#scoreGood > div').html(rightAnswers);
   jQuery('#scoreGood').effect('highlight', {color: '#acffa3'}, 500);
 
-  scoreAnswerReactionTimeData.completeCurrentActionReactionTimeItem(new Date());
+  score.completeCurrentActionReactionTimeItem(new Date());
 }
 
 const handleInvalidAnswer = (doPlayShowItemAudio) => {
@@ -124,7 +125,7 @@ const handleInvalidAnswer = (doPlayShowItemAudio) => {
   jQuery('#scoreBad > div').html(wrongAnswers);
   jQuery('#scoreBad').effect('highlight', {color: '#ff9c9c'}, 500);
 
-  scoreAnswerReactionTimeData.updateFailuresCurrentAnswerReactionTimeItem();
+  score.updateFailuresCurrentAnswerReactionTimeItem();
 }
 
 const resetActivityItems = () => {
@@ -144,7 +145,7 @@ const resetSounds = () => {
 const playShowItemAudio = (repeat = true) => {
   resetActivityItems();
 
-  if (dlResultsModalPanel && dlResultsModalPanel.is(":visible")) {
+  if (score.dlResultsModalPanel && score.dlResultsModalPanel.is(":visible")) {
     // don't repeat the command and reschedule next repeat
     if (repeat && !showItemSoundInterval) {
       showItemSoundInterval = setInterval(playShowItemAudio, getCommandRepeatInterval());
