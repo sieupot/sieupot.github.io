@@ -23,11 +23,11 @@
 
     <script defer src="../js/main.js"></script>
     <script defer src="../js/utils.js"></script>
+    <script defer src="../js/modules/score.js"></script>
     <script defer src="../js/activityEngine.js"></script>
     <script defer src="../js/colors.js"></script>
     <!-- inject the template footer into the page -->
     <script defer src="../js/injectors/footerInjector.js"></script>
-    <script defer src="../js/injectors/scorePanelInjector.js"></script>
     <script type="text/javascript">
       const sndPath = "../sounds/colors/";
       const initActivityItems = () => {
@@ -52,7 +52,6 @@
         }
         
         activityItems = activityItemsBasic.concat(activityItemsAdvanced);
-        console.log(activityItems);
       }
     </script>
   </head>

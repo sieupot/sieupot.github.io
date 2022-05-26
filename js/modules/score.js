@@ -1,3 +1,4 @@
+// TODO: Perhaps thia could be moved in the activityEngine.js
 const scorePanel = `
 <object type="text/xml" style="display: none;">
     <script defer src="../js/lib/xlsx.full.min.js"></script>
@@ -50,6 +51,7 @@ const scorePanel = `
 
 class Score {
 	constructor () {
+// TODO: Perhaps thia could be moved in the activityEngine.js
 		jQuery('#scorePanelId').append(scorePanel);
 
 		this.dlResultsModalPanel = jQuery('#downloadResultsFormId');
