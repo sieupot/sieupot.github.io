@@ -1,3 +1,4 @@
+// TODO: Perhaps thia could be moved in the activityEngine.js
 const scorePanel = `
 <object type="text/xml" style="display: none;">
     <script defer src="../js/lib/xlsx.full.min.js"></script>
@@ -21,7 +22,7 @@ const scorePanel = `
           </div>
         </div>
         <div id="downloadResultsContainerId">
-          <input type="button" name="download results" title="descarcă rezultate Excel (.xlsx)" onclick="showDlResultsPopup();" class="dl-res-btn"/>
+          <input type="button" name="download results" title="descarcă rezultate Excel (.xlsx)" onclick="score.showDlResultsPopup();" class="dl-res-btn"/>
 
           <table id="tblExportId" style="display:none"></table>
 
@@ -29,7 +30,7 @@ const scorePanel = `
             <div class="modal-content">
               <div class="modal-title">
                 <span class="title">Export rezultate</span>
-                <span class="close" onclick="dlResultsModalPanel.hide();"><i class="fa fa-times"></i></span>
+                <span class="close" onclick="score.dlResultsModalPanel.hide();"><i class="fa fa-times"></i></span>
               </div>
 
               <div id="modalScorePanelFormId">
@@ -38,60 +39,98 @@ const scorePanel = `
               </div>
               <hr id="modalScoreSeparatorId"/>
               <div id="modalScoreButtonsId">
-                <button type="button" name="Anulează" class="side-button width-150-px" onclick="dlResultsModalPanel.hide();"><i class="fa fa-times"></i> Anulează</button>
+                <button type="button" name="Anulează" class="side-button width-150-px" onclick="score.dlResultsModalPanel.hide();"><i class="fa fa-times"></i> Anulează</button>
                 <span style="width: 10px; display: inline-block;"></span>
-                <button type="button" name="Descarcă" title="descarcă rezultate Excel (.xlsx)" class="main-button width-150-px" onclick="fnExcelReport();"><i class="fa fa-download"></i> Descarcă</button>
+                <button type="button" name="Descarcă" title="descarcă rezultate Excel (.xlsx)" class="main-button width-150-px" onclick="score.fnExcelReport();"><i class="fa fa-download"></i> Descarcă</button>
               </div>
             </div>
           </div>
         </div>
       </div>
 `;
-jQuery('#scorePanelId').append(scorePanel);
 
-const dlResultsModalPanel = jQuery('#downloadResultsFormId');
+class Score {
+	constructor () {
+// TODO: Perhaps thia could be moved in the activityEngine.js
+		jQuery('#scorePanelId').append(scorePanel);
 
-const showDlResultsPopup = () => {
-  dlResultsModalPanel.show(0, () => {
-    document.querySelector('#patientNameInputId').focus();
-  });
-}
+		this.dlResultsModalPanel = jQuery('#downloadResultsFormId');
+		this.activityName = document.title;
+	    this.nbDistractors = nbDistractors;
+	    this.answerReactionTimeItems = [];
+	}
 
-const fnExcelReport = () => {
-  const today = new Date();
-  const dd = String(today.getDate()).padStart(2, '0');
-  const MM = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-  const yyyy = today.getFullYear();
+	showDlResultsPopup = () => {
+	  this.dlResultsModalPanel.show(0, () => {
+	    document.querySelector('#patientNameInputId').focus();
+	  });
+	}
 
-  const hh = String(today.getHours()).padStart(2, '0');
-  const mm = String(today.getMinutes()).padStart(2, '0');
+	fnExcelReport = () => {
+	  const today = new Date();
+	  const dd = String(today.getDate()).padStart(2, '0');
+	  const MM = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+	  const yyyy = today.getFullYear();
+	
+	  const hh = String(today.getHours()).padStart(2, '0');
+	  const mm = String(today.getMinutes()).padStart(2, '0');
+	
+	  const date = `${dd}/${MM}/${yyyy}`;
+	  const time = `${hh}:${mm}`;
+	  const activityDuration = `${document.querySelector('#timerId > #minutes').innerHTML}:${document.querySelector('#timerId > #seconds').innerHTML}`;
+	
+	  const exportResultDataBuilder = new ExportResultDataBuilder(date, time, document.title, document.querySelector('#patientNameInputId').value, document.querySelector('#patientAgeInputId').value, document.querySelector('#scoreCountGoodId').innerHTML, document.querySelector('#scoreCountBadId').innerHTML, activityDuration);
+	
+	  const workbook = XLSX.utils.book_new();
+	
+	  //var worksheet_data  =  [['hello','world']];
+	  //var worksheet = XLSX.utils.aoa_to_sheet(worksheet_data);
+	
+	  const worksheet_data = document.querySelector("#tblExportId");
+	  worksheet_data.innerHTML = exportResultDataBuilder.buildExportHTMLRows();
+	  let worksheet = XLSX.utils.table_to_sheet(worksheet_data);
+	  workbook.SheetNames.push("Rezultate activitate");
+	  workbook.Sheets["Rezultate activitate"] = worksheet;
+	
+	  // reaction times sheet
+	  worksheet_data.innerHTML = this.buildExportReactionTimesHTMLRows();
+	  worksheet = XLSX.utils.table_to_sheet(worksheet_data);
+	  workbook.SheetNames.push("Timpi de raspuns");
+	  workbook.Sheets["Timpi de raspuns"] = worksheet;
+	
+	  XLSX.writeFile(workbook, "rezultate.xlsx");
+	
+	  this.dlResultsModalPanel.hide();
+	}
+	
+	addAnswerReactionTimeItem(startDateTime, challengeName) {
+    const answerReactionTimeItem = new AnswerReactionTimeItem(startDateTime, challengeName);
+    this.answerReactionTimeItems.push(answerReactionTimeItem);
+  }
 
-  const date = `${dd}/${MM}/${yyyy}`;
-  const time = `${hh}:${mm}`;
-  const activityDuration = `${document.querySelector('#timerId > #minutes').innerHTML}:${document.querySelector('#timerId > #seconds').innerHTML}`;
+  updateFailuresCurrentAnswerReactionTimeItem = () => {
+    ++this.answerReactionTimeItems[this.answerReactionTimeItems.length - 1].nbFailures;
+  }
 
-  const exportResultDataBuilder = new ExportResultDataBuilder(date, time, document.title, document.querySelector('#patientNameInputId').value, document.querySelector('#patientAgeInputId').value, document.querySelector('#scoreCountGoodId').innerHTML, document.querySelector('#scoreCountBadId').innerHTML, activityDuration);
+  completeCurrentActionReactionTimeItem(endDateTime) {
+    this.answerReactionTimeItems[this.answerReactionTimeItems.length - 1].challengeEndDateTime = endDateTime;
+  }
 
-  const workbook = XLSX.utils.book_new();
+  buildExportReactionTimesHTMLRows = () => {
+    let rows = `<tr><td colspan="2">Nume activitate:</td><td colspan="4">${this.activityName}</td></tr>`;
+    if (hasDistractors) {
+      rows += `<tr><td colspan="2">Numar distractori:</td><td>${this.nbDistractors}</td></tr>`;
+    }
+    rows += '<tr/>';
+    rows += '<tr><td colspan="2">DENUMIRE SARCINA</td><td colspan="4">DURATA INDEPLINIRE SARCINA (min:sec)</td><td colspan="4">NUMAR RASPUNSURI GRESITE/SARCINA</td></tr>';
+    for (const answerReactionTimeItem of this.answerReactionTimeItems) {
+      if (answerReactionTimeItem.isComplete()) {
+        rows += answerReactionTimeItem.buildExportHTMLRow();
+      }
+    }
+    return rows;
+  }
 
-  //var worksheet_data  =  [['hello','world']];
-  //var worksheet = XLSX.utils.aoa_to_sheet(worksheet_data);
-
-  const worksheet_data = document.querySelector("#tblExportId");
-  worksheet_data.innerHTML = exportResultDataBuilder.buildExportHTMLRows();
-  let worksheet = XLSX.utils.table_to_sheet(worksheet_data);
-  workbook.SheetNames.push("Rezultate activitate");
-  workbook.Sheets["Rezultate activitate"] = worksheet;
-
-  // reaction times sheet
-  worksheet_data.innerHTML = scoreAnswerReactionTimeData.buildExportReactionTimesHTMLRows();
-  worksheet = XLSX.utils.table_to_sheet(worksheet_data);
-  workbook.SheetNames.push("Timpi de raspuns");
-  workbook.Sheets["Timpi de raspuns"] = worksheet;
-
-  XLSX.writeFile(workbook, "rezultate.xlsx");
-
-  dlResultsModalPanel.hide();
 }
 
 const ExportResultDataBuilder = class {
@@ -107,7 +146,7 @@ const ExportResultDataBuilder = class {
   }
 
   // build the HTML table rows that will be used for rendering the xlsx data
-  buildExportHTMLRows() {
+  buildExportHTMLRows = () => {
     let rows = `<tr><td colspan="3" class="bold">Nume activitate:</td><td colspan="4" class="bold">${this.activityName}</td></tr>`;
     rows += `<tr><td colspan="3">Data:</td><td colspan="4">${this.dateString}</td></tr>tr>`;
     rows += `<tr><td colspan="3">Ora:</td><td colspan="4">${this.timeString}</td></tr>`;
@@ -125,42 +164,6 @@ const ExportResultDataBuilder = class {
 }
 
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-class ScoreAnswerReactionTimeData {
-  constructor() {
-    this.activityName = document.title;
-    this.nbDistractors = nbDistractors;
-    this.answerReactionTimeItems = [];
-  }
-
-  addAnswerReactionTimeItem(startDateTime, challengeName) {
-    const answerReactionTimeItem = new AnswerReactionTimeItem(startDateTime, challengeName);
-    this.answerReactionTimeItems.push(answerReactionTimeItem);
-  }
-
-  updateFailuresCurrentAnswerReactionTimeItem() {
-    ++this.answerReactionTimeItems[this.answerReactionTimeItems.length - 1].nbFailures;
-  }
-
-  completeCurrentActionReactionTimeItem(endDateTime) {
-    this.answerReactionTimeItems[this.answerReactionTimeItems.length - 1].challengeEndDateTime = endDateTime;
-  }
-
-  buildExportReactionTimesHTMLRows() {
-    let rows = `<tr><td colspan="2">Nume activitate:</td><td colspan="4">${this.activityName}</td></tr>`;
-    if (hasDistractors) {
-      rows += `<tr><td colspan="2">Numar distractori:</td><td>${this.nbDistractors}</td></tr>`;
-    }
-    rows += '<tr/>';
-    rows += '<tr><td colspan="2">DENUMIRE SARCINA</td><td colspan="4">DURATA INDEPLINIRE SARCINA (min:sec)</td><td colspan="4">NUMAR RASPUNSURI GRESITE/SARCINA</td></tr>';
-    for (const answerReactionTimeItem of this.answerReactionTimeItems) {
-      if (answerReactionTimeItem.isComplete()) {
-        rows += answerReactionTimeItem.buildExportHTMLRow();
-      }
-    }
-    return rows;
-  }
-}
-
 class AnswerReactionTimeItem {
   constructor(challengeStartDateTime, challengeName) {
     this.challengeName = challengeName;
@@ -169,7 +172,7 @@ class AnswerReactionTimeItem {
     this.nbFailures = 0; // how many wrong answers were given until the correct answer was chosen
   }
 
-  buildExportHTMLRow() {
+  buildExportHTMLRow = () => {
     return `<tr><td colspan="2">${this.challengeName}</td><td colspan="4">${this.getMinutesSecondsDelta()}</td><td colspan="4">${this.nbFailures}</td></tr>`;
   }
 
@@ -177,11 +180,9 @@ class AnswerReactionTimeItem {
     return this.challengeEndDateTime > this.challengeStartDateTime;
   }
 
-  getMinutesSecondsDelta() {
+  getMinutesSecondsDelta = () => {
     const deltaDate = new Date(this.challengeEndDateTime - this.challengeStartDateTime);
     return `${pad(deltaDate.getMinutes())}:${pad(deltaDate.getSeconds())}`;
   }
 }
-
-const scoreAnswerReactionTimeData = new ScoreAnswerReactionTimeData();
 /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
