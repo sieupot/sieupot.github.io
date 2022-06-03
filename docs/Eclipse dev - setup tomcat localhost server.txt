@@ -3,14 +3,15 @@
 3. Define new Apache Tomcat server Run Configuration
 
 4. in the worspace's folder: [path_to_workspace]/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/webapps create a symbolic link named sieupot to the root folder of the project
-5. access resources in browser at: http://localhost:8080/sieupot 
+   in Windows: mklink /D sieupot ..\..\..\..\..\SiEuPot\
+5. access resources in browser at: http://localhost:8080/sieupot or https://localhost:8443/sieupot
 
 -----------
 
 set the Apache to run on https
    - generate certificate file by running the following command in the terminal:
    		 keytool -genkey -noprompt -alias tomcat-localhost -keyalg RSA -keystore localhost-rsa.jks -keypass 123123123 -storepass 123123123 -dname "CN=tomcat-cert, OU=Dev, O=, L=, ST=, C=RO"
-   - in $[TOMCAT_HOME]/conf/server.conf, add the httpa connector:
+   - in $[TOMCAT_HOME]/conf/server.conf, add the https connector:
 		<Connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
 	               maxThreads="150" SSLEnabled="true" >
 	        <UpgradeProtocol className="org.apache.coyote.http2.Http2Protocol" />
