@@ -1,5 +1,5 @@
 // used for the PWA registration of the service worker
-if ('serviceWorker' in navigator) {
+/*if ('serviceWorker' in navigator) {
   // register service worker
   let swVersion = '1.0';
   navigator.serviceWorker.register('/service-worker.js').then(() => {
@@ -7,7 +7,7 @@ if ('serviceWorker' in navigator) {
   }).catch(error => {
     console.error(`Service Worker ${swVersion} registration failed!`, error)
   });
-}
+}*/
 
 /**
  *

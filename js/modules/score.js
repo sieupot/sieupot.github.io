@@ -1,66 +1,76 @@
-// TODO: Perhaps thia could be moved in the activityEngine.js
-const scorePanel = `
-<object type="text/xml" style="display: none;">
-    <script defer src="../js/lib/xlsx.full.min.js"></script>
-    <script defer src="../js/activityTimer.js"></script>
+export class Score {
+	constructor (hasDistractors, nbDistractors) {
+		jQuery('#scorePanelId').append(this.scorePanel);
 
-    <link rel="stylesheet" href="../css/activityTimer.css">
-    <link rel="stylesheet" href="../css/fonts.css">
-    <link rel="stylesheet" href="../css/scorePanel.css">
-    <link rel="stylesheet" href="../css/fontawesome-free-5.15.3-web/css/all.css">
-</object>
+		this.activityName = document.title;
+    this.hasDistractors = hasDistractors;
+    this.nbDistractors = nbDistractors;
+    this.answerReactionTimeItems = [];
 
-      <div id="scorePanel">
-        <div id="scoreContainerId">
-          <div id="scoreGood">
-            <img src="../images/smileFace.png" alt="good answers" style="height: 25px;"/>
-            <div id="scoreCountGoodId">0</div>
-          </div>
-          <div id="scoreBad">
-            <img src="../images/sadFace.png" alt="bad answers" style="height: 25px;"/>
-            <div id="scoreCountBadId">0</div>
-          </div>
+    this.dlResultsModalPanel = jQuery('#downloadResultsFormId');
+
+    let objInstance = this;
+    $( "#dlResBtnId" ).bind( "click", function() {
+      objInstance.showDlResultsPopup();
+    });
+    $( "#cancelDlResBtnId" ).bind( "click", function() {
+      objInstance.dlResultsModalPanel.hide();
+    });
+    $( "#dlExportBtnId" ).bind( "mousedown", function() {
+      objInstance.fnExcelReport();
+    });
+	}
+
+  scorePanel = `
+    <object type="text/xml" style="display: none;">
+        <script defer src="../js/lib/xlsx.full.min.js"></script>
+    
+        <link rel="stylesheet" href="../css/activityTimer.css">
+        <link rel="stylesheet" href="../css/fonts.css">
+        <link rel="stylesheet" href="../css/scorePanel.css">
+        <link rel="stylesheet" href="../css/fontawesome-free-5.15.3-web/css/all.css">
+    </object>
+
+    <div id="scorePanel">
+      <div id="scoreContainerId">
+        <div id="scoreGood">
+          <img src="../images/smileFace.png" alt="good answers" style="height: 25px;"/>
+          <div id="scoreCountGoodId">0</div>
         </div>
-        <div id="downloadResultsContainerId">
-          <input type="button" name="download results" title="descarcă rezultate Excel (.xlsx)" onclick="score.showDlResultsPopup();" class="dl-res-btn"/>
+        <div id="scoreBad">
+          <img src="../images/sadFace.png" alt="bad answers" style="height: 25px;"/>
+          <div id="scoreCountBadId">0</div>
+        </div>
+      </div>
+      <div id="downloadResultsContainerId">
+        <input id="dlResBtnId" type="button" name="download results" title="descarcă rezultate Excel (.xlsx)" class="dl-res-btn"/>
 
-          <table id="tblExportId" style="display:none"></table>
+        <table id="tblExportId" style="display:none"></table>
 
-          <div id="downloadResultsFormId" class="score-modal" style="display: none;">
-            <div class="modal-content">
-              <div class="modal-title">
-                <span class="title">Export rezultate</span>
-                <span class="close" onclick="score.dlResultsModalPanel.hide();"><i class="fa fa-times"></i></span>
-              </div>
+        <div id="downloadResultsFormId" class="score-modal" style="display: none;">
+          <div class="modal-content">
+            <div class="modal-title">
+              <span class="title">Export rezultate</span>
+              <span class="close" onclick="this.dlResultsModalPanel.hide();"><i class="fa fa-times"></i></span>
+            </div>
 
-              <div id="modalScorePanelFormId">
-                <input type="text" name="name" id="patientNameInputId" placeholder="Nume copil" class="score-export-input"/>
-                <input type="number" name="name" id="patientAgeInputId" placeholder="Vârstă copil (ani)" class="score-export-input" min="1" max="200" onkeydown="return isNumberKey(event);"/>
-              </div>
-              <hr id="modalScoreSeparatorId"/>
-              <div id="modalScoreButtonsId">
-                <button type="button" name="Anulează" class="side-button width-150-px" onclick="score.dlResultsModalPanel.hide();"><i class="fa fa-times"></i> Anulează</button>
-                <span style="width: 10px; display: inline-block;"></span>
-                <button type="button" name="Descarcă" title="descarcă rezultate Excel (.xlsx)" class="main-button width-150-px" onclick="score.fnExcelReport();"><i class="fa fa-download"></i> Descarcă</button>
-              </div>
+            <div id="modalScorePanelFormId">
+              <input type="text" name="name" id="patientNameInputId" placeholder="Nume copil" class="score-export-input"/>
+              <input type="number" name="name" id="patientAgeInputId" placeholder="Vârstă copil (ani)" class="score-export-input" min="1" max="200" onkeydown="return isNumberKey(event);"/>
+            </div>
+            <hr id="modalScoreSeparatorId"/>
+            <div id="modalScoreButtonsId">
+              <button type="button" id="cancelDlResBtnId" name="Anulează" class="side-button width-150-px"><i class="fa fa-times"></i> Anulează</button>
+              <span style="width: 10px; display: inline-block;"></span>
+              <button type="button" id="dlExportBtnId" name="Descarcă" title="descarcă rezultate Excel (.xlsx)" class="main-button width-150-px"><i class="fa fa-download"></i> Descarcă</button>
             </div>
           </div>
         </div>
       </div>
-`;
+    </div>
+  `;
 
-class Score {
-	constructor () {
-// TODO: Perhaps thia could be moved in the activityEngine.js
-		jQuery('#scorePanelId').append(scorePanel);
-
-		this.dlResultsModalPanel = jQuery('#downloadResultsFormId');
-		this.activityName = document.title;
-	    this.nbDistractors = nbDistractors;
-	    this.answerReactionTimeItems = [];
-	}
-
-	showDlResultsPopup = () => {
+  showDlResultsPopup = () => {
 	  this.dlResultsModalPanel.show(0, () => {
 	    document.querySelector('#patientNameInputId').focus();
 	  });
@@ -102,7 +112,7 @@ class Score {
 	
 	  this.dlResultsModalPanel.hide();
 	}
-	
+
 	addAnswerReactionTimeItem(startDateTime, challengeName) {
     const answerReactionTimeItem = new AnswerReactionTimeItem(startDateTime, challengeName);
     this.answerReactionTimeItems.push(answerReactionTimeItem);
@@ -118,7 +128,7 @@ class Score {
 
   buildExportReactionTimesHTMLRows = () => {
     let rows = `<tr><td colspan="2">Nume activitate:</td><td colspan="4">${this.activityName}</td></tr>`;
-    if (hasDistractors) {
+    if (this.hasDistractors) {
       rows += `<tr><td colspan="2">Numar distractori:</td><td>${this.nbDistractors}</td></tr>`;
     }
     rows += '<tr/>';
