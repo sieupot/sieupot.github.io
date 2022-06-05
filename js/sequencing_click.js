@@ -25,10 +25,10 @@ class SequencingClick extends ActivityEngine {
   okClicksNb = 0;
   selectedActivitySqLength = 0;
   itemsContainerId = jQuery('#itemsContainerId');
+
   activityItems;
   imgPath = "../images/sequencing/";
   sndPath = "../sounds/sequencing/";
-
   initActivityItems = () => {
     this.activityItems = [];
 
@@ -94,13 +94,13 @@ class SequencingClick extends ActivityEngine {
     const clickableHtmlElem = `<div id="clickable${index}" class="pointer-cursor click-item" style="background-image: url('${imagePath}');" canbeclicked="true">
           </div>`;
     this.itemsContainerId.append(clickableHtmlElem);
-    
+
     let objInstance = this;
     $( `#clickable${index}` ).bind( "mousedown", function(ev) {
       objInstance.itemClicked(ev);
     });
   }
-  
+
   generateChallengeItems = () => {
     // remove previous HTML content from the itemsContainerId div (new content will be generated below)
     removeContent(this.itemsContainerId.attr('id'));
@@ -136,8 +136,7 @@ class SequencingClick extends ActivityEngine {
       if (clickableElemIndex === this.okClicksNb) {
         // don't allow source to be clickable anymore
         removeAttributes(clickableElem, 'canbeclicked');
-        clickableElemJQ.unbind('mousedown');
-        clickableElemJQ.removeClass('pointer-cursor');
+        clickableElemJQ.unbind('mousedown').removeClass('pointer-cursor');
   
         // add counter on source image
         let indicatorNode = document.createElement('span');
@@ -153,6 +152,7 @@ class SequencingClick extends ActivityEngine {
       } else {
         this.modalPanel.dialog(super.dialogOptions);
         this.handleInvalidAnswer(false);
+        // in order to have the animation of the error-indicator play after repeatedly clicking on this element
         clickableElemJQ.replaceWith(clickableElemJQ.clone(true).addClass('error-indicator'));
       }
     }

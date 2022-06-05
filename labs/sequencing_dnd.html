@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="../css/normalize.css">
   <link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" href="../css/pageLayout.css">
-  <link rel="stylesheet" href="../css/sequencing_click.css">
+  <link rel="stylesheet" href="../css/sequencing_dnd.css">
 
   <meta name="theme-color" content="#EFE7E0">
 
@@ -24,7 +24,7 @@
   <script defer src="../js/main.js"></script>
   <script defer src="../js/utils.js"></script>
   <script type="module" src="../js/activityEngine.js"></script>
-  <script type="module" src="../js/sequencing_click.js"></script>
+  <script type="module" src="../js/sequencing_dnd.js"></script>
   <!-- inject the template footer into the page -->
   <script defer src="../js/injectors/footerInjector.js"></script>
 </head>
@@ -37,8 +37,15 @@
     </div>
 
     <div id="contentPanel">
-      <div id="itemsContainerId" class="clickable-items-container">
-        <!-- content generated in sequencing_click.js -->
+      <div id="dropContainersId" class="items-container">
+        <!-- content generated in sequencing_dnd.js -->
+      </div>
+
+      <div class="separator">
+      </div>
+
+      <div id="dragContainersId" class="draggable-items-container">
+        <!-- content generated in sequencing_dnd.js -->
       </div>
     </div>
   </div>

@@ -1,153 +1,240 @@
-let hasDistractors = false; // used when exporting results, as info in the sheet with activity reaction times
+import { ActivityEngine } from './activityEngine.js'
 
 // on page load
 jQuery(() => {
-  // declared in the html file
-  initActivityItems();
-
-  modalPanel = jQuery('#dialogDiv');
-  resultDivElem = jQuery('div.result');
-
-  // show the start icon and let the user manually start the activity
-  resultDivElem.fadeIn(300);
-  modalPanel.dialog(dialogOptions);
+  new SequencingDND();
 });
 
-let dropContainers = jQuery('#dropContainersId');
-let dragContainers = jQuery('#dragContainersId');
+class SequencingDND extends ActivityEngine {
+  constructor() {
+    super();
 
-const generateDroppableHtmlElem = (index, nbItems) => {
-  let assistAudioPath = "../sounds/sequencing/";
-  switch (index) {
-    case 1:
-      // first
-      assistAudioPath += 'whatComesFirst.ogg';
-      break;
-    case (nbItems):
-      // last
-      assistAudioPath += 'whatComesLast.ogg';
-      break;
-    default:
-      // then
-      assistAudioPath += 'whatComesThen.ogg';
-      break;
+    this.modalPanel = $('#dialogDiv');
+    this.resultDivElem = $('div.result');
+
+    let objInstance = this;
+    $( "div.start-activity" ).bind('mousedown', function() {
+      objInstance.startActivity();
+    });
+
+    // show the start icon and let the user manually start the activity
+    this.resultDivElem.fadeIn(300);
+    this.modalPanel.dialog(this.dialogOptions);
   }
 
-  let droppableHtmlElem = document.createElement('div');
-  droppableHtmlElem.id = `droppable${index}`;
-  droppableHtmlElem.style.cursor = 'help';
-  droppableHtmlElem.classList.add('activity-item', 'droppable');
-  droppableHtmlElem.setAttribute('onDrop', 'drop(event)');
-  droppableHtmlElem.setAttribute('onDragOver', 'allowDrop(event)');
-  droppableHtmlElem.setAttribute('onDragEnter', 'highlightArea(event, true)');
-  droppableHtmlElem.setAttribute('onMouseOut', 'highlightArea(event, false)');
-  droppableHtmlElem.setAttribute('onDragLeave', 'highlightArea(event, false)');
-  droppableHtmlElem.onmousedown = function () {
-    let assistAudio = new Audio(assistAudioPath);
-    assistAudio.play();
-  };
-  dropContainers.append(droppableHtmlElem);
-}
+  dropContainers = $('#dropContainersId');
+  dragContainers = $('#dragContainersId');
 
-const generateDraggableHtmlElem = (index, imagePath) => {
-  const draggableHtmlElem = `<div id="draggable${index}" class="draggable-container drag-item" style="background-image: url('${imagePath}');" draggable="true" ondragstart="startDrag(event)" ondragend="endDrag(event);">
-        </div>`;
-  dragContainers.append(draggableHtmlElem);
-}
+  activityItems;
+  imgPath = "../images/sequencing/";
+  sndPath = "../sounds/sequencing/";
+  initActivityItems = () => {
+    this.activityItems = [];
 
-const generateChallengeItems = () => {
-  // remove previous HTML content from the dropContainersId div (new content will be generated below)
-  removeContent(dropContainers.attr('id'));
+    // CATERPILLAR
+    let caterpillarSq = {name: 'caterpillar', items: [{index: 1, imagePath: `${this.imgPath}caterpillar1.jpg`},
+                                                      {index: 2, imagePath: `${this.imgPath}caterpillar2.jpg`},
+                                                      {index: 3, imagePath: `${this.imgPath}caterpillar3.jpg`}]};
+    this.activityItems.push(caterpillarSq);
 
-  activitySoundList.push(`${sndPath}sequence.ogg`);
+    // CHICKEN
+    let chickenSq = {name: 'chicken', items: [{index: 1, imagePath: `${this.imgPath}chicken1.jpg`},
+                                              {index: 2, imagePath: `${this.imgPath}chicken2.jpg`},
+                                              {index: 3, imagePath: `${this.imgPath}chicken3.jpg`}]};
+    this.activityItems.push(chickenSq);
 
-  // extract the activity sequence
-  const indexAct = Math.floor((Math.random() * activityItems.length));
-  const selectedActivitySq = activityItems[indexAct];
+    // CUBES
+    let cubesSq = {name: 'cubes', items: [{index: 1, imagePath: `${this.imgPath}cubes1.jpg`},
+                                          {index: 2, imagePath: `${this.imgPath}cubes2.jpg`},
+                                          {index: 3, imagePath: `${this.imgPath}cubes3.jpg`}]};
+    this. activityItems.push(cubesSq);
 
-  challengeCorrectItemName = selectedActivitySq.name;
+    // DRAWN BEAR
+    let drawnBearSq = {name: 'drawBear', items: [{index: 1, imagePath: `${this.imgPath}drawnBear1.jpg`},
+                                                 {index: 2, imagePath: `${this.imgPath}drawnBear2.jpg`},
+                                                 {index: 3, imagePath: `${this.imgPath}drawnBear3.jpg`}]};
+    this.activityItems.push(drawnBearSq);
 
-  const selectedActivitySqItems = Object.assign([], selectedActivitySq.items); // clone the array, or else the extractRandomEntryAndSplice will empty the source array
-  for (index in selectedActivitySqItems) {
-    generateDroppableHtmlElem(parseInt(index) + 1, selectedActivitySqItems.length);
+    // HOUSE
+    let houseSq = {name: 'buildHouse', items: [{index: 1, imagePath: `${this.imgPath}house1.jpg`},
+                                               {index: 2, imagePath: `${this.imgPath}house2.jpg`},
+                                               {index: 3, imagePath: `${this.imgPath}house3.jpg`},
+                                               {index: 4, imagePath: `${this.imgPath}house4.jpg`},
+                                               {index: 5, imagePath: `${this.imgPath}house5.jpg`},
+                                               {index: 6, imagePath: `${this.imgPath}house6.jpg`}]};
+    this.activityItems.push(houseSq);
+
+    // PLANT
+    let plantSq = {name: 'growPlant', items: [{index: 1, imagePath: `${this.imgPath}plant1.jpg`},
+                                              {index: 2, imagePath: `${this.imgPath}plant2.jpg`},
+                                              {index: 3, imagePath: `${this.imgPath}plant3.jpg`}]};
+    this.activityItems.push(plantSq);
+
+    // SEASON TREE
+    let seasonTreeSq = {name: 'seasonTree', items: [{index: 1, imagePath: `${this.imgPath}seasonTree1.jpg`},
+                                                    {index: 2, imagePath: `${this.imgPath}seasonTree2.jpg`},
+                                                    {index: 3, imagePath: `${this.imgPath}seasonTree3.jpg`},
+                                                    {index: 4, imagePath: `${this.imgPath}seasonTree4.jpg`},
+                                                    {index: 5, imagePath: `${this.imgPath}seasonTree5.jpg`},
+                                                    {index: 6, imagePath: `${this.imgPath}seasonTree6.jpg`}]};
+    this.activityItems.push(seasonTreeSq);
+
+    // WAKEUP
+    let wakeupSq = {name: 'wakeup', items: [{index: 1, imagePath: `${this.imgPath}wakeup1.jpg`},
+                                            {index: 2, imagePath: `${this.imgPath}wakeup2.jpg`},
+                                            {index: 3, imagePath: `${this.imgPath}wakeup3.jpg`},
+                                            {index: 4, imagePath: `${this.imgPath}wakeup4.jpg`},
+                                            {index: 5, imagePath: `${this.imgPath}wakeup5.jpg`},
+                                            {index: 6, imagePath: `${this.imgPath}wakeup6.jpg`}]};
+    this.activityItems.push(wakeupSq);
   }
 
-  while (selectedActivitySqItems.length > 0) {
-    const entryObj = extractRandomEntryAndSplice(selectedActivitySqItems);
+  generateDroppableHtmlElem = (index, nbItems) => {
+    let assistAudioPath = "../sounds/sequencing/";
+    switch (index) {
+      case 1:
+        // first
+        assistAudioPath += 'whatComesFirst.ogg';
+        break;
+      case (nbItems):
+        // last
+        assistAudioPath += 'whatComesLast.ogg';
+        break;
+      default:
+        // then
+        assistAudioPath += 'whatComesThen.ogg';
+        break;
+    }
 
-    generateDraggableHtmlElem(entryObj.index, entryObj.imagePath);
+    const objInstance = this;
+    let droppableHtmlElem = document.createElement('div');
+    droppableHtmlElem.id = `droppable${index}`;
+    droppableHtmlElem.style.cursor = 'help';
+    droppableHtmlElem.classList.add('activity-item', 'droppable');
+    this.dropContainers.append(droppableHtmlElem);
+    
+    const droppableHtmlElemJQ = $(droppableHtmlElem);
+    droppableHtmlElemJQ.bind('drop', function () {
+      objInstance.drop(event);
+    });
+    droppableHtmlElemJQ.bind('dragover', function () {
+      objInstance.allowDrop(event);
+    });
+    droppableHtmlElemJQ.bind('dragenter', function () {
+      objInstance.highlightArea(event, true);
+    });
+    droppableHtmlElemJQ.bind('mouseout', function () {
+      objInstance.highlightArea(event, false);
+    });
+    droppableHtmlElemJQ.bind('dragleave', function () {
+      objInstance.highlightArea(event, false);
+    });
+    droppableHtmlElemJQ.bind('mousedown', function () {
+      let assistAudio = new Audio(assistAudioPath);
+      assistAudio.play();
+    });
+}
+  
+  generateDraggableHtmlElem = (index, imagePath) => {
+    const draggableHtmlElem = `<div id="draggable${index}" class="draggable-container drag-item" style="background-image: url('${imagePath}');" draggable="true">
+          </div>`;
+    this.dragContainers.append(draggableHtmlElem);
+
+    const objInstance = this;
+    $( `#draggable${index}` ).bind( "dragstart", function(ev) {
+      objInstance.startDrag(ev);
+    }).bind( "dragend", function(ev) {
+      objInstance.endDrag(ev);
+    });
   }
-
-  playShowItemAudio(false);
-}
-
-const checkActivityProgress = () => {
-  // no more draggable items?
-  if (dragContainers.children().length === 0) {
-    checkValidAnswer(true);
+  
+  generateChallengeItems = () => {
+    // remove previous HTML content from the dropContainersId div (new content will be generated below)
+    removeContent(this.dropContainers.attr('id'));
+  
+    this.activitySoundList.push(`${this.sndPath}sequence.ogg`);
+  
+    // extract the activity sequence
+    const indexAct = Math.floor((Math.random() * this.activityItems.length));
+    const selectedActivitySq = this.activityItems[indexAct];
+  
+    this.challengeCorrectItemName = selectedActivitySq.name;
+  
+    const selectedActivitySqItems = Object.assign([], selectedActivitySq.items); // clone the array, or else the extractRandomEntryAndSplice will empty the source array
+    for (let index in selectedActivitySqItems) {
+      this.generateDroppableHtmlElem(parseInt(index) + 1, selectedActivitySqItems.length);
+    }
+  
+    while (selectedActivitySqItems.length > 0) {
+      const entryObj = extractRandomEntryAndSplice(selectedActivitySqItems);
+  
+      this.generateDraggableHtmlElem(entryObj.index, entryObj.imagePath);
+    }
+  
+    this.playShowItemAudio(false);
   }
-}
-
-/* used in the DRAG AND DROP logic */
-let draggedElemId;
-
-const allowDrop = (ev) => {
-  ev.preventDefault();
-}
-
-const startDrag = (ev) => {
-  const draggableElem = document.getElementById(ev.target.id);
-  if (draggableElem.getAttribute('draggable')) {
-    draggableElem.classList.add('hide-src-while-dragging');
-    draggedElemId = ev.target.id;
-  }
-}
-const endDrag = (ev) => {
-  document.getElementById(ev.target.id).classList.remove('hide-src-while-dragging');
-  draggedElemId = null;
-}
-
-const drop = (ev) => {
-  ev.preventDefault();
-  const draggableElem = document.getElementById(draggedElemId);
-  if (draggableElem && draggableElem.getAttribute('draggable')) {
-    const dropElem = ev.target;
-
-    // remove alphas from draggableId (i.e.: draggable1 -> 1, etc)
-    const draggableElemIndex = draggedElemId.replace(/[^\d.-]/g, '');
-    // remove alphas from droppableId (i.e.: droppable1 -> 1, etc)
-    const dropElemIndex = dropElem.id.replace(/[^\d.-]/g, '');
-    if (draggableElemIndex === dropElemIndex) {
-      dropElem.appendChild(draggableElem);
-      // don't allow source to be draggable anymore
-      removeAttributes(draggableElem, 'draggable');
-      draggableElem.style.cursor = 'default';
-      draggableElem.classList.remove('hide-src-while-dragging', 'draggable-container');
-      // don't allow occupied dropElem to accept dropping anymore
-      removeAttributes(dropElem, 'ondrop', 'ondragover', 'ondragenter', 'onmouseout', 'ondragleave');
-      // hide the counter indicator
-      dropElem.classList.add('hidden-content', 'success-indicator');
-      dropElem.style.backgroundColor = "";
-      dropElem.onmousedown = {};
-      dropElem.style.cursor = 'auto';
-
-      checkActivityProgress();
-    } else {
-      modalPanel.dialog(dialogOptions);
-      handleInvalidAnswer(false);
-      dropElem.style.backgroundColor = '';
-      dropElem.classList.add('error-indicator');
+  
+  checkActivityProgress = () => {
+    // no more draggable items?
+    if (this.dragContainers.children().length === 0) {
+      this.checkValidAnswer(true);
     }
   }
-}
+  
+  /* used in the DRAG AND DROP logic */
+  draggedElemId;
+  
+  allowDrop = (ev) => {
+    ev.preventDefault();
+  }
+  
+  startDrag = (ev) => {
+    const draggableElem = document.getElementById(ev.target.id);
+    if (draggableElem.getAttribute('draggable')) {
+      draggableElem.classList.add('hide-src-while-dragging');
+      this.draggedElemId = ev.target.id;
+    }
+  }
+  endDrag = (ev) => {
+    document.getElementById(ev.target.id).classList.remove('hide-src-while-dragging');
+    this.draggedElemId = null;
+  }
+  
+  drop = (ev) => {
+    ev.preventDefault();
+    const draggableElemJQ = $(`#${this.draggedElemId}`);
+    if (draggableElemJQ && draggableElemJQ.attr('draggable')) {
+      const dropElemJQ = $(ev.target);
+  
+      // remove alphas from draggableId (i.e.: draggable1 -> 1, etc)
+      const draggableElemIndex = this.draggedElemId.replace(/[^\d.-]/g, '');
+      // remove alphas from droppableId (i.e.: droppable1 -> 1, etc)
+      const dropElemIndex = dropElemJQ.attr('id').replace(/[^\d.-]/g, '');
+      if (draggableElemIndex === dropElemIndex) {
+        dropElemJQ.append(draggableElemJQ);
+        // don't allow source to be draggable anymore
+        draggableElemJQ.removeAttr('draggable').css({'cursor' : 'default'}).removeClass('hide-src-while-dragging draggable-container');
+        // don't allow occupied dropElem to accept dropping anymore
 
-const highlightArea = (ev, isTrue) => {
-  if (draggedElemId) {
-    const dropElem = document.getElementById(ev.target.id);
-    const draggableElem = document.getElementById(draggedElemId);
-    if (dropElem && draggableElem) {
-      dropElem.classList.remove('error-indicator');
-      dropElem.style.backgroundColor = (isTrue && draggableElem.hasAttribute('draggable') ? 'yellow' : "");
+        // remove listeners and hide the counter indicator
+        dropElemJQ.unbind('drop').unbind('dragover').unbind('dragenter').unbind('mouseout').unbind('mousedown').unbind('dragleave').css({'background-color': '', 'cursor': 'auto'}).addClass('hidden-content success-indicator');
+        this.checkActivityProgress();
+      } else {
+        this.modalPanel.dialog(this.dialogOptions);
+        this.handleInvalidAnswer(false);
+        dropElemJQ.css({'background-color': ''}).addClass('error-indicator');
+      }
+    }
+  }
+  
+  highlightArea = (ev, isTrue) => {
+    if (this.draggedElemId) {
+      const dropElem = document.getElementById(ev.target.id);
+      const draggableElem = document.getElementById(this.draggedElemId);
+      if (dropElem && draggableElem) {
+        dropElem.classList.remove('error-indicator');
+        dropElem.style.backgroundColor = (isTrue && draggableElem.hasAttribute('draggable') ? 'yellow' : "");
+      }
     }
   }
 }
