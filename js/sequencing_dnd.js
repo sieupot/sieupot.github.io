@@ -226,7 +226,7 @@ class SequencingDND extends ActivityEngine {
       }
     }
   }
-  
+
   highlightArea = (ev, isTrue) => {
     if (this.draggedElemId) {
       const dropElem = document.getElementById(ev.target.id);

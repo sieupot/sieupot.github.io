@@ -23,358 +23,372 @@
 
   <script defer src="../js/main.js"></script>
   <script defer src="../js/utils.js"></script>
-  <script defer src="../js/modules/score.js"></script>
-  <script defer src="../js/activityEngine.js"></script>
-  <script defer src="../js/spatialPositioning.js"></script>
+  <script type="module" src="../js/activityEngine.js"></script>
+  <script type="module" src="../js/spatialPositioning.js"></script>
   <!-- inject the template footer into the page -->
   <script defer src="../js/injectors/footerInjector.js"></script>
   <script defer type="text/javascript">
-    const imgPath = "../images/spatialPositioning/2/";
-    const sndPath = "../sounds/spatialPositioning/2/";
+  class SPActivityItems{
+      constructor() {
+        this.initActivityItems();
+      }
+
+      imgPath = "../images/spatialPositioning/2/";
+      sndPath = "../sounds/spatialPositioning/2/";
+
+      andSoundItem = new SoundItem(this.sndPath, 'and');
+      aboveSoundItem = new SoundItem(this.sndPath, 'above', '', true);
+      betweenSoundItem = new SoundItem(this.sndPath, 'between');
+      beforeSoundItem = new SoundItem(this.sndPath, 'before', '', true);
+      behindSoundItem = new SoundItem(this.sndPath, 'behind', '', true);
+      inSoundItem = new SoundItem(this.sndPath, 'in', '', true);
+      nearSoundItem = new SoundItem(this.sndPath, 'near', '', true);
+      underSoundItem = new SoundItem(this.sndPath, 'under', '', true);
+
+      teddyBearArtDSoundItem = new SoundItem(this.sndPath, 'teddyBear', 'D');
+      teddyBearArtISoundItem = new SoundItem(this.sndPath, 'teddyBear', 'I');
+      boxArtISoundItem = new SoundItem(this.sndPath, 'box', 'I');
+      boxArtDSoundItem = new SoundItem(this.sndPath, 'box', 'D');
+      boxArtPSoundItem = new SoundItem(this.sndPath, 'box', 'P');
+      chairArtISoundItem = new SoundItem(this.sndPath, 'chair', 'I');
+      chairArtPSoundItem = new SoundItem(this.sndPath, 'chair', 'P');
+      closetArtISoundItem = new SoundItem(this.sndPath, 'closet', 'I');
+      closetArtPSoundItem = new SoundItem(this.sndPath, 'closet', 'P');
+      tableArtISoundItem = new SoundItem(this.sndPath, 'table', 'I');
+      tableArtPSoundItem = new SoundItem(this.sndPath, 'table', 'P');
+
+      activityItems;
+      initActivityItems = () => {
+        this.activityItems = [];
+  
+        // BEAR between BOX and CHAIR
+        let boxBearChair = {};
+        boxBearChair.name = 'bearBetweenBoxAndChair';
+        boxBearChair.images = [this.imgPath + "box_bear_chair.svg", this.imgPath + "chair_bear_box.svg"];
+        boxBearChair.soundItems = [this.teddyBearArtDSoundItem.soundPath, this.betweenSoundItem.soundPath, this.boxArtISoundItem.soundPath, this.andSoundItem.soundPath, this.chairArtISoundItem.soundPath];
+        this.activityItems.push(boxBearChair);
+        // BEAR between BOX and CLOSET
+        let boxBearCloset = {};
+        boxBearCloset.name = 'bearBetweenBoxAndCloset';
+        boxBearCloset.images = [this.imgPath + "box_bear_closet.svg", this.imgPath + "closet_bear_box.svg"];
+        boxBearCloset.soundItems = [this.teddyBearArtDSoundItem.soundPath, this.betweenSoundItem.soundPath, this.boxArtISoundItem.soundPath, this.andSoundItem.soundPath, this.closetArtISoundItem.soundPath];
+        this.activityItems.push(boxBearCloset);
+        // BEAR between BOX and TABLE
+        let boxBearTable = {};
+        boxBearTable.name = 'bearBetweenBoxAndTable';
+        boxBearTable.images = [this.imgPath + "box_bear_table.svg", this.imgPath + "table_bear_box.svg"];
+        boxBearTable.soundItems = [this.teddyBearArtDSoundItem.soundPath, this.betweenSoundItem.soundPath, this.boxArtISoundItem.soundPath, this.andSoundItem.soundPath, this.tableArtISoundItem.soundPath];
+        this.activityItems.push(boxBearTable);
+        // BEAR between CHAIR and CLOSET
+        let chairBearCloset = {};
+        chairBearCloset.name = 'bearBetweenChairAndCloset';
+        chairBearCloset.images = [this.imgPath + "chair_bear_closet.svg", this.imgPath + "closet_bear_chair.svg"];
+        chairBearCloset.soundItems = [this.teddyBearArtDSoundItem.soundPath, this.betweenSoundItem.soundPath, this.chairArtISoundItem.soundPath, this.andSoundItem.soundPath, this.closetArtISoundItem.soundPath];
+        this.activityItems.push(chairBearCloset);
+        // BEAR between CHAIR and TABLE
+        let chairBearTable = {};
+        chairBearTable.name = 'bearBetweenChairAndTable';
+        chairBearTable.images = [this.imgPath + "chair_bear_table.svg", this.imgPath + "table_bear_chair.svg"];
+        chairBearTable.soundItems = [this.teddyBearArtDSoundItem.soundPath, this.betweenSoundItem.soundPath, this.chairArtISoundItem.soundPath, this.andSoundItem.soundPath, this.tableArtISoundItem.soundPath];
+        this.activityItems.push(chairBearTable);
+        // BEAR between CLOSET and TABLE
+        let closetBearTable = {};
+        closetBearTable.name = 'bearBetweenClosetAndTable';
+        closetBearTable.images = [this.imgPath + "closet_bear_table.svg", this.imgPath + "table_bear_closet.svg"];
+        closetBearTable.soundItems = [this.teddyBearArtDSoundItem.soundPath, this.betweenSoundItem.soundPath, this.closetArtISoundItem.soundPath, this.andSoundItem.soundPath, this.tableArtISoundItem.soundPath];
+        this.activityItems.push(closetBearTable);
+  
+        // BOX between CHAIR and CLOSET
+        let chairBoxCloset = {};
+        chairBoxCloset.name = 'boxBetweenChairAndCloset';
+        chairBoxCloset.images = [this.imgPath + "chair_box_closet.svg", this.imgPath + "closet_box_chair.svg"];
+        chairBoxCloset.soundItems = [this.boxArtDSoundItem.soundPath, this.betweenSoundItem.soundPath, this.chairArtISoundItem.soundPath, this.andSoundItem.soundPath, this.closetArtISoundItem.soundPath];
+        this.activityItems.push(chairBoxCloset);
+        // BOX between CHAIR and TABLE
+        let chairBoxTable = {};
+        chairBoxTable.name = 'boxBetweenChairAndTable';
+        chairBoxTable.images = [this.imgPath + "chair_box_table.svg", this.imgPath + "table_box_chair.svg"];
+        chairBoxTable.soundItems = [this.boxArtDSoundItem.soundPath, this.betweenSoundItem.soundPath, this.chairArtISoundItem.soundPath, this.andSoundItem.soundPath, this.tableArtISoundItem.soundPath];
+        this.activityItems.push(chairBoxTable);
+        // BOX between CHAIR and BEAR
+        let chairBoxBear = {};
+        chairBoxBear.name = 'boxBetweenChairAndTeddyBear';
+        chairBoxBear.images = [this.imgPath + "chair_box_teddyBear.svg", this.imgPath + "teddyBear_box_chair.svg"];
+        chairBoxBear.soundItems = [this.boxArtDSoundItem.soundPath, this.betweenSoundItem.soundPath, this.chairArtISoundItem.soundPath, this.andSoundItem.soundPath, this.teddyBearArtISoundItem.soundPath];
+        this.activityItems.push(chairBoxBear);
+        // BOX between CLOSET and TABLE
+        let closetBoxTable = {};
+        closetBoxTable.name = 'boxBetweenClosetAndTable';
+        closetBoxTable.images = [this.imgPath + "closet_box_table.svg", this.imgPath + "table_box_closet.svg"];
+        closetBoxTable.soundItems = [this.boxArtDSoundItem.soundPath, this.betweenSoundItem.soundPath, this.closetArtISoundItem.soundPath, this.andSoundItem.soundPath, this.tableArtISoundItem.soundPath];
+        this.activityItems.push(closetBoxTable);
+        // BOX between CLOSET and BEAR
+        let closetBoxBear = {};
+        closetBoxBear.name = 'boxBetweenClosetAndTeddyBear';
+        closetBoxBear.images = [this.imgPath + "closet_box_teddyBear.svg", this.imgPath + "teddyBear_box_closet.svg"];
+        closetBoxBear.soundItems = [this.boxArtDSoundItem.soundPath, this.betweenSoundItem.soundPath, this.closetArtISoundItem.soundPath, this.andSoundItem.soundPath, this.teddyBearArtISoundItem.soundPath];
+        this.activityItems.push(closetBoxBear);
+        // BOX between table and BEAR
+        let tableBoxBear = {};
+        tableBoxBear.name = 'boxBetweenTableAndTeddyBear';
+        tableBoxBear.images = [this.imgPath + "table_box_teddyBear.svg", this.imgPath + "teddyBear_box_table.svg"];
+        tableBoxBear.soundItems = [this.boxArtDSoundItem.soundPath, this.betweenSoundItem.soundPath, this.tableArtISoundItem.soundPath, this.andSoundItem.soundPath, this.teddyBearArtISoundItem.soundPath];
+        this.activityItems.push(tableBoxBear);
+  
+        // BOX before CHAIR
+        let boxBeforeChair = {};
+        boxBeforeChair.name = 'boxBeforeChair';
+        boxBeforeChair.images = [this.imgPath + "box_Before_Chair.svg"];
+        boxBeforeChair.soundItems = [this.boxArtDSoundItem.soundPath, this.beforeSoundItem.soundPath, this.chairArtPSoundItem.soundPath];
+        this.activityItems.push(boxBeforeChair);
+        // BOX before CLOSET
+        let boxBeforeCloset = {};
+        boxBeforeCloset.name = 'boxBeforeCloset';
+        boxBeforeCloset.images = [this.imgPath + "box_Before_Closet.svg"];
+        boxBeforeCloset.soundItems = [this.boxArtDSoundItem.soundPath, this.beforeSoundItem.soundPath, this.closetArtPSoundItem.soundPath];
+        this.activityItems.push(boxBeforeCloset);
+        // BOX before TABLE
+        let boxBeforeTable = {};
+        boxBeforeTable.name = 'boxBeforeTable';
+        boxBeforeTable.images = [this.imgPath + "box_Before_Table.svg"];
+        boxBeforeTable.soundItems = [this.boxArtDSoundItem.soundPath, this.beforeSoundItem.soundPath, this.tableArtPSoundItem.soundPath];
+        this.activityItems.push(boxBeforeTable);
+  
+        // BOX behind CHAIR
+        let boxBehindChair = {};
+        boxBehindChair.name = 'boxBehindChair';
+        boxBehindChair.images = [this.imgPath + "box_Behind_Chair.svg"];
+        boxBehindChair.soundItems = [this.boxArtDSoundItem.soundPath, this.behindSoundItem.soundPath, this.chairArtPSoundItem.soundPath];
+        this.activityItems.push(boxBehindChair);
+        // BOX behind CLOSET
+        let boxBehindCloset = {};
+        boxBehindCloset.name = 'boxBehindCloset';
+        boxBehindCloset.images = [this.imgPath + "box_Behind_Closet.svg"];
+        boxBehindCloset.soundItems = [this.boxArtDSoundItem.soundPath, this.behindSoundItem.soundPath, this.closetArtPSoundItem.soundPath];
+        this.activityItems.push(boxBehindCloset);
+        // BOX behind TABLE
+        let boxBehindTable = {};
+        boxBehindTable.name = 'boxBehindTable';
+        boxBehindTable.images = [this.imgPath + "box_Behind_Table.svg"];
+        boxBehindTable.soundItems = [this.boxArtDSoundItem.soundPath, this.behindSoundItem.soundPath, this.tableArtPSoundItem.soundPath];
+        this.activityItems.push(boxBehindTable);
+  
+        // BOX in CLOSET
+        let boxInCloset = {};
+        boxInCloset.name = 'boxInCloset';
+        boxInCloset.images = [this.imgPath + "box_In_Closet.svg"];
+        boxInCloset.soundItems = [this.boxArtDSoundItem.soundPath, this.inSoundItem.soundPath, this.closetArtISoundItem.soundPath];
+        this.activityItems.push(boxInCloset);
+        // BEAR in CLOSET
+        let bearInCloset = {};
+        bearInCloset.name = 'teddyBearInCloset';
+        bearInCloset.images = [this.imgPath + "teddyBear_In_Closet.svg"];
+        bearInCloset.soundItems = [this.teddyBearArtDSoundItem.soundPath, this.inSoundItem.soundPath, this.closetArtISoundItem.soundPath];
+        this.activityItems.push(bearInCloset);
+        // BEAR in BOX
+        let bearInBox = {};
+        bearInBox.name = 'teddyBearInBox';
+        bearInBox.images = [this.imgPath + "teddyBear_In_Box.svg"];
+        bearInBox.soundItems = [this.teddyBearArtDSoundItem.soundPath, this.inSoundItem.soundPath, this.boxArtISoundItem.soundPath];
+        this.activityItems.push(bearInBox);
+  
+        // BOX near CHAIR
+        let boxNearChair = {};
+        boxNearChair.name = 'boxNearChair';
+        boxNearChair.images = [this.imgPath + "box_Near_Chair.svg"];
+        boxNearChair.soundItems = [this.boxArtDSoundItem.soundPath, this.nearSoundItem.soundPath, this.chairArtISoundItem.soundPath];
+        this.activityItems.push(boxNearChair);
+        // BOX near CLOSET
+        let boxNearCloset = {};
+        boxNearCloset.name = 'boxNearCloset';
+        boxNearCloset.images = [this.imgPath + "box_Near_Closet.svg"];
+        boxNearCloset.soundItems = [this.boxArtDSoundItem.soundPath, this.nearSoundItem.soundPath, this.closetArtISoundItem.soundPath];
+        this.activityItems.push(boxNearCloset);
+        // BOX near TABLE
+        let boxNearTable = {};
+        boxNearTable.name = 'boxNearTable';
+        boxNearTable.images = [this.imgPath + "box_Near_Table.svg"];
+        boxNearTable.soundItems = [this.boxArtDSoundItem.soundPath, this.nearSoundItem.soundPath, this.tableArtISoundItem.soundPath];
+        this.activityItems.push(boxNearTable);
+  
+        // BOX on CHAIR
+        let boxOnChair = {};
+        boxOnChair.name = 'boxOnChair';
+        boxOnChair.images = [this.imgPath + "box_On_Chair.svg"];
+        boxOnChair.soundItems = [this.boxArtDSoundItem.soundPath, this.aboveSoundItem.soundPath, this.chairArtISoundItem.soundPath];
+        this.activityItems.push(boxOnChair);
+        // BOX on CLOSET
+        let boxOnCloset = {};
+        boxOnCloset.name = 'boxOnCloset';
+        boxOnCloset.images = [this.imgPath + "box_On_Closet.svg"];
+        boxOnCloset.soundItems = [this.boxArtDSoundItem.soundPath, this.aboveSoundItem.soundPath, this.closetArtISoundItem.soundPath];
+        this.activityItems.push(boxOnCloset);
+        // BOX on TABLE
+        let boxOnTable = {};
+        boxOnTable.name = 'boxOnTable';
+        boxOnTable.images = [this.imgPath + "box_On_Table.svg"];
+        boxOnTable.soundItems = [this.boxArtDSoundItem.soundPath, this.aboveSoundItem.soundPath, this.tableArtISoundItem.soundPath];
+        this.activityItems.push(boxOnTable);
+  
+        // BOX under CHAIR
+        let boxUnderChair = {};
+        boxUnderChair.name = 'boxUnderChair';
+        boxUnderChair.images = [this.imgPath + "box_Under_Chair.svg"];
+        boxUnderChair.soundItems = [this.boxArtDSoundItem.soundPath, this.underSoundItem.soundPath, this.chairArtISoundItem.soundPath];
+        this.activityItems.push(boxUnderChair);
+        // BOX under CLOSET
+        let boxUnderCloset = {};
+        boxUnderCloset.name = 'boxUnderCloset';
+        boxUnderCloset.images = [this.imgPath + "box_Under_Closet.svg"];
+        boxUnderCloset.soundItems = [this.boxArtDSoundItem.soundPath, this.underSoundItem.soundPath, this.closetArtISoundItem.soundPath];
+        this.activityItems.push(boxUnderCloset);
+        // BOX under TABLE
+        let boxUnderTable = {};
+        boxUnderTable.name = 'boxUnderTable';
+        boxUnderTable.images = [this.imgPath + "box_Under_Table.svg"];
+        boxUnderTable.soundItems = [this.boxArtDSoundItem.soundPath, this.underSoundItem.soundPath, this.tableArtISoundItem.soundPath];
+        this.activityItems.push(boxUnderTable);
+  
+        // BEAR before BOX
+        let bearBeforeBox = {};
+        bearBeforeBox.name = 'teddyBearBeforeBox';
+        bearBeforeBox.images = [this.imgPath + "teddyBear_Before_Box.svg"];
+        bearBeforeBox.soundItems = [this.teddyBearArtDSoundItem.soundPath, this.beforeSoundItem.soundPath, this.boxArtPSoundItem.soundPath];
+        this.activityItems.push(bearBeforeBox);
+        // BEAR before CHAIR
+        let bearBeforeChair = {};
+        bearBeforeChair.name = 'teddyBearBeforeChair';
+        bearBeforeChair.images = [this.imgPath + "teddyBear_Before_Chair.svg"];
+        bearBeforeChair.soundItems = [this.teddyBearArtDSoundItem.soundPath, this.beforeSoundItem.soundPath, this.chairArtPSoundItem.soundPath];
+        this.activityItems.push(bearBeforeChair);
+        // BEAR before CLOSET
+        let bearBeforeCloset = {};
+        bearBeforeCloset.name = 'teddyBearBeforeCloset';
+        bearBeforeCloset.images = [this.imgPath + "teddyBear_Before_Closet.svg"];
+        bearBeforeCloset.soundItems = [this.teddyBearArtDSoundItem.soundPath, this.beforeSoundItem.soundPath, this.closetArtPSoundItem.soundPath];
+        this.activityItems.push(bearBeforeCloset);
+        // BEAR before TABLE
+        let bearBeforeTable = {};
+        bearBeforeTable.name = 'teddyBearBeforeTable';
+        bearBeforeTable.images = [this.imgPath + "teddyBear_Before_Table.svg"];
+        bearBeforeTable.soundItems = [this.teddyBearArtDSoundItem.soundPath, this.beforeSoundItem.soundPath, this.tableArtPSoundItem.soundPath];
+        this.activityItems.push(bearBeforeTable);
+  
+        // BEAR behind BOX
+        let bearBehindBox = {};
+        bearBehindBox.name = 'teddyBearBehindBox';
+        bearBehindBox.images = [this.imgPath + "teddyBear_Behind_Box.svg"];
+        bearBehindBox.soundItems = [this.teddyBearArtDSoundItem.soundPath, this.behindSoundItem.soundPath, this.boxArtPSoundItem.soundPath];
+        this.activityItems.push(bearBehindBox);
+        // BEAR behind CHAIR
+        let bearBehindChair = {};
+        bearBehindChair.name = 'teddyBearBehindChair';
+        bearBehindChair.images = [this.imgPath + "teddyBear_Behind_Chair.svg"];
+        bearBehindChair.soundItems = [this.teddyBearArtDSoundItem.soundPath, this.behindSoundItem.soundPath, this.chairArtPSoundItem.soundPath];
+        this.activityItems.push(bearBehindChair);
+        // BEAR behind CLOSET
+        let bearBehindCloset = {};
+        bearBehindCloset.name = 'teddyBearBehindCloset';
+        bearBehindCloset.images = [this.imgPath + "teddyBear_Behind_Closet.svg"];
+        bearBehindCloset.soundItems = [this.teddyBearArtDSoundItem.soundPath, this.behindSoundItem.soundPath, this.closetArtPSoundItem.soundPath];
+        this.activityItems.push(bearBehindCloset);
+        // BEAR behind TABLE
+        let bearBehindTable = {};
+        bearBehindTable.name = 'teddyBearBehindTable';
+        bearBehindTable.images = [this.imgPath + "teddyBear_Behind_Table.svg"];
+        bearBehindTable.soundItems = [this.teddyBearArtDSoundItem.soundPath, this.behindSoundItem.soundPath, this.tableArtPSoundItem.soundPath];
+        this.activityItems.push(bearBehindTable);
+  
+        // BEAR near BOX
+        let bearNearBox = {};
+        bearNearBox.name = 'teddyBearNearBox';
+        bearNearBox.images = [this.imgPath + "teddyBear_Near_Box.svg"];
+        bearNearBox.soundItems = [this.teddyBearArtDSoundItem.soundPath, this.nearSoundItem.soundPath, this.boxArtISoundItem.soundPath];
+        this.activityItems.push(bearNearBox);
+        // BEAR near CHAIR
+        let bearNearChair = {};
+        bearNearChair.name = 'teddyBearNearChair';
+        bearNearChair.images = [this.imgPath + "teddyBear_Near_Chair.svg"];
+        bearNearChair.soundItems = [this.teddyBearArtDSoundItem.soundPath, this.nearSoundItem.soundPath, this.chairArtISoundItem.soundPath];
+        this.activityItems.push(bearNearChair);
+        // BEAR near CLOSET
+        let bearNearCloset = {};
+        bearNearCloset.name = 'teddyBearNearCloset';
+        bearNearCloset.images = [this.imgPath + "teddyBear_Near_Closet.svg"];
+        bearNearCloset.soundItems = [this.teddyBearArtDSoundItem.soundPath, this.nearSoundItem.soundPath, this.closetArtISoundItem.soundPath];
+        this.activityItems.push(bearNearCloset);
+        // BEAR near TABLE
+        let bearNearTable = {};
+        bearNearTable.name = 'teddyBearNearTable';
+        bearNearTable.images = [this.imgPath + "teddyBear_Near_Table.svg"];
+        bearNearTable.soundItems = [this.teddyBearArtDSoundItem.soundPath, this.nearSoundItem.soundPath, this.tableArtISoundItem.soundPath];
+        this.activityItems.push(bearNearTable);
+  
+        // BEAR on BOX
+        let bearOnBox = {};
+        bearOnBox.name = 'teddyBearOnBox';
+        bearOnBox.images = [this.imgPath + "teddyBear_On_Box.svg"];
+        bearOnBox.soundItems = [this.teddyBearArtDSoundItem.soundPath, this.aboveSoundItem.soundPath, this.boxArtISoundItem.soundPath];
+        this.activityItems.push(bearOnBox);
+        // BEAR on CHAIR
+        let bearOnChair = {};
+        bearOnChair.name = 'teddyBearOnChair';
+        bearOnChair.images = [this.imgPath + "teddyBear_On_Chair.svg"];
+        bearOnChair.soundItems = [this.teddyBearArtDSoundItem.soundPath, this.aboveSoundItem.soundPath, this.chairArtISoundItem.soundPath];
+        this.activityItems.push(bearOnChair);
+        // BEAR on CLOSET
+        let bearOnCloset = {};
+        bearOnCloset.name = 'teddyBearOnCloset';
+        bearOnCloset.images = [this.imgPath + "teddyBear_On_Closet.svg"];
+        bearOnCloset.soundItems = [this.teddyBearArtDSoundItem.soundPath, this.aboveSoundItem.soundPath, this.closetArtISoundItem.soundPath];
+        this.activityItems.push(bearOnCloset);
+        // BEAR on TABLE
+        let bearOnTable = {};
+        bearOnTable.name = 'teddyBearOnTable';
+        bearOnTable.images = [this.imgPath + "teddyBear_On_Table.svg"];
+        bearOnTable.soundItems = [this.teddyBearArtDSoundItem.soundPath, this.aboveSoundItem.soundPath, this.tableArtISoundItem.soundPath];
+        this.activityItems.push(bearOnTable);
+  
+        // BEAR under BOX
+        let bearUnderBox = {};
+        bearUnderBox.name = 'teddyBearUnderBox';
+        bearUnderBox.images = [this.imgPath + "teddyBear_Under_Box.svg"];
+        bearUnderBox.soundItems = [this.teddyBearArtDSoundItem.soundPath, this.underSoundItem.soundPath, this.boxArtISoundItem.soundPath];
+        this.activityItems.push(bearUnderBox);
+        // BEAR under CHAIR
+        let bearUnderChair = {};
+        bearUnderChair.name = 'teddyBearUnderChair';
+        bearUnderChair.images = [this.imgPath + "teddyBear_Under_Chair.svg"];
+        bearUnderChair.soundItems = [this.teddyBearArtDSoundItem.soundPath, this.underSoundItem.soundPath, this.chairArtISoundItem.soundPath];
+        this.activityItems.push(bearUnderChair);
+        // BEAR under CLOSET
+        let bearUnderCloset = {};
+        bearUnderCloset.name = 'teddyBearUnderCloset';
+        bearUnderCloset.images = [this.imgPath + "teddyBear_Under_Closet.svg"];
+        bearUnderCloset.soundItems = [this.teddyBearArtDSoundItem.soundPath, this.underSoundItem.soundPath, this.closetArtISoundItem.soundPath];
+        this.activityItems.push(bearUnderCloset);
+        // BEAR under TABLE
+        let bearUnderTable = {};
+        bearUnderTable.name = 'teddyBearUnderTable';
+        bearUnderTable.images = [this.imgPath + "teddyBear_Under_Table.svg"];
+        bearUnderTable.soundItems = [this.teddyBearArtDSoundItem.soundPath, this.underSoundItem.soundPath, this.tableArtISoundItem.soundPath];
+        this.activityItems.push(bearUnderTable);
+      }
+    }
 
     class SoundItem {
       /**
        *
+       * @param sndPath
        * @param soundBaseFileName
        * @param soundArticle: Indefinite, Definite, Possessive
        * @param sharedSound: some sounds are shared by the spatial positioning activities
        */
-      constructor(soundBaseFileName, soundArticle = '', sharedSound = false) {
-        this.soundPath = `${sharedSound ? sndCommonPath : sndPath}${soundBaseFileName}${soundArticle}.ogg`;
+      constructor(sndPath, soundBaseFileName, soundArticle = '', sharedSound = false) {
+        this.soundPath = `${sharedSound ? this.sndCommonPath : sndPath}${soundBaseFileName}${soundArticle}.ogg`;
       }
-    }
-
-    const
-      andSoundItem = new SoundItem('and'),
-      betweenSoundItem = new SoundItem('between'),
-
-      teddyBearArtDSoundItem = new SoundItem('teddyBear', 'D'),
-      teddyBearArtISoundItem = new SoundItem('teddyBear', 'I'),
-      boxArtISoundItem = new SoundItem('box', 'I'),
-      boxArtDSoundItem = new SoundItem('box', 'D'),
-      boxArtPSoundItem = new SoundItem('box', 'P'),
-      chairArtISoundItem = new SoundItem('chair', 'I'),
-      chairArtPSoundItem = new SoundItem('chair', 'P'),
-      closetArtISoundItem = new SoundItem('closet', 'I'),
-      closetArtPSoundItem = new SoundItem('closet', 'P'),
-      tableArtISoundItem = new SoundItem('table', 'I'),
-      tableArtPSoundItem = new SoundItem('table', 'P');
-
-    const initActivityItems = () => {
-      activityItems = [];
-
-      // BEAR between BOX and CHAIR
-      let boxBearChair = {};
-      boxBearChair.name = 'bearBetweenBoxAndChair';
-      boxBearChair.images = [imgPath + "box_bear_chair.svg", imgPath + "chair_bear_box.svg"];
-      boxBearChair.soundItems = [teddyBearArtDSoundItem.soundPath, betweenSoundItem.soundPath, boxArtISoundItem.soundPath, andSoundItem.soundPath, chairArtISoundItem.soundPath];
-      activityItems.push(boxBearChair);
-      // BEAR between BOX and CLOSET
-      let boxBearCloset = {};
-      boxBearCloset.name = 'bearBetweenBoxAndCloset';
-      boxBearCloset.images = [imgPath + "box_bear_closet.svg", imgPath + "closet_bear_box.svg"];
-      boxBearCloset.soundItems = [teddyBearArtDSoundItem.soundPath, betweenSoundItem.soundPath, boxArtISoundItem.soundPath, andSoundItem.soundPath, closetArtISoundItem.soundPath];
-      activityItems.push(boxBearCloset);
-      // BEAR between BOX and TABLE
-      let boxBearTable = {};
-      boxBearTable.name = 'bearBetweenBoxAndTable';
-      boxBearTable.images = [imgPath + "box_bear_table.svg", imgPath + "table_bear_box.svg"];
-      boxBearTable.soundItems = [teddyBearArtDSoundItem.soundPath, betweenSoundItem.soundPath, boxArtISoundItem.soundPath, andSoundItem.soundPath, tableArtISoundItem.soundPath];
-      activityItems.push(boxBearTable);
-      // BEAR between CHAIR and CLOSET
-      let chairBearCloset = {};
-      chairBearCloset.name = 'bearBetweenChairAndCloset';
-      chairBearCloset.images = [imgPath + "chair_bear_closet.svg", imgPath + "closet_bear_chair.svg"];
-      chairBearCloset.soundItems = [teddyBearArtDSoundItem.soundPath, betweenSoundItem.soundPath, chairArtISoundItem.soundPath, andSoundItem.soundPath, closetArtISoundItem.soundPath];
-      activityItems.push(chairBearCloset);
-      // BEAR between CHAIR and TABLE
-      let chairBearTable = {};
-      chairBearTable.name = 'bearBetweenChairAndTable';
-      chairBearTable.images = [imgPath + "chair_bear_table.svg", imgPath + "table_bear_chair.svg"];
-      chairBearTable.soundItems = [teddyBearArtDSoundItem.soundPath, betweenSoundItem.soundPath, chairArtISoundItem.soundPath, andSoundItem.soundPath, tableArtISoundItem.soundPath];
-      activityItems.push(chairBearTable);
-      // BEAR between CLOSET and TABLE
-      let closetBearTable = {};
-      closetBearTable.name = 'bearBetweenClosetAndTable';
-      closetBearTable.images = [imgPath + "closet_bear_table.svg", imgPath + "table_bear_closet.svg"];
-      closetBearTable.soundItems = [teddyBearArtDSoundItem.soundPath, betweenSoundItem.soundPath, closetArtISoundItem.soundPath, andSoundItem.soundPath, tableArtISoundItem.soundPath];
-      activityItems.push(closetBearTable);
-
-      // BOX between CHAIR and CLOSET
-      let chairBoxCloset = {};
-      chairBoxCloset.name = 'boxBetweenChairAndCloset';
-      chairBoxCloset.images = [imgPath + "chair_box_closet.svg", imgPath + "closet_box_chair.svg"];
-      chairBoxCloset.soundItems = [boxArtDSoundItem.soundPath, betweenSoundItem.soundPath, chairArtISoundItem.soundPath, andSoundItem.soundPath, closetArtISoundItem.soundPath];
-      activityItems.push(chairBoxCloset);
-      // BOX between CHAIR and TABLE
-      let chairBoxTable = {};
-      chairBoxTable.name = 'boxBetweenChairAndTable';
-      chairBoxTable.images = [imgPath + "chair_box_table.svg", imgPath + "table_box_chair.svg"];
-      chairBoxTable.soundItems = [boxArtDSoundItem.soundPath, betweenSoundItem.soundPath, chairArtISoundItem.soundPath, andSoundItem.soundPath, tableArtISoundItem.soundPath];
-      activityItems.push(chairBoxTable);
-      // BOX between CHAIR and BEAR
-      let chairBoxBear = {};
-      chairBoxBear.name = 'boxBetweenChairAndTeddyBear';
-      chairBoxBear.images = [imgPath + "chair_box_teddyBear.svg", imgPath + "teddyBear_box_chair.svg"];
-      chairBoxBear.soundItems = [boxArtDSoundItem.soundPath, betweenSoundItem.soundPath, chairArtISoundItem.soundPath, andSoundItem.soundPath, teddyBearArtISoundItem.soundPath];
-      activityItems.push(chairBoxBear);
-      // BOX between CLOSET and TABLE
-      let closetBoxTable = {};
-      closetBoxTable.name = 'boxBetweenClosetAndTable';
-      closetBoxTable.images = [imgPath + "closet_box_table.svg", imgPath + "table_box_closet.svg"];
-      closetBoxTable.soundItems = [boxArtDSoundItem.soundPath, betweenSoundItem.soundPath, closetArtISoundItem.soundPath, andSoundItem.soundPath, tableArtISoundItem.soundPath];
-      activityItems.push(closetBoxTable);
-      // BOX between CLOSET and BEAR
-      let closetBoxBear = {};
-      closetBoxBear.name = 'boxBetweenClosetAndTeddyBear';
-      closetBoxBear.images = [imgPath + "closet_box_teddyBear.svg", imgPath + "teddyBear_box_closet.svg"];
-      closetBoxBear.soundItems = [boxArtDSoundItem.soundPath, betweenSoundItem.soundPath, closetArtISoundItem.soundPath, andSoundItem.soundPath, teddyBearArtISoundItem.soundPath];
-      activityItems.push(closetBoxBear);
-      // BOX between table and BEAR
-      let tableBoxBear = {};
-      tableBoxBear.name = 'boxBetweenTableAndTeddyBear';
-      tableBoxBear.images = [imgPath + "table_box_teddyBear.svg", imgPath + "teddyBear_box_table.svg"];
-      tableBoxBear.soundItems = [boxArtDSoundItem.soundPath, betweenSoundItem.soundPath, tableArtISoundItem.soundPath, andSoundItem.soundPath, teddyBearArtISoundItem.soundPath];
-      activityItems.push(tableBoxBear);
-
-      // BOX before CHAIR
-      let boxBeforeChair = {};
-      boxBeforeChair.name = 'boxBeforeChair';
-      boxBeforeChair.images = [imgPath + "box_Before_Chair.svg"];
-      boxBeforeChair.soundItems = [boxArtDSoundItem.soundPath, beforeSoundItem.soundPath, chairArtPSoundItem.soundPath];
-      activityItems.push(boxBeforeChair);
-      // BOX before CLOSET
-      let boxBeforeCloset = {};
-      boxBeforeCloset.name = 'boxBeforeCloset';
-      boxBeforeCloset.images = [imgPath + "box_Before_Closet.svg"];
-      boxBeforeCloset.soundItems = [boxArtDSoundItem.soundPath, beforeSoundItem.soundPath, closetArtPSoundItem.soundPath];
-      activityItems.push(boxBeforeCloset);
-      // BOX before TABLE
-      let boxBeforeTable = {};
-      boxBeforeTable.name = 'boxBeforeTable';
-      boxBeforeTable.images = [imgPath + "box_Before_Table.svg"];
-      boxBeforeTable.soundItems = [boxArtDSoundItem.soundPath, beforeSoundItem.soundPath, tableArtPSoundItem.soundPath];
-      activityItems.push(boxBeforeTable);
-
-      // BOX behind CHAIR
-      let boxBehindChair = {};
-      boxBehindChair.name = 'boxBehindChair';
-      boxBehindChair.images = [imgPath + "box_Behind_Chair.svg"];
-      boxBehindChair.soundItems = [boxArtDSoundItem.soundPath, behindSoundItem.soundPath, chairArtPSoundItem.soundPath];
-      activityItems.push(boxBehindChair);
-      // BOX behind CLOSET
-      let boxBehindCloset = {};
-      boxBehindCloset.name = 'boxBehindCloset';
-      boxBehindCloset.images = [imgPath + "box_Behind_Closet.svg"];
-      boxBehindCloset.soundItems = [boxArtDSoundItem.soundPath, behindSoundItem.soundPath, closetArtPSoundItem.soundPath];
-      activityItems.push(boxBehindCloset);
-      // BOX behind TABLE
-      let boxBehindTable = {};
-      boxBehindTable.name = 'boxBehindTable';
-      boxBehindTable.images = [imgPath + "box_Behind_Table.svg"];
-      boxBehindTable.soundItems = [boxArtDSoundItem.soundPath, behindSoundItem.soundPath, tableArtPSoundItem.soundPath];
-      activityItems.push(boxBehindTable);
-
-      // BOX in CLOSET
-      let boxInCloset = {};
-      boxInCloset.name = 'boxInCloset';
-      boxInCloset.images = [imgPath + "box_In_Closet.svg"];
-      boxInCloset.soundItems = [boxArtDSoundItem.soundPath, inSoundItem.soundPath, closetArtISoundItem.soundPath];
-      activityItems.push(boxInCloset);
-      // BEAR in CLOSET
-      let bearInCloset = {};
-      bearInCloset.name = 'teddyBearInCloset';
-      bearInCloset.images = [imgPath + "teddyBear_In_Closet.svg"];
-      bearInCloset.soundItems = [teddyBearArtDSoundItem.soundPath, inSoundItem.soundPath, closetArtISoundItem.soundPath];
-      activityItems.push(bearInCloset);
-      // BEAR in BOX
-      let bearInBox = {};
-      bearInBox.name = 'teddyBearInBox';
-      bearInBox.images = [imgPath + "teddyBear_In_Box.svg"];
-      bearInBox.soundItems = [teddyBearArtDSoundItem.soundPath, inSoundItem.soundPath, boxArtISoundItem.soundPath];
-      activityItems.push(bearInBox);
-
-      // BOX near CHAIR
-      let boxNearChair = {};
-      boxNearChair.name = 'boxNearChair';
-      boxNearChair.images = [imgPath + "box_Near_Chair.svg"];
-      boxNearChair.soundItems = [boxArtDSoundItem.soundPath, nearSoundItem.soundPath, chairArtISoundItem.soundPath];
-      activityItems.push(boxNearChair);
-      // BOX near CLOSET
-      let boxNearCloset = {};
-      boxNearCloset.name = 'boxNearCloset';
-      boxNearCloset.images = [imgPath + "box_Near_Closet.svg"];
-      boxNearCloset.soundItems = [boxArtDSoundItem.soundPath, nearSoundItem.soundPath, closetArtISoundItem.soundPath];
-      activityItems.push(boxNearCloset);
-      // BOX near TABLE
-      let boxNearTable = {};
-      boxNearTable.name = 'boxNearTable';
-      boxNearTable.images = [imgPath + "box_Near_Table.svg"];
-      boxNearTable.soundItems = [boxArtDSoundItem.soundPath, nearSoundItem.soundPath, tableArtISoundItem.soundPath];
-      activityItems.push(boxNearTable);
-
-      // BOX on CHAIR
-      let boxOnChair = {};
-      boxOnChair.name = 'boxOnChair';
-      boxOnChair.images = [imgPath + "box_On_Chair.svg"];
-      boxOnChair.soundItems = [boxArtDSoundItem.soundPath, aboveSoundItem.soundPath, chairArtISoundItem.soundPath];
-      activityItems.push(boxOnChair);
-      // BOX on CLOSET
-      let boxOnCloset = {};
-      boxOnCloset.name = 'boxOnCloset';
-      boxOnCloset.images = [imgPath + "box_On_Closet.svg"];
-      boxOnCloset.soundItems = [boxArtDSoundItem.soundPath, aboveSoundItem.soundPath, closetArtISoundItem.soundPath];
-      activityItems.push(boxOnCloset);
-      // BOX on TABLE
-      let boxOnTable = {};
-      boxOnTable.name = 'boxOnTable';
-      boxOnTable.images = [imgPath + "box_On_Table.svg"];
-      boxOnTable.soundItems = [boxArtDSoundItem.soundPath, aboveSoundItem.soundPath, tableArtISoundItem.soundPath];
-      activityItems.push(boxOnTable);
-
-      // BOX under CHAIR
-      let boxUnderChair = {};
-      boxUnderChair.name = 'boxUnderChair';
-      boxUnderChair.images = [imgPath + "box_Under_Chair.svg"];
-      boxUnderChair.soundItems = [boxArtDSoundItem.soundPath, underSoundItem.soundPath, chairArtISoundItem.soundPath];
-      activityItems.push(boxUnderChair);
-      // BOX under CLOSET
-      let boxUnderCloset = {};
-      boxUnderCloset.name = 'boxUnderCloset';
-      boxUnderCloset.images = [imgPath + "box_Under_Closet.svg"];
-      boxUnderCloset.soundItems = [boxArtDSoundItem.soundPath, underSoundItem.soundPath, closetArtISoundItem.soundPath];
-      activityItems.push(boxUnderCloset);
-      // BOX under TABLE
-      let boxUnderTable = {};
-      boxUnderTable.name = 'boxUnderTable';
-      boxUnderTable.images = [imgPath + "box_Under_Table.svg"];
-      boxUnderTable.soundItems = [boxArtDSoundItem.soundPath, underSoundItem.soundPath, tableArtISoundItem.soundPath];
-      activityItems.push(boxUnderTable);
-
-      // BEAR before BOX
-      let bearBeforeBox = {};
-      bearBeforeBox.name = 'teddyBearBeforeBox';
-      bearBeforeBox.images = [imgPath + "teddyBear_Before_Box.svg"];
-      bearBeforeBox.soundItems = [teddyBearArtDSoundItem.soundPath, beforeSoundItem.soundPath, boxArtPSoundItem.soundPath];
-      activityItems.push(bearBeforeBox);
-      // BEAR before CHAIR
-      let bearBeforeChair = {};
-      bearBeforeChair.name = 'teddyBearBeforeChair';
-      bearBeforeChair.images = [imgPath + "teddyBear_Before_Chair.svg"];
-      bearBeforeChair.soundItems = [teddyBearArtDSoundItem.soundPath, beforeSoundItem.soundPath, chairArtPSoundItem.soundPath];
-      activityItems.push(bearBeforeChair);
-      // BEAR before CLOSET
-      let bearBeforeCloset = {};
-      bearBeforeCloset.name = 'teddyBearBeforeCloset';
-      bearBeforeCloset.images = [imgPath + "teddyBear_Before_Closet.svg"];
-      bearBeforeCloset.soundItems = [teddyBearArtDSoundItem.soundPath, beforeSoundItem.soundPath, closetArtPSoundItem.soundPath];
-      activityItems.push(bearBeforeCloset);
-      // BEAR before TABLE
-      let bearBeforeTable = {};
-      bearBeforeTable.name = 'teddyBearBeforeTable';
-      bearBeforeTable.images = [imgPath + "teddyBear_Before_Table.svg"];
-      bearBeforeTable.soundItems = [teddyBearArtDSoundItem.soundPath, beforeSoundItem.soundPath, tableArtPSoundItem.soundPath];
-      activityItems.push(bearBeforeTable);
-
-      // BEAR behind BOX
-      let bearBehindBox = {};
-      bearBehindBox.name = 'teddyBearBehindBox';
-      bearBehindBox.images = [imgPath + "teddyBear_Behind_Box.svg"];
-      bearBehindBox.soundItems = [teddyBearArtDSoundItem.soundPath, behindSoundItem.soundPath, boxArtPSoundItem.soundPath];
-      activityItems.push(bearBehindBox);
-      // BEAR behind CHAIR
-      let bearBehindChair = {};
-      bearBehindChair.name = 'teddyBearBehindChair';
-      bearBehindChair.images = [imgPath + "teddyBear_Behind_Chair.svg"];
-      bearBehindChair.soundItems = [teddyBearArtDSoundItem.soundPath, behindSoundItem.soundPath, chairArtPSoundItem.soundPath];
-      activityItems.push(bearBehindChair);
-      // BEAR behind CLOSET
-      let bearBehindCloset = {};
-      bearBehindCloset.name = 'teddyBearBehindCloset';
-      bearBehindCloset.images = [imgPath + "teddyBear_Behind_Closet.svg"];
-      bearBehindCloset.soundItems = [teddyBearArtDSoundItem.soundPath, behindSoundItem.soundPath, closetArtPSoundItem.soundPath];
-      activityItems.push(bearBehindCloset);
-      // BEAR behind TABLE
-      let bearBehindTable = {};
-      bearBehindTable.name = 'teddyBearBehindTable';
-      bearBehindTable.images = [imgPath + "teddyBear_Behind_Table.svg"];
-      bearBehindTable.soundItems = [teddyBearArtDSoundItem.soundPath, behindSoundItem.soundPath, tableArtPSoundItem.soundPath];
-      activityItems.push(bearBehindTable);
-
-      // BEAR near BOX
-      let bearNearBox = {};
-      bearNearBox.name = 'teddyBearNearBox';
-      bearNearBox.images = [imgPath + "teddyBear_Near_Box.svg"];
-      bearNearBox.soundItems = [teddyBearArtDSoundItem.soundPath, nearSoundItem.soundPath, boxArtISoundItem.soundPath];
-      activityItems.push(bearNearBox);
-      // BEAR near CHAIR
-      let bearNearChair = {};
-      bearNearChair.name = 'teddyBearNearChair';
-      bearNearChair.images = [imgPath + "teddyBear_Near_Chair.svg"];
-      bearNearChair.soundItems = [teddyBearArtDSoundItem.soundPath, nearSoundItem.soundPath, chairArtISoundItem.soundPath];
-      activityItems.push(bearNearChair);
-      // BEAR near CLOSET
-      let bearNearCloset = {};
-      bearNearCloset.name = 'teddyBearNearCloset';
-      bearNearCloset.images = [imgPath + "teddyBear_Near_Closet.svg"];
-      bearNearCloset.soundItems = [teddyBearArtDSoundItem.soundPath, nearSoundItem.soundPath, closetArtISoundItem.soundPath];
-      activityItems.push(bearNearCloset);
-      // BEAR near TABLE
-      let bearNearTable = {};
-      bearNearTable.name = 'teddyBearNearTable';
-      bearNearTable.images = [imgPath + "teddyBear_Near_Table.svg"];
-      bearNearTable.soundItems = [teddyBearArtDSoundItem.soundPath, nearSoundItem.soundPath, tableArtISoundItem.soundPath];
-      activityItems.push(bearNearTable);
-
-      // BEAR on BOX
-      let bearOnBox = {};
-      bearOnBox.name = 'teddyBearOnBox';
-      bearOnBox.images = [imgPath + "teddyBear_On_Box.svg"];
-      bearOnBox.soundItems = [teddyBearArtDSoundItem.soundPath, aboveSoundItem.soundPath, boxArtISoundItem.soundPath];
-      activityItems.push(bearOnBox);
-      // BEAR on CHAIR
-      let bearOnChair = {};
-      bearOnChair.name = 'teddyBearOnChair';
-      bearOnChair.images = [imgPath + "teddyBear_On_Chair.svg"];
-      bearOnChair.soundItems = [teddyBearArtDSoundItem.soundPath, aboveSoundItem.soundPath, chairArtISoundItem.soundPath];
-      activityItems.push(bearOnChair);
-      // BEAR on CLOSET
-      let bearOnCloset = {};
-      bearOnCloset.name = 'teddyBearOnCloset';
-      bearOnCloset.images = [imgPath + "teddyBear_On_Closet.svg"];
-      bearOnCloset.soundItems = [teddyBearArtDSoundItem.soundPath, aboveSoundItem.soundPath, closetArtISoundItem.soundPath];
-      activityItems.push(bearOnCloset);
-      // BEAR on TABLE
-      let bearOnTable = {};
-      bearOnTable.name = 'teddyBearOnTable';
-      bearOnTable.images = [imgPath + "teddyBear_On_Table.svg"];
-      bearOnTable.soundItems = [teddyBearArtDSoundItem.soundPath, aboveSoundItem.soundPath, tableArtISoundItem.soundPath];
-      activityItems.push(bearOnTable);
-
-      // BEAR under BOX
-      let bearUnderBox = {};
-      bearUnderBox.name = 'teddyBearUnderBox';
-      bearUnderBox.images = [imgPath + "teddyBear_Under_Box.svg"];
-      bearUnderBox.soundItems = [teddyBearArtDSoundItem.soundPath, underSoundItem.soundPath, boxArtISoundItem.soundPath];
-      activityItems.push(bearUnderBox);
-      // BEAR under CHAIR
-      let bearUnderChair = {};
-      bearUnderChair.name = 'teddyBearUnderChair';
-      bearUnderChair.images = [imgPath + "teddyBear_Under_Chair.svg"];
-      bearUnderChair.soundItems = [teddyBearArtDSoundItem.soundPath, underSoundItem.soundPath, chairArtISoundItem.soundPath];
-      activityItems.push(bearUnderChair);
-      // BEAR under CLOSET
-      let bearUnderCloset = {};
-      bearUnderCloset.name = 'teddyBearUnderCloset';
-      bearUnderCloset.images = [imgPath + "teddyBear_Under_Closet.svg"];
-      bearUnderCloset.soundItems = [teddyBearArtDSoundItem.soundPath, underSoundItem.soundPath, closetArtISoundItem.soundPath];
-      activityItems.push(bearUnderCloset);
-      // BEAR under TABLE
-      let bearUnderTable = {};
-      bearUnderTable.name = 'teddyBearUnderTable';
-      bearUnderTable.images = [imgPath + "teddyBear_Under_Table.svg"];
-      bearUnderTable.soundItems = [teddyBearArtDSoundItem.soundPath, underSoundItem.soundPath, tableArtISoundItem.soundPath];
-      activityItems.push(bearUnderTable);
+  
+      sndCommonPath = "../sounds/common/";
     }
   </script>
 </head>
@@ -383,7 +397,7 @@
   <div id="content">
     <div id="dialogDiv"></div>
     <div class="result">
-      <div onmousedown="startActivity();" class="pointer-cursor start-activity"></div>
+      <div class="pointer-cursor start-activity"></div>
     </div>
     <div id="contentPanel">
       <div id="itemContainer1Id" class="item pointer-cursor">

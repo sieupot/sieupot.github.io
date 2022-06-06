@@ -1,0 +1,137 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Poziționare spațială 2</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/icon.png">
+
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/pageLayout.css">
+  <link rel="stylesheet" href="../css/items.css">
+
+  <meta name="theme-color" content="#EFE7E0">
+
+  <script defer src="../js/lib/modernizr-3.8.0.min.js"></script>
+  <script defer src="../js/lib/jquery.min.js"></script>
+  <script defer src="../js/lib/jquery-ui-1.12.1.min.js"></script>
+
+  <script defer src="../js/main.js"></script>
+  <script defer src="../js/utils.js"></script>
+  <script type="module" src="../js/activityEngine.js"></script>
+  <script type="module" src="../js/spatialPositioning.js"></script>
+  <!-- inject the template footer into the page -->
+  <script defer src="../js/injectors/footerInjector.js"></script>
+  <script defer type="text/javascript">
+    class SPActivityItems{
+    	constructor() {
+    		this.initActivityItems();
+    	}
+
+    	imgPath = "../images/spatialPositioning/1/";
+	    sndPath = "../sounds/spatialPositioning/1/";
+
+	    dogArtDSoundItem = new SoundItem(this.sndPath, 'dog', 'D');
+	    doghouseArtISoundItem = new SoundItem(this.sndPath, 'doghouse', 'I');
+	    doghouseArtPSoundItem = new SoundItem(this.sndPath, 'doghouse', 'P');
+
+	    inSoundItem = new SoundItem(this.sndPath, 'in', '', true);
+	    aboveSoundItem = new SoundItem(this.sndPath, 'above', '', true);
+	    underSoundItem = new SoundItem(this.sndPath, 'under', '', true);
+	    nearSoundItem = new SoundItem(this.sndPath, 'near', '', true);
+	    beforeSoundItem = new SoundItem(this.sndPath, 'before', '', true);
+	    behindSoundItem = new SoundItem(this.sndPath, 'behind', '', true);
+
+	    activityItems;
+	    initActivityItems = () => {
+	      this.activityItems = [];
+	
+	      // DOG in DOGHOUSE
+	      let dogInDoghouse = {};
+	      dogInDoghouse.name = 'dogInDoghouse';
+	      dogInDoghouse.images = [this.imgPath + "dog_In_Doghouse.svg"];
+	      dogInDoghouse.soundItems = [this.dogArtDSoundItem.soundPath, this.inSoundItem.soundPath, this.doghouseArtISoundItem.soundPath];
+	      this.activityItems.push(dogInDoghouse);
+	
+	      // DOG on DOGHOUSE
+	      let dogOnDoghouse = {};
+	      dogOnDoghouse.name = 'dogOnDoghouse';
+	      dogOnDoghouse.images = [this.imgPath + "dog_On_Doghouse.svg"];
+	      dogOnDoghouse.soundItems = [this.dogArtDSoundItem.soundPath, this.aboveSoundItem.soundPath, this.doghouseArtISoundItem.soundPath];
+	      this.activityItems.push(dogOnDoghouse);
+	
+	      // DOG behind DOGHOUSE
+	      let dogBehindDoghouse = {};
+	      dogBehindDoghouse.name = 'dogBehindDoghouse';
+	      dogBehindDoghouse.images = [this.imgPath + "dog_Behind_Doghouse.svg"];
+	      dogBehindDoghouse.soundItems = [this.dogArtDSoundItem.soundPath, this.behindSoundItem.soundPath, this.doghouseArtPSoundItem.soundPath];
+	      this.activityItems.push(dogBehindDoghouse);
+	
+	      // DOG before DOGHOUSE
+	      let dogBeforeDoghouse = {};
+	      dogBeforeDoghouse.name = 'dogBeforeDoghouse';
+	      dogBeforeDoghouse.images = [this.imgPath + "dog_Before_Doghouse.svg"];
+	      dogBeforeDoghouse.soundItems = [this.dogArtDSoundItem.soundPath, this.beforeSoundItem.soundPath, this.doghouseArtPSoundItem.soundPath];
+	      this.activityItems.push(dogBeforeDoghouse);
+	
+	      // DOG under DOGHOUSE
+	      let dogUnderDoghouse = {};
+	      dogUnderDoghouse.name = 'dogUnderDoghouse';
+	      dogUnderDoghouse.images = [this.imgPath + "dog_Under_Doghouse.svg"];
+	      dogUnderDoghouse.soundItems = [this.dogArtDSoundItem.soundPath, this.underSoundItem.soundPath, this.doghouseArtISoundItem.soundPath];
+	      this.activityItems.push(dogUnderDoghouse);
+	
+	      // DOG near DOGHOUSE
+	      let dogNearDoghouse = {};
+	      dogNearDoghouse.name = 'dogNearDoghouse';
+	      dogNearDoghouse.images = [this.imgPath + "dog_Near_Doghouse.svg"];
+	      dogNearDoghouse.soundItems = [this.dogArtDSoundItem.soundPath, this.nearSoundItem.soundPath, this.doghouseArtISoundItem.soundPath];
+	      this.activityItems.push(dogNearDoghouse);
+	    }
+    }
+
+    class SoundItem {
+   	  /**
+   	   *
+   	   * @param soundBaseFileName
+   	   * @param soundArticle: Indefinite, Definite, Possessive
+   	   * @param sharedSound: some sounds are shared by the spatial positioning activities
+   	   */
+   	  constructor(sndPath, soundBaseFileName, soundArticle = '', sharedSound = false) {
+   	    this.soundPath = `${sharedSound ? this.sndCommonPath : sndPath}${soundBaseFileName}${soundArticle}.ogg`;
+   	  }
+
+   	  sndCommonPath = "../sounds/common/";
+   	}
+  </script>
+</head>
+
+<body>
+  <div id="content">
+    <div id="dialogDiv"></div>
+    <div class="result">
+      <div class="pointer-cursor start-activity"></div>
+    </div>
+    <div id="contentPanel">
+      <div id="itemContainer1Id" class="item pointer-cursor">
+        <svg id="svgContainer1Id" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" class="gradient-world-1">
+            <!-- SVG activity items 1 gets injected here -->
+        </svg>
+      </div>
+      <div id="itemContainer2Id" class="item pointer-cursor">
+        <svg id="svgContainer2Id" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" class="gradient-world-2">
+          <!-- SVG activity items 2 gets injected here -->
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div id="scorePanelId"><!-- score panel injected --></div>
+</body>
+
+</html>
