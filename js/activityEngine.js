@@ -52,7 +52,7 @@ export class ActivityEngine {
       this.resultDivElem = $('div.result');
     
       // INIT CONTAINER ELEMENTS: inject item containing img nodes into the page and create the JQUERY itemElements
-      for (i = 1; i <= this.nbDistractors; i++) {
+      for (let i = 1; i <= this.nbDistractors; i++) {
         let itemContainerId = `itemContainer${i}`;
         $('#contentPanel').append(`<div id="${itemContainerId}" class="${itemClass} pointer-cursor"></div>`);
     

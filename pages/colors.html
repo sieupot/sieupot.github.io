@@ -23,45 +23,19 @@
 
     <script defer src="../js/main.js"></script>
     <script defer src="../js/utils.js"></script>
-    <script defer src="../js/modules/score.js"></script>
-    <script defer src="../js/activityEngine.js"></script>
-    <script defer src="../js/colors.js"></script>
+    <script type="module" src="../js/activityEngine.js"></script>
+    <script type="module" src="../js/colors.js"></script>
     <!-- inject the template footer into the page -->
     <script defer src="../js/injectors/footerInjector.js"></script>
-    <script type="text/javascript">
-      const sndPath = "../sounds/colors/";
-      const initActivityItems = () => {
-    	const activityType = getUrlParameter('at');
-        const activityItemsBasic = [
-                {name: 'red', audioPath: sndPath + 'red.ogg'},
-                {name: 'green', audioPath: sndPath + 'green.ogg'},
-                {name: 'blue', audioPath: sndPath + 'blue.ogg'},
-                {name: 'yellow', audioPath: sndPath + 'yellow.ogg'},
-        ];
-
-        let activityItemsAdvanced = [];
-        if (activityType === 'c') {
-       	  activityItemsAdvanced = [
-                 {name: 'pink', audioPath: sndPath + 'pink.ogg'},
-                 {name: 'orange', audioPath: sndPath + 'orange.ogg'},
-                 {name: 'violet', audioPath: sndPath + 'violet.ogg'},
-                 {name: 'brown', audioPath: sndPath + 'brown.ogg'},
-                 {name: 'gray', audioPath: sndPath + 'gray.ogg'},
-                 {name: 'black', audioPath: sndPath + 'black.ogg'},
-       	  ];
-        }
-        
-        activityItems = activityItemsBasic.concat(activityItemsAdvanced);
-      }
-    </script>
   </head>
 
   <body>
     <div id="content">
       <div id="dialogDiv"></div>
       <div class="result">
-        <div onmousedown="startActivity();" class="pointer-cursor start-activity"></div>
+        <div class="pointer-cursor start-activity"></div>
       </div>
+
       <div id="contentPanel">
       </div>
     </div>
