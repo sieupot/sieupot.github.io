@@ -10,20 +10,8 @@ class Opposites extends ActivityEngine {
   constructor() {
     super();
   
-    this.modalPanel = jQuery('#dialogDiv');
-    this.resultDivElem = jQuery('div.result');
-
-    let objInstance = this;
-    $( "div.start-activity" ).bind('mousedown', function() {
-      objInstance.startActivity();
-    });
-
-    // show the start icon and let the user manually start the activity
-    this.resultDivElem.fadeIn(300);
-    this.modalPanel.dialog(this.dialogOptions);
-
-    this.activityObjElemArray.push(jQuery('#itemContainer1Id'));
-    this.activityObjElemArray.push(jQuery('#itemContainer2Id'));
+    this.activityObjElemArray.push($('#itemContainer1Id'));
+    this.activityObjElemArray.push($('#itemContainer2Id'));
   }
 
   activityObjElemArray = [];

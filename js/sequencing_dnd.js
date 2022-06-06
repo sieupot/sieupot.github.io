@@ -8,18 +8,6 @@ jQuery(() => {
 class SequencingDND extends ActivityEngine {
   constructor() {
     super();
-
-    this.modalPanel = $('#dialogDiv');
-    this.resultDivElem = $('div.result');
-
-    let objInstance = this;
-    $( "div.start-activity" ).bind('mousedown', function() {
-      objInstance.startActivity();
-    });
-
-    // show the start icon and let the user manually start the activity
-    this.resultDivElem.fadeIn(300);
-    this.modalPanel.dialog(this.dialogOptions);
   }
 
   dropContainers = $('#dropContainersId');

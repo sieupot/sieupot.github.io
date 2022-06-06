@@ -8,24 +8,12 @@ jQuery(() => {
 class SequencingClickNCopy extends ActivityEngine {
   constructor() {
     super();
-
-    this.modalPanel = jQuery('#dialogDiv');
-    this.resultDivElem = jQuery('div.result');
-
-    let objInstance = this;
-    $( "div.start-activity" ).bind('mousedown', function() {
-      objInstance.startActivity();
-    });
-
-    // show the start icon and let the user manually start the activity
-    this.resultDivElem.fadeIn(300);
-    this.modalPanel.dialog(this.dialogOptions);
   }
 
   okClicksNb = 0;
   selectedActivitySqLength = 0;
-  destContainers = jQuery('#destContainersId');
-  srcContainers = jQuery('#srcContainersId');
+  destContainers = $('#destContainersId');
+  srcContainers = $('#srcContainersId');
 
   activityItems;
   imgPath = "../images/sequencing/";
@@ -148,7 +136,7 @@ class SequencingClickNCopy extends ActivityEngine {
       this.generateDestHtmlElem(parseInt(index) + 1, selectedActivitySqItems.length);
     }
     // set bg-color opacity of first element to 1, as if it's waiting to be populated
-    jQuery('.activity-item:not(:has(> div)):first').addClass('done');
+    $('.activity-item:not(:has(> div)):first').addClass('done');
   
     this.selectedActivitySqLength = selectedActivitySqItems.length;
     this.okClicksNb = 1;

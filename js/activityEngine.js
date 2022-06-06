@@ -3,10 +3,22 @@ import { ActivityTimer } from './modules/activityTimer.js';
 
 export class ActivityEngine { 
     constructor (hasDistractors = false) {
-       this.hasDistractors = hasDistractors;
+      this.hasDistractors = hasDistractors;
 
-       this.score = new Score(this.hasDistractors, this.nbDistractors);
-       this.activityTimer = new ActivityTimer(this.score);
+      this.score = new Score(this.hasDistractors, this.nbDistractors);
+      this.activityTimer = new ActivityTimer(this.score);
+
+      this.modalPanel = $('#dialogDiv');
+      this.resultDivElem = $('div.result');
+  
+      let objInstance = this;
+      $( "div.start-activity" ).bind('mousedown', function() {
+        objInstance.startActivity();
+      });
+  
+      // show the start icon and let the user manually start the activity
+      this.resultDivElem.fadeIn(300);
+      this.modalPanel.dialog(this.dialogOptions);
     } 
 
     nbDistractors = getNbDistractors();
@@ -36,15 +48,15 @@ export class ActivityEngine {
     resultDivElem;
     
     initActivity = (itemClass = 'item') => {
-      this.modalPanel = jQuery('#dialogDiv');
-      this.resultDivElem = jQuery('div.result');
+      this.modalPanel = $('#dialogDiv');
+      this.resultDivElem = $('div.result');
     
       // INIT CONTAINER ELEMENTS: inject item containing img nodes into the page and create the JQUERY itemElements
       for (i = 1; i <= this.nbDistractors; i++) {
         let itemContainerId = `itemContainer${i}`;
-        jQuery('#contentPanel').append(`<div id="${itemContainerId}" class="${itemClass} pointer-cursor"></div>`);
+        $('#contentPanel').append(`<div id="${itemContainerId}" class="${itemClass} pointer-cursor"></div>`);
     
-        let objElem = jQuery(`#${itemContainerId}`);
+        let objElem = $(`#${itemContainerId}`);
         this.activityObjElemArray.push(objElem);
       }
     
@@ -117,8 +129,8 @@ export class ActivityEngine {
         this.startNewChallenge();
       }
     
-      jQuery('#scoreGood > div').html(this.rightAnswers);
-      jQuery('#scoreGood').effect('highlight', {color: '#acffa3'}, 500);
+      $('#scoreGood > div').html(this.rightAnswers);
+      $('#scoreGood').effect('highlight', {color: '#acffa3'}, 500);
     
       this.score.completeCurrentActionReactionTimeItem(new Date());
     }
@@ -137,8 +149,8 @@ export class ActivityEngine {
       });
       playingWrongAnswerAudio.play();
       this.playingAudios.push(playingWrongAnswerAudio);
-      jQuery('#scoreBad > div').html(this.wrongAnswers);
-      jQuery('#scoreBad').effect('highlight', {color: '#ff9c9c'}, 500);
+      $('#scoreBad > div').html(this.wrongAnswers);
+      $('#scoreBad').effect('highlight', {color: '#ff9c9c'}, 500);
     
       this.score.updateFailuresCurrentAnswerReactionTimeItem();
     }

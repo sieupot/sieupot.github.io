@@ -8,23 +8,11 @@ jQuery(() => {
 class SequencingClick extends ActivityEngine {
   constructor() {
     super();
-
-    this.modalPanel = jQuery('#dialogDiv');
-    this.resultDivElem = jQuery('div.result');
-
-    let objInstance = this;
-    $( "div.start-activity" ).bind('mousedown', function() {
-      objInstance.startActivity();
-    });
-
-    // show the start icon and let the user manually start the activity
-    this.resultDivElem.fadeIn(300);
-    this.modalPanel.dialog(this.dialogOptions);
   }
 
   okClicksNb = 0;
   selectedActivitySqLength = 0;
-  itemsContainerId = jQuery('#itemsContainerId');
+  itemsContainerId = $('#itemsContainerId');
 
   activityItems;
   imgPath = "../images/sequencing/";

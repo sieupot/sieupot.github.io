@@ -1,112 +1,266 @@
-let prevRnd;
-let hasDistractors = false; // used when exporting results, as info in the sheet with activity reaction times
-let userSelectedElem;
-let challengeItem;
-let currentActivityItems;
+import { ActivityEngine } from './activityEngine.js'
 
 // on page load
 jQuery(() => {
-  // declared in the html file
-  initActivityItems();
-
-  modalPanel = jQuery('#dialogDiv');
-  resultDivElem = jQuery('div.result');
-
-  // show the start icon and let the user manually start the activity
-  resultDivElem.fadeIn(300);
-  modalPanel.dialog(dialogOptions);
+  new HumanBodyComplex();
 });
 
-let clickSrcContainers = jQuery('#clickSrcContainersId');
+class HumanBodyComplex extends ActivityEngine {
+  constructor() {
+    super();
+  }
 
-const generateChallengeItems = () => {
-  // load dest resource
-  jQuery('#clickDestContainerId > svg').load(destImagePath, function () {
-    Array.from(document.getElementsByClassName('covered')).forEach(function (item) {
-      item.setAttribute('onmousedown', 'event.stopPropagation(); validateChallenge(event);');
+  userSelectedElem;
+  challengeItem;
+  currentActivityItems;
+  
+  clickSrcContainers = $('#clickSrcContainersId');
+  
+  activityItems;
+  initActivityItems = () => {
+    let humanBodyActivityItems;
+    if (humanBodyPart === 'head') {
+      humanBodyActivityItems = new HeadActivityItems(humanBodySubject);
+    } else if (humanBodyPart === 'body') {
+      humanBodyActivityItems = new BodyActivityItems(humanBodySubject);
+    } else {
+      alert("ERROR: no items class defind");
+    }
+    this.activityItems = humanBodyActivityItems.activityItems;
+  }
+
+  generateChallengeItems = () => {
+    let objInstance = this;
+
+    // load dest resource
+    $('#clickDestContainerId > svg').load(destImagePath, function () {
+      Array.from(document.getElementsByClassName('covered')).forEach(function (item) {
+        $(item).bind('mousedown', function (event) {
+          event.stopPropagation();
+          objInstance.validateChallenge(event);
+        });
+      });
     });
-  });
-
-  // generate selectable items
-  currentActivityItems = Object.assign([], activityItems); // clone the array
-  shuffleArray(currentActivityItems); // shuffle items
-
-  currentActivityItems.forEach(function (item) {
-    let clickSrcHtmlElem = document.createElement('div');
-    clickSrcHtmlElem.id = `${item.name}SrcId`;
-    clickSrcHtmlElem.setAttribute('name', `${item.name}`);
-    clickSrcHtmlElem.style.backgroundImage = `url('${item.image}')`;
-    clickSrcHtmlElem.classList.add('clickable-src-container', 'pointer-cursor');
-    clickSrcHtmlElem.setAttribute('onmousedown', 'sourceSelected(event);');
-    clickSrcContainers.append(clickSrcHtmlElem);
-  });
-
-  selectValidChallengeItem();
-}
-
-const selectValidChallengeItem = () => {
-  // select the valid challenge item, save it to be checked later
-  const validItemIndex = Math.floor((Math.random() * currentActivityItems.length));
-  challengeItem = clickSrcContainers.children()[validItemIndex];
-
-  activitySoundList = [];
-  activitySoundList.push('../sounds/match.ogg'); // potriveste
-  const correctItem = currentActivityItems[validItemIndex];
-  activitySoundList.push(correctItem.soundItem.soundPath);
-
-  currentActivityItems.splice(validItemIndex, 1);
-
-  playShowItemAudio();
-}
-
-const sourceSelected = (ev) => {
-  let clickedElem = ev.currentTarget;
-  if (!userSelectedElem) {
-    if (clickedElem.getAttribute('name') === challengeItem.getAttribute('name')) {
-      clickedElem.classList.add('selected');
-      clickedElem.classList.remove('pointer-cursor');
-      userSelectedElem = clickedElem;
-
-      handleValidAnswer(false, false, false);
+  
+    // generate selectable items
+    this.currentActivityItems = Object.assign([], this.activityItems); // clone the array
+    shuffleArray(this.currentActivityItems); // shuffle items
+  
+    this.currentActivityItems.forEach(function (item) {
+      let clickSrcHtmlElem = document.createElement('div');
+      clickSrcHtmlElem.id = `${item.name}SrcId`;
+      clickSrcHtmlElem.setAttribute('name', `${item.name}`);
+      clickSrcHtmlElem.style.backgroundImage = `url('${item.image}')`;
+      clickSrcHtmlElem.classList.add('clickable-src-container', 'pointer-cursor');
+      objInstance.clickSrcContainers.append(clickSrcHtmlElem);
+      
+      $(clickSrcHtmlElem).bind('mousedown', function (event) {
+        objInstance.sourceSelected(event);        
+      });
+    });
+  
+    this.selectValidChallengeItem();
+  }
+  
+  selectValidChallengeItem = () => {
+    // select the valid challenge item, save it to be checked later
+    const validItemIndex = Math.floor((Math.random() * this.currentActivityItems.length));
+    this.challengeItem = this.clickSrcContainers.children()[validItemIndex];
+  
+    this.activitySoundList = [];
+    this.activitySoundList.push('../sounds/match.ogg'); // potriveste
+    const correctItem = this.currentActivityItems[validItemIndex];
+    this.activitySoundList.push(correctItem.soundItem.soundPath);
+  
+    this.currentActivityItems.splice(validItemIndex, 1);
+  
+    this.playShowItemAudio();
+  }
+  
+  sourceSelected = (ev) => {
+    let clickedElem = ev.currentTarget;
+    let clickedElemJQ = $(clickedElem);
+    if (!this.userSelectedElem) {
+      if (clickedElem.getAttribute('name') === this.challengeItem.getAttribute('name')) {
+        clickedElem.classList.add('selected');
+        clickedElem.classList.remove('pointer-cursor');
+        this.userSelectedElem = clickedElem;
+  
+        this.handleValidAnswer(false, false, false);
+      } else {
+        this.handleInvalidAnswer(true);
+        // in order to have the animation of the error-indicator play after repeatedly clicking on this element
+        clickedElemJQ.replaceWith(clickedElemJQ.clone(true).addClass('error-indicator'));
+      }
+    }
+  }
+  
+  validateChallenge = (ev) => {
+    let clickedElemJQ = $(ev.currentTarget);
+    if (this.userSelectedElem) {
+      const userSelectedItemAttrName = this.userSelectedElem.getAttribute('name');
+      const challengeItemAttrName = this.challengeItem.getAttribute('name');
+      if (clickedElemJQ.attr('id') === `gr_${userSelectedItemAttrName}` && userSelectedItemAttrName === challengeItemAttrName) {
+        // uncover the item on the head
+        clickedElemJQ.unbind('mousedown').removeClass('covered pointer-cursor');
+  
+        // remove uncovered item from source clickable list
+        this.userSelectedElem.remove();
+        this.userSelectedElem = undefined;
+  
+        // check progress
+        this.checkActivityProgress();
+      } else {
+        this.handleInvalidAnswer(true);
+      }
+    }
+  }
+  
+  checkActivityProgress = () => {
+    // no more clickable items?
+    if (this.clickSrcContainers.children().length <= 0) {
+      this.checkValidAnswer(true);
     } else {
-      handleInvalidAnswer(true);
-      // in order to have the animation of the error-indicator play after repeatedly clicking on this element
-      const clickedElemClone = clickedElem.cloneNode(true);
-      clickedElemClone.classList.add('error-indicator');
-      clickedElem.parentNode.replaceChild(clickedElemClone, clickedElem);
+      this.handleValidAnswer(false, false, false);
+  
+      this.selectValidChallengeItem();
     }
   }
 }
 
-const validateChallenge = (ev) => {
-  let clickedElem = ev.currentTarget;
-  if (userSelectedElem) {
-    const userSelectedItemAttrName = userSelectedElem.getAttribute('name');
-    const challengeItemAttrName = challengeItem.getAttribute('name');
-    if (clickedElem.id === `gr_${userSelectedItemAttrName}` && userSelectedItemAttrName === challengeItemAttrName) {
-      // uncover the item on the head
-      clickedElem.classList.remove('covered', 'pointer-cursor');
-      removeAttributes(clickedElem, 'onmousedown')
+class SoundItem {
+  /**
+   *
+   * @param soundBaseFileName
+   * @param soundArticle: Indefinite, Definite, Possessive
+   */
+  constructor(soundBaseFileName, soundArticle = '') {
+    this.soundPath = `${this.sndPath}${soundBaseFileName}${soundArticle}.ogg`;
+  }
+  
+  sndPath = "../sounds/humanBody/";
+}
 
-      // remove uncovered item from source clickable list
-      userSelectedElem.remove();
-      userSelectedElem = undefined;
+class BodyActivityItems {
+  constructor(humanBodySubject) {
+    this.initActivityItems(humanBodySubject);
+  }
 
-      // check progress
-      checkActivityProgress();
-    } else {
-      handleInvalidAnswer(true);
-    }
+  imgPath = "../images/humanBody/";
+
+  activityItems;
+  initActivityItems = (humanBodySubject) => {
+    this.activityItems = [];
+
+    // head
+    let head = {};
+    head.name = 'head';
+    head.image = this.imgPath + `head_item_${humanBodySubject}.svg`;
+    head.soundItem = new SoundItem('head');
+    this.activityItems.push(head);
+
+    // shoulders
+    let shoulders = {};
+    shoulders.name = 'shoulders';
+    shoulders.image = this.imgPath + `shoulders_${humanBodySubject}.svg`;
+    shoulders.soundItem = new SoundItem('shoulders');
+    this.activityItems.push(shoulders);
+
+    // arms
+    let arms = {};
+    arms.name = 'arms';
+    arms.image = this.imgPath + `arms_${humanBodySubject}.svg`;
+    arms.soundItem = new SoundItem('arms');
+    this.activityItems.push(arms);
+
+    // chest
+    let chest = {};
+    chest.name = 'chest';
+    chest.image = this.imgPath + `chest_${humanBodySubject}.svg`;
+    chest.soundItem = new SoundItem('chest');
+    this.activityItems.push(chest);
+
+    // belly
+    let belly = {};
+    belly.name = 'belly';
+    belly.image = this.imgPath + `belly_${humanBodySubject}.svg`;
+    belly.soundItem = new SoundItem('belly');
+    this.activityItems.push(belly);
+
+    // palms
+    let palms = {};
+    palms.name = 'palms';
+    palms.image = this.imgPath + `palms_${humanBodySubject}.svg`;
+    palms.soundItem = new SoundItem('palms');
+    this.activityItems.push(palms);
+
+    // legs
+    let legs = {};
+    legs.name = 'legs';
+    legs.image = this.imgPath + `legs_${humanBodySubject}.svg`;
+    legs.soundItem = new SoundItem('legs');
+    this.activityItems.push(legs);
+
+    // knees
+    let knees = {};
+    knees.name = 'knees';
+    knees.image = this.imgPath + `knees_${humanBodySubject}.svg`;
+    knees.soundItem = new SoundItem('knees');
+    this.activityItems.push(knees);
   }
 }
 
-const checkActivityProgress = () => {
-  // no more clickable items?
-  if (clickSrcContainers.children().length <= 0) {
-    checkValidAnswer(true);
-  } else {
-    handleValidAnswer(false, false, false);
+class HeadActivityItems {
+  constructor(humanBodySubject) {
+    this.initActivityItems(humanBodySubject);
+  }
 
-    selectValidChallengeItem();
+  imgPath = "../images/humanBody/";
+
+  activityItems;
+  initActivityItems = (humanBodySubject) => {
+    this.activityItems = [];
+
+    // hair
+    let hair = {};
+    hair.name = 'hair';
+    hair.image = this.imgPath + `hair_${humanBodySubject}.svg`;
+    hair.soundItem = new SoundItem('hair', 'I');
+    this.activityItems.push(hair);
+
+    // eyeBrows
+    let eyeBrows = {};
+    eyeBrows.name = 'eyebrows';
+    eyeBrows.image = this.imgPath + `eyebrows_${humanBodySubject}.svg`;
+    eyeBrows.soundItem = new SoundItem('eyebrows', 'I');
+    this.activityItems.push(eyeBrows);
+
+    // eyes
+    let eyes = {};
+    eyes.name = 'eyes';
+    eyes.image = this.imgPath + `eyes_${humanBodySubject}.svg`;
+    eyes.soundItem = new SoundItem('eyes', 'I');
+    this.activityItems.push(eyes);
+
+    // ears
+    let ears = {};
+    ears.name = 'ears';
+    ears.image = this.imgPath + `ears_${humanBodySubject}.svg`;
+    ears.soundItem = new SoundItem('ears', 'I');
+    this.activityItems.push(ears);
+
+    // nose
+    let nose = {};
+    nose.name = 'nose';
+    nose.image = this.imgPath + `nose_${humanBodySubject}.svg`;
+    nose.soundItem = new SoundItem('nose', 'I');
+    this.activityItems.push(nose);
+
+    // mouth
+    let mouth = {};
+    mouth.name = 'mouth';
+    mouth.image = this.imgPath + `mouth_${humanBodySubject}.svg`;
+    mouth.soundItem = new SoundItem('mouth', 'I');
+    this.activityItems.push(mouth);
   }
 }

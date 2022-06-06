@@ -9,20 +9,8 @@ class SpatialPositioning extends ActivityEngine {
   constructor() {
     super();
 
-    this.modalPanel = $('#dialogDiv');
-    this.resultDivElem = $('div.result');
-
-    let objInstance = this;
-    $( "div.start-activity" ).bind('mousedown', function() {
-      objInstance.startActivity();
-    });
-  
     this.activityObjElemArray.push(jQuery('#svgContainer1Id'));
     this.activityObjElemArray.push(jQuery('#svgContainer2Id'));
-  
-    // show the start icon and let the user manually start the activity
-    this.resultDivElem.fadeIn(300);
-    this.modalPanel.dialog(this.dialogOptions);
   }
 
   activityObjElemArray = [];
@@ -35,7 +23,7 @@ class SpatialPositioning extends ActivityEngine {
     } else if (actionsType === 2) {
       sPActivityItems = new SP2ActivityItems();
     } else {
-      alerty("ERROR: no items class defind");
+      alert("ERROR: no items class defind");
     }
     this.activityItems = sPActivityItems.activityItems;
   }

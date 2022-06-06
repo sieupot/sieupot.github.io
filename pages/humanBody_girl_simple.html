@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Arata Corpul Uman</title>
+  <title>Arată Corpul Uman (corp fetiță simplu)</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -23,79 +23,13 @@
 
   <script defer src="../js/main.js"></script>
   <script defer src="../js/utils.js"></script>
-  <script defer src="../js/modules/score.js"></script>
-  <script defer src="../js/activityEngine.js"></script>
-  <script defer src="../js/humanBody-simple.js"></script>
+  <script type="module" src="../js/activityEngine.js"></script>
+  <script type="module" src="../js/humanBody-simple.js"></script>
   <!-- inject the template footer into the page -->
   <script defer src="../js/injectors/footerInjector.js"></script>
   <script defer type="text/javascript">
-    const imgPath = "../images/humanBody/";
-    const sndPath = "../sounds/humanBody/";
-
-    class SoundItem {
-      /**
-       *
-       * @param soundBaseFileName
-       * @param soundArticle: Indefinite, Definite, Possessive
-       */
-      constructor(soundBaseFileName, soundArticle = '') {
-        this.soundPath = `${sndPath}${soundBaseFileName}${soundArticle}.ogg`;
-      }
-    }
-
     const destImagePath = '../images/humanBody/humanBody_girl.svg';
-
-    const initActivityItems = () => {
-      activityItems = [];
-
-      // head
-      let head = {};
-      head.name = 'head';
-      head.soundItem = new SoundItem('head');
-      activityItems.push(head);
-
-      // shoulders
-      let shoulders = {};
-      shoulders.name = 'shoulders';
-      shoulders.soundItem = new SoundItem('shoulders');
-      activityItems.push(shoulders);
-
-      // chest
-      let chest = {};
-      chest.name = 'chest';
-      chest.soundItem = new SoundItem('chest');
-      activityItems.push(chest);
-
-      // arms
-      let arms = {};
-      arms.name = 'arms';
-      arms.soundItem = new SoundItem('arms');
-      activityItems.push(arms);
-
-      // palms
-      let palms = {};
-      palms.name = 'palms';
-      palms.soundItem = new SoundItem('palms');
-      activityItems.push(palms);
-
-      // belly
-      let belly = {};
-      belly.name = 'belly';
-      belly.soundItem = new SoundItem('belly');
-      activityItems.push(belly);
-
-      // legs
-      let legs = {};
-      legs.name = 'legs';
-      legs.soundItem = new SoundItem('legs');
-      activityItems.push(legs);
-
-      // knees
-      let knees = {};
-      knees.name = 'knees';
-      knees.soundItem = new SoundItem('knees');
-      activityItems.push(knees);
-    }
+    const humanBodyPart = 'body';
   </script>
 </head>
 
@@ -103,8 +37,9 @@
   <div id="content">
     <div id="dialogDiv"></div>
     <div class="result">
-      <div onmousedown="startActivity();" class="pointer-cursor start-activity"></div>
+      <div class="pointer-cursor start-activity"></div>
     </div>
+
     <div id="contentPanel">
       <div id="clickDestContainerId">
         <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">

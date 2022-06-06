@@ -9,20 +9,8 @@ class Actions extends ActivityEngine {
   constructor() {
     super();
 
-    this.modalPanel = jQuery('#dialogDiv');
-    this.resultDivElem = jQuery('div.result');
-  
-    let objInstance = this;
-    $( "div.start-activity" ).bind('mousedown', function() {
-      objInstance.startActivity();
-    });
-
-    // show the start icon and let the user manually start the activity
-    this.resultDivElem.fadeIn(300);
-    this.modalPanel.dialog(this.dialogOptions);
-
-    this.activityObjElemArray.push(jQuery('#actionContainer1Id'));
-    this.activityObjElemArray.push(jQuery('#actionContainer2Id'));
+    this.activityObjElemArray.push($('#actionContainer1Id'));
+    this.activityObjElemArray.push($('#actionContainer2Id'));
   }
 
   activityObjElemArray = [];
@@ -36,7 +24,7 @@ class Actions extends ActivityEngine {
     } else if (actionsType === 'complex') {
       actionsActivityItems = new ActionsComplexActivityItems(imgPath);
     } else {
-      alerty("ERROR: no items class defind");
+      alert("ERROR: no items class defind");
     }
     this.activityItems = actionsActivityItems.activityItems;
   }
