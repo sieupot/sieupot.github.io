@@ -18,12 +18,12 @@ class Opposites extends ActivityEngine {
       objInstance.startActivity();
     });
 
-    this.activityObjElemArray.push(jQuery('#itemContainer1Id'));
-    this.activityObjElemArray.push(jQuery('#itemContainer2Id'));
-  
     // show the start icon and let the user manually start the activity
     this.resultDivElem.fadeIn(300);
     this.modalPanel.dialog(this.dialogOptions);
+
+    this.activityObjElemArray.push(jQuery('#itemContainer1Id'));
+    this.activityObjElemArray.push(jQuery('#itemContainer2Id'));
   }
 
   activityObjElemArray = [];
