@@ -10,7 +10,7 @@
     <script defer src="../js/lib/jquery.min.js"></script>
     <script defer src="../js/lib/jquery-ui-1.12.1.min.js"></script>
 
-    <script defer src="../js/items.js"></script>
+    <script type="module" src="../js/items.js"></script>
 
     <style>
       .item {
@@ -21,8 +21,8 @@
     <script type="text/javascript">
       const sndPath = "../sounds/items/shapes/";
       const imgPath = "../images/items/shapes/";
-      function initActivityItems(){
-        activityItems = [
+      getActivityItems = () => {
+        return [
           {name: 'square', imagePath: imgPath + 'squareWhite.svg', audioPath: sndPath + 'square.ogg'},
           {name: 'rectangle', imagePath: imgPath + 'rectangleWhite.svg', audioPath: sndPath + 'rectangle.ogg'},
           {name: 'circle', imagePath: imgPath + 'circleWhite.svg', audioPath: sndPath + 'circle.ogg'},

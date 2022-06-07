@@ -33,10 +33,10 @@ const getUrlParameter = (sParam) => {
  */
 const navigateTo = (pageLocation, includeUrlParams = true) => {
   if (includeUrlParams) {
-    if (pageLocation.indexOf('?') >= 0) {
-      // if pageLocation already contains params, append window..ocation.search params without the "?" delimiter but replace it with the "&" delimiter
-      pageLocation += '&' + window.location.search.substring(1);  
-    } else {
+  	if (pageLocation.indexOf('?') >= 0) {
+  	  // if pageLocation already contains params, append window..ocation.search params without the "?" delimiter but replace it with the "&" delimiter
+  	  pageLocation += '&' + window.location.search.substring(1);	
+  	} else {
       pageLocation += window.location.search;
     }
   }

@@ -10,13 +10,13 @@
     <script defer src="../js/lib/jquery.min.js"></script>
     <script defer src="../js/lib/jquery-ui-1.12.1.min.js"></script>
 
-    <script defer src="../js/items.js"></script>
+    <script type="module" src="../js/items.js"></script>
 
     <script type="text/javascript">
       const sndPath = "../sounds/items/animals/tamed/";
       const imgPath = "../images/items/animals/tamed/";
-      const initActivityItems = () => {
-        activityItems = [
+      const getActivityItems = () => {
+        return [
                  {name: 'cat', imagePath: imgPath + 'cat1.jpg', audioPath: sndPath + 'cat.ogg'},
                  {name: 'chick', imagePath: imgPath + 'chick1.jpg', audioPath: sndPath + 'chick.ogg'},
                  {name: 'chicken', imagePath: imgPath + 'chicken1.jpg', audioPath: sndPath + 'chicken.ogg'},

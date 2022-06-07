@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Arata Corpul Uman</title>
+  <title>Arată Corpul Uman (cap băiețel complex)</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -23,87 +23,14 @@
 
   <script defer src="../js/main.js"></script>
   <script defer src="../js/utils.js"></script>
-  <script defer src="../js/modules/score.js"></script>
-  <script defer src="../js/activityEngine.js"></script>
-  <script defer src="../js/humanBody-complex.js"></script>
+  <script type="module" src="../js/activityEngine.js"></script>
+  <script type="module" src="../js/humanBody-complex.js"></script>
   <!-- inject the template footer into the page -->
   <script defer src="../js/injectors/footerInjector.js"></script>
   <script defer type="text/javascript">
-    const imgPath = "../images/humanBody/";
-    const sndPath = "../sounds/humanBody/";
-
-    class SoundItem {
-      /**
-       *
-       * @param soundBaseFileName
-       * @param soundArticle: Indefinite, Definite, Possessive
-       */
-      constructor(soundBaseFileName, soundArticle = '') {
-        this.soundPath = `${sndPath}${soundBaseFileName}${soundArticle}.ogg`;
-      }
-    }
-
     const destImagePath = '../images/humanBody/humanBody_boy.svg';
-
-    const initActivityItems = () => {
-      activityItems = [];
-
-      // head
-      let head = {};
-      head.name = 'head';
-      head.image = imgPath + "head_item_boy.svg";
-      head.soundItem = new SoundItem('head');
-      activityItems.push(head);
-
-      // shoulders
-      let shoulders = {};
-      shoulders.name = 'shoulders';
-      shoulders.image = imgPath + "shoulders_boy.svg";
-      shoulders.soundItem = new SoundItem('shoulders');
-      activityItems.push(shoulders);
-
-      // arms
-      let arms = {};
-      arms.name = 'arms';
-      arms.image = imgPath + "arms_boy.svg";
-      arms.soundItem = new SoundItem('arms');
-      activityItems.push(arms);
-
-      // chest
-      let chest = {};
-      chest.name = 'chest';
-      chest.image = imgPath + "chest_boy.svg";
-      chest.soundItem = new SoundItem('chest');
-      activityItems.push(chest);
-
-      // belly
-      let belly = {};
-      belly.name = 'belly';
-      belly.image = imgPath + "belly_boy.svg";
-      belly.soundItem = new SoundItem('belly');
-      activityItems.push(belly);
-
-      // palms
-      let palms = {};
-      palms.name = 'palms';
-      palms.image = imgPath + "palms_boy.svg";
-      palms.soundItem = new SoundItem('palms');
-      activityItems.push(palms);
-
-      // legs
-      let legs = {};
-      legs.name = 'legs';
-      legs.image = imgPath + "legs_boy.svg";
-      legs.soundItem = new SoundItem('legs');
-      activityItems.push(legs);
-
-      // knees
-      let knees = {};
-      knees.name = 'knees';
-      knees.image = imgPath + "knees_boy.svg";
-      knees.soundItem = new SoundItem('knees');
-      activityItems.push(knees);
-    }
+    const humanBodyPart = 'body';
+    const humanBodySubject = 'boy';
   </script>
 </head>
 
@@ -111,7 +38,7 @@
   <div id="content">
     <div id="dialogDiv"></div>
     <div class="result">
-      <div onmousedown="startActivity();" class="pointer-cursor start-activity"></div>
+      <div class="pointer-cursor start-activity"></div>
     </div>
 
     <div id="contentPanel">
@@ -127,7 +54,6 @@
         </svg>
       </div>
     </div>
-
   </div>
 
   <div id="scorePanelId"><!-- score panel injected --></div>

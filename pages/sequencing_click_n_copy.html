@@ -23,83 +23,17 @@
 
   <script defer src="../js/main.js"></script>
   <script defer src="../js/utils.js"></script>
-  <script defer src="../js/modules/score.js"></script>
-  <script defer src="../js/activityEngine.js"></script>
-  <script defer src="../js/sequencing_click_n_copy.js"></script>
+  <script type="module" src="../js/activityEngine.js"></script>
+  <script type="module" src="../js/sequencing_click_n_copy.js"></script>
   <!-- inject the template footer into the page -->
   <script defer src="../js/injectors/footerInjector.js"></script>
-  <script defer type="text/javascript">
-    const imgPath = "../images/sequencing/";
-    const sndPath = "../sounds/sequencing/";
-
-    function initActivityItems(){
-      activityItems = [];
-
-      // CATERPILLAR
-      let caterpillarSq = {name: 'caterpillar', items: [{index: 1, imagePath: `${imgPath}caterpillar1.jpg`},
-                                                        {index: 2, imagePath: `${imgPath}caterpillar2.jpg`},
-                                                        {index: 3, imagePath: `${imgPath}caterpillar3.jpg`}]};
-      activityItems.push(caterpillarSq);
-
-      // CHICKEN
-      let chickenSq = {name: 'chicken', items: [{index: 1, imagePath: `${imgPath}chicken1.jpg`},
-                                                {index: 2, imagePath: `${imgPath}chicken2.jpg`},
-                                                {index: 3, imagePath: `${imgPath}chicken3.jpg`}]};
-      activityItems.push(chickenSq);
-
-      // CUBES
-      let cubesSq = {name: 'cubes', items: [{index: 1, imagePath: `${imgPath}cubes1.jpg`},
-                                            {index: 2, imagePath: `${imgPath}cubes2.jpg`},
-                                            {index: 3, imagePath: `${imgPath}cubes3.jpg`}]};
-      activityItems.push(cubesSq);
-
-      // DRAWN BEAR
-      let drawnBearSq = {name: 'drawBear', items: [{index: 1, imagePath: `${imgPath}drawnBear1.jpg`},
-                                                   {index: 2, imagePath: `${imgPath}drawnBear2.jpg`},
-                                                   {index: 3, imagePath: `${imgPath}drawnBear3.jpg`}]};
-      activityItems.push(drawnBearSq);
-
-      // HOUSE
-      let houseSq = {name: 'buildHouse', items: [{index: 1, imagePath: `${imgPath}house1.jpg`},
-                                                 {index: 2, imagePath: `${imgPath}house2.jpg`},
-                                                 {index: 3, imagePath: `${imgPath}house3.jpg`},
-                                                 {index: 4, imagePath: `${imgPath}house4.jpg`},
-                                                 {index: 5, imagePath: `${imgPath}house5.jpg`},
-                                                 {index: 6, imagePath: `${imgPath}house6.jpg`}]};
-      activityItems.push(houseSq);
-
-      // PLANT
-      let plantSq = {name: 'growPlant', items: [{index: 1, imagePath: `${imgPath}plant1.jpg`},
-                                                {index: 2, imagePath: `${imgPath}plant2.jpg`},
-                                                {index: 3, imagePath: `${imgPath}plant3.jpg`}]};
-      activityItems.push(plantSq);
-
-      // SEASON TREE
-      let seasonTreeSq = {name: 'seasonTree', items: [{index: 1, imagePath: `${imgPath}seasonTree1.jpg`},
-                                                      {index: 2, imagePath: `${imgPath}seasonTree2.jpg`},
-                                                      {index: 3, imagePath: `${imgPath}seasonTree3.jpg`},
-                                                      {index: 4, imagePath: `${imgPath}seasonTree4.jpg`},
-                                                      {index: 5, imagePath: `${imgPath}seasonTree5.jpg`},
-                                                      {index: 6, imagePath: `${imgPath}seasonTree6.jpg`}]};
-      activityItems.push(seasonTreeSq);
-
-      // WAKEUP
-      let wakeupSq = {name: 'wakeup', items: [{index: 1, imagePath: `${imgPath}wakeup1.jpg`},
-                                              {index: 2, imagePath: `${imgPath}wakeup2.jpg`},
-                                              {index: 3, imagePath: `${imgPath}wakeup3.jpg`},
-                                              {index: 4, imagePath: `${imgPath}wakeup4.jpg`},
-                                              {index: 5, imagePath: `${imgPath}wakeup5.jpg`},
-                                              {index: 6, imagePath: `${imgPath}wakeup6.jpg`}]};
-      activityItems.push(wakeupSq);
-    }
-  </script>
 </head>
 
 <body>
   <div id="content">
     <div id="dialogDiv"></div>
     <div class="result">
-      <div onmousedown="startActivity();" class="pointer-cursor start-activity"></div>
+      <div class="pointer-cursor start-activity"></div>
     </div>
 
     <div id="contentPanel">
