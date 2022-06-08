@@ -1,10 +1,12 @@
 import { Score } from './modules/score.js';
+import { Footer } from './modules/footer.js';
 import { ActivityTimer } from './modules/activityTimer.js';
 
 export class ActivityEngine { 
     constructor (hasDistractors = false) {
       this.hasDistractors = hasDistractors;
 
+      new Footer();
       this.score = new Score(this.hasDistractors, this.nbDistractors);
       this.activityTimer = new ActivityTimer(this.score);
 

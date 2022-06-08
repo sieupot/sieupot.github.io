@@ -3,22 +3,22 @@ export class Score {
 		jQuery('#scorePanelId').append(this.scorePanel);
 
 		this.activityName = document.title;
-    this.hasDistractors = hasDistractors;
-    this.nbDistractors = nbDistractors;
-    this.answerReactionTimeItems = [];
-
-    this.dlResultsModalPanel = jQuery('#downloadResultsFormId');
-
-    let objInstance = this;
-    $( "#dlResBtnId" ).bind( "click", function() {
-      objInstance.showDlResultsPopup();
-    });
-    $( "#cancelDlResBtnId" ).bind( "click", function() {
-      objInstance.dlResultsModalPanel.hide();
-    });
-    $( "#dlExportBtnId" ).bind( "mousedown", function() {
-      objInstance.fnExcelReport();
-    });
+	    this.hasDistractors = hasDistractors;
+	    this.nbDistractors = nbDistractors;
+	    this.answerReactionTimeItems = [];
+	
+	    this.dlResultsModalPanel = jQuery('#downloadResultsFormId');
+	
+	    let objInstance = this;
+	    $( "#dlResBtnId" ).bind( "click", function() {
+	      objInstance.showDlResultsPopup();
+	    });
+	    $( "#cancelDlResBtnId" ).bind( "click", function() {
+	      objInstance.dlResultsModalPanel.hide();
+	    });
+	    $( "#dlExportBtnId" ).bind( "mousedown", function() {
+	      objInstance.fnExcelReport();
+	    });
 	}
 
   scorePanel = `
