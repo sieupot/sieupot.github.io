@@ -1,6 +1,6 @@
 export class Footer {
 	constructor () {
-		jQuery('body').append(this.footerPanel);
+		$('body').append(this.footerPanel);
 	}
 
 	footerPanel = 

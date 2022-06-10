@@ -1,24 +1,24 @@
 export class Score {
 	constructor (hasDistractors, nbDistractors) {
-		jQuery('#scorePanelId').append(this.scorePanel);
+		$('#scorePanelId').append(this.scorePanel);
 
 		this.activityName = document.title;
-	    this.hasDistractors = hasDistractors;
-	    this.nbDistractors = nbDistractors;
-	    this.answerReactionTimeItems = [];
-	
-	    this.dlResultsModalPanel = jQuery('#downloadResultsFormId');
-	
-	    let objInstance = this;
-	    $( "#dlResBtnId" ).bind( "click", function() {
-	      objInstance.showDlResultsPopup();
-	    });
-	    $( "#cancelDlResBtnId" ).bind( "click", function() {
-	      objInstance.dlResultsModalPanel.hide();
-	    });
-	    $( "#dlExportBtnId" ).bind( "mousedown", function() {
-	      objInstance.fnExcelReport();
-	    });
+    this.hasDistractors = hasDistractors;
+    this.nbDistractors = nbDistractors;
+    this.answerReactionTimeItems = [];
+
+    this.dlResultsModalPanel = $('#downloadResultsFormId');
+
+    const objInstance = this;
+    $( "#dlResBtnId" ).bind( "click", function() {
+      objInstance.showDlResultsPopup();
+    });
+    $( "#cancelDlResBtnId" ).bind( "click", function() {
+      objInstance.dlResultsModalPanel.hide();
+    });
+    $( "#dlExportBtnId" ).bind( "mousedown", function() {
+      objInstance.fnExcelReport();
+    });
 	}
 
   scorePanel = `
@@ -84,7 +84,7 @@ export class Score {
 	
 	  const hh = String(today.getHours()).padStart(2, '0');
 	  const mm = String(today.getMinutes()).padStart(2, '0');
-	
+
 	  const date = `${dd}/${MM}/${yyyy}`;
 	  const time = `${hh}:${mm}`;
 	  const activityDuration = `${document.querySelector('#timerId > #minutes').innerHTML}:${document.querySelector('#timerId > #seconds').innerHTML}`;
