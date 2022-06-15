@@ -1,11 +1,11 @@
-import { ActivityEngine } from './activityEngine.js'
+import { ActivityCore } from './activityCore.js'
 
 // on page load
 jQuery(() => {
   new SequencingClick();
 });
 
-class SequencingClick extends ActivityEngine {
+class SequencingClick extends ActivityCore {
   constructor() {
     super();
   }

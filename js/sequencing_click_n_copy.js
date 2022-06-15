@@ -1,11 +1,11 @@
-import { ActivityEngine } from './activityEngine.js'
+import { ActivityCore } from './activityCore.js'
 
 // on page load
 jQuery(() => {
   new SequencingClickNCopy();
 });
 
-class SequencingClickNCopy extends ActivityEngine {
+class SequencingClickNCopy extends ActivityCore {
   constructor() {
     super();
   }

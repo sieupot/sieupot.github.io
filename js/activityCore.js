@@ -2,7 +2,7 @@ import { Score } from './modules/score.js';
 import { Footer } from './modules/footer.js';
 import { ActivityTimer } from './modules/activityTimer.js';
 
-export class ActivityEngine { 
+export class ActivityCore { 
     constructor (hasDistractors = false) {
       this.hasDistractors = hasDistractors;
 

@@ -1,11 +1,11 @@
-import { ActivityEngine } from './activityEngine.js'
+import { ActivityCore } from './activityCore.js'
 
 // on page load
 jQuery(() => {
   new SequencingDND();
 });
 
-class SequencingDND extends ActivityEngine {
+class SequencingDND extends ActivityCore {
   constructor() {
     super();
   }

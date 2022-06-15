@@ -1,11 +1,11 @@
-import { ActivityEngine } from './activityEngine.js'
+import { ActivityCore } from './activityCore.js'
 
 // on page load
 jQuery(() => {
   new Colors();
 });
 
-class Colors extends ActivityEngine {
+class Colors extends ActivityCore {
   constructor() {
     super(true);
   }

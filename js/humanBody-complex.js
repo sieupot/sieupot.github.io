@@ -1,11 +1,11 @@
-import { ActivityEngine } from './activityEngine.js'
+import { ActivityCore } from './activityCore.js'
 
 // on page load
 jQuery(() => {
   new HumanBodyComplex();
 });
 
-class HumanBodyComplex extends ActivityEngine {
+class HumanBodyComplex extends ActivityCore {
   constructor() {
     super();
   }

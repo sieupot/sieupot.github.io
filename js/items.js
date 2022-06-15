@@ -1,4 +1,4 @@
-import { ActivityEngine } from './activityEngine.js'
+import { ActivityCore } from './activityCore.js'
 
 // on page load
 jQuery(() => {
@@ -7,7 +7,7 @@ jQuery(() => {
   });
 });
 
-class Items extends ActivityEngine {
+class Items extends ActivityCore {
   constructor() {
     super(true);
   }

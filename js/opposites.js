@@ -1,11 +1,11 @@
-import { ActivityEngine } from './activityEngine.js'
+import { ActivityCore } from './activityCore.js'
 
 // on page load
 jQuery(() => {
   new Opposites();
 });
 
-class Opposites extends ActivityEngine {
+class Opposites extends ActivityCore {
   // on page load
   constructor() {
     super();

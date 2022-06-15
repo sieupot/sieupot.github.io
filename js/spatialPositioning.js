@@ -1,11 +1,11 @@
-import { ActivityEngine } from './activityEngine.js'
+import { ActivityCore } from './activityCore.js'
 
 // on page load
 jQuery(() => {
   new SpatialPositioning();
 });
 
-class SpatialPositioning extends ActivityEngine {
+class SpatialPositioning extends ActivityCore {
   constructor() {
     super();
 
