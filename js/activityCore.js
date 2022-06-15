@@ -21,7 +21,7 @@ export class ActivityCore {
       // show the start icon and let the user manually start the activity
       this.resultDivElem.fadeIn(300);
       this.modalPanel.dialog(this.dialogOptions);
-    } 
+    }
 
     nbDistractors = getNbDistractors();
     
@@ -57,7 +57,7 @@ export class ActivityCore {
       for (let i = 1; i <= this.nbDistractors; i++) {
         let itemContainerId = `itemContainer${i}`;
         $('#contentPanel').append(`<div id="${itemContainerId}" class="${itemClass} pointer-cursor"></div>`);
-    
+
         let objElem = $(`#${itemContainerId}`);
         this.activityObjElemArray.push(objElem);
       }

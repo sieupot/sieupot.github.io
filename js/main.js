@@ -3,9 +3,9 @@
   // register service worker
   let swVersion = '1.0';
   navigator.serviceWorker.register('/service-worker.js').then(() => {
-    console.log(`Service Worker ${swVersion} registered!`)
+	console.log(`Service Worker ${swVersion} registered!`)
   }).catch(error => {
-    console.error(`Service Worker ${swVersion} registration failed!`, error)
+	console.error(`Service Worker ${swVersion} registration failed!`, error)
   });
 }*/
 
@@ -16,10 +16,10 @@
  * @returns {number}
  */
 const getCommandRepeatInterval = (inMillis = true) => {
-  const sessionCmdRepeatIntervalSeconds = sessionStorage.getItem('commandRepeatIntervalSeconds');
-  const commandRepeatIntervalSeconds = (sessionCmdRepeatIntervalSeconds ? sessionCmdRepeatIntervalSeconds : 15);
+	const sessionCmdRepeatIntervalSeconds = sessionStorage.getItem('commandRepeatIntervalSeconds');
+	const commandRepeatIntervalSeconds = (sessionCmdRepeatIntervalSeconds ? sessionCmdRepeatIntervalSeconds : 15);
 
-  return inMillis ? (commandRepeatIntervalSeconds * 1000) : commandRepeatIntervalSeconds;
+	return inMillis ? (commandRepeatIntervalSeconds * 1000) : commandRepeatIntervalSeconds;
 }
 
 /**
@@ -27,10 +27,10 @@ const getCommandRepeatInterval = (inMillis = true) => {
  * @returns {string|boolean}
  */
 const getDisplayActivityTimer = () => {
-  const displayActivityTimer = sessionStorage.getItem('displayActivityTimer');
-  return displayActivityTimer === true || displayActivityTimer === 'true';
+	const displayActivityTimer = sessionStorage.getItem('displayActivityTimer');
+	return displayActivityTimer === true || displayActivityTimer === 'true';
 }
 
 const setSessionProperty = (property, value) => {
-  sessionStorage[property] = value;
+	sessionStorage[property] = value;
 }

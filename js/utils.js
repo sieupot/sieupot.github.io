@@ -11,19 +11,19 @@ const isIsogram = (str) => !/(.).*\1/.test(str);
  * @returns {boolean|string}
  */
 const getUrlParameter = (sParam) => {
-  const sPageURL = window.location.search.substring(1);
-  const sURLVariables = sPageURL.split('&');
-  let sParameterName;
-  let i;
+	const sPageURL = window.location.search.substring(1);
+	const sURLVariables = sPageURL.split('&');
+	let sParameterName;
+	let i;
 
-  for (i = 0; i < sURLVariables.length; i++) {
-    sParameterName = sURLVariables[i].split('=');
+	for (i = 0; i < sURLVariables.length; i++) {
+		sParameterName = sURLVariables[i].split('=');
 
-    if (sParameterName[0] === sParam) {
-      return typeof sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
-    }
-  }
-  return false;
+		if (sParameterName[0] === sParam) {
+			return typeof sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+		}
+	}
+	return false;
 };
 
 /**
@@ -32,16 +32,16 @@ const getUrlParameter = (sParam) => {
  * @param includeUrlParams include url params
  */
 const navigateTo = (pageLocation, includeUrlParams = true) => {
-  if (includeUrlParams) {
-  	if (pageLocation.indexOf('?') >= 0) {
-  	  // if pageLocation already contains params, append window..ocation.search params without the "?" delimiter but replace it with the "&" delimiter
-  	  pageLocation += '&' + window.location.search.substring(1);	
-  	} else {
-      pageLocation += window.location.search;
-    }
-  }
-  
-  window.location = pageLocation;
+	if (includeUrlParams) {
+		if (pageLocation.indexOf('?') >= 0) {
+			// if pageLocation already contains params, append window..ocation.search params without the "?" delimiter but replace it with the "&" delimiter
+			pageLocation += '&' + window.location.search.substring(1);
+		} else {
+			pageLocation += window.location.search;
+		}
+	}
+
+	window.location = pageLocation;
 }
 
 /**
@@ -52,54 +52,54 @@ const navigateTo = (pageLocation, includeUrlParams = true) => {
  * @returns {string}
  */
 const parseDynamicJsString = (sParam) => {
-  const sParamTokens = sParam.split(' ');
-  sParamTokens.forEach((token, curIndex) => {
-    if (token.indexOf('#{') >= 0) {
-      sParamTokens[curIndex] = eval(token.substring(2, token.length - 1));
-    }
-  });
+	const sParamTokens = sParam.split(' ');
+	sParamTokens.forEach((token, curIndex) => {
+		if (token.indexOf('#{') >= 0) {
+			sParamTokens[curIndex] = eval(token.substring(2, token.length - 1));
+		}
+	});
 
-  return sParamTokens.join(' ');
+	return sParamTokens.join(' ');
 }
 
 // extract entry from array and splice the array
 const extractRandomEntryAndSplice = (entryArray) => {
-  const entryIndex = Math.floor(Math.random() * entryArray.length);
-  const entryRet = entryArray[entryIndex]; // true or false
-  entryArray.splice(entryIndex, 1); // remove the selected answer from the array
-  return entryRet;
+	const entryIndex = Math.floor(Math.random() * entryArray.length);
+	const entryRet = entryArray[entryIndex]; // true or false
+	entryArray.splice(entryIndex, 1); // remove the selected answer from the array
+	return entryRet;
 }
 
 const removeAttributes = (element, ...attrs) => {
-  attrs.forEach(attr => element.removeAttribute(attr))
+	attrs.forEach(attr => element.removeAttribute(attr))
 }
 
 const removeContent = (...containerIds) => {
-  containerIds.forEach(containerId => document.getElementById(containerId).innerHTML = '')
+	containerIds.forEach(containerId => document.getElementById(containerId).innerHTML = '')
 }
 
 const isNumberKey = (evt) => {
-  const charCode = (evt.which) ? evt.which : evt.keyCode;
-  return !(charCode === 32 || charCode > 57);
+	const charCode = (evt.which) ? evt.which : evt.keyCode;
+	return !(charCode === 32 || charCode > 57);
 }
 
 const getNbDistractors = () => {
-  let nbDistractorsRet = Number(getUrlParameter('dst'));
+	let nbDistractorsRet = Number(getUrlParameter('dst'));
 
-  // what level is this? Init number of distractors used to render the number of activity items
-  nbDistractorsRet = (!nbDistractorsRet || nbDistractorsRet > 4) ? 2 : nbDistractorsRet;
+	// what level is this? Init number of distractors used to render the number of activity items
+	nbDistractorsRet = (!nbDistractorsRet || nbDistractorsRet > 4) ? 2 : nbDistractorsRet;
 
-  return nbDistractorsRet;
+	return nbDistractorsRet;
 }
 
 const pad = (val) => {
-  return val > 9 ? val : "0" + val;
+	return val > 9 ? val : "0" + val;
 }
 
 // shuffles the elements in an array
 function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
+	for (let i = array.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		[array[i], array[j]] = [array[j], array[i]];
+	}
 }

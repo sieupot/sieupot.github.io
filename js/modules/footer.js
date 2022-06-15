@@ -1,12 +1,12 @@
 export class Footer {
-	constructor () {
+	constructor() {
 		$('body').append(this.footerPanel);
 	}
 
-	footerPanel = 
-	 `
+	footerPanel =
+		`
 	    <footer>
 	        © 2021 All rights reserved. Teodor GUTAN.
 	    </footer>
-	`;
+		`;
 }
