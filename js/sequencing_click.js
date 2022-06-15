@@ -64,7 +64,7 @@ class SequencingClick extends ActivityCore {
 
 		// PLANT
 		let plantSq = {
-			name: 'growPlant', items: [{ index: 1, imagePath: `${this.imgPat}plant1.jpg` },
+			name: 'growPlant', items: [{ index: 1, imagePath: `${this.imgPath}plant1.jpg` },
 									   { index: 2, imagePath: `${this.imgPath}plant2.jpg` },
 									   { index: 3, imagePath: `${this.imgPath}plant3.jpg` }]
 		};
@@ -86,7 +86,7 @@ class SequencingClick extends ActivityCore {
 			name: 'wakeup', items: [{ index: 1, imagePath: `${this.imgPath}wakeup1.jpg` },
 									{ index: 2, imagePath: `${this.imgPath}wakeup2.jpg` },
 									{ index: 3, imagePath: `${this.imgPath}wakeup3.jpg` },
-									{ index: 4, imagePath: `${this.imgPat}wakeup4.jpg` },
+									{ index: 4, imagePath: `${this.imgPath}wakeup4.jpg` },
 									{ index: 5, imagePath: `${this.imgPath}wakeup5.jpg` },
 									{ index: 6, imagePath: `${this.imgPath}wakeup6.jpg` }]
 		};
@@ -99,7 +99,7 @@ class SequencingClick extends ActivityCore {
 		this.itemsContainerId.append(clickableHtmlElem);
 
 		let objInstance = this;
-		$(`#clickable${inde}`).bind("mousedown", function(ev) {
+		$(`#clickable${index}`).bind("mousedown", function(ev) {
 			objInstance.itemClicked(ev);
 		});
 	}
