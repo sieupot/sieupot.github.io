@@ -1,7 +1,7 @@
 {
   "name": "Si Eu Pot Invata",
   "short_name": "Si Eu Pot",
-  "description": "Produs destinat extinderii si imbunatatirii procedeelor si modurilor de lucru ale terapeutilor din domeniul logopediei. Produsul a fost dezvoltat in vederea folosirii atat in prezenta logopedului, cat si independent, ca unealta de antrenare si sedimantare a deprinderilor.",
+  "description": "Produs destinat extinderii si imbunatatirii procedeelor si modurilor de lucru ale terapeutilor din domeniul logopediei. Produsul e dezvoltat in vederea folosirii atat in prezenta logopedului, cat si independent, ca unealta de antrenare si sedimantare a deprinderilor.",
   "start_url": "index.html",
   "scope": "./",
   "icons": [{
