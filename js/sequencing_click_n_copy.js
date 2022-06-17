@@ -14,6 +14,7 @@ class SequencingClickNCopy extends ActivityCore {
 	selectedActivitySqLength = 0;
 	destContainers = $('#destContainersId');
 	srcContainers = $('#srcContainersId');
+	assistAudio;
 
 	activityItems;
 	imgPath = "../images/sequencing/";
@@ -116,9 +117,13 @@ class SequencingClickNCopy extends ActivityCore {
 		destHtmlElem.id = `dest${index}`;
 		destHtmlElem.style.cursor = 'help';
 		destHtmlElem.classList.add('activity-item', 'destination');
+		let objInstance = this;
 		destHtmlElem.onmousedown = function() {
-			let assistAudio = new Audio(assistAudioPath);
-			assistAudio.play();
+			if (objInstance.assistAudio) {
+				objInstance.assistAudio.pause();
+			}
+			objInstance.assistAudio = new Audio(assistAudioPath);
+			objInstance.assistAudio.play();
 		};
 		this.destContainers.append(destHtmlElem);
 	}

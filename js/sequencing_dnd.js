@@ -12,6 +12,7 @@ class SequencingDND extends ActivityCore {
 
 	dropContainers = $('#dropContainersId');
 	dragContainers = $('#dragContainersId');
+	assistAudio;
 
 	activityItems;
 	imgPath = "../images/sequencing/";
@@ -134,8 +135,11 @@ class SequencingDND extends ActivityCore {
 			objInstance.highlightArea(event, false);
 		});
 		droppableHtmlElemJQ.bind('mousedown', function() {
-			let assistAudio = new Audio(assistAudioPath);
-			assistAudio.play();
+			if (objInstance.assistAudio) {
+				objInstance.assistAudio.pause();
+			}
+			objInstance.assistAudio = new Audio(assistAudioPath);
+			objInstance.assistAudio.play();
 		});
 	}
 
