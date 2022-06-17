@@ -174,7 +174,7 @@ export class ActivityCore {
 	playShowItemAudio = (repeat = true) => {
 		this.resetActivityItems();
 
-		if (Score.dlResultsModalPanel && Score.dlResultsModalPanel.is(":visible")) {
+		if (this.score.dlResultsModalPanel && this.score.dlResultsModalPanel.is(":visible")) {
 			// don't repeat the command and reschedule next repeat
 			if (repeat && !this.showItemSoundInterval) {
 				this.showItemSoundInterval = setInterval(this.playShowItemAudio, getCommandRepeatInterval());
