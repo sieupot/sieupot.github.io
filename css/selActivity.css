@@ -32,10 +32,13 @@
   right: .5em;
   top: .5em;
 }
-object.difficulty > object.checked {
+object.difficulty > object.easy {
   color: #ff9900;
 }
-object.difficulty > object.checked-r {
+object.difficulty > object.medium {
+  color: #ff9900;
+}
+object.difficulty > object.hard {
   color: #ff0000;
 }
 .activity-button > img {

@@ -28,7 +28,7 @@ export class Score {
 	        <link rel="stylesheet" href="../css/activityTimer.css">
 	        <link rel="stylesheet" href="../css/fonts.css">
 	        <link rel="stylesheet" href="../css/scorePanel.css">
-	        <link rel="stylesheet" href="../css/fontawesome-free-5.15.3-web/css/all.css">
+	        <link rel="stylesheet" href="../css/fontawesome-free-6.2.0-web/css/all.css">
 	    </object>
 	
 	    <div id="scorePanel">
