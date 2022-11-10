@@ -5,6 +5,7 @@
   position: absolute;
   right: 0;
   left: 426px;
+  padding-top: 10px;
 }
 #userSettingsMenuId {
   margin-left: auto;
@@ -15,11 +16,11 @@
   background-color: #fff;
   min-width: 160px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  top: 42px;
+  top: 32px;
   z-index: 9999999;
   padding: 20px 10px 10px 10px;
-  border-radius: 20px;
-  right: 0;
+  border-radius: 20px 0 20px 20px;
+  right: 20px;
   border: 2px solid #226473;
 }
 #settingsPanelTitleId {
@@ -100,10 +101,12 @@
 #userSettingsMenuButtonId {
   width: 40px;
   height: 40px;
+  position: relative;
   border-radius: 50%;
   border: 2px solid #226473;
   background: rgb(255, 255, 255) url('../images/app/profileSettings.svg') no-repeat center;
   background-size: 30px;
+  z-index: 99999999;
 }
 
 #settingsPanelId .checkbox-container {

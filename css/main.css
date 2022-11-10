@@ -21,7 +21,7 @@ body {
   display: grid;
   overflow: auto;
   grid-template-rows: auto 1fr;
-  margin-top: 44px;
+  margin-top: 54px;
   height: calc(100% - 44px);
 }
 
