@@ -6,7 +6,7 @@ export class Footer {
 	footerPanel =
 		`
 	    <footer>
-	        © 2021 All rights reserved. Teodor GUTAN.
+	        © ${new Date().getFullYear()} All rights reserved. Teodor GUTAN.
 	    </footer>
 		`;
 }
