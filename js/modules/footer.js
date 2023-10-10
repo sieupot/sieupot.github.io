@@ -1,12 +1,5 @@
 export class Footer {
 	constructor() {
-		$('body').append(this.footerPanel);
+		jQuery('body').append(`<footer>© ${new Date().getFullYear()} All rights reserved to Teodor GUTAN.</footer>`);
 	}
-
-	footerPanel =
-		`
-	    <footer>
-	        © ${new Date().getFullYear()} All rights reserved. Teodor GUTAN.
-	    </footer>
-		`;
 }

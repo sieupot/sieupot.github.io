@@ -8,18 +8,18 @@ jQuery(() => {
 class SequencingClickNCopy extends ActivityCore {
 	constructor() {
 		super();
+
+		this.okClicksNb = 0;
+		this.selectedActivitySqLength = 0;
+		this.destContainers = $('#destContainersId');
+		this.srcContainers = $('#srcContainersId');
+		this.assistAudio;
+
+		this.imgPath = "../images/sequencing/";
+		this.sndPath = "../sounds/sequencing/";
 	}
 
-	okClicksNb = 0;
-	selectedActivitySqLength = 0;
-	destContainers = $('#destContainersId');
-	srcContainers = $('#srcContainersId');
-	assistAudio;
-
-	activityItems;
-	imgPath = "../images/sequencing/";
-	sndPath = "../sounds/sequencing/";
-	initActivityItems = () => {
+	initActivityItems() {
 		this.activityItems = [];
 
 		// CATERPILLAR
@@ -96,7 +96,7 @@ class SequencingClickNCopy extends ActivityCore {
 		this.activityItems.push(wakeupSq);
 	}
 
-	generateDestHtmlElem = (index, nbItems) => {
+	generateDestHtmlElem(index, nbItems) {
 		let assistAudioPath = "../sounds/sequencing/";
 		switch (index) {
 			case 1:
@@ -128,7 +128,7 @@ class SequencingClickNCopy extends ActivityCore {
 		this.destContainers.append(destHtmlElem);
 	}
 
-	generateClickableHtmlElem = (index, imagePath) => {
+	generateClickableHtmlElem(index, imagePath) {
 		const clickableHtmlElem = `<div id="clickable${index}" class="pointer-cursor click-item" style="background-image: url('${imagePath}');" canBeClicked="true">
           </div>`;
 		this.srcContainers.append(clickableHtmlElem);
@@ -139,7 +139,7 @@ class SequencingClickNCopy extends ActivityCore {
 		});
 	}
 
-	generateChallengeItems = () => {
+	generateChallengeItems() {
 		// remove previous HTML content from the destContainersId div (new content will be generated below)
 		removeContent(this.destContainers.attr('id'));
 		removeContent(this.srcContainers.attr('id'));
@@ -170,14 +170,14 @@ class SequencingClickNCopy extends ActivityCore {
 		this.playShowItemAudio(false);
 	}
 
-	checkActivityProgress = () => {
+	checkActivityProgress() {
 		// no more clickable items?
 		if (this.okClicksNb === this.selectedActivitySqLength) {
 			this.checkValidAnswer(true);
 		}
 	}
 
-	itemClicked = (ev) => {
+	itemClicked(ev) {
 		ev.preventDefault();
 		const clickableElem = ev.target;
 		let clickableElemJQ = $(clickableElem);

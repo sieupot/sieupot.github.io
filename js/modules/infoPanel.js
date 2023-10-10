@@ -6,8 +6,8 @@ export class InfoPanel {
 		this.pgDescriptionMsg = parseDynamicJsString(this.infoPanel.attr('pgDescriptionMsg'));
 	}
 
-	render = () => {
-		let infoPnlContent = `
+	render() {
+		const infoPnlContent = `
 		    <div>
 		      <svg viewBox="0 0 100% 100%" xmlns="http://www.w3.org/2000/svg" height="200"
 		           class="pointer-cursor"

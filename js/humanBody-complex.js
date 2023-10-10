@@ -8,16 +8,17 @@ jQuery(() => {
 class HumanBodyComplex extends ActivityCore {
 	constructor() {
 		super();
+
+		this.userSelectedElem;
+		this.challengeItem;
+		this.currentActivityItems;
+	
+		this.clickSrcContainers = $('#clickSrcContainersId');
+	
+		this.activityItems;
 	}
 
-	userSelectedElem;
-	challengeItem;
-	currentActivityItems;
-
-	clickSrcContainers = $('#clickSrcContainersId');
-
-	activityItems;
-	initActivityItems = () => {
+	initActivityItems() {
 		let humanBodyActivityItems;
 		if (humanBodyPart === 'head') {
 			humanBodyActivityItems = new HeadActivityItems(humanBodySubject);
@@ -29,7 +30,7 @@ class HumanBodyComplex extends ActivityCore {
 		this.activityItems = humanBodyActivityItems.activityItems;
 	}
 
-	generateChallengeItems = () => {
+	generateChallengeItems() {
 		let objInstance = this;
 
 		// load dest resource
@@ -62,7 +63,7 @@ class HumanBodyComplex extends ActivityCore {
 		this.selectValidChallengeItem();
 	}
 
-	selectValidChallengeItem = () => {
+	selectValidChallengeItem() {
 		// select the valid challenge item, save it to be checked later
 		const validItemIndex = Math.floor((Math.random() * this.currentActivityItems.length));
 		this.challengeItem = this.clickSrcContainers.children()[validItemIndex];
@@ -77,7 +78,7 @@ class HumanBodyComplex extends ActivityCore {
 		this.playShowItemAudio();
 	}
 
-	sourceSelected = (ev) => {
+	sourceSelected(ev) {
 		let clickedElem = ev.currentTarget;
 		let clickedElemJQ = $(clickedElem);
 		if (!this.userSelectedElem) {
@@ -95,7 +96,7 @@ class HumanBodyComplex extends ActivityCore {
 		}
 	}
 
-	validateChallenge = (ev) => {
+	validateChallenge(ev) {
 		let clickedElemJQ = $(ev.currentTarget);
 		if (this.userSelectedElem) {
 			const userSelectedItemAttrName = this.userSelectedElem.getAttribute('name');
@@ -116,7 +117,7 @@ class HumanBodyComplex extends ActivityCore {
 		}
 	}
 
-	checkActivityProgress = () => {
+	checkActivityProgress() {
 		// no more clickable items?
 		if (this.clickSrcContainers.children().length <= 0) {
 			this.checkValidAnswer(true);
@@ -135,21 +136,20 @@ class SoundItem {
 	 * @param soundArticle: Indefinite, Definite, Possessive
 	 */
 	constructor(soundBaseFileName, soundArticle = '') {
-		this.soundPath = `${this.sndPath}${soundBaseFileName}${soundArticle}.ogg`;
+		const sndPath = "../sounds/humanBody/";
+		this.soundPath = `${sndPath}${soundBaseFileName}${soundArticle}.ogg`;
 	}
 
-	sndPath = "../sounds/humanBody/";
 }
 
 class BodyActivityItems {
 	constructor(humanBodySubject) {
+		this.imgPath = "../images/humanBody/";
 		this.initActivityItems(humanBodySubject);
 	}
 
-	imgPath = "../images/humanBody/";
 
-	activityItems;
-	initActivityItems = (humanBodySubject) => {
+	initActivityItems(humanBodySubject) {
 		this.activityItems = [];
 
 		// head
@@ -212,13 +212,12 @@ class BodyActivityItems {
 
 class HeadActivityItems {
 	constructor(humanBodySubject) {
+		this.imgPath = "../images/humanBody/";
 		this.initActivityItems(humanBodySubject);
 	}
 
-	imgPath = "../images/humanBody/";
 
-	activityItems;
-	initActivityItems = (humanBodySubject) => {
+	initActivityItems(humanBodySubject) {
 		this.activityItems = [];
 
 		// hair

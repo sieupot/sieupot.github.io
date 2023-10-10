@@ -8,16 +8,16 @@ jQuery(() => {
 class SequencingClick extends ActivityCore {
 	constructor() {
 		super();
+
+		this.okClicksNb = 0;
+		this.selectedActivitySqLength = 0;
+		this.itemsContainerId = $('#itemsContainerId');
+	
+		this.imgPath = "../images/sequencing/";
+		this.sndPath = "../sounds/sequencing/";
 	}
 
-	okClicksNb = 0;
-	selectedActivitySqLength = 0;
-	itemsContainerId = $('#itemsContainerId');
-
-	activityItems;
-	imgPath = "../images/sequencing/";
-	sndPath = "../sounds/sequencing/";
-	initActivityItems = () => {
+	initActivityItems() {
 		this.activityItems = [];
 
 		// CATERPILLAR
@@ -93,7 +93,7 @@ class SequencingClick extends ActivityCore {
 		this.activityItems.push(wakeupSq);
 	}
 
-	generateClickableHtmlElem = (index, imagePath) => {
+	generateClickableHtmlElem(index, imagePath) {
 		const clickableHtmlElem = `<div id="clickable${index}" class="pointer-cursor click-item" style="background-image: url('${imagePath}');" canbeclicked="true">
           </div>`;
 		this.itemsContainerId.append(clickableHtmlElem);
@@ -104,7 +104,7 @@ class SequencingClick extends ActivityCore {
 		});
 	}
 
-	generateChallengeItems = () => {
+	generateChallengeItems() {
 		// remove previous HTML content from the itemsContainerId div (new content will be generated below)
 		removeContent(this.itemsContainerId.attr('id'));
 
@@ -128,7 +128,7 @@ class SequencingClick extends ActivityCore {
 		this.playShowItemAudio(false);
 	}
 
-	itemClicked = (ev) => {
+	itemClicked(ev) {
 		ev.preventDefault();
 		const clickableElem = ev.target;
 		let clickableElemJQ = $(clickableElem);
@@ -161,7 +161,7 @@ class SequencingClick extends ActivityCore {
 		}
 	}
 
-	checkActivityProgress = () => {
+	checkActivityProgress() {
 		// no more clickable items?
 		if (this.okClicksNb === this.selectedActivitySqLength) {
 			this.checkValidAnswer(true);

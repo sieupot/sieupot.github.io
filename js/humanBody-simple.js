@@ -19,12 +19,11 @@ class HumanBodySimple extends ActivityCore {
 				});
 			});
 		});
+
+		this.challengeItem;
 	}
 
-	challengeItem;
-
-	activityItems;
-	initActivityItems = () => {
+	initActivityItems() {
 		let humanBodyActivityItems;
 		if (humanBodyPart === 'head') {
 			humanBodyActivityItems = new HeadActivityItems();
@@ -36,7 +35,7 @@ class HumanBodySimple extends ActivityCore {
 		this.activityItems = humanBodyActivityItems.activityItems;
 	}
 
-	generateChallengeItems = () => {
+	generateChallengeItems() {
 		// select the valid challenge item, save it to be checked later
 		const validItemIndex = Math.floor((Math.random() * this.activityItems.length));
 		this.challengeItem = this.activityItems[validItemIndex];
@@ -49,7 +48,7 @@ class HumanBodySimple extends ActivityCore {
 		this.playShowItemAudio();
 	}
 
-	validateChallenge = (ev) => {
+	validateChallenge(ev) {
 		let clickedElem = ev.currentTarget;
 		this.checkValidAnswer(clickedElem.id === `gr_${this.challengeItem.name}`);
 	}
@@ -62,10 +61,10 @@ class SoundItem {
 	 * @param soundArticle: Indefinite, Definite, Possessive
 	 */
 	constructor(soundBaseFileName, soundArticle = '') {
-		this.soundPath = `${this.sndPath}${soundBaseFileName}${soundArticle}.ogg`;
+		const sndPath = "../sounds/humanBody/";
+		this.soundPath = `${sndPath}${soundBaseFileName}${soundArticle}.ogg`;
 	}
 
-	sndPath = "../sounds/humanBody/";
 }
 
 class BodyActivityItems {
@@ -73,8 +72,7 @@ class BodyActivityItems {
 		this.initActivityItems();
 	}
 
-	activityItems;
-	initActivityItems = () => {
+	initActivityItems() {
 		this.activityItems = [];
 
 		// head
@@ -132,8 +130,7 @@ class HeadActivityItems {
 		this.initActivityItems();
 	}
 
-	activityItems;
-	initActivityItems = () => {
+	initActivityItems() {
 		this.activityItems = [];
 
 		// hair

@@ -9,6 +9,8 @@ export class ActivityCore {
 		// add element content on page
 		new Footer();
 
+		this.nbDistractors = getNbDistractors();
+
 		// initialize score object and add score content on page
 		this.score = new Score(this.hasDistractors, this.nbDistractors);
 
@@ -18,6 +20,18 @@ export class ActivityCore {
 		this.modalPanel = $('#dialogDiv');
 		this.resultDivElem = $('div.result');
 
+		this.dialogOptions = {
+			dialogClass: 'ui-dialog-no-close-button',
+			show: {
+				effect: 'fade',
+				duration: 200
+			},
+			hide: {
+				effect: 'fade',
+				duration: 200
+			},
+		};
+
 		let objInstance = this;
 		$("div.start-activity").bind('mousedown', function() {
 			objInstance.startActivity();
@@ -26,35 +40,18 @@ export class ActivityCore {
 		// show the start icon and let the user manually start the activity
 		this.resultDivElem.fadeIn(300);
 		this.modalPanel.dialog(this.dialogOptions);
+		this.activityObjElemArray = []; // list of the JQUERY items actively displayed in the page
+	
+		this.activitySoundList = [];
+		this.showItemSoundInterval;
+		this.playingAudios = [];
+		this.rightAnswers = 0;
+		this.wrongAnswers = 0;
+
+		this.challengeCorrectItemName = '';
 	}
 
-	nbDistractors = getNbDistractors();
-
-	activityObjElemArray = []; // list of the JQUERY items actively displayed in the page
-	activitySoundList = [];
-	showItemSoundInterval;
-	playingAudios = [];
-	rightAnswers = 0;
-	wrongAnswers = 0;
-
-	challengeCorrectItemName = '';
-
-	dialogOptions = {
-		dialogClass: 'ui-dialog-no-close-button',
-		show: {
-			effect: 'fade',
-			duration: 200
-		},
-		hide: {
-			effect: 'fade',
-			duration: 200
-		},
-	};
-
-	modalPanel;
-	resultDivElem;
-
-	initActivity = (itemClass = 'item') => {
+	initActivity(itemClass = 'item') {
 		this.modalPanel = $('#dialogDiv');
 		this.resultDivElem = $('div.result');
 
@@ -72,10 +69,10 @@ export class ActivityCore {
 		this.modalPanel.dialog(this.dialogOptions);
 	}
 
-	generateChallengeItems = () => { alert(5)/*overridden*/ };
-	initActivityItems = () => { alert(0);/*overridden*/ };
+	generateChallengeItems() { alert(5)/*overridden*/ };
+	initActivityItems() { alert(0);/*overridden*/ };
 
-	startNewChallenge = () => {
+	startNewChallenge() {
 		this.generateChallengeItems();
 
 		// initialize a new reaction time item
@@ -85,7 +82,7 @@ export class ActivityCore {
 	/**
 	 * triggered when the user manually chooses to start the activity
 	 */
-	startActivity = () => {
+	startActivity() {
 		this.activityTimer.startTimer();
 
 		this.resultDivElem.find('div').unbind('mousedown').removeClass('pointer-cursor');
@@ -96,13 +93,13 @@ export class ActivityCore {
 		this.startNewChallenge();
 	}
 
-	getAnswerOptions = () => {
+	getAnswerOptions() {
 		let answerOptionValues = []; // [true, false, (false)..]
 		this.activityObjElemArray.forEach(() => answerOptionValues.push(!answerOptionValues.length || answerOptionValues.length === 0));
 		return answerOptionValues;
 	}
 
-	checkValidAnswer = (isValidAnswer) => {
+	checkValidAnswer(isValidAnswer) {
 		this.resetActivityItems();
 		this.modalPanel.dialog(this.dialogOptions);
 
@@ -113,7 +110,7 @@ export class ActivityCore {
 		}
 	}
 
-	handleValidAnswer = (doShowSmileFace, doPlayCorrectItemAudio, doStartNewChallenge) => {
+	handleValidAnswer(doShowSmileFace, doPlayCorrectItemAudio, doStartNewChallenge) {
 		this.rightAnswers++;
 		if (doShowSmileFace) {
 			// ------------------------------------------v display success smaller and top right so that children can see the correct item they have chosen (on a tablet, for the human body activities)
@@ -123,12 +120,13 @@ export class ActivityCore {
 		if (doPlayCorrectItemAudio) {
 			let playingCorrectAnswerAudio = new Audio('../sounds/correct.ogg');
 			this.playingAudios.push(playingCorrectAnswerAudio);
+			let objInstance = this;
 			playingCorrectAnswerAudio.addEventListener('ended', () => {
-				this.resultDivElem.css('opacity', 1).hide().find('div').removeClass('action-feedback');
+				objInstance.resultDivElem.css('opacity', 1).hide().find('div').removeClass('action-feedback');
 
-				this.activitySoundList = [];
+				objInstance.activitySoundList = [];
 				if (doStartNewChallenge) {
-					this.startNewChallenge();
+					objInstance.startNewChallenge();
 				}
 			});
 			playingCorrectAnswerAudio.play();
@@ -142,16 +140,17 @@ export class ActivityCore {
 		this.score.completeCurrentActionReactionTimeItem(new Date());
 	}
 
-	handleInvalidAnswer = (doPlayShowItemAudio) => {
+	handleInvalidAnswer(doPlayShowItemAudio) {
 		this.wrongAnswers++;
 		this.resultDivElem.css('opacity', .5).find('div').css('background-image', 'url(../images/sadFace.png)');
 		this.resultDivElem.fadeIn(500);
 		let playingWrongAnswerAudio = new Audio('../sounds/wrong.ogg');
+		let objInstance = this;
 		playingWrongAnswerAudio.addEventListener('ended', () => {
-			this.resultDivElem.css('opacity', 1).hide();
-			this.modalPanel.dialog('close');
+			objInstance.resultDivElem.css('opacity', 1).hide();
+			objInstance.modalPanel.dialog('close');
 			if (doPlayShowItemAudio) {
-				this.playShowItemAudio();
+				objInstance.playShowItemAudio();
 			}
 		});
 		playingWrongAnswerAudio.play();
@@ -162,46 +161,47 @@ export class ActivityCore {
 		this.score.updateFailuresCurrentAnswerReactionTimeItem();
 	}
 
-	resetActivityItems = () => {
+	resetActivityItems() {
 		this.resetSounds();
 	}
 
-	resetSounds = () => {
+	resetSounds() {
 		window.clearInterval(this.showItemSoundInterval);
 		this.showItemSoundInterval = null;
 	}
 
-	playShowItemAudio = (repeat = true) => {
-		this.resetActivityItems();
+	playShowItemAudio(repeat = true) {
+		let objInstance = this;
+		objInstance.resetActivityItems();
 
-		if (this.score.dlResultsModalPanel && this.score.dlResultsModalPanel.is(":visible")) {
+		if (objInstance.score.dlResultsModalPanel && objInstance.score.dlResultsModalPanel.is(":visible")) {
 			// don't repeat the command and reschedule next repeat
-			if (repeat && !this.showItemSoundInterval) {
-				this.showItemSoundInterval = setInterval(this.playShowItemAudio, getCommandRepeatInterval());
+			if (repeat && !objInstance.showItemSoundInterval) {
+				objInstance.showItemSoundInterval = setInterval(function() {objInstance.playShowItemAudio()}, getCommandRepeatInterval());
 			}
 		} else {
-			this.resultDivElem.find('div').css('background-image', 'url(../images/pause.svg)');
-			this.resultDivElem.fadeIn(300);
-			this.modalPanel.dialog(this.dialogOptions);
+			objInstance.resultDivElem.find('div').css('background-image', 'url(../images/pause.svg)');
+			objInstance.resultDivElem.fadeIn(300);
+			objInstance.modalPanel.dialog(objInstance.dialogOptions);
 
 			let audio = new Audio(),
 				i = 0;
 			audio.addEventListener('ended', () => {
-				if (++i === this.activitySoundList.length) {
-					this.resultDivElem.hide();
-					this.modalPanel.dialog('close');
+				if (++i === objInstance.activitySoundList.length) {
+					objInstance.resultDivElem.hide();
+					objInstance.modalPanel.dialog('close');
 
 					// schedule next repeat after the last sound has been played
-					if (repeat && !this.showItemSoundInterval) {
-						this.showItemSoundInterval = setInterval(this.playShowItemAudio, getCommandRepeatInterval());
+					if (repeat && !objInstance.showItemSoundInterval) {
+						objInstance.showItemSoundInterval = setInterval(function() {objInstance.playShowItemAudio()}, getCommandRepeatInterval());
 					}
 					return;
 				}
 
-				audio.src = this.activitySoundList[i];
+				audio.src = objInstance.activitySoundList[i];
 				audio.play();
 			}, true);
-			audio.src = this.activitySoundList[0];
+			audio.src = objInstance.activitySoundList[0];
 			audio.play();
 		}
 	}

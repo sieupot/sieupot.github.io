@@ -8,13 +8,14 @@ jQuery(() => {
 class HumanBody extends ActivityCore {
 	constructor() {
 		super();
+		
+		this.prevRnd = null;
+		this.activityObjElemArray = [];
+
+		this.activityItems = null;
 	}
 
-	prevRnd;
-	activityObjElemArray = [];
-
-	activityItems;
-	initActivityItems = () => {
+	initActivityItems() {
 		const sndPath = "../sounds/humanBody/";
 		this.activityItems = [
 			{ name: 'head', audioPath: sndPath + 'head.ogg' },
@@ -30,7 +31,7 @@ class HumanBody extends ActivityCore {
 		this.activityItems.forEach(item => this.activityObjElemArray.push($('svg[' + item.name + '-attr]')));
 	}
 
-	generateChallengeItems = () => {
+	generateChallengeItems() {
 		let validItemIndex;
 		do {
 			validItemIndex = Math.floor((Math.random() * this.activityItems.length));
@@ -44,7 +45,7 @@ class HumanBody extends ActivityCore {
 
 		let objInstance = this;
 		// unbind previously bound mousedown handler; bind the mousedown event function
-		for (const [i, svgElem] of this.activityObjElemArray.entries()) {
+		for (const [i, svgElem] of objInstance.activityObjElemArray.entries()) {
 			svgElem.off('mousedown').mousedown(() => {
 				objInstance.checkValidAnswer(i === validItemIndex);
 			});

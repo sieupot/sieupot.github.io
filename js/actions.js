@@ -11,12 +11,11 @@ class Actions extends ActivityCore {
 
 		this.activityObjElemArray.push($('#actionContainer1Id'));
 		this.activityObjElemArray.push($('#actionContainer2Id'));
+
+		this.activityItems = [];
 	}
 
-	activityObjElemArray = [];
-
-	activityItems;
-	initActivityItems = () => {
+	initActivityItems() {
 		const imgPath = "../images/actions/";
 		let actionsActivityItems;
 		if (actionsType === 'simple') {
@@ -29,7 +28,7 @@ class Actions extends ActivityCore {
 		this.activityItems = actionsActivityItems.activityItems;
 	}
 
-	generateChallengeItems = () => {
+	generateChallengeItems() {
 		// generate answer options
 		this.answerOptionValues = this.getAnswerOptions(); // [true, false, (false)..]
 
@@ -56,7 +55,7 @@ class Actions extends ActivityCore {
 		this.playShowItemAudio();
 	}
 
-	setupAnswer = (objElem, selectedActivityItem) => {
+	setupAnswer(objElem, selectedActivityItem) {
 		// extract the image to display for this first activity item
 		let imagePath = selectedActivityItem.images[Math.floor((Math.random() * selectedActivityItem.images.length))];
 		// randomly determine whether this is the correct answer or not
@@ -81,11 +80,11 @@ class SoundItem {
 	 * @param sharedSound: some sounds are shared by the spatial positioning activities
 	 */
 	constructor(soundBaseFileName, soundArticle = '', sharedSound = false) {
+		this.sndCommonPath = "../sounds/common/";
+		this.sndPath = "../sounds/actions/";
+
 		this.soundPath = `${sharedSound ? this.sndCommonPath : this.sndPath}${soundBaseFileName}${soundArticle}.ogg`;
 	}
-
-	sndCommonPath = "../sounds/common/";
-	sndPath = "../sounds/actions/";
 }
 
 class ActionsSoundItems {
@@ -152,8 +151,7 @@ class ActionsSimpleActivityItems {
 		this.initActivityItems(imgPath);
 	}
 
-	activityItems;
-	initActivityItems = (imgPath) => {
+	initActivityItems(imgPath) {
 		this.activityItems = [];
 
 		// BOY CLAPS HANDS
@@ -613,8 +611,7 @@ class ActionsComplexActivityItems {
 		this.initActivityItems(imgPath);
 	}
 
-	activityItems;
-	initActivityItems = (imgPath) => {
+	initActivityItems(imgPath) {
 		this.activityItems = [];
 
 		// BOY CLAPS HANDS

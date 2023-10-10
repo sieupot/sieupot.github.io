@@ -8,16 +8,16 @@ jQuery(() => {
 class Colors extends ActivityCore {
 	constructor() {
 		super(true);
+		this.activityItems = [];
 	}
 
-	activityItems;
-	initActivityItems = () => {
+	initActivityItems() {
 		this.activityItems = this.getActivityItems();
 
 		this.initActivity('color');
 	}
 
-	getActivityItems = () => {
+	getActivityItems() {
 		const sndPath = "../sounds/colors/";
 		const activityType = getUrlParameter('at');
 		const activityItemsBasic = [
@@ -42,7 +42,7 @@ class Colors extends ActivityCore {
 		return activityItemsBasic.concat(activityItemsAdvanced);
 	};
 
-	generateChallengeItems = () => {
+	generateChallengeItems() {
 		this.answerOptionValues = this.getAnswerOptions(); // [true, false, (false)..]
 
 		// setup the containing DOM elements

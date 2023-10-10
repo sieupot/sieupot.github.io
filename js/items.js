@@ -10,18 +10,17 @@ jQuery(() => {
 class Items extends ActivityCore {
 	constructor() {
 		super(true);
+
+		this.prevSelectedItems = [];
 	}
 
-	prevSelectedItems = [];
-
-	activityItems;
-	initActivityItems = () => {
+	initActivityItems() {
 		this.activityItems = getActivityItems();
 
 		this.initActivity();
 	}
 
-	generateChallengeItems = () => {
+	generateChallengeItems() {
 		this.answerOptionValues = this.getAnswerOptions(); // [true, false, (false)..]
 
 		// setup the containing DOM elements

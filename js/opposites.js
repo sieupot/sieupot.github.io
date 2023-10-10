@@ -10,16 +10,15 @@ class Opposites extends ActivityCore {
 	constructor() {
 		super();
 
+		this.activityObjElemArray = [];
 		this.activityObjElemArray.push($('#itemContainer1Id'));
 		this.activityObjElemArray.push($('#itemContainer2Id'));
+
+		this.imgPath = "../images/opposites/";
+		this.sndPath = "../sounds/opposites/";
 	}
 
-	activityObjElemArray = [];
-
-	activityItems;
-	imgPath = "../images/opposites/";
-	sndPath = "../sounds/opposites/";
-	initActivityItems = () => {
+	initActivityItems() {
 		this.activityItems = [];
 
 		// FULL / EMPTY
@@ -264,7 +263,7 @@ class Opposites extends ActivityCore {
 		this.activityItems.push(offCategory);
 	}
 
-	generateChallengeItems = () => {
+	generateChallengeItems() {
 		// generate answer options
 		this.answerOptionValues = this.getAnswerOptions(); // [true, false, (false)..]
 
@@ -281,7 +280,7 @@ class Opposites extends ActivityCore {
 		this.playShowItemAudio();
 	}
 
-	setupAnswer = (objElem, selectedActivityItem) => {
+	setupAnswer(objElem, selectedActivityItem) {
 		// extract the image to display for this first activity item
 		let imagePath1 = selectedActivityItem.images[Math.floor((Math.random() * selectedActivityItem.images.length))];
 		// randomly determine whether this is the correct answer or not

@@ -8,16 +8,19 @@ jQuery(() => {
 class SequencingDND extends ActivityCore {
 	constructor() {
 		super();
+
+		this.dropContainers = $('#dropContainersId');
+		this.dragContainers = $('#dragContainersId');
+		this.assistAudio;
+	
+		this.imgPath = "../images/sequencing/";
+		this.sndPath = "../sounds/sequencing/";
+	
+		/* used in the DRAG AND DROP logic */
+		this.draggedElemId;
 	}
 
-	dropContainers = $('#dropContainersId');
-	dragContainers = $('#dragContainersId');
-	assistAudio;
-
-	activityItems;
-	imgPath = "../images/sequencing/";
-	sndPath = "../sounds/sequencing/";
-	initActivityItems = () => {
+	initActivityItems() {
 		this.activityItems = [];
 
 		// CATERPILLAR
@@ -94,7 +97,7 @@ class SequencingDND extends ActivityCore {
 		this.activityItems.push(wakeupSq);
 	}
 
-	generateDroppableHtmlElem = (index, nbItems) => {
+	generateDroppableHtmlElem(index, nbItems) {
 		let assistAudioPath = "../sounds/sequencing/";
 		switch (index) {
 			case 1:
@@ -143,7 +146,7 @@ class SequencingDND extends ActivityCore {
 		});
 	}
 
-	generateDraggableHtmlElem = (index, imagePath) => {
+	generateDraggableHtmlElem(index, imagePath) {
 		const draggableHtmlElem = `<div id="draggable${index}" class="draggable-container drag-item" style="background-image: url('${imagePath}');" draggable="true">
           </div>`;
 		this.dragContainers.append(draggableHtmlElem);
@@ -156,7 +159,7 @@ class SequencingDND extends ActivityCore {
 		});
 	}
 
-	generateChallengeItems = () => {
+	generateChallengeItems() {
 		// remove previous HTML content from the dropContainersId div (new content will be generated below)
 		removeContent(this.dropContainers.attr('id'));
 
@@ -182,33 +185,30 @@ class SequencingDND extends ActivityCore {
 		this.playShowItemAudio(false);
 	}
 
-	checkActivityProgress = () => {
+	checkActivityProgress() {
 		// no more draggable items?
 		if (this.dragContainers.children().length === 0) {
 			this.checkValidAnswer(true);
 		}
 	}
 
-	/* used in the DRAG AND DROP logic */
-	draggedElemId;
-
-	allowDrop = (ev) => {
+	allowDrop(ev) {
 		ev.preventDefault();
 	}
 
-	startDrag = (ev) => {
+	startDrag(ev) {
 		const draggableElem = document.getElementById(ev.target.id);
 		if (draggableElem.getAttribute('draggable')) {
 			draggableElem.classList.add('hide-src-while-dragging');
 			this.draggedElemId = ev.target.id;
 		}
 	}
-	endDrag = (ev) => {
+	endDrag(ev) {
 		document.getElementById(ev.target.id).classList.remove('hide-src-while-dragging');
 		this.draggedElemId = null;
 	}
 
-	drop = (ev) => {
+	drop(ev) {
 		ev.preventDefault();
 		const draggableElemJQ = $(`#${this.draggedElemId}`);
 		if (draggableElemJQ && draggableElemJQ.attr('draggable')) {
@@ -235,7 +235,7 @@ class SequencingDND extends ActivityCore {
 		}
 	}
 
-	highlightArea = (ev, isTrue) => {
+	highlightArea(ev, isTrue) {
 		if (this.draggedElemId) {
 			const dropElem = document.getElementById(ev.target.id);
 			const draggableElem = document.getElementById(this.draggedElemId);

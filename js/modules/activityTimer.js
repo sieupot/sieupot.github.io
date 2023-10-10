@@ -1,10 +1,10 @@
 export class ActivityTimer {
 	constructor(score) {
 		this.score = score;
+		this.activityTimeSeconds = 0;
 	}
-	activityTimeSeconds = 0;
 
-	startTimer = () => {
+	startTimer() {
 		jQuery('body').prepend(`<div id="timerId" style="display: ${(getDisplayActivityTimer() ? 'block' : 'none')};"><span id="minutes">00</span>:<span id="seconds">00</span></div>`);
 
 		setInterval(() => {

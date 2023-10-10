@@ -1,6 +1,54 @@
 export class Score {
 	constructor(hasDistractors, nbDistractors) {
-		$('#scorePanelId').append(this.scorePanel);
+		const scorePanel = `
+		    <object type="text/xml" style="display: none;">
+		        <script defer src="../js/lib/xlsx.full.min.js"></script>
+		    
+		        <link rel="stylesheet" href="../css/activityTimer.css">
+		        <link rel="stylesheet" href="../css/fonts.css">
+		        <link rel="stylesheet" href="../css/scorePanel.css">
+		        <link rel="stylesheet" href="../css/fontawesome-free-6.2.0-web/css/all.css">
+		    </object>
+		
+		    <div id="scorePanel">
+		      <div id="scoreContainerId">
+		        <div id="scoreGood">
+		          <img src="../images/smileFace.png" alt="good answers" style="height: 25px;"/>
+		          <div id="scoreCountGoodId">0</div>
+		        </div>
+		        <div id="scoreBad">
+		          <img src="../images/sadFace.png" alt="bad answers" style="height: 25px;"/>
+		          <div id="scoreCountBadId">0</div>
+		        </div>
+		      </div>
+		      <div id="downloadResultsContainerId">
+		        <input id="dlResBtnId" type="button" name="download results" title="descarcă rezultate Excel (.xlsx)" class="dl-res-btn"/>
+		
+		        <table id="tblExportId" style="display:none"></table>
+		
+		        <div id="downloadResultsFormId" class="score-modal" style="display: none;">
+		          <div class="modal-content">
+		            <div class="modal-title">
+		              <span class="title">Export rezultate</span>
+		              <span class="close" onclick="this.dlResultsModalPanel.hide();"><i class="fa fa-times"></i></span>
+		            </div>
+		
+		            <div id="modalScorePanelFormId">
+		              <input type="text" name="name" id="patientNameInputId" placeholder="Nume copil" class="score-export-input"/>
+		              <input type="number" name="name" id="patientAgeInputId" placeholder="Vârstă copil (ani)" class="score-export-input" min="1" max="200" onkeydown="return isNumberKey(event);"/>
+		            </div>
+		            <hr id="modalScoreSeparatorId"/>
+		            <div id="modalScoreButtonsId">
+		              <button type="button" id="cancelDlResBtnId" name="Anulează" class="side-button width-150-px"><i class="fa fa-times"></i> Anulează</button>
+		              <span style="width: 10px; display: inline-block;"></span>
+		              <button type="button" id="dlExportBtnId" name="Descarcă" title="descarcă rezultate Excel (.xlsx)" class="main-button width-150-px"><i class="fa fa-download"></i> Descarcă</button>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		`;
+		$('#scorePanelId').append(scorePanel);
 
 		this.activityName = document.title;
 		this.hasDistractors = hasDistractors;
@@ -21,62 +69,13 @@ export class Score {
 		});
 	}
 
-	scorePanel = `
-	    <object type="text/xml" style="display: none;">
-	        <script defer src="../js/lib/xlsx.full.min.js"></script>
-	    
-	        <link rel="stylesheet" href="../css/activityTimer.css">
-	        <link rel="stylesheet" href="../css/fonts.css">
-	        <link rel="stylesheet" href="../css/scorePanel.css">
-	        <link rel="stylesheet" href="../css/fontawesome-free-6.2.0-web/css/all.css">
-	    </object>
-	
-	    <div id="scorePanel">
-	      <div id="scoreContainerId">
-	        <div id="scoreGood">
-	          <img src="../images/smileFace.png" alt="good answers" style="height: 25px;"/>
-	          <div id="scoreCountGoodId">0</div>
-	        </div>
-	        <div id="scoreBad">
-	          <img src="../images/sadFace.png" alt="bad answers" style="height: 25px;"/>
-	          <div id="scoreCountBadId">0</div>
-	        </div>
-	      </div>
-	      <div id="downloadResultsContainerId">
-	        <input id="dlResBtnId" type="button" name="download results" title="descarcă rezultate Excel (.xlsx)" class="dl-res-btn"/>
-	
-	        <table id="tblExportId" style="display:none"></table>
-	
-	        <div id="downloadResultsFormId" class="score-modal" style="display: none;">
-	          <div class="modal-content">
-	            <div class="modal-title">
-	              <span class="title">Export rezultate</span>
-	              <span class="close" onclick="this.dlResultsModalPanel.hide();"><i class="fa fa-times"></i></span>
-	            </div>
-	
-	            <div id="modalScorePanelFormId">
-	              <input type="text" name="name" id="patientNameInputId" placeholder="Nume copil" class="score-export-input"/>
-	              <input type="number" name="name" id="patientAgeInputId" placeholder="Vârstă copil (ani)" class="score-export-input" min="1" max="200" onkeydown="return isNumberKey(event);"/>
-	            </div>
-	            <hr id="modalScoreSeparatorId"/>
-	            <div id="modalScoreButtonsId">
-	              <button type="button" id="cancelDlResBtnId" name="Anulează" class="side-button width-150-px"><i class="fa fa-times"></i> Anulează</button>
-	              <span style="width: 10px; display: inline-block;"></span>
-	              <button type="button" id="dlExportBtnId" name="Descarcă" title="descarcă rezultate Excel (.xlsx)" class="main-button width-150-px"><i class="fa fa-download"></i> Descarcă</button>
-	            </div>
-	          </div>
-	        </div>
-	      </div>
-	    </div>
-	`;
-
-	showDlResultsPopup = () => {
+	showDlResultsPopup() {
 		this.dlResultsModalPanel.show(0, () => {
 			document.querySelector('#patientNameInputId').focus();
 		});
 	}
 
-	fnExcelReport = () => {
+	fnExcelReport() {
 		const today = new Date();
 		const dd = String(today.getDate()).padStart(2, '0');
 		const MM = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
@@ -118,7 +117,7 @@ export class Score {
 		this.answerReactionTimeItems.push(answerReactionTimeItem);
 	}
 
-	updateFailuresCurrentAnswerReactionTimeItem = () => {
+	updateFailuresCurrentAnswerReactionTimeItem() {
 		++this.answerReactionTimeItems[this.answerReactionTimeItems.length - 1].nbFailures;
 	}
 
@@ -126,7 +125,7 @@ export class Score {
 		this.answerReactionTimeItems[this.answerReactionTimeItems.length - 1].challengeEndDateTime = endDateTime;
 	}
 
-	buildExportReactionTimesHTMLRows = () => {
+	buildExportReactionTimesHTMLRows() {
 		let rows = `<tr><td colspan="2">Nume activitate:</td><td colspan="4">${this.activityName}</td></tr>`;
 		if (this.hasDistractors) {
 			rows += `<tr><td colspan="2">Numar distractori:</td><td>${this.nbDistractors}</td></tr>`;
@@ -156,7 +155,7 @@ const ExportResultDataBuilder = class {
 	}
 
 	// build the HTML table rows that will be used for rendering the xlsx data
-	buildExportHTMLRows = () => {
+	buildExportHTMLRows() {
 		let rows = `<tr><td colspan="3" class="bold">Nume activitate:</td><td colspan="4" class="bold">${this.activityName}</td></tr>`;
 		rows += `<tr><td colspan="3">Data:</td><td colspan="4">${this.dateString}</td></tr>tr>`;
 		rows += `<tr><td colspan="3">Ora:</td><td colspan="4">${this.timeString}</td></tr>`;
@@ -173,7 +172,6 @@ const ExportResultDataBuilder = class {
 	};
 }
 
-/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 class AnswerReactionTimeItem {
 	constructor(challengeStartDateTime, challengeName) {
 		this.challengeName = challengeName;
@@ -182,7 +180,7 @@ class AnswerReactionTimeItem {
 		this.nbFailures = 0; // how many wrong answers were given until the correct answer was chosen
 	}
 
-	buildExportHTMLRow = () => {
+	buildExportHTMLRow() {
 		return `<tr><td colspan="2">${this.challengeName}</td><td colspan="4">${this.getMinutesSecondsDelta()}</td><td colspan="4">${this.nbFailures}</td></tr>`;
 	}
 
@@ -190,9 +188,8 @@ class AnswerReactionTimeItem {
 		return this.challengeEndDateTime > this.challengeStartDateTime;
 	}
 
-	getMinutesSecondsDelta = () => {
-		const deltaDate = new Date(this.challengeEndDateTime - this.challengeStartDateTime);
+	getMinutesSecondsDelta() {
+		let deltaDate = new Date(this.challengeEndDateTime - this.challengeStartDateTime);
 		return `${pad(deltaDate.getMinutes())}:${pad(deltaDate.getSeconds())}`;
 	}
 }
-/*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/

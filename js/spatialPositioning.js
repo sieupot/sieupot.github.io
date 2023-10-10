@@ -9,14 +9,12 @@ class SpatialPositioning extends ActivityCore {
 	constructor() {
 		super();
 
+		this.activityObjElemArray = [];
 		this.activityObjElemArray.push(jQuery('#svgContainer1Id'));
 		this.activityObjElemArray.push(jQuery('#svgContainer2Id'));
 	}
 
-	activityObjElemArray = [];
-
-	activityItems;
-	initActivityItems = () => {
+	initActivityItems() {
 		let sPActivityItems;
 		if (actionsType === 1) {
 			sPActivityItems = new SP1ActivityItems();
@@ -28,7 +26,7 @@ class SpatialPositioning extends ActivityCore {
 		this.activityItems = sPActivityItems.activityItems;
 	}
 
-	generateChallengeItems = () => {
+	generateChallengeItems() {
 		// generate answer options
 		this.answerOptionValues = this.getAnswerOptions(); // [true, false, (false)..]
 
@@ -51,7 +49,7 @@ class SpatialPositioning extends ActivityCore {
 		this.playShowItemAudio();
 	}
 
-	setupAnswer = (objElem, { images, soundItems, name }) => {
+	setupAnswer(objElem, { images, soundItems, name }) {
 		// extract the image to display for this first activity item
 		let imagePath = images[Math.floor((Math.random() * images.length))];
 		// randomly determine whether this is the correct answer or not
@@ -75,10 +73,9 @@ class SoundItem {
 	 * @param sharedSound: some sounds are shared by the spatial positioning activities
 	 */
 	constructor(sndPath, soundBaseFileName, soundArticle = '', sharedSound = false) {
-		this.soundPath = `${sharedSound ? this.sndCommonPath : sndPath}${soundBaseFileName}${soundArticle}.ogg`;
+		const sndCommonPath = "../sounds/common/";
+		this.soundPath = `${sharedSound ? sndCommonPath : sndPath}${soundBaseFileName}${soundArticle}.ogg`;
 	}
-
-	sndCommonPath = "../sounds/common/";
 }
 
 class ActionsSoundItems {
@@ -108,18 +105,15 @@ class ActionsSoundItems {
 	static closetArtPSoundItem = new SoundItem(this.sndPath2, 'closet', 'P');
 	static tableArtISoundItem = new SoundItem(this.sndPath2, 'table', 'I');
 	static tableArtPSoundItem = new SoundItem(this.sndPath2, 'table', 'P');
-
 }
 
 class SP1ActivityItems {
 	constructor() {
+		this.imgPath = "../images/spatialPositioning/1/";
 		this.initActivityItems();
 	}
 
-	imgPath = "../images/spatialPositioning/1/";
-
-	activityItems;
-	initActivityItems = () => {
+	initActivityItems() {
 		this.activityItems = [];
 
 		// DOG in DOGHOUSE
@@ -168,13 +162,11 @@ class SP1ActivityItems {
 
 class SP2ActivityItems {
 	constructor() {
+		this.imgPath = "../images/spatialPositioning/2/";
 		this.initActivityItems();
 	}
 
-	imgPath = "../images/spatialPositioning/2/";
-
-	activityItems;
-	initActivityItems = () => {
+	initActivityItems() {
 		this.activityItems = [];
 
 		// BEAR between BOX and CHAIR
