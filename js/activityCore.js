@@ -44,6 +44,7 @@ export class ActivityCore {
 	
 		this.activitySoundList = [];
 		this.showItemSoundInterval;
+		// prevent audios from overlapping
 		this.playingAudios = [];
 		this.rightAnswers = 0;
 		this.wrongAnswers = 0;
@@ -125,6 +126,8 @@ export class ActivityCore {
 				objInstance.resultDivElem.css('opacity', 1).hide().find('div').removeClass('action-feedback');
 
 				objInstance.activitySoundList = [];
+				// take out the added sound item to be played, indicating that there is no active sound to be played, so the repeat activity sound item can be played
+				this.playingAudios.splice(this.playingAudios.indexOf(playingCorrectAnswerAudio), 1);
 				if (doStartNewChallenge) {
 					objInstance.startNewChallenge();
 				}
@@ -149,6 +152,8 @@ export class ActivityCore {
 		playingWrongAnswerAudio.addEventListener('ended', () => {
 			objInstance.resultDivElem.css('opacity', 1).hide();
 			objInstance.modalPanel.dialog('close');
+			// take out the added sound item to be played, indicating that there is no active sound to be played, so the recurring activity sound item can be played
+			this.playingAudios.splice(this.playingAudios.indexOf(playingWrongAnswerAudio), 1);
 			if (doPlayShowItemAudio) {
 				objInstance.playShowItemAudio();
 			}
@@ -174,7 +179,8 @@ export class ActivityCore {
 		let objInstance = this;
 		objInstance.resetActivityItems();
 
-		if (objInstance.score.dlResultsModalPanel && objInstance.score.dlResultsModalPanel.is(":visible")) {
+		// should we reschedule this? In the body complex activity, when the user selects the wrong item from the left panel, the select activity item sound is replayed, so we should reschedule playiing the recurring one
+		if (this.playingAudios.length > 0 || objInstance.score.dlResultsModalPanel && objInstance.score.dlResultsModalPanel.is(":visible")) {
 			// don't repeat the command and reschedule next repeat
 			if (repeat && !objInstance.showItemSoundInterval) {
 				objInstance.showItemSoundInterval = setInterval(function() {objInstance.playShowItemAudio()}, getCommandRepeatInterval());
