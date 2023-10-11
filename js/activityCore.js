@@ -4,15 +4,13 @@ import { ActivityTimer } from './modules/activityTimer.js';
 
 export class ActivityCore {
 	constructor(hasDistractors = false) {
-		this.hasDistractors = hasDistractors;
-
 		// add element content on page
 		new Footer();
 
 		this.nbDistractors = getNbDistractors();
 
 		// initialize score object and add score content on page
-		this.score = new Score(this.hasDistractors, this.nbDistractors);
+		this.score = new Score(hasDistractors, this.nbDistractors);
 
 		// initialize timer object
 		this.activityTimer = new ActivityTimer(this.score);
@@ -158,7 +156,7 @@ export class ActivityCore {
 		objInstance.resetActivityItems();
 
 		// should we reschedule this? In the body complex activity, when the user selects the wrong item from the left panel, the select activity item sound is replayed, so we should reschedule playiing the recurring one
-		if (this.playingAudios.length > 0 || objInstance.score.dlResultsModalPanel && objInstance.score.dlResultsModalPanel.is(":visible")) {
+		if (objInstance.playingAudios.length > 0 || objInstance.score.dlResultsModalPanel && objInstance.score.dlResultsModalPanel.is(":visible")) {
 			// don't repeat the command and reschedule next repeat
 			if (repeat && !objInstance.showItemSoundInterval) {
 				objInstance.showItemSoundInterval = setInterval(function() { objInstance.playShowItemAudio() }, getCommandRepeatInterval());

@@ -14,8 +14,6 @@ class HumanBodyComplex extends ActivityCore {
 		this.currentActivityItems;
 	
 		this.clickSrcContainers = $('#clickSrcContainersId');
-	
-		this.activityItems;
 	}
 
 	initActivityItems() {
@@ -147,7 +145,6 @@ class BodyActivityItems {
 		this.imgPath = "../images/humanBody/";
 		this.initActivityItems(humanBodySubject);
 	}
-
 
 	initActivityItems(humanBodySubject) {
 		this.activityItems = [];
