@@ -1,7 +1,7 @@
 import { ActivityCore } from './activityCore.js'
 
 // on page load
-jQuery(() => {
+$(() => {
 	new HumanBodyComplex();
 });
 
@@ -120,7 +120,7 @@ class HumanBodyComplex extends ActivityCore {
 	checkActivityProgress() {
 		// no more clickable items?
 		if (this.clickSrcContainers.children().length <= 0) {
-			this.checkValidAnswer(true);
+			this.checkAnswer(true);
 		} else {
 			this.handleValidAnswer(false, false, false);
 

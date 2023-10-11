@@ -17,20 +17,7 @@ export class ActivityCore {
 		// initialize timer object
 		this.activityTimer = new ActivityTimer(this.score);
 
-		this.modalPanel = $('#dialogDiv');
 		this.resultDivElem = $('div.result');
-
-		this.dialogOptions = {
-			dialogClass: 'ui-dialog-no-close-button',
-			show: {
-				effect: 'fade',
-				duration: 200
-			},
-			hide: {
-				effect: 'fade',
-				duration: 200
-			},
-		};
 
 		let objInstance = this;
 		$("div.start-activity").bind('mousedown', function() {
@@ -39,9 +26,8 @@ export class ActivityCore {
 
 		// show the start icon and let the user manually start the activity
 		this.resultDivElem.fadeIn(300);
-		this.modalPanel.dialog(this.dialogOptions);
 		this.activityObjElemArray = []; // list of the JQUERY items actively displayed in the page
-	
+
 		this.activitySoundList = [];
 		this.showItemSoundInterval;
 		// prevent audios from overlapping
@@ -53,7 +39,6 @@ export class ActivityCore {
 	}
 
 	initActivity(itemClass = 'item') {
-		this.modalPanel = $('#dialogDiv');
 		this.resultDivElem = $('div.result');
 
 		// INIT CONTAINER ELEMENTS: inject item containing img nodes into the page and create the JQUERY itemElements
@@ -67,7 +52,6 @@ export class ActivityCore {
 
 		// show the start icon and let the user manually start the activity
 		this.resultDivElem.fadeIn(300);
-		this.modalPanel.dialog(this.dialogOptions);
 	}
 
 	generateChallengeItems() { alert(5)/*overridden*/ };
@@ -90,7 +74,6 @@ export class ActivityCore {
 
 		this.initActivityItems();
 
-		this.activitySoundList = [];
 		this.startNewChallenge();
 	}
 
@@ -100,9 +83,8 @@ export class ActivityCore {
 		return answerOptionValues;
 	}
 
-	checkValidAnswer(isValidAnswer) {
+	checkAnswer(isValidAnswer) {
 		this.resetActivityItems();
-		this.modalPanel.dialog(this.dialogOptions);
 
 		if (isValidAnswer) {
 			this.handleValidAnswer(true, true, true);
@@ -151,7 +133,6 @@ export class ActivityCore {
 		let objInstance = this;
 		playingWrongAnswerAudio.addEventListener('ended', () => {
 			objInstance.resultDivElem.css('opacity', 1).hide();
-			objInstance.modalPanel.dialog('close');
 			// take out the added sound item to be played, indicating that there is no active sound to be played, so the recurring activity sound item can be played
 			this.playingAudios.splice(this.playingAudios.indexOf(playingWrongAnswerAudio), 1);
 			if (doPlayShowItemAudio) {
@@ -167,10 +148,7 @@ export class ActivityCore {
 	}
 
 	resetActivityItems() {
-		this.resetSounds();
-	}
-
-	resetSounds() {
+		// reset sounds
 		window.clearInterval(this.showItemSoundInterval);
 		this.showItemSoundInterval = null;
 	}
@@ -183,23 +161,21 @@ export class ActivityCore {
 		if (this.playingAudios.length > 0 || objInstance.score.dlResultsModalPanel && objInstance.score.dlResultsModalPanel.is(":visible")) {
 			// don't repeat the command and reschedule next repeat
 			if (repeat && !objInstance.showItemSoundInterval) {
-				objInstance.showItemSoundInterval = setInterval(function() {objInstance.playShowItemAudio()}, getCommandRepeatInterval());
+				objInstance.showItemSoundInterval = setInterval(function() { objInstance.playShowItemAudio() }, getCommandRepeatInterval());
 			}
 		} else {
 			objInstance.resultDivElem.find('div').css('background-image', 'url(../images/pause.svg)');
 			objInstance.resultDivElem.fadeIn(300);
-			objInstance.modalPanel.dialog(objInstance.dialogOptions);
 
 			let audio = new Audio(),
 				i = 0;
 			audio.addEventListener('ended', () => {
 				if (++i === objInstance.activitySoundList.length) {
 					objInstance.resultDivElem.hide();
-					objInstance.modalPanel.dialog('close');
 
 					// schedule next repeat after the last sound has been played
 					if (repeat && !objInstance.showItemSoundInterval) {
-						objInstance.showItemSoundInterval = setInterval(function() {objInstance.playShowItemAudio()}, getCommandRepeatInterval());
+						objInstance.showItemSoundInterval = setInterval(function() { objInstance.playShowItemAudio() }, getCommandRepeatInterval());
 					}
 					return;
 				}

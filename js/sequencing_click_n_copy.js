@@ -1,7 +1,7 @@
 import { ActivityCore } from './activityCore.js'
 
 // on page load
-jQuery(() => {
+$(() => {
 	new SequencingClickNCopy();
 });
 
@@ -173,7 +173,7 @@ class SequencingClickNCopy extends ActivityCore {
 	checkActivityProgress() {
 		// no more clickable items?
 		if (this.okClicksNb === this.selectedActivitySqLength) {
-			this.checkValidAnswer(true);
+			this.checkAnswer(true);
 		}
 	}
 
@@ -219,7 +219,6 @@ class SequencingClickNCopy extends ActivityCore {
 				this.checkActivityProgress();
 				this.okClicksNb++;
 			} else {
-				this.modalPanel.dialog(this.dialogOptions);
 				this.handleInvalidAnswer(false);
 				// in order to have the animation of the error-indicator play after repeatedly clicking on this element
 				clickableElemJQ.replaceWith(clickableElemJQ.clone(true).addClass('error-indicator'));

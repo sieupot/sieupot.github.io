@@ -1,7 +1,7 @@
 import { ActivityCore } from './activityCore.js'
 
 // on page load
-jQuery(() => {
+$(() => {
 	new Actions();
 });
 
@@ -67,7 +67,7 @@ class Actions extends ActivityCore {
 		objElem.css('background-image', 'url(' + imagePath + ')');
 		// objElem.attr('src', imagePath);
 		objElem.off('mousedown').mousedown(() => {
-			this.checkValidAnswer(isCorrectAnswer);
+			this.checkAnswer(isCorrectAnswer);
 		});
 	}
 }

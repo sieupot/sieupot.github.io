@@ -1,7 +1,7 @@
 import { ActivityCore } from './activityCore.js'
 
 // on page load
-jQuery(() => {
+$(() => {
 	new Opposites();
 });
 
@@ -291,7 +291,7 @@ class Opposites extends ActivityCore {
 		}
 		objElem.css('background-image', 'url(' + imagePath1 + ')');
 		objElem.off('mousedown').mousedown(() => {
-			this.checkValidAnswer(isCorrectAnswer);
+			this.checkAnswer(isCorrectAnswer);
 		});
 	}
 }

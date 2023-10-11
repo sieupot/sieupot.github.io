@@ -1,7 +1,7 @@
 import { ActivityCore } from './activityCore.js'
 
 // on page load
-jQuery(() => {
+$(() => {
 	new HumanBody();
 });
 
@@ -47,7 +47,7 @@ class HumanBody extends ActivityCore {
 		// unbind previously bound mousedown handler; bind the mousedown event function
 		for (const [i, svgElem] of objInstance.activityObjElemArray.entries()) {
 			svgElem.off('mousedown').mousedown(() => {
-				objInstance.checkValidAnswer(i === validItemIndex);
+				objInstance.checkAnswer(i === validItemIndex);
 			});
 		}
 

@@ -1,7 +1,7 @@
 import { ActivityCore } from './activityCore.js'
 
 // on page load
-jQuery(() => {
+$(() => {
 	new SequencingDND();
 });
 
@@ -188,7 +188,7 @@ class SequencingDND extends ActivityCore {
 	checkActivityProgress() {
 		// no more draggable items?
 		if (this.dragContainers.children().length === 0) {
-			this.checkValidAnswer(true);
+			this.checkAnswer(true);
 		}
 	}
 
@@ -228,7 +228,6 @@ class SequencingDND extends ActivityCore {
 				dropElemJQ.unbind('drop').unbind('dragover').unbind('dragenter').unbind('mouseout').unbind('mousedown').unbind('dragleave').css({ 'background-color': '', 'cursor': 'auto' }).addClass('hidden-content success-indicator');
 				this.checkActivityProgress();
 			} else {
-				this.modalPanel.dialog(this.dialogOptions);
 				this.handleInvalidAnswer(false);
 				dropElemJQ.css({ 'background-color': '' }).addClass('error-indicator');
 			}

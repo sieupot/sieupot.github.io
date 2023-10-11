@@ -87,9 +87,7 @@ const getNbDistractors = () => {
 	let nbDistractorsRet = Number(getUrlParameter('dst'));
 
 	// what level is this? Init number of distractors used to render the number of activity items
-	nbDistractorsRet = (!nbDistractorsRet || nbDistractorsRet > 4) ? 2 : nbDistractorsRet;
-
-	return nbDistractorsRet;
+	return (!nbDistractorsRet || nbDistractorsRet > 4) ? 2 : nbDistractorsRet;
 }
 
 const pad = (val) => {

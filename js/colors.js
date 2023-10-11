@@ -1,7 +1,7 @@
 import { ActivityCore } from './activityCore.js'
 
 // on page load
-jQuery(() => {
+$(() => {
 	new Colors();
 });
 
@@ -68,7 +68,7 @@ class Colors extends ActivityCore {
 			objElem.removeClass().addClass('color pointer-cursor ' + item.name);
 			// unbind previously bound mousedown handler; bind the mousedown event function
 			objElem.off('mousedown').mousedown(() => {
-				this.checkValidAnswer(isCorrectAnswer);
+				this.checkAnswer(isCorrectAnswer);
 			});
 
 			if (isCorrectAnswer) {

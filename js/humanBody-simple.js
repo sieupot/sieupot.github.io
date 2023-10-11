@@ -1,7 +1,7 @@
 import { ActivityCore } from './activityCore.js'
 
 // on page load
-jQuery(() => {
+$(() => {
 	new HumanBodySimple();
 });
 
@@ -50,7 +50,7 @@ class HumanBodySimple extends ActivityCore {
 
 	validateChallenge(ev) {
 		let clickedElem = ev.currentTarget;
-		this.checkValidAnswer(clickedElem.id === `gr_${this.challengeItem.name}`);
+		this.checkAnswer(clickedElem.id === `gr_${this.challengeItem.name}`);
 	}
 }
 

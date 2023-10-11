@@ -1,7 +1,7 @@
 import { ActivityCore } from './activityCore.js'
 
 // on page load
-jQuery(() => {
+$(() => {
 	new SpatialPositioning();
 });
 
@@ -10,8 +10,8 @@ class SpatialPositioning extends ActivityCore {
 		super();
 
 		this.activityObjElemArray = [];
-		this.activityObjElemArray.push(jQuery('#svgContainer1Id'));
-		this.activityObjElemArray.push(jQuery('#svgContainer2Id'));
+		this.activityObjElemArray.push($('#svgContainer1Id'));
+		this.activityObjElemArray.push($('#svgContainer2Id'));
 	}
 
 	initActivityItems() {
@@ -60,7 +60,7 @@ class SpatialPositioning extends ActivityCore {
 		}
 		objElem.load(imagePath);
 		objElem.off('mousedown').mousedown(() => {
-			this.checkValidAnswer(isCorrectAnswer);
+			this.checkAnswer(isCorrectAnswer);
 		});
 	}
 }

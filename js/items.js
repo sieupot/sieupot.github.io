@@ -1,8 +1,8 @@
 import { ActivityCore } from './activityCore.js'
 
 // on page load
-jQuery(() => {
-	jQuery('body').load('0_item.inc.html', function() {
+$(() => {
+	$('body').load('0_item.inc.html', function() {
 		new Items();
 	});
 });
@@ -47,7 +47,7 @@ class Items extends ActivityCore {
 			// objElem.attr('src', item.imagePath).removeClass().addClass('item pointer-cursor');
 			// unbind previously bound mousedown handler; bind the mousedown event function
 			objElem.off('mousedown').mousedown(() => {
-				this.checkValidAnswer(isCorrectAnswer);
+				this.checkAnswer(isCorrectAnswer);
 			});
 
 			if (isCorrectAnswer) {
