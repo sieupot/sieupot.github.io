@@ -1,0 +1,37 @@
+sa nu uit... am niste sugestii in ceea ce priveste metode de complicare a lucrurilor:
+
+Dependency Injection (Weld, https://www.baeldung.com/java-ee-cdi si sper sa foloseste jakarta.*)
+Transaction manager (sper ca e folosit acolo in JPA)
+in felul asta iti dai de lucru ptr. urmatorii 2 ani!
+
+si sper ca folosesti un LOGGER serios
+
+ai putea folosi si AspectJ (putin AOP nu strica https://www.baeldung.com/aspectj )
+
+bine-nteles sa nu uitam de solutii de caching
+
+si sper ca toate astea le folosesti cu Maven
+
+si ca pe linga unit-teste facute TestNG
+sa pui si cod ptr. unit test code coverage
+un Cobertura de exmplu
+
+si sa pui plugini ca sa scoti rapoarte HTML customizate si ca sa tii documentate toate lucrurile astea si arhitectura in Confluence
+
+iar issue-urile lei pui in JIRA
+normal ca nu le instalezi pe calculatorul tau ci le tii pe un cont in cloud, in Azure (am auzit ca-ti place)]
+
+si sper ca iti iei si un mail server astfel incit programatorii sa primeasca email cind faci update la documentatie si cind crapa build-urile
+
+si sa nu uitam de performantza... firmele serioase au cod care ruleaza adevaratul cod si scot statistici care apar in grafuri faine si care sint salvate ptr. a fi comparate ulterior cu noile statistici facute cu noile versiuni
+si daca apar diferente majore atunci se pot detecta cu aceste scripturi
+
+si sa nu uitam cei mai IMPORTANT... BACKUP
+in cel putin 2 locuri diferite
+si nu numai backup dar si planuri care sa fie urmate periodic si cu care sa zici cum se verifica backup-urile si cum se face restore in caz de ceva naspa
+
+si ca orice proiect care se respecta iti trebuie un website
+
+si pagina pe GitHub unde sa lasi lumea sa raporteze bug-uri
+si sa te ajute cu merge request-uri
+si unde lumea poate sa ceara feature-uri noi
