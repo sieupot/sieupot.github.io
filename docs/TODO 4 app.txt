@@ -34,4 +34,4 @@ si ca orice proiect care se respecta iti trebuie un website
 
 si pagina pe GitHub unde sa lasi lumea sa raporteze bug-uri
 si sa te ajute cu merge request-uri
-si unde lumea poate sa ceara feature-uri noi
+	si unde lumea poate sa ceara feature-uri noi
