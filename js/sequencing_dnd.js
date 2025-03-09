@@ -12,10 +12,10 @@ class SequencingDND extends ActivityCore {
 		this.dropContainers = $('#dropContainersId');
 		this.dragContainers = $('#dragContainersId');
 		this.assistAudio;
-	
+
 		this.imgPath = "../images/sequencing/";
 		this.sndPath = "../sounds/sequencing/";
-	
+
 		/* used in the DRAG AND DROP logic */
 		this.draggedElemId;
 	}
@@ -152,9 +152,15 @@ class SequencingDND extends ActivityCore {
 		this.dragContainers.append(draggableHtmlElem);
 
 		const objInstance = this;
-		$(`#draggable${index}`).bind("dragstart", function(ev) {
+		$(`#draggable${index}`).bind("pointerdown", function(ev) {
+      if (ev.pointerType === "touch") {
+        ev.preventDefault(); // Prevent scrolling interference
+      }
 			objInstance.startDrag(ev);
-		}).bind("dragend", function(ev) {
+		}).bind("pointerup", function(ev) {
+      if (ev.pointerType === "touch") {
+        ev.preventDefault();
+      }
 			objInstance.endDrag(ev);
 		});
 	}

@@ -155,7 +155,7 @@ export class ActivityCore {
 		let objInstance = this;
 		objInstance.resetActivityItems();
 
-		// should we reschedule this? In the body complex activity, when the user selects the wrong item from the left panel, the select activity item sound is replayed, so we should reschedule playiing the recurring one
+		// should we reschedule this? In the body complex activity, when the user selects the wrong item from the left panel, the select activity item sound is replayed, so we should reschedule playing the recurring one
 		if (objInstance.playingAudios.length > 0 || objInstance.score.dlResultsModalPanel && objInstance.score.dlResultsModalPanel.is(":visible")) {
 			// don't repeat the command and reschedule next repeat
 			if (repeat && !objInstance.showItemSoundInterval) {
