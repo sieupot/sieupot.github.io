@@ -153,14 +153,8 @@ class SequencingDND extends ActivityCore {
 
 		const objInstance = this;
 		$(`#draggable${index}`).bind("pointerdown", function(ev) {
-      if (ev.pointerType === "touch") {
-        ev.preventDefault(); // Prevent scrolling interference
-      }
 			objInstance.startDrag(ev);
 		}).bind("pointerup", function(ev) {
-      if (ev.pointerType === "touch") {
-        ev.preventDefault();
-      }
 			objInstance.endDrag(ev);
 		});
 	}
