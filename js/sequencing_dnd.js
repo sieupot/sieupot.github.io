@@ -1,6 +1,6 @@
 import { ActivityCore } from './activityCore.js'
 
-import { interact } from './lib/interact.min.js'
+const interact = require('interactjs')
 
 // on page load
 $(() => {
