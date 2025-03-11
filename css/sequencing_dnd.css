@@ -68,6 +68,10 @@ body {
   min-width: 100px;
 }
 
+.draggable-container.drag-item {
+  touch-action: none;
+  user-select: none;
+}
 .separator {
   height: 1px;
   background-color: gray;

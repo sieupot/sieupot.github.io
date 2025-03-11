@@ -1,25 +1,8 @@
 import { ActivityCore } from './activityCore.js'
 
-const interact = require('interactjs')
-
 // on page load
 $(() => {
-	const sequencingDND = new SequencingDND();
-
-  window.dragMoveListener = sequencingDND.dragMoveListener;
-
-  interact('.draggable-container.drag-item')
-    .draggable({
-      inertia: false,
-      modifiers: [
-        interact.modifiers.restrictRect({
-          restriction: 'parent',
-          endOnly: true
-        })
-      ],
-      autoScroll: true,
-      listeners: { move: dragMoveListener }
-    })
+  new SequencingDND();
 });
 
 class SequencingDND extends ActivityCore {
@@ -168,12 +151,33 @@ class SequencingDND extends ActivityCore {
           </div>`;
 		this.dragContainers.append(draggableHtmlElem);
 
-		/*const objInstance = this;
-		$(`#draggable${index}`).bind("dragstart", function(ev) {
-			objInstance.startDrag(ev);
-		}).bind("dragend", function(ev) {
-			objInstance.endDrag(ev);
-		});*/
+		const objInstance = this;
+    interact(`#draggable${index}`).draggable({
+      listeners: {
+        start(event) {
+          objInstance.startDrag(event); // Your existing function
+        },
+        move(event) {
+          const target = event.target;
+          // Update position (storing it inside the element)
+          const x = (parseFloat(target.getAttribute("data-x")) || 0) + event.dx;
+          const y = (parseFloat(target.getAttribute("data-y")) || 0) + event.dy;
+
+          target.style.transform = `translate(${x}px, ${y}px)`;
+          target.setAttribute("data-x", x);
+          target.setAttribute("data-y", y);
+        },
+        end(event) {
+          objInstance.endDrag(event); // Your existing function
+        }
+      }
+    });
+
+    /*$(`#draggable${index}`).bind("dragstart", function(ev) {
+      objInstance.startDrag(ev);
+    }).bind("dragend", function(ev) {
+      objInstance.endDrag(ev);
+    });*/
 	}
 
 	generateChallengeItems() {
