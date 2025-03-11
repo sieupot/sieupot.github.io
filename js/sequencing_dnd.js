@@ -1,8 +1,25 @@
 import { ActivityCore } from './activityCore.js'
 
+import interact from 'interactjs'
+
 // on page load
 $(() => {
-	new SequencingDND();
+	const sequencingDND = new SequencingDND();
+
+  window.dragMoveListener = sequencingDND.dragMoveListener;
+
+  interact('.draggable-container.drag-item')
+    .draggable({
+      inertia: false,
+      modifiers: [
+        interact.modifiers.restrictRect({
+          restriction: 'parent',
+          endOnly: true
+        })
+      ],
+      autoScroll: true,
+      listeners: { move: dragMoveListener }
+    })
 });
 
 class SequencingDND extends ActivityCore {
@@ -151,12 +168,12 @@ class SequencingDND extends ActivityCore {
           </div>`;
 		this.dragContainers.append(draggableHtmlElem);
 
-		const objInstance = this;
+		/*const objInstance = this;
 		$(`#draggable${index}`).bind("dragstart", function(ev) {
 			objInstance.startDrag(ev);
 		}).bind("dragend", function(ev) {
 			objInstance.endDrag(ev);
-		});
+		});*/
 	}
 
 	generateChallengeItems() {
@@ -244,4 +261,18 @@ class SequencingDND extends ActivityCore {
 			}
 		}
 	}
+
+  dragMoveListener (event) {
+    let target = event.target
+    // keep the dragged position in the data-x/data-y attributes
+    const x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx
+    const y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy
+
+    // translate the element
+    target.style.transform = 'translate(' + x + 'px, ' + y + 'px)'
+
+    // update the posiion attributes
+    target.setAttribute('data-x', x)
+    target.setAttribute('data-y', y)
+  }
 }
