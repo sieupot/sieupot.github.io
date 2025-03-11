@@ -152,9 +152,15 @@ class SequencingDND extends ActivityCore {
 		this.dragContainers.append(draggableHtmlElem);
 
 		const objInstance = this;
-		$(`#draggable${index}`).bind("dragstart", function(ev) {
+		$(`#draggable${index}`).bind("pointerdown", function(ev) {
+      if (ev.pointerType === "touch") {
+        ev.preventDefault();
+      }
 			objInstance.startDrag(ev);
-		}).bind("dragend", function(ev) {
+		}).bind("pointerup", function(ev) {
+      if (ev.pointerType === "touch") {
+        ev.preventDefault();
+      }
 			objInstance.endDrag(ev);
 		});
 	}
