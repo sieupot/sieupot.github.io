@@ -24,6 +24,7 @@
   <script defer src="../js/main.js"></script>
   <script defer src="../js/utils.js"></script>
   <script type="module" src="../js/activityCore.js"></script>
+  <script type="module" src="./sequencing_dnd_new.js"></script>
 
 
   <style>
@@ -50,20 +51,6 @@
       position: absolute;
       touch-action: none; /* Prevent scrolling while dragging on mobile */
     }
-
-    .dropzone {
-      width: 120px;
-      height: 120px;
-      background-color: lightgray;
-      text-align: center;
-      line-height: 120px;
-      transition: background 0.3s ease-in-out;
-    }
-
-    /* Highlight effect */
-    .dropzone.highlight {
-      background-color: yellow;
-    }
   </style>
 </head>
 
@@ -81,109 +68,8 @@
       <div class="separator">
       </div>
 
-      <div>
-        <h2>Drag the boxes and drop them in the targets!</h2>
-
-        <!-- Draggable Elements -->
-        <div class="container">
-          <div class="draggable" draggable="true" id="drag1">Drag 1</div>
-          <div class="draggable" draggable="true" id="drag2">Drag 2</div>
-          <div class="draggable" draggable="true" id="drag3">Drag 3</div>
-        </div>
-
-        <!-- Drop Zones -->
-        <div class="container">
-          <div class="dropzone" id="drop1">Drop 1</div>
-          <div class="dropzone" id="drop2">Drop 2</div>
-          <div class="dropzone" id="drop3">Drop 3</div>
-        </div>
-
-        <script>
-          const draggables = document.querySelectorAll(".draggable");
-          const dropzones = document.querySelectorAll(".dropzone");
-
-          // === DESKTOP DRAG & DROP ===
-          draggables.forEach(draggable => {
-            draggable.addEventListener("dragstart", (event) => {
-              event.dataTransfer.setData("text", event.target.id);
-            });
-          });
-
-          dropzones.forEach(dropzone => {
-            dropzone.addEventListener("dragover", (event) => {
-              event.preventDefault();
-            });
-
-            dropzone.addEventListener("dragenter", () => {
-              dropzone.classList.add("highlight");
-            });
-
-            dropzone.addEventListener("dragleave", () => {
-              dropzone.classList.remove("highlight");
-            });
-
-            dropzone.addEventListener("drop", (event) => {
-              event.preventDefault();
-              dropzone.classList.remove("highlight");
-
-              let draggedId = event.dataTransfer.getData("text");
-              let draggedElement = document.getElementById(draggedId);
-              dropzone.appendChild(draggedElement);
-              draggedElement.style.position = "static"; // Reset position
-            });
-          });
-
-          // === TOUCH EVENTS (FOR MOBILE) ===
-          draggables.forEach(draggable => {
-            let offsetX = 0, offsetY = 0;
-
-            draggable.addEventListener("touchstart", (event) => {
-              const touch = event.touches[0];
-              offsetX = touch.clientX - draggable.getBoundingClientRect().left;
-              offsetY = touch.clientY - draggable.getBoundingClientRect().top;
-            });
-
-            draggable.addEventListener("touchmove", (event) => {
-              event.preventDefault(); // Prevent scrolling
-
-              const touch = event.touches[0];
-              draggable.style.left = `${touch.clientX - offsetX}px`;
-              draggable.style.top = `${touch.clientY - offsetY}px`;
-
-              dropzones.forEach(dropzone => {
-                const dropRect = dropzone.getBoundingClientRect();
-                if (touch.clientX >= dropRect.left &&
-                  touch.clientX <= dropRect.right &&
-                  touch.clientY >= dropRect.top &&
-                  touch.clientY <= dropRect.bottom) {
-                  dropzone.classList.add("highlight");
-                } else {
-                  dropzone.classList.remove("highlight");
-                }
-              });
-            });
-
-            draggable.addEventListener("touchend", (event) => {
-              const touch = event.changedTouches[0];
-
-              dropzones.forEach(dropzone => {
-                const dropRect = dropzone.getBoundingClientRect();
-                if (touch.clientX >= dropRect.left &&
-                  touch.clientX <= dropRect.right &&
-                  touch.clientY >= dropRect.top &&
-                  touch.clientY <= dropRect.bottom) {
-                  dropzone.classList.remove("highlight");
-                  dropzone.appendChild(draggable);
-                  draggable.style.position = "static"; // Reset position
-                } else {
-                  dropzone.classList.remove("highlight");
-                }
-              });
-            });
-          });
-
-        </script>
-
+      <div id="dragContainersId" class="draggable-items-container">
+        <!-- content generated in sequencing_dnd.js -->
       </div>
     </div>
   </div>

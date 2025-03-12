@@ -1,8 +1,8 @@
-import { ActivityCore } from './activityCore.js'
-
+import { ActivityCore } from '../js/activityCore.js'
+let getObjInstance;
 // on page load
 $(() => {
-  new SequencingDND();
+  getObjInstance = new SequencingDND();
 });
 
 class SequencingDND extends ActivityCore {
@@ -15,9 +15,6 @@ class SequencingDND extends ActivityCore {
 
     this.imgPath = "../images/sequencing/";
     this.sndPath = "../sounds/sequencing/";
-
-    /* used in the DRAG AND DROP logic */
-    this.draggedElemId;
   }
 
   initActivityItems() {
@@ -121,23 +118,7 @@ class SequencingDND extends ActivityCore {
     droppableHtmlElem.classList.add('activity-item', 'droppable');
     this.dropContainers.append(droppableHtmlElem);
 
-    const droppableHtmlElemJQ = $(droppableHtmlElem);
-    droppableHtmlElemJQ.bind('drop', function() {
-      objInstance.drop(event);
-    });
-    droppableHtmlElemJQ.bind('dragover', function() {
-      objInstance.allowDrop(event);
-    });
-    droppableHtmlElemJQ.bind('dragenter', function() {
-      objInstance.highlightArea(event, true);
-    });
-    droppableHtmlElemJQ.bind('mouseout', function() {
-      objInstance.highlightArea(event, false);
-    });
-    droppableHtmlElemJQ.bind('dragleave', function() {
-      objInstance.highlightArea(event, false);
-    });
-    droppableHtmlElemJQ.bind('mousedown', function() {
+    $(droppableHtmlElem).bind('mousedown', () => {
       if (objInstance.assistAudio) {
         objInstance.assistAudio.pause();
       }
@@ -147,17 +128,10 @@ class SequencingDND extends ActivityCore {
   }
 
   generateDraggableHtmlElem(index, imagePath) {
-    const draggableHtmlElem = `<div id="draggable${index}" class="draggable-container drag-item" style="background-image: url('${imagePath}');" draggable="true">
-          </div>`;
+    const draggableHtmlElem = `<div id="draggable${index}" class="draggable-container drag-item" style="background-image: url('${imagePath}');" draggable="true"></div>`;
     this.dragContainers.append(draggableHtmlElem);
-
-    const objInstance = this;
-    $(`#draggable${index}`).bind("dragstart", function(ev) {
-      objInstance.startDrag(ev);
-    }).bind("dragend", function(ev) {
-      objInstance.endDrag(ev);
-    });
   }
+
 
   generateChallengeItems() {
     // remove previous HTML content from the dropContainersId div (new content will be generated below)
@@ -183,6 +157,7 @@ class SequencingDND extends ActivityCore {
     }
 
     this.playShowItemAudio(false);
+    this.init();
   }
 
   checkActivityProgress() {
@@ -192,56 +167,115 @@ class SequencingDND extends ActivityCore {
     }
   }
 
-  allowDrop(ev) {
-    ev.preventDefault();
+  init() {
+    let objInstance = this;
+    const draggables = document.querySelectorAll(".draggable-container");
+    const droppables = document.querySelectorAll(".droppable");
+
+    // === DESKTOP DRAG & DROP ===
+    draggables.forEach(draggable => {
+      draggable.addEventListener("dragstart", (event) => {
+        event.dataTransfer.setData("text", event.target.id);
+      });
+    });
+
+    droppables.forEach(droppable => {
+      droppable.addEventListener("dragover", processDragOver);
+      droppable.addEventListener("dragenter", processDragEnter);
+      droppable.addEventListener("dragleave", processDragLeave);
+      droppable.addEventListener("drop", processDrop);
+    });
+
+    // === TOUCH EVENTS (FOR MOBILE) ===
+    draggables.forEach(draggable => {
+      let offsetX = 0, offsetY = 0;
+
+      draggable.addEventListener("touchstart", (event) => {
+        const touch = event.touches[0];
+        offsetX = touch.clientX - draggable.getBoundingClientRect().left;
+        offsetY = touch.clientY - draggable.getBoundingClientRect().top;
+      });
+
+      draggable.addEventListener("touchmove", (event) => {
+        event.preventDefault(); // Prevent scrolling
+
+        const touch = event.touches[0];
+        draggable.style.left = `${touch.clientX - offsetX}px`;
+        draggable.style.top = `${touch.clientY - offsetY}px`;
+
+        droppables.forEach(dropzone => {
+          const dropRect = dropzone.getBoundingClientRect();
+          if (touch.clientX >= dropRect.left &&
+            touch.clientX <= dropRect.right &&
+            touch.clientY >= dropRect.top &&
+            touch.clientY <= dropRect.bottom) {
+            dropzone.classList.add("highlight");
+          } else {
+            dropzone.classList.remove("highlight");
+          }
+        });
+      });
+
+      draggable.addEventListener("touchend", (event) => {
+        const touch = event.changedTouches[0];
+
+        droppables.forEach(dropzone => {
+          const dropRect = dropzone.getBoundingClientRect();
+          if (touch.clientX >= dropRect.left &&
+            touch.clientX <= dropRect.right &&
+            touch.clientY >= dropRect.top &&
+            touch.clientY <= dropRect.bottom) {
+            dropzone.classList.remove("highlight");
+            dropzone.appendChild(draggable);
+            draggable.style.position = "static"; // Reset position
+          } else {
+            dropzone.classList.remove("highlight");
+          }
+        });
+      });
+    });
   }
+}
 
-  startDrag(ev) {
-    const draggableElem = document.getElementById(ev.target.id);
-    if (draggableElem.getAttribute('draggable')) {
-      draggableElem.classList.add('hide-src-while-dragging');
-      this.draggedElemId = ev.target.id;
-    }
-  }
-  endDrag(ev) {
-    document.getElementById(ev.target.id).classList.remove('hide-src-while-dragging');
-    this.draggedElemId = null;
-  }
+function processDragOver(event) {
+  event.preventDefault();
+}
 
-  drop(ev) {
-    ev.preventDefault();
-    const draggableElemJQ = $(`#${this.draggedElemId}`);
-    if (draggableElemJQ && draggableElemJQ.attr('draggable')) {
-      const dropElemJQ = $(ev.target);
+function processDragEnter(event) {
+  event.currentTarget.classList.remove('error-indicator');
+  event.currentTarget.classList.add("highlight");
+}
 
-      // remove alphas from draggableId (i.e.: draggable1 -> 1, etc)
-      const draggableElemIndex = this.draggedElemId.replace(/[^\d.-]/g, '');
-      // remove alphas from droppableId (i.e.: droppable1 -> 1, etc)
-      const dropElemIndex = dropElemJQ.attr('id').replace(/[^\d.-]/g, '');
-      if (draggableElemIndex === dropElemIndex) {
-        dropElemJQ.append(draggableElemJQ);
-        // don't allow source to be draggable anymore
-        draggableElemJQ.removeAttr('draggable').css({ 'cursor': 'default' }).removeClass('hide-src-while-dragging draggable-container');
-        // don't allow occupied dropElem to accept dropping anymore
+function processDragLeave(event) {
+  event.currentTarget.classList.remove("highlight");
+}
 
-        // remove listeners and hide the counter indicator
-        dropElemJQ.unbind('drop').unbind('dragover').unbind('dragenter').unbind('mouseout').unbind('mousedown').unbind('dragleave').css({ 'background-color': '', 'cursor': 'auto' }).addClass('hidden-content success-indicator');
-        this.checkActivityProgress();
-      } else {
-        this.handleInvalidAnswer(false);
-        dropElemJQ.css({ 'background-color': '' }).addClass('error-indicator');
-      }
-    }
-  }
+function processDrop(event) {
+  event.preventDefault();
+  let droppable = event.currentTarget;
+  droppable.classList.remove("highlight");
 
-  highlightArea(ev, isTrue) {
-    if (this.draggedElemId) {
-      const dropElem = document.getElementById(ev.target.id);
-      const draggableElem = document.getElementById(this.draggedElemId);
-      if (dropElem && draggableElem) {
-        dropElem.classList.remove('error-indicator');
-        dropElem.style.backgroundColor = (isTrue && draggableElem.hasAttribute('draggable') ? 'yellow' : "");
-      }
-    }
+  let dropElemJQ = $(droppable);
+  let draggedId = event.dataTransfer.getData("text");
+  let draggableElemJQ = $(`#${draggedId}`);
+
+  const draggableElemIndex = draggedId.replace(/[^\d.-]/g, '');
+  const dropElemIndex = dropElemJQ.attr('id').replace(/[^\d.-]/g, '');
+
+  if (draggableElemIndex === dropElemIndex) {
+    dropElemJQ.append(draggableElemJQ);
+    draggableElemJQ.removeAttr('draggable').css({ 'cursor': 'default' }).removeClass('hide-src-while-dragging draggable-container');
+
+    droppable.removeEventListener('drop', processDrop);
+    dropElemJQ.off('mousedown');
+    droppable.removeEventListener('dragover', processDragOver);
+    droppable.removeEventListener('dragenter', processDragEnter);
+    droppable.removeEventListener('dragleave', processDragLeave);
+    dropElemJQ.css({ 'background-color': '', 'cursor': 'auto' }).addClass('hidden-content success-indicator');
+
+    getObjInstance.checkActivityProgress();
+  } else {
+    getObjInstance.handleInvalidAnswer(false);
+    dropElemJQ.css({ 'background-color': '' }).addClass('error-indicator');
   }
 }

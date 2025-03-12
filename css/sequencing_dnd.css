@@ -2,6 +2,9 @@ body {
   counter-reset: indexNb;  /* used to add the counter indicator on the bacground of the drop element */
 }
 
+.droppable {
+  transition: background 0.3s ease-in-out;
+}
 .droppable::before {
   counter-increment: indexNb;
   content: counter(indexNb);
@@ -18,6 +21,9 @@ body {
 }
 .droppable.hidden-content::before {
   visibility: hidden;
+}
+.droppable.highlight {
+  background-color: yellow;
 }
 
 #contentPanel {
