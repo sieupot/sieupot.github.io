@@ -152,33 +152,19 @@ class SequencingDND extends ActivityCore {
 		this.dragContainers.append(draggableHtmlElem);
 
 		const objInstance = this;
-    interact(`#draggable${index}`).draggable({
-      listeners: {
-        start(event) {
-          objInstance.startDrag(event); // Your existing function
-        },
-        move(event) {
-          const target = event.target;
-          // Update position (storing it inside the element)
-          const x = (parseFloat(target.getAttribute("data-x")) || 0) + event.dx;
-          const y = (parseFloat(target.getAttribute("data-y")) || 0) + event.dy;
-
-          target.style.transform = `translate(${x}px, ${y}px)`;
-          target.setAttribute("data-x", x);
-          target.setAttribute("data-y", y);
-        },
-        end(event) {
-          objInstance.endDrag(event); // Your existing function
-        }
-      }
+    const draggableElemJQ = $(`#draggable${index}`);
+    draggableElemJQ.bind("pointerdown", function(ev) {
+			objInstance.startDrag(ev);
+		}).bind("pointerup", function(ev) {
+			objInstance.endDrag(ev);
+		});
+    draggableElemJQ.bind("touchstart", function(ev) {
+      objInstance.startDrag(ev);
+    }).bind("touchend", function(ev) {
+      objInstance.endDrag(ev);
     });
 
-    /*$(`#draggable${index}`).bind("dragstart", function(ev) {
-      objInstance.startDrag(ev);
-    }).bind("dragend", function(ev) {
-      objInstance.endDrag(ev);
-    });*/
-	}
+  }
 
 	generateChallengeItems() {
 		// remove previous HTML content from the dropContainersId div (new content will be generated below)
@@ -220,6 +206,42 @@ class SequencingDND extends ActivityCore {
 	startDrag(ev) {
 		const draggableElem = document.getElementById(ev.target.id);
 		if (draggableElem.getAttribute('draggable')) {
+      ev.preventDefault(); // Prevent default touch behavior (like scrolling)
+
+      // Get touch/mouse coordinates
+      /*let startX = ev.type.startsWith("touch") ? ev.touches[0].pageX : ev.pageX;
+      let startY = ev.type.startsWith("touch") ? ev.touches[0].pageY : ev.pageY;*/
+
+      // Clone the div
+      const clonedDiv = draggableElem.cloneNode(true);
+      clonedDiv.id = "clonedDiv"; // Assign a new ID if needed
+      clonedDiv.style.position = "absolute";
+      clonedDiv.style.pointerEvents = "none"; // Prevent interfering with mouse events
+      clonedDiv.style.opacity = "0.7"; // Make it slightly transparent
+      clonedDiv.style.zIndex = "999"; // Bring it to the front
+      document.body.appendChild(clonedDiv);
+
+      // Function to move the clone with the mouse
+      function moveClone(e) {
+        console.log(`${e.pageX + 10} - ${e.type}`);
+        let x = e.type.startsWith("touch") ? e.touches[0].pageX : e.pageX;
+        let y = e.type.startsWith("touch") ? e.touches[0].pageY : e.pageY;
+        clonedDiv.style.left = `${x + 10}px`; // Offset to avoid cursor/finger overlap
+        clonedDiv.style.top = `${y + 10}px`;
+      }
+
+      // Move with mouse
+      document.addEventListener("touchmove", moveClone);
+      document.addEventListener("pointermove", moveClone);
+
+      // Stop following on mouseup
+      document.addEventListener("touchend", function () {
+        clonedDiv.remove();
+      }, { once: true });
+      document.addEventListener("pointerup", function () {
+        clonedDiv.remove();
+      }, { once: true });
+
 			draggableElem.classList.add('hide-src-while-dragging');
 			this.draggedElemId = ev.target.id;
 		}
@@ -251,6 +273,7 @@ class SequencingDND extends ActivityCore {
 			} else {
 				this.handleInvalidAnswer(false);
 				dropElemJQ.css({ 'background-color': '' }).addClass('error-indicator');
+        draggableElemJQ.removeClass('hide-src-while-dragging');
 			}
 		}
 	}
@@ -265,18 +288,4 @@ class SequencingDND extends ActivityCore {
 			}
 		}
 	}
-
-  dragMoveListener (event) {
-    let target = event.target
-    // keep the dragged position in the data-x/data-y attributes
-    const x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx
-    const y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy
-
-    // translate the element
-    target.style.transform = 'translate(' + x + 'px, ' + y + 'px)'
-
-    // update the posiion attributes
-    target.setAttribute('data-x', x)
-    target.setAttribute('data-y', y)
-  }
 }

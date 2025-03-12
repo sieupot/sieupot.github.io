@@ -72,6 +72,7 @@ body {
   touch-action: none;
   user-select: none;
 }
+
 .separator {
   height: 1px;
   background-color: gray;
