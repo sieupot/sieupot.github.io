@@ -1,8 +1,8 @@
 import { ActivityCore } from '../js/activityCore.js'
-let getObjInstance;
+let mainObjInstance;
 // on page load
 $(() => {
-  getObjInstance = new SequencingDND();
+  mainObjInstance = new SequencingDND();
 });
 
 class SequencingDND extends ActivityCore {
@@ -168,7 +168,6 @@ class SequencingDND extends ActivityCore {
   }
 
   init() {
-    let objInstance = this;
     const draggables = document.querySelectorAll(".draggable-container");
     const droppables = document.querySelectorAll(".droppable");
 
@@ -190,13 +189,12 @@ class SequencingDND extends ActivityCore {
     draggables.forEach(draggable => {
       let offsetX = 0, offsetY = 0;
 
-      draggable.addEventListener("touchstart", (event) => {
+      function processTouchStart(event) {
         const touch = event.touches[0];
         offsetX = touch.clientX - draggable.getBoundingClientRect().left;
         offsetY = touch.clientY - draggable.getBoundingClientRect().top;
-      });
-
-      draggable.addEventListener("touchmove", (event) => {
+      }
+      function processTouchMove(event) {
         event.preventDefault(); // Prevent scrolling
 
         const touch = event.touches[0];
@@ -214,22 +212,45 @@ class SequencingDND extends ActivityCore {
             dropzone.classList.remove("highlight");
           }
         });
-      });
+      }
+
+      draggable.addEventListener("touchstart", processTouchStart);
+      draggable.addEventListener("touchmove", processTouchMove);
 
       draggable.addEventListener("touchend", (event) => {
         const touch = event.changedTouches[0];
 
-        droppables.forEach(dropzone => {
-          const dropRect = dropzone.getBoundingClientRect();
+        droppables.forEach(droppable => {
+          droppable.classList.remove("highlight");
+
+          const dropRect = droppable.getBoundingClientRect();
           if (touch.clientX >= dropRect.left &&
             touch.clientX <= dropRect.right &&
             touch.clientY >= dropRect.top &&
             touch.clientY <= dropRect.bottom) {
-            dropzone.classList.remove("highlight");
-            dropzone.appendChild(draggable);
-            draggable.style.position = "static"; // Reset position
+            const draggableElemIndex = draggable.id.replace(/[^\d.-]/g, '');
+
+            const dropElemIndex = droppable.id.replace(/[^\d.-]/g, '');
+
+            let dropElemJQ = $(droppable);
+            if (draggableElemIndex === dropElemIndex) { // is it the right position?
+              draggable.style.position = "static"; // Reset position
+              droppable.appendChild(draggable);
+              draggableElemJQ.removeAttr('draggable').css({ 'cursor': 'default' }).removeClass('hide-src-while-dragging draggable-container');
+
+              dropElemJQ.off('mousedown');
+
+              draggable.removeEventListener("touchstart", processTouchStart);
+              draggable.removeEventListener("touchmove", processTouchMove);
+
+              mainObjInstance.checkActivityProgress();
+            } else { // it's the wrong position
+              // mark bad answer and move draggable back
+              mainObjInstance.handleInvalidAnswer(false);
+              dropElemJQ.css({ 'background-color': '' }).addClass('error-indicator');
+            }
           } else {
-            dropzone.classList.remove("highlight");
+            // move draggable back
           }
         });
       });
@@ -249,7 +270,6 @@ function processDragEnter(event) {
 function processDragLeave(event) {
   event.currentTarget.classList.remove("highlight");
 }
-
 function processDrop(event) {
   event.preventDefault();
   let droppable = event.currentTarget;
@@ -257,12 +277,11 @@ function processDrop(event) {
 
   let dropElemJQ = $(droppable);
   let draggedId = event.dataTransfer.getData("text");
-  let draggableElemJQ = $(`#${draggedId}`);
-
   const draggableElemIndex = draggedId.replace(/[^\d.-]/g, '');
-  const dropElemIndex = dropElemJQ.attr('id').replace(/[^\d.-]/g, '');
 
+  const dropElemIndex = dropElemJQ.attr('id').replace(/[^\d.-]/g, '');
   if (draggableElemIndex === dropElemIndex) {
+    let draggableElemJQ = $(`#${draggedId}`);
     dropElemJQ.append(draggableElemJQ);
     draggableElemJQ.removeAttr('draggable').css({ 'cursor': 'default' }).removeClass('hide-src-while-dragging draggable-container');
 
@@ -273,9 +292,11 @@ function processDrop(event) {
     droppable.removeEventListener('dragleave', processDragLeave);
     dropElemJQ.css({ 'background-color': '', 'cursor': 'auto' }).addClass('hidden-content success-indicator');
 
-    getObjInstance.checkActivityProgress();
+    mainObjInstance.checkActivityProgress();
   } else {
-    getObjInstance.handleInvalidAnswer(false);
+    mainObjInstance.handleInvalidAnswer(false);
     dropElemJQ.css({ 'background-color': '' }).addClass('error-indicator');
   }
 }
+
+
