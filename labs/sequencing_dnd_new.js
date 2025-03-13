@@ -173,9 +173,8 @@ class SequencingDND extends ActivityCore {
 
     // === DESKTOP DRAG & DROP ===
     draggables.forEach(draggable => {
-      draggable.addEventListener("dragstart", (event) => {
-        event.dataTransfer.setData("text", event.target.id);
-      });
+      draggable.addEventListener("dragstart", processDragStart);
+      draggable.addEventListener("dragend", processDragEnd);
     });
 
     droppables.forEach(droppable => {
@@ -187,6 +186,10 @@ class SequencingDND extends ActivityCore {
 
     // === TOUCH EVENTS (FOR MOBILE) ===
     draggables.forEach(draggable => {
+      draggable.addEventListener("touchstart", processTouchStart);
+      draggable.addEventListener("touchmove", processTouchMove);
+      draggable.addEventListener("touchend", processTouchEnd);
+
       let offsetX = 0, offsetY = 0;
 
       function processTouchStart(event) {
@@ -213,11 +216,7 @@ class SequencingDND extends ActivityCore {
           }
         });
       }
-
-      draggable.addEventListener("touchstart", processTouchStart);
-      draggable.addEventListener("touchmove", processTouchMove);
-
-      draggable.addEventListener("touchend", (event) => {
+      function processTouchEnd(event) {
         const touch = event.changedTouches[0];
 
         droppables.forEach(droppable => {
@@ -240,23 +239,37 @@ class SequencingDND extends ActivityCore {
               draggableElemJQ.removeAttr('draggable').css({ 'cursor': 'default' }).removeClass('hide-src-while-dragging draggable-container');
 
               dropElemJQ.off('mousedown');
-
               draggable.removeEventListener("touchstart", processTouchStart);
               draggable.removeEventListener("touchmove", processTouchMove);
+              draggable.removeEventListener("touchend", processTouchEnd);
+              dropElemJQ.css({ 'background-color': '', 'cursor': 'auto' }).addClass('hidden-content success-indicator');
 
               mainObjInstance.checkActivityProgress();
             } else { // it's the wrong position
-              // mark bad answer and move draggable back
+              // mark bad answer
               mainObjInstance.handleInvalidAnswer(false);
               dropElemJQ.css({ 'background-color': '' }).addClass('error-indicator');
+              // move draggable back
+              draggable.style.left = 0;
+              draggable.style.top = 0;
             }
           } else {
             // move draggable back
+            draggable.style.left = 0;
+            draggable.style.top = 0;
           }
         });
-      });
+      }
     });
   }
+}
+
+function processDragStart(event) {
+  event.currentTarget.classList.add('hide-src-while-dragging');
+  event.dataTransfer.setData("text", event.target.id);
+}
+function processDragEnd(event) {
+  event.currentTarget.classList.remove('hide-src-while-dragging');
 }
 
 function processDragOver(event) {
@@ -274,17 +287,20 @@ function processDragLeave(event) {
 function processDrop(event) {
   event.preventDefault();
   let droppable = event.currentTarget;
+  let draggable = document.getElementById(`${event.dataTransfer.getData("text")}`);
   droppable.classList.remove("highlight");
 
   let dropElemJQ = $(droppable);
-  let draggedId = event.dataTransfer.getData("text");
-  const draggableElemIndex = draggedId.replace(/[^\d.-]/g, '');
+  const draggableElemIndex = draggable.id.replace(/[^\d.-]/g, '');
 
   const dropElemIndex = dropElemJQ.attr('id').replace(/[^\d.-]/g, '');
   if (draggableElemIndex === dropElemIndex) {
-    let draggableElemJQ = $(`#${draggedId}`);
+    let draggableElemJQ = $(draggable);
     dropElemJQ.append(draggableElemJQ);
     draggableElemJQ.removeAttr('draggable').css({ 'cursor': 'default' }).removeClass('hide-src-while-dragging draggable-container');
+
+    draggable.removeEventListener('dragstart', processDragStart);
+    draggable.removeEventListener('dragend', processDragEnd);
 
     droppable.removeEventListener('drop', processDrop);
     dropElemJQ.off('mousedown');
