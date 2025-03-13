@@ -1,4 +1,5 @@
-import { ActivityCore } from '../js/activityCore.js'
+import { ActivityCore } from './activityCore.js'
+
 let mainObjInstance;
 // on page load
 $(() => {
@@ -195,6 +196,12 @@ class SequencingDND extends ActivityCore {
         const touch = event.touches[0];
         offsetX = touch.clientX - draggable.getBoundingClientRect().left;
         offsetY = touch.clientY - draggable.getBoundingClientRect().top;
+
+        draggable.style.position = 'absolute';
+        draggable.style.width = `${draggable.getBoundingClientRect().width}px`;
+        draggable.style.height = `${draggable.getBoundingClientRect().height}px`;
+        draggable.style.left = `${touch.clientX - offsetX}px`;
+        draggable.style.top = `${touch.clientY - offsetY}px`;
       }
       function processTouchMove(event) {
         event.preventDefault(); // Prevent scrolling
@@ -216,11 +223,14 @@ class SequencingDND extends ActivityCore {
         });
       }
       function processTouchEnd(event) {
-        const touch = event.changedTouches[0];
+        draggable.style.position = 'relative';
+        draggable.style.width = ``;
+        draggable.style.height = ``;
 
         for (const droppable of [...droppables]) {
           droppable.classList.remove("highlight");
 
+          const touch = event.changedTouches[0];
           const dropRect = droppable.getBoundingClientRect();
           if (touch.clientX >= dropRect.left &&
             touch.clientX <= dropRect.right &&
