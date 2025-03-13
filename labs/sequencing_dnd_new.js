@@ -111,7 +111,6 @@ class SequencingDND extends ActivityCore {
         break;
     }
 
-    const objInstance = this;
     let droppableHtmlElem = document.createElement('div');
     droppableHtmlElem.id = `droppable${index}`;
     droppableHtmlElem.style.cursor = 'help';
@@ -119,11 +118,11 @@ class SequencingDND extends ActivityCore {
     this.dropContainers.append(droppableHtmlElem);
 
     $(droppableHtmlElem).bind('mousedown', () => {
-      if (objInstance.assistAudio) {
-        objInstance.assistAudio.pause();
+      if (mainObjInstance.assistAudio) {
+        mainObjInstance.assistAudio.pause();
       }
-      objInstance.assistAudio = new Audio(assistAudioPath);
-      objInstance.assistAudio.play();
+      mainObjInstance.assistAudio = new Audio(assistAudioPath);
+      mainObjInstance.assistAudio.play();
     });
   }
 
