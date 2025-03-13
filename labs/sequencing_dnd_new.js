@@ -219,7 +219,7 @@ class SequencingDND extends ActivityCore {
       function processTouchEnd(event) {
         const touch = event.changedTouches[0];
 
-        droppables.forEach(droppable => {
+        for (const droppable of [...droppables]) {
           droppable.classList.remove("highlight");
 
           const dropRect = droppable.getBoundingClientRect();
@@ -244,6 +244,8 @@ class SequencingDND extends ActivityCore {
               draggable.removeEventListener("touchend", processTouchEnd);
               dropElemJQ.css({ 'background-color': '', 'cursor': 'auto' }).addClass('hidden-content success-indicator');
 
+              droppable.remove();
+
               mainObjInstance.checkActivityProgress();
             } else { // it's the wrong position
               // mark bad answer
@@ -258,7 +260,7 @@ class SequencingDND extends ActivityCore {
             draggable.style.left = 0;
             draggable.style.top = 0;
           }
-        });
+        }
       }
     });
   }
