@@ -247,7 +247,7 @@ class SequencingDND extends ActivityCore {
               alert(droppables.length);
               // remove the droppable element from the initial list, so that this droppable is excluded from any iterating logic
               droppables = droppables.filter(droppableInner => {
-                alert(droppableInner.id + ' / ' + droppable.id);
+                alert('' + droppableInner.id + ' / ' + droppable.id);
                 return droppableInner.id !== droppable.id; // Keep elements that match the condition
               });
               alert(droppables.length);
