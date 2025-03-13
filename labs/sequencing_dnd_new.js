@@ -169,7 +169,7 @@ class SequencingDND extends ActivityCore {
 
   init() {
     const draggables = document.querySelectorAll(".draggable-container");
-    const droppables = document.querySelectorAll(".droppable");
+    let droppables = document.querySelectorAll(".droppable");
 
     // === DESKTOP DRAG & DROP ===
     draggables.forEach(draggable => {
@@ -183,8 +183,6 @@ class SequencingDND extends ActivityCore {
       droppable.addEventListener("dragleave", processDragLeave);
       droppable.addEventListener("drop", processDrop);
     });
-
-    alert(1);
 
     // === TOUCH EVENTS (FOR MOBILE) ===
     draggables.forEach(draggable => {
@@ -246,7 +244,9 @@ class SequencingDND extends ActivityCore {
               draggable.removeEventListener("touchend", processTouchEnd);
               dropElemJQ.css({ 'background-color': '', 'cursor': 'auto' }).addClass('hidden-content success-indicator');
 
-              droppable.remove();
+              droppables = droppables.filter(droppableInner => {
+                return droppableInner.id != droppable.id; // Keep elements that match the condition
+              });
 
               mainObjInstance.checkActivityProgress();
             } else { // it's the wrong position
