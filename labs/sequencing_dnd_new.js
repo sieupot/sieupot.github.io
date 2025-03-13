@@ -186,15 +186,53 @@ class SequencingDND extends ActivityCore {
       droppable.addEventListener("drop", processDrop);
     });
 
-    // === MOBILE TOUCH-BASED DRAG & DROP ===
+    // === TOUCH EVENTS (FOR MOBILE) ===
     draggables.forEach(draggable => {
-      draggable.addEventListener("touchstart", handleTouchStart, { passive: false });
-      draggable.addEventListener("touchmove", handleTouchMove, { passive: false });
-      draggable.addEventListener("touchend", handleTouchEnd, { passive: false });
-    });
+      let offsetX = 0, offsetY = 0;
 
-    droppables.forEach(droppable => {
-      droppable.addEventListener("touchend", handleTouchDrop, { passive: false });
+      draggable.addEventListener("touchstart", (event) => {
+        const touch = event.touches[0];
+        offsetX = touch.clientX - draggable.getBoundingClientRect().left;
+        offsetY = touch.clientY - draggable.getBoundingClientRect().top;
+      });
+
+      draggable.addEventListener("touchmove", (event) => {
+        event.preventDefault(); // Prevent scrolling
+
+        const touch = event.touches[0];
+        draggable.style.left = `${touch.clientX - offsetX}px`;
+        draggable.style.top = `${touch.clientY - offsetY}px`;
+
+        droppables.forEach(dropzone => {
+          const dropRect = dropzone.getBoundingClientRect();
+          if (touch.clientX >= dropRect.left &&
+            touch.clientX <= dropRect.right &&
+            touch.clientY >= dropRect.top &&
+            touch.clientY <= dropRect.bottom) {
+            dropzone.classList.add("highlight");
+          } else {
+            dropzone.classList.remove("highlight");
+          }
+        });
+      });
+
+      draggable.addEventListener("touchend", (event) => {
+        const touch = event.changedTouches[0];
+
+        droppables.forEach(dropzone => {
+          const dropRect = dropzone.getBoundingClientRect();
+          if (touch.clientX >= dropRect.left &&
+            touch.clientX <= dropRect.right &&
+            touch.clientY >= dropRect.top &&
+            touch.clientY <= dropRect.bottom) {
+            dropzone.classList.remove("highlight");
+            dropzone.appendChild(draggable);
+            draggable.style.position = "static"; // Reset position
+          } else {
+            dropzone.classList.remove("highlight");
+          }
+        });
+      });
     });
   }
 }
@@ -239,58 +277,5 @@ function processDrop(event) {
   } else {
     getObjInstance.handleInvalidAnswer(false);
     dropElemJQ.css({ 'background-color': '' }).addClass('error-indicator');
-  }
-}
-
-
-/* ------- FROM MOBILE DEVICES -------- */
-let currentDraggedElement = null;
-
-// Handle touch start
-function handleTouchStart(event) {
-  currentDraggedElement = event.target;
-  event.target.style.position = "absolute";
-  event.target.style.zIndex = "1000";
-}
-
-// Handle touch move
-function handleTouchMove(event) {
-  event.preventDefault();
-  let touch = event.touches[0];
-
-  if (currentDraggedElement) {
-    currentDraggedElement.style.left = touch.pageX - currentDraggedElement.clientWidth / 2 + "px";
-    currentDraggedElement.style.top = touch.pageY - currentDraggedElement.clientHeight / 2 + "px";
-  }
-}
-
-// Handle touch end (drop)
-function handleTouchEnd(event) {
-  let touch = event.changedTouches[0];
-  let dropTarget = document.elementFromPoint(touch.clientX, touch.clientY);
-
-  if (dropTarget && dropTarget.classList.contains("droppable")) {
-    handleTouchDrop(event, dropTarget);
-  } else {
-    resetDraggedElement();
-  }
-}
-
-// Handle touch drop
-function handleTouchDrop(event, dropTarget) {
-  event.preventDefault();
-
-  if (dropTarget && currentDraggedElement) {
-    dropTarget.appendChild(currentDraggedElement);
-    resetDraggedElement();
-  }
-}
-
-// Reset styles after drop
-function resetDraggedElement() {
-  if (currentDraggedElement) {
-    currentDraggedElement.style.position = "";
-    currentDraggedElement.style.zIndex = "";
-    currentDraggedElement = null;
   }
 }
