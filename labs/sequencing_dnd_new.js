@@ -245,7 +245,7 @@ class SequencingDND extends ActivityCore {
               dropElemJQ.css({ 'background-color': '', 'cursor': 'auto' }).addClass('hidden-content success-indicator');
 
               droppables = droppables.filter(droppableInner => {
-                return droppableInner.id != droppable.id; // Keep elements that match the condition
+                return droppableInner.id !== droppable.id; // Keep elements that match the condition
               });
 
               mainObjInstance.checkActivityProgress();
