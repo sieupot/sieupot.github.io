@@ -184,6 +184,8 @@ class SequencingDND extends ActivityCore {
       droppable.addEventListener("drop", processDrop);
     });
 
+    alert(1);
+
     // === TOUCH EVENTS (FOR MOBILE) ===
     draggables.forEach(draggable => {
       draggable.addEventListener("touchstart", processTouchStart);
@@ -193,14 +195,12 @@ class SequencingDND extends ActivityCore {
       let offsetX = 0, offsetY = 0;
 
       function processTouchStart(event) {
-        alert(0);
         const touch = event.touches[0];
         offsetX = touch.clientX - draggable.getBoundingClientRect().left;
         offsetY = touch.clientY - draggable.getBoundingClientRect().top;
       }
       function processTouchMove(event) {
         event.preventDefault(); // Prevent scrolling
-        alert(1);
 
         const touch = event.touches[0];
         draggable.style.left = `${touch.clientX - offsetX}px`;
