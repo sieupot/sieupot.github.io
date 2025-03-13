@@ -244,9 +244,13 @@ class SequencingDND extends ActivityCore {
               draggable.removeEventListener("touchend", processTouchEnd);
               dropElemJQ.css({ 'background-color': '', 'cursor': 'auto' }).addClass('hidden-content success-indicator');
 
+              alert(droppables.length);
+              // remove the droppable element from the initial list, so that this droppable is excluded from any iterating logic
               droppables = droppables.filter(droppableInner => {
+                alert(droppableInner.id + ' / ' + droppable.id);
                 return droppableInner.id !== droppable.id; // Keep elements that match the condition
               });
+              alert(droppables.length);
 
               mainObjInstance.checkActivityProgress();
             } else { // it's the wrong position
