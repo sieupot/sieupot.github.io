@@ -1,8 +1,9 @@
 import { ActivityCore } from './activityCore.js'
 
+let mainObjInstance;
 // on page load
 $(() => {
-  new SequencingDND();
+  mainObjInstance = new SequencingDND();
 });
 
 class SequencingDND extends ActivityCore {
@@ -15,9 +16,6 @@ class SequencingDND extends ActivityCore {
 
     this.imgPath = "../images/sequencing/";
     this.sndPath = "../sounds/sequencing/";
-
-    /* used in the DRAG AND DROP logic */
-    this.draggedElemId;
   }
 
   initActivityItems() {
@@ -114,50 +112,26 @@ class SequencingDND extends ActivityCore {
         break;
     }
 
-    const objInstance = this;
     let droppableHtmlElem = document.createElement('div');
     droppableHtmlElem.id = `droppable${index}`;
     droppableHtmlElem.style.cursor = 'help';
     droppableHtmlElem.classList.add('activity-item', 'droppable');
     this.dropContainers.append(droppableHtmlElem);
 
-    const droppableHtmlElemJQ = $(droppableHtmlElem);
-    droppableHtmlElemJQ.bind('drop', function() {
-      objInstance.drop(event);
-    });
-    droppableHtmlElemJQ.bind('dragover', function() {
-      objInstance.allowDrop(event);
-    });
-    droppableHtmlElemJQ.bind('dragenter', function() {
-      objInstance.highlightArea(event, true);
-    });
-    droppableHtmlElemJQ.bind('mouseout', function() {
-      objInstance.highlightArea(event, false);
-    });
-    droppableHtmlElemJQ.bind('dragleave', function() {
-      objInstance.highlightArea(event, false);
-    });
-    droppableHtmlElemJQ.bind('mousedown', function() {
-      if (objInstance.assistAudio) {
-        objInstance.assistAudio.pause();
+    $(droppableHtmlElem).bind('mousedown', () => {
+      if (mainObjInstance.assistAudio) {
+        mainObjInstance.assistAudio.pause();
       }
-      objInstance.assistAudio = new Audio(assistAudioPath);
-      objInstance.assistAudio.play();
+      mainObjInstance.assistAudio = new Audio(assistAudioPath);
+      mainObjInstance.assistAudio.play();
     });
   }
 
   generateDraggableHtmlElem(index, imagePath) {
-    const draggableHtmlElem = `<div id="draggable${index}" class="draggable-container drag-item" style="background-image: url('${imagePath}');" draggable="true">
-          </div>`;
+    const draggableHtmlElem = `<div id="draggable${index}" class="draggable-container drag-item" style="background-image: url('${imagePath}');" draggable="true"></div>`;
     this.dragContainers.append(draggableHtmlElem);
-
-    const objInstance = this;
-    $(`#draggable${index}`).bind("dragstart", function(ev) {
-      objInstance.startDrag(ev);
-    }).bind("dragend", function(ev) {
-      objInstance.endDrag(ev);
-    });
   }
+
 
   generateChallengeItems() {
     // remove previous HTML content from the dropContainersId div (new content will be generated below)
@@ -183,6 +157,7 @@ class SequencingDND extends ActivityCore {
     }
 
     this.playShowItemAudio(false);
+    this.init();
   }
 
   checkActivityProgress() {
@@ -192,56 +167,167 @@ class SequencingDND extends ActivityCore {
     }
   }
 
-  allowDrop(ev) {
-    ev.preventDefault();
-  }
+  init() {
+    const draggables = document.querySelectorAll(".draggable-container");
+    let droppables = Array.from(document.querySelectorAll(".droppable"));
 
-  startDrag(ev) {
-    const draggableElem = document.getElementById(ev.target.id);
-    if (draggableElem.getAttribute('draggable')) {
-      draggableElem.classList.add('hide-src-while-dragging');
-      this.draggedElemId = ev.target.id;
-    }
-  }
-  endDrag(ev) {
-    document.getElementById(ev.target.id).classList.remove('hide-src-while-dragging');
-    this.draggedElemId = null;
-  }
+    // === DESKTOP DRAG & DROP ===
+    draggables.forEach(draggable => {
+      draggable.addEventListener("dragstart", processDragStart);
+      draggable.addEventListener("dragend", processDragEnd);
+    });
 
-  drop(ev) {
-    ev.preventDefault();
-    const draggableElemJQ = $(`#${this.draggedElemId}`);
-    if (draggableElemJQ && draggableElemJQ.attr('draggable')) {
-      const dropElemJQ = $(ev.target);
+    droppables.forEach(droppable => {
+      droppable.addEventListener("dragover", processDragOver);
+      droppable.addEventListener("dragenter", processDragEnter);
+      droppable.addEventListener("dragleave", processDragLeave);
+      droppable.addEventListener("drop", processDrop);
+    });
 
-      // remove alphas from draggableId (i.e.: draggable1 -> 1, etc)
-      const draggableElemIndex = this.draggedElemId.replace(/[^\d.-]/g, '');
-      // remove alphas from droppableId (i.e.: droppable1 -> 1, etc)
-      const dropElemIndex = dropElemJQ.attr('id').replace(/[^\d.-]/g, '');
-      if (draggableElemIndex === dropElemIndex) {
-        dropElemJQ.append(draggableElemJQ);
-        // don't allow source to be draggable anymore
-        draggableElemJQ.removeAttr('draggable').css({ 'cursor': 'default' }).removeClass('hide-src-while-dragging draggable-container');
-        // don't allow occupied dropElem to accept dropping anymore
+    // === TOUCH EVENTS (FOR MOBILE) ===
+    draggables.forEach(draggable => {
+      draggable.addEventListener("touchstart", processTouchStart);
+      draggable.addEventListener("touchmove", processTouchMove);
+      draggable.addEventListener("touchend", processTouchEnd);
 
-        // remove listeners and hide the counter indicator
-        dropElemJQ.unbind('drop').unbind('dragover').unbind('dragenter').unbind('mouseout').unbind('mousedown').unbind('dragleave').css({ 'background-color': '', 'cursor': 'auto' }).addClass('hidden-content success-indicator');
-        this.checkActivityProgress();
-      } else {
-        this.handleInvalidAnswer(false);
-        dropElemJQ.css({ 'background-color': '' }).addClass('error-indicator');
+      let offsetX = 0, offsetY = 0;
+
+      function processTouchStart(event) {
+        const touch = event.touches[0];
+        offsetX = touch.clientX - draggable.getBoundingClientRect().left;
+        offsetY = touch.clientY - draggable.getBoundingClientRect().top;
+
+        draggable.style.position = 'absolute';
+        draggable.style.width = `${draggable.getBoundingClientRect().width}px`;
+        draggable.style.height = `${draggable.getBoundingClientRect().height}px`;
+        draggable.style.left = `${touch.clientX - offsetX}px`;
+        draggable.style.top = `${touch.clientY - offsetY}px`;
       }
-    }
-  }
+      function processTouchMove(event) {
+        event.preventDefault(); // Prevent scrolling
 
-  highlightArea(ev, isTrue) {
-    if (this.draggedElemId) {
-      const dropElem = document.getElementById(ev.target.id);
-      const draggableElem = document.getElementById(this.draggedElemId);
-      if (dropElem && draggableElem) {
-        dropElem.classList.remove('error-indicator');
-        dropElem.style.backgroundColor = (isTrue && draggableElem.hasAttribute('draggable') ? 'yellow' : "");
+        const touch = event.touches[0];
+        draggable.style.left = `${touch.clientX - offsetX}px`;
+        draggable.style.top = `${touch.clientY - offsetY}px`;
+
+        droppables.forEach(dropzone => {
+          const dropRect = dropzone.getBoundingClientRect();
+          if (touch.clientX >= dropRect.left &&
+            touch.clientX <= dropRect.right &&
+            touch.clientY >= dropRect.top &&
+            touch.clientY <= dropRect.bottom) {
+            dropzone.classList.add("highlight");
+          } else {
+            dropzone.classList.remove("highlight");
+          }
+        });
       }
-    }
+      function processTouchEnd(event) {
+        draggable.style.position = 'relative';
+        draggable.style.width = ``;
+        draggable.style.height = ``;
+
+        for (const droppable of [...droppables]) {
+          droppable.classList.remove("highlight");
+
+          const touch = event.changedTouches[0];
+          const dropRect = droppable.getBoundingClientRect();
+          if (touch.clientX >= dropRect.left &&
+            touch.clientX <= dropRect.right &&
+            touch.clientY >= dropRect.top &&
+            touch.clientY <= dropRect.bottom) {
+            const draggableElemIndex = draggable.id.replace(/[^\d.-]/g, '');
+
+            const dropElemIndex = droppable.id.replace(/[^\d.-]/g, '');
+
+            let dropElemJQ = $(droppable);
+            if (draggableElemIndex === dropElemIndex) { // is it the right position?
+              draggable.style.position = "static"; // Reset position
+              droppable.appendChild(draggable);
+              let draggableElemJQ = $(draggable);
+              draggableElemJQ.removeAttr('draggable').css({ 'cursor': 'default' }).removeClass('hide-src-while-dragging draggable-container');
+
+              dropElemJQ.off('mousedown');
+              draggable.removeEventListener("touchstart", processTouchStart);
+              draggable.removeEventListener("touchmove", processTouchMove);
+              draggable.removeEventListener("touchend", processTouchEnd);
+              dropElemJQ.css({ 'background-color': '', 'cursor': 'auto' }).addClass('hidden-content success-indicator');
+
+              // remove the droppable element from the initial list, so that this droppable is excluded from any iterating logic
+              droppables = droppables.filter(droppableInner => {
+                return droppableInner.id !== droppable.id; // Keep elements that match the condition
+              });
+
+              mainObjInstance.checkActivityProgress();
+            } else { // it's the wrong position
+              // mark bad answer
+              mainObjInstance.handleInvalidAnswer(false);
+              dropElemJQ.css({ 'background-color': '' }).addClass('error-indicator');
+              // move draggable back
+              draggable.style.left = 0;
+              draggable.style.top = 0;
+            }
+          } else {
+            // move draggable back
+            draggable.style.left = 0;
+            draggable.style.top = 0;
+          }
+        }
+      }
+    });
   }
 }
+
+function processDragStart(event) {
+  event.currentTarget.classList.add('hide-src-while-dragging');
+  event.dataTransfer.setData("text", event.target.id);
+}
+function processDragEnd(event) {
+  event.currentTarget.classList.remove('hide-src-while-dragging');
+}
+
+function processDragOver(event) {
+  event.preventDefault();
+}
+
+function processDragEnter(event) {
+  event.currentTarget.classList.remove('error-indicator');
+  event.currentTarget.classList.add("highlight");
+}
+
+function processDragLeave(event) {
+  event.currentTarget.classList.remove("highlight");
+}
+function processDrop(event) {
+  event.preventDefault();
+  let droppable = event.currentTarget;
+  let draggable = document.getElementById(`${event.dataTransfer.getData("text")}`);
+  droppable.classList.remove("highlight");
+
+  let dropElemJQ = $(droppable);
+  const draggableElemIndex = draggable.id.replace(/[^\d.-]/g, '');
+
+  const dropElemIndex = dropElemJQ.attr('id').replace(/[^\d.-]/g, '');
+  if (draggableElemIndex === dropElemIndex) {
+    let draggableElemJQ = $(draggable);
+    dropElemJQ.append(draggableElemJQ);
+    draggableElemJQ.removeAttr('draggable').css({ 'cursor': 'default' }).removeClass('hide-src-while-dragging draggable-container');
+
+    draggable.removeEventListener('dragstart', processDragStart);
+    draggable.removeEventListener('dragend', processDragEnd);
+
+    droppable.removeEventListener('drop', processDrop);
+    dropElemJQ.off('mousedown');
+    droppable.removeEventListener('dragover', processDragOver);
+    droppable.removeEventListener('dragenter', processDragEnter);
+    droppable.removeEventListener('dragleave', processDragLeave);
+    dropElemJQ.css({ 'background-color': '', 'cursor': 'auto' }).addClass('hidden-content success-indicator');
+
+    mainObjInstance.checkActivityProgress();
+  } else {
+    mainObjInstance.handleInvalidAnswer(false);
+    dropElemJQ.css({ 'background-color': '' }).addClass('error-indicator');
+  }
+}
+
+
