@@ -236,6 +236,7 @@ class SequencingDND extends ActivityCore {
             if (draggableElemIndex === dropElemIndex) { // is it the right position?
               draggable.style.position = "static"; // Reset position
               droppable.appendChild(draggable);
+              let draggableElemJQ = $(draggable);
               draggableElemJQ.removeAttr('draggable').css({ 'cursor': 'default' }).removeClass('hide-src-while-dragging draggable-container');
 
               dropElemJQ.off('mousedown');
